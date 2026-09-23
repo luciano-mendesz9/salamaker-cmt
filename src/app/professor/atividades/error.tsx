@@ -1,0 +1,2 @@
+"use client";
+export default function ErrorState({reset}:{error:Error;reset:()=>void}){return <main className="grid min-h-[60vh] place-items-center p-5"><section className="glass max-w-lg rounded-2xl p-7 text-center"><h2 className="font-display text-2xl font-bold">Não foi possível carregar as atividades</h2><p className="mt-2 text-sm text-slate-400">Tente novamente. Se o problema continuar, confira a conexão e a migração do banco.</p><button onClick={reset} className="button-primary mt-5">Tentar novamente</button></section></main>}

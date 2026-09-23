@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    // The managed runner cannot capture detached CLI output used by Next's
+    // default TypeScript check. The compiler API performs the same validation.
+    useTypeScriptCli: false,
+  },
 };
 
 export default nextConfig;

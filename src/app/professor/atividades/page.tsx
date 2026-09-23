@@ -1,0 +1,21 @@
+import Link from "next/link";
+import { ClipboardList, Plus, Search } from "lucide-react";
+import { EmptyState } from "@/components/empty-state";
+import { ProfessorShell } from "@/components/professor-shell";
+import { activityStateLabel, effectiveActivityState, formatSchoolDate } from "@/lib/activities";
+import { prisma } from "@/lib/db";
+
+const typeLabels:Record<string,string>={EXTERNAL_LINK:"Link externo",FORM:"Formulário",GROUP:"Em grupo"};
+export default async function Atividades({searchParams}:{searchParams:Promise<Record<string,string|undefined>>}){
+  const filters=await searchParams;
+  const settings=await prisma.appSetting.findUnique({where:{id:1},select:{timeZone:true}});
+  const timeZone=settings?.timeZone??"America/Fortaleza";
+  const all=await prisma.activity.findMany({include:{recipients:{select:{completedAt:true,studentSignaledAt:true}},submissions:{select:{status:true}}},orderBy:{createdAt:"desc"}});
+  const activities=all.filter(activity=>(!filters.q||activity.title.toLocaleLowerCase("pt-BR").includes(filters.q.toLocaleLowerCase("pt-BR")))&&(!filters.type||activity.type===filters.type)&&(!filters.state||effectiveActivityState(activity)===filters.state));
+  return <ProfessorShell title="Atividades">
+    <div className="flex flex-wrap items-end justify-between gap-4"><div><p className="eyebrow">Sala Maker</p><h2 className="mt-3 font-display text-3xl font-bold">Atividades</h2><p className="mt-2 text-sm text-slate-400">Toda atividade é publicada para a única turma de Robótica.</p></div><Link href="/professor/atividades/nova" className="button-primary"><Plus size={17}/>Criar atividade</Link></div>
+    <form className="glass mt-7 grid gap-3 rounded-2xl p-4 sm:grid-cols-2 xl:grid-cols-4"><label className="relative sm:col-span-2"><Search className="absolute left-4 top-4 text-slate-500" size={17}/><input name="q" defaultValue={filters.q} placeholder="Buscar por título" className="input pl-11"/></label><select name="type" defaultValue={filters.type??""} className="input"><option value="">Todos os tipos</option>{Object.entries(typeLabels).map(([value,label])=><option key={value} value={value}>{label}</option>)}</select><div className="flex gap-2"><select name="state" defaultValue={filters.state??""} className="input"><option value="">Todos os estados</option><option value="SCHEDULED">Agendada</option><option value="OPEN">Aberta</option><option value="CLOSED">Fechada</option></select><button className="button-secondary">Filtrar</button></div></form>
+    <div className="mt-6">{activities.length?<div className="grid gap-4 xl:grid-cols-2">{activities.map(activity=>{const state=effectiveActivityState(activity);const completed=activity.recipients.filter(item=>item.completedAt||item.studentSignaledAt).length;return <Link key={activity.id} href={`/professor/atividades/${activity.id}`} className="glass focus-ring rounded-2xl p-5 transition hover:border-blue-400/50"><div className="flex items-start justify-between gap-4"><div><p className="text-xs font-bold uppercase tracking-wider text-blue-300">{typeLabels[activity.type]}</p><h3 className="mt-2 font-display text-xl font-bold">{activity.title}</h3><p className="mt-1 text-sm text-slate-400">Toda a turma de Robótica</p></div><span className={`rounded-full px-3 py-1 text-xs font-bold ${state==="OPEN"?"bg-emerald-400/10 text-emerald-300":state==="SCHEDULED"?"bg-amber-400/10 text-amber-300":"bg-slate-700 text-slate-300"}`}>{activityStateLabel[state]}</span></div><dl className="mt-5 grid grid-cols-2 gap-3 text-sm sm:grid-cols-4"><Metric label="XP máximo" value={`${activity.maxXp} XP`}/><Metric label="Abertura" value={formatSchoolDate(activity.opensAt,timeZone)}/><Metric label="Fechamento" value={formatSchoolDate(activity.closesAt,timeZone)}/><Metric label="Participação" value={`${completed} fez · ${activity.recipients.length-completed} falta`}/></dl></Link>})}</div>:<EmptyState icon={ClipboardList} title="Nenhuma atividade encontrada" description="Crie uma atividade ou ajuste os filtros de busca."/>}</div>
+  </ProfessorShell>;
+}
+function Metric({label,value}:{label:string;value:string}){return <div><dt className="text-xs text-slate-500">{label}</dt><dd className="mt-1 font-semibold">{value}</dd></div>}

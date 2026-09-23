@@ -1,0 +1,3 @@
+import Link from "next/link";
+import { Orbit } from "lucide-react";
+export function Brand({ context }: { context?: string }) { return <Link href="/" className="focus-ring flex items-center gap-2.5 rounded-lg"><span className="grid h-10 w-10 place-items-center rounded-xl border border-blue-400/25 bg-blue-400/15 text-blue-300"><Orbit size={24}/></span><span className="font-display text-lg font-bold leading-none">SALA MAKER<span className="text-blue-400">.</span><small className="mt-1.5 block text-[9px] uppercase tracking-[.25em] text-slate-400">CMT · {context ?? "Robótica"}</small></span></Link> }

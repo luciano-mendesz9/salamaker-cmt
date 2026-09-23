@@ -1,0 +1,410 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  TEACHER
+  STUDENT
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+}
+
+enum SchoolClass {
+  GRADE_6_A
+  GRADE_6_B
+  GRADE_6_C
+  GRADE_7_A
+  GRADE_7_B
+  GRADE_7_C
+}
+
+enum LessonStatus {
+  OPEN
+  CLOSED
+}
+
+enum AttendanceStatus {
+  PRESENT
+  ABSENT
+  EXCUSED
+}
+
+enum XpSource {
+  ATTENDANCE
+  BEHAVIOR
+  MANUAL
+  BULK
+  SYSTEM
+  ACTIVITY
+}
+
+enum AuditEvent {
+  USER_CREATED
+  USER_UPDATED
+  USER_STATUS_CHANGED
+  PASSWORD_RESET
+  PASSWORD_CHANGED
+  MODERATION_CHANGED
+  THEME_CHANGED
+  ACTIVITY_CREATED
+  ACTIVITY_STATE_CHANGED
+  ACTIVITY_GRADED
+}
+
+enum ActivityType {
+  EXTERNAL_LINK
+  FORM
+  GROUP
+}
+
+enum ActivityQuestionType {
+  SINGLE_CHOICE
+  MULTIPLE_CHOICE
+  WRITTEN
+}
+
+enum SubmissionStatus {
+  SUBMITTED
+  AWAITING_REVIEW
+  GRADED
+}
+
+enum WrittenGrade {
+  CORRECT
+  INCORRECT
+  PARTIAL
+}
+
+enum TeamDivisionMode {
+  RANDOM
+  MANUAL
+}
+
+model User {
+  id                      String               @id @default(uuid()) @db.Uuid
+  firstName               String
+  lastName                String
+  passwordHash            String
+  xp                      Int                  @default(0)
+  accessCode              String               @unique
+  originSchoolClass       SchoolClass?
+  status                  UserStatus           @default(ACTIVE)
+  role                    Role
+  sessionVersion          Int                  @default(1)
+  mustChangePassword      Boolean              @default(false)
+  lastLoginAt             DateTime?
+  lastSeenAt              DateTime?
+  deactivatedAt           DateTime?
+  createdAt               DateTime             @default(now())
+  updatedAt               DateTime             @updatedAt
+  lessons                 Lesson[]             @relation("TeacherLessons")
+  attendances             Attendance[]
+  xpEntries               XpEntry[]            @relation("StudentXp")
+  authoredXp              XpEntry[]            @relation("XpAuthor")
+  behaviors               BehaviorRating[]     @relation("StudentBehavior")
+  ratedBehaviors          BehaviorRating[]     @relation("BehaviorTeacher")
+  cleanups                CleanupAssignment[]  @relation("CleanupStudent")
+  confirmedCleanups       CleanupAssignment[]  @relation("CleanupTeacher")
+  auditActions            AuditLog[]           @relation("AuditActor")
+  auditTargets            AuditLog[]           @relation("AuditTarget")
+  authoredActivities      Activity[]           @relation("ActivityAuthor")
+  activityRecipients      ActivityRecipient[]  @relation("ActivityRecipientStudent")
+  activitySubmissions     ActivitySubmission[]
+  activityAnswers         ActivityAnswer[]
+  activityTeamMemberships ActivityTeamMember[]
+  activityAwards          ActivityAward[]
+  lessonParticipations    LessonParticipant[]
+
+  @@index([role, status, xp])
+  @@index([originSchoolClass, status])
+}
+
+model AccessCodeSequence {
+  year      Int @id
+  nextValue Int @default(1)
+}
+
+model Lesson {
+  id               String              @id @default(uuid()) @db.Uuid
+  title            String
+  teacherId        String              @db.Uuid
+  status           LessonStatus        @default(OPEN)
+  openSlot         String?             @unique
+  presenceCodeHash String
+  openedAt         DateTime            @default(now())
+  closedAt         DateTime?
+  teacher          User                @relation("TeacherLessons", fields: [teacherId], references: [id])
+  attendances      Attendance[]
+  xpEntries        XpEntry[]
+  behaviors        BehaviorRating[]
+  cleanups         CleanupAssignment[]
+  participants     LessonParticipant[]
+
+  @@index([status, openedAt])
+}
+
+model LessonParticipant {
+  id        String   @id @default(uuid()) @db.Uuid
+  lessonId  String   @db.Uuid
+  studentId String   @db.Uuid
+  createdAt DateTime @default(now())
+  lesson    Lesson   @relation(fields: [lessonId], references: [id], onDelete: Restrict)
+  student   User     @relation(fields: [studentId], references: [id], onDelete: Restrict)
+
+  @@unique([lessonId, studentId])
+  @@index([studentId, lessonId])
+}
+
+model Attendance {
+  id        String           @id @default(uuid()) @db.Uuid
+  lessonId  String           @db.Uuid
+  studentId String           @db.Uuid
+  status    AttendanceStatus @default(PRESENT)
+  note      String?
+  markedAt  DateTime         @default(now())
+  lesson    Lesson           @relation(fields: [lessonId], references: [id], onDelete: Restrict)
+  student   User             @relation(fields: [studentId], references: [id], onDelete: Restrict)
+
+  @@unique([lessonId, studentId])
+}
+
+model XpEntry {
+  id             String          @id @default(uuid()) @db.Uuid
+  studentId      String          @db.Uuid
+  lessonId       String?         @db.Uuid
+  authorId       String?         @db.Uuid
+  delta          Int
+  reason         String
+  source         XpSource
+  idempotencyKey String          @unique
+  createdAt      DateTime        @default(now())
+  student        User            @relation("StudentXp", fields: [studentId], references: [id], onDelete: Restrict)
+  lesson         Lesson?         @relation(fields: [lessonId], references: [id], onDelete: Restrict)
+  author         User?           @relation("XpAuthor", fields: [authorId], references: [id], onDelete: SetNull)
+  behavior       BehaviorRating?
+  activityAwards ActivityAward[]
+
+  @@index([studentId, createdAt])
+}
+
+model BehaviorRating {
+  id        String   @id @default(uuid()) @db.Uuid
+  lessonId  String   @db.Uuid
+  studentId String   @db.Uuid
+  teacherId String   @db.Uuid
+  score     Int
+  reason    String?
+  xpEntryId String   @unique @db.Uuid
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  lesson    Lesson   @relation(fields: [lessonId], references: [id], onDelete: Restrict)
+  student   User     @relation("StudentBehavior", fields: [studentId], references: [id], onDelete: Restrict)
+  teacher   User     @relation("BehaviorTeacher", fields: [teacherId], references: [id], onDelete: Restrict)
+  xpEntry   XpEntry  @relation(fields: [xpEntryId], references: [id], onDelete: Restrict)
+
+  @@unique([lessonId, studentId])
+}
+
+model CleanupAssignment {
+  id          String   @id @default(uuid()) @db.Uuid
+  lessonId    String   @db.Uuid
+  studentId   String   @db.Uuid
+  confirmedBy String   @db.Uuid
+  confirmedAt DateTime @default(now())
+  lesson      Lesson   @relation(fields: [lessonId], references: [id], onDelete: Restrict)
+  student     User     @relation("CleanupStudent", fields: [studentId], references: [id], onDelete: Restrict)
+  teacher     User     @relation("CleanupTeacher", fields: [confirmedBy], references: [id], onDelete: Restrict)
+
+  @@unique([lessonId, studentId])
+  @@index([studentId, confirmedAt])
+}
+
+model AppSetting {
+  id                 Int      @id @default(1)
+  studentAreaEnabled Boolean  @default(true)
+  accentColor        String   @default("#328fff")
+  timeZone           String   @default("America/Fortaleza")
+  updatedAt          DateTime @updatedAt
+}
+
+model Activity {
+  id               String               @id @default(uuid()) @db.Uuid
+  title            String
+  description      String?
+  type             ActivityType
+  opensAt          DateTime
+  closesAt         DateTime
+  manuallyClosedAt DateTime?
+  externalUrl      String?
+  maxXp            Int
+  authorId         String               @db.Uuid
+  divisionMode     TeamDivisionMode?
+  createdAt        DateTime             @default(now())
+  updatedAt        DateTime             @updatedAt
+  author           User                 @relation("ActivityAuthor", fields: [authorId], references: [id], onDelete: Restrict)
+  recipients       ActivityRecipient[]
+  questions        ActivityQuestion[]
+  submissions      ActivitySubmission[]
+  teams            ActivityTeam[]
+  awards           ActivityAward[]
+
+  @@index([opensAt, closesAt])
+  @@index([authorId, createdAt])
+}
+
+model ActivityRecipient {
+  id                String              @id @default(uuid()) @db.Uuid
+  activityId        String              @db.Uuid
+  studentId         String              @db.Uuid
+  studentSignaledAt DateTime?
+  completedAt       DateTime?
+  createdAt         DateTime            @default(now())
+  activity          Activity            @relation(fields: [activityId], references: [id], onDelete: Cascade)
+  student           User                @relation("ActivityRecipientStudent", fields: [studentId], references: [id], onDelete: Restrict)
+  submission        ActivitySubmission?
+  teamMembership    ActivityTeamMember?
+  award             ActivityAward?
+
+  @@unique([activityId, studentId])
+  @@index([studentId, createdAt])
+}
+
+model ActivityQuestion {
+  id         String               @id @default(uuid()) @db.Uuid
+  activityId String               @db.Uuid
+  prompt     String
+  type       ActivityQuestionType
+  maxXp      Int
+  position   Int
+  activity   Activity             @relation(fields: [activityId], references: [id], onDelete: Cascade)
+  options    ActivityOption[]
+  answers    ActivityAnswer[]
+
+  @@unique([activityId, position])
+}
+
+model ActivityOption {
+  id         String                 @id @default(uuid()) @db.Uuid
+  questionId String                 @db.Uuid
+  text       String
+  isCorrect  Boolean
+  position   Int
+  question   ActivityQuestion       @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  selections ActivityAnswerOption[]
+
+  @@unique([questionId, position])
+}
+
+model ActivitySubmission {
+  id          String            @id @default(uuid()) @db.Uuid
+  activityId  String            @db.Uuid
+  recipientId String            @unique @db.Uuid
+  studentId   String            @db.Uuid
+  status      SubmissionStatus
+  submittedAt DateTime          @default(now())
+  gradedAt    DateTime?
+  activity    Activity          @relation(fields: [activityId], references: [id], onDelete: Restrict)
+  recipient   ActivityRecipient @relation(fields: [recipientId], references: [id], onDelete: Restrict)
+  student     User              @relation(fields: [studentId], references: [id], onDelete: Restrict)
+  answers     ActivityAnswer[]
+
+  @@unique([activityId, studentId])
+  @@index([activityId, status])
+}
+
+model ActivityAnswer {
+  id           String                 @id @default(uuid()) @db.Uuid
+  submissionId String                 @db.Uuid
+  questionId   String                 @db.Uuid
+  studentId    String                 @db.Uuid
+  writtenText  String?
+  autoCorrect  Boolean?
+  writtenGrade WrittenGrade?
+  awardedXp    Int?
+  comment      String?
+  submission   ActivitySubmission     @relation(fields: [submissionId], references: [id], onDelete: Cascade)
+  question     ActivityQuestion       @relation(fields: [questionId], references: [id], onDelete: Restrict)
+  student      User                   @relation(fields: [studentId], references: [id], onDelete: Restrict)
+  selections   ActivityAnswerOption[]
+
+  @@unique([submissionId, questionId])
+}
+
+model ActivityAnswerOption {
+  answerId String         @db.Uuid
+  optionId String         @db.Uuid
+  answer   ActivityAnswer @relation(fields: [answerId], references: [id], onDelete: Cascade)
+  option   ActivityOption @relation(fields: [optionId], references: [id], onDelete: Restrict)
+
+  @@id([answerId, optionId])
+}
+
+model ActivityTeam {
+  id          String               @id @default(uuid()) @db.Uuid
+  activityId  String               @db.Uuid
+  name        String
+  position    Int
+  completedAt DateTime?
+  activity    Activity             @relation(fields: [activityId], references: [id], onDelete: Cascade)
+  members     ActivityTeamMember[]
+
+  @@unique([activityId, position])
+}
+
+model ActivityTeamMember {
+  id          String            @id @default(uuid()) @db.Uuid
+  teamId      String            @db.Uuid
+  recipientId String            @unique @db.Uuid
+  studentId   String            @db.Uuid
+  team        ActivityTeam      @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  recipient   ActivityRecipient @relation(fields: [recipientId], references: [id], onDelete: Restrict)
+  student     User              @relation(fields: [studentId], references: [id], onDelete: Restrict)
+
+  @@unique([teamId, studentId])
+}
+
+model ActivityAward {
+  id              String            @id @default(uuid()) @db.Uuid
+  activityId      String            @db.Uuid
+  recipientId     String            @unique @db.Uuid
+  studentId       String            @db.Uuid
+  awardedXp       Int
+  revision        Int               @default(1)
+  observation     String?
+  latestXpEntryId String            @db.Uuid
+  gradedAt        DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  activity        Activity          @relation(fields: [activityId], references: [id], onDelete: Restrict)
+  recipient       ActivityRecipient @relation(fields: [recipientId], references: [id], onDelete: Restrict)
+  student         User              @relation(fields: [studentId], references: [id], onDelete: Restrict)
+  xpEntry         XpEntry           @relation(fields: [latestXpEntryId], references: [id], onDelete: Restrict)
+
+  @@unique([activityId, studentId])
+  @@index([studentId, gradedAt])
+}
+
+model AuditLog {
+  id        String     @id @default(uuid()) @db.Uuid
+  actorId   String?    @db.Uuid
+  targetId  String?    @db.Uuid
+  event     AuditEvent
+  details   Json?
+  createdAt DateTime   @default(now())
+  actor     User?      @relation("AuditActor", fields: [actorId], references: [id], onDelete: SetNull)
+  target    User?      @relation("AuditTarget", fields: [targetId], references: [id], onDelete: SetNull)
+}
+
+model RateLimitBucket {
+  key       String   @id
+  attempts  Int      @default(0)
+  windowEnd DateTime
+  updatedAt DateTime @updatedAt
+}
