@@ -61,6 +61,8 @@ export const ModelName = {
   CleanupAssignment: 'CleanupAssignment',
   AppSetting: 'AppSetting',
   Activity: 'Activity',
+  Notification: 'Notification',
+  NotificationReceipt: 'NotificationReceipt',
   ActivityRecipient: 'ActivityRecipient',
   ActivityQuestion: 'ActivityQuestion',
   ActivityOption: 'ActivityOption',
@@ -225,6 +227,33 @@ export const ActivityScalarFieldEnum = {
 } as const
 
 export type ActivityScalarFieldEnum = (typeof ActivityScalarFieldEnum)[keyof typeof ActivityScalarFieldEnum]
+
+
+export const NotificationScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  body: 'body',
+  kind: 'kind',
+  expiresAt: 'expiresAt',
+  linkPath: 'linkPath',
+  authorId: 'authorId',
+  activityId: 'activityId',
+  createdAt: 'createdAt'
+} as const
+
+export type NotificationScalarFieldEnum = (typeof NotificationScalarFieldEnum)[keyof typeof NotificationScalarFieldEnum]
+
+
+export const NotificationReceiptScalarFieldEnum = {
+  id: 'id',
+  notificationId: 'notificationId',
+  studentId: 'studentId',
+  readAt: 'readAt',
+  dismissedAt: 'dismissedAt',
+  lastPopupShownAt: 'lastPopupShownAt'
+} as const
+
+export type NotificationReceiptScalarFieldEnum = (typeof NotificationReceiptScalarFieldEnum)[keyof typeof NotificationReceiptScalarFieldEnum]
 
 
 export const ActivityRecipientScalarFieldEnum = {

@@ -1,0 +1,3 @@
+import assert from "node:assert/strict";import test from "node:test";import {getSchoolDay,isDailyLoginXpDay,schoolDateEnd} from "./school-day";
+test("bônus diário vale de segunda a sábado no fuso da escola",()=>{const monday=getSchoolDay(new Date("2026-09-21T12:00:00Z"));const saturday=getSchoolDay(new Date("2026-09-26T12:00:00Z"));const sunday=getSchoolDay(new Date("2026-09-27T12:00:00Z"));assert.equal(monday.key,"2026-09-21");assert.equal(isDailyLoginXpDay(monday.weekday),true);assert.equal(isDailyLoginXpDay(saturday.weekday),true);assert.equal(isDailyLoginXpDay(sunday.weekday),false)});
+test("validade do pop-up termina na virada do dia seguinte em Fortaleza",()=>{assert.equal(schoolDateEnd("2026-09-30").toISOString(),"2026-10-01T03:00:00.000Z")});

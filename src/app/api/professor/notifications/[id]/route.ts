@@ -1,0 +1,2 @@
+import {NextResponse} from "next/server";import {apiError,requireTeacher} from "@/lib/authorization";import {prisma} from "@/lib/db";
+export async function DELETE(_request:Request,{params}:{params:Promise<{id:string}>}){try{await requireTeacher();const{id}=await params;const result=await prisma.notification.deleteMany({where:{id}});if(!result.count)return NextResponse.json({message:"Notificação não encontrada."},{status:404});return new NextResponse(null,{status:204})}catch(error){const[message,status]=apiError(error);return NextResponse.json({message},{status})}}

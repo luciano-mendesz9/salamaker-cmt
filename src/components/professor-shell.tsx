@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Activity, BookOpen, ClipboardList, Gauge, Palette, ScrollText, Settings2, UsersRound } from "lucide-react";
+import { Activity, Bell, BookOpen, ClipboardList, Gauge, Palette, ScrollText, Settings2, UsersRound } from "lucide-react";
 import { Brand } from "./brand";
 import { LogoutButton } from "./logout-button";
 
@@ -7,6 +7,7 @@ const links = [
   ["/professor", "Visão geral", Gauge],
   ["/professor/aulas", "Histórico de aulas", BookOpen],
   ["/professor/atividades", "Atividades", ClipboardList],
+  ["/professor/notificacoes", "Notificações", Bell],
   ["/professor/comportamento", "Comportamento", Activity],
   ["/professor/logs", "Logs do sistema", ScrollText],
   ["/professor/moderacao", "Moderação e tema", Palette],
@@ -25,6 +26,7 @@ export function ProfessorShell({ title, children }: { title: string; children: R
       <Link href="/professor" aria-label="Visão geral" className="focus-ring text-slate-400"><Gauge/></Link>
       <Link href="/professor/aulas" aria-label="Aulas" className="focus-ring text-slate-400"><BookOpen/></Link>
       <Link href="/professor/atividades" aria-label="Atividades" className="focus-ring text-blue-300"><ClipboardList/></Link>
+      <Link href="/professor/notificacoes" aria-label="Notificações" className="focus-ring text-slate-400"><Bell/></Link>
       <Link href="/professor/comportamento" aria-label="Comportamento" className="focus-ring text-slate-400"><Activity/></Link>
       <Link href="/professor/moderacao" aria-label="Configurações" className="focus-ring text-slate-400"><Settings2/></Link>
     </nav>

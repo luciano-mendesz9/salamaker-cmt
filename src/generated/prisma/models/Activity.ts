@@ -286,6 +286,7 @@ export type ActivityWhereInput = {
   submissions?: Prisma.ActivitySubmissionListRelationFilter
   teams?: Prisma.ActivityTeamListRelationFilter
   awards?: Prisma.ActivityAwardListRelationFilter
+  notifications?: Prisma.NotificationListRelationFilter
 }
 
 export type ActivityOrderByWithRelationInput = {
@@ -308,6 +309,7 @@ export type ActivityOrderByWithRelationInput = {
   submissions?: Prisma.ActivitySubmissionOrderByRelationAggregateInput
   teams?: Prisma.ActivityTeamOrderByRelationAggregateInput
   awards?: Prisma.ActivityAwardOrderByRelationAggregateInput
+  notifications?: Prisma.NotificationOrderByRelationAggregateInput
 }
 
 export type ActivityWhereUniqueInput = Prisma.AtLeast<{
@@ -333,6 +335,7 @@ export type ActivityWhereUniqueInput = Prisma.AtLeast<{
   submissions?: Prisma.ActivitySubmissionListRelationFilter
   teams?: Prisma.ActivityTeamListRelationFilter
   awards?: Prisma.ActivityAwardListRelationFilter
+  notifications?: Prisma.NotificationListRelationFilter
 }, "id">
 
 export type ActivityOrderByWithAggregationInput = {
@@ -394,6 +397,7 @@ export type ActivityCreateInput = {
   submissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutActivityInput
   teams?: Prisma.ActivityTeamCreateNestedManyWithoutActivityInput
   awards?: Prisma.ActivityAwardCreateNestedManyWithoutActivityInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutActivityInput
 }
 
 export type ActivityUncheckedCreateInput = {
@@ -415,6 +419,7 @@ export type ActivityUncheckedCreateInput = {
   submissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutActivityInput
   teams?: Prisma.ActivityTeamUncheckedCreateNestedManyWithoutActivityInput
   awards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutActivityInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutActivityInput
 }
 
 export type ActivityUpdateInput = {
@@ -436,6 +441,7 @@ export type ActivityUpdateInput = {
   submissions?: Prisma.ActivitySubmissionUpdateManyWithoutActivityNestedInput
   teams?: Prisma.ActivityTeamUpdateManyWithoutActivityNestedInput
   awards?: Prisma.ActivityAwardUpdateManyWithoutActivityNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutActivityNestedInput
 }
 
 export type ActivityUncheckedUpdateInput = {
@@ -457,6 +463,7 @@ export type ActivityUncheckedUpdateInput = {
   submissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutActivityNestedInput
   teams?: Prisma.ActivityTeamUncheckedUpdateManyWithoutActivityNestedInput
   awards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutActivityNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutActivityNestedInput
 }
 
 export type ActivityCreateManyInput = {
@@ -572,6 +579,11 @@ export type ActivitySumOrderByAggregateInput = {
   maxXp?: Prisma.SortOrder
 }
 
+export type ActivityNullableScalarRelationFilter = {
+  is?: Prisma.ActivityWhereInput | null
+  isNot?: Prisma.ActivityWhereInput | null
+}
+
 export type ActivityScalarRelationFilter = {
   is?: Prisma.ActivityWhereInput
   isNot?: Prisma.ActivityWhereInput
@@ -625,6 +637,22 @@ export type EnumActivityTypeFieldUpdateOperationsInput = {
 
 export type NullableEnumTeamDivisionModeFieldUpdateOperationsInput = {
   set?: $Enums.TeamDivisionMode | null
+}
+
+export type ActivityCreateNestedOneWithoutNotificationsInput = {
+  create?: Prisma.XOR<Prisma.ActivityCreateWithoutNotificationsInput, Prisma.ActivityUncheckedCreateWithoutNotificationsInput>
+  connectOrCreate?: Prisma.ActivityCreateOrConnectWithoutNotificationsInput
+  connect?: Prisma.ActivityWhereUniqueInput
+}
+
+export type ActivityUpdateOneWithoutNotificationsNestedInput = {
+  create?: Prisma.XOR<Prisma.ActivityCreateWithoutNotificationsInput, Prisma.ActivityUncheckedCreateWithoutNotificationsInput>
+  connectOrCreate?: Prisma.ActivityCreateOrConnectWithoutNotificationsInput
+  upsert?: Prisma.ActivityUpsertWithoutNotificationsInput
+  disconnect?: Prisma.ActivityWhereInput | boolean
+  delete?: Prisma.ActivityWhereInput | boolean
+  connect?: Prisma.ActivityWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ActivityUpdateToOneWithWhereWithoutNotificationsInput, Prisma.ActivityUpdateWithoutNotificationsInput>, Prisma.ActivityUncheckedUpdateWithoutNotificationsInput>
 }
 
 export type ActivityCreateNestedOneWithoutRecipientsInput = {
@@ -715,6 +743,7 @@ export type ActivityCreateWithoutAuthorInput = {
   submissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutActivityInput
   teams?: Prisma.ActivityTeamCreateNestedManyWithoutActivityInput
   awards?: Prisma.ActivityAwardCreateNestedManyWithoutActivityInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutActivityInput
 }
 
 export type ActivityUncheckedCreateWithoutAuthorInput = {
@@ -735,6 +764,7 @@ export type ActivityUncheckedCreateWithoutAuthorInput = {
   submissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutActivityInput
   teams?: Prisma.ActivityTeamUncheckedCreateNestedManyWithoutActivityInput
   awards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutActivityInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutActivityInput
 }
 
 export type ActivityCreateOrConnectWithoutAuthorInput = {
@@ -782,6 +812,106 @@ export type ActivityScalarWhereInput = {
   updatedAt?: Prisma.DateTimeFilter<"Activity"> | Date | string
 }
 
+export type ActivityCreateWithoutNotificationsInput = {
+  id?: string
+  title: string
+  description?: string | null
+  type: $Enums.ActivityType
+  opensAt: Date | string
+  closesAt: Date | string
+  manuallyClosedAt?: Date | string | null
+  externalUrl?: string | null
+  maxXp: number
+  divisionMode?: $Enums.TeamDivisionMode | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  author: Prisma.UserCreateNestedOneWithoutAuthoredActivitiesInput
+  recipients?: Prisma.ActivityRecipientCreateNestedManyWithoutActivityInput
+  questions?: Prisma.ActivityQuestionCreateNestedManyWithoutActivityInput
+  submissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutActivityInput
+  teams?: Prisma.ActivityTeamCreateNestedManyWithoutActivityInput
+  awards?: Prisma.ActivityAwardCreateNestedManyWithoutActivityInput
+}
+
+export type ActivityUncheckedCreateWithoutNotificationsInput = {
+  id?: string
+  title: string
+  description?: string | null
+  type: $Enums.ActivityType
+  opensAt: Date | string
+  closesAt: Date | string
+  manuallyClosedAt?: Date | string | null
+  externalUrl?: string | null
+  maxXp: number
+  authorId: string
+  divisionMode?: $Enums.TeamDivisionMode | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  recipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutActivityInput
+  questions?: Prisma.ActivityQuestionUncheckedCreateNestedManyWithoutActivityInput
+  submissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutActivityInput
+  teams?: Prisma.ActivityTeamUncheckedCreateNestedManyWithoutActivityInput
+  awards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutActivityInput
+}
+
+export type ActivityCreateOrConnectWithoutNotificationsInput = {
+  where: Prisma.ActivityWhereUniqueInput
+  create: Prisma.XOR<Prisma.ActivityCreateWithoutNotificationsInput, Prisma.ActivityUncheckedCreateWithoutNotificationsInput>
+}
+
+export type ActivityUpsertWithoutNotificationsInput = {
+  update: Prisma.XOR<Prisma.ActivityUpdateWithoutNotificationsInput, Prisma.ActivityUncheckedUpdateWithoutNotificationsInput>
+  create: Prisma.XOR<Prisma.ActivityCreateWithoutNotificationsInput, Prisma.ActivityUncheckedCreateWithoutNotificationsInput>
+  where?: Prisma.ActivityWhereInput
+}
+
+export type ActivityUpdateToOneWithWhereWithoutNotificationsInput = {
+  where?: Prisma.ActivityWhereInput
+  data: Prisma.XOR<Prisma.ActivityUpdateWithoutNotificationsInput, Prisma.ActivityUncheckedUpdateWithoutNotificationsInput>
+}
+
+export type ActivityUpdateWithoutNotificationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.EnumActivityTypeFieldUpdateOperationsInput | $Enums.ActivityType
+  opensAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  maxXp?: Prisma.IntFieldUpdateOperationsInput | number
+  divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  author?: Prisma.UserUpdateOneRequiredWithoutAuthoredActivitiesNestedInput
+  recipients?: Prisma.ActivityRecipientUpdateManyWithoutActivityNestedInput
+  questions?: Prisma.ActivityQuestionUpdateManyWithoutActivityNestedInput
+  submissions?: Prisma.ActivitySubmissionUpdateManyWithoutActivityNestedInput
+  teams?: Prisma.ActivityTeamUpdateManyWithoutActivityNestedInput
+  awards?: Prisma.ActivityAwardUpdateManyWithoutActivityNestedInput
+}
+
+export type ActivityUncheckedUpdateWithoutNotificationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
+  description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.EnumActivityTypeFieldUpdateOperationsInput | $Enums.ActivityType
+  opensAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  maxXp?: Prisma.IntFieldUpdateOperationsInput | number
+  authorId?: Prisma.StringFieldUpdateOperationsInput | string
+  divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  recipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutActivityNestedInput
+  questions?: Prisma.ActivityQuestionUncheckedUpdateManyWithoutActivityNestedInput
+  submissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutActivityNestedInput
+  teams?: Prisma.ActivityTeamUncheckedUpdateManyWithoutActivityNestedInput
+  awards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutActivityNestedInput
+}
+
 export type ActivityCreateWithoutRecipientsInput = {
   id?: string
   title: string
@@ -800,6 +930,7 @@ export type ActivityCreateWithoutRecipientsInput = {
   submissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutActivityInput
   teams?: Prisma.ActivityTeamCreateNestedManyWithoutActivityInput
   awards?: Prisma.ActivityAwardCreateNestedManyWithoutActivityInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutActivityInput
 }
 
 export type ActivityUncheckedCreateWithoutRecipientsInput = {
@@ -820,6 +951,7 @@ export type ActivityUncheckedCreateWithoutRecipientsInput = {
   submissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutActivityInput
   teams?: Prisma.ActivityTeamUncheckedCreateNestedManyWithoutActivityInput
   awards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutActivityInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutActivityInput
 }
 
 export type ActivityCreateOrConnectWithoutRecipientsInput = {
@@ -856,6 +988,7 @@ export type ActivityUpdateWithoutRecipientsInput = {
   submissions?: Prisma.ActivitySubmissionUpdateManyWithoutActivityNestedInput
   teams?: Prisma.ActivityTeamUpdateManyWithoutActivityNestedInput
   awards?: Prisma.ActivityAwardUpdateManyWithoutActivityNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutActivityNestedInput
 }
 
 export type ActivityUncheckedUpdateWithoutRecipientsInput = {
@@ -876,6 +1009,7 @@ export type ActivityUncheckedUpdateWithoutRecipientsInput = {
   submissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutActivityNestedInput
   teams?: Prisma.ActivityTeamUncheckedUpdateManyWithoutActivityNestedInput
   awards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutActivityNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutActivityNestedInput
 }
 
 export type ActivityCreateWithoutQuestionsInput = {
@@ -896,6 +1030,7 @@ export type ActivityCreateWithoutQuestionsInput = {
   submissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutActivityInput
   teams?: Prisma.ActivityTeamCreateNestedManyWithoutActivityInput
   awards?: Prisma.ActivityAwardCreateNestedManyWithoutActivityInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutActivityInput
 }
 
 export type ActivityUncheckedCreateWithoutQuestionsInput = {
@@ -916,6 +1051,7 @@ export type ActivityUncheckedCreateWithoutQuestionsInput = {
   submissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutActivityInput
   teams?: Prisma.ActivityTeamUncheckedCreateNestedManyWithoutActivityInput
   awards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutActivityInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutActivityInput
 }
 
 export type ActivityCreateOrConnectWithoutQuestionsInput = {
@@ -952,6 +1088,7 @@ export type ActivityUpdateWithoutQuestionsInput = {
   submissions?: Prisma.ActivitySubmissionUpdateManyWithoutActivityNestedInput
   teams?: Prisma.ActivityTeamUpdateManyWithoutActivityNestedInput
   awards?: Prisma.ActivityAwardUpdateManyWithoutActivityNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutActivityNestedInput
 }
 
 export type ActivityUncheckedUpdateWithoutQuestionsInput = {
@@ -972,6 +1109,7 @@ export type ActivityUncheckedUpdateWithoutQuestionsInput = {
   submissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutActivityNestedInput
   teams?: Prisma.ActivityTeamUncheckedUpdateManyWithoutActivityNestedInput
   awards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutActivityNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutActivityNestedInput
 }
 
 export type ActivityCreateWithoutSubmissionsInput = {
@@ -992,6 +1130,7 @@ export type ActivityCreateWithoutSubmissionsInput = {
   questions?: Prisma.ActivityQuestionCreateNestedManyWithoutActivityInput
   teams?: Prisma.ActivityTeamCreateNestedManyWithoutActivityInput
   awards?: Prisma.ActivityAwardCreateNestedManyWithoutActivityInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutActivityInput
 }
 
 export type ActivityUncheckedCreateWithoutSubmissionsInput = {
@@ -1012,6 +1151,7 @@ export type ActivityUncheckedCreateWithoutSubmissionsInput = {
   questions?: Prisma.ActivityQuestionUncheckedCreateNestedManyWithoutActivityInput
   teams?: Prisma.ActivityTeamUncheckedCreateNestedManyWithoutActivityInput
   awards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutActivityInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutActivityInput
 }
 
 export type ActivityCreateOrConnectWithoutSubmissionsInput = {
@@ -1048,6 +1188,7 @@ export type ActivityUpdateWithoutSubmissionsInput = {
   questions?: Prisma.ActivityQuestionUpdateManyWithoutActivityNestedInput
   teams?: Prisma.ActivityTeamUpdateManyWithoutActivityNestedInput
   awards?: Prisma.ActivityAwardUpdateManyWithoutActivityNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutActivityNestedInput
 }
 
 export type ActivityUncheckedUpdateWithoutSubmissionsInput = {
@@ -1068,6 +1209,7 @@ export type ActivityUncheckedUpdateWithoutSubmissionsInput = {
   questions?: Prisma.ActivityQuestionUncheckedUpdateManyWithoutActivityNestedInput
   teams?: Prisma.ActivityTeamUncheckedUpdateManyWithoutActivityNestedInput
   awards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutActivityNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutActivityNestedInput
 }
 
 export type ActivityCreateWithoutTeamsInput = {
@@ -1088,6 +1230,7 @@ export type ActivityCreateWithoutTeamsInput = {
   questions?: Prisma.ActivityQuestionCreateNestedManyWithoutActivityInput
   submissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutActivityInput
   awards?: Prisma.ActivityAwardCreateNestedManyWithoutActivityInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutActivityInput
 }
 
 export type ActivityUncheckedCreateWithoutTeamsInput = {
@@ -1108,6 +1251,7 @@ export type ActivityUncheckedCreateWithoutTeamsInput = {
   questions?: Prisma.ActivityQuestionUncheckedCreateNestedManyWithoutActivityInput
   submissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutActivityInput
   awards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutActivityInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutActivityInput
 }
 
 export type ActivityCreateOrConnectWithoutTeamsInput = {
@@ -1144,6 +1288,7 @@ export type ActivityUpdateWithoutTeamsInput = {
   questions?: Prisma.ActivityQuestionUpdateManyWithoutActivityNestedInput
   submissions?: Prisma.ActivitySubmissionUpdateManyWithoutActivityNestedInput
   awards?: Prisma.ActivityAwardUpdateManyWithoutActivityNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutActivityNestedInput
 }
 
 export type ActivityUncheckedUpdateWithoutTeamsInput = {
@@ -1164,6 +1309,7 @@ export type ActivityUncheckedUpdateWithoutTeamsInput = {
   questions?: Prisma.ActivityQuestionUncheckedUpdateManyWithoutActivityNestedInput
   submissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutActivityNestedInput
   awards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutActivityNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutActivityNestedInput
 }
 
 export type ActivityCreateWithoutAwardsInput = {
@@ -1184,6 +1330,7 @@ export type ActivityCreateWithoutAwardsInput = {
   questions?: Prisma.ActivityQuestionCreateNestedManyWithoutActivityInput
   submissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutActivityInput
   teams?: Prisma.ActivityTeamCreateNestedManyWithoutActivityInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutActivityInput
 }
 
 export type ActivityUncheckedCreateWithoutAwardsInput = {
@@ -1204,6 +1351,7 @@ export type ActivityUncheckedCreateWithoutAwardsInput = {
   questions?: Prisma.ActivityQuestionUncheckedCreateNestedManyWithoutActivityInput
   submissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutActivityInput
   teams?: Prisma.ActivityTeamUncheckedCreateNestedManyWithoutActivityInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutActivityInput
 }
 
 export type ActivityCreateOrConnectWithoutAwardsInput = {
@@ -1240,6 +1388,7 @@ export type ActivityUpdateWithoutAwardsInput = {
   questions?: Prisma.ActivityQuestionUpdateManyWithoutActivityNestedInput
   submissions?: Prisma.ActivitySubmissionUpdateManyWithoutActivityNestedInput
   teams?: Prisma.ActivityTeamUpdateManyWithoutActivityNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutActivityNestedInput
 }
 
 export type ActivityUncheckedUpdateWithoutAwardsInput = {
@@ -1260,6 +1409,7 @@ export type ActivityUncheckedUpdateWithoutAwardsInput = {
   questions?: Prisma.ActivityQuestionUncheckedUpdateManyWithoutActivityNestedInput
   submissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutActivityNestedInput
   teams?: Prisma.ActivityTeamUncheckedUpdateManyWithoutActivityNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutActivityNestedInput
 }
 
 export type ActivityCreateManyAuthorInput = {
@@ -1295,6 +1445,7 @@ export type ActivityUpdateWithoutAuthorInput = {
   submissions?: Prisma.ActivitySubmissionUpdateManyWithoutActivityNestedInput
   teams?: Prisma.ActivityTeamUpdateManyWithoutActivityNestedInput
   awards?: Prisma.ActivityAwardUpdateManyWithoutActivityNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutActivityNestedInput
 }
 
 export type ActivityUncheckedUpdateWithoutAuthorInput = {
@@ -1315,6 +1466,7 @@ export type ActivityUncheckedUpdateWithoutAuthorInput = {
   submissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutActivityNestedInput
   teams?: Prisma.ActivityTeamUncheckedUpdateManyWithoutActivityNestedInput
   awards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutActivityNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutActivityNestedInput
 }
 
 export type ActivityUncheckedUpdateManyWithoutAuthorInput = {
@@ -1343,6 +1495,7 @@ export type ActivityCountOutputType = {
   submissions: number
   teams: number
   awards: number
+  notifications: number
 }
 
 export type ActivityCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1351,6 +1504,7 @@ export type ActivityCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensio
   submissions?: boolean | ActivityCountOutputTypeCountSubmissionsArgs
   teams?: boolean | ActivityCountOutputTypeCountTeamsArgs
   awards?: boolean | ActivityCountOutputTypeCountAwardsArgs
+  notifications?: boolean | ActivityCountOutputTypeCountNotificationsArgs
 }
 
 /**
@@ -1398,6 +1552,13 @@ export type ActivityCountOutputTypeCountAwardsArgs<ExtArgs extends runtime.Types
   where?: Prisma.ActivityAwardWhereInput
 }
 
+/**
+ * ActivityCountOutputType without action
+ */
+export type ActivityCountOutputTypeCountNotificationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.NotificationWhereInput
+}
+
 
 export type ActivitySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -1419,6 +1580,7 @@ export type ActivitySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   submissions?: boolean | Prisma.Activity$submissionsArgs<ExtArgs>
   teams?: boolean | Prisma.Activity$teamsArgs<ExtArgs>
   awards?: boolean | Prisma.Activity$awardsArgs<ExtArgs>
+  notifications?: boolean | Prisma.Activity$notificationsArgs<ExtArgs>
   _count?: boolean | Prisma.ActivityCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["activity"]>
 
@@ -1480,6 +1642,7 @@ export type ActivityInclude<ExtArgs extends runtime.Types.Extensions.InternalArg
   submissions?: boolean | Prisma.Activity$submissionsArgs<ExtArgs>
   teams?: boolean | Prisma.Activity$teamsArgs<ExtArgs>
   awards?: boolean | Prisma.Activity$awardsArgs<ExtArgs>
+  notifications?: boolean | Prisma.Activity$notificationsArgs<ExtArgs>
   _count?: boolean | Prisma.ActivityCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type ActivityIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1498,6 +1661,7 @@ export type $ActivityPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
     submissions: Prisma.$ActivitySubmissionPayload<ExtArgs>[]
     teams: Prisma.$ActivityTeamPayload<ExtArgs>[]
     awards: Prisma.$ActivityAwardPayload<ExtArgs>[]
+    notifications: Prisma.$NotificationPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1913,6 +2077,7 @@ export interface Prisma__ActivityClient<T, Null = never, ExtArgs extends runtime
   submissions<T extends Prisma.Activity$submissionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Activity$submissionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ActivitySubmissionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   teams<T extends Prisma.Activity$teamsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Activity$teamsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ActivityTeamPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   awards<T extends Prisma.Activity$awardsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Activity$awardsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ActivityAwardPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  notifications<T extends Prisma.Activity$notificationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Activity$notificationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotificationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2473,6 +2638,30 @@ export type Activity$awardsArgs<ExtArgs extends runtime.Types.Extensions.Interna
   take?: number
   skip?: number
   distinct?: Prisma.ActivityAwardScalarFieldEnum | Prisma.ActivityAwardScalarFieldEnum[]
+}
+
+/**
+ * Activity.notifications
+ */
+export type Activity$notificationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Notification
+   */
+  select?: Prisma.NotificationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Notification
+   */
+  omit?: Prisma.NotificationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.NotificationInclude<ExtArgs> | null
+  where?: Prisma.NotificationWhereInput
+  orderBy?: Prisma.NotificationOrderByWithRelationInput | Prisma.NotificationOrderByWithRelationInput[]
+  cursor?: Prisma.NotificationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.NotificationScalarFieldEnum | Prisma.NotificationScalarFieldEnum[]
 }
 
 /**

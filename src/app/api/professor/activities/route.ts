@@ -103,7 +103,31 @@ export async function POST(request: Request) {
           await tx.activityTeam.create({ data: { activityId: activity.id, name: group.name, position, members: { create: group.studentIds.map((studentId) => ({ studentId, recipientId: recipientByStudent.get(studentId)! })) } } });
         }
       }
+      const notificationBody = body.description?.trim()
+        ? `Nova atividade publicada: ${body.description.trim()}`
+        : "Uma nova atividade foi publicada para a turma de Robótica.";
+      const inboxNotification = await tx.notification.create({ data: {
+        title: `Nova atividade: ${activity.title}`,
+        body: notificationBody,
+        kind: "INBOX",
+        linkPath: `/aluno/atividades/${activity.id}`,
+        authorId: teacher.id,
+        activityId: activity.id,
+      } });
+      const popupNotification = await tx.notification.create({ data: {
+        title: `Nova atividade: ${activity.title}`,
+        body: notificationBody,
+        kind: "POPUP",
+        expiresAt: activity.closesAt,
+        linkPath: `/aluno/atividades/${activity.id}`,
+        authorId: teacher.id,
+        activityId: activity.id,
+      } });
       await tx.auditLog.create({ data: { actorId: teacher.id, event: "ACTIVITY_CREATED", details: { activityId: activity.id, type: activity.type, audience: "ROBOTICS_COHORT", recipientCount: students.length } } });
+      await tx.auditLog.createMany({ data: [
+        { actorId: teacher.id, event: "NOTIFICATION_CREATED", details: { notificationId: inboxNotification.id, title: inboxNotification.title, kind: inboxNotification.kind, source: "ACTIVITY", activityId: activity.id } },
+        { actorId: teacher.id, event: "NOTIFICATION_CREATED", details: { notificationId: popupNotification.id, title: popupNotification.title, kind: popupNotification.kind, source: "ACTIVITY", activityId: activity.id } },
+      ] });
       return activity;
     });
     return NextResponse.json({ id: created.id }, { status: 201 });

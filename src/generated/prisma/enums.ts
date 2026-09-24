@@ -76,10 +76,19 @@ export const AuditEvent = {
   THEME_CHANGED: 'THEME_CHANGED',
   ACTIVITY_CREATED: 'ACTIVITY_CREATED',
   ACTIVITY_STATE_CHANGED: 'ACTIVITY_STATE_CHANGED',
-  ACTIVITY_GRADED: 'ACTIVITY_GRADED'
+  ACTIVITY_GRADED: 'ACTIVITY_GRADED',
+  NOTIFICATION_CREATED: 'NOTIFICATION_CREATED'
 } as const
 
 export type AuditEvent = (typeof AuditEvent)[keyof typeof AuditEvent]
+
+
+export const NotificationKind = {
+  POPUP: 'POPUP',
+  INBOX: 'INBOX'
+} as const
+
+export type NotificationKind = (typeof NotificationKind)[keyof typeof NotificationKind]
 
 
 export const ActivityType = {

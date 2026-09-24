@@ -57,6 +57,12 @@ enum AuditEvent {
   ACTIVITY_CREATED
   ACTIVITY_STATE_CHANGED
   ACTIVITY_GRADED
+  NOTIFICATION_CREATED
+}
+
+enum NotificationKind {
+  POPUP
+  INBOX
 }
 
 enum ActivityType {
@@ -89,39 +95,41 @@ enum TeamDivisionMode {
 }
 
 model User {
-  id                      String               @id @default(uuid()) @db.Uuid
+  id                      String                @id @default(uuid()) @db.Uuid
   firstName               String
   lastName                String
   passwordHash            String
-  xp                      Int                  @default(0)
-  accessCode              String               @unique
+  xp                      Int                   @default(0)
+  accessCode              String                @unique
   originSchoolClass       SchoolClass?
-  status                  UserStatus           @default(ACTIVE)
+  status                  UserStatus            @default(ACTIVE)
   role                    Role
-  sessionVersion          Int                  @default(1)
-  mustChangePassword      Boolean              @default(false)
+  sessionVersion          Int                   @default(1)
+  mustChangePassword      Boolean               @default(false)
   lastLoginAt             DateTime?
   lastSeenAt              DateTime?
   deactivatedAt           DateTime?
-  createdAt               DateTime             @default(now())
-  updatedAt               DateTime             @updatedAt
-  lessons                 Lesson[]             @relation("TeacherLessons")
+  createdAt               DateTime              @default(now())
+  updatedAt               DateTime              @updatedAt
+  lessons                 Lesson[]              @relation("TeacherLessons")
   attendances             Attendance[]
-  xpEntries               XpEntry[]            @relation("StudentXp")
-  authoredXp              XpEntry[]            @relation("XpAuthor")
-  behaviors               BehaviorRating[]     @relation("StudentBehavior")
-  ratedBehaviors          BehaviorRating[]     @relation("BehaviorTeacher")
-  cleanups                CleanupAssignment[]  @relation("CleanupStudent")
-  confirmedCleanups       CleanupAssignment[]  @relation("CleanupTeacher")
-  auditActions            AuditLog[]           @relation("AuditActor")
-  auditTargets            AuditLog[]           @relation("AuditTarget")
-  authoredActivities      Activity[]           @relation("ActivityAuthor")
-  activityRecipients      ActivityRecipient[]  @relation("ActivityRecipientStudent")
+  xpEntries               XpEntry[]             @relation("StudentXp")
+  authoredXp              XpEntry[]             @relation("XpAuthor")
+  behaviors               BehaviorRating[]      @relation("StudentBehavior")
+  ratedBehaviors          BehaviorRating[]      @relation("BehaviorTeacher")
+  cleanups                CleanupAssignment[]   @relation("CleanupStudent")
+  confirmedCleanups       CleanupAssignment[]   @relation("CleanupTeacher")
+  auditActions            AuditLog[]            @relation("AuditActor")
+  auditTargets            AuditLog[]            @relation("AuditTarget")
+  authoredActivities      Activity[]            @relation("ActivityAuthor")
+  activityRecipients      ActivityRecipient[]   @relation("ActivityRecipientStudent")
   activitySubmissions     ActivitySubmission[]
   activityAnswers         ActivityAnswer[]
   activityTeamMemberships ActivityTeamMember[]
   activityAwards          ActivityAward[]
   lessonParticipations    LessonParticipant[]
+  authoredNotifications   Notification[]        @relation("NotificationAuthor")
+  notificationReceipts    NotificationReceipt[]
 
   @@index([role, status, xp])
   @@index([originSchoolClass, status])
@@ -255,9 +263,42 @@ model Activity {
   submissions      ActivitySubmission[]
   teams            ActivityTeam[]
   awards           ActivityAward[]
+  notifications    Notification[]
 
   @@index([opensAt, closesAt])
   @@index([authorId, createdAt])
+}
+
+model Notification {
+  id         String                @id @default(uuid()) @db.Uuid
+  title      String
+  body       String
+  kind       NotificationKind
+  expiresAt  DateTime?
+  linkPath   String?
+  authorId   String?               @db.Uuid
+  activityId String?               @db.Uuid
+  createdAt  DateTime              @default(now())
+  author     User?                 @relation("NotificationAuthor", fields: [authorId], references: [id], onDelete: SetNull)
+  activity   Activity?             @relation(fields: [activityId], references: [id], onDelete: SetNull)
+  receipts   NotificationReceipt[]
+
+  @@index([kind, expiresAt, createdAt])
+  @@index([activityId, kind])
+}
+
+model NotificationReceipt {
+  id               String       @id @default(uuid()) @db.Uuid
+  notificationId   String       @db.Uuid
+  studentId        String       @db.Uuid
+  readAt           DateTime?
+  dismissedAt      DateTime?
+  lastPopupShownAt DateTime?
+  notification     Notification @relation(fields: [notificationId], references: [id], onDelete: Cascade)
+  student          User         @relation(fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@unique([notificationId, studentId])
+  @@index([studentId, readAt])
 }
 
 model ActivityRecipient {
