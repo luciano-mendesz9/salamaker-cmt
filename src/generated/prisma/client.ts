@@ -47,6 +47,11 @@ export { Prisma }
  */
 export type User = Prisma.UserModel
 /**
+ * Model ProfileAvatarPurchase
+ *
+ */
+export type ProfileAvatarPurchase = Prisma.ProfileAvatarPurchaseModel
+/**
  * Model AccessCodeSequence
  *
  */
