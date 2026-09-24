@@ -2,24 +2,29 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { Check, Pencil, X } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { Check, Coins, LockKeyhole, Pencil, ShoppingCart, X } from "lucide-react";
 import { toast } from "sonner";
+import { profileAvatarPrice } from "@/lib/profile-avatar-pricing";
 import { getProfileAvatar, PROFILE_AVATARS, type ProfileAvatarKey } from "@/lib/profile-avatars";
 
-export function ProfileAvatarEditor({ currentAvatar, studentName }: { currentAvatar: string; studentName: string }) {
+type Props = { currentAvatar: string; currentXp: number; ownedAvatars: string[]; studentName: string };
+
+export function ProfileAvatarEditor({ currentAvatar, currentXp, ownedAvatars, studentName }: Props) {
   const router = useRouter();
-  const [selected, setSelected] = useState<ProfileAvatarKey>(
-    PROFILE_AVATARS.some(({ key }) => key === currentAvatar) ? currentAvatar as ProfileAvatarKey : "default",
-  );
-  const [saving, setSaving] = useState<ProfileAvatarKey | null>(null);
+  const initialAvatar = PROFILE_AVATARS.some(({ key }) => key === currentAvatar) ? currentAvatar as ProfileAvatarKey : "default";
+  const [active, setActive] = useState<ProfileAvatarKey>(initialAvatar);
+  const [candidate, setCandidate] = useState<ProfileAvatarKey>(initialAvatar);
+  const [xp, setXp] = useState(currentXp);
+  const [owned, setOwned] = useState(() => new Set(ownedAvatars));
+  const [saving, setSaving] = useState(false);
   const [open, setOpen] = useState(false);
+  const price = useMemo(() => profileAvatarPrice(xp), [xp]);
+  const candidateOwned = candidate === "default" || owned.has(candidate);
 
   useEffect(() => {
     if (!open) return;
-    const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpen(false);
-    };
+    const closeOnEscape = (event: KeyboardEvent) => { if (event.key === "Escape" && !saving) setOpen(false); };
     document.addEventListener("keydown", closeOnEscape);
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -27,65 +32,75 @@ export function ProfileAvatarEditor({ currentAvatar, studentName }: { currentAva
       document.removeEventListener("keydown", closeOnEscape);
       document.body.style.overflow = previousOverflow;
     };
-  }, [open]);
+  }, [open, saving]);
 
-  async function choose(avatar: ProfileAvatarKey) {
-    if (avatar === selected || saving) return;
-    setSaving(avatar);
+  async function applySelection() {
+    if (candidate === active || saving) return;
+    setSaving(true);
     const response = await fetch("/api/student/profile-avatar", {
       method: "PATCH",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ avatar }),
+      body: JSON.stringify({ avatar: candidate, expectedPrice: candidateOwned ? 0 : price }),
     });
     const data = await response.json();
-    setSaving(null);
+    setSaving(false);
     if (!response.ok) {
-      toast.error(data.message);
+      if (response.status === 409 && Number.isInteger(data.xp)) setXp(data.xp);
+      toast.error(data.message ?? "Não foi possível atualizar a foto.");
       return;
     }
-    setSelected(avatar);
-    toast.success("Foto de perfil atualizada.");
+    setActive(candidate);
+    setXp(data.xp);
+    if (data.purchasedNow) setOwned(current => new Set(current).add(candidate));
+    toast.success(data.purchasedNow ? `Foto comprada por ${data.pricePaid} XP e aplicada ao perfil.` : "Foto de perfil atualizada.");
     setOpen(false);
     router.refresh();
   }
 
   return (
     <>
-      <button type="button" onClick={() => setOpen(true)} className="focus-ring group relative h-24 w-24 shrink-0 rounded-3xl sm:h-28 sm:w-28" aria-label="Alterar foto de perfil">
-        <Image src={getProfileAvatar(selected)} alt={`Foto de perfil de ${studentName}`} fill priority sizes="112px" className="rounded-3xl border-2 border-blue-300/30 object-cover shadow-xl transition group-hover:border-blue-300/70" />
+      <button type="button" onClick={() => { setCandidate(active); setOpen(true); }} className="focus-ring group relative h-24 w-24 shrink-0 rounded-3xl sm:h-28 sm:w-28" aria-label="Alterar foto de perfil">
+        <Image src={getProfileAvatar(active)} alt={`Foto de perfil de ${studentName}`} fill priority sizes="112px" className="rounded-3xl border-2 border-blue-300/30 object-cover shadow-xl transition group-hover:border-blue-300/70" />
         <span className="absolute -bottom-1 -right-1 grid h-9 w-9 place-items-center rounded-full border-2 border-[#142b4d] bg-blue-500 text-white shadow-lg transition group-hover:scale-105" aria-hidden="true"><Pencil size={16} /></span>
       </button>
       {open && (
-        <div className="fixed inset-0 z-[80] grid place-items-center bg-slate-950/80 p-4 backdrop-blur-sm" onMouseDown={event => { if (event.target === event.currentTarget && !saving) setOpen(false); }}>
-          <section role="dialog" aria-modal="true" aria-labelledby="profile-avatar-title" className="glass max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-3xl p-5 sm:p-7">
+        <div className="fixed inset-0 z-[80] grid place-items-center bg-slate-950/80 p-3 backdrop-blur-sm sm:p-4" onMouseDown={event => { if (event.target === event.currentTarget && !saving) setOpen(false); }}>
+          <section role="dialog" aria-modal="true" aria-labelledby="profile-avatar-title" className="glass flex max-h-[94vh] w-full max-w-4xl flex-col rounded-3xl p-4 sm:p-7">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="eyebrow">Personalizar perfil</p>
+                <p className="eyebrow">Loja de fotos do perfil</p>
                 <h2 id="profile-avatar-title" className="mt-2 font-display text-2xl font-bold">Escolha sua foto</h2>
-                <p className="mt-2 text-sm text-slate-400">Ela aparecerá no seu painel e no ranking.</p>
+                <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-300"><strong className="text-amber-300">Cada foto custa 20% do seu XP atual</strong>, arredondado para cima. Você paga uma única vez e depois pode usar a foto quando quiser.</p>
+                <p className="mt-1 flex items-center gap-1.5 text-sm font-bold text-blue-300"><Coins size={16} /> Seu saldo: {xp} XP · preço agora: {price} XP</p>
               </div>
-              <button autoFocus type="button" disabled={saving !== null} onClick={() => setOpen(false)} className="focus-ring rounded-xl border border-slate-700 p-2.5 text-slate-300 hover:bg-slate-800" aria-label="Fechar seleção de foto"><X size={20} /></button>
+              <button autoFocus type="button" disabled={saving} onClick={() => setOpen(false)} className="focus-ring rounded-xl border border-slate-700 p-2.5 text-slate-300 hover:bg-slate-800" aria-label="Fechar seleção de foto"><X size={20} /></button>
             </div>
-            <div className="mt-6 grid grid-cols-4 gap-3 sm:grid-cols-6 md:grid-cols-8">
+            <div className="mt-5 grid min-h-0 flex-1 grid-cols-3 gap-3 overflow-y-auto pr-1 sm:grid-cols-5 md:grid-cols-8">
               {PROFILE_AVATARS.map(({ key, image }) => {
-                const active = key === selected;
+                const selected = key === candidate;
+                const isOwned = key === "default" || owned.has(key);
                 return (
-                  <button
-                    key={key}
-                    type="button"
-                    disabled={saving !== null}
-                    onClick={() => choose(key)}
-                    aria-label={key === "default" ? "Usar imagem sem perfil" : `Usar foto de perfil ${key}`}
-                    aria-pressed={active}
-                    className={`focus-ring relative aspect-square overflow-hidden rounded-2xl border-2 transition ${active ? "border-blue-300 ring-2 ring-blue-300/25" : "border-slate-700 hover:border-blue-400/60"}`}
-                  >
-                    <Image src={image} alt="" fill sizes="(max-width: 640px) 20vw, 96px" className="object-cover" />
-                    {active && <span className="absolute right-1.5 top-1.5 grid h-6 w-6 place-items-center rounded-full bg-blue-500 text-white shadow"><Check size={15} strokeWidth={3} /></span>}
-                    {saving === key && <span className="absolute inset-0 grid place-items-center bg-slate-950/65 text-[10px] font-bold text-white">Salvando…</span>}
+                  <button key={key} type="button" disabled={saving} onClick={() => setCandidate(key)} aria-label={key === "default" ? "Selecionar imagem padrão gratuita" : `Selecionar foto ${key}, ${isOwned ? "já comprada" : `${price} XP`}`} aria-pressed={selected} className={`focus-ring rounded-2xl border-2 p-1.5 text-center transition ${selected ? "border-blue-300 bg-blue-400/10 ring-2 ring-blue-300/25" : "border-slate-700 hover:border-blue-400/60"}`}>
+                    <span className="relative block aspect-square overflow-hidden rounded-xl">
+                      <Image src={image} alt="" fill sizes="(max-width: 640px) 30vw, 96px" className="object-cover" />
+                      {key === active && <span className="absolute right-1.5 top-1.5 grid h-6 w-6 place-items-center rounded-full bg-blue-500 text-white shadow" title="Em uso"><Check size={15} strokeWidth={3} /></span>}
+                    </span>
+                    <span className={`mt-1.5 flex min-h-5 items-center justify-center gap-1 text-[11px] font-bold ${isOwned ? "text-emerald-300" : "text-amber-300"}`}>
+                      {key === "default" ? "Grátis" : isOwned ? <><Check size={12} />Comprada</> : <><Coins size={12} />{price} XP</>}
+                    </span>
                   </button>
                 );
               })}
             </div>
+            <div className="mt-5 rounded-2xl border border-slate-700 bg-slate-950/45 p-4 sm:flex sm:items-center sm:justify-between sm:gap-5">
+              <div className="text-sm">
+                {candidate === active ? <p className="text-slate-300">Esta é a foto que está em uso.</p> : candidateOwned ? <p className="flex items-center gap-2 text-emerald-300"><Check size={16} />Esta foto já é sua. Não haverá nova cobrança.</p> : <p className="text-slate-200"><strong>Confirmar compra?</strong> Serão debitados <span className="font-bold text-amber-300">{price} XP (20%)</span>. Seu saldo ficará em {xp - price} XP.</p>}
+              </div>
+              <button type="button" disabled={candidate === active || saving} onClick={applySelection} className="button-primary mt-3 w-full whitespace-nowrap sm:mt-0 sm:w-auto">
+                {saving ? "Processando…" : candidate === active ? "Foto em uso" : candidateOwned ? <><Check size={17} />Usar esta foto</> : <><ShoppingCart size={17} />Confirmar compra</>}
+              </button>
+            </div>
+            {!candidateOwned && candidate !== active && <p className="mt-2 flex items-center gap-1.5 text-xs text-slate-400"><LockKeyhole size={13} />A compra e o débito de XP só acontecem após sua confirmação.</p>}
           </section>
         </div>
       )}

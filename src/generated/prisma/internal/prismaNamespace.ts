@@ -398,6 +398,7 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 export const ModelName = {
   User: 'User',
+  ProfileAvatarPurchase: 'ProfileAvatarPurchase',
   AccessCodeSequence: 'AccessCodeSequence',
   Lesson: 'Lesson',
   LessonParticipant: 'LessonParticipant',
@@ -435,7 +436,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket"
+    modelProps: "user" | "profileAvatarPurchase" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -510,6 +511,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.UserCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.UserCountAggregateOutputType> | number
+        }
+      }
+    }
+    ProfileAvatarPurchase: {
+      payload: Prisma.$ProfileAvatarPurchasePayload<ExtArgs>
+      fields: Prisma.ProfileAvatarPurchaseFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ProfileAvatarPurchaseFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProfileAvatarPurchasePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ProfileAvatarPurchaseFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProfileAvatarPurchasePayload>
+        }
+        findFirst: {
+          args: Prisma.ProfileAvatarPurchaseFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProfileAvatarPurchasePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ProfileAvatarPurchaseFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProfileAvatarPurchasePayload>
+        }
+        findMany: {
+          args: Prisma.ProfileAvatarPurchaseFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProfileAvatarPurchasePayload>[]
+        }
+        create: {
+          args: Prisma.ProfileAvatarPurchaseCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProfileAvatarPurchasePayload>
+        }
+        createMany: {
+          args: Prisma.ProfileAvatarPurchaseCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ProfileAvatarPurchaseCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProfileAvatarPurchasePayload>[]
+        }
+        delete: {
+          args: Prisma.ProfileAvatarPurchaseDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProfileAvatarPurchasePayload>
+        }
+        update: {
+          args: Prisma.ProfileAvatarPurchaseUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProfileAvatarPurchasePayload>
+        }
+        deleteMany: {
+          args: Prisma.ProfileAvatarPurchaseDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ProfileAvatarPurchaseUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ProfileAvatarPurchaseUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProfileAvatarPurchasePayload>[]
+        }
+        upsert: {
+          args: Prisma.ProfileAvatarPurchaseUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProfileAvatarPurchasePayload>
+        }
+        aggregate: {
+          args: Prisma.ProfileAvatarPurchaseAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateProfileAvatarPurchase>
+        }
+        groupBy: {
+          args: Prisma.ProfileAvatarPurchaseGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ProfileAvatarPurchaseGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ProfileAvatarPurchaseCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ProfileAvatarPurchaseCountAggregateOutputType> | number
         }
       }
     }
@@ -2203,6 +2278,18 @@ export const UserScalarFieldEnum = {
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
+export const ProfileAvatarPurchaseScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  avatarKey: 'avatarKey',
+  pricePaid: 'pricePaid',
+  xpEntryId: 'xpEntryId',
+  purchasedAt: 'purchasedAt'
+} as const
+
+export type ProfileAvatarPurchaseScalarFieldEnum = (typeof ProfileAvatarPurchaseScalarFieldEnum)[keyof typeof ProfileAvatarPurchaseScalarFieldEnum]
+
+
 export const AccessCodeSequenceScalarFieldEnum = {
   year: 'year',
   nextValue: 'nextValue'
@@ -2932,6 +3019,7 @@ export interface PrismaClientOptionsWithAdapter extends PrismaClientBaseOptions 
 export type PrismaClientOptions = PrismaClientOptionsWithAccelerateUrl | PrismaClientOptionsWithAdapter
 export type GlobalOmitConfig = {
   user?: Prisma.UserOmit
+  profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseOmit
   accessCodeSequence?: Prisma.AccessCodeSequenceOmit
   lesson?: Prisma.LessonOmit
   lessonParticipant?: Prisma.LessonParticipantOmit

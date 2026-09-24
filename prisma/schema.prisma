@@ -44,6 +44,7 @@ enum XpSource {
   BULK
   SYSTEM
   ACTIVITY
+  PROFILE_AVATAR
 }
 
 enum AuditEvent {
@@ -95,45 +96,60 @@ enum TeamDivisionMode {
 }
 
 model User {
-  id                      String                @id @default(uuid()) @db.Uuid
+  id                      String                  @id @default(uuid()) @db.Uuid
   firstName               String
   lastName                String
   passwordHash            String
-  xp                      Int                   @default(0)
-  accessCode              String                @unique
+  xp                      Int                     @default(0)
+  accessCode              String                  @unique
   originSchoolClass       SchoolClass?
-  status                  UserStatus            @default(ACTIVE)
+  status                  UserStatus              @default(ACTIVE)
   role                    Role
-  profileAvatar           String                @default("default")
-  sessionVersion          Int                   @default(1)
-  mustChangePassword      Boolean               @default(false)
+  profileAvatar           String                  @default("default")
+  sessionVersion          Int                     @default(1)
+  mustChangePassword      Boolean                 @default(false)
   lastLoginAt             DateTime?
   lastSeenAt              DateTime?
   deactivatedAt           DateTime?
-  createdAt               DateTime              @default(now())
-  updatedAt               DateTime              @updatedAt
-  lessons                 Lesson[]              @relation("TeacherLessons")
+  createdAt               DateTime                @default(now())
+  updatedAt               DateTime                @updatedAt
+  lessons                 Lesson[]                @relation("TeacherLessons")
   attendances             Attendance[]
-  xpEntries               XpEntry[]             @relation("StudentXp")
-  authoredXp              XpEntry[]             @relation("XpAuthor")
-  behaviors               BehaviorRating[]      @relation("StudentBehavior")
-  ratedBehaviors          BehaviorRating[]      @relation("BehaviorTeacher")
-  cleanups                CleanupAssignment[]   @relation("CleanupStudent")
-  confirmedCleanups       CleanupAssignment[]   @relation("CleanupTeacher")
-  auditActions            AuditLog[]            @relation("AuditActor")
-  auditTargets            AuditLog[]            @relation("AuditTarget")
-  authoredActivities      Activity[]            @relation("ActivityAuthor")
-  activityRecipients      ActivityRecipient[]   @relation("ActivityRecipientStudent")
+  xpEntries               XpEntry[]               @relation("StudentXp")
+  authoredXp              XpEntry[]               @relation("XpAuthor")
+  behaviors               BehaviorRating[]        @relation("StudentBehavior")
+  ratedBehaviors          BehaviorRating[]        @relation("BehaviorTeacher")
+  cleanups                CleanupAssignment[]     @relation("CleanupStudent")
+  confirmedCleanups       CleanupAssignment[]     @relation("CleanupTeacher")
+  auditActions            AuditLog[]              @relation("AuditActor")
+  auditTargets            AuditLog[]              @relation("AuditTarget")
+  authoredActivities      Activity[]              @relation("ActivityAuthor")
+  activityRecipients      ActivityRecipient[]     @relation("ActivityRecipientStudent")
   activitySubmissions     ActivitySubmission[]
   activityAnswers         ActivityAnswer[]
   activityTeamMemberships ActivityTeamMember[]
   activityAwards          ActivityAward[]
   lessonParticipations    LessonParticipant[]
-  authoredNotifications   Notification[]        @relation("NotificationAuthor")
+  authoredNotifications   Notification[]          @relation("NotificationAuthor")
   notificationReceipts    NotificationReceipt[]
+  profileAvatarPurchases  ProfileAvatarPurchase[]
 
   @@index([role, status, xp])
   @@index([originSchoolClass, status])
+}
+
+model ProfileAvatarPurchase {
+  id          String   @id @default(uuid()) @db.Uuid
+  studentId   String   @db.Uuid
+  avatarKey   String
+  pricePaid   Int
+  xpEntryId   String   @unique @db.Uuid
+  purchasedAt DateTime @default(now())
+  student     User     @relation(fields: [studentId], references: [id], onDelete: Restrict)
+  xpEntry     XpEntry  @relation(fields: [xpEntryId], references: [id], onDelete: Restrict)
+
+  @@unique([studentId, avatarKey])
+  @@index([studentId, purchasedAt])
 }
 
 model AccessCodeSequence {
@@ -186,20 +202,21 @@ model Attendance {
 }
 
 model XpEntry {
-  id             String          @id @default(uuid()) @db.Uuid
-  studentId      String          @db.Uuid
-  lessonId       String?         @db.Uuid
-  authorId       String?         @db.Uuid
-  delta          Int
-  reason         String
-  source         XpSource
-  idempotencyKey String          @unique
-  createdAt      DateTime        @default(now())
-  student        User            @relation("StudentXp", fields: [studentId], references: [id], onDelete: Restrict)
-  lesson         Lesson?         @relation(fields: [lessonId], references: [id], onDelete: Restrict)
-  author         User?           @relation("XpAuthor", fields: [authorId], references: [id], onDelete: SetNull)
-  behavior       BehaviorRating?
-  activityAwards ActivityAward[]
+  id                    String                 @id @default(uuid()) @db.Uuid
+  studentId             String                 @db.Uuid
+  lessonId              String?                @db.Uuid
+  authorId              String?                @db.Uuid
+  delta                 Int
+  reason                String
+  source                XpSource
+  idempotencyKey        String                 @unique
+  createdAt             DateTime               @default(now())
+  student               User                   @relation("StudentXp", fields: [studentId], references: [id], onDelete: Restrict)
+  lesson                Lesson?                @relation(fields: [lessonId], references: [id], onDelete: Restrict)
+  author                User?                  @relation("XpAuthor", fields: [authorId], references: [id], onDelete: SetNull)
+  behavior              BehaviorRating?
+  activityAwards        ActivityAward[]
+  profileAvatarPurchase ProfileAvatarPurchase?
 
   @@index([studentId, createdAt])
 }
