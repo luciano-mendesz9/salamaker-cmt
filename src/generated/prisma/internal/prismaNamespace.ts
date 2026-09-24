@@ -2190,6 +2190,7 @@ export const UserScalarFieldEnum = {
   originSchoolClass: 'originSchoolClass',
   status: 'status',
   role: 'role',
+  profileAvatar: 'profileAvatar',
   sessionVersion: 'sessionVersion',
   mustChangePassword: 'mustChangePassword',
   lastLoginAt: 'lastLoginAt',
