@@ -53,6 +53,7 @@ export const AnyNull = runtime.AnyNull
 export const ModelName = {
   User: 'User',
   ProfileAvatarPurchase: 'ProfileAvatarPurchase',
+  DevCoinEntry: 'DevCoinEntry',
   AccessCodeSequence: 'AccessCodeSequence',
   Lesson: 'Lesson',
   LessonParticipant: 'LessonParticipant',
@@ -99,6 +100,7 @@ export const UserScalarFieldEnum = {
   lastName: 'lastName',
   passwordHash: 'passwordHash',
   xp: 'xp',
+  devCoins: 'devCoins',
   accessCode: 'accessCode',
   originSchoolClass: 'originSchoolClass',
   status: 'status',
@@ -120,12 +122,29 @@ export const ProfileAvatarPurchaseScalarFieldEnum = {
   id: 'id',
   studentId: 'studentId',
   avatarKey: 'avatarKey',
-  pricePaid: 'pricePaid',
+  amountPaid: 'amountPaid',
+  currency: 'currency',
   xpEntryId: 'xpEntryId',
+  devCoinEntryId: 'devCoinEntryId',
   purchasedAt: 'purchasedAt'
 } as const
 
 export type ProfileAvatarPurchaseScalarFieldEnum = (typeof ProfileAvatarPurchaseScalarFieldEnum)[keyof typeof ProfileAvatarPurchaseScalarFieldEnum]
+
+
+export const DevCoinEntryScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  authorId: 'authorId',
+  xpEntryId: 'xpEntryId',
+  delta: 'delta',
+  reason: 'reason',
+  source: 'source',
+  idempotencyKey: 'idempotencyKey',
+  createdAt: 'createdAt'
+} as const
+
+export type DevCoinEntryScalarFieldEnum = (typeof DevCoinEntryScalarFieldEnum)[keyof typeof DevCoinEntryScalarFieldEnum]
 
 
 export const AccessCodeSequenceScalarFieldEnum = {
@@ -218,6 +237,7 @@ export const AppSettingScalarFieldEnum = {
   studentAreaEnabled: 'studentAreaEnabled',
   accentColor: 'accentColor',
   timeZone: 'timeZone',
+  devCoinsPerXp: 'devCoinsPerXp',
   updatedAt: 'updatedAt'
 } as const
 

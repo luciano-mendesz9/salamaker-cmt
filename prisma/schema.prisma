@@ -45,6 +45,7 @@ enum XpSource {
   SYSTEM
   ACTIVITY
   PROFILE_AVATAR
+  DEV_COIN_PURCHASE
 }
 
 enum AuditEvent {
@@ -59,6 +60,20 @@ enum AuditEvent {
   ACTIVITY_STATE_CHANGED
   ACTIVITY_GRADED
   NOTIFICATION_CREATED
+  DEV_COIN_GRANTED
+  DEV_COIN_RATE_CHANGED
+}
+
+enum DevCoinSource {
+  PURCHASE
+  TEACHER_GRANT
+  INITIAL_GRANT
+  PROFILE_AVATAR
+}
+
+enum AvatarPurchaseCurrency {
+  XP
+  DEV_COIN
 }
 
 enum NotificationKind {
@@ -101,6 +116,7 @@ model User {
   lastName                String
   passwordHash            String
   xp                      Int                     @default(0)
+  devCoins                Int                     @default(0)
   accessCode              String                  @unique
   originSchoolClass       SchoolClass?
   status                  UserStatus              @default(ACTIVE)
@@ -133,23 +149,46 @@ model User {
   authoredNotifications   Notification[]          @relation("NotificationAuthor")
   notificationReceipts    NotificationReceipt[]
   profileAvatarPurchases  ProfileAvatarPurchase[]
+  devCoinEntries          DevCoinEntry[]          @relation("StudentDevCoins")
+  authoredDevCoinEntries  DevCoinEntry[]          @relation("DevCoinAuthor")
 
   @@index([role, status, xp])
   @@index([originSchoolClass, status])
 }
 
 model ProfileAvatarPurchase {
-  id          String   @id @default(uuid()) @db.Uuid
-  studentId   String   @db.Uuid
-  avatarKey   String
-  pricePaid   Int
-  xpEntryId   String   @unique @db.Uuid
-  purchasedAt DateTime @default(now())
-  student     User     @relation(fields: [studentId], references: [id], onDelete: Restrict)
-  xpEntry     XpEntry  @relation(fields: [xpEntryId], references: [id], onDelete: Restrict)
+  id             String                 @id @default(uuid()) @db.Uuid
+  studentId      String                 @db.Uuid
+  avatarKey      String
+  amountPaid     Int
+  currency       AvatarPurchaseCurrency @default(XP)
+  xpEntryId      String?                @unique @db.Uuid
+  devCoinEntryId String?                @unique @db.Uuid
+  purchasedAt    DateTime               @default(now())
+  student        User                   @relation(fields: [studentId], references: [id], onDelete: Restrict)
+  xpEntry        XpEntry?               @relation(fields: [xpEntryId], references: [id], onDelete: Restrict)
+  devCoinEntry   DevCoinEntry?          @relation(fields: [devCoinEntryId], references: [id], onDelete: Restrict)
 
   @@unique([studentId, avatarKey])
   @@index([studentId, purchasedAt])
+}
+
+model DevCoinEntry {
+  id                    String                 @id @default(uuid()) @db.Uuid
+  studentId             String                 @db.Uuid
+  authorId              String?                @db.Uuid
+  xpEntryId             String?                @unique @db.Uuid
+  delta                 Int
+  reason                String
+  source                DevCoinSource
+  idempotencyKey        String                 @unique
+  createdAt             DateTime               @default(now())
+  student               User                   @relation("StudentDevCoins", fields: [studentId], references: [id], onDelete: Restrict)
+  author                User?                  @relation("DevCoinAuthor", fields: [authorId], references: [id], onDelete: SetNull)
+  xpEntry               XpEntry?               @relation(fields: [xpEntryId], references: [id], onDelete: Restrict)
+  profileAvatarPurchase ProfileAvatarPurchase?
+
+  @@index([studentId, createdAt])
 }
 
 model AccessCodeSequence {
@@ -217,6 +256,7 @@ model XpEntry {
   behavior              BehaviorRating?
   activityAwards        ActivityAward[]
   profileAvatarPurchase ProfileAvatarPurchase?
+  devCoinEntry          DevCoinEntry?
 
   @@index([studentId, createdAt])
 }
@@ -258,6 +298,7 @@ model AppSetting {
   studentAreaEnabled Boolean  @default(true)
   accentColor        String   @default("#328fff")
   timeZone           String   @default("America/Fortaleza")
+  devCoinsPerXp      Int      @default(1)
   updatedAt          DateTime @updatedAt
 }
 

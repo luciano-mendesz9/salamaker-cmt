@@ -2,24 +2,23 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
-import { Check, Coins, LockKeyhole, Pencil, ShoppingCart, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Check, LockKeyhole, Pencil, ShoppingCart, X } from "lucide-react";
 import { toast } from "sonner";
-import { profileAvatarPrice } from "@/lib/profile-avatar-pricing";
+import { PROFILE_AVATAR_DEV_COIN_PRICE } from "@/lib/profile-avatar-pricing";
 import { getProfileAvatar, PROFILE_AVATARS, type ProfileAvatarKey } from "@/lib/profile-avatars";
 
-type Props = { currentAvatar: string; currentXp: number; ownedAvatars: string[]; studentName: string };
+type Props = { currentAvatar: string; currentDevCoins: number; ownedAvatars: string[]; studentName: string };
 
-export function ProfileAvatarEditor({ currentAvatar, currentXp, ownedAvatars, studentName }: Props) {
+export function ProfileAvatarEditor({ currentAvatar, currentDevCoins, ownedAvatars, studentName }: Props) {
   const router = useRouter();
   const initialAvatar = PROFILE_AVATARS.some(({ key }) => key === currentAvatar) ? currentAvatar as ProfileAvatarKey : "default";
   const [active, setActive] = useState<ProfileAvatarKey>(initialAvatar);
   const [candidate, setCandidate] = useState<ProfileAvatarKey>(initialAvatar);
-  const [xp, setXp] = useState(currentXp);
   const [owned, setOwned] = useState(() => new Set(ownedAvatars));
   const [saving, setSaving] = useState(false);
   const [open, setOpen] = useState(false);
-  const price = useMemo(() => profileAvatarPrice(xp), [xp]);
+  const price = PROFILE_AVATAR_DEV_COIN_PRICE;
   const candidateOwned = candidate === "default" || owned.has(candidate);
 
   useEffect(() => {
@@ -40,19 +39,17 @@ export function ProfileAvatarEditor({ currentAvatar, currentXp, ownedAvatars, st
     const response = await fetch("/api/student/profile-avatar", {
       method: "PATCH",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ avatar: candidate, expectedPrice: candidateOwned ? 0 : price }),
+      body: JSON.stringify({ avatar: candidate }),
     });
     const data = await response.json();
     setSaving(false);
     if (!response.ok) {
-      if (response.status === 409 && Number.isInteger(data.xp)) setXp(data.xp);
       toast.error(data.message ?? "Não foi possível atualizar a foto.");
       return;
     }
     setActive(candidate);
-    setXp(data.xp);
     if (data.purchasedNow) setOwned(current => new Set(current).add(candidate));
-    toast.success(data.purchasedNow ? `Foto comprada por ${data.pricePaid} XP e aplicada ao perfil.` : "Foto de perfil atualizada.");
+    toast.success(data.purchasedNow ? `Foto comprada por ${data.pricePaid} Dev-Coins e aplicada ao perfil.` : "Foto de perfil atualizada.");
     setOpen(false);
     router.refresh();
   }
@@ -70,8 +67,8 @@ export function ProfileAvatarEditor({ currentAvatar, currentXp, ownedAvatars, st
               <div>
                 <p className="eyebrow">Loja de fotos do perfil</p>
                 <h2 id="profile-avatar-title" className="mt-2 font-display text-2xl font-bold">Escolha sua foto</h2>
-                <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-300"><strong className="text-amber-300">Cada foto custa 20% do seu XP atual</strong>, arredondado para cima. Você paga uma única vez e depois pode usar a foto quando quiser.</p>
-                <p className="mt-1 flex items-center gap-1.5 text-sm font-bold text-blue-300"><Coins size={16} /> Seu saldo: {xp} XP · preço agora: {price} XP</p>
+                <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-300"><strong className="text-amber-300">Cada foto custa 20 Dev-Coins.</strong> Você paga uma única vez e depois pode usar a foto quando quiser.</p>
+                <p className="mt-1 text-sm font-bold text-amber-300">Seu saldo: {currentDevCoins} Dev-Coins</p>
               </div>
               <button autoFocus type="button" disabled={saving} onClick={() => setOpen(false)} className="focus-ring rounded-xl border border-slate-700 p-2.5 text-slate-300 hover:bg-slate-800" aria-label="Fechar seleção de foto"><X size={20} /></button>
             </div>
@@ -80,13 +77,13 @@ export function ProfileAvatarEditor({ currentAvatar, currentXp, ownedAvatars, st
                 const selected = key === candidate;
                 const isOwned = key === "default" || owned.has(key);
                 return (
-                  <button key={key} type="button" disabled={saving} onClick={() => setCandidate(key)} aria-label={key === "default" ? "Selecionar imagem padrão gratuita" : `Selecionar foto ${key}, ${isOwned ? "já comprada" : `${price} XP`}`} aria-pressed={selected} className={`focus-ring rounded-2xl border-2 p-1.5 text-center transition ${selected ? "border-blue-300 bg-blue-400/10 ring-2 ring-blue-300/25" : "border-slate-700 hover:border-blue-400/60"}`}>
+                  <button key={key} type="button" disabled={saving} onClick={() => setCandidate(key)} aria-label={key === "default" ? "Selecionar imagem padrão gratuita" : `Selecionar foto ${key}, ${isOwned ? "já comprada" : `${price} Dev-Coins`}`} aria-pressed={selected} className={`focus-ring rounded-2xl border-2 p-1.5 text-center transition ${selected ? "border-blue-300 bg-blue-400/10 ring-2 ring-blue-300/25" : "border-slate-700 hover:border-blue-400/60"}`}>
                     <span className="relative block aspect-square overflow-hidden rounded-xl">
                       <Image src={image} alt="" fill sizes="(max-width: 640px) 30vw, 96px" className="object-cover" />
                       {key === active && <span className="absolute right-1.5 top-1.5 grid h-6 w-6 place-items-center rounded-full bg-blue-500 text-white shadow" title="Em uso"><Check size={15} strokeWidth={3} /></span>}
                     </span>
                     <span className={`mt-1.5 flex min-h-5 items-center justify-center gap-1 text-[11px] font-bold ${isOwned ? "text-emerald-300" : "text-amber-300"}`}>
-                      {key === "default" ? "Grátis" : isOwned ? <><Check size={12} />Comprada</> : <><Coins size={12} />{price} XP</>}
+                      {key === "default" ? "Grátis" : isOwned ? <><Check size={12} />Comprada</> : <>{price} Dev-Coins</>}
                     </span>
                   </button>
                 );
@@ -94,13 +91,13 @@ export function ProfileAvatarEditor({ currentAvatar, currentXp, ownedAvatars, st
             </div>
             <div className="mt-5 rounded-2xl border border-slate-700 bg-slate-950/45 p-4 sm:flex sm:items-center sm:justify-between sm:gap-5">
               <div className="text-sm">
-                {candidate === active ? <p className="text-slate-300">Esta é a foto que está em uso.</p> : candidateOwned ? <p className="flex items-center gap-2 text-emerald-300"><Check size={16} />Esta foto já é sua. Não haverá nova cobrança.</p> : <p className="text-slate-200"><strong>Confirmar compra?</strong> Serão debitados <span className="font-bold text-amber-300">{price} XP (20%)</span>. Seu saldo ficará em {xp - price} XP.</p>}
+                {candidate === active ? <p className="text-slate-300">Esta é a foto que está em uso.</p> : candidateOwned ? <p className="flex items-center gap-2 text-emerald-300"><Check size={16} />Esta foto já é sua. Não haverá nova cobrança.</p> : <p className="text-slate-200"><strong>Confirmar compra?</strong> Serão debitadas <span className="font-bold text-amber-300">{price} Dev-Coins</span>. Seu saldo ficará em {currentDevCoins - price}.</p>}
               </div>
-              <button type="button" disabled={candidate === active || saving} onClick={applySelection} className="button-primary mt-3 w-full whitespace-nowrap sm:mt-0 sm:w-auto">
+              <button type="button" disabled={candidate === active || saving || (!candidateOwned && currentDevCoins < price)} onClick={applySelection} className="button-primary mt-3 w-full whitespace-nowrap sm:mt-0 sm:w-auto">
                 {saving ? "Processando…" : candidate === active ? "Foto em uso" : candidateOwned ? <><Check size={17} />Usar esta foto</> : <><ShoppingCart size={17} />Confirmar compra</>}
               </button>
             </div>
-            {!candidateOwned && candidate !== active && <p className="mt-2 flex items-center gap-1.5 text-xs text-slate-400"><LockKeyhole size={13} />A compra e o débito de XP só acontecem após sua confirmação.</p>}
+            {!candidateOwned && candidate !== active && <p className={`mt-2 flex items-center gap-1.5 text-xs ${currentDevCoins < price ? "text-rose-300" : "text-slate-400"}`}><LockKeyhole size={13} />{currentDevCoins < price ? "Você precisa comprar mais Dev-Coins antes de escolher esta foto." : "A compra e o débito das moedas só acontecem após sua confirmação."}</p>}
           </section>
         </div>
       )}

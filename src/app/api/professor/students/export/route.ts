@@ -14,6 +14,7 @@ export async function GET() {
         accessCode: true,
         originSchoolClass: true,
         xp: true,
+        devCoins: true,
       },
       orderBy: [
         { originSchoolClass: "asc" },

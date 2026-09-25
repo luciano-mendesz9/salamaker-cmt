@@ -28,6 +28,11 @@ export type User = Prisma.UserModel
  */
 export type ProfileAvatarPurchase = Prisma.ProfileAvatarPurchaseModel
 /**
+ * Model DevCoinEntry
+ *
+ */
+export type DevCoinEntry = Prisma.DevCoinEntryModel
+/**
  * Model AccessCodeSequence
  *
  */

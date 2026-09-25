@@ -1,3 +1,49 @@
 import {randomUUID} from "node:crypto";import {NextResponse} from "next/server";import {z} from "zod";import {prisma} from "@/lib/db";import {apiError,requireTeacher,verifyAdminActionPassword} from "@/lib/authorization";
-const schema=z.discriminatedUnion("action",[z.object({action:z.literal("XP"),ids:z.array(z.string().uuid()).min(1).max(100),amount:z.number().int().min(1).max(10000),reason:z.string().trim().min(3).max(160),adminPassword:z.string()}),z.object({action:z.literal("ARCHIVE"),ids:z.array(z.string().uuid()).min(1).max(100),adminPassword:z.string()})]);
-export async function POST(request:Request){try{const teacher=await requireTeacher();const body=schema.parse(await request.json());verifyAdminActionPassword(body.adminPassword);const students=await prisma.user.findMany({where:{id:{in:body.ids},role:"STUDENT",status:"ACTIVE"},select:{id:true}});if(!students.length)return NextResponse.json({message:"Nenhum aluno ativo selecionado."},{status:400});if(body.action==="XP")await prisma.$transaction(students.flatMap(student=>[prisma.user.update({where:{id:student.id},data:{xp:{increment:body.amount}}}),prisma.xpEntry.create({data:{studentId:student.id,authorId:teacher.id,delta:body.amount,reason:body.reason,source:"BULK",idempotencyKey:`bulk:${randomUUID()}:${student.id}`}})]));else await prisma.$transaction([...students.map(student=>prisma.user.update({where:{id:student.id},data:{status:"INACTIVE",deactivatedAt:new Date(),sessionVersion:{increment:1}}})),...students.map(student=>prisma.auditLog.create({data:{actorId:teacher.id,targetId:student.id,event:"USER_STATUS_CHANGED",details:{status:"INACTIVE",bulk:true}}}))]);return NextResponse.json({updated:students.length})}catch(e){if(e instanceof z.ZodError)return NextResponse.json({message:"Revise os dados da ação em massa."},{status:400});const[m,s]=apiError(e);return NextResponse.json({message:m},{status:s})}}
+const monetaryAction = {
+  ids: z.array(z.string().uuid()).min(1).max(100),
+  amount: z.number().int().min(1).max(10_000),
+  reason: z.string().trim().min(3).max(160),
+  adminPassword: z.string(),
+};
+const schema = z.discriminatedUnion("action", [
+  z.object({ action: z.literal("XP"), ...monetaryAction }),
+  z.object({ action: z.literal("DEV_COINS"), ...monetaryAction }),
+  z.object({ action: z.literal("ARCHIVE"), ids: monetaryAction.ids, adminPassword: z.string() }),
+]);
+
+export async function POST(request: Request) {
+  try {
+    const teacher = await requireTeacher();
+    const body = schema.parse(await request.json());
+    verifyAdminActionPassword(body.adminPassword);
+    const students = await prisma.user.findMany({
+      where: { id: { in: body.ids }, role: "STUDENT", status: "ACTIVE" },
+      select: { id: true },
+    });
+    if (!students.length) return NextResponse.json({ message: "Nenhum aluno ativo selecionado." }, { status: 400 });
+
+    const operationId = randomUUID();
+    if (body.action === "XP") {
+      await prisma.$transaction(students.flatMap((student) => [
+        prisma.user.update({ where: { id: student.id }, data: { xp: { increment: body.amount } } }),
+        prisma.xpEntry.create({ data: { studentId: student.id, authorId: teacher.id, delta: body.amount, reason: body.reason, source: "BULK", idempotencyKey: `bulk:${operationId}:${student.id}` } }),
+      ]));
+    } else if (body.action === "DEV_COINS") {
+      await prisma.$transaction(students.flatMap((student) => [
+        prisma.user.update({ where: { id: student.id }, data: { devCoins: { increment: body.amount } } }),
+        prisma.devCoinEntry.create({ data: { studentId: student.id, authorId: teacher.id, delta: body.amount, reason: body.reason, source: "TEACHER_GRANT", idempotencyKey: `teacher-grant:${operationId}:${student.id}` } }),
+        prisma.auditLog.create({ data: { actorId: teacher.id, targetId: student.id, event: "DEV_COIN_GRANTED", details: { amount: body.amount, reason: body.reason, operationId } } }),
+      ]));
+    } else {
+      await prisma.$transaction([
+        ...students.map((student) => prisma.user.update({ where: { id: student.id }, data: { status: "INACTIVE", deactivatedAt: new Date(), sessionVersion: { increment: 1 } } })),
+        ...students.map((student) => prisma.auditLog.create({ data: { actorId: teacher.id, targetId: student.id, event: "USER_STATUS_CHANGED", details: { status: "INACTIVE", bulk: true } } })),
+      ]);
+    }
+    return NextResponse.json({ updated: students.length });
+  } catch (error) {
+    if (error instanceof z.ZodError) return NextResponse.json({ message: "Revise os dados da ação em massa." }, { status: 400 });
+    const [message, status] = apiError(error);
+    return NextResponse.json({ message }, { status });
+  }
+}

@@ -254,6 +254,7 @@ export type XpEntryWhereInput = {
   behavior?: Prisma.XOR<Prisma.BehaviorRatingNullableScalarRelationFilter, Prisma.BehaviorRatingWhereInput> | null
   activityAwards?: Prisma.ActivityAwardListRelationFilter
   profileAvatarPurchase?: Prisma.XOR<Prisma.ProfileAvatarPurchaseNullableScalarRelationFilter, Prisma.ProfileAvatarPurchaseWhereInput> | null
+  devCoinEntry?: Prisma.XOR<Prisma.DevCoinEntryNullableScalarRelationFilter, Prisma.DevCoinEntryWhereInput> | null
 }
 
 export type XpEntryOrderByWithRelationInput = {
@@ -272,6 +273,7 @@ export type XpEntryOrderByWithRelationInput = {
   behavior?: Prisma.BehaviorRatingOrderByWithRelationInput
   activityAwards?: Prisma.ActivityAwardOrderByRelationAggregateInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseOrderByWithRelationInput
+  devCoinEntry?: Prisma.DevCoinEntryOrderByWithRelationInput
 }
 
 export type XpEntryWhereUniqueInput = Prisma.AtLeast<{
@@ -293,6 +295,7 @@ export type XpEntryWhereUniqueInput = Prisma.AtLeast<{
   behavior?: Prisma.XOR<Prisma.BehaviorRatingNullableScalarRelationFilter, Prisma.BehaviorRatingWhereInput> | null
   activityAwards?: Prisma.ActivityAwardListRelationFilter
   profileAvatarPurchase?: Prisma.XOR<Prisma.ProfileAvatarPurchaseNullableScalarRelationFilter, Prisma.ProfileAvatarPurchaseWhereInput> | null
+  devCoinEntry?: Prisma.XOR<Prisma.DevCoinEntryNullableScalarRelationFilter, Prisma.DevCoinEntryWhereInput> | null
 }, "id" | "idempotencyKey">
 
 export type XpEntryOrderByWithAggregationInput = {
@@ -340,6 +343,7 @@ export type XpEntryCreateInput = {
   behavior?: Prisma.BehaviorRatingCreateNestedOneWithoutXpEntryInput
   activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutXpEntryInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseCreateNestedOneWithoutXpEntryInput
+  devCoinEntry?: Prisma.DevCoinEntryCreateNestedOneWithoutXpEntryInput
 }
 
 export type XpEntryUncheckedCreateInput = {
@@ -355,6 +359,7 @@ export type XpEntryUncheckedCreateInput = {
   behavior?: Prisma.BehaviorRatingUncheckedCreateNestedOneWithoutXpEntryInput
   activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutXpEntryInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedOneWithoutXpEntryInput
+  devCoinEntry?: Prisma.DevCoinEntryUncheckedCreateNestedOneWithoutXpEntryInput
 }
 
 export type XpEntryUpdateInput = {
@@ -370,6 +375,7 @@ export type XpEntryUpdateInput = {
   behavior?: Prisma.BehaviorRatingUpdateOneWithoutXpEntryNestedInput
   activityAwards?: Prisma.ActivityAwardUpdateManyWithoutXpEntryNestedInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUpdateOneWithoutXpEntryNestedInput
+  devCoinEntry?: Prisma.DevCoinEntryUpdateOneWithoutXpEntryNestedInput
 }
 
 export type XpEntryUncheckedUpdateInput = {
@@ -385,6 +391,7 @@ export type XpEntryUncheckedUpdateInput = {
   behavior?: Prisma.BehaviorRatingUncheckedUpdateOneWithoutXpEntryNestedInput
   activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutXpEntryNestedInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUncheckedUpdateOneWithoutXpEntryNestedInput
+  devCoinEntry?: Prisma.DevCoinEntryUncheckedUpdateOneWithoutXpEntryNestedInput
 }
 
 export type XpEntryCreateManyInput = {
@@ -430,9 +437,9 @@ export type XpEntryOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type XpEntryScalarRelationFilter = {
-  is?: Prisma.XpEntryWhereInput
-  isNot?: Prisma.XpEntryWhereInput
+export type XpEntryNullableScalarRelationFilter = {
+  is?: Prisma.XpEntryWhereInput | null
+  isNot?: Prisma.XpEntryWhereInput | null
 }
 
 export type XpEntryCountOrderByAggregateInput = {
@@ -477,6 +484,11 @@ export type XpEntryMinOrderByAggregateInput = {
 
 export type XpEntrySumOrderByAggregateInput = {
   delta?: Prisma.SortOrder
+}
+
+export type XpEntryScalarRelationFilter = {
+  is?: Prisma.XpEntryWhereInput
+  isNot?: Prisma.XpEntryWhereInput
 }
 
 export type XpEntryCreateNestedManyWithoutStudentInput = {
@@ -569,12 +581,30 @@ export type XpEntryCreateNestedOneWithoutProfileAvatarPurchaseInput = {
   connect?: Prisma.XpEntryWhereUniqueInput
 }
 
-export type XpEntryUpdateOneRequiredWithoutProfileAvatarPurchaseNestedInput = {
+export type XpEntryUpdateOneWithoutProfileAvatarPurchaseNestedInput = {
   create?: Prisma.XOR<Prisma.XpEntryCreateWithoutProfileAvatarPurchaseInput, Prisma.XpEntryUncheckedCreateWithoutProfileAvatarPurchaseInput>
   connectOrCreate?: Prisma.XpEntryCreateOrConnectWithoutProfileAvatarPurchaseInput
   upsert?: Prisma.XpEntryUpsertWithoutProfileAvatarPurchaseInput
+  disconnect?: Prisma.XpEntryWhereInput | boolean
+  delete?: Prisma.XpEntryWhereInput | boolean
   connect?: Prisma.XpEntryWhereUniqueInput
   update?: Prisma.XOR<Prisma.XOR<Prisma.XpEntryUpdateToOneWithWhereWithoutProfileAvatarPurchaseInput, Prisma.XpEntryUpdateWithoutProfileAvatarPurchaseInput>, Prisma.XpEntryUncheckedUpdateWithoutProfileAvatarPurchaseInput>
+}
+
+export type XpEntryCreateNestedOneWithoutDevCoinEntryInput = {
+  create?: Prisma.XOR<Prisma.XpEntryCreateWithoutDevCoinEntryInput, Prisma.XpEntryUncheckedCreateWithoutDevCoinEntryInput>
+  connectOrCreate?: Prisma.XpEntryCreateOrConnectWithoutDevCoinEntryInput
+  connect?: Prisma.XpEntryWhereUniqueInput
+}
+
+export type XpEntryUpdateOneWithoutDevCoinEntryNestedInput = {
+  create?: Prisma.XOR<Prisma.XpEntryCreateWithoutDevCoinEntryInput, Prisma.XpEntryUncheckedCreateWithoutDevCoinEntryInput>
+  connectOrCreate?: Prisma.XpEntryCreateOrConnectWithoutDevCoinEntryInput
+  upsert?: Prisma.XpEntryUpsertWithoutDevCoinEntryInput
+  disconnect?: Prisma.XpEntryWhereInput | boolean
+  delete?: Prisma.XpEntryWhereInput | boolean
+  connect?: Prisma.XpEntryWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.XpEntryUpdateToOneWithWhereWithoutDevCoinEntryInput, Prisma.XpEntryUpdateWithoutDevCoinEntryInput>, Prisma.XpEntryUncheckedUpdateWithoutDevCoinEntryInput>
 }
 
 export type XpEntryCreateNestedManyWithoutLessonInput = {
@@ -663,6 +693,7 @@ export type XpEntryCreateWithoutStudentInput = {
   behavior?: Prisma.BehaviorRatingCreateNestedOneWithoutXpEntryInput
   activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutXpEntryInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseCreateNestedOneWithoutXpEntryInput
+  devCoinEntry?: Prisma.DevCoinEntryCreateNestedOneWithoutXpEntryInput
 }
 
 export type XpEntryUncheckedCreateWithoutStudentInput = {
@@ -677,6 +708,7 @@ export type XpEntryUncheckedCreateWithoutStudentInput = {
   behavior?: Prisma.BehaviorRatingUncheckedCreateNestedOneWithoutXpEntryInput
   activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutXpEntryInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedOneWithoutXpEntryInput
+  devCoinEntry?: Prisma.DevCoinEntryUncheckedCreateNestedOneWithoutXpEntryInput
 }
 
 export type XpEntryCreateOrConnectWithoutStudentInput = {
@@ -701,6 +733,7 @@ export type XpEntryCreateWithoutAuthorInput = {
   behavior?: Prisma.BehaviorRatingCreateNestedOneWithoutXpEntryInput
   activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutXpEntryInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseCreateNestedOneWithoutXpEntryInput
+  devCoinEntry?: Prisma.DevCoinEntryCreateNestedOneWithoutXpEntryInput
 }
 
 export type XpEntryUncheckedCreateWithoutAuthorInput = {
@@ -715,6 +748,7 @@ export type XpEntryUncheckedCreateWithoutAuthorInput = {
   behavior?: Prisma.BehaviorRatingUncheckedCreateNestedOneWithoutXpEntryInput
   activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutXpEntryInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedOneWithoutXpEntryInput
+  devCoinEntry?: Prisma.DevCoinEntryUncheckedCreateNestedOneWithoutXpEntryInput
 }
 
 export type XpEntryCreateOrConnectWithoutAuthorInput = {
@@ -786,6 +820,7 @@ export type XpEntryCreateWithoutProfileAvatarPurchaseInput = {
   author?: Prisma.UserCreateNestedOneWithoutAuthoredXpInput
   behavior?: Prisma.BehaviorRatingCreateNestedOneWithoutXpEntryInput
   activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutXpEntryInput
+  devCoinEntry?: Prisma.DevCoinEntryCreateNestedOneWithoutXpEntryInput
 }
 
 export type XpEntryUncheckedCreateWithoutProfileAvatarPurchaseInput = {
@@ -800,6 +835,7 @@ export type XpEntryUncheckedCreateWithoutProfileAvatarPurchaseInput = {
   createdAt?: Date | string
   behavior?: Prisma.BehaviorRatingUncheckedCreateNestedOneWithoutXpEntryInput
   activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutXpEntryInput
+  devCoinEntry?: Prisma.DevCoinEntryUncheckedCreateNestedOneWithoutXpEntryInput
 }
 
 export type XpEntryCreateOrConnectWithoutProfileAvatarPurchaseInput = {
@@ -830,6 +866,7 @@ export type XpEntryUpdateWithoutProfileAvatarPurchaseInput = {
   author?: Prisma.UserUpdateOneWithoutAuthoredXpNestedInput
   behavior?: Prisma.BehaviorRatingUpdateOneWithoutXpEntryNestedInput
   activityAwards?: Prisma.ActivityAwardUpdateManyWithoutXpEntryNestedInput
+  devCoinEntry?: Prisma.DevCoinEntryUpdateOneWithoutXpEntryNestedInput
 }
 
 export type XpEntryUncheckedUpdateWithoutProfileAvatarPurchaseInput = {
@@ -844,6 +881,83 @@ export type XpEntryUncheckedUpdateWithoutProfileAvatarPurchaseInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   behavior?: Prisma.BehaviorRatingUncheckedUpdateOneWithoutXpEntryNestedInput
   activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutXpEntryNestedInput
+  devCoinEntry?: Prisma.DevCoinEntryUncheckedUpdateOneWithoutXpEntryNestedInput
+}
+
+export type XpEntryCreateWithoutDevCoinEntryInput = {
+  id?: string
+  delta: number
+  reason: string
+  source: $Enums.XpSource
+  idempotencyKey: string
+  createdAt?: Date | string
+  student: Prisma.UserCreateNestedOneWithoutXpEntriesInput
+  lesson?: Prisma.LessonCreateNestedOneWithoutXpEntriesInput
+  author?: Prisma.UserCreateNestedOneWithoutAuthoredXpInput
+  behavior?: Prisma.BehaviorRatingCreateNestedOneWithoutXpEntryInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutXpEntryInput
+  profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseCreateNestedOneWithoutXpEntryInput
+}
+
+export type XpEntryUncheckedCreateWithoutDevCoinEntryInput = {
+  id?: string
+  studentId: string
+  lessonId?: string | null
+  authorId?: string | null
+  delta: number
+  reason: string
+  source: $Enums.XpSource
+  idempotencyKey: string
+  createdAt?: Date | string
+  behavior?: Prisma.BehaviorRatingUncheckedCreateNestedOneWithoutXpEntryInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutXpEntryInput
+  profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedOneWithoutXpEntryInput
+}
+
+export type XpEntryCreateOrConnectWithoutDevCoinEntryInput = {
+  where: Prisma.XpEntryWhereUniqueInput
+  create: Prisma.XOR<Prisma.XpEntryCreateWithoutDevCoinEntryInput, Prisma.XpEntryUncheckedCreateWithoutDevCoinEntryInput>
+}
+
+export type XpEntryUpsertWithoutDevCoinEntryInput = {
+  update: Prisma.XOR<Prisma.XpEntryUpdateWithoutDevCoinEntryInput, Prisma.XpEntryUncheckedUpdateWithoutDevCoinEntryInput>
+  create: Prisma.XOR<Prisma.XpEntryCreateWithoutDevCoinEntryInput, Prisma.XpEntryUncheckedCreateWithoutDevCoinEntryInput>
+  where?: Prisma.XpEntryWhereInput
+}
+
+export type XpEntryUpdateToOneWithWhereWithoutDevCoinEntryInput = {
+  where?: Prisma.XpEntryWhereInput
+  data: Prisma.XOR<Prisma.XpEntryUpdateWithoutDevCoinEntryInput, Prisma.XpEntryUncheckedUpdateWithoutDevCoinEntryInput>
+}
+
+export type XpEntryUpdateWithoutDevCoinEntryInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  delta?: Prisma.IntFieldUpdateOperationsInput | number
+  reason?: Prisma.StringFieldUpdateOperationsInput | string
+  source?: Prisma.EnumXpSourceFieldUpdateOperationsInput | $Enums.XpSource
+  idempotencyKey?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  student?: Prisma.UserUpdateOneRequiredWithoutXpEntriesNestedInput
+  lesson?: Prisma.LessonUpdateOneWithoutXpEntriesNestedInput
+  author?: Prisma.UserUpdateOneWithoutAuthoredXpNestedInput
+  behavior?: Prisma.BehaviorRatingUpdateOneWithoutXpEntryNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutXpEntryNestedInput
+  profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUpdateOneWithoutXpEntryNestedInput
+}
+
+export type XpEntryUncheckedUpdateWithoutDevCoinEntryInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  studentId?: Prisma.StringFieldUpdateOperationsInput | string
+  lessonId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  authorId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  delta?: Prisma.IntFieldUpdateOperationsInput | number
+  reason?: Prisma.StringFieldUpdateOperationsInput | string
+  source?: Prisma.EnumXpSourceFieldUpdateOperationsInput | $Enums.XpSource
+  idempotencyKey?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  behavior?: Prisma.BehaviorRatingUncheckedUpdateOneWithoutXpEntryNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutXpEntryNestedInput
+  profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUncheckedUpdateOneWithoutXpEntryNestedInput
 }
 
 export type XpEntryCreateWithoutLessonInput = {
@@ -858,6 +972,7 @@ export type XpEntryCreateWithoutLessonInput = {
   behavior?: Prisma.BehaviorRatingCreateNestedOneWithoutXpEntryInput
   activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutXpEntryInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseCreateNestedOneWithoutXpEntryInput
+  devCoinEntry?: Prisma.DevCoinEntryCreateNestedOneWithoutXpEntryInput
 }
 
 export type XpEntryUncheckedCreateWithoutLessonInput = {
@@ -872,6 +987,7 @@ export type XpEntryUncheckedCreateWithoutLessonInput = {
   behavior?: Prisma.BehaviorRatingUncheckedCreateNestedOneWithoutXpEntryInput
   activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutXpEntryInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedOneWithoutXpEntryInput
+  devCoinEntry?: Prisma.DevCoinEntryUncheckedCreateNestedOneWithoutXpEntryInput
 }
 
 export type XpEntryCreateOrConnectWithoutLessonInput = {
@@ -912,6 +1028,7 @@ export type XpEntryCreateWithoutBehaviorInput = {
   author?: Prisma.UserCreateNestedOneWithoutAuthoredXpInput
   activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutXpEntryInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseCreateNestedOneWithoutXpEntryInput
+  devCoinEntry?: Prisma.DevCoinEntryCreateNestedOneWithoutXpEntryInput
 }
 
 export type XpEntryUncheckedCreateWithoutBehaviorInput = {
@@ -926,6 +1043,7 @@ export type XpEntryUncheckedCreateWithoutBehaviorInput = {
   createdAt?: Date | string
   activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutXpEntryInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedOneWithoutXpEntryInput
+  devCoinEntry?: Prisma.DevCoinEntryUncheckedCreateNestedOneWithoutXpEntryInput
 }
 
 export type XpEntryCreateOrConnectWithoutBehaviorInput = {
@@ -956,6 +1074,7 @@ export type XpEntryUpdateWithoutBehaviorInput = {
   author?: Prisma.UserUpdateOneWithoutAuthoredXpNestedInput
   activityAwards?: Prisma.ActivityAwardUpdateManyWithoutXpEntryNestedInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUpdateOneWithoutXpEntryNestedInput
+  devCoinEntry?: Prisma.DevCoinEntryUpdateOneWithoutXpEntryNestedInput
 }
 
 export type XpEntryUncheckedUpdateWithoutBehaviorInput = {
@@ -970,6 +1089,7 @@ export type XpEntryUncheckedUpdateWithoutBehaviorInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutXpEntryNestedInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUncheckedUpdateOneWithoutXpEntryNestedInput
+  devCoinEntry?: Prisma.DevCoinEntryUncheckedUpdateOneWithoutXpEntryNestedInput
 }
 
 export type XpEntryCreateWithoutActivityAwardsInput = {
@@ -984,6 +1104,7 @@ export type XpEntryCreateWithoutActivityAwardsInput = {
   author?: Prisma.UserCreateNestedOneWithoutAuthoredXpInput
   behavior?: Prisma.BehaviorRatingCreateNestedOneWithoutXpEntryInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseCreateNestedOneWithoutXpEntryInput
+  devCoinEntry?: Prisma.DevCoinEntryCreateNestedOneWithoutXpEntryInput
 }
 
 export type XpEntryUncheckedCreateWithoutActivityAwardsInput = {
@@ -998,6 +1119,7 @@ export type XpEntryUncheckedCreateWithoutActivityAwardsInput = {
   createdAt?: Date | string
   behavior?: Prisma.BehaviorRatingUncheckedCreateNestedOneWithoutXpEntryInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedOneWithoutXpEntryInput
+  devCoinEntry?: Prisma.DevCoinEntryUncheckedCreateNestedOneWithoutXpEntryInput
 }
 
 export type XpEntryCreateOrConnectWithoutActivityAwardsInput = {
@@ -1028,6 +1150,7 @@ export type XpEntryUpdateWithoutActivityAwardsInput = {
   author?: Prisma.UserUpdateOneWithoutAuthoredXpNestedInput
   behavior?: Prisma.BehaviorRatingUpdateOneWithoutXpEntryNestedInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUpdateOneWithoutXpEntryNestedInput
+  devCoinEntry?: Prisma.DevCoinEntryUpdateOneWithoutXpEntryNestedInput
 }
 
 export type XpEntryUncheckedUpdateWithoutActivityAwardsInput = {
@@ -1042,6 +1165,7 @@ export type XpEntryUncheckedUpdateWithoutActivityAwardsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   behavior?: Prisma.BehaviorRatingUncheckedUpdateOneWithoutXpEntryNestedInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUncheckedUpdateOneWithoutXpEntryNestedInput
+  devCoinEntry?: Prisma.DevCoinEntryUncheckedUpdateOneWithoutXpEntryNestedInput
 }
 
 export type XpEntryCreateManyStudentInput = {
@@ -1078,6 +1202,7 @@ export type XpEntryUpdateWithoutStudentInput = {
   behavior?: Prisma.BehaviorRatingUpdateOneWithoutXpEntryNestedInput
   activityAwards?: Prisma.ActivityAwardUpdateManyWithoutXpEntryNestedInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUpdateOneWithoutXpEntryNestedInput
+  devCoinEntry?: Prisma.DevCoinEntryUpdateOneWithoutXpEntryNestedInput
 }
 
 export type XpEntryUncheckedUpdateWithoutStudentInput = {
@@ -1092,6 +1217,7 @@ export type XpEntryUncheckedUpdateWithoutStudentInput = {
   behavior?: Prisma.BehaviorRatingUncheckedUpdateOneWithoutXpEntryNestedInput
   activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutXpEntryNestedInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUncheckedUpdateOneWithoutXpEntryNestedInput
+  devCoinEntry?: Prisma.DevCoinEntryUncheckedUpdateOneWithoutXpEntryNestedInput
 }
 
 export type XpEntryUncheckedUpdateManyWithoutStudentInput = {
@@ -1117,6 +1243,7 @@ export type XpEntryUpdateWithoutAuthorInput = {
   behavior?: Prisma.BehaviorRatingUpdateOneWithoutXpEntryNestedInput
   activityAwards?: Prisma.ActivityAwardUpdateManyWithoutXpEntryNestedInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUpdateOneWithoutXpEntryNestedInput
+  devCoinEntry?: Prisma.DevCoinEntryUpdateOneWithoutXpEntryNestedInput
 }
 
 export type XpEntryUncheckedUpdateWithoutAuthorInput = {
@@ -1131,6 +1258,7 @@ export type XpEntryUncheckedUpdateWithoutAuthorInput = {
   behavior?: Prisma.BehaviorRatingUncheckedUpdateOneWithoutXpEntryNestedInput
   activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutXpEntryNestedInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUncheckedUpdateOneWithoutXpEntryNestedInput
+  devCoinEntry?: Prisma.DevCoinEntryUncheckedUpdateOneWithoutXpEntryNestedInput
 }
 
 export type XpEntryUncheckedUpdateManyWithoutAuthorInput = {
@@ -1167,6 +1295,7 @@ export type XpEntryUpdateWithoutLessonInput = {
   behavior?: Prisma.BehaviorRatingUpdateOneWithoutXpEntryNestedInput
   activityAwards?: Prisma.ActivityAwardUpdateManyWithoutXpEntryNestedInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUpdateOneWithoutXpEntryNestedInput
+  devCoinEntry?: Prisma.DevCoinEntryUpdateOneWithoutXpEntryNestedInput
 }
 
 export type XpEntryUncheckedUpdateWithoutLessonInput = {
@@ -1181,6 +1310,7 @@ export type XpEntryUncheckedUpdateWithoutLessonInput = {
   behavior?: Prisma.BehaviorRatingUncheckedUpdateOneWithoutXpEntryNestedInput
   activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutXpEntryNestedInput
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUncheckedUpdateOneWithoutXpEntryNestedInput
+  devCoinEntry?: Prisma.DevCoinEntryUncheckedUpdateOneWithoutXpEntryNestedInput
 }
 
 export type XpEntryUncheckedUpdateManyWithoutLessonInput = {
@@ -1241,6 +1371,7 @@ export type XpEntrySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   behavior?: boolean | Prisma.XpEntry$behaviorArgs<ExtArgs>
   activityAwards?: boolean | Prisma.XpEntry$activityAwardsArgs<ExtArgs>
   profileAvatarPurchase?: boolean | Prisma.XpEntry$profileAvatarPurchaseArgs<ExtArgs>
+  devCoinEntry?: boolean | Prisma.XpEntry$devCoinEntryArgs<ExtArgs>
   _count?: boolean | Prisma.XpEntryCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["xpEntry"]>
 
@@ -1294,6 +1425,7 @@ export type XpEntryInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs
   behavior?: boolean | Prisma.XpEntry$behaviorArgs<ExtArgs>
   activityAwards?: boolean | Prisma.XpEntry$activityAwardsArgs<ExtArgs>
   profileAvatarPurchase?: boolean | Prisma.XpEntry$profileAvatarPurchaseArgs<ExtArgs>
+  devCoinEntry?: boolean | Prisma.XpEntry$devCoinEntryArgs<ExtArgs>
   _count?: boolean | Prisma.XpEntryCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type XpEntryIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1316,6 +1448,7 @@ export type $XpEntryPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     behavior: Prisma.$BehaviorRatingPayload<ExtArgs> | null
     activityAwards: Prisma.$ActivityAwardPayload<ExtArgs>[]
     profileAvatarPurchase: Prisma.$ProfileAvatarPurchasePayload<ExtArgs> | null
+    devCoinEntry: Prisma.$DevCoinEntryPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1727,6 +1860,7 @@ export interface Prisma__XpEntryClient<T, Null = never, ExtArgs extends runtime.
   behavior<T extends Prisma.XpEntry$behaviorArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.XpEntry$behaviorArgs<ExtArgs>>): Prisma.Prisma__BehaviorRatingClient<runtime.Types.Result.GetResult<Prisma.$BehaviorRatingPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   activityAwards<T extends Prisma.XpEntry$activityAwardsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.XpEntry$activityAwardsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ActivityAwardPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   profileAvatarPurchase<T extends Prisma.XpEntry$profileAvatarPurchaseArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.XpEntry$profileAvatarPurchaseArgs<ExtArgs>>): Prisma.Prisma__ProfileAvatarPurchaseClient<runtime.Types.Result.GetResult<Prisma.$ProfileAvatarPurchasePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  devCoinEntry<T extends Prisma.XpEntry$devCoinEntryArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.XpEntry$devCoinEntryArgs<ExtArgs>>): Prisma.Prisma__DevCoinEntryClient<runtime.Types.Result.GetResult<Prisma.$DevCoinEntryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2263,6 +2397,25 @@ export type XpEntry$profileAvatarPurchaseArgs<ExtArgs extends runtime.Types.Exte
    */
   include?: Prisma.ProfileAvatarPurchaseInclude<ExtArgs> | null
   where?: Prisma.ProfileAvatarPurchaseWhereInput
+}
+
+/**
+ * XpEntry.devCoinEntry
+ */
+export type XpEntry$devCoinEntryArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the DevCoinEntry
+   */
+  select?: Prisma.DevCoinEntrySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the DevCoinEntry
+   */
+  omit?: Prisma.DevCoinEntryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.DevCoinEntryInclude<ExtArgs> | null
+  where?: Prisma.DevCoinEntryWhereInput
 }
 
 /**

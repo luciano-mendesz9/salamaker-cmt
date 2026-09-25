@@ -6,7 +6,7 @@ import { prisma } from "@/lib/db";
 
 export default async function Professor(){
   const[students,lessonCount,openLesson]=await Promise.all([
-    prisma.user.findMany({where:{role:"STUDENT"},select:{id:true,firstName:true,lastName:true,accessCode:true,originSchoolClass:true,status:true,xp:true,mustChangePassword:true,createdAt:true,updatedAt:true,lastLoginAt:true,lastSeenAt:true},orderBy:[{status:"asc"},{firstName:"asc"}]}),
+    prisma.user.findMany({where:{role:"STUDENT"},select:{id:true,firstName:true,lastName:true,accessCode:true,originSchoolClass:true,status:true,xp:true,devCoins:true,mustChangePassword:true,createdAt:true,updatedAt:true,lastLoginAt:true,lastSeenAt:true},orderBy:[{status:"asc"},{firstName:"asc"}]}),
     prisma.lesson.count({where:{status:"CLOSED"}}),
     prisma.lesson.findFirst({where:{status:"OPEN"},include:{attendances:{select:{studentId:true,status:true}},participants:{include:{student:{select:{id:true,firstName:true,lastName:true,originSchoolClass:true}}},orderBy:{student:{firstName:"asc"}}}}}),
   ]);

@@ -27,19 +27,21 @@ export type AggregateProfileAvatarPurchase = {
 }
 
 export type ProfileAvatarPurchaseAvgAggregateOutputType = {
-  pricePaid: number | null
+  amountPaid: number | null
 }
 
 export type ProfileAvatarPurchaseSumAggregateOutputType = {
-  pricePaid: number | null
+  amountPaid: number | null
 }
 
 export type ProfileAvatarPurchaseMinAggregateOutputType = {
   id: string | null
   studentId: string | null
   avatarKey: string | null
-  pricePaid: number | null
+  amountPaid: number | null
+  currency: $Enums.AvatarPurchaseCurrency | null
   xpEntryId: string | null
+  devCoinEntryId: string | null
   purchasedAt: Date | null
 }
 
@@ -47,8 +49,10 @@ export type ProfileAvatarPurchaseMaxAggregateOutputType = {
   id: string | null
   studentId: string | null
   avatarKey: string | null
-  pricePaid: number | null
+  amountPaid: number | null
+  currency: $Enums.AvatarPurchaseCurrency | null
   xpEntryId: string | null
+  devCoinEntryId: string | null
   purchasedAt: Date | null
 }
 
@@ -56,27 +60,31 @@ export type ProfileAvatarPurchaseCountAggregateOutputType = {
   id: number
   studentId: number
   avatarKey: number
-  pricePaid: number
+  amountPaid: number
+  currency: number
   xpEntryId: number
+  devCoinEntryId: number
   purchasedAt: number
   _all: number
 }
 
 
 export type ProfileAvatarPurchaseAvgAggregateInputType = {
-  pricePaid?: true
+  amountPaid?: true
 }
 
 export type ProfileAvatarPurchaseSumAggregateInputType = {
-  pricePaid?: true
+  amountPaid?: true
 }
 
 export type ProfileAvatarPurchaseMinAggregateInputType = {
   id?: true
   studentId?: true
   avatarKey?: true
-  pricePaid?: true
+  amountPaid?: true
+  currency?: true
   xpEntryId?: true
+  devCoinEntryId?: true
   purchasedAt?: true
 }
 
@@ -84,8 +92,10 @@ export type ProfileAvatarPurchaseMaxAggregateInputType = {
   id?: true
   studentId?: true
   avatarKey?: true
-  pricePaid?: true
+  amountPaid?: true
+  currency?: true
   xpEntryId?: true
+  devCoinEntryId?: true
   purchasedAt?: true
 }
 
@@ -93,8 +103,10 @@ export type ProfileAvatarPurchaseCountAggregateInputType = {
   id?: true
   studentId?: true
   avatarKey?: true
-  pricePaid?: true
+  amountPaid?: true
+  currency?: true
   xpEntryId?: true
+  devCoinEntryId?: true
   purchasedAt?: true
   _all?: true
 }
@@ -189,8 +201,10 @@ export type ProfileAvatarPurchaseGroupByOutputType = {
   id: string
   studentId: string
   avatarKey: string
-  pricePaid: number
-  xpEntryId: string
+  amountPaid: number
+  currency: $Enums.AvatarPurchaseCurrency
+  xpEntryId: string | null
+  devCoinEntryId: string | null
   purchasedAt: Date
   _count: ProfileAvatarPurchaseCountAggregateOutputType | null
   _avg: ProfileAvatarPurchaseAvgAggregateOutputType | null
@@ -221,45 +235,56 @@ export type ProfileAvatarPurchaseWhereInput = {
   id?: Prisma.UuidFilter<"ProfileAvatarPurchase"> | string
   studentId?: Prisma.UuidFilter<"ProfileAvatarPurchase"> | string
   avatarKey?: Prisma.StringFilter<"ProfileAvatarPurchase"> | string
-  pricePaid?: Prisma.IntFilter<"ProfileAvatarPurchase"> | number
-  xpEntryId?: Prisma.UuidFilter<"ProfileAvatarPurchase"> | string
+  amountPaid?: Prisma.IntFilter<"ProfileAvatarPurchase"> | number
+  currency?: Prisma.EnumAvatarPurchaseCurrencyFilter<"ProfileAvatarPurchase"> | $Enums.AvatarPurchaseCurrency
+  xpEntryId?: Prisma.UuidNullableFilter<"ProfileAvatarPurchase"> | string | null
+  devCoinEntryId?: Prisma.UuidNullableFilter<"ProfileAvatarPurchase"> | string | null
   purchasedAt?: Prisma.DateTimeFilter<"ProfileAvatarPurchase"> | Date | string
   student?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-  xpEntry?: Prisma.XOR<Prisma.XpEntryScalarRelationFilter, Prisma.XpEntryWhereInput>
+  xpEntry?: Prisma.XOR<Prisma.XpEntryNullableScalarRelationFilter, Prisma.XpEntryWhereInput> | null
+  devCoinEntry?: Prisma.XOR<Prisma.DevCoinEntryNullableScalarRelationFilter, Prisma.DevCoinEntryWhereInput> | null
 }
 
 export type ProfileAvatarPurchaseOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   studentId?: Prisma.SortOrder
   avatarKey?: Prisma.SortOrder
-  pricePaid?: Prisma.SortOrder
-  xpEntryId?: Prisma.SortOrder
+  amountPaid?: Prisma.SortOrder
+  currency?: Prisma.SortOrder
+  xpEntryId?: Prisma.SortOrderInput | Prisma.SortOrder
+  devCoinEntryId?: Prisma.SortOrderInput | Prisma.SortOrder
   purchasedAt?: Prisma.SortOrder
   student?: Prisma.UserOrderByWithRelationInput
   xpEntry?: Prisma.XpEntryOrderByWithRelationInput
+  devCoinEntry?: Prisma.DevCoinEntryOrderByWithRelationInput
 }
 
 export type ProfileAvatarPurchaseWhereUniqueInput = Prisma.AtLeast<{
   id?: string
   xpEntryId?: string
+  devCoinEntryId?: string
   studentId_avatarKey?: Prisma.ProfileAvatarPurchaseStudentIdAvatarKeyCompoundUniqueInput
   AND?: Prisma.ProfileAvatarPurchaseWhereInput | Prisma.ProfileAvatarPurchaseWhereInput[]
   OR?: Prisma.ProfileAvatarPurchaseWhereInput[]
   NOT?: Prisma.ProfileAvatarPurchaseWhereInput | Prisma.ProfileAvatarPurchaseWhereInput[]
   studentId?: Prisma.UuidFilter<"ProfileAvatarPurchase"> | string
   avatarKey?: Prisma.StringFilter<"ProfileAvatarPurchase"> | string
-  pricePaid?: Prisma.IntFilter<"ProfileAvatarPurchase"> | number
+  amountPaid?: Prisma.IntFilter<"ProfileAvatarPurchase"> | number
+  currency?: Prisma.EnumAvatarPurchaseCurrencyFilter<"ProfileAvatarPurchase"> | $Enums.AvatarPurchaseCurrency
   purchasedAt?: Prisma.DateTimeFilter<"ProfileAvatarPurchase"> | Date | string
   student?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-  xpEntry?: Prisma.XOR<Prisma.XpEntryScalarRelationFilter, Prisma.XpEntryWhereInput>
-}, "id" | "xpEntryId" | "studentId_avatarKey">
+  xpEntry?: Prisma.XOR<Prisma.XpEntryNullableScalarRelationFilter, Prisma.XpEntryWhereInput> | null
+  devCoinEntry?: Prisma.XOR<Prisma.DevCoinEntryNullableScalarRelationFilter, Prisma.DevCoinEntryWhereInput> | null
+}, "id" | "xpEntryId" | "devCoinEntryId" | "studentId_avatarKey">
 
 export type ProfileAvatarPurchaseOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   studentId?: Prisma.SortOrder
   avatarKey?: Prisma.SortOrder
-  pricePaid?: Prisma.SortOrder
-  xpEntryId?: Prisma.SortOrder
+  amountPaid?: Prisma.SortOrder
+  currency?: Prisma.SortOrder
+  xpEntryId?: Prisma.SortOrderInput | Prisma.SortOrder
+  devCoinEntryId?: Prisma.SortOrderInput | Prisma.SortOrder
   purchasedAt?: Prisma.SortOrder
   _count?: Prisma.ProfileAvatarPurchaseCountOrderByAggregateInput
   _avg?: Prisma.ProfileAvatarPurchaseAvgOrderByAggregateInput
@@ -275,44 +300,54 @@ export type ProfileAvatarPurchaseScalarWhereWithAggregatesInput = {
   id?: Prisma.UuidWithAggregatesFilter<"ProfileAvatarPurchase"> | string
   studentId?: Prisma.UuidWithAggregatesFilter<"ProfileAvatarPurchase"> | string
   avatarKey?: Prisma.StringWithAggregatesFilter<"ProfileAvatarPurchase"> | string
-  pricePaid?: Prisma.IntWithAggregatesFilter<"ProfileAvatarPurchase"> | number
-  xpEntryId?: Prisma.UuidWithAggregatesFilter<"ProfileAvatarPurchase"> | string
+  amountPaid?: Prisma.IntWithAggregatesFilter<"ProfileAvatarPurchase"> | number
+  currency?: Prisma.EnumAvatarPurchaseCurrencyWithAggregatesFilter<"ProfileAvatarPurchase"> | $Enums.AvatarPurchaseCurrency
+  xpEntryId?: Prisma.UuidNullableWithAggregatesFilter<"ProfileAvatarPurchase"> | string | null
+  devCoinEntryId?: Prisma.UuidNullableWithAggregatesFilter<"ProfileAvatarPurchase"> | string | null
   purchasedAt?: Prisma.DateTimeWithAggregatesFilter<"ProfileAvatarPurchase"> | Date | string
 }
 
 export type ProfileAvatarPurchaseCreateInput = {
   id?: string
   avatarKey: string
-  pricePaid: number
+  amountPaid: number
+  currency?: $Enums.AvatarPurchaseCurrency
   purchasedAt?: Date | string
   student: Prisma.UserCreateNestedOneWithoutProfileAvatarPurchasesInput
-  xpEntry: Prisma.XpEntryCreateNestedOneWithoutProfileAvatarPurchaseInput
+  xpEntry?: Prisma.XpEntryCreateNestedOneWithoutProfileAvatarPurchaseInput
+  devCoinEntry?: Prisma.DevCoinEntryCreateNestedOneWithoutProfileAvatarPurchaseInput
 }
 
 export type ProfileAvatarPurchaseUncheckedCreateInput = {
   id?: string
   studentId: string
   avatarKey: string
-  pricePaid: number
-  xpEntryId: string
+  amountPaid: number
+  currency?: $Enums.AvatarPurchaseCurrency
+  xpEntryId?: string | null
+  devCoinEntryId?: string | null
   purchasedAt?: Date | string
 }
 
 export type ProfileAvatarPurchaseUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   avatarKey?: Prisma.StringFieldUpdateOperationsInput | string
-  pricePaid?: Prisma.IntFieldUpdateOperationsInput | number
+  amountPaid?: Prisma.IntFieldUpdateOperationsInput | number
+  currency?: Prisma.EnumAvatarPurchaseCurrencyFieldUpdateOperationsInput | $Enums.AvatarPurchaseCurrency
   purchasedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   student?: Prisma.UserUpdateOneRequiredWithoutProfileAvatarPurchasesNestedInput
-  xpEntry?: Prisma.XpEntryUpdateOneRequiredWithoutProfileAvatarPurchaseNestedInput
+  xpEntry?: Prisma.XpEntryUpdateOneWithoutProfileAvatarPurchaseNestedInput
+  devCoinEntry?: Prisma.DevCoinEntryUpdateOneWithoutProfileAvatarPurchaseNestedInput
 }
 
 export type ProfileAvatarPurchaseUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   studentId?: Prisma.StringFieldUpdateOperationsInput | string
   avatarKey?: Prisma.StringFieldUpdateOperationsInput | string
-  pricePaid?: Prisma.IntFieldUpdateOperationsInput | number
-  xpEntryId?: Prisma.StringFieldUpdateOperationsInput | string
+  amountPaid?: Prisma.IntFieldUpdateOperationsInput | number
+  currency?: Prisma.EnumAvatarPurchaseCurrencyFieldUpdateOperationsInput | $Enums.AvatarPurchaseCurrency
+  xpEntryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  devCoinEntryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   purchasedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -320,15 +355,18 @@ export type ProfileAvatarPurchaseCreateManyInput = {
   id?: string
   studentId: string
   avatarKey: string
-  pricePaid: number
-  xpEntryId: string
+  amountPaid: number
+  currency?: $Enums.AvatarPurchaseCurrency
+  xpEntryId?: string | null
+  devCoinEntryId?: string | null
   purchasedAt?: Date | string
 }
 
 export type ProfileAvatarPurchaseUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   avatarKey?: Prisma.StringFieldUpdateOperationsInput | string
-  pricePaid?: Prisma.IntFieldUpdateOperationsInput | number
+  amountPaid?: Prisma.IntFieldUpdateOperationsInput | number
+  currency?: Prisma.EnumAvatarPurchaseCurrencyFieldUpdateOperationsInput | $Enums.AvatarPurchaseCurrency
   purchasedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -336,8 +374,10 @@ export type ProfileAvatarPurchaseUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   studentId?: Prisma.StringFieldUpdateOperationsInput | string
   avatarKey?: Prisma.StringFieldUpdateOperationsInput | string
-  pricePaid?: Prisma.IntFieldUpdateOperationsInput | number
-  xpEntryId?: Prisma.StringFieldUpdateOperationsInput | string
+  amountPaid?: Prisma.IntFieldUpdateOperationsInput | number
+  currency?: Prisma.EnumAvatarPurchaseCurrencyFieldUpdateOperationsInput | $Enums.AvatarPurchaseCurrency
+  xpEntryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  devCoinEntryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   purchasedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -360,21 +400,25 @@ export type ProfileAvatarPurchaseCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   studentId?: Prisma.SortOrder
   avatarKey?: Prisma.SortOrder
-  pricePaid?: Prisma.SortOrder
+  amountPaid?: Prisma.SortOrder
+  currency?: Prisma.SortOrder
   xpEntryId?: Prisma.SortOrder
+  devCoinEntryId?: Prisma.SortOrder
   purchasedAt?: Prisma.SortOrder
 }
 
 export type ProfileAvatarPurchaseAvgOrderByAggregateInput = {
-  pricePaid?: Prisma.SortOrder
+  amountPaid?: Prisma.SortOrder
 }
 
 export type ProfileAvatarPurchaseMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   studentId?: Prisma.SortOrder
   avatarKey?: Prisma.SortOrder
-  pricePaid?: Prisma.SortOrder
+  amountPaid?: Prisma.SortOrder
+  currency?: Prisma.SortOrder
   xpEntryId?: Prisma.SortOrder
+  devCoinEntryId?: Prisma.SortOrder
   purchasedAt?: Prisma.SortOrder
 }
 
@@ -382,13 +426,15 @@ export type ProfileAvatarPurchaseMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   studentId?: Prisma.SortOrder
   avatarKey?: Prisma.SortOrder
-  pricePaid?: Prisma.SortOrder
+  amountPaid?: Prisma.SortOrder
+  currency?: Prisma.SortOrder
   xpEntryId?: Prisma.SortOrder
+  devCoinEntryId?: Prisma.SortOrder
   purchasedAt?: Prisma.SortOrder
 }
 
 export type ProfileAvatarPurchaseSumOrderByAggregateInput = {
-  pricePaid?: Prisma.SortOrder
+  amountPaid?: Prisma.SortOrder
 }
 
 export type ProfileAvatarPurchaseNullableScalarRelationFilter = {
@@ -438,6 +484,46 @@ export type ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput = 
   deleteMany?: Prisma.ProfileAvatarPurchaseScalarWhereInput | Prisma.ProfileAvatarPurchaseScalarWhereInput[]
 }
 
+export type EnumAvatarPurchaseCurrencyFieldUpdateOperationsInput = {
+  set?: $Enums.AvatarPurchaseCurrency
+}
+
+export type NullableStringFieldUpdateOperationsInput = {
+  set?: string | null
+}
+
+export type ProfileAvatarPurchaseCreateNestedOneWithoutDevCoinEntryInput = {
+  create?: Prisma.XOR<Prisma.ProfileAvatarPurchaseCreateWithoutDevCoinEntryInput, Prisma.ProfileAvatarPurchaseUncheckedCreateWithoutDevCoinEntryInput>
+  connectOrCreate?: Prisma.ProfileAvatarPurchaseCreateOrConnectWithoutDevCoinEntryInput
+  connect?: Prisma.ProfileAvatarPurchaseWhereUniqueInput
+}
+
+export type ProfileAvatarPurchaseUncheckedCreateNestedOneWithoutDevCoinEntryInput = {
+  create?: Prisma.XOR<Prisma.ProfileAvatarPurchaseCreateWithoutDevCoinEntryInput, Prisma.ProfileAvatarPurchaseUncheckedCreateWithoutDevCoinEntryInput>
+  connectOrCreate?: Prisma.ProfileAvatarPurchaseCreateOrConnectWithoutDevCoinEntryInput
+  connect?: Prisma.ProfileAvatarPurchaseWhereUniqueInput
+}
+
+export type ProfileAvatarPurchaseUpdateOneWithoutDevCoinEntryNestedInput = {
+  create?: Prisma.XOR<Prisma.ProfileAvatarPurchaseCreateWithoutDevCoinEntryInput, Prisma.ProfileAvatarPurchaseUncheckedCreateWithoutDevCoinEntryInput>
+  connectOrCreate?: Prisma.ProfileAvatarPurchaseCreateOrConnectWithoutDevCoinEntryInput
+  upsert?: Prisma.ProfileAvatarPurchaseUpsertWithoutDevCoinEntryInput
+  disconnect?: Prisma.ProfileAvatarPurchaseWhereInput | boolean
+  delete?: Prisma.ProfileAvatarPurchaseWhereInput | boolean
+  connect?: Prisma.ProfileAvatarPurchaseWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ProfileAvatarPurchaseUpdateToOneWithWhereWithoutDevCoinEntryInput, Prisma.ProfileAvatarPurchaseUpdateWithoutDevCoinEntryInput>, Prisma.ProfileAvatarPurchaseUncheckedUpdateWithoutDevCoinEntryInput>
+}
+
+export type ProfileAvatarPurchaseUncheckedUpdateOneWithoutDevCoinEntryNestedInput = {
+  create?: Prisma.XOR<Prisma.ProfileAvatarPurchaseCreateWithoutDevCoinEntryInput, Prisma.ProfileAvatarPurchaseUncheckedCreateWithoutDevCoinEntryInput>
+  connectOrCreate?: Prisma.ProfileAvatarPurchaseCreateOrConnectWithoutDevCoinEntryInput
+  upsert?: Prisma.ProfileAvatarPurchaseUpsertWithoutDevCoinEntryInput
+  disconnect?: Prisma.ProfileAvatarPurchaseWhereInput | boolean
+  delete?: Prisma.ProfileAvatarPurchaseWhereInput | boolean
+  connect?: Prisma.ProfileAvatarPurchaseWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ProfileAvatarPurchaseUpdateToOneWithWhereWithoutDevCoinEntryInput, Prisma.ProfileAvatarPurchaseUpdateWithoutDevCoinEntryInput>, Prisma.ProfileAvatarPurchaseUncheckedUpdateWithoutDevCoinEntryInput>
+}
+
 export type ProfileAvatarPurchaseCreateNestedOneWithoutXpEntryInput = {
   create?: Prisma.XOR<Prisma.ProfileAvatarPurchaseCreateWithoutXpEntryInput, Prisma.ProfileAvatarPurchaseUncheckedCreateWithoutXpEntryInput>
   connectOrCreate?: Prisma.ProfileAvatarPurchaseCreateOrConnectWithoutXpEntryInput
@@ -473,16 +559,20 @@ export type ProfileAvatarPurchaseUncheckedUpdateOneWithoutXpEntryNestedInput = {
 export type ProfileAvatarPurchaseCreateWithoutStudentInput = {
   id?: string
   avatarKey: string
-  pricePaid: number
+  amountPaid: number
+  currency?: $Enums.AvatarPurchaseCurrency
   purchasedAt?: Date | string
-  xpEntry: Prisma.XpEntryCreateNestedOneWithoutProfileAvatarPurchaseInput
+  xpEntry?: Prisma.XpEntryCreateNestedOneWithoutProfileAvatarPurchaseInput
+  devCoinEntry?: Prisma.DevCoinEntryCreateNestedOneWithoutProfileAvatarPurchaseInput
 }
 
 export type ProfileAvatarPurchaseUncheckedCreateWithoutStudentInput = {
   id?: string
   avatarKey: string
-  pricePaid: number
-  xpEntryId: string
+  amountPaid: number
+  currency?: $Enums.AvatarPurchaseCurrency
+  xpEntryId?: string | null
+  devCoinEntryId?: string | null
   purchasedAt?: Date | string
 }
 
@@ -519,24 +609,86 @@ export type ProfileAvatarPurchaseScalarWhereInput = {
   id?: Prisma.UuidFilter<"ProfileAvatarPurchase"> | string
   studentId?: Prisma.UuidFilter<"ProfileAvatarPurchase"> | string
   avatarKey?: Prisma.StringFilter<"ProfileAvatarPurchase"> | string
-  pricePaid?: Prisma.IntFilter<"ProfileAvatarPurchase"> | number
-  xpEntryId?: Prisma.UuidFilter<"ProfileAvatarPurchase"> | string
+  amountPaid?: Prisma.IntFilter<"ProfileAvatarPurchase"> | number
+  currency?: Prisma.EnumAvatarPurchaseCurrencyFilter<"ProfileAvatarPurchase"> | $Enums.AvatarPurchaseCurrency
+  xpEntryId?: Prisma.UuidNullableFilter<"ProfileAvatarPurchase"> | string | null
+  devCoinEntryId?: Prisma.UuidNullableFilter<"ProfileAvatarPurchase"> | string | null
   purchasedAt?: Prisma.DateTimeFilter<"ProfileAvatarPurchase"> | Date | string
+}
+
+export type ProfileAvatarPurchaseCreateWithoutDevCoinEntryInput = {
+  id?: string
+  avatarKey: string
+  amountPaid: number
+  currency?: $Enums.AvatarPurchaseCurrency
+  purchasedAt?: Date | string
+  student: Prisma.UserCreateNestedOneWithoutProfileAvatarPurchasesInput
+  xpEntry?: Prisma.XpEntryCreateNestedOneWithoutProfileAvatarPurchaseInput
+}
+
+export type ProfileAvatarPurchaseUncheckedCreateWithoutDevCoinEntryInput = {
+  id?: string
+  studentId: string
+  avatarKey: string
+  amountPaid: number
+  currency?: $Enums.AvatarPurchaseCurrency
+  xpEntryId?: string | null
+  purchasedAt?: Date | string
+}
+
+export type ProfileAvatarPurchaseCreateOrConnectWithoutDevCoinEntryInput = {
+  where: Prisma.ProfileAvatarPurchaseWhereUniqueInput
+  create: Prisma.XOR<Prisma.ProfileAvatarPurchaseCreateWithoutDevCoinEntryInput, Prisma.ProfileAvatarPurchaseUncheckedCreateWithoutDevCoinEntryInput>
+}
+
+export type ProfileAvatarPurchaseUpsertWithoutDevCoinEntryInput = {
+  update: Prisma.XOR<Prisma.ProfileAvatarPurchaseUpdateWithoutDevCoinEntryInput, Prisma.ProfileAvatarPurchaseUncheckedUpdateWithoutDevCoinEntryInput>
+  create: Prisma.XOR<Prisma.ProfileAvatarPurchaseCreateWithoutDevCoinEntryInput, Prisma.ProfileAvatarPurchaseUncheckedCreateWithoutDevCoinEntryInput>
+  where?: Prisma.ProfileAvatarPurchaseWhereInput
+}
+
+export type ProfileAvatarPurchaseUpdateToOneWithWhereWithoutDevCoinEntryInput = {
+  where?: Prisma.ProfileAvatarPurchaseWhereInput
+  data: Prisma.XOR<Prisma.ProfileAvatarPurchaseUpdateWithoutDevCoinEntryInput, Prisma.ProfileAvatarPurchaseUncheckedUpdateWithoutDevCoinEntryInput>
+}
+
+export type ProfileAvatarPurchaseUpdateWithoutDevCoinEntryInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  avatarKey?: Prisma.StringFieldUpdateOperationsInput | string
+  amountPaid?: Prisma.IntFieldUpdateOperationsInput | number
+  currency?: Prisma.EnumAvatarPurchaseCurrencyFieldUpdateOperationsInput | $Enums.AvatarPurchaseCurrency
+  purchasedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  student?: Prisma.UserUpdateOneRequiredWithoutProfileAvatarPurchasesNestedInput
+  xpEntry?: Prisma.XpEntryUpdateOneWithoutProfileAvatarPurchaseNestedInput
+}
+
+export type ProfileAvatarPurchaseUncheckedUpdateWithoutDevCoinEntryInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  studentId?: Prisma.StringFieldUpdateOperationsInput | string
+  avatarKey?: Prisma.StringFieldUpdateOperationsInput | string
+  amountPaid?: Prisma.IntFieldUpdateOperationsInput | number
+  currency?: Prisma.EnumAvatarPurchaseCurrencyFieldUpdateOperationsInput | $Enums.AvatarPurchaseCurrency
+  xpEntryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  purchasedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ProfileAvatarPurchaseCreateWithoutXpEntryInput = {
   id?: string
   avatarKey: string
-  pricePaid: number
+  amountPaid: number
+  currency?: $Enums.AvatarPurchaseCurrency
   purchasedAt?: Date | string
   student: Prisma.UserCreateNestedOneWithoutProfileAvatarPurchasesInput
+  devCoinEntry?: Prisma.DevCoinEntryCreateNestedOneWithoutProfileAvatarPurchaseInput
 }
 
 export type ProfileAvatarPurchaseUncheckedCreateWithoutXpEntryInput = {
   id?: string
   studentId: string
   avatarKey: string
-  pricePaid: number
+  amountPaid: number
+  currency?: $Enums.AvatarPurchaseCurrency
+  devCoinEntryId?: string | null
   purchasedAt?: Date | string
 }
 
@@ -559,48 +711,60 @@ export type ProfileAvatarPurchaseUpdateToOneWithWhereWithoutXpEntryInput = {
 export type ProfileAvatarPurchaseUpdateWithoutXpEntryInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   avatarKey?: Prisma.StringFieldUpdateOperationsInput | string
-  pricePaid?: Prisma.IntFieldUpdateOperationsInput | number
+  amountPaid?: Prisma.IntFieldUpdateOperationsInput | number
+  currency?: Prisma.EnumAvatarPurchaseCurrencyFieldUpdateOperationsInput | $Enums.AvatarPurchaseCurrency
   purchasedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   student?: Prisma.UserUpdateOneRequiredWithoutProfileAvatarPurchasesNestedInput
+  devCoinEntry?: Prisma.DevCoinEntryUpdateOneWithoutProfileAvatarPurchaseNestedInput
 }
 
 export type ProfileAvatarPurchaseUncheckedUpdateWithoutXpEntryInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   studentId?: Prisma.StringFieldUpdateOperationsInput | string
   avatarKey?: Prisma.StringFieldUpdateOperationsInput | string
-  pricePaid?: Prisma.IntFieldUpdateOperationsInput | number
+  amountPaid?: Prisma.IntFieldUpdateOperationsInput | number
+  currency?: Prisma.EnumAvatarPurchaseCurrencyFieldUpdateOperationsInput | $Enums.AvatarPurchaseCurrency
+  devCoinEntryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   purchasedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ProfileAvatarPurchaseCreateManyStudentInput = {
   id?: string
   avatarKey: string
-  pricePaid: number
-  xpEntryId: string
+  amountPaid: number
+  currency?: $Enums.AvatarPurchaseCurrency
+  xpEntryId?: string | null
+  devCoinEntryId?: string | null
   purchasedAt?: Date | string
 }
 
 export type ProfileAvatarPurchaseUpdateWithoutStudentInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   avatarKey?: Prisma.StringFieldUpdateOperationsInput | string
-  pricePaid?: Prisma.IntFieldUpdateOperationsInput | number
+  amountPaid?: Prisma.IntFieldUpdateOperationsInput | number
+  currency?: Prisma.EnumAvatarPurchaseCurrencyFieldUpdateOperationsInput | $Enums.AvatarPurchaseCurrency
   purchasedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  xpEntry?: Prisma.XpEntryUpdateOneRequiredWithoutProfileAvatarPurchaseNestedInput
+  xpEntry?: Prisma.XpEntryUpdateOneWithoutProfileAvatarPurchaseNestedInput
+  devCoinEntry?: Prisma.DevCoinEntryUpdateOneWithoutProfileAvatarPurchaseNestedInput
 }
 
 export type ProfileAvatarPurchaseUncheckedUpdateWithoutStudentInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   avatarKey?: Prisma.StringFieldUpdateOperationsInput | string
-  pricePaid?: Prisma.IntFieldUpdateOperationsInput | number
-  xpEntryId?: Prisma.StringFieldUpdateOperationsInput | string
+  amountPaid?: Prisma.IntFieldUpdateOperationsInput | number
+  currency?: Prisma.EnumAvatarPurchaseCurrencyFieldUpdateOperationsInput | $Enums.AvatarPurchaseCurrency
+  xpEntryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  devCoinEntryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   purchasedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   avatarKey?: Prisma.StringFieldUpdateOperationsInput | string
-  pricePaid?: Prisma.IntFieldUpdateOperationsInput | number
-  xpEntryId?: Prisma.StringFieldUpdateOperationsInput | string
+  amountPaid?: Prisma.IntFieldUpdateOperationsInput | number
+  currency?: Prisma.EnumAvatarPurchaseCurrencyFieldUpdateOperationsInput | $Enums.AvatarPurchaseCurrency
+  xpEntryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  devCoinEntryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   purchasedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -610,70 +774,87 @@ export type ProfileAvatarPurchaseSelect<ExtArgs extends runtime.Types.Extensions
   id?: boolean
   studentId?: boolean
   avatarKey?: boolean
-  pricePaid?: boolean
+  amountPaid?: boolean
+  currency?: boolean
   xpEntryId?: boolean
+  devCoinEntryId?: boolean
   purchasedAt?: boolean
   student?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  xpEntry?: boolean | Prisma.XpEntryDefaultArgs<ExtArgs>
+  xpEntry?: boolean | Prisma.ProfileAvatarPurchase$xpEntryArgs<ExtArgs>
+  devCoinEntry?: boolean | Prisma.ProfileAvatarPurchase$devCoinEntryArgs<ExtArgs>
 }, ExtArgs["result"]["profileAvatarPurchase"]>
 
 export type ProfileAvatarPurchaseSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   studentId?: boolean
   avatarKey?: boolean
-  pricePaid?: boolean
+  amountPaid?: boolean
+  currency?: boolean
   xpEntryId?: boolean
+  devCoinEntryId?: boolean
   purchasedAt?: boolean
   student?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  xpEntry?: boolean | Prisma.XpEntryDefaultArgs<ExtArgs>
+  xpEntry?: boolean | Prisma.ProfileAvatarPurchase$xpEntryArgs<ExtArgs>
+  devCoinEntry?: boolean | Prisma.ProfileAvatarPurchase$devCoinEntryArgs<ExtArgs>
 }, ExtArgs["result"]["profileAvatarPurchase"]>
 
 export type ProfileAvatarPurchaseSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   studentId?: boolean
   avatarKey?: boolean
-  pricePaid?: boolean
+  amountPaid?: boolean
+  currency?: boolean
   xpEntryId?: boolean
+  devCoinEntryId?: boolean
   purchasedAt?: boolean
   student?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  xpEntry?: boolean | Prisma.XpEntryDefaultArgs<ExtArgs>
+  xpEntry?: boolean | Prisma.ProfileAvatarPurchase$xpEntryArgs<ExtArgs>
+  devCoinEntry?: boolean | Prisma.ProfileAvatarPurchase$devCoinEntryArgs<ExtArgs>
 }, ExtArgs["result"]["profileAvatarPurchase"]>
 
 export type ProfileAvatarPurchaseSelectScalar = {
   id?: boolean
   studentId?: boolean
   avatarKey?: boolean
-  pricePaid?: boolean
+  amountPaid?: boolean
+  currency?: boolean
   xpEntryId?: boolean
+  devCoinEntryId?: boolean
   purchasedAt?: boolean
 }
 
-export type ProfileAvatarPurchaseOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "studentId" | "avatarKey" | "pricePaid" | "xpEntryId" | "purchasedAt", ExtArgs["result"]["profileAvatarPurchase"]>
+export type ProfileAvatarPurchaseOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "studentId" | "avatarKey" | "amountPaid" | "currency" | "xpEntryId" | "devCoinEntryId" | "purchasedAt", ExtArgs["result"]["profileAvatarPurchase"]>
 export type ProfileAvatarPurchaseInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   student?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  xpEntry?: boolean | Prisma.XpEntryDefaultArgs<ExtArgs>
+  xpEntry?: boolean | Prisma.ProfileAvatarPurchase$xpEntryArgs<ExtArgs>
+  devCoinEntry?: boolean | Prisma.ProfileAvatarPurchase$devCoinEntryArgs<ExtArgs>
 }
 export type ProfileAvatarPurchaseIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   student?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  xpEntry?: boolean | Prisma.XpEntryDefaultArgs<ExtArgs>
+  xpEntry?: boolean | Prisma.ProfileAvatarPurchase$xpEntryArgs<ExtArgs>
+  devCoinEntry?: boolean | Prisma.ProfileAvatarPurchase$devCoinEntryArgs<ExtArgs>
 }
 export type ProfileAvatarPurchaseIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   student?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  xpEntry?: boolean | Prisma.XpEntryDefaultArgs<ExtArgs>
+  xpEntry?: boolean | Prisma.ProfileAvatarPurchase$xpEntryArgs<ExtArgs>
+  devCoinEntry?: boolean | Prisma.ProfileAvatarPurchase$devCoinEntryArgs<ExtArgs>
 }
 
 export type $ProfileAvatarPurchasePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "ProfileAvatarPurchase"
   objects: {
     student: Prisma.$UserPayload<ExtArgs>
-    xpEntry: Prisma.$XpEntryPayload<ExtArgs>
+    xpEntry: Prisma.$XpEntryPayload<ExtArgs> | null
+    devCoinEntry: Prisma.$DevCoinEntryPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     studentId: string
     avatarKey: string
-    pricePaid: number
-    xpEntryId: string
+    amountPaid: number
+    currency: $Enums.AvatarPurchaseCurrency
+    xpEntryId: string | null
+    devCoinEntryId: string | null
     purchasedAt: Date
   }, ExtArgs["result"]["profileAvatarPurchase"]>
   composites: {}
@@ -1070,7 +1251,8 @@ readonly fields: ProfileAvatarPurchaseFieldRefs;
 export interface Prisma__ProfileAvatarPurchaseClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   student<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  xpEntry<T extends Prisma.XpEntryDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.XpEntryDefaultArgs<ExtArgs>>): Prisma.Prisma__XpEntryClient<runtime.Types.Result.GetResult<Prisma.$XpEntryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  xpEntry<T extends Prisma.ProfileAvatarPurchase$xpEntryArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ProfileAvatarPurchase$xpEntryArgs<ExtArgs>>): Prisma.Prisma__XpEntryClient<runtime.Types.Result.GetResult<Prisma.$XpEntryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  devCoinEntry<T extends Prisma.ProfileAvatarPurchase$devCoinEntryArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ProfileAvatarPurchase$devCoinEntryArgs<ExtArgs>>): Prisma.Prisma__DevCoinEntryClient<runtime.Types.Result.GetResult<Prisma.$DevCoinEntryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1103,8 +1285,10 @@ export interface ProfileAvatarPurchaseFieldRefs {
   readonly id: Prisma.FieldRef<"ProfileAvatarPurchase", 'String'>
   readonly studentId: Prisma.FieldRef<"ProfileAvatarPurchase", 'String'>
   readonly avatarKey: Prisma.FieldRef<"ProfileAvatarPurchase", 'String'>
-  readonly pricePaid: Prisma.FieldRef<"ProfileAvatarPurchase", 'Int'>
+  readonly amountPaid: Prisma.FieldRef<"ProfileAvatarPurchase", 'Int'>
+  readonly currency: Prisma.FieldRef<"ProfileAvatarPurchase", 'AvatarPurchaseCurrency'>
   readonly xpEntryId: Prisma.FieldRef<"ProfileAvatarPurchase", 'String'>
+  readonly devCoinEntryId: Prisma.FieldRef<"ProfileAvatarPurchase", 'String'>
   readonly purchasedAt: Prisma.FieldRef<"ProfileAvatarPurchase", 'DateTime'>
 }
 
@@ -1504,6 +1688,44 @@ export type ProfileAvatarPurchaseDeleteManyArgs<ExtArgs extends runtime.Types.Ex
    * Limit how many ProfileAvatarPurchases to delete.
    */
   limit?: number
+}
+
+/**
+ * ProfileAvatarPurchase.xpEntry
+ */
+export type ProfileAvatarPurchase$xpEntryArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the XpEntry
+   */
+  select?: Prisma.XpEntrySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the XpEntry
+   */
+  omit?: Prisma.XpEntryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.XpEntryInclude<ExtArgs> | null
+  where?: Prisma.XpEntryWhereInput
+}
+
+/**
+ * ProfileAvatarPurchase.devCoinEntry
+ */
+export type ProfileAvatarPurchase$devCoinEntryArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the DevCoinEntry
+   */
+  select?: Prisma.DevCoinEntrySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the DevCoinEntry
+   */
+  omit?: Prisma.DevCoinEntryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.DevCoinEntryInclude<ExtArgs> | null
+  where?: Prisma.DevCoinEntryWhereInput
 }
 
 /**
