@@ -28,11 +28,13 @@ export type AggregateUser = {
 
 export type UserAvgAggregateOutputType = {
   xp: number | null
+  devCoins: number | null
   sessionVersion: number | null
 }
 
 export type UserSumAggregateOutputType = {
   xp: number | null
+  devCoins: number | null
   sessionVersion: number | null
 }
 
@@ -42,6 +44,7 @@ export type UserMinAggregateOutputType = {
   lastName: string | null
   passwordHash: string | null
   xp: number | null
+  devCoins: number | null
   accessCode: string | null
   originSchoolClass: $Enums.SchoolClass | null
   status: $Enums.UserStatus | null
@@ -62,6 +65,7 @@ export type UserMaxAggregateOutputType = {
   lastName: string | null
   passwordHash: string | null
   xp: number | null
+  devCoins: number | null
   accessCode: string | null
   originSchoolClass: $Enums.SchoolClass | null
   status: $Enums.UserStatus | null
@@ -82,6 +86,7 @@ export type UserCountAggregateOutputType = {
   lastName: number
   passwordHash: number
   xp: number
+  devCoins: number
   accessCode: number
   originSchoolClass: number
   status: number
@@ -100,11 +105,13 @@ export type UserCountAggregateOutputType = {
 
 export type UserAvgAggregateInputType = {
   xp?: true
+  devCoins?: true
   sessionVersion?: true
 }
 
 export type UserSumAggregateInputType = {
   xp?: true
+  devCoins?: true
   sessionVersion?: true
 }
 
@@ -114,6 +121,7 @@ export type UserMinAggregateInputType = {
   lastName?: true
   passwordHash?: true
   xp?: true
+  devCoins?: true
   accessCode?: true
   originSchoolClass?: true
   status?: true
@@ -134,6 +142,7 @@ export type UserMaxAggregateInputType = {
   lastName?: true
   passwordHash?: true
   xp?: true
+  devCoins?: true
   accessCode?: true
   originSchoolClass?: true
   status?: true
@@ -154,6 +163,7 @@ export type UserCountAggregateInputType = {
   lastName?: true
   passwordHash?: true
   xp?: true
+  devCoins?: true
   accessCode?: true
   originSchoolClass?: true
   status?: true
@@ -261,6 +271,7 @@ export type UserGroupByOutputType = {
   lastName: string
   passwordHash: string
   xp: number
+  devCoins: number
   accessCode: string
   originSchoolClass: $Enums.SchoolClass | null
   status: $Enums.UserStatus
@@ -304,6 +315,7 @@ export type UserWhereInput = {
   lastName?: Prisma.StringFilter<"User"> | string
   passwordHash?: Prisma.StringFilter<"User"> | string
   xp?: Prisma.IntFilter<"User"> | number
+  devCoins?: Prisma.IntFilter<"User"> | number
   accessCode?: Prisma.StringFilter<"User"> | string
   originSchoolClass?: Prisma.EnumSchoolClassNullableFilter<"User"> | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFilter<"User"> | $Enums.UserStatus
@@ -336,6 +348,8 @@ export type UserWhereInput = {
   authoredNotifications?: Prisma.NotificationListRelationFilter
   notificationReceipts?: Prisma.NotificationReceiptListRelationFilter
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseListRelationFilter
+  devCoinEntries?: Prisma.DevCoinEntryListRelationFilter
+  authoredDevCoinEntries?: Prisma.DevCoinEntryListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -344,6 +358,7 @@ export type UserOrderByWithRelationInput = {
   lastName?: Prisma.SortOrder
   passwordHash?: Prisma.SortOrder
   xp?: Prisma.SortOrder
+  devCoins?: Prisma.SortOrder
   accessCode?: Prisma.SortOrder
   originSchoolClass?: Prisma.SortOrderInput | Prisma.SortOrder
   status?: Prisma.SortOrder
@@ -376,6 +391,8 @@ export type UserOrderByWithRelationInput = {
   authoredNotifications?: Prisma.NotificationOrderByRelationAggregateInput
   notificationReceipts?: Prisma.NotificationReceiptOrderByRelationAggregateInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseOrderByRelationAggregateInput
+  devCoinEntries?: Prisma.DevCoinEntryOrderByRelationAggregateInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -388,6 +405,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   lastName?: Prisma.StringFilter<"User"> | string
   passwordHash?: Prisma.StringFilter<"User"> | string
   xp?: Prisma.IntFilter<"User"> | number
+  devCoins?: Prisma.IntFilter<"User"> | number
   originSchoolClass?: Prisma.EnumSchoolClassNullableFilter<"User"> | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFilter<"User"> | $Enums.UserStatus
   role?: Prisma.EnumRoleFilter<"User"> | $Enums.Role
@@ -419,6 +437,8 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   authoredNotifications?: Prisma.NotificationListRelationFilter
   notificationReceipts?: Prisma.NotificationReceiptListRelationFilter
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseListRelationFilter
+  devCoinEntries?: Prisma.DevCoinEntryListRelationFilter
+  authoredDevCoinEntries?: Prisma.DevCoinEntryListRelationFilter
 }, "id" | "accessCode">
 
 export type UserOrderByWithAggregationInput = {
@@ -427,6 +447,7 @@ export type UserOrderByWithAggregationInput = {
   lastName?: Prisma.SortOrder
   passwordHash?: Prisma.SortOrder
   xp?: Prisma.SortOrder
+  devCoins?: Prisma.SortOrder
   accessCode?: Prisma.SortOrder
   originSchoolClass?: Prisma.SortOrderInput | Prisma.SortOrder
   status?: Prisma.SortOrder
@@ -455,6 +476,7 @@ export type UserScalarWhereWithAggregatesInput = {
   lastName?: Prisma.StringWithAggregatesFilter<"User"> | string
   passwordHash?: Prisma.StringWithAggregatesFilter<"User"> | string
   xp?: Prisma.IntWithAggregatesFilter<"User"> | number
+  devCoins?: Prisma.IntWithAggregatesFilter<"User"> | number
   accessCode?: Prisma.StringWithAggregatesFilter<"User"> | string
   originSchoolClass?: Prisma.EnumSchoolClassNullableWithAggregatesFilter<"User"> | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusWithAggregatesFilter<"User"> | $Enums.UserStatus
@@ -475,6 +497,7 @@ export type UserCreateInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -507,6 +530,8 @@ export type UserCreateInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -515,6 +540,7 @@ export type UserUncheckedCreateInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -547,6 +573,8 @@ export type UserUncheckedCreateInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUpdateInput = {
@@ -555,6 +583,7 @@ export type UserUpdateInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -587,6 +616,8 @@ export type UserUpdateInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -595,6 +626,7 @@ export type UserUncheckedUpdateInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -627,6 +659,8 @@ export type UserUncheckedUpdateInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -635,6 +669,7 @@ export type UserCreateManyInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -655,6 +690,7 @@ export type UserUpdateManyMutationInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -675,6 +711,7 @@ export type UserUncheckedUpdateManyInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -695,6 +732,7 @@ export type UserCountOrderByAggregateInput = {
   lastName?: Prisma.SortOrder
   passwordHash?: Prisma.SortOrder
   xp?: Prisma.SortOrder
+  devCoins?: Prisma.SortOrder
   accessCode?: Prisma.SortOrder
   originSchoolClass?: Prisma.SortOrder
   status?: Prisma.SortOrder
@@ -711,6 +749,7 @@ export type UserCountOrderByAggregateInput = {
 
 export type UserAvgOrderByAggregateInput = {
   xp?: Prisma.SortOrder
+  devCoins?: Prisma.SortOrder
   sessionVersion?: Prisma.SortOrder
 }
 
@@ -720,6 +759,7 @@ export type UserMaxOrderByAggregateInput = {
   lastName?: Prisma.SortOrder
   passwordHash?: Prisma.SortOrder
   xp?: Prisma.SortOrder
+  devCoins?: Prisma.SortOrder
   accessCode?: Prisma.SortOrder
   originSchoolClass?: Prisma.SortOrder
   status?: Prisma.SortOrder
@@ -740,6 +780,7 @@ export type UserMinOrderByAggregateInput = {
   lastName?: Prisma.SortOrder
   passwordHash?: Prisma.SortOrder
   xp?: Prisma.SortOrder
+  devCoins?: Prisma.SortOrder
   accessCode?: Prisma.SortOrder
   originSchoolClass?: Prisma.SortOrder
   status?: Prisma.SortOrder
@@ -756,6 +797,7 @@ export type UserMinOrderByAggregateInput = {
 
 export type UserSumOrderByAggregateInput = {
   xp?: Prisma.SortOrder
+  devCoins?: Prisma.SortOrder
   sessionVersion?: Prisma.SortOrder
 }
 
@@ -817,6 +859,36 @@ export type UserUpdateOneRequiredWithoutProfileAvatarPurchasesNestedInput = {
   upsert?: Prisma.UserUpsertWithoutProfileAvatarPurchasesInput
   connect?: Prisma.UserWhereUniqueInput
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutProfileAvatarPurchasesInput, Prisma.UserUpdateWithoutProfileAvatarPurchasesInput>, Prisma.UserUncheckedUpdateWithoutProfileAvatarPurchasesInput>
+}
+
+export type UserCreateNestedOneWithoutDevCoinEntriesInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutDevCoinEntriesInput, Prisma.UserUncheckedCreateWithoutDevCoinEntriesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutDevCoinEntriesInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutAuthoredDevCoinEntriesInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutAuthoredDevCoinEntriesInput, Prisma.UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutAuthoredDevCoinEntriesInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutDevCoinEntriesNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutDevCoinEntriesInput, Prisma.UserUncheckedCreateWithoutDevCoinEntriesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutDevCoinEntriesInput
+  upsert?: Prisma.UserUpsertWithoutDevCoinEntriesInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutDevCoinEntriesInput, Prisma.UserUpdateWithoutDevCoinEntriesInput>, Prisma.UserUncheckedUpdateWithoutDevCoinEntriesInput>
+}
+
+export type UserUpdateOneWithoutAuthoredDevCoinEntriesNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutAuthoredDevCoinEntriesInput, Prisma.UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutAuthoredDevCoinEntriesInput
+  upsert?: Prisma.UserUpsertWithoutAuthoredDevCoinEntriesInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutAuthoredDevCoinEntriesInput, Prisma.UserUpdateWithoutAuthoredDevCoinEntriesInput>, Prisma.UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput>
 }
 
 export type UserCreateNestedOneWithoutLessonsInput = {
@@ -1099,6 +1171,7 @@ export type UserCreateWithoutProfileAvatarPurchasesInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -1130,6 +1203,8 @@ export type UserCreateWithoutProfileAvatarPurchasesInput = {
   lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutProfileAvatarPurchasesInput = {
@@ -1138,6 +1213,7 @@ export type UserUncheckedCreateWithoutProfileAvatarPurchasesInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -1169,6 +1245,8 @@ export type UserUncheckedCreateWithoutProfileAvatarPurchasesInput = {
   lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutProfileAvatarPurchasesInput = {
@@ -1193,6 +1271,7 @@ export type UserUpdateWithoutProfileAvatarPurchasesInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -1224,6 +1303,8 @@ export type UserUpdateWithoutProfileAvatarPurchasesInput = {
   lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutProfileAvatarPurchasesInput = {
@@ -1232,6 +1313,7 @@ export type UserUncheckedUpdateWithoutProfileAvatarPurchasesInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -1263,6 +1345,376 @@ export type UserUncheckedUpdateWithoutProfileAvatarPurchasesInput = {
   lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserCreateWithoutDevCoinEntriesInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+}
+
+export type UserUncheckedCreateWithoutDevCoinEntriesInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+}
+
+export type UserCreateOrConnectWithoutDevCoinEntriesInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutDevCoinEntriesInput, Prisma.UserUncheckedCreateWithoutDevCoinEntriesInput>
+}
+
+export type UserCreateWithoutAuthoredDevCoinEntriesInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+}
+
+export type UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+}
+
+export type UserCreateOrConnectWithoutAuthoredDevCoinEntriesInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutAuthoredDevCoinEntriesInput, Prisma.UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput>
+}
+
+export type UserUpsertWithoutDevCoinEntriesInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutDevCoinEntriesInput, Prisma.UserUncheckedUpdateWithoutDevCoinEntriesInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutDevCoinEntriesInput, Prisma.UserUncheckedCreateWithoutDevCoinEntriesInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutDevCoinEntriesInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutDevCoinEntriesInput, Prisma.UserUncheckedUpdateWithoutDevCoinEntriesInput>
+}
+
+export type UserUpdateWithoutDevCoinEntriesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserUncheckedUpdateWithoutDevCoinEntriesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserUpsertWithoutAuthoredDevCoinEntriesInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutAuthoredDevCoinEntriesInput, Prisma.UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutAuthoredDevCoinEntriesInput, Prisma.UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutAuthoredDevCoinEntriesInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutAuthoredDevCoinEntriesInput, Prisma.UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput>
+}
+
+export type UserUpdateWithoutAuthoredDevCoinEntriesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+}
+
+export type UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutLessonsInput = {
@@ -1271,6 +1723,7 @@ export type UserCreateWithoutLessonsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -1302,6 +1755,8 @@ export type UserCreateWithoutLessonsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutLessonsInput = {
@@ -1310,6 +1765,7 @@ export type UserUncheckedCreateWithoutLessonsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -1341,6 +1797,8 @@ export type UserUncheckedCreateWithoutLessonsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutLessonsInput = {
@@ -1365,6 +1823,7 @@ export type UserUpdateWithoutLessonsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -1396,6 +1855,8 @@ export type UserUpdateWithoutLessonsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLessonsInput = {
@@ -1404,6 +1865,7 @@ export type UserUncheckedUpdateWithoutLessonsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -1435,6 +1897,8 @@ export type UserUncheckedUpdateWithoutLessonsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutLessonParticipationsInput = {
@@ -1443,6 +1907,7 @@ export type UserCreateWithoutLessonParticipationsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -1474,6 +1939,8 @@ export type UserCreateWithoutLessonParticipationsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutLessonParticipationsInput = {
@@ -1482,6 +1949,7 @@ export type UserUncheckedCreateWithoutLessonParticipationsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -1513,6 +1981,8 @@ export type UserUncheckedCreateWithoutLessonParticipationsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutLessonParticipationsInput = {
@@ -1537,6 +2007,7 @@ export type UserUpdateWithoutLessonParticipationsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -1568,6 +2039,8 @@ export type UserUpdateWithoutLessonParticipationsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLessonParticipationsInput = {
@@ -1576,6 +2049,7 @@ export type UserUncheckedUpdateWithoutLessonParticipationsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -1607,6 +2081,8 @@ export type UserUncheckedUpdateWithoutLessonParticipationsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutAttendancesInput = {
@@ -1615,6 +2091,7 @@ export type UserCreateWithoutAttendancesInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -1646,6 +2123,8 @@ export type UserCreateWithoutAttendancesInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutAttendancesInput = {
@@ -1654,6 +2133,7 @@ export type UserUncheckedCreateWithoutAttendancesInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -1685,6 +2165,8 @@ export type UserUncheckedCreateWithoutAttendancesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutAttendancesInput = {
@@ -1709,6 +2191,7 @@ export type UserUpdateWithoutAttendancesInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -1740,6 +2223,8 @@ export type UserUpdateWithoutAttendancesInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAttendancesInput = {
@@ -1748,6 +2233,7 @@ export type UserUncheckedUpdateWithoutAttendancesInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -1779,6 +2265,8 @@ export type UserUncheckedUpdateWithoutAttendancesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutXpEntriesInput = {
@@ -1787,6 +2275,7 @@ export type UserCreateWithoutXpEntriesInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -1818,6 +2307,8 @@ export type UserCreateWithoutXpEntriesInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutXpEntriesInput = {
@@ -1826,6 +2317,7 @@ export type UserUncheckedCreateWithoutXpEntriesInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -1857,6 +2349,8 @@ export type UserUncheckedCreateWithoutXpEntriesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutXpEntriesInput = {
@@ -1870,6 +2364,7 @@ export type UserCreateWithoutAuthoredXpInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -1901,6 +2396,8 @@ export type UserCreateWithoutAuthoredXpInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredXpInput = {
@@ -1909,6 +2406,7 @@ export type UserUncheckedCreateWithoutAuthoredXpInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -1940,6 +2438,8 @@ export type UserUncheckedCreateWithoutAuthoredXpInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredXpInput = {
@@ -1964,6 +2464,7 @@ export type UserUpdateWithoutXpEntriesInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -1995,6 +2496,8 @@ export type UserUpdateWithoutXpEntriesInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutXpEntriesInput = {
@@ -2003,6 +2506,7 @@ export type UserUncheckedUpdateWithoutXpEntriesInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -2034,6 +2538,8 @@ export type UserUncheckedUpdateWithoutXpEntriesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUpsertWithoutAuthoredXpInput = {
@@ -2053,6 +2559,7 @@ export type UserUpdateWithoutAuthoredXpInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -2084,6 +2591,8 @@ export type UserUpdateWithoutAuthoredXpInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredXpInput = {
@@ -2092,6 +2601,7 @@ export type UserUncheckedUpdateWithoutAuthoredXpInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -2123,6 +2633,8 @@ export type UserUncheckedUpdateWithoutAuthoredXpInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutBehaviorsInput = {
@@ -2131,6 +2643,7 @@ export type UserCreateWithoutBehaviorsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -2162,6 +2675,8 @@ export type UserCreateWithoutBehaviorsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutBehaviorsInput = {
@@ -2170,6 +2685,7 @@ export type UserUncheckedCreateWithoutBehaviorsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -2201,6 +2717,8 @@ export type UserUncheckedCreateWithoutBehaviorsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutBehaviorsInput = {
@@ -2214,6 +2732,7 @@ export type UserCreateWithoutRatedBehaviorsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -2245,6 +2764,8 @@ export type UserCreateWithoutRatedBehaviorsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutRatedBehaviorsInput = {
@@ -2253,6 +2774,7 @@ export type UserUncheckedCreateWithoutRatedBehaviorsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -2284,6 +2806,8 @@ export type UserUncheckedCreateWithoutRatedBehaviorsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutRatedBehaviorsInput = {
@@ -2308,6 +2832,7 @@ export type UserUpdateWithoutBehaviorsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -2339,6 +2864,8 @@ export type UserUpdateWithoutBehaviorsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutBehaviorsInput = {
@@ -2347,6 +2874,7 @@ export type UserUncheckedUpdateWithoutBehaviorsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -2378,6 +2906,8 @@ export type UserUncheckedUpdateWithoutBehaviorsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUpsertWithoutRatedBehaviorsInput = {
@@ -2397,6 +2927,7 @@ export type UserUpdateWithoutRatedBehaviorsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -2428,6 +2959,8 @@ export type UserUpdateWithoutRatedBehaviorsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutRatedBehaviorsInput = {
@@ -2436,6 +2969,7 @@ export type UserUncheckedUpdateWithoutRatedBehaviorsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -2467,6 +3001,8 @@ export type UserUncheckedUpdateWithoutRatedBehaviorsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutCleanupsInput = {
@@ -2475,6 +3011,7 @@ export type UserCreateWithoutCleanupsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -2506,6 +3043,8 @@ export type UserCreateWithoutCleanupsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutCleanupsInput = {
@@ -2514,6 +3053,7 @@ export type UserUncheckedCreateWithoutCleanupsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -2545,6 +3085,8 @@ export type UserUncheckedCreateWithoutCleanupsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutCleanupsInput = {
@@ -2558,6 +3100,7 @@ export type UserCreateWithoutConfirmedCleanupsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -2589,6 +3132,8 @@ export type UserCreateWithoutConfirmedCleanupsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutConfirmedCleanupsInput = {
@@ -2597,6 +3142,7 @@ export type UserUncheckedCreateWithoutConfirmedCleanupsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -2628,6 +3174,8 @@ export type UserUncheckedCreateWithoutConfirmedCleanupsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutConfirmedCleanupsInput = {
@@ -2652,6 +3200,7 @@ export type UserUpdateWithoutCleanupsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -2683,6 +3232,8 @@ export type UserUpdateWithoutCleanupsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCleanupsInput = {
@@ -2691,6 +3242,7 @@ export type UserUncheckedUpdateWithoutCleanupsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -2722,6 +3274,8 @@ export type UserUncheckedUpdateWithoutCleanupsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUpsertWithoutConfirmedCleanupsInput = {
@@ -2741,6 +3295,7 @@ export type UserUpdateWithoutConfirmedCleanupsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -2772,6 +3327,8 @@ export type UserUpdateWithoutConfirmedCleanupsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutConfirmedCleanupsInput = {
@@ -2780,6 +3337,7 @@ export type UserUncheckedUpdateWithoutConfirmedCleanupsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -2811,6 +3369,8 @@ export type UserUncheckedUpdateWithoutConfirmedCleanupsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutAuthoredActivitiesInput = {
@@ -2819,6 +3379,7 @@ export type UserCreateWithoutAuthoredActivitiesInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -2850,6 +3411,8 @@ export type UserCreateWithoutAuthoredActivitiesInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredActivitiesInput = {
@@ -2858,6 +3421,7 @@ export type UserUncheckedCreateWithoutAuthoredActivitiesInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -2889,6 +3453,8 @@ export type UserUncheckedCreateWithoutAuthoredActivitiesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredActivitiesInput = {
@@ -2913,6 +3479,7 @@ export type UserUpdateWithoutAuthoredActivitiesInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -2944,6 +3511,8 @@ export type UserUpdateWithoutAuthoredActivitiesInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredActivitiesInput = {
@@ -2952,6 +3521,7 @@ export type UserUncheckedUpdateWithoutAuthoredActivitiesInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -2983,6 +3553,8 @@ export type UserUncheckedUpdateWithoutAuthoredActivitiesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutAuthoredNotificationsInput = {
@@ -2991,6 +3563,7 @@ export type UserCreateWithoutAuthoredNotificationsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -3022,6 +3595,8 @@ export type UserCreateWithoutAuthoredNotificationsInput = {
   lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredNotificationsInput = {
@@ -3030,6 +3605,7 @@ export type UserUncheckedCreateWithoutAuthoredNotificationsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -3061,6 +3637,8 @@ export type UserUncheckedCreateWithoutAuthoredNotificationsInput = {
   lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredNotificationsInput = {
@@ -3085,6 +3663,7 @@ export type UserUpdateWithoutAuthoredNotificationsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -3116,6 +3695,8 @@ export type UserUpdateWithoutAuthoredNotificationsInput = {
   lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredNotificationsInput = {
@@ -3124,6 +3705,7 @@ export type UserUncheckedUpdateWithoutAuthoredNotificationsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -3155,6 +3737,8 @@ export type UserUncheckedUpdateWithoutAuthoredNotificationsInput = {
   lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutNotificationReceiptsInput = {
@@ -3163,6 +3747,7 @@ export type UserCreateWithoutNotificationReceiptsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -3194,6 +3779,8 @@ export type UserCreateWithoutNotificationReceiptsInput = {
   lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutNotificationReceiptsInput = {
@@ -3202,6 +3789,7 @@ export type UserUncheckedCreateWithoutNotificationReceiptsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -3233,6 +3821,8 @@ export type UserUncheckedCreateWithoutNotificationReceiptsInput = {
   lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutNotificationReceiptsInput = {
@@ -3257,6 +3847,7 @@ export type UserUpdateWithoutNotificationReceiptsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -3288,6 +3879,8 @@ export type UserUpdateWithoutNotificationReceiptsInput = {
   lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutNotificationReceiptsInput = {
@@ -3296,6 +3889,7 @@ export type UserUncheckedUpdateWithoutNotificationReceiptsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -3327,6 +3921,8 @@ export type UserUncheckedUpdateWithoutNotificationReceiptsInput = {
   lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutActivityRecipientsInput = {
@@ -3335,6 +3931,7 @@ export type UserCreateWithoutActivityRecipientsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -3366,6 +3963,8 @@ export type UserCreateWithoutActivityRecipientsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutActivityRecipientsInput = {
@@ -3374,6 +3973,7 @@ export type UserUncheckedCreateWithoutActivityRecipientsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -3405,6 +4005,8 @@ export type UserUncheckedCreateWithoutActivityRecipientsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutActivityRecipientsInput = {
@@ -3429,6 +4031,7 @@ export type UserUpdateWithoutActivityRecipientsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -3460,6 +4063,8 @@ export type UserUpdateWithoutActivityRecipientsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityRecipientsInput = {
@@ -3468,6 +4073,7 @@ export type UserUncheckedUpdateWithoutActivityRecipientsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -3499,6 +4105,8 @@ export type UserUncheckedUpdateWithoutActivityRecipientsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutActivitySubmissionsInput = {
@@ -3507,6 +4115,7 @@ export type UserCreateWithoutActivitySubmissionsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -3538,6 +4147,8 @@ export type UserCreateWithoutActivitySubmissionsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutActivitySubmissionsInput = {
@@ -3546,6 +4157,7 @@ export type UserUncheckedCreateWithoutActivitySubmissionsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -3577,6 +4189,8 @@ export type UserUncheckedCreateWithoutActivitySubmissionsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutActivitySubmissionsInput = {
@@ -3601,6 +4215,7 @@ export type UserUpdateWithoutActivitySubmissionsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -3632,6 +4247,8 @@ export type UserUpdateWithoutActivitySubmissionsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivitySubmissionsInput = {
@@ -3640,6 +4257,7 @@ export type UserUncheckedUpdateWithoutActivitySubmissionsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -3671,6 +4289,8 @@ export type UserUncheckedUpdateWithoutActivitySubmissionsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutActivityAnswersInput = {
@@ -3679,6 +4299,7 @@ export type UserCreateWithoutActivityAnswersInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -3710,6 +4331,8 @@ export type UserCreateWithoutActivityAnswersInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutActivityAnswersInput = {
@@ -3718,6 +4341,7 @@ export type UserUncheckedCreateWithoutActivityAnswersInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -3749,6 +4373,8 @@ export type UserUncheckedCreateWithoutActivityAnswersInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutActivityAnswersInput = {
@@ -3773,6 +4399,7 @@ export type UserUpdateWithoutActivityAnswersInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -3804,6 +4431,8 @@ export type UserUpdateWithoutActivityAnswersInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityAnswersInput = {
@@ -3812,6 +4441,7 @@ export type UserUncheckedUpdateWithoutActivityAnswersInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -3843,6 +4473,8 @@ export type UserUncheckedUpdateWithoutActivityAnswersInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutActivityTeamMembershipsInput = {
@@ -3851,6 +4483,7 @@ export type UserCreateWithoutActivityTeamMembershipsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -3882,6 +4515,8 @@ export type UserCreateWithoutActivityTeamMembershipsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutActivityTeamMembershipsInput = {
@@ -3890,6 +4525,7 @@ export type UserUncheckedCreateWithoutActivityTeamMembershipsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -3921,6 +4557,8 @@ export type UserUncheckedCreateWithoutActivityTeamMembershipsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutActivityTeamMembershipsInput = {
@@ -3945,6 +4583,7 @@ export type UserUpdateWithoutActivityTeamMembershipsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -3976,6 +4615,8 @@ export type UserUpdateWithoutActivityTeamMembershipsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityTeamMembershipsInput = {
@@ -3984,6 +4625,7 @@ export type UserUncheckedUpdateWithoutActivityTeamMembershipsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -4015,6 +4657,8 @@ export type UserUncheckedUpdateWithoutActivityTeamMembershipsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutActivityAwardsInput = {
@@ -4023,6 +4667,7 @@ export type UserCreateWithoutActivityAwardsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -4054,6 +4699,8 @@ export type UserCreateWithoutActivityAwardsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutActivityAwardsInput = {
@@ -4062,6 +4709,7 @@ export type UserUncheckedCreateWithoutActivityAwardsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -4093,6 +4741,8 @@ export type UserUncheckedCreateWithoutActivityAwardsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutActivityAwardsInput = {
@@ -4117,6 +4767,7 @@ export type UserUpdateWithoutActivityAwardsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -4148,6 +4799,8 @@ export type UserUpdateWithoutActivityAwardsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityAwardsInput = {
@@ -4156,6 +4809,7 @@ export type UserUncheckedUpdateWithoutActivityAwardsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -4187,6 +4841,8 @@ export type UserUncheckedUpdateWithoutActivityAwardsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutAuditActionsInput = {
@@ -4195,6 +4851,7 @@ export type UserCreateWithoutAuditActionsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -4226,6 +4883,8 @@ export type UserCreateWithoutAuditActionsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutAuditActionsInput = {
@@ -4234,6 +4893,7 @@ export type UserUncheckedCreateWithoutAuditActionsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -4265,6 +4925,8 @@ export type UserUncheckedCreateWithoutAuditActionsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutAuditActionsInput = {
@@ -4278,6 +4940,7 @@ export type UserCreateWithoutAuditTargetsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -4309,6 +4972,8 @@ export type UserCreateWithoutAuditTargetsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutAuditTargetsInput = {
@@ -4317,6 +4982,7 @@ export type UserUncheckedCreateWithoutAuditTargetsInput = {
   lastName: string
   passwordHash: string
   xp?: number
+  devCoins?: number
   accessCode: string
   originSchoolClass?: $Enums.SchoolClass | null
   status?: $Enums.UserStatus
@@ -4348,6 +5014,8 @@ export type UserUncheckedCreateWithoutAuditTargetsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutAuditTargetsInput = {
@@ -4372,6 +5040,7 @@ export type UserUpdateWithoutAuditActionsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -4403,6 +5072,8 @@ export type UserUpdateWithoutAuditActionsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuditActionsInput = {
@@ -4411,6 +5082,7 @@ export type UserUncheckedUpdateWithoutAuditActionsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -4442,6 +5114,8 @@ export type UserUncheckedUpdateWithoutAuditActionsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUpsertWithoutAuditTargetsInput = {
@@ -4461,6 +5135,7 @@ export type UserUpdateWithoutAuditTargetsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -4492,6 +5167,8 @@ export type UserUpdateWithoutAuditTargetsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuditTargetsInput = {
@@ -4500,6 +5177,7 @@ export type UserUncheckedUpdateWithoutAuditTargetsInput = {
   lastName?: Prisma.StringFieldUpdateOperationsInput | string
   passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
   xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
   accessCode?: Prisma.StringFieldUpdateOperationsInput | string
   originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
   status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
@@ -4531,6 +5209,8 @@ export type UserUncheckedUpdateWithoutAuditTargetsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 
@@ -4559,6 +5239,8 @@ export type UserCountOutputType = {
   authoredNotifications: number
   notificationReceipts: number
   profileAvatarPurchases: number
+  devCoinEntries: number
+  authoredDevCoinEntries: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -4582,6 +5264,8 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   authoredNotifications?: boolean | UserCountOutputTypeCountAuthoredNotificationsArgs
   notificationReceipts?: boolean | UserCountOutputTypeCountNotificationReceiptsArgs
   profileAvatarPurchases?: boolean | UserCountOutputTypeCountProfileAvatarPurchasesArgs
+  devCoinEntries?: boolean | UserCountOutputTypeCountDevCoinEntriesArgs
+  authoredDevCoinEntries?: boolean | UserCountOutputTypeCountAuthoredDevCoinEntriesArgs
 }
 
 /**
@@ -4734,6 +5418,20 @@ export type UserCountOutputTypeCountProfileAvatarPurchasesArgs<ExtArgs extends r
   where?: Prisma.ProfileAvatarPurchaseWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountDevCoinEntriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.DevCoinEntryWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountAuthoredDevCoinEntriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.DevCoinEntryWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -4741,6 +5439,7 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   lastName?: boolean
   passwordHash?: boolean
   xp?: boolean
+  devCoins?: boolean
   accessCode?: boolean
   originSchoolClass?: boolean
   status?: boolean
@@ -4773,6 +5472,8 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   authoredNotifications?: boolean | Prisma.User$authoredNotificationsArgs<ExtArgs>
   notificationReceipts?: boolean | Prisma.User$notificationReceiptsArgs<ExtArgs>
   profileAvatarPurchases?: boolean | Prisma.User$profileAvatarPurchasesArgs<ExtArgs>
+  devCoinEntries?: boolean | Prisma.User$devCoinEntriesArgs<ExtArgs>
+  authoredDevCoinEntries?: boolean | Prisma.User$authoredDevCoinEntriesArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -4782,6 +5483,7 @@ export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   lastName?: boolean
   passwordHash?: boolean
   xp?: boolean
+  devCoins?: boolean
   accessCode?: boolean
   originSchoolClass?: boolean
   status?: boolean
@@ -4802,6 +5504,7 @@ export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   lastName?: boolean
   passwordHash?: boolean
   xp?: boolean
+  devCoins?: boolean
   accessCode?: boolean
   originSchoolClass?: boolean
   status?: boolean
@@ -4822,6 +5525,7 @@ export type UserSelectScalar = {
   lastName?: boolean
   passwordHash?: boolean
   xp?: boolean
+  devCoins?: boolean
   accessCode?: boolean
   originSchoolClass?: boolean
   status?: boolean
@@ -4836,7 +5540,7 @@ export type UserSelectScalar = {
   updatedAt?: boolean
 }
 
-export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "firstName" | "lastName" | "passwordHash" | "xp" | "accessCode" | "originSchoolClass" | "status" | "role" | "profileAvatar" | "sessionVersion" | "mustChangePassword" | "lastLoginAt" | "lastSeenAt" | "deactivatedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "firstName" | "lastName" | "passwordHash" | "xp" | "devCoins" | "accessCode" | "originSchoolClass" | "status" | "role" | "profileAvatar" | "sessionVersion" | "mustChangePassword" | "lastLoginAt" | "lastSeenAt" | "deactivatedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   lessons?: boolean | Prisma.User$lessonsArgs<ExtArgs>
   attendances?: boolean | Prisma.User$attendancesArgs<ExtArgs>
@@ -4858,6 +5562,8 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   authoredNotifications?: boolean | Prisma.User$authoredNotificationsArgs<ExtArgs>
   notificationReceipts?: boolean | Prisma.User$notificationReceiptsArgs<ExtArgs>
   profileAvatarPurchases?: boolean | Prisma.User$profileAvatarPurchasesArgs<ExtArgs>
+  devCoinEntries?: boolean | Prisma.User$devCoinEntriesArgs<ExtArgs>
+  authoredDevCoinEntries?: boolean | Prisma.User$authoredDevCoinEntriesArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -4886,6 +5592,8 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     authoredNotifications: Prisma.$NotificationPayload<ExtArgs>[]
     notificationReceipts: Prisma.$NotificationReceiptPayload<ExtArgs>[]
     profileAvatarPurchases: Prisma.$ProfileAvatarPurchasePayload<ExtArgs>[]
+    devCoinEntries: Prisma.$DevCoinEntryPayload<ExtArgs>[]
+    authoredDevCoinEntries: Prisma.$DevCoinEntryPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -4893,6 +5601,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     lastName: string
     passwordHash: string
     xp: number
+    devCoins: number
     accessCode: string
     originSchoolClass: $Enums.SchoolClass | null
     status: $Enums.UserStatus
@@ -5319,6 +6028,8 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   authoredNotifications<T extends Prisma.User$authoredNotificationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$authoredNotificationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotificationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   notificationReceipts<T extends Prisma.User$notificationReceiptsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$notificationReceiptsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotificationReceiptPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   profileAvatarPurchases<T extends Prisma.User$profileAvatarPurchasesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$profileAvatarPurchasesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProfileAvatarPurchasePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  devCoinEntries<T extends Prisma.User$devCoinEntriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$devCoinEntriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DevCoinEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  authoredDevCoinEntries<T extends Prisma.User$authoredDevCoinEntriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$authoredDevCoinEntriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DevCoinEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -5353,6 +6064,7 @@ export interface UserFieldRefs {
   readonly lastName: Prisma.FieldRef<"User", 'String'>
   readonly passwordHash: Prisma.FieldRef<"User", 'String'>
   readonly xp: Prisma.FieldRef<"User", 'Int'>
+  readonly devCoins: Prisma.FieldRef<"User", 'Int'>
   readonly accessCode: Prisma.FieldRef<"User", 'String'>
   readonly originSchoolClass: Prisma.FieldRef<"User", 'SchoolClass'>
   readonly status: Prisma.FieldRef<"User", 'UserStatus'>
@@ -6235,6 +6947,54 @@ export type User$profileAvatarPurchasesArgs<ExtArgs extends runtime.Types.Extens
   take?: number
   skip?: number
   distinct?: Prisma.ProfileAvatarPurchaseScalarFieldEnum | Prisma.ProfileAvatarPurchaseScalarFieldEnum[]
+}
+
+/**
+ * User.devCoinEntries
+ */
+export type User$devCoinEntriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the DevCoinEntry
+   */
+  select?: Prisma.DevCoinEntrySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the DevCoinEntry
+   */
+  omit?: Prisma.DevCoinEntryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.DevCoinEntryInclude<ExtArgs> | null
+  where?: Prisma.DevCoinEntryWhereInput
+  orderBy?: Prisma.DevCoinEntryOrderByWithRelationInput | Prisma.DevCoinEntryOrderByWithRelationInput[]
+  cursor?: Prisma.DevCoinEntryWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.DevCoinEntryScalarFieldEnum | Prisma.DevCoinEntryScalarFieldEnum[]
+}
+
+/**
+ * User.authoredDevCoinEntries
+ */
+export type User$authoredDevCoinEntriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the DevCoinEntry
+   */
+  select?: Prisma.DevCoinEntrySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the DevCoinEntry
+   */
+  omit?: Prisma.DevCoinEntryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.DevCoinEntryInclude<ExtArgs> | null
+  where?: Prisma.DevCoinEntryWhereInput
+  orderBy?: Prisma.DevCoinEntryOrderByWithRelationInput | Prisma.DevCoinEntryOrderByWithRelationInput[]
+  cursor?: Prisma.DevCoinEntryWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.DevCoinEntryScalarFieldEnum | Prisma.DevCoinEntryScalarFieldEnum[]
 }
 
 /**

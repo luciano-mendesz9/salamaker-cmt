@@ -399,6 +399,7 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 export const ModelName = {
   User: 'User',
   ProfileAvatarPurchase: 'ProfileAvatarPurchase',
+  DevCoinEntry: 'DevCoinEntry',
   AccessCodeSequence: 'AccessCodeSequence',
   Lesson: 'Lesson',
   LessonParticipant: 'LessonParticipant',
@@ -436,7 +437,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "profileAvatarPurchase" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket"
+    modelProps: "user" | "profileAvatarPurchase" | "devCoinEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -585,6 +586,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.ProfileAvatarPurchaseCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.ProfileAvatarPurchaseCountAggregateOutputType> | number
+        }
+      }
+    }
+    DevCoinEntry: {
+      payload: Prisma.$DevCoinEntryPayload<ExtArgs>
+      fields: Prisma.DevCoinEntryFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.DevCoinEntryFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinEntryPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.DevCoinEntryFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinEntryPayload>
+        }
+        findFirst: {
+          args: Prisma.DevCoinEntryFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinEntryPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.DevCoinEntryFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinEntryPayload>
+        }
+        findMany: {
+          args: Prisma.DevCoinEntryFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinEntryPayload>[]
+        }
+        create: {
+          args: Prisma.DevCoinEntryCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinEntryPayload>
+        }
+        createMany: {
+          args: Prisma.DevCoinEntryCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.DevCoinEntryCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinEntryPayload>[]
+        }
+        delete: {
+          args: Prisma.DevCoinEntryDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinEntryPayload>
+        }
+        update: {
+          args: Prisma.DevCoinEntryUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinEntryPayload>
+        }
+        deleteMany: {
+          args: Prisma.DevCoinEntryDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.DevCoinEntryUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.DevCoinEntryUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinEntryPayload>[]
+        }
+        upsert: {
+          args: Prisma.DevCoinEntryUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinEntryPayload>
+        }
+        aggregate: {
+          args: Prisma.DevCoinEntryAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateDevCoinEntry>
+        }
+        groupBy: {
+          args: Prisma.DevCoinEntryGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DevCoinEntryGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.DevCoinEntryCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DevCoinEntryCountAggregateOutputType> | number
         }
       }
     }
@@ -2261,6 +2336,7 @@ export const UserScalarFieldEnum = {
   lastName: 'lastName',
   passwordHash: 'passwordHash',
   xp: 'xp',
+  devCoins: 'devCoins',
   accessCode: 'accessCode',
   originSchoolClass: 'originSchoolClass',
   status: 'status',
@@ -2282,12 +2358,29 @@ export const ProfileAvatarPurchaseScalarFieldEnum = {
   id: 'id',
   studentId: 'studentId',
   avatarKey: 'avatarKey',
-  pricePaid: 'pricePaid',
+  amountPaid: 'amountPaid',
+  currency: 'currency',
   xpEntryId: 'xpEntryId',
+  devCoinEntryId: 'devCoinEntryId',
   purchasedAt: 'purchasedAt'
 } as const
 
 export type ProfileAvatarPurchaseScalarFieldEnum = (typeof ProfileAvatarPurchaseScalarFieldEnum)[keyof typeof ProfileAvatarPurchaseScalarFieldEnum]
+
+
+export const DevCoinEntryScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  authorId: 'authorId',
+  xpEntryId: 'xpEntryId',
+  delta: 'delta',
+  reason: 'reason',
+  source: 'source',
+  idempotencyKey: 'idempotencyKey',
+  createdAt: 'createdAt'
+} as const
+
+export type DevCoinEntryScalarFieldEnum = (typeof DevCoinEntryScalarFieldEnum)[keyof typeof DevCoinEntryScalarFieldEnum]
 
 
 export const AccessCodeSequenceScalarFieldEnum = {
@@ -2380,6 +2473,7 @@ export const AppSettingScalarFieldEnum = {
   studentAreaEnabled: 'studentAreaEnabled',
   accentColor: 'accentColor',
   timeZone: 'timeZone',
+  devCoinsPerXp: 'devCoinsPerXp',
   updatedAt: 'updatedAt'
 } as const
 
@@ -2697,6 +2791,34 @@ export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel
  * Reference to a field of type 'DateTime[]'
  */
 export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
+
+
+
+/**
+ * Reference to a field of type 'AvatarPurchaseCurrency'
+ */
+export type EnumAvatarPurchaseCurrencyFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AvatarPurchaseCurrency'>
+
+
+
+/**
+ * Reference to a field of type 'AvatarPurchaseCurrency[]'
+ */
+export type ListEnumAvatarPurchaseCurrencyFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AvatarPurchaseCurrency[]'>
+
+
+
+/**
+ * Reference to a field of type 'DevCoinSource'
+ */
+export type EnumDevCoinSourceFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DevCoinSource'>
+
+
+
+/**
+ * Reference to a field of type 'DevCoinSource[]'
+ */
+export type ListEnumDevCoinSourceFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DevCoinSource[]'>
 
 
 
@@ -3020,6 +3142,7 @@ export type PrismaClientOptions = PrismaClientOptionsWithAccelerateUrl | PrismaC
 export type GlobalOmitConfig = {
   user?: Prisma.UserOmit
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseOmit
+  devCoinEntry?: Prisma.DevCoinEntryOmit
   accessCodeSequence?: Prisma.AccessCodeSequenceOmit
   lesson?: Prisma.LessonOmit
   lessonParticipant?: Prisma.LessonParticipantOmit

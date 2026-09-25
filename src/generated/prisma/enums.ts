@@ -61,7 +61,8 @@ export const XpSource = {
   BULK: 'BULK',
   SYSTEM: 'SYSTEM',
   ACTIVITY: 'ACTIVITY',
-  PROFILE_AVATAR: 'PROFILE_AVATAR'
+  PROFILE_AVATAR: 'PROFILE_AVATAR',
+  DEV_COIN_PURCHASE: 'DEV_COIN_PURCHASE'
 } as const
 
 export type XpSource = (typeof XpSource)[keyof typeof XpSource]
@@ -78,10 +79,30 @@ export const AuditEvent = {
   ACTIVITY_CREATED: 'ACTIVITY_CREATED',
   ACTIVITY_STATE_CHANGED: 'ACTIVITY_STATE_CHANGED',
   ACTIVITY_GRADED: 'ACTIVITY_GRADED',
-  NOTIFICATION_CREATED: 'NOTIFICATION_CREATED'
+  NOTIFICATION_CREATED: 'NOTIFICATION_CREATED',
+  DEV_COIN_GRANTED: 'DEV_COIN_GRANTED',
+  DEV_COIN_RATE_CHANGED: 'DEV_COIN_RATE_CHANGED'
 } as const
 
 export type AuditEvent = (typeof AuditEvent)[keyof typeof AuditEvent]
+
+
+export const DevCoinSource = {
+  PURCHASE: 'PURCHASE',
+  TEACHER_GRANT: 'TEACHER_GRANT',
+  INITIAL_GRANT: 'INITIAL_GRANT',
+  PROFILE_AVATAR: 'PROFILE_AVATAR'
+} as const
+
+export type DevCoinSource = (typeof DevCoinSource)[keyof typeof DevCoinSource]
+
+
+export const AvatarPurchaseCurrency = {
+  XP: 'XP',
+  DEV_COIN: 'DEV_COIN'
+} as const
+
+export type AvatarPurchaseCurrency = (typeof AvatarPurchaseCurrency)[keyof typeof AvatarPurchaseCurrency]
 
 
 export const NotificationKind = {

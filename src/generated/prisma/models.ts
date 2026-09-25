@@ -10,6 +10,7 @@
  */
 export type * from './models/User'
 export type * from './models/ProfileAvatarPurchase'
+export type * from './models/DevCoinEntry'
 export type * from './models/AccessCodeSequence'
 export type * from './models/Lesson'
 export type * from './models/LessonParticipant'

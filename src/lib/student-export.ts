@@ -1,17 +1,17 @@
 import { strToU8, zipSync } from "fflate";
 
-type ExportStudent = { firstName:string; lastName:string; accessCode:string; originSchoolClass:string|null; xp:number };
+type ExportStudent = { firstName:string; lastName:string; accessCode:string; originSchoolClass:string|null; xp:number; devCoins:number };
 const classLabels:Record<string,string>={GRADE_6_A:"6º Ano A",GRADE_6_B:"6º Ano B",GRADE_6_C:"6º Ano C",GRADE_7_A:"7º Ano A",GRADE_7_B:"7º Ano B",GRADE_7_C:"7º Ano C"};
 
 function xml(value:string){return value.replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&apos;")}
 function textCell(reference:string,value:string,style:number){return `<c r="${reference}" t="inlineStr" s="${style}"><is><t xml:space="preserve">${xml(value)}</t></is></c>`}
 
 export function createStudentsWorkbook(students:ExportStudent[]){
-  const header=["Nome","Código de acesso","Turma","XP"].map((value,index)=>textCell(`${String.fromCharCode(65+index)}1`,value,1)).join("");
+  const header=["Nome","Código de acesso","Turma","XP","Dev-Coins"].map((value,index)=>textCell(`${String.fromCharCode(65+index)}1`,value,1)).join("");
   const rows=students.map((student,index)=>{
     const row=index+2;const style=row%2===0?0:2;
     const schoolClass=student.originSchoolClass?(classLabels[student.originSchoolClass]??student.originSchoolClass):"Sem turma";
-    return `<row r="${row}">${textCell(`A${row}`,`${student.firstName} ${student.lastName}`.trim(),style)}${textCell(`B${row}`,student.accessCode,style)}${textCell(`C${row}`,schoolClass,style)}<c r="D${row}" s="${style}"><v>${student.xp}</v></c></row>`;
+    return `<row r="${row}">${textCell(`A${row}`,`${student.firstName} ${student.lastName}`.trim(),style)}${textCell(`B${row}`,student.accessCode,style)}${textCell(`C${row}`,schoolClass,style)}<c r="D${row}" s="${style}"><v>${student.xp}</v></c><c r="E${row}" s="${style}"><v>${student.devCoins}</v></c></row>`;
   }).join("");
   const lastRow=students.length+1;const createdAt=new Date().toISOString();
   const files:Record<string,Uint8Array>={
@@ -22,7 +22,7 @@ export function createStudentsWorkbook(students:ExportStudent[]){
     "xl/workbook.xml":strToU8(`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="Alunos" sheetId="1" r:id="rId1"/></sheets></workbook>`),
     "xl/_rels/workbook.xml.rels":strToU8(`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>`),
     "xl/styles.xml":strToU8(`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><fonts count="2"><font><sz val="11"/><name val="Calibri"/></font><font><b/><color rgb="FFFFFFFF"/><sz val="11"/><name val="Calibri"/></font></fonts><fills count="4"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FF1D4ED8"/></patternFill></fill><fill><patternFill patternType="solid"><fgColor rgb="FFEFF6FF"/></patternFill></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="3"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1"/><xf numFmtId="0" fontId="0" fillId="3" borderId="0" xfId="0" applyFill="1"/></cellXfs><cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>`),
-    "xl/worksheets/sheet1.xml":strToU8(`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><dimension ref="A1:D${lastRow}"/><sheetViews><sheetView workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews><cols><col min="1" max="1" width="34" customWidth="1"/><col min="2" max="2" width="20" customWidth="1"/><col min="3" max="3" width="18" customWidth="1"/><col min="4" max="4" width="12" customWidth="1"/></cols><sheetData><row r="1" ht="24" customHeight="1">${header}</row>${rows}</sheetData><autoFilter ref="A1:D${lastRow}"/></worksheet>`),
+    "xl/worksheets/sheet1.xml":strToU8(`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><dimension ref="A1:E${lastRow}"/><sheetViews><sheetView workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews><cols><col min="1" max="1" width="34" customWidth="1"/><col min="2" max="2" width="20" customWidth="1"/><col min="3" max="3" width="18" customWidth="1"/><col min="4" max="5" width="12" customWidth="1"/></cols><sheetData><row r="1" ht="24" customHeight="1">${header}</row>${rows}</sheetData><autoFilter ref="A1:E${lastRow}"/></worksheet>`),
   };
   return zipSync(files,{level:6});
 }
