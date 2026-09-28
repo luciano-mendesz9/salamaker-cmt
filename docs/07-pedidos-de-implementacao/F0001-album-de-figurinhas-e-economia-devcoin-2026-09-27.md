@@ -6,7 +6,7 @@
 |---|---|
 | ID | F0001 |
 | Data | 2026-09-27 |
-| Estado | Pedido especificado; nao implementado |
+| Estado | Implementado no codigo em `codex/f001-f002-sticker-album`; migration de producao nao aplicada |
 | Publico | Alunos e professores da Sala Maker |
 | Dependencias | Autenticacao, XP, Dev-Coins, notificacoes e auditoria existentes |
 
@@ -29,6 +29,7 @@ O recurso deve retirar XP de circulacao sem vender vantagem academica. A recompe
 9. Compras feitas diretamente na plataforma devolvem os Dev-Coins ao caixa.
 10. No mercado entre alunos, o vendedor recebe o valor liquido e o caixa recebe uma taxa.
 11. Dev-Coin nao representa dinheiro, nao pode ser comprado com moeda real e nao possui saque ou conversao externa.
+12. Compras e vendas entre alunos comecam desativadas e dependem de ativacao explicita do professor.
 
 ## Terminologia
 
@@ -72,6 +73,8 @@ Deve listar apenas a quantidade acima da primeira unidade. Copias reservadas em 
 ### Mercado global
 
 O aluno ve apenas anuncios de outros alunos ativos, de figurinhas que ainda nao possui e de copias nao vendidas e nao expiradas. Cada anuncio mostra figurinha, raridade, score, preco, data limite e identificacao reduzida do vendedor. Codigo de acesso, sobrenome completo e saldos do vendedor nao devem ser expostos.
+
+O professor controla uma chave persistente no catalogo. Quando desativada, novos anuncios e compras sao recusados no servidor, inclusive se a interface estiver desatualizada. Anuncios existentes permanecem visiveis e podem ser cancelados pelo vendedor para liberar a copia em escrow. A alteracao e auditada e a chave inicia desativada.
 
 ## Cadastro e oferta de figurinhas
 
@@ -342,3 +345,13 @@ Todas as tabelas financeiras e de transferencia precisam de chaves idempotentes,
 - teste de autorizacao entre dois alunos e um professor;
 - teste de teclado, leitor de tela e dispositivo movel;
 - reconciliacao de saldos, caixa, ledgers e estoque depois do teste completo.
+
+## Evidencia de implementacao — 2026-09-28
+
+- A consulta final somente leitura ao Neon compartilhado encontrou 25 contas de aluno, 15.005 DC nos saldos e 15.005 DC no `DevCoinEntry`; a reconciliacao estava exata. Uma leitura anterior havia encontrado 15.020 DC, comprovando que o valor pode mudar enquanto o sistema esta em uso.
+- A abertura adotada e derivada dentro da migration: oferta administrada = 1.000 DC solicitados + 500 DC de reserva + saldo existente. Com o retrato final consultado, isso corresponde a 16.505 DC de oferta e 1.500 DC no caixa depois do reconhecimento dos 15.005 DC ja em circulacao.
+- A migration `20260928120000_add_sticker_album_and_treasury` repete a reconciliacao dentro da propria execucao e aborta diante de qualquer divergencia. Ela nao foi aplicada ao banco compartilhado durante a implementacao.
+- Conversao XP → DC, compra de avatar, pacote Maker, mercado, recompensas e distribuicao do professor agora transferem DC de/para o caixa na mesma transacao. Mint e burn ficam restritos a tesouraria com senha pessoal, motivo, previa e auditoria.
+- Album, sorteio de tres copias com bloqueio concorrente, limite diario, score distinto, patentes versionadas, recompensas idempotentes, anuncios, taxa de mercado, escrow e doacoes com custo de XP foram integrados a autenticacao e aos ledgers existentes.
+- O catalogo do professor possui uma chave persistente, inicialmente desativada, que bloqueia no servidor a criacao e a liquidacao de anuncios sem impedir o cancelamento de anuncios existentes.
+- Portas tecnicas executadas: Prisma format/validate/generate, TypeScript, testes unitarios, lint e build Webpack. Integracao transacional em PostgreSQL descartavel, concorrencia real, navegacao assistiva e validacao visual autenticada continuam pendentes antes do deploy.

@@ -4,6 +4,9 @@ import { z } from "zod";
 import { apiError, requireStudent } from "@/lib/authorization";
 import { prisma } from "@/lib/db";
 import { devCoinsForXp } from "@/lib/dev-coins";
+import { debitTreasury, InsufficientTreasury } from "@/lib/treasury";
+import { assertSameOrigin, consumeRateLimit } from "@/lib/request-security";
+import { requireCollectiblesSchema } from "@/lib/feature-readiness";
 
 const input = z.object({
   xpAmount: z.number().int().min(1).max(10_000),
@@ -57,7 +60,7 @@ async function purchaseDevCoins(studentId: string, xpAmount: number, expectedRat
             idempotencyKey: `dev-coin-purchase-xp:${operationId}`,
           },
         });
-        await tx.devCoinEntry.create({
+        const devCoinEntry = await tx.devCoinEntry.create({
           data: {
             studentId,
             xpEntryId: xpEntry.id,
@@ -66,6 +69,12 @@ async function purchaseDevCoins(studentId: string, xpAmount: number, expectedRat
             source: "PURCHASE",
             idempotencyKey: `dev-coin-purchase:${operationId}`,
           },
+        });
+        await debitTreasury(tx, quantity, {
+          reason: `Conversão de ${xpAmount} XP em ${quantity} DC`,
+          source: "XP_CONVERSION",
+          idempotencyKey: `treasury:dev-coin-purchase:${operationId}`,
+          devCoinEntryId: devCoinEntry.id,
         });
 
         return {
@@ -87,6 +96,9 @@ async function purchaseDevCoins(studentId: string, xpAmount: number, expectedRat
 export async function POST(request: Request) {
   try {
     const { student } = await requireStudent();
+    await requireCollectiblesSchema();
+    assertSameOrigin(request);
+    await consumeRateLimit(`dev-coins:purchase:${student.id}`, 20, 10 * 60_000);
     const { xpAmount, expectedRate } = input.parse(await request.json());
     return NextResponse.json(await purchaseDevCoins(student.id, xpAmount, expectedRate));
   } catch (error) {
@@ -98,6 +110,9 @@ export async function POST(request: Request) {
     }
     if (error instanceof InsufficientXp) {
       return NextResponse.json({ message: "Você não tem XP suficiente para esta compra.", xp: error.xp }, { status: 409 });
+    }
+    if (error instanceof InsufficientTreasury) {
+      return NextResponse.json({ message: "O caixa do sistema não possui Dev-Coins suficientes para esta conversão." }, { status: 409 });
     }
     const [message, status] = apiError(error);
     return NextResponse.json({ message }, { status });

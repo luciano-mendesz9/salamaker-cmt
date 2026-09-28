@@ -62,6 +62,12 @@ enum AuditEvent {
   NOTIFICATION_CREATED
   DEV_COIN_GRANTED
   DEV_COIN_RATE_CHANGED
+  DEV_COIN_TREASURY_CHANGED
+  STICKER_ACTIVATED
+  STICKER_PACK_PURCHASED
+  STICKER_LISTED
+  STICKER_TRADED
+  STICKER_DONATED
 }
 
 enum DevCoinSource {
@@ -69,6 +75,65 @@ enum DevCoinSource {
   TEACHER_GRANT
   INITIAL_GRANT
   PROFILE_AVATAR
+  STICKER_PACK
+  STICKER_MARKET
+  PATENT_REWARD
+}
+
+enum StickerCollectionState {
+  DRAFT
+  ACTIVE
+  ARCHIVED
+}
+
+enum StickerState {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum StickerRarity {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum StickerCopyState {
+  TREASURY
+  OWNED
+  ESCROW
+}
+
+enum StickerListingState {
+  ACTIVE
+  SOLD
+  CANCELLED
+  EXPIRED
+}
+
+enum StickerDonationState {
+  PENDING
+  ACCEPTED
+  DECLINED
+  CANCELLED
+  EXPIRED
+}
+
+enum PatentRewardState {
+  PAID
+  PENDING
+}
+
+enum TreasuryEntrySource {
+  OPENING
+  EXISTING_CIRCULATION
+  XP_CONVERSION
+  PLATFORM_PURCHASE
+  MARKET_FEE
+  PATENT_REWARD
+  TEACHER_DISTRIBUTION
+  ADMIN_MINT
+  ADMIN_BURN
 }
 
 enum AvatarPurchaseCurrency {
@@ -111,46 +176,57 @@ enum TeamDivisionMode {
 }
 
 model User {
-  id                      String                  @id @default(uuid()) @db.Uuid
-  firstName               String
-  lastName                String
-  passwordHash            String
-  xp                      Int                     @default(0)
-  devCoins                Int                     @default(0)
-  accessCode              String                  @unique
-  originSchoolClass       SchoolClass?
-  status                  UserStatus              @default(ACTIVE)
-  role                    Role
-  profileAvatar           String                  @default("default")
-  sessionVersion          Int                     @default(1)
-  mustChangePassword      Boolean                 @default(false)
-  lastLoginAt             DateTime?
-  lastSeenAt              DateTime?
-  deactivatedAt           DateTime?
-  createdAt               DateTime                @default(now())
-  updatedAt               DateTime                @updatedAt
-  lessons                 Lesson[]                @relation("TeacherLessons")
-  attendances             Attendance[]
-  xpEntries               XpEntry[]               @relation("StudentXp")
-  authoredXp              XpEntry[]               @relation("XpAuthor")
-  behaviors               BehaviorRating[]        @relation("StudentBehavior")
-  ratedBehaviors          BehaviorRating[]        @relation("BehaviorTeacher")
-  cleanups                CleanupAssignment[]     @relation("CleanupStudent")
-  confirmedCleanups       CleanupAssignment[]     @relation("CleanupTeacher")
-  auditActions            AuditLog[]              @relation("AuditActor")
-  auditTargets            AuditLog[]              @relation("AuditTarget")
-  authoredActivities      Activity[]              @relation("ActivityAuthor")
-  activityRecipients      ActivityRecipient[]     @relation("ActivityRecipientStudent")
-  activitySubmissions     ActivitySubmission[]
-  activityAnswers         ActivityAnswer[]
-  activityTeamMemberships ActivityTeamMember[]
-  activityAwards          ActivityAward[]
-  lessonParticipations    LessonParticipant[]
-  authoredNotifications   Notification[]          @relation("NotificationAuthor")
-  notificationReceipts    NotificationReceipt[]
-  profileAvatarPurchases  ProfileAvatarPurchase[]
-  devCoinEntries          DevCoinEntry[]          @relation("StudentDevCoins")
-  authoredDevCoinEntries  DevCoinEntry[]          @relation("DevCoinAuthor")
+  id                       String                  @id @default(uuid()) @db.Uuid
+  firstName                String
+  lastName                 String
+  passwordHash             String
+  xp                       Int                     @default(0)
+  devCoins                 Int                     @default(0)
+  accessCode               String                  @unique
+  originSchoolClass        SchoolClass?
+  status                   UserStatus              @default(ACTIVE)
+  role                     Role
+  profileAvatar            String                  @default("default")
+  sessionVersion           Int                     @default(1)
+  mustChangePassword       Boolean                 @default(false)
+  lastLoginAt              DateTime?
+  lastSeenAt               DateTime?
+  deactivatedAt            DateTime?
+  createdAt                DateTime                @default(now())
+  updatedAt                DateTime                @updatedAt
+  lessons                  Lesson[]                @relation("TeacherLessons")
+  attendances              Attendance[]
+  xpEntries                XpEntry[]               @relation("StudentXp")
+  authoredXp               XpEntry[]               @relation("XpAuthor")
+  behaviors                BehaviorRating[]        @relation("StudentBehavior")
+  ratedBehaviors           BehaviorRating[]        @relation("BehaviorTeacher")
+  cleanups                 CleanupAssignment[]     @relation("CleanupStudent")
+  confirmedCleanups        CleanupAssignment[]     @relation("CleanupTeacher")
+  auditActions             AuditLog[]              @relation("AuditActor")
+  auditTargets             AuditLog[]              @relation("AuditTarget")
+  authoredActivities       Activity[]              @relation("ActivityAuthor")
+  activityRecipients       ActivityRecipient[]     @relation("ActivityRecipientStudent")
+  activitySubmissions      ActivitySubmission[]
+  activityAnswers          ActivityAnswer[]
+  activityTeamMemberships  ActivityTeamMember[]
+  activityAwards           ActivityAward[]
+  lessonParticipations     LessonParticipant[]
+  authoredNotifications    Notification[]          @relation("NotificationAuthor")
+  notificationReceipts     NotificationReceipt[]
+  profileAvatarPurchases   ProfileAvatarPurchase[]
+  devCoinEntries           DevCoinEntry[]          @relation("StudentDevCoins")
+  authoredDevCoinEntries   DevCoinEntry[]          @relation("DevCoinAuthor")
+  stickerCopies            StickerCopy[]           @relation("StickerCopyOwner")
+  stickerPackPurchases     StickerPackPurchase[]
+  stickerListings          StickerListing[]        @relation("StickerListingSeller")
+  stickerPurchases         StickerListing[]        @relation("StickerListingBuyer")
+  stickerTradesSold        StickerTrade[]          @relation("StickerTradeSeller")
+  stickerTradesBought      StickerTrade[]          @relation("StickerTradeBuyer")
+  stickerDonationsSent     StickerDonation[]       @relation("StickerDonationSender")
+  stickerDonationsReceived StickerDonation[]       @relation("StickerDonationRecipient")
+  patentProgress           StudentPatentProgress?
+  patentRewardClaims       PatentRewardClaim[]
+  treasuryEntriesAuthored  DevCoinTreasuryEntry[]  @relation("TreasuryEntryAuthor")
 
   @@index([role, status, xp])
   @@index([originSchoolClass, status])
@@ -187,8 +263,201 @@ model DevCoinEntry {
   author                User?                  @relation("DevCoinAuthor", fields: [authorId], references: [id], onDelete: SetNull)
   xpEntry               XpEntry?               @relation(fields: [xpEntryId], references: [id], onDelete: Restrict)
   profileAvatarPurchase ProfileAvatarPurchase?
+  treasuryEntry         DevCoinTreasuryEntry?
 
   @@index([studentId, createdAt])
+}
+
+model StickerCollection {
+  id           String                 @id @default(uuid()) @db.Uuid
+  slug         String                 @unique
+  name         String
+  state        StickerCollectionState @default(DRAFT)
+  activatedAt  DateTime?
+  createdAt    DateTime               @default(now())
+  updatedAt    DateTime               @updatedAt
+  stickers     Sticker[]
+  patentLevels PatentLevel[]
+}
+
+model Sticker {
+  id                 String            @id @default(uuid()) @db.Uuid
+  collectionId       String            @db.Uuid
+  number             Int
+  slug               String            @unique
+  name               String
+  description        String
+  alt                String
+  imagePath          String
+  manifestHash       String
+  totalCopies        Int
+  rarity             StickerRarity
+  score              Int
+  state              StickerState      @default(DRAFT)
+  publishedAt        DateTime?
+  firstDistributedAt DateTime?
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  collection         StickerCollection @relation(fields: [collectionId], references: [id], onDelete: Restrict)
+  copies             StickerCopy[]
+
+  @@unique([collectionId, number])
+  @@index([collectionId, state, number])
+}
+
+model StickerCopy {
+  id             String               @id @default(uuid()) @db.Uuid
+  stickerId      String               @db.Uuid
+  serial         Int
+  ownerId        String?              @db.Uuid
+  state          StickerCopyState     @default(TREASURY)
+  packPurchaseId String?              @db.Uuid
+  acquiredAt     DateTime?
+  createdAt      DateTime             @default(now())
+  sticker        Sticker              @relation(fields: [stickerId], references: [id], onDelete: Restrict)
+  owner          User?                @relation("StickerCopyOwner", fields: [ownerId], references: [id], onDelete: Restrict)
+  packPurchase   StickerPackPurchase? @relation(fields: [packPurchaseId], references: [id], onDelete: Restrict)
+  listings       StickerListing[]
+  donations      StickerDonation[]
+
+  @@unique([stickerId, serial])
+  @@index([ownerId, state, stickerId])
+  @@index([state, stickerId])
+}
+
+model StickerPackPurchase {
+  id             String        @id @default(uuid()) @db.Uuid
+  studentId      String        @db.Uuid
+  price          Int
+  schoolDay      String
+  idempotencyKey String        @unique
+  createdAt      DateTime      @default(now())
+  student        User          @relation(fields: [studentId], references: [id], onDelete: Restrict)
+  copies         StickerCopy[]
+
+  @@index([studentId, schoolDay])
+}
+
+model StickerListing {
+  id        String              @id @default(uuid()) @db.Uuid
+  copyId    String              @db.Uuid
+  sellerId  String              @db.Uuid
+  buyerId   String?             @db.Uuid
+  price     Int
+  state     StickerListingState @default(ACTIVE)
+  expiresAt DateTime
+  createdAt DateTime            @default(now())
+  settledAt DateTime?
+  copy      StickerCopy         @relation(fields: [copyId], references: [id], onDelete: Restrict)
+  seller    User                @relation("StickerListingSeller", fields: [sellerId], references: [id], onDelete: Restrict)
+  buyer     User?               @relation("StickerListingBuyer", fields: [buyerId], references: [id], onDelete: Restrict)
+  trade     StickerTrade?
+
+  @@index([state, expiresAt])
+  @@index([sellerId, state])
+}
+
+model StickerTrade {
+  id           String         @id @default(uuid()) @db.Uuid
+  listingId    String         @unique @db.Uuid
+  sellerId     String         @db.Uuid
+  buyerId      String         @db.Uuid
+  price        Int
+  sellerAmount Int
+  fee          Int
+  createdAt    DateTime       @default(now())
+  listing      StickerListing @relation(fields: [listingId], references: [id], onDelete: Restrict)
+  seller       User           @relation("StickerTradeSeller", fields: [sellerId], references: [id], onDelete: Restrict)
+  buyer        User           @relation("StickerTradeBuyer", fields: [buyerId], references: [id], onDelete: Restrict)
+}
+
+model StickerDonation {
+  id          String               @id @default(uuid()) @db.Uuid
+  copyId      String               @db.Uuid
+  senderId    String               @db.Uuid
+  recipientId String               @db.Uuid
+  state       StickerDonationState @default(PENDING)
+  expiresAt   DateTime
+  createdAt   DateTime             @default(now())
+  resolvedAt  DateTime?
+  copy        StickerCopy          @relation(fields: [copyId], references: [id], onDelete: Restrict)
+  sender      User                 @relation("StickerDonationSender", fields: [senderId], references: [id], onDelete: Restrict)
+  recipient   User                 @relation("StickerDonationRecipient", fields: [recipientId], references: [id], onDelete: Restrict)
+
+  @@index([recipientId, state, expiresAt])
+  @@index([senderId, state])
+}
+
+model PatentLevel {
+  id            String                  @id @default(uuid()) @db.Uuid
+  collectionId  String                  @db.Uuid
+  version       Int
+  rank          Int
+  name          String
+  threshold     Int
+  xpReward      Int
+  devCoinReward Int
+  packReward    Int                     @default(0)
+  collection    StickerCollection       @relation(fields: [collectionId], references: [id], onDelete: Restrict)
+  progress      StudentPatentProgress[]
+  rewardClaims  PatentRewardClaim[]
+
+  @@unique([collectionId, version, rank])
+}
+
+model StudentPatentProgress {
+  id        String       @id @default(uuid()) @db.Uuid
+  studentId String       @unique @db.Uuid
+  score     Int          @default(0)
+  levelId   String?      @db.Uuid
+  bestRank  Int          @default(1)
+  updatedAt DateTime     @updatedAt
+  student   User         @relation(fields: [studentId], references: [id], onDelete: Restrict)
+  level     PatentLevel? @relation(fields: [levelId], references: [id], onDelete: Restrict)
+}
+
+model PatentRewardClaim {
+  id            String            @id @default(uuid()) @db.Uuid
+  studentId     String            @db.Uuid
+  patentLevelId String            @db.Uuid
+  state         PatentRewardState
+  xpPaid        Int               @default(0)
+  devCoinsPaid  Int               @default(0)
+  packPaid      Int               @default(0)
+  createdAt     DateTime          @default(now())
+  paidAt        DateTime?
+  student       User              @relation(fields: [studentId], references: [id], onDelete: Restrict)
+  patentLevel   PatentLevel       @relation(fields: [patentLevelId], references: [id], onDelete: Restrict)
+
+  @@unique([studentId, patentLevelId])
+}
+
+model DevCoinTreasury {
+  id          Int      @id @default(1)
+  balance     Int
+  totalSupply Int
+  updatedAt   DateTime @updatedAt
+}
+
+model StickerMarketSetting {
+  id        Int      @id @default(1)
+  enabled   Boolean  @default(false)
+  updatedAt DateTime @updatedAt
+}
+
+model DevCoinTreasuryEntry {
+  id             String              @id @default(uuid()) @db.Uuid
+  authorId       String?             @db.Uuid
+  devCoinEntryId String?             @unique @db.Uuid
+  delta          Int
+  reason         String
+  source         TreasuryEntrySource
+  idempotencyKey String              @unique
+  createdAt      DateTime            @default(now())
+  author         User?               @relation("TreasuryEntryAuthor", fields: [authorId], references: [id], onDelete: SetNull)
+  devCoinEntry   DevCoinEntry?       @relation(fields: [devCoinEntryId], references: [id], onDelete: Restrict)
+
+  @@index([createdAt])
 }
 
 model AccessCodeSequence {

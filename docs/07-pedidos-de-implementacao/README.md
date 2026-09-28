@@ -12,7 +12,7 @@ F<numero>-<nome-do-recurso>-<AAAA-MM-DD>.md
 
 | ID | Recurso | Estado |
 |---|---|---|
-| [F0001](./F0001-album-de-figurinhas-e-economia-devcoin-2026-09-27.md) | Album de figurinhas, patentes, mercado e oferta administrada de Dev-Coins | Especificado; nao implementado |
-| [F0002](./F0002-gerenciador-local-de-imagens-2026-09-27.md) | Upload local de avatares e figurinhas com conversao para WebP | Especificado; nao implementado |
+| [F0001](./F0001-album-de-figurinhas-e-economia-devcoin-2026-09-27.md) | Album de figurinhas, patentes, mercado e oferta administrada de Dev-Coins | Implementado no codigo; migration de producao pendente |
+| [F0002](./F0002-gerenciador-local-de-imagens-2026-09-27.md) | Upload local de avatares e figurinhas com conversao para WebP | Implementado no codigo; validacao visual/local pendente |
 
 Os documentos desta pasta nao devem ser interpretados como evidencia de que as telas, APIs, tabelas ou migracoes ja existem.

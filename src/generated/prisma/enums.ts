@@ -81,7 +81,13 @@ export const AuditEvent = {
   ACTIVITY_GRADED: 'ACTIVITY_GRADED',
   NOTIFICATION_CREATED: 'NOTIFICATION_CREATED',
   DEV_COIN_GRANTED: 'DEV_COIN_GRANTED',
-  DEV_COIN_RATE_CHANGED: 'DEV_COIN_RATE_CHANGED'
+  DEV_COIN_RATE_CHANGED: 'DEV_COIN_RATE_CHANGED',
+  DEV_COIN_TREASURY_CHANGED: 'DEV_COIN_TREASURY_CHANGED',
+  STICKER_ACTIVATED: 'STICKER_ACTIVATED',
+  STICKER_PACK_PURCHASED: 'STICKER_PACK_PURCHASED',
+  STICKER_LISTED: 'STICKER_LISTED',
+  STICKER_TRADED: 'STICKER_TRADED',
+  STICKER_DONATED: 'STICKER_DONATED'
 } as const
 
 export type AuditEvent = (typeof AuditEvent)[keyof typeof AuditEvent]
@@ -91,10 +97,93 @@ export const DevCoinSource = {
   PURCHASE: 'PURCHASE',
   TEACHER_GRANT: 'TEACHER_GRANT',
   INITIAL_GRANT: 'INITIAL_GRANT',
-  PROFILE_AVATAR: 'PROFILE_AVATAR'
+  PROFILE_AVATAR: 'PROFILE_AVATAR',
+  STICKER_PACK: 'STICKER_PACK',
+  STICKER_MARKET: 'STICKER_MARKET',
+  PATENT_REWARD: 'PATENT_REWARD'
 } as const
 
 export type DevCoinSource = (typeof DevCoinSource)[keyof typeof DevCoinSource]
+
+
+export const StickerCollectionState = {
+  DRAFT: 'DRAFT',
+  ACTIVE: 'ACTIVE',
+  ARCHIVED: 'ARCHIVED'
+} as const
+
+export type StickerCollectionState = (typeof StickerCollectionState)[keyof typeof StickerCollectionState]
+
+
+export const StickerState = {
+  DRAFT: 'DRAFT',
+  PUBLISHED: 'PUBLISHED',
+  ARCHIVED: 'ARCHIVED'
+} as const
+
+export type StickerState = (typeof StickerState)[keyof typeof StickerState]
+
+
+export const StickerRarity = {
+  LOW: 'LOW',
+  MEDIUM: 'MEDIUM',
+  HIGH: 'HIGH'
+} as const
+
+export type StickerRarity = (typeof StickerRarity)[keyof typeof StickerRarity]
+
+
+export const StickerCopyState = {
+  TREASURY: 'TREASURY',
+  OWNED: 'OWNED',
+  ESCROW: 'ESCROW'
+} as const
+
+export type StickerCopyState = (typeof StickerCopyState)[keyof typeof StickerCopyState]
+
+
+export const StickerListingState = {
+  ACTIVE: 'ACTIVE',
+  SOLD: 'SOLD',
+  CANCELLED: 'CANCELLED',
+  EXPIRED: 'EXPIRED'
+} as const
+
+export type StickerListingState = (typeof StickerListingState)[keyof typeof StickerListingState]
+
+
+export const StickerDonationState = {
+  PENDING: 'PENDING',
+  ACCEPTED: 'ACCEPTED',
+  DECLINED: 'DECLINED',
+  CANCELLED: 'CANCELLED',
+  EXPIRED: 'EXPIRED'
+} as const
+
+export type StickerDonationState = (typeof StickerDonationState)[keyof typeof StickerDonationState]
+
+
+export const PatentRewardState = {
+  PAID: 'PAID',
+  PENDING: 'PENDING'
+} as const
+
+export type PatentRewardState = (typeof PatentRewardState)[keyof typeof PatentRewardState]
+
+
+export const TreasuryEntrySource = {
+  OPENING: 'OPENING',
+  EXISTING_CIRCULATION: 'EXISTING_CIRCULATION',
+  XP_CONVERSION: 'XP_CONVERSION',
+  PLATFORM_PURCHASE: 'PLATFORM_PURCHASE',
+  MARKET_FEE: 'MARKET_FEE',
+  PATENT_REWARD: 'PATENT_REWARD',
+  TEACHER_DISTRIBUTION: 'TEACHER_DISTRIBUTION',
+  ADMIN_MINT: 'ADMIN_MINT',
+  ADMIN_BURN: 'ADMIN_BURN'
+} as const
+
+export type TreasuryEntrySource = (typeof TreasuryEntrySource)[keyof typeof TreasuryEntrySource]
 
 
 export const AvatarPurchaseCurrency = {

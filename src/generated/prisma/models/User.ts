@@ -350,6 +350,17 @@ export type UserWhereInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseListRelationFilter
   devCoinEntries?: Prisma.DevCoinEntryListRelationFilter
   authoredDevCoinEntries?: Prisma.DevCoinEntryListRelationFilter
+  stickerCopies?: Prisma.StickerCopyListRelationFilter
+  stickerPackPurchases?: Prisma.StickerPackPurchaseListRelationFilter
+  stickerListings?: Prisma.StickerListingListRelationFilter
+  stickerPurchases?: Prisma.StickerListingListRelationFilter
+  stickerTradesSold?: Prisma.StickerTradeListRelationFilter
+  stickerTradesBought?: Prisma.StickerTradeListRelationFilter
+  stickerDonationsSent?: Prisma.StickerDonationListRelationFilter
+  stickerDonationsReceived?: Prisma.StickerDonationListRelationFilter
+  patentProgress?: Prisma.XOR<Prisma.StudentPatentProgressNullableScalarRelationFilter, Prisma.StudentPatentProgressWhereInput> | null
+  patentRewardClaims?: Prisma.PatentRewardClaimListRelationFilter
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -393,6 +404,17 @@ export type UserOrderByWithRelationInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseOrderByRelationAggregateInput
   devCoinEntries?: Prisma.DevCoinEntryOrderByRelationAggregateInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryOrderByRelationAggregateInput
+  stickerCopies?: Prisma.StickerCopyOrderByRelationAggregateInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseOrderByRelationAggregateInput
+  stickerListings?: Prisma.StickerListingOrderByRelationAggregateInput
+  stickerPurchases?: Prisma.StickerListingOrderByRelationAggregateInput
+  stickerTradesSold?: Prisma.StickerTradeOrderByRelationAggregateInput
+  stickerTradesBought?: Prisma.StickerTradeOrderByRelationAggregateInput
+  stickerDonationsSent?: Prisma.StickerDonationOrderByRelationAggregateInput
+  stickerDonationsReceived?: Prisma.StickerDonationOrderByRelationAggregateInput
+  patentProgress?: Prisma.StudentPatentProgressOrderByWithRelationInput
+  patentRewardClaims?: Prisma.PatentRewardClaimOrderByRelationAggregateInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -439,6 +461,17 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseListRelationFilter
   devCoinEntries?: Prisma.DevCoinEntryListRelationFilter
   authoredDevCoinEntries?: Prisma.DevCoinEntryListRelationFilter
+  stickerCopies?: Prisma.StickerCopyListRelationFilter
+  stickerPackPurchases?: Prisma.StickerPackPurchaseListRelationFilter
+  stickerListings?: Prisma.StickerListingListRelationFilter
+  stickerPurchases?: Prisma.StickerListingListRelationFilter
+  stickerTradesSold?: Prisma.StickerTradeListRelationFilter
+  stickerTradesBought?: Prisma.StickerTradeListRelationFilter
+  stickerDonationsSent?: Prisma.StickerDonationListRelationFilter
+  stickerDonationsReceived?: Prisma.StickerDonationListRelationFilter
+  patentProgress?: Prisma.XOR<Prisma.StudentPatentProgressNullableScalarRelationFilter, Prisma.StudentPatentProgressWhereInput> | null
+  patentRewardClaims?: Prisma.PatentRewardClaimListRelationFilter
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryListRelationFilter
 }, "id" | "accessCode">
 
 export type UserOrderByWithAggregationInput = {
@@ -532,6 +565,17 @@ export type UserCreateInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -575,6 +619,17 @@ export type UserUncheckedCreateInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUpdateInput = {
@@ -618,6 +673,17 @@ export type UserUpdateInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -661,6 +727,17 @@ export type UserUncheckedUpdateInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -889,6 +966,166 @@ export type UserUpdateOneWithoutAuthoredDevCoinEntriesNestedInput = {
   delete?: Prisma.UserWhereInput | boolean
   connect?: Prisma.UserWhereUniqueInput
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutAuthoredDevCoinEntriesInput, Prisma.UserUpdateWithoutAuthoredDevCoinEntriesInput>, Prisma.UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput>
+}
+
+export type UserCreateNestedOneWithoutStickerCopiesInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStickerCopiesInput, Prisma.UserUncheckedCreateWithoutStickerCopiesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStickerCopiesInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneWithoutStickerCopiesNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStickerCopiesInput, Prisma.UserUncheckedCreateWithoutStickerCopiesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStickerCopiesInput
+  upsert?: Prisma.UserUpsertWithoutStickerCopiesInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutStickerCopiesInput, Prisma.UserUpdateWithoutStickerCopiesInput>, Prisma.UserUncheckedUpdateWithoutStickerCopiesInput>
+}
+
+export type UserCreateNestedOneWithoutStickerPackPurchasesInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStickerPackPurchasesInput, Prisma.UserUncheckedCreateWithoutStickerPackPurchasesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStickerPackPurchasesInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutStickerPackPurchasesNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStickerPackPurchasesInput, Prisma.UserUncheckedCreateWithoutStickerPackPurchasesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStickerPackPurchasesInput
+  upsert?: Prisma.UserUpsertWithoutStickerPackPurchasesInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutStickerPackPurchasesInput, Prisma.UserUpdateWithoutStickerPackPurchasesInput>, Prisma.UserUncheckedUpdateWithoutStickerPackPurchasesInput>
+}
+
+export type UserCreateNestedOneWithoutStickerListingsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStickerListingsInput, Prisma.UserUncheckedCreateWithoutStickerListingsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStickerListingsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutStickerPurchasesInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStickerPurchasesInput, Prisma.UserUncheckedCreateWithoutStickerPurchasesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStickerPurchasesInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutStickerListingsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStickerListingsInput, Prisma.UserUncheckedCreateWithoutStickerListingsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStickerListingsInput
+  upsert?: Prisma.UserUpsertWithoutStickerListingsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutStickerListingsInput, Prisma.UserUpdateWithoutStickerListingsInput>, Prisma.UserUncheckedUpdateWithoutStickerListingsInput>
+}
+
+export type UserUpdateOneWithoutStickerPurchasesNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStickerPurchasesInput, Prisma.UserUncheckedCreateWithoutStickerPurchasesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStickerPurchasesInput
+  upsert?: Prisma.UserUpsertWithoutStickerPurchasesInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutStickerPurchasesInput, Prisma.UserUpdateWithoutStickerPurchasesInput>, Prisma.UserUncheckedUpdateWithoutStickerPurchasesInput>
+}
+
+export type UserCreateNestedOneWithoutStickerTradesSoldInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStickerTradesSoldInput, Prisma.UserUncheckedCreateWithoutStickerTradesSoldInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStickerTradesSoldInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutStickerTradesBoughtInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStickerTradesBoughtInput, Prisma.UserUncheckedCreateWithoutStickerTradesBoughtInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStickerTradesBoughtInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutStickerTradesSoldNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStickerTradesSoldInput, Prisma.UserUncheckedCreateWithoutStickerTradesSoldInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStickerTradesSoldInput
+  upsert?: Prisma.UserUpsertWithoutStickerTradesSoldInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutStickerTradesSoldInput, Prisma.UserUpdateWithoutStickerTradesSoldInput>, Prisma.UserUncheckedUpdateWithoutStickerTradesSoldInput>
+}
+
+export type UserUpdateOneRequiredWithoutStickerTradesBoughtNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStickerTradesBoughtInput, Prisma.UserUncheckedCreateWithoutStickerTradesBoughtInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStickerTradesBoughtInput
+  upsert?: Prisma.UserUpsertWithoutStickerTradesBoughtInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutStickerTradesBoughtInput, Prisma.UserUpdateWithoutStickerTradesBoughtInput>, Prisma.UserUncheckedUpdateWithoutStickerTradesBoughtInput>
+}
+
+export type UserCreateNestedOneWithoutStickerDonationsSentInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStickerDonationsSentInput, Prisma.UserUncheckedCreateWithoutStickerDonationsSentInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStickerDonationsSentInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutStickerDonationsReceivedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStickerDonationsReceivedInput, Prisma.UserUncheckedCreateWithoutStickerDonationsReceivedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStickerDonationsReceivedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutStickerDonationsSentNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStickerDonationsSentInput, Prisma.UserUncheckedCreateWithoutStickerDonationsSentInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStickerDonationsSentInput
+  upsert?: Prisma.UserUpsertWithoutStickerDonationsSentInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutStickerDonationsSentInput, Prisma.UserUpdateWithoutStickerDonationsSentInput>, Prisma.UserUncheckedUpdateWithoutStickerDonationsSentInput>
+}
+
+export type UserUpdateOneRequiredWithoutStickerDonationsReceivedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStickerDonationsReceivedInput, Prisma.UserUncheckedCreateWithoutStickerDonationsReceivedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStickerDonationsReceivedInput
+  upsert?: Prisma.UserUpsertWithoutStickerDonationsReceivedInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutStickerDonationsReceivedInput, Prisma.UserUpdateWithoutStickerDonationsReceivedInput>, Prisma.UserUncheckedUpdateWithoutStickerDonationsReceivedInput>
+}
+
+export type UserCreateNestedOneWithoutPatentProgressInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPatentProgressInput, Prisma.UserUncheckedCreateWithoutPatentProgressInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPatentProgressInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutPatentProgressNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPatentProgressInput, Prisma.UserUncheckedCreateWithoutPatentProgressInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPatentProgressInput
+  upsert?: Prisma.UserUpsertWithoutPatentProgressInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutPatentProgressInput, Prisma.UserUpdateWithoutPatentProgressInput>, Prisma.UserUncheckedUpdateWithoutPatentProgressInput>
+}
+
+export type UserCreateNestedOneWithoutPatentRewardClaimsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPatentRewardClaimsInput, Prisma.UserUncheckedCreateWithoutPatentRewardClaimsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPatentRewardClaimsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutPatentRewardClaimsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPatentRewardClaimsInput, Prisma.UserUncheckedCreateWithoutPatentRewardClaimsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPatentRewardClaimsInput
+  upsert?: Prisma.UserUpsertWithoutPatentRewardClaimsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutPatentRewardClaimsInput, Prisma.UserUpdateWithoutPatentRewardClaimsInput>, Prisma.UserUncheckedUpdateWithoutPatentRewardClaimsInput>
+}
+
+export type UserCreateNestedOneWithoutTreasuryEntriesAuthoredInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutTreasuryEntriesAuthoredInput, Prisma.UserUncheckedCreateWithoutTreasuryEntriesAuthoredInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutTreasuryEntriesAuthoredInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneWithoutTreasuryEntriesAuthoredNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutTreasuryEntriesAuthoredInput, Prisma.UserUncheckedCreateWithoutTreasuryEntriesAuthoredInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutTreasuryEntriesAuthoredInput
+  upsert?: Prisma.UserUpsertWithoutTreasuryEntriesAuthoredInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutTreasuryEntriesAuthoredInput, Prisma.UserUpdateWithoutTreasuryEntriesAuthoredInput>, Prisma.UserUncheckedUpdateWithoutTreasuryEntriesAuthoredInput>
 }
 
 export type UserCreateNestedOneWithoutLessonsInput = {
@@ -1205,6 +1442,17 @@ export type UserCreateWithoutProfileAvatarPurchasesInput = {
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutProfileAvatarPurchasesInput = {
@@ -1247,6 +1495,17 @@ export type UserUncheckedCreateWithoutProfileAvatarPurchasesInput = {
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutProfileAvatarPurchasesInput = {
@@ -1305,6 +1564,17 @@ export type UserUpdateWithoutProfileAvatarPurchasesInput = {
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutProfileAvatarPurchasesInput = {
@@ -1347,6 +1617,17 @@ export type UserUncheckedUpdateWithoutProfileAvatarPurchasesInput = {
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutDevCoinEntriesInput = {
@@ -1389,6 +1670,17 @@ export type UserCreateWithoutDevCoinEntriesInput = {
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutDevCoinEntriesInput = {
@@ -1431,6 +1723,17 @@ export type UserUncheckedCreateWithoutDevCoinEntriesInput = {
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutDevCoinEntriesInput = {
@@ -1478,6 +1781,17 @@ export type UserCreateWithoutAuthoredDevCoinEntriesInput = {
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput = {
@@ -1520,6 +1834,17 @@ export type UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput = {
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredDevCoinEntriesInput = {
@@ -1578,6 +1903,17 @@ export type UserUpdateWithoutDevCoinEntriesInput = {
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutDevCoinEntriesInput = {
@@ -1620,6 +1956,17 @@ export type UserUncheckedUpdateWithoutDevCoinEntriesInput = {
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUpsertWithoutAuthoredDevCoinEntriesInput = {
@@ -1673,6 +2020,17 @@ export type UserUpdateWithoutAuthoredDevCoinEntriesInput = {
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput = {
@@ -1715,6 +2073,2525 @@ export type UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput = {
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserCreateWithoutStickerCopiesInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+}
+
+export type UserUncheckedCreateWithoutStickerCopiesInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+}
+
+export type UserCreateOrConnectWithoutStickerCopiesInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutStickerCopiesInput, Prisma.UserUncheckedCreateWithoutStickerCopiesInput>
+}
+
+export type UserUpsertWithoutStickerCopiesInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutStickerCopiesInput, Prisma.UserUncheckedUpdateWithoutStickerCopiesInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutStickerCopiesInput, Prisma.UserUncheckedCreateWithoutStickerCopiesInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutStickerCopiesInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutStickerCopiesInput, Prisma.UserUncheckedUpdateWithoutStickerCopiesInput>
+}
+
+export type UserUpdateWithoutStickerCopiesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserUncheckedUpdateWithoutStickerCopiesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserCreateWithoutStickerPackPurchasesInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+}
+
+export type UserUncheckedCreateWithoutStickerPackPurchasesInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+}
+
+export type UserCreateOrConnectWithoutStickerPackPurchasesInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutStickerPackPurchasesInput, Prisma.UserUncheckedCreateWithoutStickerPackPurchasesInput>
+}
+
+export type UserUpsertWithoutStickerPackPurchasesInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutStickerPackPurchasesInput, Prisma.UserUncheckedUpdateWithoutStickerPackPurchasesInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutStickerPackPurchasesInput, Prisma.UserUncheckedCreateWithoutStickerPackPurchasesInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutStickerPackPurchasesInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutStickerPackPurchasesInput, Prisma.UserUncheckedUpdateWithoutStickerPackPurchasesInput>
+}
+
+export type UserUpdateWithoutStickerPackPurchasesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserUncheckedUpdateWithoutStickerPackPurchasesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserCreateWithoutStickerListingsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+}
+
+export type UserUncheckedCreateWithoutStickerListingsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+}
+
+export type UserCreateOrConnectWithoutStickerListingsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutStickerListingsInput, Prisma.UserUncheckedCreateWithoutStickerListingsInput>
+}
+
+export type UserCreateWithoutStickerPurchasesInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+}
+
+export type UserUncheckedCreateWithoutStickerPurchasesInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+}
+
+export type UserCreateOrConnectWithoutStickerPurchasesInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutStickerPurchasesInput, Prisma.UserUncheckedCreateWithoutStickerPurchasesInput>
+}
+
+export type UserUpsertWithoutStickerListingsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutStickerListingsInput, Prisma.UserUncheckedUpdateWithoutStickerListingsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutStickerListingsInput, Prisma.UserUncheckedCreateWithoutStickerListingsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutStickerListingsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutStickerListingsInput, Prisma.UserUncheckedUpdateWithoutStickerListingsInput>
+}
+
+export type UserUpdateWithoutStickerListingsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserUncheckedUpdateWithoutStickerListingsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserUpsertWithoutStickerPurchasesInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutStickerPurchasesInput, Prisma.UserUncheckedUpdateWithoutStickerPurchasesInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutStickerPurchasesInput, Prisma.UserUncheckedCreateWithoutStickerPurchasesInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutStickerPurchasesInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutStickerPurchasesInput, Prisma.UserUncheckedUpdateWithoutStickerPurchasesInput>
+}
+
+export type UserUpdateWithoutStickerPurchasesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserUncheckedUpdateWithoutStickerPurchasesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserCreateWithoutStickerTradesSoldInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+}
+
+export type UserUncheckedCreateWithoutStickerTradesSoldInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+}
+
+export type UserCreateOrConnectWithoutStickerTradesSoldInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutStickerTradesSoldInput, Prisma.UserUncheckedCreateWithoutStickerTradesSoldInput>
+}
+
+export type UserCreateWithoutStickerTradesBoughtInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+}
+
+export type UserUncheckedCreateWithoutStickerTradesBoughtInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+}
+
+export type UserCreateOrConnectWithoutStickerTradesBoughtInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutStickerTradesBoughtInput, Prisma.UserUncheckedCreateWithoutStickerTradesBoughtInput>
+}
+
+export type UserUpsertWithoutStickerTradesSoldInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutStickerTradesSoldInput, Prisma.UserUncheckedUpdateWithoutStickerTradesSoldInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutStickerTradesSoldInput, Prisma.UserUncheckedCreateWithoutStickerTradesSoldInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutStickerTradesSoldInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutStickerTradesSoldInput, Prisma.UserUncheckedUpdateWithoutStickerTradesSoldInput>
+}
+
+export type UserUpdateWithoutStickerTradesSoldInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserUncheckedUpdateWithoutStickerTradesSoldInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserUpsertWithoutStickerTradesBoughtInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutStickerTradesBoughtInput, Prisma.UserUncheckedUpdateWithoutStickerTradesBoughtInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutStickerTradesBoughtInput, Prisma.UserUncheckedCreateWithoutStickerTradesBoughtInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutStickerTradesBoughtInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutStickerTradesBoughtInput, Prisma.UserUncheckedUpdateWithoutStickerTradesBoughtInput>
+}
+
+export type UserUpdateWithoutStickerTradesBoughtInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserUncheckedUpdateWithoutStickerTradesBoughtInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserCreateWithoutStickerDonationsSentInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+}
+
+export type UserUncheckedCreateWithoutStickerDonationsSentInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+}
+
+export type UserCreateOrConnectWithoutStickerDonationsSentInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutStickerDonationsSentInput, Prisma.UserUncheckedCreateWithoutStickerDonationsSentInput>
+}
+
+export type UserCreateWithoutStickerDonationsReceivedInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+}
+
+export type UserUncheckedCreateWithoutStickerDonationsReceivedInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+}
+
+export type UserCreateOrConnectWithoutStickerDonationsReceivedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutStickerDonationsReceivedInput, Prisma.UserUncheckedCreateWithoutStickerDonationsReceivedInput>
+}
+
+export type UserUpsertWithoutStickerDonationsSentInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutStickerDonationsSentInput, Prisma.UserUncheckedUpdateWithoutStickerDonationsSentInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutStickerDonationsSentInput, Prisma.UserUncheckedCreateWithoutStickerDonationsSentInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutStickerDonationsSentInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutStickerDonationsSentInput, Prisma.UserUncheckedUpdateWithoutStickerDonationsSentInput>
+}
+
+export type UserUpdateWithoutStickerDonationsSentInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserUncheckedUpdateWithoutStickerDonationsSentInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserUpsertWithoutStickerDonationsReceivedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutStickerDonationsReceivedInput, Prisma.UserUncheckedUpdateWithoutStickerDonationsReceivedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutStickerDonationsReceivedInput, Prisma.UserUncheckedCreateWithoutStickerDonationsReceivedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutStickerDonationsReceivedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutStickerDonationsReceivedInput, Prisma.UserUncheckedUpdateWithoutStickerDonationsReceivedInput>
+}
+
+export type UserUpdateWithoutStickerDonationsReceivedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserUncheckedUpdateWithoutStickerDonationsReceivedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserCreateWithoutPatentProgressInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+}
+
+export type UserUncheckedCreateWithoutPatentProgressInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+}
+
+export type UserCreateOrConnectWithoutPatentProgressInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutPatentProgressInput, Prisma.UserUncheckedCreateWithoutPatentProgressInput>
+}
+
+export type UserUpsertWithoutPatentProgressInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutPatentProgressInput, Prisma.UserUncheckedUpdateWithoutPatentProgressInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutPatentProgressInput, Prisma.UserUncheckedCreateWithoutPatentProgressInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutPatentProgressInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutPatentProgressInput, Prisma.UserUncheckedUpdateWithoutPatentProgressInput>
+}
+
+export type UserUpdateWithoutPatentProgressInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserUncheckedUpdateWithoutPatentProgressInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserCreateWithoutPatentRewardClaimsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+}
+
+export type UserUncheckedCreateWithoutPatentRewardClaimsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+}
+
+export type UserCreateOrConnectWithoutPatentRewardClaimsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutPatentRewardClaimsInput, Prisma.UserUncheckedCreateWithoutPatentRewardClaimsInput>
+}
+
+export type UserUpsertWithoutPatentRewardClaimsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutPatentRewardClaimsInput, Prisma.UserUncheckedUpdateWithoutPatentRewardClaimsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutPatentRewardClaimsInput, Prisma.UserUncheckedCreateWithoutPatentRewardClaimsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutPatentRewardClaimsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutPatentRewardClaimsInput, Prisma.UserUncheckedUpdateWithoutPatentRewardClaimsInput>
+}
+
+export type UserUpdateWithoutPatentRewardClaimsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserUncheckedUpdateWithoutPatentRewardClaimsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+}
+
+export type UserCreateWithoutTreasuryEntriesAuthoredInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+}
+
+export type UserUncheckedCreateWithoutTreasuryEntriesAuthoredInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+}
+
+export type UserCreateOrConnectWithoutTreasuryEntriesAuthoredInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutTreasuryEntriesAuthoredInput, Prisma.UserUncheckedCreateWithoutTreasuryEntriesAuthoredInput>
+}
+
+export type UserUpsertWithoutTreasuryEntriesAuthoredInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutTreasuryEntriesAuthoredInput, Prisma.UserUncheckedUpdateWithoutTreasuryEntriesAuthoredInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutTreasuryEntriesAuthoredInput, Prisma.UserUncheckedCreateWithoutTreasuryEntriesAuthoredInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutTreasuryEntriesAuthoredInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutTreasuryEntriesAuthoredInput, Prisma.UserUncheckedUpdateWithoutTreasuryEntriesAuthoredInput>
+}
+
+export type UserUpdateWithoutTreasuryEntriesAuthoredInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+}
+
+export type UserUncheckedUpdateWithoutTreasuryEntriesAuthoredInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutLessonsInput = {
@@ -1757,6 +4634,17 @@ export type UserCreateWithoutLessonsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutLessonsInput = {
@@ -1799,6 +4687,17 @@ export type UserUncheckedCreateWithoutLessonsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutLessonsInput = {
@@ -1857,6 +4756,17 @@ export type UserUpdateWithoutLessonsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLessonsInput = {
@@ -1899,6 +4809,17 @@ export type UserUncheckedUpdateWithoutLessonsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutLessonParticipationsInput = {
@@ -1941,6 +4862,17 @@ export type UserCreateWithoutLessonParticipationsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutLessonParticipationsInput = {
@@ -1983,6 +4915,17 @@ export type UserUncheckedCreateWithoutLessonParticipationsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutLessonParticipationsInput = {
@@ -2041,6 +4984,17 @@ export type UserUpdateWithoutLessonParticipationsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLessonParticipationsInput = {
@@ -2083,6 +5037,17 @@ export type UserUncheckedUpdateWithoutLessonParticipationsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutAttendancesInput = {
@@ -2125,6 +5090,17 @@ export type UserCreateWithoutAttendancesInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutAttendancesInput = {
@@ -2167,6 +5143,17 @@ export type UserUncheckedCreateWithoutAttendancesInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutAttendancesInput = {
@@ -2225,6 +5212,17 @@ export type UserUpdateWithoutAttendancesInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAttendancesInput = {
@@ -2267,6 +5265,17 @@ export type UserUncheckedUpdateWithoutAttendancesInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutXpEntriesInput = {
@@ -2309,6 +5318,17 @@ export type UserCreateWithoutXpEntriesInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutXpEntriesInput = {
@@ -2351,6 +5371,17 @@ export type UserUncheckedCreateWithoutXpEntriesInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutXpEntriesInput = {
@@ -2398,6 +5429,17 @@ export type UserCreateWithoutAuthoredXpInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredXpInput = {
@@ -2440,6 +5482,17 @@ export type UserUncheckedCreateWithoutAuthoredXpInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredXpInput = {
@@ -2498,6 +5551,17 @@ export type UserUpdateWithoutXpEntriesInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutXpEntriesInput = {
@@ -2540,6 +5604,17 @@ export type UserUncheckedUpdateWithoutXpEntriesInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUpsertWithoutAuthoredXpInput = {
@@ -2593,6 +5668,17 @@ export type UserUpdateWithoutAuthoredXpInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredXpInput = {
@@ -2635,6 +5721,17 @@ export type UserUncheckedUpdateWithoutAuthoredXpInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutBehaviorsInput = {
@@ -2677,6 +5774,17 @@ export type UserCreateWithoutBehaviorsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutBehaviorsInput = {
@@ -2719,6 +5827,17 @@ export type UserUncheckedCreateWithoutBehaviorsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutBehaviorsInput = {
@@ -2766,6 +5885,17 @@ export type UserCreateWithoutRatedBehaviorsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutRatedBehaviorsInput = {
@@ -2808,6 +5938,17 @@ export type UserUncheckedCreateWithoutRatedBehaviorsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutRatedBehaviorsInput = {
@@ -2866,6 +6007,17 @@ export type UserUpdateWithoutBehaviorsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutBehaviorsInput = {
@@ -2908,6 +6060,17 @@ export type UserUncheckedUpdateWithoutBehaviorsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUpsertWithoutRatedBehaviorsInput = {
@@ -2961,6 +6124,17 @@ export type UserUpdateWithoutRatedBehaviorsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutRatedBehaviorsInput = {
@@ -3003,6 +6177,17 @@ export type UserUncheckedUpdateWithoutRatedBehaviorsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutCleanupsInput = {
@@ -3045,6 +6230,17 @@ export type UserCreateWithoutCleanupsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutCleanupsInput = {
@@ -3087,6 +6283,17 @@ export type UserUncheckedCreateWithoutCleanupsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutCleanupsInput = {
@@ -3134,6 +6341,17 @@ export type UserCreateWithoutConfirmedCleanupsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutConfirmedCleanupsInput = {
@@ -3176,6 +6394,17 @@ export type UserUncheckedCreateWithoutConfirmedCleanupsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutConfirmedCleanupsInput = {
@@ -3234,6 +6463,17 @@ export type UserUpdateWithoutCleanupsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCleanupsInput = {
@@ -3276,6 +6516,17 @@ export type UserUncheckedUpdateWithoutCleanupsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUpsertWithoutConfirmedCleanupsInput = {
@@ -3329,6 +6580,17 @@ export type UserUpdateWithoutConfirmedCleanupsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutConfirmedCleanupsInput = {
@@ -3371,6 +6633,17 @@ export type UserUncheckedUpdateWithoutConfirmedCleanupsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutAuthoredActivitiesInput = {
@@ -3413,6 +6686,17 @@ export type UserCreateWithoutAuthoredActivitiesInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredActivitiesInput = {
@@ -3455,6 +6739,17 @@ export type UserUncheckedCreateWithoutAuthoredActivitiesInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredActivitiesInput = {
@@ -3513,6 +6808,17 @@ export type UserUpdateWithoutAuthoredActivitiesInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredActivitiesInput = {
@@ -3555,6 +6861,17 @@ export type UserUncheckedUpdateWithoutAuthoredActivitiesInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutAuthoredNotificationsInput = {
@@ -3597,6 +6914,17 @@ export type UserCreateWithoutAuthoredNotificationsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredNotificationsInput = {
@@ -3639,6 +6967,17 @@ export type UserUncheckedCreateWithoutAuthoredNotificationsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredNotificationsInput = {
@@ -3697,6 +7036,17 @@ export type UserUpdateWithoutAuthoredNotificationsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredNotificationsInput = {
@@ -3739,6 +7089,17 @@ export type UserUncheckedUpdateWithoutAuthoredNotificationsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutNotificationReceiptsInput = {
@@ -3781,6 +7142,17 @@ export type UserCreateWithoutNotificationReceiptsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutNotificationReceiptsInput = {
@@ -3823,6 +7195,17 @@ export type UserUncheckedCreateWithoutNotificationReceiptsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutNotificationReceiptsInput = {
@@ -3881,6 +7264,17 @@ export type UserUpdateWithoutNotificationReceiptsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutNotificationReceiptsInput = {
@@ -3923,6 +7317,17 @@ export type UserUncheckedUpdateWithoutNotificationReceiptsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutActivityRecipientsInput = {
@@ -3965,6 +7370,17 @@ export type UserCreateWithoutActivityRecipientsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutActivityRecipientsInput = {
@@ -4007,6 +7423,17 @@ export type UserUncheckedCreateWithoutActivityRecipientsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutActivityRecipientsInput = {
@@ -4065,6 +7492,17 @@ export type UserUpdateWithoutActivityRecipientsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityRecipientsInput = {
@@ -4107,6 +7545,17 @@ export type UserUncheckedUpdateWithoutActivityRecipientsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutActivitySubmissionsInput = {
@@ -4149,6 +7598,17 @@ export type UserCreateWithoutActivitySubmissionsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutActivitySubmissionsInput = {
@@ -4191,6 +7651,17 @@ export type UserUncheckedCreateWithoutActivitySubmissionsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutActivitySubmissionsInput = {
@@ -4249,6 +7720,17 @@ export type UserUpdateWithoutActivitySubmissionsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivitySubmissionsInput = {
@@ -4291,6 +7773,17 @@ export type UserUncheckedUpdateWithoutActivitySubmissionsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutActivityAnswersInput = {
@@ -4333,6 +7826,17 @@ export type UserCreateWithoutActivityAnswersInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutActivityAnswersInput = {
@@ -4375,6 +7879,17 @@ export type UserUncheckedCreateWithoutActivityAnswersInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutActivityAnswersInput = {
@@ -4433,6 +7948,17 @@ export type UserUpdateWithoutActivityAnswersInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityAnswersInput = {
@@ -4475,6 +8001,17 @@ export type UserUncheckedUpdateWithoutActivityAnswersInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutActivityTeamMembershipsInput = {
@@ -4517,6 +8054,17 @@ export type UserCreateWithoutActivityTeamMembershipsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutActivityTeamMembershipsInput = {
@@ -4559,6 +8107,17 @@ export type UserUncheckedCreateWithoutActivityTeamMembershipsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutActivityTeamMembershipsInput = {
@@ -4617,6 +8176,17 @@ export type UserUpdateWithoutActivityTeamMembershipsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityTeamMembershipsInput = {
@@ -4659,6 +8229,17 @@ export type UserUncheckedUpdateWithoutActivityTeamMembershipsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutActivityAwardsInput = {
@@ -4701,6 +8282,17 @@ export type UserCreateWithoutActivityAwardsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutActivityAwardsInput = {
@@ -4743,6 +8335,17 @@ export type UserUncheckedCreateWithoutActivityAwardsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutActivityAwardsInput = {
@@ -4801,6 +8404,17 @@ export type UserUpdateWithoutActivityAwardsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityAwardsInput = {
@@ -4843,6 +8457,17 @@ export type UserUncheckedUpdateWithoutActivityAwardsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserCreateWithoutAuditActionsInput = {
@@ -4885,6 +8510,17 @@ export type UserCreateWithoutAuditActionsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutAuditActionsInput = {
@@ -4927,6 +8563,17 @@ export type UserUncheckedCreateWithoutAuditActionsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutAuditActionsInput = {
@@ -4974,6 +8621,17 @@ export type UserCreateWithoutAuditTargetsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
 }
 
 export type UserUncheckedCreateWithoutAuditTargetsInput = {
@@ -5016,6 +8674,17 @@ export type UserUncheckedCreateWithoutAuditTargetsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
 }
 
 export type UserCreateOrConnectWithoutAuditTargetsInput = {
@@ -5074,6 +8743,17 @@ export type UserUpdateWithoutAuditActionsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuditActionsInput = {
@@ -5116,6 +8796,17 @@ export type UserUncheckedUpdateWithoutAuditActionsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUpsertWithoutAuditTargetsInput = {
@@ -5169,6 +8860,17 @@ export type UserUpdateWithoutAuditTargetsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuditTargetsInput = {
@@ -5211,6 +8913,17 @@ export type UserUncheckedUpdateWithoutAuditTargetsInput = {
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
 }
 
 
@@ -5241,6 +8954,16 @@ export type UserCountOutputType = {
   profileAvatarPurchases: number
   devCoinEntries: number
   authoredDevCoinEntries: number
+  stickerCopies: number
+  stickerPackPurchases: number
+  stickerListings: number
+  stickerPurchases: number
+  stickerTradesSold: number
+  stickerTradesBought: number
+  stickerDonationsSent: number
+  stickerDonationsReceived: number
+  patentRewardClaims: number
+  treasuryEntriesAuthored: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -5266,6 +8989,16 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   profileAvatarPurchases?: boolean | UserCountOutputTypeCountProfileAvatarPurchasesArgs
   devCoinEntries?: boolean | UserCountOutputTypeCountDevCoinEntriesArgs
   authoredDevCoinEntries?: boolean | UserCountOutputTypeCountAuthoredDevCoinEntriesArgs
+  stickerCopies?: boolean | UserCountOutputTypeCountStickerCopiesArgs
+  stickerPackPurchases?: boolean | UserCountOutputTypeCountStickerPackPurchasesArgs
+  stickerListings?: boolean | UserCountOutputTypeCountStickerListingsArgs
+  stickerPurchases?: boolean | UserCountOutputTypeCountStickerPurchasesArgs
+  stickerTradesSold?: boolean | UserCountOutputTypeCountStickerTradesSoldArgs
+  stickerTradesBought?: boolean | UserCountOutputTypeCountStickerTradesBoughtArgs
+  stickerDonationsSent?: boolean | UserCountOutputTypeCountStickerDonationsSentArgs
+  stickerDonationsReceived?: boolean | UserCountOutputTypeCountStickerDonationsReceivedArgs
+  patentRewardClaims?: boolean | UserCountOutputTypeCountPatentRewardClaimsArgs
+  treasuryEntriesAuthored?: boolean | UserCountOutputTypeCountTreasuryEntriesAuthoredArgs
 }
 
 /**
@@ -5432,6 +9165,76 @@ export type UserCountOutputTypeCountAuthoredDevCoinEntriesArgs<ExtArgs extends r
   where?: Prisma.DevCoinEntryWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountStickerCopiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.StickerCopyWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountStickerPackPurchasesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.StickerPackPurchaseWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountStickerListingsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.StickerListingWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountStickerPurchasesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.StickerListingWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountStickerTradesSoldArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.StickerTradeWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountStickerTradesBoughtArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.StickerTradeWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountStickerDonationsSentArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.StickerDonationWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountStickerDonationsReceivedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.StickerDonationWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountPatentRewardClaimsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PatentRewardClaimWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountTreasuryEntriesAuthoredArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.DevCoinTreasuryEntryWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -5474,6 +9277,17 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   profileAvatarPurchases?: boolean | Prisma.User$profileAvatarPurchasesArgs<ExtArgs>
   devCoinEntries?: boolean | Prisma.User$devCoinEntriesArgs<ExtArgs>
   authoredDevCoinEntries?: boolean | Prisma.User$authoredDevCoinEntriesArgs<ExtArgs>
+  stickerCopies?: boolean | Prisma.User$stickerCopiesArgs<ExtArgs>
+  stickerPackPurchases?: boolean | Prisma.User$stickerPackPurchasesArgs<ExtArgs>
+  stickerListings?: boolean | Prisma.User$stickerListingsArgs<ExtArgs>
+  stickerPurchases?: boolean | Prisma.User$stickerPurchasesArgs<ExtArgs>
+  stickerTradesSold?: boolean | Prisma.User$stickerTradesSoldArgs<ExtArgs>
+  stickerTradesBought?: boolean | Prisma.User$stickerTradesBoughtArgs<ExtArgs>
+  stickerDonationsSent?: boolean | Prisma.User$stickerDonationsSentArgs<ExtArgs>
+  stickerDonationsReceived?: boolean | Prisma.User$stickerDonationsReceivedArgs<ExtArgs>
+  patentProgress?: boolean | Prisma.User$patentProgressArgs<ExtArgs>
+  patentRewardClaims?: boolean | Prisma.User$patentRewardClaimsArgs<ExtArgs>
+  treasuryEntriesAuthored?: boolean | Prisma.User$treasuryEntriesAuthoredArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -5564,6 +9378,17 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   profileAvatarPurchases?: boolean | Prisma.User$profileAvatarPurchasesArgs<ExtArgs>
   devCoinEntries?: boolean | Prisma.User$devCoinEntriesArgs<ExtArgs>
   authoredDevCoinEntries?: boolean | Prisma.User$authoredDevCoinEntriesArgs<ExtArgs>
+  stickerCopies?: boolean | Prisma.User$stickerCopiesArgs<ExtArgs>
+  stickerPackPurchases?: boolean | Prisma.User$stickerPackPurchasesArgs<ExtArgs>
+  stickerListings?: boolean | Prisma.User$stickerListingsArgs<ExtArgs>
+  stickerPurchases?: boolean | Prisma.User$stickerPurchasesArgs<ExtArgs>
+  stickerTradesSold?: boolean | Prisma.User$stickerTradesSoldArgs<ExtArgs>
+  stickerTradesBought?: boolean | Prisma.User$stickerTradesBoughtArgs<ExtArgs>
+  stickerDonationsSent?: boolean | Prisma.User$stickerDonationsSentArgs<ExtArgs>
+  stickerDonationsReceived?: boolean | Prisma.User$stickerDonationsReceivedArgs<ExtArgs>
+  patentProgress?: boolean | Prisma.User$patentProgressArgs<ExtArgs>
+  patentRewardClaims?: boolean | Prisma.User$patentRewardClaimsArgs<ExtArgs>
+  treasuryEntriesAuthored?: boolean | Prisma.User$treasuryEntriesAuthoredArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -5594,6 +9419,17 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     profileAvatarPurchases: Prisma.$ProfileAvatarPurchasePayload<ExtArgs>[]
     devCoinEntries: Prisma.$DevCoinEntryPayload<ExtArgs>[]
     authoredDevCoinEntries: Prisma.$DevCoinEntryPayload<ExtArgs>[]
+    stickerCopies: Prisma.$StickerCopyPayload<ExtArgs>[]
+    stickerPackPurchases: Prisma.$StickerPackPurchasePayload<ExtArgs>[]
+    stickerListings: Prisma.$StickerListingPayload<ExtArgs>[]
+    stickerPurchases: Prisma.$StickerListingPayload<ExtArgs>[]
+    stickerTradesSold: Prisma.$StickerTradePayload<ExtArgs>[]
+    stickerTradesBought: Prisma.$StickerTradePayload<ExtArgs>[]
+    stickerDonationsSent: Prisma.$StickerDonationPayload<ExtArgs>[]
+    stickerDonationsReceived: Prisma.$StickerDonationPayload<ExtArgs>[]
+    patentProgress: Prisma.$StudentPatentProgressPayload<ExtArgs> | null
+    patentRewardClaims: Prisma.$PatentRewardClaimPayload<ExtArgs>[]
+    treasuryEntriesAuthored: Prisma.$DevCoinTreasuryEntryPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -6030,6 +9866,17 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   profileAvatarPurchases<T extends Prisma.User$profileAvatarPurchasesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$profileAvatarPurchasesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProfileAvatarPurchasePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   devCoinEntries<T extends Prisma.User$devCoinEntriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$devCoinEntriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DevCoinEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   authoredDevCoinEntries<T extends Prisma.User$authoredDevCoinEntriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$authoredDevCoinEntriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DevCoinEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  stickerCopies<T extends Prisma.User$stickerCopiesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$stickerCopiesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StickerCopyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  stickerPackPurchases<T extends Prisma.User$stickerPackPurchasesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$stickerPackPurchasesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StickerPackPurchasePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  stickerListings<T extends Prisma.User$stickerListingsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$stickerListingsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StickerListingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  stickerPurchases<T extends Prisma.User$stickerPurchasesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$stickerPurchasesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StickerListingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  stickerTradesSold<T extends Prisma.User$stickerTradesSoldArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$stickerTradesSoldArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StickerTradePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  stickerTradesBought<T extends Prisma.User$stickerTradesBoughtArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$stickerTradesBoughtArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StickerTradePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  stickerDonationsSent<T extends Prisma.User$stickerDonationsSentArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$stickerDonationsSentArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StickerDonationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  stickerDonationsReceived<T extends Prisma.User$stickerDonationsReceivedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$stickerDonationsReceivedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StickerDonationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  patentProgress<T extends Prisma.User$patentProgressArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$patentProgressArgs<ExtArgs>>): Prisma.Prisma__StudentPatentProgressClient<runtime.Types.Result.GetResult<Prisma.$StudentPatentProgressPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  patentRewardClaims<T extends Prisma.User$patentRewardClaimsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$patentRewardClaimsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PatentRewardClaimPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  treasuryEntriesAuthored<T extends Prisma.User$treasuryEntriesAuthoredArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$treasuryEntriesAuthoredArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DevCoinTreasuryEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -6995,6 +10842,265 @@ export type User$authoredDevCoinEntriesArgs<ExtArgs extends runtime.Types.Extens
   take?: number
   skip?: number
   distinct?: Prisma.DevCoinEntryScalarFieldEnum | Prisma.DevCoinEntryScalarFieldEnum[]
+}
+
+/**
+ * User.stickerCopies
+ */
+export type User$stickerCopiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the StickerCopy
+   */
+  select?: Prisma.StickerCopySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the StickerCopy
+   */
+  omit?: Prisma.StickerCopyOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StickerCopyInclude<ExtArgs> | null
+  where?: Prisma.StickerCopyWhereInput
+  orderBy?: Prisma.StickerCopyOrderByWithRelationInput | Prisma.StickerCopyOrderByWithRelationInput[]
+  cursor?: Prisma.StickerCopyWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StickerCopyScalarFieldEnum | Prisma.StickerCopyScalarFieldEnum[]
+}
+
+/**
+ * User.stickerPackPurchases
+ */
+export type User$stickerPackPurchasesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the StickerPackPurchase
+   */
+  select?: Prisma.StickerPackPurchaseSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the StickerPackPurchase
+   */
+  omit?: Prisma.StickerPackPurchaseOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StickerPackPurchaseInclude<ExtArgs> | null
+  where?: Prisma.StickerPackPurchaseWhereInput
+  orderBy?: Prisma.StickerPackPurchaseOrderByWithRelationInput | Prisma.StickerPackPurchaseOrderByWithRelationInput[]
+  cursor?: Prisma.StickerPackPurchaseWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StickerPackPurchaseScalarFieldEnum | Prisma.StickerPackPurchaseScalarFieldEnum[]
+}
+
+/**
+ * User.stickerListings
+ */
+export type User$stickerListingsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the StickerListing
+   */
+  select?: Prisma.StickerListingSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the StickerListing
+   */
+  omit?: Prisma.StickerListingOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StickerListingInclude<ExtArgs> | null
+  where?: Prisma.StickerListingWhereInput
+  orderBy?: Prisma.StickerListingOrderByWithRelationInput | Prisma.StickerListingOrderByWithRelationInput[]
+  cursor?: Prisma.StickerListingWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StickerListingScalarFieldEnum | Prisma.StickerListingScalarFieldEnum[]
+}
+
+/**
+ * User.stickerPurchases
+ */
+export type User$stickerPurchasesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the StickerListing
+   */
+  select?: Prisma.StickerListingSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the StickerListing
+   */
+  omit?: Prisma.StickerListingOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StickerListingInclude<ExtArgs> | null
+  where?: Prisma.StickerListingWhereInput
+  orderBy?: Prisma.StickerListingOrderByWithRelationInput | Prisma.StickerListingOrderByWithRelationInput[]
+  cursor?: Prisma.StickerListingWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StickerListingScalarFieldEnum | Prisma.StickerListingScalarFieldEnum[]
+}
+
+/**
+ * User.stickerTradesSold
+ */
+export type User$stickerTradesSoldArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the StickerTrade
+   */
+  select?: Prisma.StickerTradeSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the StickerTrade
+   */
+  omit?: Prisma.StickerTradeOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StickerTradeInclude<ExtArgs> | null
+  where?: Prisma.StickerTradeWhereInput
+  orderBy?: Prisma.StickerTradeOrderByWithRelationInput | Prisma.StickerTradeOrderByWithRelationInput[]
+  cursor?: Prisma.StickerTradeWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StickerTradeScalarFieldEnum | Prisma.StickerTradeScalarFieldEnum[]
+}
+
+/**
+ * User.stickerTradesBought
+ */
+export type User$stickerTradesBoughtArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the StickerTrade
+   */
+  select?: Prisma.StickerTradeSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the StickerTrade
+   */
+  omit?: Prisma.StickerTradeOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StickerTradeInclude<ExtArgs> | null
+  where?: Prisma.StickerTradeWhereInput
+  orderBy?: Prisma.StickerTradeOrderByWithRelationInput | Prisma.StickerTradeOrderByWithRelationInput[]
+  cursor?: Prisma.StickerTradeWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StickerTradeScalarFieldEnum | Prisma.StickerTradeScalarFieldEnum[]
+}
+
+/**
+ * User.stickerDonationsSent
+ */
+export type User$stickerDonationsSentArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the StickerDonation
+   */
+  select?: Prisma.StickerDonationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the StickerDonation
+   */
+  omit?: Prisma.StickerDonationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StickerDonationInclude<ExtArgs> | null
+  where?: Prisma.StickerDonationWhereInput
+  orderBy?: Prisma.StickerDonationOrderByWithRelationInput | Prisma.StickerDonationOrderByWithRelationInput[]
+  cursor?: Prisma.StickerDonationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StickerDonationScalarFieldEnum | Prisma.StickerDonationScalarFieldEnum[]
+}
+
+/**
+ * User.stickerDonationsReceived
+ */
+export type User$stickerDonationsReceivedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the StickerDonation
+   */
+  select?: Prisma.StickerDonationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the StickerDonation
+   */
+  omit?: Prisma.StickerDonationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StickerDonationInclude<ExtArgs> | null
+  where?: Prisma.StickerDonationWhereInput
+  orderBy?: Prisma.StickerDonationOrderByWithRelationInput | Prisma.StickerDonationOrderByWithRelationInput[]
+  cursor?: Prisma.StickerDonationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StickerDonationScalarFieldEnum | Prisma.StickerDonationScalarFieldEnum[]
+}
+
+/**
+ * User.patentProgress
+ */
+export type User$patentProgressArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the StudentPatentProgress
+   */
+  select?: Prisma.StudentPatentProgressSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the StudentPatentProgress
+   */
+  omit?: Prisma.StudentPatentProgressOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StudentPatentProgressInclude<ExtArgs> | null
+  where?: Prisma.StudentPatentProgressWhereInput
+}
+
+/**
+ * User.patentRewardClaims
+ */
+export type User$patentRewardClaimsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PatentRewardClaim
+   */
+  select?: Prisma.PatentRewardClaimSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PatentRewardClaim
+   */
+  omit?: Prisma.PatentRewardClaimOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PatentRewardClaimInclude<ExtArgs> | null
+  where?: Prisma.PatentRewardClaimWhereInput
+  orderBy?: Prisma.PatentRewardClaimOrderByWithRelationInput | Prisma.PatentRewardClaimOrderByWithRelationInput[]
+  cursor?: Prisma.PatentRewardClaimWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PatentRewardClaimScalarFieldEnum | Prisma.PatentRewardClaimScalarFieldEnum[]
+}
+
+/**
+ * User.treasuryEntriesAuthored
+ */
+export type User$treasuryEntriesAuthoredArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the DevCoinTreasuryEntry
+   */
+  select?: Prisma.DevCoinTreasuryEntrySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the DevCoinTreasuryEntry
+   */
+  omit?: Prisma.DevCoinTreasuryEntryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.DevCoinTreasuryEntryInclude<ExtArgs> | null
+  where?: Prisma.DevCoinTreasuryEntryWhereInput
+  orderBy?: Prisma.DevCoinTreasuryEntryOrderByWithRelationInput | Prisma.DevCoinTreasuryEntryOrderByWithRelationInput[]
+  cursor?: Prisma.DevCoinTreasuryEntryWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.DevCoinTreasuryEntryScalarFieldEnum | Prisma.DevCoinTreasuryEntryScalarFieldEnum[]
 }
 
 /**
