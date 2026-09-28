@@ -33,6 +33,71 @@ export type ProfileAvatarPurchase = Prisma.ProfileAvatarPurchaseModel
  */
 export type DevCoinEntry = Prisma.DevCoinEntryModel
 /**
+ * Model StickerCollection
+ *
+ */
+export type StickerCollection = Prisma.StickerCollectionModel
+/**
+ * Model Sticker
+ *
+ */
+export type Sticker = Prisma.StickerModel
+/**
+ * Model StickerCopy
+ *
+ */
+export type StickerCopy = Prisma.StickerCopyModel
+/**
+ * Model StickerPackPurchase
+ *
+ */
+export type StickerPackPurchase = Prisma.StickerPackPurchaseModel
+/**
+ * Model StickerListing
+ *
+ */
+export type StickerListing = Prisma.StickerListingModel
+/**
+ * Model StickerTrade
+ *
+ */
+export type StickerTrade = Prisma.StickerTradeModel
+/**
+ * Model StickerDonation
+ *
+ */
+export type StickerDonation = Prisma.StickerDonationModel
+/**
+ * Model PatentLevel
+ *
+ */
+export type PatentLevel = Prisma.PatentLevelModel
+/**
+ * Model StudentPatentProgress
+ *
+ */
+export type StudentPatentProgress = Prisma.StudentPatentProgressModel
+/**
+ * Model PatentRewardClaim
+ *
+ */
+export type PatentRewardClaim = Prisma.PatentRewardClaimModel
+/**
+ * Model DevCoinTreasury
+ *
+ */
+export type DevCoinTreasury = Prisma.DevCoinTreasuryModel
+/**
+ * Model StickerMarketSetting
+ *
+ */
+export type StickerMarketSetting = Prisma.StickerMarketSettingModel
+/**
+ * Model DevCoinTreasuryEntry
+ *
+ */
+export type DevCoinTreasuryEntry = Prisma.DevCoinTreasuryEntryModel
+/**
  * Model AccessCodeSequence
  *
  */

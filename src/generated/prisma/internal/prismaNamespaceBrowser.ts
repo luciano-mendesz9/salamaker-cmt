@@ -54,6 +54,19 @@ export const ModelName = {
   User: 'User',
   ProfileAvatarPurchase: 'ProfileAvatarPurchase',
   DevCoinEntry: 'DevCoinEntry',
+  StickerCollection: 'StickerCollection',
+  Sticker: 'Sticker',
+  StickerCopy: 'StickerCopy',
+  StickerPackPurchase: 'StickerPackPurchase',
+  StickerListing: 'StickerListing',
+  StickerTrade: 'StickerTrade',
+  StickerDonation: 'StickerDonation',
+  PatentLevel: 'PatentLevel',
+  StudentPatentProgress: 'StudentPatentProgress',
+  PatentRewardClaim: 'PatentRewardClaim',
+  DevCoinTreasury: 'DevCoinTreasury',
+  StickerMarketSetting: 'StickerMarketSetting',
+  DevCoinTreasuryEntry: 'DevCoinTreasuryEntry',
   AccessCodeSequence: 'AccessCodeSequence',
   Lesson: 'Lesson',
   LessonParticipant: 'LessonParticipant',
@@ -145,6 +158,186 @@ export const DevCoinEntryScalarFieldEnum = {
 } as const
 
 export type DevCoinEntryScalarFieldEnum = (typeof DevCoinEntryScalarFieldEnum)[keyof typeof DevCoinEntryScalarFieldEnum]
+
+
+export const StickerCollectionScalarFieldEnum = {
+  id: 'id',
+  slug: 'slug',
+  name: 'name',
+  state: 'state',
+  activatedAt: 'activatedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type StickerCollectionScalarFieldEnum = (typeof StickerCollectionScalarFieldEnum)[keyof typeof StickerCollectionScalarFieldEnum]
+
+
+export const StickerScalarFieldEnum = {
+  id: 'id',
+  collectionId: 'collectionId',
+  number: 'number',
+  slug: 'slug',
+  name: 'name',
+  description: 'description',
+  alt: 'alt',
+  imagePath: 'imagePath',
+  manifestHash: 'manifestHash',
+  totalCopies: 'totalCopies',
+  rarity: 'rarity',
+  score: 'score',
+  state: 'state',
+  publishedAt: 'publishedAt',
+  firstDistributedAt: 'firstDistributedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type StickerScalarFieldEnum = (typeof StickerScalarFieldEnum)[keyof typeof StickerScalarFieldEnum]
+
+
+export const StickerCopyScalarFieldEnum = {
+  id: 'id',
+  stickerId: 'stickerId',
+  serial: 'serial',
+  ownerId: 'ownerId',
+  state: 'state',
+  packPurchaseId: 'packPurchaseId',
+  acquiredAt: 'acquiredAt',
+  createdAt: 'createdAt'
+} as const
+
+export type StickerCopyScalarFieldEnum = (typeof StickerCopyScalarFieldEnum)[keyof typeof StickerCopyScalarFieldEnum]
+
+
+export const StickerPackPurchaseScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  price: 'price',
+  schoolDay: 'schoolDay',
+  idempotencyKey: 'idempotencyKey',
+  createdAt: 'createdAt'
+} as const
+
+export type StickerPackPurchaseScalarFieldEnum = (typeof StickerPackPurchaseScalarFieldEnum)[keyof typeof StickerPackPurchaseScalarFieldEnum]
+
+
+export const StickerListingScalarFieldEnum = {
+  id: 'id',
+  copyId: 'copyId',
+  sellerId: 'sellerId',
+  buyerId: 'buyerId',
+  price: 'price',
+  state: 'state',
+  expiresAt: 'expiresAt',
+  createdAt: 'createdAt',
+  settledAt: 'settledAt'
+} as const
+
+export type StickerListingScalarFieldEnum = (typeof StickerListingScalarFieldEnum)[keyof typeof StickerListingScalarFieldEnum]
+
+
+export const StickerTradeScalarFieldEnum = {
+  id: 'id',
+  listingId: 'listingId',
+  sellerId: 'sellerId',
+  buyerId: 'buyerId',
+  price: 'price',
+  sellerAmount: 'sellerAmount',
+  fee: 'fee',
+  createdAt: 'createdAt'
+} as const
+
+export type StickerTradeScalarFieldEnum = (typeof StickerTradeScalarFieldEnum)[keyof typeof StickerTradeScalarFieldEnum]
+
+
+export const StickerDonationScalarFieldEnum = {
+  id: 'id',
+  copyId: 'copyId',
+  senderId: 'senderId',
+  recipientId: 'recipientId',
+  state: 'state',
+  expiresAt: 'expiresAt',
+  createdAt: 'createdAt',
+  resolvedAt: 'resolvedAt'
+} as const
+
+export type StickerDonationScalarFieldEnum = (typeof StickerDonationScalarFieldEnum)[keyof typeof StickerDonationScalarFieldEnum]
+
+
+export const PatentLevelScalarFieldEnum = {
+  id: 'id',
+  collectionId: 'collectionId',
+  version: 'version',
+  rank: 'rank',
+  name: 'name',
+  threshold: 'threshold',
+  xpReward: 'xpReward',
+  devCoinReward: 'devCoinReward',
+  packReward: 'packReward'
+} as const
+
+export type PatentLevelScalarFieldEnum = (typeof PatentLevelScalarFieldEnum)[keyof typeof PatentLevelScalarFieldEnum]
+
+
+export const StudentPatentProgressScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  score: 'score',
+  levelId: 'levelId',
+  bestRank: 'bestRank',
+  updatedAt: 'updatedAt'
+} as const
+
+export type StudentPatentProgressScalarFieldEnum = (typeof StudentPatentProgressScalarFieldEnum)[keyof typeof StudentPatentProgressScalarFieldEnum]
+
+
+export const PatentRewardClaimScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  patentLevelId: 'patentLevelId',
+  state: 'state',
+  xpPaid: 'xpPaid',
+  devCoinsPaid: 'devCoinsPaid',
+  packPaid: 'packPaid',
+  createdAt: 'createdAt',
+  paidAt: 'paidAt'
+} as const
+
+export type PatentRewardClaimScalarFieldEnum = (typeof PatentRewardClaimScalarFieldEnum)[keyof typeof PatentRewardClaimScalarFieldEnum]
+
+
+export const DevCoinTreasuryScalarFieldEnum = {
+  id: 'id',
+  balance: 'balance',
+  totalSupply: 'totalSupply',
+  updatedAt: 'updatedAt'
+} as const
+
+export type DevCoinTreasuryScalarFieldEnum = (typeof DevCoinTreasuryScalarFieldEnum)[keyof typeof DevCoinTreasuryScalarFieldEnum]
+
+
+export const StickerMarketSettingScalarFieldEnum = {
+  id: 'id',
+  enabled: 'enabled',
+  updatedAt: 'updatedAt'
+} as const
+
+export type StickerMarketSettingScalarFieldEnum = (typeof StickerMarketSettingScalarFieldEnum)[keyof typeof StickerMarketSettingScalarFieldEnum]
+
+
+export const DevCoinTreasuryEntryScalarFieldEnum = {
+  id: 'id',
+  authorId: 'authorId',
+  devCoinEntryId: 'devCoinEntryId',
+  delta: 'delta',
+  reason: 'reason',
+  source: 'source',
+  idempotencyKey: 'idempotencyKey',
+  createdAt: 'createdAt'
+} as const
+
+export type DevCoinTreasuryEntryScalarFieldEnum = (typeof DevCoinTreasuryEntryScalarFieldEnum)[keyof typeof DevCoinTreasuryEntryScalarFieldEnum]
 
 
 export const AccessCodeSequenceScalarFieldEnum = {

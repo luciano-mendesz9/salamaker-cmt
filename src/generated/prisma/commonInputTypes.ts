@@ -281,6 +281,142 @@ export type EnumDevCoinSourceWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedEnumDevCoinSourceFilter<$PrismaModel>
 }
 
+export type EnumStickerCollectionStateFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerCollectionState | Prisma.EnumStickerCollectionStateFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerCollectionState[] | Prisma.ListEnumStickerCollectionStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerCollectionState[] | Prisma.ListEnumStickerCollectionStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerCollectionStateFilter<$PrismaModel> | $Enums.StickerCollectionState
+}
+
+export type EnumStickerCollectionStateWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerCollectionState | Prisma.EnumStickerCollectionStateFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerCollectionState[] | Prisma.ListEnumStickerCollectionStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerCollectionState[] | Prisma.ListEnumStickerCollectionStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerCollectionStateWithAggregatesFilter<$PrismaModel> | $Enums.StickerCollectionState
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumStickerCollectionStateFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumStickerCollectionStateFilter<$PrismaModel>
+}
+
+export type EnumStickerRarityFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerRarity | Prisma.EnumStickerRarityFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerRarity[] | Prisma.ListEnumStickerRarityFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerRarity[] | Prisma.ListEnumStickerRarityFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerRarityFilter<$PrismaModel> | $Enums.StickerRarity
+}
+
+export type EnumStickerStateFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerState | Prisma.EnumStickerStateFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerState[] | Prisma.ListEnumStickerStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerState[] | Prisma.ListEnumStickerStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerStateFilter<$PrismaModel> | $Enums.StickerState
+}
+
+export type EnumStickerRarityWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerRarity | Prisma.EnumStickerRarityFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerRarity[] | Prisma.ListEnumStickerRarityFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerRarity[] | Prisma.ListEnumStickerRarityFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerRarityWithAggregatesFilter<$PrismaModel> | $Enums.StickerRarity
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumStickerRarityFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumStickerRarityFilter<$PrismaModel>
+}
+
+export type EnumStickerStateWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerState | Prisma.EnumStickerStateFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerState[] | Prisma.ListEnumStickerStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerState[] | Prisma.ListEnumStickerStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerStateWithAggregatesFilter<$PrismaModel> | $Enums.StickerState
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumStickerStateFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumStickerStateFilter<$PrismaModel>
+}
+
+export type EnumStickerCopyStateFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerCopyState | Prisma.EnumStickerCopyStateFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerCopyState[] | Prisma.ListEnumStickerCopyStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerCopyState[] | Prisma.ListEnumStickerCopyStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerCopyStateFilter<$PrismaModel> | $Enums.StickerCopyState
+}
+
+export type EnumStickerCopyStateWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerCopyState | Prisma.EnumStickerCopyStateFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerCopyState[] | Prisma.ListEnumStickerCopyStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerCopyState[] | Prisma.ListEnumStickerCopyStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerCopyStateWithAggregatesFilter<$PrismaModel> | $Enums.StickerCopyState
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumStickerCopyStateFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumStickerCopyStateFilter<$PrismaModel>
+}
+
+export type EnumStickerListingStateFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerListingState | Prisma.EnumStickerListingStateFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerListingState[] | Prisma.ListEnumStickerListingStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerListingState[] | Prisma.ListEnumStickerListingStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerListingStateFilter<$PrismaModel> | $Enums.StickerListingState
+}
+
+export type EnumStickerListingStateWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerListingState | Prisma.EnumStickerListingStateFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerListingState[] | Prisma.ListEnumStickerListingStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerListingState[] | Prisma.ListEnumStickerListingStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerListingStateWithAggregatesFilter<$PrismaModel> | $Enums.StickerListingState
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumStickerListingStateFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumStickerListingStateFilter<$PrismaModel>
+}
+
+export type EnumStickerDonationStateFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerDonationState | Prisma.EnumStickerDonationStateFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerDonationState[] | Prisma.ListEnumStickerDonationStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerDonationState[] | Prisma.ListEnumStickerDonationStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerDonationStateFilter<$PrismaModel> | $Enums.StickerDonationState
+}
+
+export type EnumStickerDonationStateWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerDonationState | Prisma.EnumStickerDonationStateFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerDonationState[] | Prisma.ListEnumStickerDonationStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerDonationState[] | Prisma.ListEnumStickerDonationStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerDonationStateWithAggregatesFilter<$PrismaModel> | $Enums.StickerDonationState
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumStickerDonationStateFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumStickerDonationStateFilter<$PrismaModel>
+}
+
+export type EnumPatentRewardStateFilter<$PrismaModel = never> = {
+  equals?: $Enums.PatentRewardState | Prisma.EnumPatentRewardStateFieldRefInput<$PrismaModel>
+  in?: $Enums.PatentRewardState[] | Prisma.ListEnumPatentRewardStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PatentRewardState[] | Prisma.ListEnumPatentRewardStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPatentRewardStateFilter<$PrismaModel> | $Enums.PatentRewardState
+}
+
+export type EnumPatentRewardStateWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.PatentRewardState | Prisma.EnumPatentRewardStateFieldRefInput<$PrismaModel>
+  in?: $Enums.PatentRewardState[] | Prisma.ListEnumPatentRewardStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PatentRewardState[] | Prisma.ListEnumPatentRewardStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPatentRewardStateWithAggregatesFilter<$PrismaModel> | $Enums.PatentRewardState
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumPatentRewardStateFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumPatentRewardStateFilter<$PrismaModel>
+}
+
+export type EnumTreasuryEntrySourceFilter<$PrismaModel = never> = {
+  equals?: $Enums.TreasuryEntrySource | Prisma.EnumTreasuryEntrySourceFieldRefInput<$PrismaModel>
+  in?: $Enums.TreasuryEntrySource[] | Prisma.ListEnumTreasuryEntrySourceFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TreasuryEntrySource[] | Prisma.ListEnumTreasuryEntrySourceFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTreasuryEntrySourceFilter<$PrismaModel> | $Enums.TreasuryEntrySource
+}
+
+export type EnumTreasuryEntrySourceWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TreasuryEntrySource | Prisma.EnumTreasuryEntrySourceFieldRefInput<$PrismaModel>
+  in?: $Enums.TreasuryEntrySource[] | Prisma.ListEnumTreasuryEntrySourceFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TreasuryEntrySource[] | Prisma.ListEnumTreasuryEntrySourceFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTreasuryEntrySourceWithAggregatesFilter<$PrismaModel> | $Enums.TreasuryEntrySource
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTreasuryEntrySourceFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTreasuryEntrySourceFilter<$PrismaModel>
+}
+
 export type EnumLessonStatusFilter<$PrismaModel = never> = {
   equals?: $Enums.LessonStatus | Prisma.EnumLessonStatusFieldRefInput<$PrismaModel>
   in?: $Enums.LessonStatus[] | Prisma.ListEnumLessonStatusFieldRefInput<$PrismaModel>
@@ -865,6 +1001,142 @@ export type NestedEnumDevCoinSourceWithAggregatesFilter<$PrismaModel = never> = 
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumDevCoinSourceFilter<$PrismaModel>
   _max?: Prisma.NestedEnumDevCoinSourceFilter<$PrismaModel>
+}
+
+export type NestedEnumStickerCollectionStateFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerCollectionState | Prisma.EnumStickerCollectionStateFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerCollectionState[] | Prisma.ListEnumStickerCollectionStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerCollectionState[] | Prisma.ListEnumStickerCollectionStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerCollectionStateFilter<$PrismaModel> | $Enums.StickerCollectionState
+}
+
+export type NestedEnumStickerCollectionStateWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerCollectionState | Prisma.EnumStickerCollectionStateFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerCollectionState[] | Prisma.ListEnumStickerCollectionStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerCollectionState[] | Prisma.ListEnumStickerCollectionStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerCollectionStateWithAggregatesFilter<$PrismaModel> | $Enums.StickerCollectionState
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumStickerCollectionStateFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumStickerCollectionStateFilter<$PrismaModel>
+}
+
+export type NestedEnumStickerRarityFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerRarity | Prisma.EnumStickerRarityFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerRarity[] | Prisma.ListEnumStickerRarityFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerRarity[] | Prisma.ListEnumStickerRarityFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerRarityFilter<$PrismaModel> | $Enums.StickerRarity
+}
+
+export type NestedEnumStickerStateFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerState | Prisma.EnumStickerStateFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerState[] | Prisma.ListEnumStickerStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerState[] | Prisma.ListEnumStickerStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerStateFilter<$PrismaModel> | $Enums.StickerState
+}
+
+export type NestedEnumStickerRarityWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerRarity | Prisma.EnumStickerRarityFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerRarity[] | Prisma.ListEnumStickerRarityFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerRarity[] | Prisma.ListEnumStickerRarityFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerRarityWithAggregatesFilter<$PrismaModel> | $Enums.StickerRarity
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumStickerRarityFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumStickerRarityFilter<$PrismaModel>
+}
+
+export type NestedEnumStickerStateWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerState | Prisma.EnumStickerStateFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerState[] | Prisma.ListEnumStickerStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerState[] | Prisma.ListEnumStickerStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerStateWithAggregatesFilter<$PrismaModel> | $Enums.StickerState
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumStickerStateFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumStickerStateFilter<$PrismaModel>
+}
+
+export type NestedEnumStickerCopyStateFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerCopyState | Prisma.EnumStickerCopyStateFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerCopyState[] | Prisma.ListEnumStickerCopyStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerCopyState[] | Prisma.ListEnumStickerCopyStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerCopyStateFilter<$PrismaModel> | $Enums.StickerCopyState
+}
+
+export type NestedEnumStickerCopyStateWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerCopyState | Prisma.EnumStickerCopyStateFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerCopyState[] | Prisma.ListEnumStickerCopyStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerCopyState[] | Prisma.ListEnumStickerCopyStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerCopyStateWithAggregatesFilter<$PrismaModel> | $Enums.StickerCopyState
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumStickerCopyStateFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumStickerCopyStateFilter<$PrismaModel>
+}
+
+export type NestedEnumStickerListingStateFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerListingState | Prisma.EnumStickerListingStateFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerListingState[] | Prisma.ListEnumStickerListingStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerListingState[] | Prisma.ListEnumStickerListingStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerListingStateFilter<$PrismaModel> | $Enums.StickerListingState
+}
+
+export type NestedEnumStickerListingStateWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerListingState | Prisma.EnumStickerListingStateFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerListingState[] | Prisma.ListEnumStickerListingStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerListingState[] | Prisma.ListEnumStickerListingStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerListingStateWithAggregatesFilter<$PrismaModel> | $Enums.StickerListingState
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumStickerListingStateFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumStickerListingStateFilter<$PrismaModel>
+}
+
+export type NestedEnumStickerDonationStateFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerDonationState | Prisma.EnumStickerDonationStateFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerDonationState[] | Prisma.ListEnumStickerDonationStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerDonationState[] | Prisma.ListEnumStickerDonationStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerDonationStateFilter<$PrismaModel> | $Enums.StickerDonationState
+}
+
+export type NestedEnumStickerDonationStateWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.StickerDonationState | Prisma.EnumStickerDonationStateFieldRefInput<$PrismaModel>
+  in?: $Enums.StickerDonationState[] | Prisma.ListEnumStickerDonationStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StickerDonationState[] | Prisma.ListEnumStickerDonationStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStickerDonationStateWithAggregatesFilter<$PrismaModel> | $Enums.StickerDonationState
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumStickerDonationStateFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumStickerDonationStateFilter<$PrismaModel>
+}
+
+export type NestedEnumPatentRewardStateFilter<$PrismaModel = never> = {
+  equals?: $Enums.PatentRewardState | Prisma.EnumPatentRewardStateFieldRefInput<$PrismaModel>
+  in?: $Enums.PatentRewardState[] | Prisma.ListEnumPatentRewardStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PatentRewardState[] | Prisma.ListEnumPatentRewardStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPatentRewardStateFilter<$PrismaModel> | $Enums.PatentRewardState
+}
+
+export type NestedEnumPatentRewardStateWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.PatentRewardState | Prisma.EnumPatentRewardStateFieldRefInput<$PrismaModel>
+  in?: $Enums.PatentRewardState[] | Prisma.ListEnumPatentRewardStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PatentRewardState[] | Prisma.ListEnumPatentRewardStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPatentRewardStateWithAggregatesFilter<$PrismaModel> | $Enums.PatentRewardState
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumPatentRewardStateFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumPatentRewardStateFilter<$PrismaModel>
+}
+
+export type NestedEnumTreasuryEntrySourceFilter<$PrismaModel = never> = {
+  equals?: $Enums.TreasuryEntrySource | Prisma.EnumTreasuryEntrySourceFieldRefInput<$PrismaModel>
+  in?: $Enums.TreasuryEntrySource[] | Prisma.ListEnumTreasuryEntrySourceFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TreasuryEntrySource[] | Prisma.ListEnumTreasuryEntrySourceFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTreasuryEntrySourceFilter<$PrismaModel> | $Enums.TreasuryEntrySource
+}
+
+export type NestedEnumTreasuryEntrySourceWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TreasuryEntrySource | Prisma.EnumTreasuryEntrySourceFieldRefInput<$PrismaModel>
+  in?: $Enums.TreasuryEntrySource[] | Prisma.ListEnumTreasuryEntrySourceFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TreasuryEntrySource[] | Prisma.ListEnumTreasuryEntrySourceFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTreasuryEntrySourceWithAggregatesFilter<$PrismaModel> | $Enums.TreasuryEntrySource
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTreasuryEntrySourceFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTreasuryEntrySourceFilter<$PrismaModel>
 }
 
 export type NestedEnumLessonStatusFilter<$PrismaModel = never> = {

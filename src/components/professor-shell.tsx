@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Activity, Bell, BookOpen, ClipboardList, ExternalLink, Gauge, Palette, ScrollText, Settings2, Trophy, UsersRound } from "lucide-react";
+import { Activity, Bell, BookOpen, ClipboardList, Coins, ExternalLink, Gauge, Images, Palette, ScrollText, Settings2, Trophy, UsersRound } from "lucide-react";
 import { Brand } from "./brand";
 import { LogoutButton } from "./logout-button";
 
@@ -11,6 +11,11 @@ const links = [
   ["/professor/comportamento", "Comportamento", Activity],
   ["/professor/logs", "Logs do sistema", ScrollText],
   ["/professor/moderacao", "Moderação e tema", Palette],
+  ["/professor/tesouraria", "Tesouraria Dev-Coin", Coins],
+  ["/professor/figurinhas/catalogo", "Catálogo de figurinhas", Images],
+  ...(process.env.NODE_ENV !== "production" && process.env.ENABLE_LOCAL_ASSET_MANAGER === "true"
+    ? [["/professor/midias", "Mídias locais", Images] as const]
+    : []),
 ] as const;
 
 export function ProfessorShell({ title, children }: { title: string; children: React.ReactNode }) {

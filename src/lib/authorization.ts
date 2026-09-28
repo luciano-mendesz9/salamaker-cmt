@@ -32,6 +32,10 @@ export function apiError(error: unknown) {
     UNAUTHORIZED: ["Sessão expirada.", 401], FORBIDDEN: ["Acesso negado.", 403],
     INVALID_ADMIN_PASSWORD: ["Senha administrativa incorreta.", 403],
     ADMIN_PASSWORD_NOT_CONFIGURED: ["Configure ADMIN_ACTION_PASSWORD no ambiente.", 503],
+    INVALID_ORIGIN: ["Origem da solicitação inválida.", 403],
+    RATE_LIMITED: ["Muitas tentativas. Aguarde alguns minutos.", 429],
+    COLLECTIBLES_SCHEMA_NOT_READY: ["Álbum e tesouraria aguardam a migration de produção.", 503],
+    STICKER_MARKET_DISABLED: ["Compras e vendas de figurinhas estão desativadas pelo professor.", 403],
   };
   return map[message] ?? ["Não foi possível concluir a operação.", 500];
 }

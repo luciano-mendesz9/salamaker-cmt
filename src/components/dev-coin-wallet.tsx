@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { ShoppingCart, Sparkles, X, Zap } from "lucide-react";
+import { Images, ShoppingCart, Sparkles, X, Zap } from "lucide-react";
 import { toast } from "sonner";
 import devCoinImage from "@/assets/dev-coin.webp";
 import { devCoinsForXp } from "@/lib/dev-coins";
@@ -56,6 +57,7 @@ export function DevCoinWallet({ currentDevCoins, currentXp, devCoinsPerXp }: Pro
       <span><span className="block text-xs font-bold uppercase tracking-wider text-amber-200/75">Minhas Dev-Coins</span><strong className="mt-1 block font-display text-2xl text-amber-200">{currentDevCoins}</strong></span>
       <span className="ml-auto text-right text-xs font-bold text-amber-200"><Sparkles className="ml-auto mb-1" size={17} />Comprar</span>
     </button>
+    <Link href="/aluno/album" className="button-secondary mt-3 w-full"><Images size={18}/>Abrir álbum de figurinhas</Link>
     {open && <div className="fixed inset-0 z-[90] grid place-items-center bg-slate-950/80 p-4 backdrop-blur-sm" onMouseDown={(event) => { if (event.target === event.currentTarget && !busy) setOpen(false); }}>
       <section role="dialog" aria-modal="true" aria-labelledby="dev-coin-title" className="glass w-full max-w-md rounded-3xl p-6 sm:p-7">
         <div className="flex items-start justify-between gap-4"><div className="flex items-center gap-3"><span className="relative block h-14 w-14"><Image src={devCoinImage} alt="" fill sizes="56px" className="object-contain" /></span><div><p className="eyebrow">Carteira digital</p><h2 id="dev-coin-title" className="mt-1 font-display text-2xl font-bold">Comprar Dev-Coins</h2></div></div><button autoFocus type="button" disabled={busy} onClick={() => setOpen(false)} className="focus-ring rounded-xl border border-slate-700 p-2 text-slate-300" aria-label="Fechar compra"><X size={20} /></button></div>

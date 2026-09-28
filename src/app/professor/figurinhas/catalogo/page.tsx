@@ -1,0 +1,8 @@
+import { STICKER_CATALOG } from "@/content/sticker-catalog.generated";
+import { ProfessorShell } from "@/components/professor-shell";
+import { StickerCatalogManager } from "@/components/sticker-catalog-manager";
+import { StickerMarketControl } from "@/components/sticker-market-control";
+import { prisma } from "@/lib/db";
+import { getCollectiblesReadiness } from "@/lib/feature-readiness";
+import { getStickerMarketEnabled } from "@/lib/sticker-market";
+export default async function StickerCatalogPage(){const readiness=await getCollectiblesReadiness();if(!readiness.ready)return <ProfessorShell title="Catálogo de figurinhas"><section className="glass rounded-2xl p-8 text-center"><p className="eyebrow">Implantação pendente</p><h2 className="mt-3 font-display text-2xl font-bold">Banco ainda sem as tabelas de figurinhas</h2><p className="mt-3 text-slate-400">A migration foi gerada, mas não foi aplicada ao Neon compartilhado. O catálogo permanece somente leitura e nenhum estoque será criado antes da autorização de deploy.</p></section></ProfessorShell>;const[active,marketEnabled]=await Promise.all([prisma.sticker.findMany({select:{slug:true}}),getStickerMarketEnabled()]);return <ProfessorShell title="Catálogo de figurinhas"><StickerMarketControl initialEnabled={marketEnabled}/><StickerCatalogManager items={STICKER_CATALOG} activeSlugs={active.map(item=>item.slug)}/>{STICKER_CATALOG.length===0&&<p className="glass rounded-2xl p-8 text-center text-slate-400">Nenhuma figurinha foi entregue pelo deploy ainda. Prepare uma mídia local, revise o diff, publique e volte aqui.</p>}</ProfessorShell>}

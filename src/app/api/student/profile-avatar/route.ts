@@ -4,6 +4,9 @@ import { apiError, requireStudent } from "@/lib/authorization";
 import { prisma } from "@/lib/db";
 import { PROFILE_AVATAR_DEV_COIN_PRICE } from "@/lib/profile-avatar-pricing";
 import { PROFILE_AVATAR_KEYS } from "@/lib/profile-avatars";
+import { creditTreasury } from "@/lib/treasury";
+import { assertSameOrigin, consumeRateLimit } from "@/lib/request-security";
+import { requireCollectiblesSchema } from "@/lib/feature-readiness";
 
 const input = z.object({
   avatar: z.enum(PROFILE_AVATAR_KEYS),
@@ -47,6 +50,12 @@ async function applyAvatar(studentId: string, avatar: (typeof PROFILE_AVATAR_KEY
             idempotencyKey: `profile-avatar:${studentId}:${avatar}`,
           },
         });
+        await creditTreasury(tx, PROFILE_AVATAR_DEV_COIN_PRICE, {
+          reason: `Compra da foto de perfil ${avatar}`,
+          source: "PLATFORM_PURCHASE",
+          idempotencyKey: `treasury:profile-avatar:${studentId}:${avatar}`,
+          devCoinEntryId: devCoinEntry.id,
+        });
         await tx.profileAvatarPurchase.create({
           data: {
             studentId,
@@ -69,7 +78,10 @@ async function applyAvatar(studentId: string, avatar: (typeof PROFILE_AVATAR_KEY
 export async function PATCH(request: Request) {
   try {
     const { student } = await requireStudent();
+    assertSameOrigin(request);
+    await consumeRateLimit(`profile-avatar:${student.id}`, 20, 10 * 60_000);
     const { avatar } = input.parse(await request.json());
+    if (avatar !== "default" && !(await prisma.profileAvatarPurchase.findUnique({ where: { studentId_avatarKey: { studentId: student.id, avatarKey: avatar } }, select: { id: true } }))) await requireCollectiblesSchema();
     return NextResponse.json(await applyAvatar(student.id, avatar));
   } catch (error) {
     if (error instanceof z.ZodError) {

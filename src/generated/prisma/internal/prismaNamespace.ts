@@ -400,6 +400,19 @@ export const ModelName = {
   User: 'User',
   ProfileAvatarPurchase: 'ProfileAvatarPurchase',
   DevCoinEntry: 'DevCoinEntry',
+  StickerCollection: 'StickerCollection',
+  Sticker: 'Sticker',
+  StickerCopy: 'StickerCopy',
+  StickerPackPurchase: 'StickerPackPurchase',
+  StickerListing: 'StickerListing',
+  StickerTrade: 'StickerTrade',
+  StickerDonation: 'StickerDonation',
+  PatentLevel: 'PatentLevel',
+  StudentPatentProgress: 'StudentPatentProgress',
+  PatentRewardClaim: 'PatentRewardClaim',
+  DevCoinTreasury: 'DevCoinTreasury',
+  StickerMarketSetting: 'StickerMarketSetting',
+  DevCoinTreasuryEntry: 'DevCoinTreasuryEntry',
   AccessCodeSequence: 'AccessCodeSequence',
   Lesson: 'Lesson',
   LessonParticipant: 'LessonParticipant',
@@ -437,7 +450,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "profileAvatarPurchase" | "devCoinEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket"
+    modelProps: "user" | "profileAvatarPurchase" | "devCoinEntry" | "stickerCollection" | "sticker" | "stickerCopy" | "stickerPackPurchase" | "stickerListing" | "stickerTrade" | "stickerDonation" | "patentLevel" | "studentPatentProgress" | "patentRewardClaim" | "devCoinTreasury" | "stickerMarketSetting" | "devCoinTreasuryEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -660,6 +673,968 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.DevCoinEntryCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.DevCoinEntryCountAggregateOutputType> | number
+        }
+      }
+    }
+    StickerCollection: {
+      payload: Prisma.$StickerCollectionPayload<ExtArgs>
+      fields: Prisma.StickerCollectionFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.StickerCollectionFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCollectionPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.StickerCollectionFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCollectionPayload>
+        }
+        findFirst: {
+          args: Prisma.StickerCollectionFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCollectionPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.StickerCollectionFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCollectionPayload>
+        }
+        findMany: {
+          args: Prisma.StickerCollectionFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCollectionPayload>[]
+        }
+        create: {
+          args: Prisma.StickerCollectionCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCollectionPayload>
+        }
+        createMany: {
+          args: Prisma.StickerCollectionCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.StickerCollectionCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCollectionPayload>[]
+        }
+        delete: {
+          args: Prisma.StickerCollectionDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCollectionPayload>
+        }
+        update: {
+          args: Prisma.StickerCollectionUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCollectionPayload>
+        }
+        deleteMany: {
+          args: Prisma.StickerCollectionDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.StickerCollectionUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.StickerCollectionUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCollectionPayload>[]
+        }
+        upsert: {
+          args: Prisma.StickerCollectionUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCollectionPayload>
+        }
+        aggregate: {
+          args: Prisma.StickerCollectionAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateStickerCollection>
+        }
+        groupBy: {
+          args: Prisma.StickerCollectionGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StickerCollectionGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.StickerCollectionCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StickerCollectionCountAggregateOutputType> | number
+        }
+      }
+    }
+    Sticker: {
+      payload: Prisma.$StickerPayload<ExtArgs>
+      fields: Prisma.StickerFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.StickerFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.StickerFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPayload>
+        }
+        findFirst: {
+          args: Prisma.StickerFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.StickerFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPayload>
+        }
+        findMany: {
+          args: Prisma.StickerFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPayload>[]
+        }
+        create: {
+          args: Prisma.StickerCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPayload>
+        }
+        createMany: {
+          args: Prisma.StickerCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.StickerCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPayload>[]
+        }
+        delete: {
+          args: Prisma.StickerDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPayload>
+        }
+        update: {
+          args: Prisma.StickerUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPayload>
+        }
+        deleteMany: {
+          args: Prisma.StickerDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.StickerUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.StickerUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPayload>[]
+        }
+        upsert: {
+          args: Prisma.StickerUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPayload>
+        }
+        aggregate: {
+          args: Prisma.StickerAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateSticker>
+        }
+        groupBy: {
+          args: Prisma.StickerGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StickerGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.StickerCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StickerCountAggregateOutputType> | number
+        }
+      }
+    }
+    StickerCopy: {
+      payload: Prisma.$StickerCopyPayload<ExtArgs>
+      fields: Prisma.StickerCopyFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.StickerCopyFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCopyPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.StickerCopyFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCopyPayload>
+        }
+        findFirst: {
+          args: Prisma.StickerCopyFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCopyPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.StickerCopyFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCopyPayload>
+        }
+        findMany: {
+          args: Prisma.StickerCopyFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCopyPayload>[]
+        }
+        create: {
+          args: Prisma.StickerCopyCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCopyPayload>
+        }
+        createMany: {
+          args: Prisma.StickerCopyCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.StickerCopyCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCopyPayload>[]
+        }
+        delete: {
+          args: Prisma.StickerCopyDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCopyPayload>
+        }
+        update: {
+          args: Prisma.StickerCopyUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCopyPayload>
+        }
+        deleteMany: {
+          args: Prisma.StickerCopyDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.StickerCopyUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.StickerCopyUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCopyPayload>[]
+        }
+        upsert: {
+          args: Prisma.StickerCopyUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerCopyPayload>
+        }
+        aggregate: {
+          args: Prisma.StickerCopyAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateStickerCopy>
+        }
+        groupBy: {
+          args: Prisma.StickerCopyGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StickerCopyGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.StickerCopyCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StickerCopyCountAggregateOutputType> | number
+        }
+      }
+    }
+    StickerPackPurchase: {
+      payload: Prisma.$StickerPackPurchasePayload<ExtArgs>
+      fields: Prisma.StickerPackPurchaseFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.StickerPackPurchaseFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPackPurchasePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.StickerPackPurchaseFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPackPurchasePayload>
+        }
+        findFirst: {
+          args: Prisma.StickerPackPurchaseFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPackPurchasePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.StickerPackPurchaseFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPackPurchasePayload>
+        }
+        findMany: {
+          args: Prisma.StickerPackPurchaseFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPackPurchasePayload>[]
+        }
+        create: {
+          args: Prisma.StickerPackPurchaseCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPackPurchasePayload>
+        }
+        createMany: {
+          args: Prisma.StickerPackPurchaseCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.StickerPackPurchaseCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPackPurchasePayload>[]
+        }
+        delete: {
+          args: Prisma.StickerPackPurchaseDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPackPurchasePayload>
+        }
+        update: {
+          args: Prisma.StickerPackPurchaseUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPackPurchasePayload>
+        }
+        deleteMany: {
+          args: Prisma.StickerPackPurchaseDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.StickerPackPurchaseUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.StickerPackPurchaseUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPackPurchasePayload>[]
+        }
+        upsert: {
+          args: Prisma.StickerPackPurchaseUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerPackPurchasePayload>
+        }
+        aggregate: {
+          args: Prisma.StickerPackPurchaseAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateStickerPackPurchase>
+        }
+        groupBy: {
+          args: Prisma.StickerPackPurchaseGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StickerPackPurchaseGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.StickerPackPurchaseCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StickerPackPurchaseCountAggregateOutputType> | number
+        }
+      }
+    }
+    StickerListing: {
+      payload: Prisma.$StickerListingPayload<ExtArgs>
+      fields: Prisma.StickerListingFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.StickerListingFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerListingPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.StickerListingFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerListingPayload>
+        }
+        findFirst: {
+          args: Prisma.StickerListingFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerListingPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.StickerListingFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerListingPayload>
+        }
+        findMany: {
+          args: Prisma.StickerListingFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerListingPayload>[]
+        }
+        create: {
+          args: Prisma.StickerListingCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerListingPayload>
+        }
+        createMany: {
+          args: Prisma.StickerListingCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.StickerListingCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerListingPayload>[]
+        }
+        delete: {
+          args: Prisma.StickerListingDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerListingPayload>
+        }
+        update: {
+          args: Prisma.StickerListingUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerListingPayload>
+        }
+        deleteMany: {
+          args: Prisma.StickerListingDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.StickerListingUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.StickerListingUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerListingPayload>[]
+        }
+        upsert: {
+          args: Prisma.StickerListingUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerListingPayload>
+        }
+        aggregate: {
+          args: Prisma.StickerListingAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateStickerListing>
+        }
+        groupBy: {
+          args: Prisma.StickerListingGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StickerListingGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.StickerListingCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StickerListingCountAggregateOutputType> | number
+        }
+      }
+    }
+    StickerTrade: {
+      payload: Prisma.$StickerTradePayload<ExtArgs>
+      fields: Prisma.StickerTradeFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.StickerTradeFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerTradePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.StickerTradeFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerTradePayload>
+        }
+        findFirst: {
+          args: Prisma.StickerTradeFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerTradePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.StickerTradeFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerTradePayload>
+        }
+        findMany: {
+          args: Prisma.StickerTradeFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerTradePayload>[]
+        }
+        create: {
+          args: Prisma.StickerTradeCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerTradePayload>
+        }
+        createMany: {
+          args: Prisma.StickerTradeCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.StickerTradeCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerTradePayload>[]
+        }
+        delete: {
+          args: Prisma.StickerTradeDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerTradePayload>
+        }
+        update: {
+          args: Prisma.StickerTradeUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerTradePayload>
+        }
+        deleteMany: {
+          args: Prisma.StickerTradeDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.StickerTradeUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.StickerTradeUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerTradePayload>[]
+        }
+        upsert: {
+          args: Prisma.StickerTradeUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerTradePayload>
+        }
+        aggregate: {
+          args: Prisma.StickerTradeAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateStickerTrade>
+        }
+        groupBy: {
+          args: Prisma.StickerTradeGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StickerTradeGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.StickerTradeCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StickerTradeCountAggregateOutputType> | number
+        }
+      }
+    }
+    StickerDonation: {
+      payload: Prisma.$StickerDonationPayload<ExtArgs>
+      fields: Prisma.StickerDonationFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.StickerDonationFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerDonationPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.StickerDonationFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerDonationPayload>
+        }
+        findFirst: {
+          args: Prisma.StickerDonationFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerDonationPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.StickerDonationFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerDonationPayload>
+        }
+        findMany: {
+          args: Prisma.StickerDonationFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerDonationPayload>[]
+        }
+        create: {
+          args: Prisma.StickerDonationCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerDonationPayload>
+        }
+        createMany: {
+          args: Prisma.StickerDonationCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.StickerDonationCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerDonationPayload>[]
+        }
+        delete: {
+          args: Prisma.StickerDonationDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerDonationPayload>
+        }
+        update: {
+          args: Prisma.StickerDonationUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerDonationPayload>
+        }
+        deleteMany: {
+          args: Prisma.StickerDonationDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.StickerDonationUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.StickerDonationUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerDonationPayload>[]
+        }
+        upsert: {
+          args: Prisma.StickerDonationUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerDonationPayload>
+        }
+        aggregate: {
+          args: Prisma.StickerDonationAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateStickerDonation>
+        }
+        groupBy: {
+          args: Prisma.StickerDonationGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StickerDonationGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.StickerDonationCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StickerDonationCountAggregateOutputType> | number
+        }
+      }
+    }
+    PatentLevel: {
+      payload: Prisma.$PatentLevelPayload<ExtArgs>
+      fields: Prisma.PatentLevelFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.PatentLevelFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentLevelPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.PatentLevelFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentLevelPayload>
+        }
+        findFirst: {
+          args: Prisma.PatentLevelFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentLevelPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.PatentLevelFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentLevelPayload>
+        }
+        findMany: {
+          args: Prisma.PatentLevelFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentLevelPayload>[]
+        }
+        create: {
+          args: Prisma.PatentLevelCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentLevelPayload>
+        }
+        createMany: {
+          args: Prisma.PatentLevelCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.PatentLevelCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentLevelPayload>[]
+        }
+        delete: {
+          args: Prisma.PatentLevelDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentLevelPayload>
+        }
+        update: {
+          args: Prisma.PatentLevelUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentLevelPayload>
+        }
+        deleteMany: {
+          args: Prisma.PatentLevelDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.PatentLevelUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.PatentLevelUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentLevelPayload>[]
+        }
+        upsert: {
+          args: Prisma.PatentLevelUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentLevelPayload>
+        }
+        aggregate: {
+          args: Prisma.PatentLevelAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePatentLevel>
+        }
+        groupBy: {
+          args: Prisma.PatentLevelGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PatentLevelGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.PatentLevelCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PatentLevelCountAggregateOutputType> | number
+        }
+      }
+    }
+    StudentPatentProgress: {
+      payload: Prisma.$StudentPatentProgressPayload<ExtArgs>
+      fields: Prisma.StudentPatentProgressFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.StudentPatentProgressFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentPatentProgressPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.StudentPatentProgressFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentPatentProgressPayload>
+        }
+        findFirst: {
+          args: Prisma.StudentPatentProgressFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentPatentProgressPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.StudentPatentProgressFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentPatentProgressPayload>
+        }
+        findMany: {
+          args: Prisma.StudentPatentProgressFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentPatentProgressPayload>[]
+        }
+        create: {
+          args: Prisma.StudentPatentProgressCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentPatentProgressPayload>
+        }
+        createMany: {
+          args: Prisma.StudentPatentProgressCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.StudentPatentProgressCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentPatentProgressPayload>[]
+        }
+        delete: {
+          args: Prisma.StudentPatentProgressDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentPatentProgressPayload>
+        }
+        update: {
+          args: Prisma.StudentPatentProgressUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentPatentProgressPayload>
+        }
+        deleteMany: {
+          args: Prisma.StudentPatentProgressDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.StudentPatentProgressUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.StudentPatentProgressUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentPatentProgressPayload>[]
+        }
+        upsert: {
+          args: Prisma.StudentPatentProgressUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentPatentProgressPayload>
+        }
+        aggregate: {
+          args: Prisma.StudentPatentProgressAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateStudentPatentProgress>
+        }
+        groupBy: {
+          args: Prisma.StudentPatentProgressGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StudentPatentProgressGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.StudentPatentProgressCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StudentPatentProgressCountAggregateOutputType> | number
+        }
+      }
+    }
+    PatentRewardClaim: {
+      payload: Prisma.$PatentRewardClaimPayload<ExtArgs>
+      fields: Prisma.PatentRewardClaimFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.PatentRewardClaimFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentRewardClaimPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.PatentRewardClaimFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentRewardClaimPayload>
+        }
+        findFirst: {
+          args: Prisma.PatentRewardClaimFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentRewardClaimPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.PatentRewardClaimFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentRewardClaimPayload>
+        }
+        findMany: {
+          args: Prisma.PatentRewardClaimFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentRewardClaimPayload>[]
+        }
+        create: {
+          args: Prisma.PatentRewardClaimCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentRewardClaimPayload>
+        }
+        createMany: {
+          args: Prisma.PatentRewardClaimCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.PatentRewardClaimCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentRewardClaimPayload>[]
+        }
+        delete: {
+          args: Prisma.PatentRewardClaimDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentRewardClaimPayload>
+        }
+        update: {
+          args: Prisma.PatentRewardClaimUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentRewardClaimPayload>
+        }
+        deleteMany: {
+          args: Prisma.PatentRewardClaimDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.PatentRewardClaimUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.PatentRewardClaimUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentRewardClaimPayload>[]
+        }
+        upsert: {
+          args: Prisma.PatentRewardClaimUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PatentRewardClaimPayload>
+        }
+        aggregate: {
+          args: Prisma.PatentRewardClaimAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePatentRewardClaim>
+        }
+        groupBy: {
+          args: Prisma.PatentRewardClaimGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PatentRewardClaimGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.PatentRewardClaimCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PatentRewardClaimCountAggregateOutputType> | number
+        }
+      }
+    }
+    DevCoinTreasury: {
+      payload: Prisma.$DevCoinTreasuryPayload<ExtArgs>
+      fields: Prisma.DevCoinTreasuryFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.DevCoinTreasuryFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.DevCoinTreasuryFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryPayload>
+        }
+        findFirst: {
+          args: Prisma.DevCoinTreasuryFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.DevCoinTreasuryFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryPayload>
+        }
+        findMany: {
+          args: Prisma.DevCoinTreasuryFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryPayload>[]
+        }
+        create: {
+          args: Prisma.DevCoinTreasuryCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryPayload>
+        }
+        createMany: {
+          args: Prisma.DevCoinTreasuryCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.DevCoinTreasuryCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryPayload>[]
+        }
+        delete: {
+          args: Prisma.DevCoinTreasuryDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryPayload>
+        }
+        update: {
+          args: Prisma.DevCoinTreasuryUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryPayload>
+        }
+        deleteMany: {
+          args: Prisma.DevCoinTreasuryDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.DevCoinTreasuryUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.DevCoinTreasuryUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryPayload>[]
+        }
+        upsert: {
+          args: Prisma.DevCoinTreasuryUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryPayload>
+        }
+        aggregate: {
+          args: Prisma.DevCoinTreasuryAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateDevCoinTreasury>
+        }
+        groupBy: {
+          args: Prisma.DevCoinTreasuryGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DevCoinTreasuryGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.DevCoinTreasuryCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DevCoinTreasuryCountAggregateOutputType> | number
+        }
+      }
+    }
+    StickerMarketSetting: {
+      payload: Prisma.$StickerMarketSettingPayload<ExtArgs>
+      fields: Prisma.StickerMarketSettingFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.StickerMarketSettingFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerMarketSettingPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.StickerMarketSettingFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerMarketSettingPayload>
+        }
+        findFirst: {
+          args: Prisma.StickerMarketSettingFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerMarketSettingPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.StickerMarketSettingFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerMarketSettingPayload>
+        }
+        findMany: {
+          args: Prisma.StickerMarketSettingFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerMarketSettingPayload>[]
+        }
+        create: {
+          args: Prisma.StickerMarketSettingCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerMarketSettingPayload>
+        }
+        createMany: {
+          args: Prisma.StickerMarketSettingCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.StickerMarketSettingCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerMarketSettingPayload>[]
+        }
+        delete: {
+          args: Prisma.StickerMarketSettingDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerMarketSettingPayload>
+        }
+        update: {
+          args: Prisma.StickerMarketSettingUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerMarketSettingPayload>
+        }
+        deleteMany: {
+          args: Prisma.StickerMarketSettingDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.StickerMarketSettingUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.StickerMarketSettingUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerMarketSettingPayload>[]
+        }
+        upsert: {
+          args: Prisma.StickerMarketSettingUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StickerMarketSettingPayload>
+        }
+        aggregate: {
+          args: Prisma.StickerMarketSettingAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateStickerMarketSetting>
+        }
+        groupBy: {
+          args: Prisma.StickerMarketSettingGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StickerMarketSettingGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.StickerMarketSettingCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StickerMarketSettingCountAggregateOutputType> | number
+        }
+      }
+    }
+    DevCoinTreasuryEntry: {
+      payload: Prisma.$DevCoinTreasuryEntryPayload<ExtArgs>
+      fields: Prisma.DevCoinTreasuryEntryFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.DevCoinTreasuryEntryFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryEntryPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.DevCoinTreasuryEntryFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryEntryPayload>
+        }
+        findFirst: {
+          args: Prisma.DevCoinTreasuryEntryFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryEntryPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.DevCoinTreasuryEntryFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryEntryPayload>
+        }
+        findMany: {
+          args: Prisma.DevCoinTreasuryEntryFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryEntryPayload>[]
+        }
+        create: {
+          args: Prisma.DevCoinTreasuryEntryCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryEntryPayload>
+        }
+        createMany: {
+          args: Prisma.DevCoinTreasuryEntryCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.DevCoinTreasuryEntryCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryEntryPayload>[]
+        }
+        delete: {
+          args: Prisma.DevCoinTreasuryEntryDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryEntryPayload>
+        }
+        update: {
+          args: Prisma.DevCoinTreasuryEntryUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryEntryPayload>
+        }
+        deleteMany: {
+          args: Prisma.DevCoinTreasuryEntryDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.DevCoinTreasuryEntryUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.DevCoinTreasuryEntryUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryEntryPayload>[]
+        }
+        upsert: {
+          args: Prisma.DevCoinTreasuryEntryUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTreasuryEntryPayload>
+        }
+        aggregate: {
+          args: Prisma.DevCoinTreasuryEntryAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateDevCoinTreasuryEntry>
+        }
+        groupBy: {
+          args: Prisma.DevCoinTreasuryEntryGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DevCoinTreasuryEntryGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.DevCoinTreasuryEntryCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DevCoinTreasuryEntryCountAggregateOutputType> | number
         }
       }
     }
@@ -2383,6 +3358,186 @@ export const DevCoinEntryScalarFieldEnum = {
 export type DevCoinEntryScalarFieldEnum = (typeof DevCoinEntryScalarFieldEnum)[keyof typeof DevCoinEntryScalarFieldEnum]
 
 
+export const StickerCollectionScalarFieldEnum = {
+  id: 'id',
+  slug: 'slug',
+  name: 'name',
+  state: 'state',
+  activatedAt: 'activatedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type StickerCollectionScalarFieldEnum = (typeof StickerCollectionScalarFieldEnum)[keyof typeof StickerCollectionScalarFieldEnum]
+
+
+export const StickerScalarFieldEnum = {
+  id: 'id',
+  collectionId: 'collectionId',
+  number: 'number',
+  slug: 'slug',
+  name: 'name',
+  description: 'description',
+  alt: 'alt',
+  imagePath: 'imagePath',
+  manifestHash: 'manifestHash',
+  totalCopies: 'totalCopies',
+  rarity: 'rarity',
+  score: 'score',
+  state: 'state',
+  publishedAt: 'publishedAt',
+  firstDistributedAt: 'firstDistributedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type StickerScalarFieldEnum = (typeof StickerScalarFieldEnum)[keyof typeof StickerScalarFieldEnum]
+
+
+export const StickerCopyScalarFieldEnum = {
+  id: 'id',
+  stickerId: 'stickerId',
+  serial: 'serial',
+  ownerId: 'ownerId',
+  state: 'state',
+  packPurchaseId: 'packPurchaseId',
+  acquiredAt: 'acquiredAt',
+  createdAt: 'createdAt'
+} as const
+
+export type StickerCopyScalarFieldEnum = (typeof StickerCopyScalarFieldEnum)[keyof typeof StickerCopyScalarFieldEnum]
+
+
+export const StickerPackPurchaseScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  price: 'price',
+  schoolDay: 'schoolDay',
+  idempotencyKey: 'idempotencyKey',
+  createdAt: 'createdAt'
+} as const
+
+export type StickerPackPurchaseScalarFieldEnum = (typeof StickerPackPurchaseScalarFieldEnum)[keyof typeof StickerPackPurchaseScalarFieldEnum]
+
+
+export const StickerListingScalarFieldEnum = {
+  id: 'id',
+  copyId: 'copyId',
+  sellerId: 'sellerId',
+  buyerId: 'buyerId',
+  price: 'price',
+  state: 'state',
+  expiresAt: 'expiresAt',
+  createdAt: 'createdAt',
+  settledAt: 'settledAt'
+} as const
+
+export type StickerListingScalarFieldEnum = (typeof StickerListingScalarFieldEnum)[keyof typeof StickerListingScalarFieldEnum]
+
+
+export const StickerTradeScalarFieldEnum = {
+  id: 'id',
+  listingId: 'listingId',
+  sellerId: 'sellerId',
+  buyerId: 'buyerId',
+  price: 'price',
+  sellerAmount: 'sellerAmount',
+  fee: 'fee',
+  createdAt: 'createdAt'
+} as const
+
+export type StickerTradeScalarFieldEnum = (typeof StickerTradeScalarFieldEnum)[keyof typeof StickerTradeScalarFieldEnum]
+
+
+export const StickerDonationScalarFieldEnum = {
+  id: 'id',
+  copyId: 'copyId',
+  senderId: 'senderId',
+  recipientId: 'recipientId',
+  state: 'state',
+  expiresAt: 'expiresAt',
+  createdAt: 'createdAt',
+  resolvedAt: 'resolvedAt'
+} as const
+
+export type StickerDonationScalarFieldEnum = (typeof StickerDonationScalarFieldEnum)[keyof typeof StickerDonationScalarFieldEnum]
+
+
+export const PatentLevelScalarFieldEnum = {
+  id: 'id',
+  collectionId: 'collectionId',
+  version: 'version',
+  rank: 'rank',
+  name: 'name',
+  threshold: 'threshold',
+  xpReward: 'xpReward',
+  devCoinReward: 'devCoinReward',
+  packReward: 'packReward'
+} as const
+
+export type PatentLevelScalarFieldEnum = (typeof PatentLevelScalarFieldEnum)[keyof typeof PatentLevelScalarFieldEnum]
+
+
+export const StudentPatentProgressScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  score: 'score',
+  levelId: 'levelId',
+  bestRank: 'bestRank',
+  updatedAt: 'updatedAt'
+} as const
+
+export type StudentPatentProgressScalarFieldEnum = (typeof StudentPatentProgressScalarFieldEnum)[keyof typeof StudentPatentProgressScalarFieldEnum]
+
+
+export const PatentRewardClaimScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  patentLevelId: 'patentLevelId',
+  state: 'state',
+  xpPaid: 'xpPaid',
+  devCoinsPaid: 'devCoinsPaid',
+  packPaid: 'packPaid',
+  createdAt: 'createdAt',
+  paidAt: 'paidAt'
+} as const
+
+export type PatentRewardClaimScalarFieldEnum = (typeof PatentRewardClaimScalarFieldEnum)[keyof typeof PatentRewardClaimScalarFieldEnum]
+
+
+export const DevCoinTreasuryScalarFieldEnum = {
+  id: 'id',
+  balance: 'balance',
+  totalSupply: 'totalSupply',
+  updatedAt: 'updatedAt'
+} as const
+
+export type DevCoinTreasuryScalarFieldEnum = (typeof DevCoinTreasuryScalarFieldEnum)[keyof typeof DevCoinTreasuryScalarFieldEnum]
+
+
+export const StickerMarketSettingScalarFieldEnum = {
+  id: 'id',
+  enabled: 'enabled',
+  updatedAt: 'updatedAt'
+} as const
+
+export type StickerMarketSettingScalarFieldEnum = (typeof StickerMarketSettingScalarFieldEnum)[keyof typeof StickerMarketSettingScalarFieldEnum]
+
+
+export const DevCoinTreasuryEntryScalarFieldEnum = {
+  id: 'id',
+  authorId: 'authorId',
+  devCoinEntryId: 'devCoinEntryId',
+  delta: 'delta',
+  reason: 'reason',
+  source: 'source',
+  idempotencyKey: 'idempotencyKey',
+  createdAt: 'createdAt'
+} as const
+
+export type DevCoinTreasuryEntryScalarFieldEnum = (typeof DevCoinTreasuryEntryScalarFieldEnum)[keyof typeof DevCoinTreasuryEntryScalarFieldEnum]
+
+
 export const AccessCodeSequenceScalarFieldEnum = {
   year: 'year',
   nextValue: 'nextValue'
@@ -2823,6 +3978,118 @@ export type ListEnumDevCoinSourceFieldRefInput<$PrismaModel> = FieldRefInputType
 
 
 /**
+ * Reference to a field of type 'StickerCollectionState'
+ */
+export type EnumStickerCollectionStateFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StickerCollectionState'>
+
+
+
+/**
+ * Reference to a field of type 'StickerCollectionState[]'
+ */
+export type ListEnumStickerCollectionStateFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StickerCollectionState[]'>
+
+
+
+/**
+ * Reference to a field of type 'StickerRarity'
+ */
+export type EnumStickerRarityFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StickerRarity'>
+
+
+
+/**
+ * Reference to a field of type 'StickerRarity[]'
+ */
+export type ListEnumStickerRarityFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StickerRarity[]'>
+
+
+
+/**
+ * Reference to a field of type 'StickerState'
+ */
+export type EnumStickerStateFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StickerState'>
+
+
+
+/**
+ * Reference to a field of type 'StickerState[]'
+ */
+export type ListEnumStickerStateFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StickerState[]'>
+
+
+
+/**
+ * Reference to a field of type 'StickerCopyState'
+ */
+export type EnumStickerCopyStateFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StickerCopyState'>
+
+
+
+/**
+ * Reference to a field of type 'StickerCopyState[]'
+ */
+export type ListEnumStickerCopyStateFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StickerCopyState[]'>
+
+
+
+/**
+ * Reference to a field of type 'StickerListingState'
+ */
+export type EnumStickerListingStateFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StickerListingState'>
+
+
+
+/**
+ * Reference to a field of type 'StickerListingState[]'
+ */
+export type ListEnumStickerListingStateFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StickerListingState[]'>
+
+
+
+/**
+ * Reference to a field of type 'StickerDonationState'
+ */
+export type EnumStickerDonationStateFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StickerDonationState'>
+
+
+
+/**
+ * Reference to a field of type 'StickerDonationState[]'
+ */
+export type ListEnumStickerDonationStateFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StickerDonationState[]'>
+
+
+
+/**
+ * Reference to a field of type 'PatentRewardState'
+ */
+export type EnumPatentRewardStateFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PatentRewardState'>
+
+
+
+/**
+ * Reference to a field of type 'PatentRewardState[]'
+ */
+export type ListEnumPatentRewardStateFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PatentRewardState[]'>
+
+
+
+/**
+ * Reference to a field of type 'TreasuryEntrySource'
+ */
+export type EnumTreasuryEntrySourceFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TreasuryEntrySource'>
+
+
+
+/**
+ * Reference to a field of type 'TreasuryEntrySource[]'
+ */
+export type ListEnumTreasuryEntrySourceFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TreasuryEntrySource[]'>
+
+
+
+/**
  * Reference to a field of type 'LessonStatus'
  */
 export type EnumLessonStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LessonStatus'>
@@ -3143,6 +4410,19 @@ export type GlobalOmitConfig = {
   user?: Prisma.UserOmit
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseOmit
   devCoinEntry?: Prisma.DevCoinEntryOmit
+  stickerCollection?: Prisma.StickerCollectionOmit
+  sticker?: Prisma.StickerOmit
+  stickerCopy?: Prisma.StickerCopyOmit
+  stickerPackPurchase?: Prisma.StickerPackPurchaseOmit
+  stickerListing?: Prisma.StickerListingOmit
+  stickerTrade?: Prisma.StickerTradeOmit
+  stickerDonation?: Prisma.StickerDonationOmit
+  patentLevel?: Prisma.PatentLevelOmit
+  studentPatentProgress?: Prisma.StudentPatentProgressOmit
+  patentRewardClaim?: Prisma.PatentRewardClaimOmit
+  devCoinTreasury?: Prisma.DevCoinTreasuryOmit
+  stickerMarketSetting?: Prisma.StickerMarketSettingOmit
+  devCoinTreasuryEntry?: Prisma.DevCoinTreasuryEntryOmit
   accessCodeSequence?: Prisma.AccessCodeSequenceOmit
   lesson?: Prisma.LessonOmit
   lessonParticipant?: Prisma.LessonParticipantOmit

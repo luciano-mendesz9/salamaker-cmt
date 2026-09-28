@@ -6,7 +6,7 @@
 |---|---|
 | ID | F0002 |
 | Data | 2026-09-27 |
-| Estado | Pedido especificado; nao implementado |
+| Estado | Implementado no codigo em `codex/f001-f002-sticker-album`; validacao visual/local pendente |
 | Publico | Professor autenticado, somente em desenvolvimento local |
 | Dependencias | Catalogo atual de avatares e F0001 para figurinhas |
 
@@ -313,3 +313,12 @@ Substituicao excepcional de uma imagem deve ser um fluxo futuro separado, com ba
 - `npm test`, lint, typecheck e build sequenciais;
 - smoke test da imagem publicada na Vercel;
 - ativacao em banco apenas depois do smoke test do asset.
+
+## Evidencia de implementacao — 2026-09-28
+
+- `sharp` foi declarado como dependencia direta. JPEG, PNG e WebP estatico sao recodificados sem metadados; perfis saem em 512 × 512 e figurinhas em 900 × 1.200, proporcao 3:4.
+- O gerenciador exige ambiente nao produtivo, `ENABLE_LOCAL_ASSET_MANAGER=true`, filesystem gravavel e professor ativo. Rotas de escrita retornam `404` quando o recurso nao esta habilitado.
+- Upload local grava asset, manifesto e registro TypeScript por troca atomica, com lock por operacao, rollback dos arquivos da operacao e bloqueio de overwrite, slug inseguro, colisao de numero e hash duplicado.
+- O catalogo inicial registra as 41 imagens de perfil existentes sem alterar as chaves salvas. A figurinha preparada fica apenas no Git; a tela de producao verifica o asset publicado antes de criar o estoque de modo idempotente e auditado.
+- Testes automatizados cobrem conversao real para WebP 3:4, remocao de EXIF, arquivo corrompido, formato nao aceito, limite de 10 MB, dimensao maior que 4.096 px e slugs maliciosos.
+- Permanecem pendentes o teste visual do recorte com professor autenticado, rollback induzido em cada etapa, smoke test do asset na Vercel e ativacao real somente depois do deploy.
