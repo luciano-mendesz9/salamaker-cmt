@@ -1,6 +1,4 @@
-/* This file is generated from src/content/sticker-catalog/*.json. */
-import type { StickerCatalogEntry } from "@/lib/asset-catalog-files";
-export const STICKER_CATALOG: readonly StickerCatalogEntry[] = [
+[
   {
     "slug": "rhanna-choft",
     "number": 1,
@@ -77,4 +75,4 @@ export const STICKER_CATALOG: readonly StickerCatalogEntry[] = [
     "bytes": 128494,
     "preparedAt": "2026-09-28T23:47:50.669Z"
   }
-];
+]
