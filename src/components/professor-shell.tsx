@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Activity, Bell, BookOpen, ClipboardList, Coins, ExternalLink, Gauge, Images, Palette, ScrollText, Settings2, Trophy, UsersRound } from "lucide-react";
+import { Activity, Bell, BookOpen, ClipboardList, Coins, ExternalLink, Gauge, Images, KeyRound, Palette, ScrollText, Settings2, Trophy, UsersRound } from "lucide-react";
 import { Brand } from "./brand";
 import { LogoutButton } from "./logout-button";
 
@@ -13,6 +13,7 @@ const links = [
   ["/professor/moderacao", "Moderação e tema", Palette],
   ["/professor/tesouraria", "Tesouraria Dev-Coin", Coins],
   ["/professor/figurinhas/catalogo", "Catálogo de figurinhas", Images],
+  ["/professor/conta", "Minha conta", KeyRound],
   ...(process.env.NODE_ENV !== "production" && process.env.ENABLE_LOCAL_ASSET_MANAGER === "true"
     ? [["/professor/midias", "Mídias locais", Images] as const]
     : []),
@@ -29,7 +30,7 @@ export function ProfessorShell({ title, children }: { title: string; children: R
       </Link>
       <div className="mt-auto rounded-2xl border border-blue-400/15 bg-blue-400/5 p-4"><UsersRound className="text-blue-300" size={20}/><p className="mt-3 text-sm font-bold">Uma turma de Robótica.</p><p className="mt-1 text-xs leading-relaxed text-slate-400">Alunos do 6º e 7º ano aprendendo juntos.</p></div>
     </aside>
-    <main className="lg:ml-64"><header className="sticky top-0 z-20 flex h-20 items-center justify-between border-b border-slate-800 bg-[#0b1421]/90 px-5 backdrop-blur-xl sm:px-8"><div><p className="text-xs text-slate-500">Painel do professor</p><h1 className="font-display font-bold">{title}</h1></div><div className="flex items-center gap-3"><span className="hidden items-center gap-2 rounded-full border border-slate-800 px-3 py-2 text-xs text-slate-400 sm:flex"><i className="h-2 w-2 rounded-full bg-emerald-400"/>Ambiente ativo</span><LogoutButton/></div></header><div className="mx-auto max-w-[1500px] p-5 sm:p-8">{children}</div></main>
+    <main className="lg:ml-64"><header className="sticky top-0 z-20 flex h-20 items-center justify-between border-b border-slate-800 bg-[#0b1421]/90 px-5 backdrop-blur-xl sm:px-8"><div><p className="text-xs text-slate-500">Painel do professor</p><h1 className="font-display font-bold">{title}</h1></div><div className="flex items-center gap-3"><span className="hidden items-center gap-2 rounded-full border border-slate-800 px-3 py-2 text-xs text-slate-400 sm:flex"><i className="h-2 w-2 rounded-full bg-emerald-400"/>Ambiente ativo</span><Link href="/professor/conta" aria-label="Minha conta e senha" title="Minha conta e senha" className="focus-ring rounded-lg p-2 text-slate-400 hover:bg-white/5 hover:text-white"><KeyRound size={18}/></Link><LogoutButton/></div></header><div className="mx-auto max-w-[1500px] p-5 sm:p-8">{children}</div></main>
     <nav aria-label="Navegação do professor" className="fixed inset-x-0 bottom-0 z-30 flex h-[72px] items-center justify-around border-t border-slate-800 bg-[#0d1726]/95 backdrop-blur lg:hidden">
       <Link href="/professor" aria-label="Visão geral" className="focus-ring text-slate-400"><Gauge/></Link>
       <Link href="/professor/aulas" aria-label="Aulas" className="focus-ring text-slate-400"><BookOpen/></Link>
