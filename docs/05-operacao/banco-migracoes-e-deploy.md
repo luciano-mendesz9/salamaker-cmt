@@ -21,6 +21,9 @@
 | `20260924040000_add_profile_avatar_purchases` | Historico de compra de avatar |
 | `20260924210000_add_dev_coins` | Saldo/ledger de Dev-Coins e migracao de compras |
 | `20260924230000_invert_dev_coin_rate` | Semantica `devCoinsPerXp` |
+| `20260928120000_add_sticker_album_and_treasury` | Album, mercado, estoque, patentes e tesouraria |
+| `20260928150000_add_sticker_market_switch` | Chave administrativa de compra e venda |
+| `20260929210000_add_student_dev_coin_transfers` | Transferencias entre alunos, taxa de XP e trilha auditavel |
 
 ## Procedimento seguro de alteracao
 
@@ -53,6 +56,6 @@ A configuracao e adequada a um runtime Node/serverless com Neon:
 
 Um build verde nao comprova que a URL do banco, segredos, migracoes e fluxos autenticados estejam corretos no ambiente publicado. Depois do deploy, valide separadamente login de professor/aluno, check-in, leitura e escrita no banco, e ao menos uma operacao reversivel de cada fluxo critico.
 
-## Estado nao verificado nesta analise
+## Evidencia de 29 de setembro de 2026
 
-Nenhum comando de escrita, migracao ou consulta ao banco remoto foi executado ao criar estes documentos. Portanto, a documentacao confirma o contrato do repositorio local, nao a situacao atual do schema ou dos dados do Neon.
+A migration `20260929210000_add_student_dev_coin_transfers` foi aplicada ao Neon configurado no checkout. A verificacao posterior informou `Database schema is up to date!`; a reconciliacao encontrou `19.998 DC` tanto nos saldos dos 25 alunos quanto no ledger. Dois ensaios transacionais de transferencia foram obrigatoriamente revertidos e confirmaram zero registros residuais. Essas evidencias sao pontuais e nao substituem monitoramento nem teste humano autenticado no deploy.

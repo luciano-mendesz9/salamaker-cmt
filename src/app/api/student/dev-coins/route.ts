@@ -7,10 +7,12 @@ import { devCoinsForXp } from "@/lib/dev-coins";
 import { debitTreasury, InsufficientTreasury } from "@/lib/treasury";
 import { assertSameOrigin, consumeRateLimit } from "@/lib/request-security";
 import { requireCollectiblesSchema } from "@/lib/feature-readiness";
+import { verifyStudentPassword } from "@/lib/student-password";
 
 const input = z.object({
   xpAmount: z.number().int().min(1).max(10_000),
   expectedRate: z.number().int().min(1).max(10_000),
+  studentPassword: z.string().min(1).max(72),
 });
 
 class DevCoinRateChanged extends Error {
@@ -99,7 +101,8 @@ export async function POST(request: Request) {
     await requireCollectiblesSchema();
     assertSameOrigin(request);
     await consumeRateLimit(`dev-coins:purchase:${student.id}`, 20, 10 * 60_000);
-    const { xpAmount, expectedRate } = input.parse(await request.json());
+    const { xpAmount, expectedRate, studentPassword } = input.parse(await request.json());
+    await verifyStudentPassword(studentPassword, student.passwordHash);
     return NextResponse.json(await purchaseDevCoins(student.id, xpAmount, expectedRate));
   } catch (error) {
     if (error instanceof z.ZodError) {

@@ -30,6 +30,24 @@ export function isSafeAssetSlug(value: string) {
   return /^[a-z0-9][a-z0-9-]{1,38}[a-z0-9]$/.test(value);
 }
 
+export function assetSlugFromName(value: string) {
+  const slug = value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 40).replace(/-+$/g, "");
+  if (!isSafeAssetSlug(slug)) throw new Error("INVALID_GENERATED_SLUG");
+  return slug;
+}
+
+export function nextAvailableAssetSlug(value: string, existing: Iterable<string>) {
+  const used = new Set(existing);
+  const base = assetSlugFromName(value);
+  if (!used.has(base)) return base;
+  for (let index = 2; index <= 999; index += 1) {
+    const suffix = `-${index}`;
+    const candidate = `${base.slice(0, 40 - suffix.length).replace(/-+$/g, "")}${suffix}`;
+    if (!used.has(candidate)) return candidate;
+  }
+  throw new Error("SLUG_SPACE_EXHAUSTED");
+}
+
 export const PATENT_NAMES = [
   "Bronze I", "Bronze II", "Bronze III",
   "Prata I", "Prata II", "Prata III",

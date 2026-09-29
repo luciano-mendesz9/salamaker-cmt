@@ -52,6 +52,9 @@
 | `POST /api/student/activities/[id]/signal` | Marca link externo como realizado |
 | `POST /api/student/activities/[id]/submit` | Envia formulario unico e corrige objetivas |
 | `POST /api/student/dev-coins` | Converte XP em Dev-Coins |
+| `POST /api/student/dev-coins/transfer` | Transfere DC para outro aluno, cobra 5 XP e aplica teto semanal |
+| `POST /api/student/stickers/packs` | Compra pacote mediante senha atual |
+| `POST /api/student/stickers/listings/[id]/purchase` | Compra figurinha anunciada mediante senha atual |
 | `PATCH /api/student/profile-avatar` | Compra ou seleciona avatar permitido |
 | `GET /api/student/notifications/popup` | Retorna pop-ups elegiveis e registra exibicao |
 | `PATCH /api/student/notifications/popup` | Dispensa pop-up individualmente |
@@ -77,6 +80,7 @@
 | `GET/POST /api/professor/notifications` | Lista ou publica notificacao |
 | `DELETE /api/professor/notifications/[id]` | Exclui notificacao global |
 | `GET/PATCH /api/professor/settings` | Consulta ou altera configuracoes |
+| `POST /api/professor/local-assets/stickers` | Prepara WebP e manifesto com colecao/identificadores automaticos no ambiente local |
 
 ## Convencoes de resposta
 

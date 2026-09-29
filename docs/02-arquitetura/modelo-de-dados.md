@@ -32,9 +32,10 @@ O schema canonico esta em `prisma/schema.prisma`. Os saldos de XP e Dev-Coins fi
 |---|---|
 | `XpEntry` | Ledger imutavel de deltas de XP com origem e chave idempotente |
 | `DevCoinEntry` | Ledger de Dev-Coins, opcionalmente ligado ao gasto de XP |
+| `DevCoinTransfer` | Transferencia auditavel entre alunos, com dois lancamentos de DC, taxa de XP, semana e idempotencia |
 | `ProfileAvatarPurchase` | Prova de compra unica de uma foto por aluno |
 
-Origens de XP: presenca, comportamento, manual/em massa, sistema, atividade, avatar legado e compra de Dev-Coins. Origens de Dev-Coin: compra, concessao do professor, concessao inicial e compra de avatar.
+Origens de XP incluem presenca, comportamento, manual/em massa, sistema, atividade, avatar legado, compra de Dev-Coins e taxa de transferencia. Origens de Dev-Coin incluem compra, concessao do professor, concessao inicial, compra de avatar, envio e recebimento entre alunos.
 
 ### Atividades
 
@@ -74,6 +75,7 @@ User (professor) ──< Activity ──< ActivityRecipient >── User (aluno)
 
 User (aluno) ──< XpEntry
              └─< DevCoinEntry
+             └─< DevCoinTransfer (remetente ou destinatario)
              └─< ProfileAvatarPurchase
 
 Notification ──< NotificationReceipt >── User (aluno)

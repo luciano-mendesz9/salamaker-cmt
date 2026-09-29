@@ -54,6 +54,7 @@ export const ModelName = {
   User: 'User',
   ProfileAvatarPurchase: 'ProfileAvatarPurchase',
   DevCoinEntry: 'DevCoinEntry',
+  DevCoinTransfer: 'DevCoinTransfer',
   StickerCollection: 'StickerCollection',
   Sticker: 'Sticker',
   StickerCopy: 'StickerCopy',
@@ -158,6 +159,23 @@ export const DevCoinEntryScalarFieldEnum = {
 } as const
 
 export type DevCoinEntryScalarFieldEnum = (typeof DevCoinEntryScalarFieldEnum)[keyof typeof DevCoinEntryScalarFieldEnum]
+
+
+export const DevCoinTransferScalarFieldEnum = {
+  id: 'id',
+  senderId: 'senderId',
+  recipientId: 'recipientId',
+  senderEntryId: 'senderEntryId',
+  recipientEntryId: 'recipientEntryId',
+  xpEntryId: 'xpEntryId',
+  amount: 'amount',
+  xpFee: 'xpFee',
+  weekKey: 'weekKey',
+  idempotencyKey: 'idempotencyKey',
+  createdAt: 'createdAt'
+} as const
+
+export type DevCoinTransferScalarFieldEnum = (typeof DevCoinTransferScalarFieldEnum)[keyof typeof DevCoinTransferScalarFieldEnum]
 
 
 export const StickerCollectionScalarFieldEnum = {

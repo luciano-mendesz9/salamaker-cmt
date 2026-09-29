@@ -361,6 +361,8 @@ export type UserWhereInput = {
   patentProgress?: Prisma.XOR<Prisma.StudentPatentProgressNullableScalarRelationFilter, Prisma.StudentPatentProgressWhereInput> | null
   patentRewardClaims?: Prisma.PatentRewardClaimListRelationFilter
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryListRelationFilter
+  devCoinTransfersSent?: Prisma.DevCoinTransferListRelationFilter
+  devCoinTransfersReceived?: Prisma.DevCoinTransferListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -415,6 +417,8 @@ export type UserOrderByWithRelationInput = {
   patentProgress?: Prisma.StudentPatentProgressOrderByWithRelationInput
   patentRewardClaims?: Prisma.PatentRewardClaimOrderByRelationAggregateInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryOrderByRelationAggregateInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferOrderByRelationAggregateInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -472,6 +476,8 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   patentProgress?: Prisma.XOR<Prisma.StudentPatentProgressNullableScalarRelationFilter, Prisma.StudentPatentProgressWhereInput> | null
   patentRewardClaims?: Prisma.PatentRewardClaimListRelationFilter
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryListRelationFilter
+  devCoinTransfersSent?: Prisma.DevCoinTransferListRelationFilter
+  devCoinTransfersReceived?: Prisma.DevCoinTransferListRelationFilter
 }, "id" | "accessCode">
 
 export type UserOrderByWithAggregationInput = {
@@ -576,6 +582,8 @@ export type UserCreateInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -630,6 +638,8 @@ export type UserUncheckedCreateInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUpdateInput = {
@@ -684,6 +694,8 @@ export type UserUpdateInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -738,6 +750,8 @@ export type UserUncheckedUpdateInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -966,6 +980,34 @@ export type UserUpdateOneWithoutAuthoredDevCoinEntriesNestedInput = {
   delete?: Prisma.UserWhereInput | boolean
   connect?: Prisma.UserWhereUniqueInput
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutAuthoredDevCoinEntriesInput, Prisma.UserUpdateWithoutAuthoredDevCoinEntriesInput>, Prisma.UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput>
+}
+
+export type UserCreateNestedOneWithoutDevCoinTransfersSentInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutDevCoinTransfersSentInput, Prisma.UserUncheckedCreateWithoutDevCoinTransfersSentInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutDevCoinTransfersSentInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutDevCoinTransfersReceivedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutDevCoinTransfersReceivedInput, Prisma.UserUncheckedCreateWithoutDevCoinTransfersReceivedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutDevCoinTransfersReceivedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutDevCoinTransfersSentNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutDevCoinTransfersSentInput, Prisma.UserUncheckedCreateWithoutDevCoinTransfersSentInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutDevCoinTransfersSentInput
+  upsert?: Prisma.UserUpsertWithoutDevCoinTransfersSentInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutDevCoinTransfersSentInput, Prisma.UserUpdateWithoutDevCoinTransfersSentInput>, Prisma.UserUncheckedUpdateWithoutDevCoinTransfersSentInput>
+}
+
+export type UserUpdateOneRequiredWithoutDevCoinTransfersReceivedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutDevCoinTransfersReceivedInput, Prisma.UserUncheckedCreateWithoutDevCoinTransfersReceivedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutDevCoinTransfersReceivedInput
+  upsert?: Prisma.UserUpsertWithoutDevCoinTransfersReceivedInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutDevCoinTransfersReceivedInput, Prisma.UserUpdateWithoutDevCoinTransfersReceivedInput>, Prisma.UserUncheckedUpdateWithoutDevCoinTransfersReceivedInput>
 }
 
 export type UserCreateNestedOneWithoutStickerCopiesInput = {
@@ -1453,6 +1495,8 @@ export type UserCreateWithoutProfileAvatarPurchasesInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutProfileAvatarPurchasesInput = {
@@ -1506,6 +1550,8 @@ export type UserUncheckedCreateWithoutProfileAvatarPurchasesInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutProfileAvatarPurchasesInput = {
@@ -1575,6 +1621,8 @@ export type UserUpdateWithoutProfileAvatarPurchasesInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutProfileAvatarPurchasesInput = {
@@ -1628,6 +1676,8 @@ export type UserUncheckedUpdateWithoutProfileAvatarPurchasesInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutDevCoinEntriesInput = {
@@ -1681,6 +1731,8 @@ export type UserCreateWithoutDevCoinEntriesInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutDevCoinEntriesInput = {
@@ -1734,6 +1786,8 @@ export type UserUncheckedCreateWithoutDevCoinEntriesInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutDevCoinEntriesInput = {
@@ -1792,6 +1846,8 @@ export type UserCreateWithoutAuthoredDevCoinEntriesInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput = {
@@ -1845,6 +1901,8 @@ export type UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredDevCoinEntriesInput = {
@@ -1914,6 +1972,8 @@ export type UserUpdateWithoutDevCoinEntriesInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutDevCoinEntriesInput = {
@@ -1967,6 +2027,8 @@ export type UserUncheckedUpdateWithoutDevCoinEntriesInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUpsertWithoutAuthoredDevCoinEntriesInput = {
@@ -2031,6 +2093,8 @@ export type UserUpdateWithoutAuthoredDevCoinEntriesInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput = {
@@ -2084,6 +2148,480 @@ export type UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+}
+
+export type UserCreateWithoutDevCoinTransfersSentInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+}
+
+export type UserUncheckedCreateWithoutDevCoinTransfersSentInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+}
+
+export type UserCreateOrConnectWithoutDevCoinTransfersSentInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutDevCoinTransfersSentInput, Prisma.UserUncheckedCreateWithoutDevCoinTransfersSentInput>
+}
+
+export type UserCreateWithoutDevCoinTransfersReceivedInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+}
+
+export type UserUncheckedCreateWithoutDevCoinTransfersReceivedInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+}
+
+export type UserCreateOrConnectWithoutDevCoinTransfersReceivedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutDevCoinTransfersReceivedInput, Prisma.UserUncheckedCreateWithoutDevCoinTransfersReceivedInput>
+}
+
+export type UserUpsertWithoutDevCoinTransfersSentInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutDevCoinTransfersSentInput, Prisma.UserUncheckedUpdateWithoutDevCoinTransfersSentInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutDevCoinTransfersSentInput, Prisma.UserUncheckedCreateWithoutDevCoinTransfersSentInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutDevCoinTransfersSentInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutDevCoinTransfersSentInput, Prisma.UserUncheckedUpdateWithoutDevCoinTransfersSentInput>
+}
+
+export type UserUpdateWithoutDevCoinTransfersSentInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+}
+
+export type UserUncheckedUpdateWithoutDevCoinTransfersSentInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+}
+
+export type UserUpsertWithoutDevCoinTransfersReceivedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutDevCoinTransfersReceivedInput, Prisma.UserUncheckedUpdateWithoutDevCoinTransfersReceivedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutDevCoinTransfersReceivedInput, Prisma.UserUncheckedCreateWithoutDevCoinTransfersReceivedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutDevCoinTransfersReceivedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutDevCoinTransfersReceivedInput, Prisma.UserUncheckedUpdateWithoutDevCoinTransfersReceivedInput>
+}
+
+export type UserUpdateWithoutDevCoinTransfersReceivedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+}
+
+export type UserUncheckedUpdateWithoutDevCoinTransfersReceivedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
 }
 
 export type UserCreateWithoutStickerCopiesInput = {
@@ -2137,6 +2675,8 @@ export type UserCreateWithoutStickerCopiesInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutStickerCopiesInput = {
@@ -2190,6 +2730,8 @@ export type UserUncheckedCreateWithoutStickerCopiesInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutStickerCopiesInput = {
@@ -2259,6 +2801,8 @@ export type UserUpdateWithoutStickerCopiesInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerCopiesInput = {
@@ -2312,6 +2856,8 @@ export type UserUncheckedUpdateWithoutStickerCopiesInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutStickerPackPurchasesInput = {
@@ -2365,6 +2911,8 @@ export type UserCreateWithoutStickerPackPurchasesInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutStickerPackPurchasesInput = {
@@ -2418,6 +2966,8 @@ export type UserUncheckedCreateWithoutStickerPackPurchasesInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutStickerPackPurchasesInput = {
@@ -2487,6 +3037,8 @@ export type UserUpdateWithoutStickerPackPurchasesInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerPackPurchasesInput = {
@@ -2540,6 +3092,8 @@ export type UserUncheckedUpdateWithoutStickerPackPurchasesInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutStickerListingsInput = {
@@ -2593,6 +3147,8 @@ export type UserCreateWithoutStickerListingsInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutStickerListingsInput = {
@@ -2646,6 +3202,8 @@ export type UserUncheckedCreateWithoutStickerListingsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutStickerListingsInput = {
@@ -2704,6 +3262,8 @@ export type UserCreateWithoutStickerPurchasesInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutStickerPurchasesInput = {
@@ -2757,6 +3317,8 @@ export type UserUncheckedCreateWithoutStickerPurchasesInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutStickerPurchasesInput = {
@@ -2826,6 +3388,8 @@ export type UserUpdateWithoutStickerListingsInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerListingsInput = {
@@ -2879,6 +3443,8 @@ export type UserUncheckedUpdateWithoutStickerListingsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUpsertWithoutStickerPurchasesInput = {
@@ -2943,6 +3509,8 @@ export type UserUpdateWithoutStickerPurchasesInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerPurchasesInput = {
@@ -2996,6 +3564,8 @@ export type UserUncheckedUpdateWithoutStickerPurchasesInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutStickerTradesSoldInput = {
@@ -3049,6 +3619,8 @@ export type UserCreateWithoutStickerTradesSoldInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutStickerTradesSoldInput = {
@@ -3102,6 +3674,8 @@ export type UserUncheckedCreateWithoutStickerTradesSoldInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutStickerTradesSoldInput = {
@@ -3160,6 +3734,8 @@ export type UserCreateWithoutStickerTradesBoughtInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutStickerTradesBoughtInput = {
@@ -3213,6 +3789,8 @@ export type UserUncheckedCreateWithoutStickerTradesBoughtInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutStickerTradesBoughtInput = {
@@ -3282,6 +3860,8 @@ export type UserUpdateWithoutStickerTradesSoldInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerTradesSoldInput = {
@@ -3335,6 +3915,8 @@ export type UserUncheckedUpdateWithoutStickerTradesSoldInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUpsertWithoutStickerTradesBoughtInput = {
@@ -3399,6 +3981,8 @@ export type UserUpdateWithoutStickerTradesBoughtInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerTradesBoughtInput = {
@@ -3452,6 +4036,8 @@ export type UserUncheckedUpdateWithoutStickerTradesBoughtInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutStickerDonationsSentInput = {
@@ -3505,6 +4091,8 @@ export type UserCreateWithoutStickerDonationsSentInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutStickerDonationsSentInput = {
@@ -3558,6 +4146,8 @@ export type UserUncheckedCreateWithoutStickerDonationsSentInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutStickerDonationsSentInput = {
@@ -3616,6 +4206,8 @@ export type UserCreateWithoutStickerDonationsReceivedInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutStickerDonationsReceivedInput = {
@@ -3669,6 +4261,8 @@ export type UserUncheckedCreateWithoutStickerDonationsReceivedInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutStickerDonationsReceivedInput = {
@@ -3738,6 +4332,8 @@ export type UserUpdateWithoutStickerDonationsSentInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerDonationsSentInput = {
@@ -3791,6 +4387,8 @@ export type UserUncheckedUpdateWithoutStickerDonationsSentInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUpsertWithoutStickerDonationsReceivedInput = {
@@ -3855,6 +4453,8 @@ export type UserUpdateWithoutStickerDonationsReceivedInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerDonationsReceivedInput = {
@@ -3908,6 +4508,8 @@ export type UserUncheckedUpdateWithoutStickerDonationsReceivedInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutPatentProgressInput = {
@@ -3961,6 +4563,8 @@ export type UserCreateWithoutPatentProgressInput = {
   stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutPatentProgressInput = {
@@ -4014,6 +4618,8 @@ export type UserUncheckedCreateWithoutPatentProgressInput = {
   stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutPatentProgressInput = {
@@ -4083,6 +4689,8 @@ export type UserUpdateWithoutPatentProgressInput = {
   stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPatentProgressInput = {
@@ -4136,6 +4744,8 @@ export type UserUncheckedUpdateWithoutPatentProgressInput = {
   stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutPatentRewardClaimsInput = {
@@ -4189,6 +4799,8 @@ export type UserCreateWithoutPatentRewardClaimsInput = {
   stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutPatentRewardClaimsInput = {
@@ -4242,6 +4854,8 @@ export type UserUncheckedCreateWithoutPatentRewardClaimsInput = {
   stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutPatentRewardClaimsInput = {
@@ -4311,6 +4925,8 @@ export type UserUpdateWithoutPatentRewardClaimsInput = {
   stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPatentRewardClaimsInput = {
@@ -4364,6 +4980,8 @@ export type UserUncheckedUpdateWithoutPatentRewardClaimsInput = {
   stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutTreasuryEntriesAuthoredInput = {
@@ -4417,6 +5035,8 @@ export type UserCreateWithoutTreasuryEntriesAuthoredInput = {
   stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutTreasuryEntriesAuthoredInput = {
@@ -4470,6 +5090,8 @@ export type UserUncheckedCreateWithoutTreasuryEntriesAuthoredInput = {
   stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutTreasuryEntriesAuthoredInput = {
@@ -4539,6 +5161,8 @@ export type UserUpdateWithoutTreasuryEntriesAuthoredInput = {
   stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutTreasuryEntriesAuthoredInput = {
@@ -4592,6 +5216,8 @@ export type UserUncheckedUpdateWithoutTreasuryEntriesAuthoredInput = {
   stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutLessonsInput = {
@@ -4645,6 +5271,8 @@ export type UserCreateWithoutLessonsInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutLessonsInput = {
@@ -4698,6 +5326,8 @@ export type UserUncheckedCreateWithoutLessonsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutLessonsInput = {
@@ -4767,6 +5397,8 @@ export type UserUpdateWithoutLessonsInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLessonsInput = {
@@ -4820,6 +5452,8 @@ export type UserUncheckedUpdateWithoutLessonsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutLessonParticipationsInput = {
@@ -4873,6 +5507,8 @@ export type UserCreateWithoutLessonParticipationsInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutLessonParticipationsInput = {
@@ -4926,6 +5562,8 @@ export type UserUncheckedCreateWithoutLessonParticipationsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutLessonParticipationsInput = {
@@ -4995,6 +5633,8 @@ export type UserUpdateWithoutLessonParticipationsInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLessonParticipationsInput = {
@@ -5048,6 +5688,8 @@ export type UserUncheckedUpdateWithoutLessonParticipationsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutAttendancesInput = {
@@ -5101,6 +5743,8 @@ export type UserCreateWithoutAttendancesInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutAttendancesInput = {
@@ -5154,6 +5798,8 @@ export type UserUncheckedCreateWithoutAttendancesInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutAttendancesInput = {
@@ -5223,6 +5869,8 @@ export type UserUpdateWithoutAttendancesInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAttendancesInput = {
@@ -5276,6 +5924,8 @@ export type UserUncheckedUpdateWithoutAttendancesInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutXpEntriesInput = {
@@ -5329,6 +5979,8 @@ export type UserCreateWithoutXpEntriesInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutXpEntriesInput = {
@@ -5382,6 +6034,8 @@ export type UserUncheckedCreateWithoutXpEntriesInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutXpEntriesInput = {
@@ -5440,6 +6094,8 @@ export type UserCreateWithoutAuthoredXpInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredXpInput = {
@@ -5493,6 +6149,8 @@ export type UserUncheckedCreateWithoutAuthoredXpInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredXpInput = {
@@ -5562,6 +6220,8 @@ export type UserUpdateWithoutXpEntriesInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutXpEntriesInput = {
@@ -5615,6 +6275,8 @@ export type UserUncheckedUpdateWithoutXpEntriesInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUpsertWithoutAuthoredXpInput = {
@@ -5679,6 +6341,8 @@ export type UserUpdateWithoutAuthoredXpInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredXpInput = {
@@ -5732,6 +6396,8 @@ export type UserUncheckedUpdateWithoutAuthoredXpInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutBehaviorsInput = {
@@ -5785,6 +6451,8 @@ export type UserCreateWithoutBehaviorsInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutBehaviorsInput = {
@@ -5838,6 +6506,8 @@ export type UserUncheckedCreateWithoutBehaviorsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutBehaviorsInput = {
@@ -5896,6 +6566,8 @@ export type UserCreateWithoutRatedBehaviorsInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutRatedBehaviorsInput = {
@@ -5949,6 +6621,8 @@ export type UserUncheckedCreateWithoutRatedBehaviorsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutRatedBehaviorsInput = {
@@ -6018,6 +6692,8 @@ export type UserUpdateWithoutBehaviorsInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutBehaviorsInput = {
@@ -6071,6 +6747,8 @@ export type UserUncheckedUpdateWithoutBehaviorsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUpsertWithoutRatedBehaviorsInput = {
@@ -6135,6 +6813,8 @@ export type UserUpdateWithoutRatedBehaviorsInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutRatedBehaviorsInput = {
@@ -6188,6 +6868,8 @@ export type UserUncheckedUpdateWithoutRatedBehaviorsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutCleanupsInput = {
@@ -6241,6 +6923,8 @@ export type UserCreateWithoutCleanupsInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutCleanupsInput = {
@@ -6294,6 +6978,8 @@ export type UserUncheckedCreateWithoutCleanupsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutCleanupsInput = {
@@ -6352,6 +7038,8 @@ export type UserCreateWithoutConfirmedCleanupsInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutConfirmedCleanupsInput = {
@@ -6405,6 +7093,8 @@ export type UserUncheckedCreateWithoutConfirmedCleanupsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutConfirmedCleanupsInput = {
@@ -6474,6 +7164,8 @@ export type UserUpdateWithoutCleanupsInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCleanupsInput = {
@@ -6527,6 +7219,8 @@ export type UserUncheckedUpdateWithoutCleanupsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUpsertWithoutConfirmedCleanupsInput = {
@@ -6591,6 +7285,8 @@ export type UserUpdateWithoutConfirmedCleanupsInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutConfirmedCleanupsInput = {
@@ -6644,6 +7340,8 @@ export type UserUncheckedUpdateWithoutConfirmedCleanupsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutAuthoredActivitiesInput = {
@@ -6697,6 +7395,8 @@ export type UserCreateWithoutAuthoredActivitiesInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredActivitiesInput = {
@@ -6750,6 +7450,8 @@ export type UserUncheckedCreateWithoutAuthoredActivitiesInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredActivitiesInput = {
@@ -6819,6 +7521,8 @@ export type UserUpdateWithoutAuthoredActivitiesInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredActivitiesInput = {
@@ -6872,6 +7576,8 @@ export type UserUncheckedUpdateWithoutAuthoredActivitiesInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutAuthoredNotificationsInput = {
@@ -6925,6 +7631,8 @@ export type UserCreateWithoutAuthoredNotificationsInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredNotificationsInput = {
@@ -6978,6 +7686,8 @@ export type UserUncheckedCreateWithoutAuthoredNotificationsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredNotificationsInput = {
@@ -7047,6 +7757,8 @@ export type UserUpdateWithoutAuthoredNotificationsInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredNotificationsInput = {
@@ -7100,6 +7812,8 @@ export type UserUncheckedUpdateWithoutAuthoredNotificationsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutNotificationReceiptsInput = {
@@ -7153,6 +7867,8 @@ export type UserCreateWithoutNotificationReceiptsInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutNotificationReceiptsInput = {
@@ -7206,6 +7922,8 @@ export type UserUncheckedCreateWithoutNotificationReceiptsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutNotificationReceiptsInput = {
@@ -7275,6 +7993,8 @@ export type UserUpdateWithoutNotificationReceiptsInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutNotificationReceiptsInput = {
@@ -7328,6 +8048,8 @@ export type UserUncheckedUpdateWithoutNotificationReceiptsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutActivityRecipientsInput = {
@@ -7381,6 +8103,8 @@ export type UserCreateWithoutActivityRecipientsInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutActivityRecipientsInput = {
@@ -7434,6 +8158,8 @@ export type UserUncheckedCreateWithoutActivityRecipientsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutActivityRecipientsInput = {
@@ -7503,6 +8229,8 @@ export type UserUpdateWithoutActivityRecipientsInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityRecipientsInput = {
@@ -7556,6 +8284,8 @@ export type UserUncheckedUpdateWithoutActivityRecipientsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutActivitySubmissionsInput = {
@@ -7609,6 +8339,8 @@ export type UserCreateWithoutActivitySubmissionsInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutActivitySubmissionsInput = {
@@ -7662,6 +8394,8 @@ export type UserUncheckedCreateWithoutActivitySubmissionsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutActivitySubmissionsInput = {
@@ -7731,6 +8465,8 @@ export type UserUpdateWithoutActivitySubmissionsInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivitySubmissionsInput = {
@@ -7784,6 +8520,8 @@ export type UserUncheckedUpdateWithoutActivitySubmissionsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutActivityAnswersInput = {
@@ -7837,6 +8575,8 @@ export type UserCreateWithoutActivityAnswersInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutActivityAnswersInput = {
@@ -7890,6 +8630,8 @@ export type UserUncheckedCreateWithoutActivityAnswersInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutActivityAnswersInput = {
@@ -7959,6 +8701,8 @@ export type UserUpdateWithoutActivityAnswersInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityAnswersInput = {
@@ -8012,6 +8756,8 @@ export type UserUncheckedUpdateWithoutActivityAnswersInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutActivityTeamMembershipsInput = {
@@ -8065,6 +8811,8 @@ export type UserCreateWithoutActivityTeamMembershipsInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutActivityTeamMembershipsInput = {
@@ -8118,6 +8866,8 @@ export type UserUncheckedCreateWithoutActivityTeamMembershipsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutActivityTeamMembershipsInput = {
@@ -8187,6 +8937,8 @@ export type UserUpdateWithoutActivityTeamMembershipsInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityTeamMembershipsInput = {
@@ -8240,6 +8992,8 @@ export type UserUncheckedUpdateWithoutActivityTeamMembershipsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutActivityAwardsInput = {
@@ -8293,6 +9047,8 @@ export type UserCreateWithoutActivityAwardsInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutActivityAwardsInput = {
@@ -8346,6 +9102,8 @@ export type UserUncheckedCreateWithoutActivityAwardsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutActivityAwardsInput = {
@@ -8415,6 +9173,8 @@ export type UserUpdateWithoutActivityAwardsInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityAwardsInput = {
@@ -8468,6 +9228,8 @@ export type UserUncheckedUpdateWithoutActivityAwardsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserCreateWithoutAuditActionsInput = {
@@ -8521,6 +9283,8 @@ export type UserCreateWithoutAuditActionsInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutAuditActionsInput = {
@@ -8574,6 +9338,8 @@ export type UserUncheckedCreateWithoutAuditActionsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutAuditActionsInput = {
@@ -8632,6 +9398,8 @@ export type UserCreateWithoutAuditTargetsInput = {
   patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
 }
 
 export type UserUncheckedCreateWithoutAuditTargetsInput = {
@@ -8685,6 +9453,8 @@ export type UserUncheckedCreateWithoutAuditTargetsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
 }
 
 export type UserCreateOrConnectWithoutAuditTargetsInput = {
@@ -8754,6 +9524,8 @@ export type UserUpdateWithoutAuditActionsInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuditActionsInput = {
@@ -8807,6 +9579,8 @@ export type UserUncheckedUpdateWithoutAuditActionsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUpsertWithoutAuditTargetsInput = {
@@ -8871,6 +9645,8 @@ export type UserUpdateWithoutAuditTargetsInput = {
   patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuditTargetsInput = {
@@ -8924,6 +9700,8 @@ export type UserUncheckedUpdateWithoutAuditTargetsInput = {
   patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
 }
 
 
@@ -8964,6 +9742,8 @@ export type UserCountOutputType = {
   stickerDonationsReceived: number
   patentRewardClaims: number
   treasuryEntriesAuthored: number
+  devCoinTransfersSent: number
+  devCoinTransfersReceived: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -8999,6 +9779,8 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   stickerDonationsReceived?: boolean | UserCountOutputTypeCountStickerDonationsReceivedArgs
   patentRewardClaims?: boolean | UserCountOutputTypeCountPatentRewardClaimsArgs
   treasuryEntriesAuthored?: boolean | UserCountOutputTypeCountTreasuryEntriesAuthoredArgs
+  devCoinTransfersSent?: boolean | UserCountOutputTypeCountDevCoinTransfersSentArgs
+  devCoinTransfersReceived?: boolean | UserCountOutputTypeCountDevCoinTransfersReceivedArgs
 }
 
 /**
@@ -9235,6 +10017,20 @@ export type UserCountOutputTypeCountTreasuryEntriesAuthoredArgs<ExtArgs extends 
   where?: Prisma.DevCoinTreasuryEntryWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountDevCoinTransfersSentArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.DevCoinTransferWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountDevCoinTransfersReceivedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.DevCoinTransferWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -9288,6 +10084,8 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   patentProgress?: boolean | Prisma.User$patentProgressArgs<ExtArgs>
   patentRewardClaims?: boolean | Prisma.User$patentRewardClaimsArgs<ExtArgs>
   treasuryEntriesAuthored?: boolean | Prisma.User$treasuryEntriesAuthoredArgs<ExtArgs>
+  devCoinTransfersSent?: boolean | Prisma.User$devCoinTransfersSentArgs<ExtArgs>
+  devCoinTransfersReceived?: boolean | Prisma.User$devCoinTransfersReceivedArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -9389,6 +10187,8 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   patentProgress?: boolean | Prisma.User$patentProgressArgs<ExtArgs>
   patentRewardClaims?: boolean | Prisma.User$patentRewardClaimsArgs<ExtArgs>
   treasuryEntriesAuthored?: boolean | Prisma.User$treasuryEntriesAuthoredArgs<ExtArgs>
+  devCoinTransfersSent?: boolean | Prisma.User$devCoinTransfersSentArgs<ExtArgs>
+  devCoinTransfersReceived?: boolean | Prisma.User$devCoinTransfersReceivedArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -9430,6 +10230,8 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     patentProgress: Prisma.$StudentPatentProgressPayload<ExtArgs> | null
     patentRewardClaims: Prisma.$PatentRewardClaimPayload<ExtArgs>[]
     treasuryEntriesAuthored: Prisma.$DevCoinTreasuryEntryPayload<ExtArgs>[]
+    devCoinTransfersSent: Prisma.$DevCoinTransferPayload<ExtArgs>[]
+    devCoinTransfersReceived: Prisma.$DevCoinTransferPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -9877,6 +10679,8 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   patentProgress<T extends Prisma.User$patentProgressArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$patentProgressArgs<ExtArgs>>): Prisma.Prisma__StudentPatentProgressClient<runtime.Types.Result.GetResult<Prisma.$StudentPatentProgressPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   patentRewardClaims<T extends Prisma.User$patentRewardClaimsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$patentRewardClaimsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PatentRewardClaimPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   treasuryEntriesAuthored<T extends Prisma.User$treasuryEntriesAuthoredArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$treasuryEntriesAuthoredArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DevCoinTreasuryEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  devCoinTransfersSent<T extends Prisma.User$devCoinTransfersSentArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$devCoinTransfersSentArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DevCoinTransferPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  devCoinTransfersReceived<T extends Prisma.User$devCoinTransfersReceivedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$devCoinTransfersReceivedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DevCoinTransferPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -11101,6 +11905,54 @@ export type User$treasuryEntriesAuthoredArgs<ExtArgs extends runtime.Types.Exten
   take?: number
   skip?: number
   distinct?: Prisma.DevCoinTreasuryEntryScalarFieldEnum | Prisma.DevCoinTreasuryEntryScalarFieldEnum[]
+}
+
+/**
+ * User.devCoinTransfersSent
+ */
+export type User$devCoinTransfersSentArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the DevCoinTransfer
+   */
+  select?: Prisma.DevCoinTransferSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the DevCoinTransfer
+   */
+  omit?: Prisma.DevCoinTransferOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.DevCoinTransferInclude<ExtArgs> | null
+  where?: Prisma.DevCoinTransferWhereInput
+  orderBy?: Prisma.DevCoinTransferOrderByWithRelationInput | Prisma.DevCoinTransferOrderByWithRelationInput[]
+  cursor?: Prisma.DevCoinTransferWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.DevCoinTransferScalarFieldEnum | Prisma.DevCoinTransferScalarFieldEnum[]
+}
+
+/**
+ * User.devCoinTransfersReceived
+ */
+export type User$devCoinTransfersReceivedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the DevCoinTransfer
+   */
+  select?: Prisma.DevCoinTransferSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the DevCoinTransfer
+   */
+  omit?: Prisma.DevCoinTransferOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.DevCoinTransferInclude<ExtArgs> | null
+  where?: Prisma.DevCoinTransferWhereInput
+  orderBy?: Prisma.DevCoinTransferOrderByWithRelationInput | Prisma.DevCoinTransferOrderByWithRelationInput[]
+  cursor?: Prisma.DevCoinTransferWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.DevCoinTransferScalarFieldEnum | Prisma.DevCoinTransferScalarFieldEnum[]
 }
 
 /**

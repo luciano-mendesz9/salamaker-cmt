@@ -16,6 +16,7 @@ Todos os alunos com `role=STUDENT` e `status=ACTIVE` compoem a coorte. `originSc
 | Atividade | 0 ate o maximo configurado |
 | Concessao em massa | Inteiro positivo definido pelo professor |
 | Compra de Dev-Coins | Debita a quantidade de XP escolhida |
+| Transferencia de Dev-Coins | Debita 5 XP do remetente por transferencia concluida |
 
 O saldo pode ficar negativo em regras como ausencia e comportamento; nao ha limite inferior no schema. Compras, entretanto, exigem saldo suficiente.
 
@@ -38,6 +39,9 @@ Correcao de comportamento preserva reversao e substituicao como dois lancamentos
 - A interface envia `expectedRate`; mudanca concorrente retorna conflito antes da compra.
 - Cada avatar pago custa 20 Dev-Coins.
 - `ProfileAvatarPurchase` e unica por aluno e chave do avatar.
+- Comprar Dev-Coins, pacotes ou figurinhas do mercado exige a senha atual do aluno.
+- Transferencias entre alunos preservam a oferta total e usam dois lancamentos espelhados.
+- Cada aluno pode enviar ate 300 DC por semana, de segunda a domingo no fuso escolar.
 
 ## Estado de atividades
 

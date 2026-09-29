@@ -11,6 +11,7 @@
 export type * from './models/User'
 export type * from './models/ProfileAvatarPurchase'
 export type * from './models/DevCoinEntry'
+export type * from './models/DevCoinTransfer'
 export type * from './models/StickerCollection'
 export type * from './models/Sticker'
 export type * from './models/StickerCopy'

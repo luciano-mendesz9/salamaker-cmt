@@ -36,6 +36,7 @@ export function apiError(error: unknown) {
     RATE_LIMITED: ["Muitas tentativas. Aguarde alguns minutos.", 429],
     COLLECTIBLES_SCHEMA_NOT_READY: ["Álbum e tesouraria aguardam a migration de produção.", 503],
     STICKER_MARKET_DISABLED: ["Compras e vendas de figurinhas estão desativadas pelo professor.", 403],
+    INVALID_STUDENT_PASSWORD: ["Senha do aluno incorreta.", 403],
   };
   return map[message] ?? ["Não foi possível concluir a operação.", 500];
 }

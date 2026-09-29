@@ -6,9 +6,12 @@ import { useState } from "react";
 import { ImagePlus, Upload } from "lucide-react";
 import { toast } from "sonner";
 
-export function LocalAssetForm({ kind }: { kind: "profile" | "sticker" }) {
+type CollectionOption = { slug: string; name: string; nextNumber: number };
+
+export function LocalAssetForm({ kind, collections = [] }: { kind: "profile" | "sticker"; collections?: CollectionOption[] }) {
   const [preview, setPreview] = useState<string>();
   const [busy, setBusy] = useState(false);
+  const [collectionSelection, setCollectionSelection] = useState(collections[0]?.slug ?? "__new__");
 
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -51,22 +54,21 @@ export function LocalAssetForm({ kind }: { kind: "profile" | "sticker" }) {
 
     <div className="grid gap-5">
       {kind === "sticker" && <>
-        <Field name="collectionSlug" label="Identificador da coleção (slug)" hint="Nome técnico permanente, sem espaços ou acentos. Exemplo: sala-maker-2026." placeholder="sala-maker-2026"/>
-        <Field name="collectionName" label="Nome visível da coleção" hint="Nome que os alunos verão no álbum. Exemplo: Sala Maker 2026." placeholder="Sala Maker 2026"/>
-        <Field name="number" label="Número da figurinha na coleção" hint="Posição usada para ordenar a coleção. Deve ser único dentro desta coleção. Exemplo: 1, 2, 3…" type="number" min="1" placeholder="1"/>
+        <label className="text-sm">
+          <span className="font-bold">Coleção e pasta</span>
+          <span className="mt-1 block text-xs leading-relaxed text-slate-400">Escolha uma coleção existente ou crie uma nova. O sistema gera pasta, slug e próximo número automaticamente.</span>
+          <select className="input mt-2" name="collectionSelection" value={collectionSelection} onChange={event=>setCollectionSelection(event.target.value)} required>
+            {collections.map(collection=><option key={collection.slug} value={collection.slug}>{collection.name} · próxima #{collection.nextNumber}</option>)}
+            <option value="__new__">+ Criar nova coleção/pasta</option>
+          </select>
+        </label>
+        {collectionSelection==="__new__"&&<Field name="collectionName" label="Nome da nova coleção" hint="A pasta e o identificador técnico serão criados automaticamente a partir deste nome." placeholder="Sala Maker 2026"/>}
       </>}
 
       <Field
-        name="slug"
-        label={kind === "profile" ? "Identificador único (slug)" : "Identificador único da figurinha (slug)"}
-        hint={kind === "profile" ? "Nome técnico sem espaços ou acentos. Exemplo: cientista-maker." : "Nome técnico permanente e exclusivo, usando letras minúsculas, números e hífens. Exemplo: robo-explorador."}
-        pattern="[a-z0-9][a-z0-9-]{1,38}[a-z0-9]"
-        placeholder={kind === "profile" ? "cientista-maker" : "robo-explorador"}
-      />
-      <Field
         name={kind === "profile" ? "label" : "name"}
         label={kind === "profile" ? "Rótulo administrativo" : "Nome visível da figurinha"}
-        hint={kind === "profile" ? "Nome usado para reconhecer esta opção no catálogo." : "Título que aparecerá no álbum dos alunos. Exemplo: Robô Explorador."}
+        hint={kind === "profile" ? "Nome usado no catálogo; o identificador técnico será gerado automaticamente." : "Título exibido no álbum; slug e número serão gerados automaticamente."}
         placeholder={kind === "profile" ? "Cientista Maker" : "Robô Explorador"}
       />
 

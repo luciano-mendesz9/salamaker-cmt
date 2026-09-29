@@ -22,6 +22,7 @@ O painel `/aluno` apresenta:
 - XP atual e posicao no ranking;
 - frequencia calculada sobre aulas fechadas das quais o aluno participou;
 - saldo, compra e historico de Dev-Coins;
+- transferencia de Dev-Coins para outro aluno ativo;
 - seis movimentacoes recentes de XP;
 - oito movimentacoes recentes de Dev-Coins;
 - oito avaliacoes recentes de comportamento;
@@ -38,7 +39,9 @@ O aluno escolhe quanto XP deseja trocar. A quantidade recebida e:
 Dev-Coins recebidos = XP gasto × Dev-Coins por XP
 ```
 
-A compra confirma a taxa vista pela interface, valida saldo dentro de transacao serializavel, debita XP e credita Dev-Coins com dois lancamentos vinculados.
+A compra confirma a taxa vista pela interface e a senha atual, valida saldo dentro de transacao serializavel, debita XP e credita Dev-Coins com dois lancamentos vinculados.
+
+O aluno tambem pode transferir DC para um colega ativo. Cada operacao custa 5 XP e o total enviado pelo remetente e limitado a 300 DC por semana escolar. O destinatario, o saldo, o teto semanal e a senha sao revalidados no servidor.
 
 ## Fotos de perfil
 

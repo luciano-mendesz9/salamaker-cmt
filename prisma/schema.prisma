@@ -46,6 +46,7 @@ enum XpSource {
   ACTIVITY
   PROFILE_AVATAR
   DEV_COIN_PURCHASE
+  DEV_COIN_TRANSFER
 }
 
 enum AuditEvent {
@@ -68,6 +69,7 @@ enum AuditEvent {
   STICKER_LISTED
   STICKER_TRADED
   STICKER_DONATED
+  DEV_COIN_TRANSFERRED
 }
 
 enum DevCoinSource {
@@ -78,6 +80,8 @@ enum DevCoinSource {
   STICKER_PACK
   STICKER_MARKET
   PATENT_REWARD
+  TRANSFER_SENT
+  TRANSFER_RECEIVED
 }
 
 enum StickerCollectionState {
@@ -227,6 +231,8 @@ model User {
   patentProgress           StudentPatentProgress?
   patentRewardClaims       PatentRewardClaim[]
   treasuryEntriesAuthored  DevCoinTreasuryEntry[]  @relation("TreasuryEntryAuthor")
+  devCoinTransfersSent     DevCoinTransfer[]       @relation("DevCoinTransferSender")
+  devCoinTransfersReceived DevCoinTransfer[]       @relation("DevCoinTransferRecipient")
 
   @@index([role, status, xp])
   @@index([originSchoolClass, status])
@@ -264,8 +270,32 @@ model DevCoinEntry {
   xpEntry               XpEntry?               @relation(fields: [xpEntryId], references: [id], onDelete: Restrict)
   profileAvatarPurchase ProfileAvatarPurchase?
   treasuryEntry         DevCoinTreasuryEntry?
+  sentTransfer          DevCoinTransfer?       @relation("DevCoinTransferSenderEntry")
+  receivedTransfer      DevCoinTransfer?       @relation("DevCoinTransferRecipientEntry")
 
   @@index([studentId, createdAt])
+}
+
+model DevCoinTransfer {
+  id               String       @id @default(uuid()) @db.Uuid
+  senderId         String       @db.Uuid
+  recipientId      String       @db.Uuid
+  senderEntryId    String       @unique @db.Uuid
+  recipientEntryId String       @unique @db.Uuid
+  xpEntryId        String       @unique @db.Uuid
+  amount           Int
+  xpFee            Int          @default(5)
+  weekKey          String
+  idempotencyKey   String       @unique
+  createdAt        DateTime     @default(now())
+  sender           User         @relation("DevCoinTransferSender", fields: [senderId], references: [id], onDelete: Restrict)
+  recipient        User         @relation("DevCoinTransferRecipient", fields: [recipientId], references: [id], onDelete: Restrict)
+  senderEntry      DevCoinEntry @relation("DevCoinTransferSenderEntry", fields: [senderEntryId], references: [id], onDelete: Restrict)
+  recipientEntry   DevCoinEntry @relation("DevCoinTransferRecipientEntry", fields: [recipientEntryId], references: [id], onDelete: Restrict)
+  xpEntry          XpEntry      @relation(fields: [xpEntryId], references: [id], onDelete: Restrict)
+
+  @@index([senderId, weekKey, createdAt])
+  @@index([recipientId, createdAt])
 }
 
 model StickerCollection {
@@ -526,6 +556,7 @@ model XpEntry {
   activityAwards        ActivityAward[]
   profileAvatarPurchase ProfileAvatarPurchase?
   devCoinEntry          DevCoinEntry?
+  devCoinTransfer       DevCoinTransfer?
 
   @@index([studentId, createdAt])
 }

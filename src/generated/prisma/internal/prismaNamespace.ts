@@ -400,6 +400,7 @@ export const ModelName = {
   User: 'User',
   ProfileAvatarPurchase: 'ProfileAvatarPurchase',
   DevCoinEntry: 'DevCoinEntry',
+  DevCoinTransfer: 'DevCoinTransfer',
   StickerCollection: 'StickerCollection',
   Sticker: 'Sticker',
   StickerCopy: 'StickerCopy',
@@ -450,7 +451,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "profileAvatarPurchase" | "devCoinEntry" | "stickerCollection" | "sticker" | "stickerCopy" | "stickerPackPurchase" | "stickerListing" | "stickerTrade" | "stickerDonation" | "patentLevel" | "studentPatentProgress" | "patentRewardClaim" | "devCoinTreasury" | "stickerMarketSetting" | "devCoinTreasuryEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket"
+    modelProps: "user" | "profileAvatarPurchase" | "devCoinEntry" | "devCoinTransfer" | "stickerCollection" | "sticker" | "stickerCopy" | "stickerPackPurchase" | "stickerListing" | "stickerTrade" | "stickerDonation" | "patentLevel" | "studentPatentProgress" | "patentRewardClaim" | "devCoinTreasury" | "stickerMarketSetting" | "devCoinTreasuryEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -673,6 +674,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.DevCoinEntryCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.DevCoinEntryCountAggregateOutputType> | number
+        }
+      }
+    }
+    DevCoinTransfer: {
+      payload: Prisma.$DevCoinTransferPayload<ExtArgs>
+      fields: Prisma.DevCoinTransferFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.DevCoinTransferFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTransferPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.DevCoinTransferFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTransferPayload>
+        }
+        findFirst: {
+          args: Prisma.DevCoinTransferFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTransferPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.DevCoinTransferFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTransferPayload>
+        }
+        findMany: {
+          args: Prisma.DevCoinTransferFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTransferPayload>[]
+        }
+        create: {
+          args: Prisma.DevCoinTransferCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTransferPayload>
+        }
+        createMany: {
+          args: Prisma.DevCoinTransferCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.DevCoinTransferCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTransferPayload>[]
+        }
+        delete: {
+          args: Prisma.DevCoinTransferDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTransferPayload>
+        }
+        update: {
+          args: Prisma.DevCoinTransferUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTransferPayload>
+        }
+        deleteMany: {
+          args: Prisma.DevCoinTransferDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.DevCoinTransferUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.DevCoinTransferUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTransferPayload>[]
+        }
+        upsert: {
+          args: Prisma.DevCoinTransferUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevCoinTransferPayload>
+        }
+        aggregate: {
+          args: Prisma.DevCoinTransferAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateDevCoinTransfer>
+        }
+        groupBy: {
+          args: Prisma.DevCoinTransferGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DevCoinTransferGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.DevCoinTransferCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DevCoinTransferCountAggregateOutputType> | number
         }
       }
     }
@@ -3358,6 +3433,23 @@ export const DevCoinEntryScalarFieldEnum = {
 export type DevCoinEntryScalarFieldEnum = (typeof DevCoinEntryScalarFieldEnum)[keyof typeof DevCoinEntryScalarFieldEnum]
 
 
+export const DevCoinTransferScalarFieldEnum = {
+  id: 'id',
+  senderId: 'senderId',
+  recipientId: 'recipientId',
+  senderEntryId: 'senderEntryId',
+  recipientEntryId: 'recipientEntryId',
+  xpEntryId: 'xpEntryId',
+  amount: 'amount',
+  xpFee: 'xpFee',
+  weekKey: 'weekKey',
+  idempotencyKey: 'idempotencyKey',
+  createdAt: 'createdAt'
+} as const
+
+export type DevCoinTransferScalarFieldEnum = (typeof DevCoinTransferScalarFieldEnum)[keyof typeof DevCoinTransferScalarFieldEnum]
+
+
 export const StickerCollectionScalarFieldEnum = {
   id: 'id',
   slug: 'slug',
@@ -4410,6 +4502,7 @@ export type GlobalOmitConfig = {
   user?: Prisma.UserOmit
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseOmit
   devCoinEntry?: Prisma.DevCoinEntryOmit
+  devCoinTransfer?: Prisma.DevCoinTransferOmit
   stickerCollection?: Prisma.StickerCollectionOmit
   sticker?: Prisma.StickerOmit
   stickerCopy?: Prisma.StickerCopyOmit

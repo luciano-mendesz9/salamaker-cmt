@@ -62,7 +62,8 @@ export const XpSource = {
   SYSTEM: 'SYSTEM',
   ACTIVITY: 'ACTIVITY',
   PROFILE_AVATAR: 'PROFILE_AVATAR',
-  DEV_COIN_PURCHASE: 'DEV_COIN_PURCHASE'
+  DEV_COIN_PURCHASE: 'DEV_COIN_PURCHASE',
+  DEV_COIN_TRANSFER: 'DEV_COIN_TRANSFER'
 } as const
 
 export type XpSource = (typeof XpSource)[keyof typeof XpSource]
@@ -87,7 +88,8 @@ export const AuditEvent = {
   STICKER_PACK_PURCHASED: 'STICKER_PACK_PURCHASED',
   STICKER_LISTED: 'STICKER_LISTED',
   STICKER_TRADED: 'STICKER_TRADED',
-  STICKER_DONATED: 'STICKER_DONATED'
+  STICKER_DONATED: 'STICKER_DONATED',
+  DEV_COIN_TRANSFERRED: 'DEV_COIN_TRANSFERRED'
 } as const
 
 export type AuditEvent = (typeof AuditEvent)[keyof typeof AuditEvent]
@@ -100,7 +102,9 @@ export const DevCoinSource = {
   PROFILE_AVATAR: 'PROFILE_AVATAR',
   STICKER_PACK: 'STICKER_PACK',
   STICKER_MARKET: 'STICKER_MARKET',
-  PATENT_REWARD: 'PATENT_REWARD'
+  PATENT_REWARD: 'PATENT_REWARD',
+  TRANSFER_SENT: 'TRANSFER_SENT',
+  TRANSFER_RECEIVED: 'TRANSFER_RECEIVED'
 } as const
 
 export type DevCoinSource = (typeof DevCoinSource)[keyof typeof DevCoinSource]

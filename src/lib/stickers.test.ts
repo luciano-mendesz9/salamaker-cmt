@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { isSafeAssetSlug, marketSplit, stickerPriceRange, stickerRarity, stickerScore, suggestedPatentLevels } from "./stickers";
+import { assetSlugFromName, isSafeAssetSlug, marketSplit, nextAvailableAssetSlug, stickerPriceRange, stickerRarity, stickerScore, suggestedPatentLevels } from "./stickers";
+import { remainingWeeklyDevCoinTransfer } from "./dev-coins";
 
 test("rarity and score follow the published copy bands", () => {
   assert.deepEqual([stickerRarity(30), stickerRarity(100), stickerRarity(101), stickerRarity(250), stickerRarity(251)], ["HIGH", "HIGH", "MEDIUM", "MEDIUM", "LOW"]);
@@ -25,4 +26,17 @@ test("patent configuration has 23 permanent levels", () => {
 test("asset slugs cannot escape allowlisted directories", () => {
   assert.equal(isSafeAssetSlug("robo-explorador"), true);
   for (const value of ["../segredo", "com/barra", "a", "-inicio", "fim-", "NOME"]) assert.equal(isSafeAssetSlug(value), false);
+});
+
+test("asset identifiers are generated safely and avoid collisions", () => {
+  assert.equal(assetSlugFromName("Robô Explorador"), "robo-explorador");
+  assert.equal(nextAvailableAssetSlug("Robô Explorador", ["robo-explorador", "robo-explorador-2"]), "robo-explorador-3");
+  assert.throws(() => assetSlugFromName("--"), /INVALID_GENERATED_SLUG/);
+});
+
+test("weekly transfer allowance never becomes negative", () => {
+  assert.equal(remainingWeeklyDevCoinTransfer(0), 300);
+  assert.equal(remainingWeeklyDevCoinTransfer(125), 175);
+  assert.equal(remainingWeeklyDevCoinTransfer(300), 0);
+  assert.equal(remainingWeeklyDevCoinTransfer(450), 0);
 });

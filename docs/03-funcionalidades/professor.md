@@ -74,6 +74,10 @@ Em `/professor/moderacao`, o professor pode:
 
 Desativar a area do aluno bloqueia as paginas autenticadas e o check-in publico, mas nao desativa contas nem altera historicos.
 
+## Midias locais
+
+O cadastro local de figurinhas usa um seletor de colecao. O professor escolhe uma pasta existente ou cria uma nova pelo nome; slug, pasta, numero e caminhos sao gerados no servidor. Nome, descricao, texto alternativo, quantidade e direitos de uso continuam obrigatorios. Preparar arquivos nao ativa estoque no banco.
+
 ## Logs
 
 O painel exibe ate 200 lancamentos recentes de XP e 200 eventos administrativos recentes. Senhas, hashes e tokens nao sao gravados nesses logs. O ledger de Dev-Coins existe no banco e aparece ao aluno, mas a tela geral de logs do professor consulta apenas `XpEntry` e `AuditLog`.

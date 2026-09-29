@@ -11,6 +11,15 @@ export function getSchoolDay(now=new Date(),timeZone=SCHOOL_TIME_ZONE){
 
 export function isDailyLoginXpDay(weekday:string){return weekday!=="Sun"}
 
+export function getSchoolWeek(now=new Date(),timeZone=SCHOOL_TIME_ZONE){
+  const day=getSchoolDay(now,timeZone);
+  const mondayOffset:Record<string,number>={Mon:0,Tue:1,Wed:2,Thu:3,Fri:4,Sat:5,Sun:6};
+  const date=new Date(`${day.key}T00:00:00.000Z`);
+  date.setUTCDate(date.getUTCDate()-(mondayOffset[day.weekday]??0));
+  const key=`${date.getUTCFullYear()}-${String(date.getUTCMonth()+1).padStart(2,"0")}-${String(date.getUTCDate()).padStart(2,"0")}`;
+  return {key,day:day.key};
+}
+
 export function schoolDateEnd(value:string,timeZone=SCHOOL_TIME_ZONE){
   if(!/^\d{4}-\d{2}-\d{2}$/.test(value))throw new Error("INVALID_EXPIRATION");
   const date=new Date(`${value}T00:00:00.000Z`);

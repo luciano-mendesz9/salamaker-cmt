@@ -33,6 +33,11 @@ export type ProfileAvatarPurchase = Prisma.ProfileAvatarPurchaseModel
  */
 export type DevCoinEntry = Prisma.DevCoinEntryModel
 /**
+ * Model DevCoinTransfer
+ *
+ */
+export type DevCoinTransfer = Prisma.DevCoinTransferModel
+/**
  * Model StickerCollection
  *
  */
