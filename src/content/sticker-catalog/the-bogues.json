@@ -93,5 +93,24 @@
     "height": 1200,
     "bytes": 166958,
     "preparedAt": "2026-09-29T00:03:31.831Z"
+  },
+  {
+    "slug": "g-blues",
+    "number": 6,
+    "name": "G-Blues",
+    "description": "Esta trupe caótica de goblins azuis, com suas feições pontudas e expressões maníacas, parece ter transformado um antigo altar de pedra em um laboratório de alquimia improvisado e perigoso",
+    "alt": "img",
+    "collectionSlug": "the-bogues",
+    "collectionName": "The Borgues",
+    "imagePath": "/media/stickers/the-bogues/g-blues.webp",
+    "totalCopies": 500,
+    "rarity": "LOW",
+    "score": 6,
+    "state": "DRAFT",
+    "sha256": "b2f6d0258d93f830997231924297a9bc1cc5b476f7977681fe8782174192d0ee",
+    "width": 900,
+    "height": 1200,
+    "bytes": 177134,
+    "preparedAt": "2026-09-29T00:19:28.860Z"
   }
 ]
