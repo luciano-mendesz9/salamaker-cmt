@@ -76,5 +76,43 @@ export const STICKER_CATALOG: readonly StickerCatalogEntry[] = [
     "height": 1200,
     "bytes": 128494,
     "preparedAt": "2026-09-28T23:47:50.669Z"
+  },
+  {
+    "slug": "turma-do-barulho",
+    "number": 5,
+    "name": "A Turma do Barulho",
+    "description": "Liderados pelo sagaz goblin encapuzado, este grupo caótico de criaturinhas verdes e pontudas semeia confusão por onde passa[cite: 5]. Com suas poções caseiras, bombas instáveis e truques mágicos imprevisíveis, a Turma do Barulho é uma força da natureza desajeitada e hilária, pronta para transformar qualquer aventura numa verdadeira explosão de gargalhadas — e de tudo o que estiver por perto",
+    "alt": "Personagem Fictício",
+    "collectionSlug": "the-bogues",
+    "collectionName": "The Borgues",
+    "imagePath": "/media/stickers/the-bogues/turma-do-barulho.webp",
+    "totalCopies": 100,
+    "rarity": "HIGH",
+    "score": 30,
+    "state": "DRAFT",
+    "sha256": "16af24f95e1911d5b8b158935a5eb8440126e09b6c6901cea81a9ee3e58ed40d",
+    "width": 900,
+    "height": 1200,
+    "bytes": 166958,
+    "preparedAt": "2026-09-29T00:03:31.831Z"
+  },
+  {
+    "slug": "g-blues",
+    "number": 6,
+    "name": "G-Blues",
+    "description": "Esta trupe caótica de goblins azuis, com suas feições pontudas e expressões maníacas, parece ter transformado um antigo altar de pedra em um laboratório de alquimia improvisado e perigoso",
+    "alt": "img",
+    "collectionSlug": "the-bogues",
+    "collectionName": "The Borgues",
+    "imagePath": "/media/stickers/the-bogues/g-blues.webp",
+    "totalCopies": 500,
+    "rarity": "LOW",
+    "score": 6,
+    "state": "DRAFT",
+    "sha256": "b2f6d0258d93f830997231924297a9bc1cc5b476f7977681fe8782174192d0ee",
+    "width": 900,
+    "height": 1200,
+    "bytes": 177134,
+    "preparedAt": "2026-09-29T00:19:28.860Z"
   }
 ];

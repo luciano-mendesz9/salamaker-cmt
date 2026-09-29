@@ -24,6 +24,18 @@
     "preparedAt": null
   },
   {
+    "key": "2tanj",
+    "label": "The BorguesA",
+    "alt": "img",
+    "imagePath": "src/assets/profiles/2tanj.webp",
+    "width": 512,
+    "height": 512,
+    "bytes": 40584,
+    "sha256": "132b31baa57803ba6478a485fe6734d1099d35e80a8d48e046964f1f46940a4f",
+    "paid": true,
+    "preparedAt": "2026-09-29T00:15:59.359Z"
+  },
+  {
     "key": "003",
     "label": "Avatar 003",
     "alt": "Avatar 003",
@@ -480,6 +492,30 @@
     "preparedAt": null
   },
   {
+    "key": "041",
+    "label": "img",
+    "alt": "img",
+    "imagePath": "src/assets/profiles/041.webp",
+    "width": 512,
+    "height": 512,
+    "bytes": 21526,
+    "sha256": "62a12bbf4effd71722c519198fcc302e52323e0067d55cf0d069085f5ee1a5e6",
+    "paid": true,
+    "preparedAt": "2026-09-29T00:12:44.554Z"
+  },
+  {
+    "key": "cur",
+    "label": "The BorguesA",
+    "alt": "img",
+    "imagePath": "src/assets/profiles/cur.webp",
+    "width": 512,
+    "height": 512,
+    "bytes": 28488,
+    "sha256": "e71aec7e04470f34cab010e6d3bf165c97ab0c08fbb3568805ff1bae25c7c127",
+    "paid": true,
+    "preparedAt": "2026-09-29T00:16:41.911Z"
+  },
+  {
     "key": "default",
     "label": "Imagem padrão",
     "alt": "Avatar padrão do aluno",
@@ -490,5 +526,101 @@
     "sha256": "9f837109296dd7f218b2b83713807635de334b5294115c57d8c354360d7d3edd",
     "paid": false,
     "preparedAt": null
+  },
+  {
+    "key": "ino1",
+    "label": "The BorguesA",
+    "alt": "img",
+    "imagePath": "src/assets/profiles/ino1.webp",
+    "width": 512,
+    "height": 512,
+    "bytes": 31540,
+    "sha256": "4b16dd4db0884c2d2f3573600dca97352c952827d2eeac21756a08ec0b74be08",
+    "paid": true,
+    "preparedAt": "2026-09-29T00:16:11.392Z"
+  },
+  {
+    "key": "ino2",
+    "label": "The BorguesA",
+    "alt": "img",
+    "imagePath": "src/assets/profiles/ino2.webp",
+    "width": 512,
+    "height": 512,
+    "bytes": 31798,
+    "sha256": "c04a40bae9caba23f599b38e04a24b793724c139d5285d4c890072621717533b",
+    "paid": true,
+    "preparedAt": "2026-09-29T00:16:25.172Z"
+  },
+  {
+    "key": "tanj",
+    "label": "The BorguesA",
+    "alt": "img",
+    "imagePath": "src/assets/profiles/tanj.webp",
+    "width": 512,
+    "height": 512,
+    "bytes": 35288,
+    "sha256": "dd98b7fd9db9f7301fe30962f7625d6feb32d58dc0e314756878a6a4fe8b1a9f",
+    "paid": true,
+    "preparedAt": "2026-09-29T00:15:39.051Z"
+  },
+  {
+    "key": "the-bogues",
+    "label": "The Borgues",
+    "alt": "img",
+    "imagePath": "src/assets/profiles/the-bogues.webp",
+    "width": 512,
+    "height": 512,
+    "bytes": 18508,
+    "sha256": "a93cffa48cd8eaa4cae7eaf5b6a2aa40d51f65a09197eca7740633427ff24571",
+    "paid": true,
+    "preparedAt": "2026-09-29T00:13:32.933Z"
+  },
+  {
+    "key": "the-bogues-2",
+    "label": "The BorguesA",
+    "alt": "img",
+    "imagePath": "src/assets/profiles/the-bogues-2.webp",
+    "width": 512,
+    "height": 512,
+    "bytes": 28192,
+    "sha256": "c333cccc24fb6acf3fd58fd1a8fbf7d2e5f165f51913c2bee0159fab92d9f6c0",
+    "paid": true,
+    "preparedAt": "2026-09-29T00:14:45.829Z"
+  },
+  {
+    "key": "the-bogues-3",
+    "label": "The BorguesA",
+    "alt": "img",
+    "imagePath": "src/assets/profiles/the-bogues-3.webp",
+    "width": 512,
+    "height": 512,
+    "bytes": 57530,
+    "sha256": "9ae56ed7a81c181d22746258bd3033edb4e54e8ecd64b83d6d4cb04e16838b65",
+    "paid": true,
+    "preparedAt": "2026-09-29T00:15:00.421Z"
+  },
+  {
+    "key": "the-bogues-4",
+    "label": "The BorguesA",
+    "alt": "img",
+    "imagePath": "src/assets/profiles/the-bogues-4.webp",
+    "width": 512,
+    "height": 512,
+    "bytes": 64642,
+    "sha256": "f0ae76c631784514eb6dd21ed946e448125ab3361894f86cc5c95773980dbb49",
+    "paid": true,
+    "preparedAt": "2026-09-29T00:15:18.291Z"
+  },
+  {
+    "key": "the-bogues-a",
+    "label": "The BorguesA",
+    "alt": "img",
+    "imagePath": "src/assets/profiles/the-bogues-a.webp",
+    "width": 512,
+    "height": 512,
+    "bytes": 47720,
+    "sha256": "decb07ccc8c971722798b6f90a68a20f6649fd2410974a944230d0e731d59898",
+    "paid": true,
+    "preparedAt": "2026-09-29T00:14:18.873Z"
   }
 ]
