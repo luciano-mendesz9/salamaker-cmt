@@ -15,6 +15,7 @@ export async function GET() {
       orderBy: { openedAt: "desc" },
       include: {
         attendances: { select: { studentId: true, status: true } },
+        cleanups: { select: { id: true, confirmedAt: true, student: { select: { id: true, firstName: true, lastName: true } } }, orderBy: { confirmedAt: "asc" } },
         teacher: { select: { firstName: true, lastName: true } },
         participants: { include: { student: { select: { id: true, firstName: true, lastName: true, originSchoolClass: true } } }, orderBy: { student: { firstName: "asc" } } },
       },
@@ -33,6 +34,7 @@ export async function GET() {
           where: { id: lesson.id },
           include: {
             attendances: { select: { studentId: true, status: true } },
+            cleanups: { select: { id: true, confirmedAt: true, student: { select: { id: true, firstName: true, lastName: true } } }, orderBy: { confirmedAt: "asc" } },
             teacher: { select: { firstName: true, lastName: true } },
             participants: { include: { student: { select: { id: true, firstName: true, lastName: true, originSchoolClass: true } } }, orderBy: { student: { firstName: "asc" } } },
           },
@@ -43,7 +45,7 @@ export async function GET() {
     if (!code) throw new Error("LESSON_CODE_UNAVAILABLE");
     const students = lesson.participants.map((participant) => participant.student);
     return NextResponse.json({
-      lesson: { id: lesson.id, title: lesson.title, openedAt: lesson.openedAt, attendances: lesson.attendances, code },
+      lesson: { id: lesson.id, title: lesson.title, openedAt: lesson.openedAt, attendances: lesson.attendances, cleanups: lesson.cleanups, code },
       students,
     });
   } catch (error) {

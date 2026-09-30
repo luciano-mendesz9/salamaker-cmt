@@ -20,6 +20,16 @@ export function getSchoolWeek(now=new Date(),timeZone=SCHOOL_TIME_ZONE){
   return {key,day:day.key};
 }
 
+export function getSchoolMonth(now=new Date(),timeZone=SCHOOL_TIME_ZONE){
+  const formatter=new Intl.DateTimeFormat("en-CA",{timeZone,year:"numeric",month:"2-digit"});
+  const parts=Object.fromEntries(formatter.formatToParts(now).filter(part=>part.type!=="literal").map(part=>[part.type,part.value]));
+  const year=Number(parts.year);const month=Number(parts.month);
+  const nextMonth=new Date(Date.UTC(year,month,1));
+  const key=`${parts.year}-${parts.month}`;
+  const nextKey=`${nextMonth.getUTCFullYear()}-${String(nextMonth.getUTCMonth()+1).padStart(2,"0")}`;
+  return {key,start:new Date(schoolLocalToUtc(`${key}-01T00:00`,timeZone)),end:new Date(schoolLocalToUtc(`${nextKey}-01T00:00`,timeZone))};
+}
+
 export function schoolDateEnd(value:string,timeZone=SCHOOL_TIME_ZONE){
   if(!/^\d{4}-\d{2}-\d{2}$/.test(value))throw new Error("INVALID_EXPIRATION");
   const date=new Date(`${value}T00:00:00.000Z`);
