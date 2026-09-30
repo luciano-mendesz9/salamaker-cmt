@@ -1,7 +1,7 @@
-import { compare } from "bcryptjs";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { prisma } from "@/lib/db";
+import { verifyLessonCode } from "@/lib/lesson-code";
 
 const schema = z.object({ accessCode: z.string().trim().toUpperCase(), lessonCode: z.string().regex(/^\d{6}$/) });
 
@@ -13,7 +13,7 @@ export async function POST(request: Request) {
     const student = await prisma.user.findFirst({ where: { accessCode: body.accessCode, role: "STUDENT", status: "ACTIVE" } });
     const lessons = await prisma.lesson.findMany({ where: { status: "OPEN" } });
     let lesson = null;
-    for (const candidate of lessons) if (await compare(body.lessonCode, candidate.presenceCodeHash)) { lesson = candidate; break; }
+    for (const candidate of lessons) if (await verifyLessonCode(body.lessonCode, candidate.presenceCodeHash)) { lesson = candidate; break; }
     if (!student || !lesson) return NextResponse.json({ message: "Não foi possível confirmar a presença com esses dados." }, { status: 400 });
     const participant = await prisma.lessonParticipant.findUnique({ where: { lessonId_studentId: { lessonId: lesson.id, studentId: student.id } }, select: { id: true } });
     if (!participant) return NextResponse.json({ message: "Você não estava entre os participantes desta aula quando ela foi aberta." }, { status: 403 });

@@ -1,16 +1,16 @@
 import { randomInt } from "node:crypto";
-import { hash } from "bcryptjs";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { prisma } from "@/lib/db";
 import { apiError, requireTeacher } from "@/lib/authorization";
+import { protectLessonCode, revealLessonCode } from "@/lib/lesson-code";
 
 const schema = z.object({ title: z.string().trim().min(3).max(100) });
 
 export async function GET() {
   try {
     await requireTeacher();
-    const lesson = await prisma.lesson.findFirst({
+    let lesson = await prisma.lesson.findFirst({
       where: { status: "OPEN" },
       orderBy: { openedAt: "desc" },
       include: {
@@ -20,8 +20,32 @@ export async function GET() {
       },
     });
     if (!lesson) return NextResponse.json({ lesson: null, students: [] });
+    let code = revealLessonCode(lesson.presenceCodeHash);
+    if (!code) {
+      code = String(randomInt(100000, 1000000));
+      const presenceCodeHash = protectLessonCode(code);
+      const rotated = await prisma.lesson.updateMany({
+        where: { id: lesson.id, status: "OPEN", presenceCodeHash: lesson.presenceCodeHash },
+        data: { presenceCodeHash },
+      });
+      if (!rotated.count) {
+        lesson = await prisma.lesson.findUniqueOrThrow({
+          where: { id: lesson.id },
+          include: {
+            attendances: { select: { studentId: true, status: true } },
+            teacher: { select: { firstName: true, lastName: true } },
+            participants: { include: { student: { select: { id: true, firstName: true, lastName: true, originSchoolClass: true } } }, orderBy: { student: { firstName: "asc" } } },
+          },
+        });
+        code = revealLessonCode(lesson.presenceCodeHash);
+      }
+    }
+    if (!code) throw new Error("LESSON_CODE_UNAVAILABLE");
     const students = lesson.participants.map((participant) => participant.student);
-    return NextResponse.json({ lesson: { ...lesson, participants: undefined, presenceCodeHash: undefined }, students });
+    return NextResponse.json({
+      lesson: { id: lesson.id, title: lesson.title, openedAt: lesson.openedAt, attendances: lesson.attendances, code },
+      students,
+    });
   } catch (error) {
     const [message, status] = apiError(error); return NextResponse.json({ message }, { status });
   }
@@ -36,7 +60,7 @@ export async function POST(request: Request) {
     const students = await prisma.user.findMany({ where: { role: "STUDENT", status: "ACTIVE" }, select: { id: true } });
     if (!students.length) return NextResponse.json({ message: "Cadastre ao menos um aluno ativo na turma de Robótica." }, { status: 400 });
     const code = String(randomInt(100000, 1000000));
-    const presenceCodeHash = await hash(code, 10);
+    const presenceCodeHash = protectLessonCode(code);
     const lesson = await prisma.lesson.create({
       data: {
         title: body.title,
