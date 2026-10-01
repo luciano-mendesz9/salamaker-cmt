@@ -1,3 +1,5 @@
+BEGIN;
+
 ALTER TYPE "XpSource" ADD VALUE 'LUDO_ROOM';
 ALTER TYPE "XpSource" ADD VALUE 'LUDO_INVITE';
 ALTER TYPE "XpSource" ADD VALUE 'LUDO_RESULT';
@@ -157,3 +159,5 @@ ALTER TABLE "LudoInvitation" ADD CONSTRAINT "LudoInvitation_inviterId_fkey" FORE
 ALTER TABLE "LudoInvitation" ADD CONSTRAINT "LudoInvitation_inviteeId_fkey" FOREIGN KEY ("inviteeId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 ALTER TABLE "LudoInvitationBlock" ADD CONSTRAINT "LudoInvitationBlock_blockerId_fkey" FOREIGN KEY ("blockerId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 ALTER TABLE "LudoInvitationBlock" ADD CONSTRAINT "LudoInvitationBlock_blockedId_fkey" FOREIGN KEY ("blockedId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+COMMIT;
