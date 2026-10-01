@@ -1,2 +1,15 @@
-import Link from "next/link";import {Bell,ClipboardList,Gamepad2,Home,PowerOff} from "lucide-react";import {StudentPopupNotifications} from "@/components/student-popup-notifications";import {LudoRealtimeBridge} from "@/components/ludo-realtime-bridge";import {prisma} from "@/lib/db";import {requireStudent} from "@/lib/authorization";
-export default async function StudentLayout({children}:{children:React.ReactNode}){await requireStudent();const settings=await prisma.appSetting.findUnique({where:{id:1},select:{studentAreaEnabled:true}});if(settings&&!settings.studentAreaEnabled)return <main className="mesh grid min-h-screen place-items-center p-5"><section className="glass max-w-lg rounded-3xl p-8 text-center"><PowerOff className="mx-auto text-rose-300" size={36}/><h1 className="mt-5 font-display text-2xl font-bold">Área temporariamente indisponível</h1><p className="mt-3 text-slate-300">O site foi desativado temporariamente pelo professor.</p></section></main>;return <>{children}<StudentPopupNotifications/><LudoRealtimeBridge/><nav aria-label="Navegação do aluno" className="fixed inset-x-0 bottom-0 z-40 flex h-[68px] items-center justify-around border-t border-slate-800 bg-[#0d1726]/95 backdrop-blur sm:hidden"><Link href="/aluno" className="focus-ring flex flex-col items-center gap-1 text-xs text-slate-300"><Home size={20}/>Início</Link><Link href="/aluno/atividades" className="focus-ring flex flex-col items-center gap-1 text-xs text-slate-300"><ClipboardList size={20}/>Atividades</Link><Link href="/aluno/minigames" className="focus-ring flex flex-col items-center gap-1 text-xs text-cyan-300"><Gamepad2 size={20}/>Jogos</Link><Link href="/aluno/notificacoes" className="focus-ring flex flex-col items-center gap-1 text-xs text-slate-300"><Bell size={20}/>Avisos</Link></nav></>}
+import { PowerOff } from "lucide-react";
+import { LudoRealtimeBridge } from "@/components/ludo-realtime-bridge";
+import { StudentMobileNav } from "@/components/student-mobile-nav";
+import { StudentPopupNotifications } from "@/components/student-popup-notifications";
+import { requireStudent } from "@/lib/authorization";
+import { prisma } from "@/lib/db";
+
+export default async function StudentLayout({ children }: { children: React.ReactNode }) {
+  await requireStudent();
+  const settings = await prisma.appSetting.findUnique({ where: { id: 1 }, select: { studentAreaEnabled: true } });
+  if (settings && !settings.studentAreaEnabled) {
+    return <main className="mesh grid min-h-screen place-items-center p-5"><section className="glass max-w-lg rounded-3xl p-8 text-center"><PowerOff className="mx-auto text-rose-300" size={36}/><h1 className="mt-5 font-display text-2xl font-bold">Área temporariamente indisponível</h1><p className="mt-3 text-slate-300">O site foi desativado temporariamente pelo professor.</p></section></main>;
+  }
+  return <>{children}<StudentPopupNotifications/><LudoRealtimeBridge/><StudentMobileNav/></>;
+}
