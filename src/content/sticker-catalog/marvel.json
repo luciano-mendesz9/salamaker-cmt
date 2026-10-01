@@ -1,0 +1,40 @@
+[
+  {
+    "slug": "homem-aranha-sentido-aranha",
+    "number": 1,
+    "name": "Homem-Aranha - Sentido Aranha",
+    "description": "Estou sentido algo",
+    "alt": "img",
+    "collectionSlug": "marvel",
+    "collectionName": "Marvel",
+    "imagePath": "/media/stickers/marvel/homem-aranha-sentido-aranha.webp",
+    "totalCopies": 200,
+    "rarity": "MEDIUM",
+    "score": 15,
+    "state": "DRAFT",
+    "sha256": "22589e04b0a11a9087a0809f20fbc6909b00852da680c172c87e848a4d714325",
+    "width": 900,
+    "height": 1200,
+    "bytes": 252794,
+    "preparedAt": "2026-10-01T02:47:11.173Z"
+  },
+  {
+    "slug": "homem-aranha-player",
+    "number": 2,
+    "name": "Homem-Aranha - Player",
+    "description": "Wow",
+    "alt": "img",
+    "collectionSlug": "marvel",
+    "collectionName": "Marvel",
+    "imagePath": "/media/stickers/marvel/homem-aranha-player.webp",
+    "totalCopies": 500,
+    "rarity": "LOW",
+    "score": 6,
+    "state": "DRAFT",
+    "sha256": "5565186bf77babb10c25e461988b79c16989bcfe00af0e01da64d5799b8721f2",
+    "width": 900,
+    "height": 1200,
+    "bytes": 134606,
+    "preparedAt": "2026-10-01T02:47:43.883Z"
+  }
+]

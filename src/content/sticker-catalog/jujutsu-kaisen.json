@@ -1,0 +1,21 @@
+[
+  {
+    "slug": "sukuna",
+    "number": 1,
+    "name": "Sukuna",
+    "description": "Tenso",
+    "alt": "img",
+    "collectionSlug": "jujutsu-kaisen",
+    "collectionName": "Jujutsu Kaisen",
+    "imagePath": "/media/stickers/jujutsu-kaisen/sukuna.webp",
+    "totalCopies": 45,
+    "rarity": "HIGH",
+    "score": 67,
+    "state": "DRAFT",
+    "sha256": "85cb9fbd14ed3e97e459f9c0ffda38a8d4752f79041c762ba7a53783aa002419",
+    "width": 900,
+    "height": 1200,
+    "bytes": 93628,
+    "preparedAt": "2026-10-01T02:46:16.302Z"
+  }
+]

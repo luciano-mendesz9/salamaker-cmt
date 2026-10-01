@@ -1,0 +1,21 @@
+[
+  {
+    "slug": "hengoku",
+    "number": 1,
+    "name": "Hengoku",
+    "description": "Encendei o seu coração!",
+    "alt": "img",
+    "collectionSlug": "demon-slayer",
+    "collectionName": "Demon Slayer",
+    "imagePath": "/media/stickers/demon-slayer/hengoku.webp",
+    "totalCopies": 90,
+    "rarity": "HIGH",
+    "score": 34,
+    "state": "DRAFT",
+    "sha256": "8a5a63028b923d23ce50e07a8acfd91e28fcb40de40e3f9ab49d84396c82980b",
+    "width": 900,
+    "height": 1200,
+    "bytes": 123370,
+    "preparedAt": "2026-10-01T02:43:31.244Z"
+  }
+]
