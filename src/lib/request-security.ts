@@ -1,9 +1,5 @@
 import { prisma } from "@/lib/db";
-
-export function assertSameOrigin(request: Request) {
-  const origin = request.headers.get("origin");
-  if (!origin || origin !== new URL(request.url).origin) throw new Error("INVALID_ORIGIN");
-}
+export { assertSameOrigin } from "@/lib/same-origin";
 
 export async function consumeRateLimit(key: string, limit: number, windowMs: number) {
   const now = new Date();
