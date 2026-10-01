@@ -89,7 +89,12 @@ export const ModelName = {
   ActivityTeamMember: 'ActivityTeamMember',
   ActivityAward: 'ActivityAward',
   AuditLog: 'AuditLog',
-  RateLimitBucket: 'RateLimitBucket'
+  RateLimitBucket: 'RateLimitBucket',
+  LudoRoom: 'LudoRoom',
+  LudoPlayer: 'LudoPlayer',
+  LudoMove: 'LudoMove',
+  LudoInvitation: 'LudoInvitation',
+  LudoInvitationBlock: 'LudoInvitationBlock'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -631,6 +636,103 @@ export const RateLimitBucketScalarFieldEnum = {
 export type RateLimitBucketScalarFieldEnum = (typeof RateLimitBucketScalarFieldEnum)[keyof typeof RateLimitBucketScalarFieldEnum]
 
 
+export const LudoRoomScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  creationKey: 'creationKey',
+  ownerId: 'ownerId',
+  mode: 'mode',
+  status: 'status',
+  wager: 'wager',
+  roomFee: 'roomFee',
+  maxPlayers: 'maxPlayers',
+  botAdvantaged: 'botAdvantaged',
+  escrowBalance: 'escrowBalance',
+  initialPlayerCount: 'initialPlayerCount',
+  currentSeat: 'currentSeat',
+  currentRoll: 'currentRoll',
+  consecutiveSixes: 'consecutiveSixes',
+  pauseRequestCount: 'pauseRequestCount',
+  turnDeadline: 'turnDeadline',
+  startedAt: 'startedAt',
+  pausedAt: 'pausedAt',
+  finishedAt: 'finishedAt',
+  cancelledAt: 'cancelledAt',
+  version: 'version',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type LudoRoomScalarFieldEnum = (typeof LudoRoomScalarFieldEnum)[keyof typeof LudoRoomScalarFieldEnum]
+
+
+export const LudoPlayerScalarFieldEnum = {
+  id: 'id',
+  roomId: 'roomId',
+  studentId: 'studentId',
+  kind: 'kind',
+  color: 'color',
+  seat: 'seat',
+  status: 'status',
+  pieces: 'pieces',
+  stake: 'stake',
+  payout: 'payout',
+  finishPosition: 'finishPosition',
+  connected: 'connected',
+  joinedAt: 'joinedAt',
+  lastSeenAt: 'lastSeenAt',
+  disconnectedAt: 'disconnectedAt',
+  forfeitedAt: 'forfeitedAt',
+  finishedAt: 'finishedAt'
+} as const
+
+export type LudoPlayerScalarFieldEnum = (typeof LudoPlayerScalarFieldEnum)[keyof typeof LudoPlayerScalarFieldEnum]
+
+
+export const LudoMoveScalarFieldEnum = {
+  id: 'id',
+  roomId: 'roomId',
+  playerId: 'playerId',
+  capturedPlayerId: 'capturedPlayerId',
+  sequence: 'sequence',
+  kind: 'kind',
+  roll: 'roll',
+  pieceIndex: 'pieceIndex',
+  fromPosition: 'fromPosition',
+  toPosition: 'toPosition',
+  captured: 'captured',
+  autoReason: 'autoReason',
+  createdAt: 'createdAt'
+} as const
+
+export type LudoMoveScalarFieldEnum = (typeof LudoMoveScalarFieldEnum)[keyof typeof LudoMoveScalarFieldEnum]
+
+
+export const LudoInvitationScalarFieldEnum = {
+  id: 'id',
+  roomId: 'roomId',
+  inviterId: 'inviterId',
+  inviteeId: 'inviteeId',
+  status: 'status',
+  expiresAt: 'expiresAt',
+  createdAt: 'createdAt',
+  respondedAt: 'respondedAt'
+} as const
+
+export type LudoInvitationScalarFieldEnum = (typeof LudoInvitationScalarFieldEnum)[keyof typeof LudoInvitationScalarFieldEnum]
+
+
+export const LudoInvitationBlockScalarFieldEnum = {
+  id: 'id',
+  blockerId: 'blockerId',
+  blockedId: 'blockedId',
+  expiresAt: 'expiresAt',
+  createdAt: 'createdAt'
+} as const
+
+export type LudoInvitationBlockScalarFieldEnum = (typeof LudoInvitationBlockScalarFieldEnum)[keyof typeof LudoInvitationBlockScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -645,6 +747,13 @@ export const NullableJsonNullValueInput = {
 } as const
 
 export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
+
+
+export const JsonNullValueInput = {
+  JsonNull: JsonNull
+} as const
+
+export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
 export const QueryMode = {

@@ -236,3 +236,28 @@ export type AuditLog = Prisma.AuditLogModel
  *
  */
 export type RateLimitBucket = Prisma.RateLimitBucketModel
+/**
+ * Model LudoRoom
+ *
+ */
+export type LudoRoom = Prisma.LudoRoomModel
+/**
+ * Model LudoPlayer
+ *
+ */
+export type LudoPlayer = Prisma.LudoPlayerModel
+/**
+ * Model LudoMove
+ *
+ */
+export type LudoMove = Prisma.LudoMoveModel
+/**
+ * Model LudoInvitation
+ *
+ */
+export type LudoInvitation = Prisma.LudoInvitationModel
+/**
+ * Model LudoInvitationBlock
+ *
+ */
+export type LudoInvitationBlock = Prisma.LudoInvitationBlockModel

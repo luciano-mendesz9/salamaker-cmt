@@ -711,6 +711,176 @@ export type JsonNullableWithAggregatesFilterBase<$PrismaModel = never> = {
   _max?: Prisma.NestedJsonNullableFilter<$PrismaModel>
 }
 
+export type EnumLudoRoomModeFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoRoomMode | Prisma.EnumLudoRoomModeFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoRoomMode[] | Prisma.ListEnumLudoRoomModeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoRoomMode[] | Prisma.ListEnumLudoRoomModeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoRoomModeFilter<$PrismaModel> | $Enums.LudoRoomMode
+}
+
+export type EnumLudoRoomStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoRoomStatus | Prisma.EnumLudoRoomStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoRoomStatus[] | Prisma.ListEnumLudoRoomStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoRoomStatus[] | Prisma.ListEnumLudoRoomStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoRoomStatusFilter<$PrismaModel> | $Enums.LudoRoomStatus
+}
+
+export type EnumLudoRoomModeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoRoomMode | Prisma.EnumLudoRoomModeFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoRoomMode[] | Prisma.ListEnumLudoRoomModeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoRoomMode[] | Prisma.ListEnumLudoRoomModeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoRoomModeWithAggregatesFilter<$PrismaModel> | $Enums.LudoRoomMode
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLudoRoomModeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLudoRoomModeFilter<$PrismaModel>
+}
+
+export type EnumLudoRoomStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoRoomStatus | Prisma.EnumLudoRoomStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoRoomStatus[] | Prisma.ListEnumLudoRoomStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoRoomStatus[] | Prisma.ListEnumLudoRoomStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoRoomStatusWithAggregatesFilter<$PrismaModel> | $Enums.LudoRoomStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLudoRoomStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLudoRoomStatusFilter<$PrismaModel>
+}
+
+export type EnumLudoPlayerKindFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoPlayerKind | Prisma.EnumLudoPlayerKindFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoPlayerKind[] | Prisma.ListEnumLudoPlayerKindFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoPlayerKind[] | Prisma.ListEnumLudoPlayerKindFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoPlayerKindFilter<$PrismaModel> | $Enums.LudoPlayerKind
+}
+
+export type EnumLudoColorFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoColor | Prisma.EnumLudoColorFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoColor[] | Prisma.ListEnumLudoColorFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoColor[] | Prisma.ListEnumLudoColorFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoColorFilter<$PrismaModel> | $Enums.LudoColor
+}
+
+export type EnumLudoPlayerStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoPlayerStatus | Prisma.EnumLudoPlayerStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoPlayerStatus[] | Prisma.ListEnumLudoPlayerStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoPlayerStatus[] | Prisma.ListEnumLudoPlayerStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoPlayerStatusFilter<$PrismaModel> | $Enums.LudoPlayerStatus
+}
+
+export type JsonFilter<$PrismaModel = never> =
+| Prisma.PatchUndefined<
+    Prisma.Either<Required<JsonFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonFilterBase<$PrismaModel>>, 'path'>>,
+    Required<JsonFilterBase<$PrismaModel>>
+  >
+| Prisma.OptionalFlat<Omit<Required<JsonFilterBase<$PrismaModel>>, 'path'>>
+
+export type JsonFilterBase<$PrismaModel = never> = {
+  equals?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | Prisma.JsonNullValueFilter
+  path?: string[]
+  mode?: Prisma.QueryMode | Prisma.EnumQueryModeFieldRefInput<$PrismaModel>
+  string_contains?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  string_starts_with?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  string_ends_with?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  array_starts_with?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | null
+  array_ends_with?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | null
+  array_contains?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | null
+  lt?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  lte?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  gt?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  gte?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  not?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | Prisma.JsonNullValueFilter
+}
+
+export type EnumLudoPlayerKindWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoPlayerKind | Prisma.EnumLudoPlayerKindFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoPlayerKind[] | Prisma.ListEnumLudoPlayerKindFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoPlayerKind[] | Prisma.ListEnumLudoPlayerKindFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoPlayerKindWithAggregatesFilter<$PrismaModel> | $Enums.LudoPlayerKind
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLudoPlayerKindFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLudoPlayerKindFilter<$PrismaModel>
+}
+
+export type EnumLudoColorWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoColor | Prisma.EnumLudoColorFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoColor[] | Prisma.ListEnumLudoColorFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoColor[] | Prisma.ListEnumLudoColorFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoColorWithAggregatesFilter<$PrismaModel> | $Enums.LudoColor
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLudoColorFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLudoColorFilter<$PrismaModel>
+}
+
+export type EnumLudoPlayerStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoPlayerStatus | Prisma.EnumLudoPlayerStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoPlayerStatus[] | Prisma.ListEnumLudoPlayerStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoPlayerStatus[] | Prisma.ListEnumLudoPlayerStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoPlayerStatusWithAggregatesFilter<$PrismaModel> | $Enums.LudoPlayerStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLudoPlayerStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLudoPlayerStatusFilter<$PrismaModel>
+}
+
+export type JsonWithAggregatesFilter<$PrismaModel = never> =
+| Prisma.PatchUndefined<
+    Prisma.Either<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
+    Required<JsonWithAggregatesFilterBase<$PrismaModel>>
+  >
+| Prisma.OptionalFlat<Omit<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
+
+export type JsonWithAggregatesFilterBase<$PrismaModel = never> = {
+  equals?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | Prisma.JsonNullValueFilter
+  path?: string[]
+  mode?: Prisma.QueryMode | Prisma.EnumQueryModeFieldRefInput<$PrismaModel>
+  string_contains?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  string_starts_with?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  string_ends_with?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  array_starts_with?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | null
+  array_ends_with?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | null
+  array_contains?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | null
+  lt?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  lte?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  gt?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  gte?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  not?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | Prisma.JsonNullValueFilter
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedJsonFilter<$PrismaModel>
+  _max?: Prisma.NestedJsonFilter<$PrismaModel>
+}
+
+export type EnumLudoMoveKindFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoMoveKind | Prisma.EnumLudoMoveKindFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoMoveKind[] | Prisma.ListEnumLudoMoveKindFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoMoveKind[] | Prisma.ListEnumLudoMoveKindFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoMoveKindFilter<$PrismaModel> | $Enums.LudoMoveKind
+}
+
+export type EnumLudoMoveKindWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoMoveKind | Prisma.EnumLudoMoveKindFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoMoveKind[] | Prisma.ListEnumLudoMoveKindFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoMoveKind[] | Prisma.ListEnumLudoMoveKindFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoMoveKindWithAggregatesFilter<$PrismaModel> | $Enums.LudoMoveKind
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLudoMoveKindFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLudoMoveKindFilter<$PrismaModel>
+}
+
+export type EnumLudoInvitationStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoInvitationStatus | Prisma.EnumLudoInvitationStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoInvitationStatus[] | Prisma.ListEnumLudoInvitationStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoInvitationStatus[] | Prisma.ListEnumLudoInvitationStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoInvitationStatusFilter<$PrismaModel> | $Enums.LudoInvitationStatus
+}
+
+export type EnumLudoInvitationStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoInvitationStatus | Prisma.EnumLudoInvitationStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoInvitationStatus[] | Prisma.ListEnumLudoInvitationStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoInvitationStatus[] | Prisma.ListEnumLudoInvitationStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoInvitationStatusWithAggregatesFilter<$PrismaModel> | $Enums.LudoInvitationStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLudoInvitationStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLudoInvitationStatusFilter<$PrismaModel>
+}
+
 export type NestedUuidFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -1388,6 +1558,149 @@ export type NestedJsonNullableFilterBase<$PrismaModel = never> = {
   gt?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
   gte?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
   not?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | Prisma.JsonNullValueFilter
+}
+
+export type NestedEnumLudoRoomModeFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoRoomMode | Prisma.EnumLudoRoomModeFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoRoomMode[] | Prisma.ListEnumLudoRoomModeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoRoomMode[] | Prisma.ListEnumLudoRoomModeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoRoomModeFilter<$PrismaModel> | $Enums.LudoRoomMode
+}
+
+export type NestedEnumLudoRoomStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoRoomStatus | Prisma.EnumLudoRoomStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoRoomStatus[] | Prisma.ListEnumLudoRoomStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoRoomStatus[] | Prisma.ListEnumLudoRoomStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoRoomStatusFilter<$PrismaModel> | $Enums.LudoRoomStatus
+}
+
+export type NestedEnumLudoRoomModeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoRoomMode | Prisma.EnumLudoRoomModeFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoRoomMode[] | Prisma.ListEnumLudoRoomModeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoRoomMode[] | Prisma.ListEnumLudoRoomModeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoRoomModeWithAggregatesFilter<$PrismaModel> | $Enums.LudoRoomMode
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLudoRoomModeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLudoRoomModeFilter<$PrismaModel>
+}
+
+export type NestedEnumLudoRoomStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoRoomStatus | Prisma.EnumLudoRoomStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoRoomStatus[] | Prisma.ListEnumLudoRoomStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoRoomStatus[] | Prisma.ListEnumLudoRoomStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoRoomStatusWithAggregatesFilter<$PrismaModel> | $Enums.LudoRoomStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLudoRoomStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLudoRoomStatusFilter<$PrismaModel>
+}
+
+export type NestedEnumLudoPlayerKindFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoPlayerKind | Prisma.EnumLudoPlayerKindFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoPlayerKind[] | Prisma.ListEnumLudoPlayerKindFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoPlayerKind[] | Prisma.ListEnumLudoPlayerKindFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoPlayerKindFilter<$PrismaModel> | $Enums.LudoPlayerKind
+}
+
+export type NestedEnumLudoColorFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoColor | Prisma.EnumLudoColorFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoColor[] | Prisma.ListEnumLudoColorFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoColor[] | Prisma.ListEnumLudoColorFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoColorFilter<$PrismaModel> | $Enums.LudoColor
+}
+
+export type NestedEnumLudoPlayerStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoPlayerStatus | Prisma.EnumLudoPlayerStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoPlayerStatus[] | Prisma.ListEnumLudoPlayerStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoPlayerStatus[] | Prisma.ListEnumLudoPlayerStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoPlayerStatusFilter<$PrismaModel> | $Enums.LudoPlayerStatus
+}
+
+export type NestedEnumLudoPlayerKindWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoPlayerKind | Prisma.EnumLudoPlayerKindFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoPlayerKind[] | Prisma.ListEnumLudoPlayerKindFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoPlayerKind[] | Prisma.ListEnumLudoPlayerKindFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoPlayerKindWithAggregatesFilter<$PrismaModel> | $Enums.LudoPlayerKind
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLudoPlayerKindFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLudoPlayerKindFilter<$PrismaModel>
+}
+
+export type NestedEnumLudoColorWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoColor | Prisma.EnumLudoColorFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoColor[] | Prisma.ListEnumLudoColorFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoColor[] | Prisma.ListEnumLudoColorFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoColorWithAggregatesFilter<$PrismaModel> | $Enums.LudoColor
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLudoColorFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLudoColorFilter<$PrismaModel>
+}
+
+export type NestedEnumLudoPlayerStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoPlayerStatus | Prisma.EnumLudoPlayerStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoPlayerStatus[] | Prisma.ListEnumLudoPlayerStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoPlayerStatus[] | Prisma.ListEnumLudoPlayerStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoPlayerStatusWithAggregatesFilter<$PrismaModel> | $Enums.LudoPlayerStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLudoPlayerStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLudoPlayerStatusFilter<$PrismaModel>
+}
+
+export type NestedJsonFilter<$PrismaModel = never> =
+| Prisma.PatchUndefined<
+    Prisma.Either<Required<NestedJsonFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>,
+    Required<NestedJsonFilterBase<$PrismaModel>>
+  >
+| Prisma.OptionalFlat<Omit<Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>
+
+export type NestedJsonFilterBase<$PrismaModel = never> = {
+  equals?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | Prisma.JsonNullValueFilter
+  path?: string[]
+  mode?: Prisma.QueryMode | Prisma.EnumQueryModeFieldRefInput<$PrismaModel>
+  string_contains?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  string_starts_with?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  string_ends_with?: string | Prisma.StringFieldRefInput<$PrismaModel>
+  array_starts_with?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | null
+  array_ends_with?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | null
+  array_contains?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | null
+  lt?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  lte?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  gt?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  gte?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
+  not?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | Prisma.JsonNullValueFilter
+}
+
+export type NestedEnumLudoMoveKindFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoMoveKind | Prisma.EnumLudoMoveKindFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoMoveKind[] | Prisma.ListEnumLudoMoveKindFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoMoveKind[] | Prisma.ListEnumLudoMoveKindFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoMoveKindFilter<$PrismaModel> | $Enums.LudoMoveKind
+}
+
+export type NestedEnumLudoMoveKindWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoMoveKind | Prisma.EnumLudoMoveKindFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoMoveKind[] | Prisma.ListEnumLudoMoveKindFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoMoveKind[] | Prisma.ListEnumLudoMoveKindFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoMoveKindWithAggregatesFilter<$PrismaModel> | $Enums.LudoMoveKind
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLudoMoveKindFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLudoMoveKindFilter<$PrismaModel>
+}
+
+export type NestedEnumLudoInvitationStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoInvitationStatus | Prisma.EnumLudoInvitationStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoInvitationStatus[] | Prisma.ListEnumLudoInvitationStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoInvitationStatus[] | Prisma.ListEnumLudoInvitationStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoInvitationStatusFilter<$PrismaModel> | $Enums.LudoInvitationStatus
+}
+
+export type NestedEnumLudoInvitationStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LudoInvitationStatus | Prisma.EnumLudoInvitationStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.LudoInvitationStatus[] | Prisma.ListEnumLudoInvitationStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LudoInvitationStatus[] | Prisma.ListEnumLudoInvitationStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLudoInvitationStatusWithAggregatesFilter<$PrismaModel> | $Enums.LudoInvitationStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLudoInvitationStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLudoInvitationStatusFilter<$PrismaModel>
 }
 
 

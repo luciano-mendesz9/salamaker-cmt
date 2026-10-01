@@ -435,7 +435,12 @@ export const ModelName = {
   ActivityTeamMember: 'ActivityTeamMember',
   ActivityAward: 'ActivityAward',
   AuditLog: 'AuditLog',
-  RateLimitBucket: 'RateLimitBucket'
+  RateLimitBucket: 'RateLimitBucket',
+  LudoRoom: 'LudoRoom',
+  LudoPlayer: 'LudoPlayer',
+  LudoMove: 'LudoMove',
+  LudoInvitation: 'LudoInvitation',
+  LudoInvitationBlock: 'LudoInvitationBlock'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -451,7 +456,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "profileAvatarPurchase" | "devCoinEntry" | "devCoinTransfer" | "stickerCollection" | "sticker" | "stickerCopy" | "stickerPackPurchase" | "stickerListing" | "stickerTrade" | "stickerDonation" | "patentLevel" | "studentPatentProgress" | "patentRewardClaim" | "devCoinTreasury" | "stickerMarketSetting" | "devCoinTreasuryEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket"
+    modelProps: "user" | "profileAvatarPurchase" | "devCoinEntry" | "devCoinTransfer" | "stickerCollection" | "sticker" | "stickerCopy" | "stickerPackPurchase" | "stickerListing" | "stickerTrade" | "stickerDonation" | "patentLevel" | "studentPatentProgress" | "patentRewardClaim" | "devCoinTreasury" | "stickerMarketSetting" | "devCoinTreasuryEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket" | "ludoRoom" | "ludoPlayer" | "ludoMove" | "ludoInvitation" | "ludoInvitationBlock"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -3341,6 +3346,376 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    LudoRoom: {
+      payload: Prisma.$LudoRoomPayload<ExtArgs>
+      fields: Prisma.LudoRoomFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.LudoRoomFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoRoomPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.LudoRoomFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoRoomPayload>
+        }
+        findFirst: {
+          args: Prisma.LudoRoomFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoRoomPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.LudoRoomFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoRoomPayload>
+        }
+        findMany: {
+          args: Prisma.LudoRoomFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoRoomPayload>[]
+        }
+        create: {
+          args: Prisma.LudoRoomCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoRoomPayload>
+        }
+        createMany: {
+          args: Prisma.LudoRoomCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.LudoRoomCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoRoomPayload>[]
+        }
+        delete: {
+          args: Prisma.LudoRoomDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoRoomPayload>
+        }
+        update: {
+          args: Prisma.LudoRoomUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoRoomPayload>
+        }
+        deleteMany: {
+          args: Prisma.LudoRoomDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.LudoRoomUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.LudoRoomUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoRoomPayload>[]
+        }
+        upsert: {
+          args: Prisma.LudoRoomUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoRoomPayload>
+        }
+        aggregate: {
+          args: Prisma.LudoRoomAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateLudoRoom>
+        }
+        groupBy: {
+          args: Prisma.LudoRoomGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LudoRoomGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.LudoRoomCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LudoRoomCountAggregateOutputType> | number
+        }
+      }
+    }
+    LudoPlayer: {
+      payload: Prisma.$LudoPlayerPayload<ExtArgs>
+      fields: Prisma.LudoPlayerFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.LudoPlayerFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoPlayerPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.LudoPlayerFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoPlayerPayload>
+        }
+        findFirst: {
+          args: Prisma.LudoPlayerFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoPlayerPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.LudoPlayerFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoPlayerPayload>
+        }
+        findMany: {
+          args: Prisma.LudoPlayerFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoPlayerPayload>[]
+        }
+        create: {
+          args: Prisma.LudoPlayerCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoPlayerPayload>
+        }
+        createMany: {
+          args: Prisma.LudoPlayerCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.LudoPlayerCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoPlayerPayload>[]
+        }
+        delete: {
+          args: Prisma.LudoPlayerDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoPlayerPayload>
+        }
+        update: {
+          args: Prisma.LudoPlayerUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoPlayerPayload>
+        }
+        deleteMany: {
+          args: Prisma.LudoPlayerDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.LudoPlayerUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.LudoPlayerUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoPlayerPayload>[]
+        }
+        upsert: {
+          args: Prisma.LudoPlayerUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoPlayerPayload>
+        }
+        aggregate: {
+          args: Prisma.LudoPlayerAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateLudoPlayer>
+        }
+        groupBy: {
+          args: Prisma.LudoPlayerGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LudoPlayerGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.LudoPlayerCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LudoPlayerCountAggregateOutputType> | number
+        }
+      }
+    }
+    LudoMove: {
+      payload: Prisma.$LudoMovePayload<ExtArgs>
+      fields: Prisma.LudoMoveFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.LudoMoveFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoMovePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.LudoMoveFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoMovePayload>
+        }
+        findFirst: {
+          args: Prisma.LudoMoveFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoMovePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.LudoMoveFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoMovePayload>
+        }
+        findMany: {
+          args: Prisma.LudoMoveFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoMovePayload>[]
+        }
+        create: {
+          args: Prisma.LudoMoveCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoMovePayload>
+        }
+        createMany: {
+          args: Prisma.LudoMoveCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.LudoMoveCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoMovePayload>[]
+        }
+        delete: {
+          args: Prisma.LudoMoveDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoMovePayload>
+        }
+        update: {
+          args: Prisma.LudoMoveUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoMovePayload>
+        }
+        deleteMany: {
+          args: Prisma.LudoMoveDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.LudoMoveUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.LudoMoveUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoMovePayload>[]
+        }
+        upsert: {
+          args: Prisma.LudoMoveUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoMovePayload>
+        }
+        aggregate: {
+          args: Prisma.LudoMoveAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateLudoMove>
+        }
+        groupBy: {
+          args: Prisma.LudoMoveGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LudoMoveGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.LudoMoveCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LudoMoveCountAggregateOutputType> | number
+        }
+      }
+    }
+    LudoInvitation: {
+      payload: Prisma.$LudoInvitationPayload<ExtArgs>
+      fields: Prisma.LudoInvitationFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.LudoInvitationFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.LudoInvitationFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationPayload>
+        }
+        findFirst: {
+          args: Prisma.LudoInvitationFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.LudoInvitationFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationPayload>
+        }
+        findMany: {
+          args: Prisma.LudoInvitationFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationPayload>[]
+        }
+        create: {
+          args: Prisma.LudoInvitationCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationPayload>
+        }
+        createMany: {
+          args: Prisma.LudoInvitationCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.LudoInvitationCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationPayload>[]
+        }
+        delete: {
+          args: Prisma.LudoInvitationDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationPayload>
+        }
+        update: {
+          args: Prisma.LudoInvitationUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationPayload>
+        }
+        deleteMany: {
+          args: Prisma.LudoInvitationDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.LudoInvitationUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.LudoInvitationUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationPayload>[]
+        }
+        upsert: {
+          args: Prisma.LudoInvitationUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationPayload>
+        }
+        aggregate: {
+          args: Prisma.LudoInvitationAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateLudoInvitation>
+        }
+        groupBy: {
+          args: Prisma.LudoInvitationGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LudoInvitationGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.LudoInvitationCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LudoInvitationCountAggregateOutputType> | number
+        }
+      }
+    }
+    LudoInvitationBlock: {
+      payload: Prisma.$LudoInvitationBlockPayload<ExtArgs>
+      fields: Prisma.LudoInvitationBlockFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.LudoInvitationBlockFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationBlockPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.LudoInvitationBlockFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationBlockPayload>
+        }
+        findFirst: {
+          args: Prisma.LudoInvitationBlockFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationBlockPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.LudoInvitationBlockFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationBlockPayload>
+        }
+        findMany: {
+          args: Prisma.LudoInvitationBlockFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationBlockPayload>[]
+        }
+        create: {
+          args: Prisma.LudoInvitationBlockCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationBlockPayload>
+        }
+        createMany: {
+          args: Prisma.LudoInvitationBlockCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.LudoInvitationBlockCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationBlockPayload>[]
+        }
+        delete: {
+          args: Prisma.LudoInvitationBlockDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationBlockPayload>
+        }
+        update: {
+          args: Prisma.LudoInvitationBlockUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationBlockPayload>
+        }
+        deleteMany: {
+          args: Prisma.LudoInvitationBlockDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.LudoInvitationBlockUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.LudoInvitationBlockUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationBlockPayload>[]
+        }
+        upsert: {
+          args: Prisma.LudoInvitationBlockUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LudoInvitationBlockPayload>
+        }
+        aggregate: {
+          args: Prisma.LudoInvitationBlockAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateLudoInvitationBlock>
+        }
+        groupBy: {
+          args: Prisma.LudoInvitationBlockGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LudoInvitationBlockGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.LudoInvitationBlockCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LudoInvitationBlockCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -3903,6 +4278,103 @@ export const RateLimitBucketScalarFieldEnum = {
 export type RateLimitBucketScalarFieldEnum = (typeof RateLimitBucketScalarFieldEnum)[keyof typeof RateLimitBucketScalarFieldEnum]
 
 
+export const LudoRoomScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  creationKey: 'creationKey',
+  ownerId: 'ownerId',
+  mode: 'mode',
+  status: 'status',
+  wager: 'wager',
+  roomFee: 'roomFee',
+  maxPlayers: 'maxPlayers',
+  botAdvantaged: 'botAdvantaged',
+  escrowBalance: 'escrowBalance',
+  initialPlayerCount: 'initialPlayerCount',
+  currentSeat: 'currentSeat',
+  currentRoll: 'currentRoll',
+  consecutiveSixes: 'consecutiveSixes',
+  pauseRequestCount: 'pauseRequestCount',
+  turnDeadline: 'turnDeadline',
+  startedAt: 'startedAt',
+  pausedAt: 'pausedAt',
+  finishedAt: 'finishedAt',
+  cancelledAt: 'cancelledAt',
+  version: 'version',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type LudoRoomScalarFieldEnum = (typeof LudoRoomScalarFieldEnum)[keyof typeof LudoRoomScalarFieldEnum]
+
+
+export const LudoPlayerScalarFieldEnum = {
+  id: 'id',
+  roomId: 'roomId',
+  studentId: 'studentId',
+  kind: 'kind',
+  color: 'color',
+  seat: 'seat',
+  status: 'status',
+  pieces: 'pieces',
+  stake: 'stake',
+  payout: 'payout',
+  finishPosition: 'finishPosition',
+  connected: 'connected',
+  joinedAt: 'joinedAt',
+  lastSeenAt: 'lastSeenAt',
+  disconnectedAt: 'disconnectedAt',
+  forfeitedAt: 'forfeitedAt',
+  finishedAt: 'finishedAt'
+} as const
+
+export type LudoPlayerScalarFieldEnum = (typeof LudoPlayerScalarFieldEnum)[keyof typeof LudoPlayerScalarFieldEnum]
+
+
+export const LudoMoveScalarFieldEnum = {
+  id: 'id',
+  roomId: 'roomId',
+  playerId: 'playerId',
+  capturedPlayerId: 'capturedPlayerId',
+  sequence: 'sequence',
+  kind: 'kind',
+  roll: 'roll',
+  pieceIndex: 'pieceIndex',
+  fromPosition: 'fromPosition',
+  toPosition: 'toPosition',
+  captured: 'captured',
+  autoReason: 'autoReason',
+  createdAt: 'createdAt'
+} as const
+
+export type LudoMoveScalarFieldEnum = (typeof LudoMoveScalarFieldEnum)[keyof typeof LudoMoveScalarFieldEnum]
+
+
+export const LudoInvitationScalarFieldEnum = {
+  id: 'id',
+  roomId: 'roomId',
+  inviterId: 'inviterId',
+  inviteeId: 'inviteeId',
+  status: 'status',
+  expiresAt: 'expiresAt',
+  createdAt: 'createdAt',
+  respondedAt: 'respondedAt'
+} as const
+
+export type LudoInvitationScalarFieldEnum = (typeof LudoInvitationScalarFieldEnum)[keyof typeof LudoInvitationScalarFieldEnum]
+
+
+export const LudoInvitationBlockScalarFieldEnum = {
+  id: 'id',
+  blockerId: 'blockerId',
+  blockedId: 'blockedId',
+  expiresAt: 'expiresAt',
+  createdAt: 'createdAt'
+} as const
+
+export type LudoInvitationBlockScalarFieldEnum = (typeof LudoInvitationBlockScalarFieldEnum)[keyof typeof LudoInvitationBlockScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -3917,6 +4389,13 @@ export const NullableJsonNullValueInput = {
 } as const
 
 export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
+
+
+export const JsonNullValueInput = {
+  JsonNull: JsonNull
+} as const
+
+export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
 export const QueryMode = {
@@ -4336,6 +4815,104 @@ export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$Prisma
 
 
 /**
+ * Reference to a field of type 'LudoRoomMode'
+ */
+export type EnumLudoRoomModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LudoRoomMode'>
+
+
+
+/**
+ * Reference to a field of type 'LudoRoomMode[]'
+ */
+export type ListEnumLudoRoomModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LudoRoomMode[]'>
+
+
+
+/**
+ * Reference to a field of type 'LudoRoomStatus'
+ */
+export type EnumLudoRoomStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LudoRoomStatus'>
+
+
+
+/**
+ * Reference to a field of type 'LudoRoomStatus[]'
+ */
+export type ListEnumLudoRoomStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LudoRoomStatus[]'>
+
+
+
+/**
+ * Reference to a field of type 'LudoPlayerKind'
+ */
+export type EnumLudoPlayerKindFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LudoPlayerKind'>
+
+
+
+/**
+ * Reference to a field of type 'LudoPlayerKind[]'
+ */
+export type ListEnumLudoPlayerKindFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LudoPlayerKind[]'>
+
+
+
+/**
+ * Reference to a field of type 'LudoColor'
+ */
+export type EnumLudoColorFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LudoColor'>
+
+
+
+/**
+ * Reference to a field of type 'LudoColor[]'
+ */
+export type ListEnumLudoColorFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LudoColor[]'>
+
+
+
+/**
+ * Reference to a field of type 'LudoPlayerStatus'
+ */
+export type EnumLudoPlayerStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LudoPlayerStatus'>
+
+
+
+/**
+ * Reference to a field of type 'LudoPlayerStatus[]'
+ */
+export type ListEnumLudoPlayerStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LudoPlayerStatus[]'>
+
+
+
+/**
+ * Reference to a field of type 'LudoMoveKind'
+ */
+export type EnumLudoMoveKindFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LudoMoveKind'>
+
+
+
+/**
+ * Reference to a field of type 'LudoMoveKind[]'
+ */
+export type ListEnumLudoMoveKindFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LudoMoveKind[]'>
+
+
+
+/**
+ * Reference to a field of type 'LudoInvitationStatus'
+ */
+export type EnumLudoInvitationStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LudoInvitationStatus'>
+
+
+
+/**
+ * Reference to a field of type 'LudoInvitationStatus[]'
+ */
+export type ListEnumLudoInvitationStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LudoInvitationStatus[]'>
+
+
+
+/**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -4538,6 +5115,11 @@ export type GlobalOmitConfig = {
   activityAward?: Prisma.ActivityAwardOmit
   auditLog?: Prisma.AuditLogOmit
   rateLimitBucket?: Prisma.RateLimitBucketOmit
+  ludoRoom?: Prisma.LudoRoomOmit
+  ludoPlayer?: Prisma.LudoPlayerOmit
+  ludoMove?: Prisma.LudoMoveOmit
+  ludoInvitation?: Prisma.LudoInvitationOmit
+  ludoInvitationBlock?: Prisma.LudoInvitationBlockOmit
 }
 
 /* Types for Logging */

@@ -63,7 +63,11 @@ export const XpSource = {
   ACTIVITY: 'ACTIVITY',
   PROFILE_AVATAR: 'PROFILE_AVATAR',
   DEV_COIN_PURCHASE: 'DEV_COIN_PURCHASE',
-  DEV_COIN_TRANSFER: 'DEV_COIN_TRANSFER'
+  DEV_COIN_TRANSFER: 'DEV_COIN_TRANSFER',
+  LUDO_ROOM: 'LUDO_ROOM',
+  LUDO_INVITE: 'LUDO_INVITE',
+  LUDO_RESULT: 'LUDO_RESULT',
+  LUDO_FORFEIT: 'LUDO_FORFEIT'
 } as const
 
 export type XpSource = (typeof XpSource)[keyof typeof XpSource]
@@ -89,7 +93,14 @@ export const AuditEvent = {
   STICKER_LISTED: 'STICKER_LISTED',
   STICKER_TRADED: 'STICKER_TRADED',
   STICKER_DONATED: 'STICKER_DONATED',
-  DEV_COIN_TRANSFERRED: 'DEV_COIN_TRANSFERRED'
+  DEV_COIN_TRANSFERRED: 'DEV_COIN_TRANSFERRED',
+  LUDO_ROOM_CREATED: 'LUDO_ROOM_CREATED',
+  LUDO_ROOM_JOINED: 'LUDO_ROOM_JOINED',
+  LUDO_INVITE_SENT: 'LUDO_INVITE_SENT',
+  LUDO_MATCH_STARTED: 'LUDO_MATCH_STARTED',
+  LUDO_MATCH_PAUSED: 'LUDO_MATCH_PAUSED',
+  LUDO_MATCH_FINISHED: 'LUDO_MATCH_FINISHED',
+  LUDO_PLAYER_FORFEITED: 'LUDO_PLAYER_FORFEITED'
 } as const
 
 export type AuditEvent = (typeof AuditEvent)[keyof typeof AuditEvent]
@@ -104,7 +115,10 @@ export const DevCoinSource = {
   STICKER_MARKET: 'STICKER_MARKET',
   PATENT_REWARD: 'PATENT_REWARD',
   TRANSFER_SENT: 'TRANSFER_SENT',
-  TRANSFER_RECEIVED: 'TRANSFER_RECEIVED'
+  TRANSFER_RECEIVED: 'TRANSFER_RECEIVED',
+  LUDO_ROOM_FEE: 'LUDO_ROOM_FEE',
+  LUDO_ESCROW: 'LUDO_ESCROW',
+  LUDO_PRIZE: 'LUDO_PRIZE'
 } as const
 
 export type DevCoinSource = (typeof DevCoinSource)[keyof typeof DevCoinSource]
@@ -184,10 +198,80 @@ export const TreasuryEntrySource = {
   PATENT_REWARD: 'PATENT_REWARD',
   TEACHER_DISTRIBUTION: 'TEACHER_DISTRIBUTION',
   ADMIN_MINT: 'ADMIN_MINT',
-  ADMIN_BURN: 'ADMIN_BURN'
+  ADMIN_BURN: 'ADMIN_BURN',
+  LUDO_ROOM_FEE: 'LUDO_ROOM_FEE',
+  LUDO_SETTLEMENT: 'LUDO_SETTLEMENT'
 } as const
 
 export type TreasuryEntrySource = (typeof TreasuryEntrySource)[keyof typeof TreasuryEntrySource]
+
+
+export const LudoRoomMode = {
+  HUMAN: 'HUMAN',
+  BOT: 'BOT'
+} as const
+
+export type LudoRoomMode = (typeof LudoRoomMode)[keyof typeof LudoRoomMode]
+
+
+export const LudoRoomStatus = {
+  WAITING: 'WAITING',
+  ACTIVE: 'ACTIVE',
+  PAUSED: 'PAUSED',
+  FINISHED: 'FINISHED',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type LudoRoomStatus = (typeof LudoRoomStatus)[keyof typeof LudoRoomStatus]
+
+
+export const LudoPlayerKind = {
+  STUDENT: 'STUDENT',
+  BOT: 'BOT'
+} as const
+
+export type LudoPlayerKind = (typeof LudoPlayerKind)[keyof typeof LudoPlayerKind]
+
+
+export const LudoPlayerStatus = {
+  JOINED: 'JOINED',
+  PLAYING: 'PLAYING',
+  FINISHED: 'FINISHED',
+  FORFEITED: 'FORFEITED'
+} as const
+
+export type LudoPlayerStatus = (typeof LudoPlayerStatus)[keyof typeof LudoPlayerStatus]
+
+
+export const LudoColor = {
+  RED: 'RED',
+  GREEN: 'GREEN',
+  YELLOW: 'YELLOW',
+  BLUE: 'BLUE'
+} as const
+
+export type LudoColor = (typeof LudoColor)[keyof typeof LudoColor]
+
+
+export const LudoInvitationStatus = {
+  PENDING: 'PENDING',
+  ACCEPTED: 'ACCEPTED',
+  DECLINED: 'DECLINED',
+  EXPIRED: 'EXPIRED'
+} as const
+
+export type LudoInvitationStatus = (typeof LudoInvitationStatus)[keyof typeof LudoInvitationStatus]
+
+
+export const LudoMoveKind = {
+  ROLL: 'ROLL',
+  MOVE: 'MOVE',
+  AUTO_ROLL: 'AUTO_ROLL',
+  AUTO_MOVE: 'AUTO_MOVE',
+  FORFEIT: 'FORFEIT'
+} as const
+
+export type LudoMoveKind = (typeof LudoMoveKind)[keyof typeof LudoMoveKind]
 
 
 export const AvatarPurchaseCurrency = {

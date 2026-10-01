@@ -363,6 +363,12 @@ export type UserWhereInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryListRelationFilter
   devCoinTransfersSent?: Prisma.DevCoinTransferListRelationFilter
   devCoinTransfersReceived?: Prisma.DevCoinTransferListRelationFilter
+  ownedLudoRooms?: Prisma.LudoRoomListRelationFilter
+  ludoPlayers?: Prisma.LudoPlayerListRelationFilter
+  sentLudoInvitations?: Prisma.LudoInvitationListRelationFilter
+  receivedLudoInvitations?: Prisma.LudoInvitationListRelationFilter
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockListRelationFilter
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -419,6 +425,12 @@ export type UserOrderByWithRelationInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryOrderByRelationAggregateInput
   devCoinTransfersSent?: Prisma.DevCoinTransferOrderByRelationAggregateInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferOrderByRelationAggregateInput
+  ownedLudoRooms?: Prisma.LudoRoomOrderByRelationAggregateInput
+  ludoPlayers?: Prisma.LudoPlayerOrderByRelationAggregateInput
+  sentLudoInvitations?: Prisma.LudoInvitationOrderByRelationAggregateInput
+  receivedLudoInvitations?: Prisma.LudoInvitationOrderByRelationAggregateInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockOrderByRelationAggregateInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -478,6 +490,12 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryListRelationFilter
   devCoinTransfersSent?: Prisma.DevCoinTransferListRelationFilter
   devCoinTransfersReceived?: Prisma.DevCoinTransferListRelationFilter
+  ownedLudoRooms?: Prisma.LudoRoomListRelationFilter
+  ludoPlayers?: Prisma.LudoPlayerListRelationFilter
+  sentLudoInvitations?: Prisma.LudoInvitationListRelationFilter
+  receivedLudoInvitations?: Prisma.LudoInvitationListRelationFilter
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockListRelationFilter
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockListRelationFilter
 }, "id" | "accessCode">
 
 export type UserOrderByWithAggregationInput = {
@@ -584,6 +602,12 @@ export type UserCreateInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -640,6 +664,12 @@ export type UserUncheckedCreateInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUpdateInput = {
@@ -696,6 +726,12 @@ export type UserUpdateInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -752,6 +788,12 @@ export type UserUncheckedUpdateInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -1444,6 +1486,92 @@ export type UserUpdateOneWithoutAuditTargetsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutAuditTargetsInput, Prisma.UserUpdateWithoutAuditTargetsInput>, Prisma.UserUncheckedUpdateWithoutAuditTargetsInput>
 }
 
+export type UserCreateNestedOneWithoutOwnedLudoRoomsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutOwnedLudoRoomsInput, Prisma.UserUncheckedCreateWithoutOwnedLudoRoomsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutOwnedLudoRoomsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutOwnedLudoRoomsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutOwnedLudoRoomsInput, Prisma.UserUncheckedCreateWithoutOwnedLudoRoomsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutOwnedLudoRoomsInput
+  upsert?: Prisma.UserUpsertWithoutOwnedLudoRoomsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutOwnedLudoRoomsInput, Prisma.UserUpdateWithoutOwnedLudoRoomsInput>, Prisma.UserUncheckedUpdateWithoutOwnedLudoRoomsInput>
+}
+
+export type UserCreateNestedOneWithoutLudoPlayersInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutLudoPlayersInput, Prisma.UserUncheckedCreateWithoutLudoPlayersInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutLudoPlayersInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneWithoutLudoPlayersNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutLudoPlayersInput, Prisma.UserUncheckedCreateWithoutLudoPlayersInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutLudoPlayersInput
+  upsert?: Prisma.UserUpsertWithoutLudoPlayersInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutLudoPlayersInput, Prisma.UserUpdateWithoutLudoPlayersInput>, Prisma.UserUncheckedUpdateWithoutLudoPlayersInput>
+}
+
+export type UserCreateNestedOneWithoutSentLudoInvitationsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutSentLudoInvitationsInput, Prisma.UserUncheckedCreateWithoutSentLudoInvitationsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutSentLudoInvitationsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutReceivedLudoInvitationsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutReceivedLudoInvitationsInput, Prisma.UserUncheckedCreateWithoutReceivedLudoInvitationsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutReceivedLudoInvitationsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutSentLudoInvitationsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutSentLudoInvitationsInput, Prisma.UserUncheckedCreateWithoutSentLudoInvitationsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutSentLudoInvitationsInput
+  upsert?: Prisma.UserUpsertWithoutSentLudoInvitationsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutSentLudoInvitationsInput, Prisma.UserUpdateWithoutSentLudoInvitationsInput>, Prisma.UserUncheckedUpdateWithoutSentLudoInvitationsInput>
+}
+
+export type UserUpdateOneRequiredWithoutReceivedLudoInvitationsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutReceivedLudoInvitationsInput, Prisma.UserUncheckedCreateWithoutReceivedLudoInvitationsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutReceivedLudoInvitationsInput
+  upsert?: Prisma.UserUpsertWithoutReceivedLudoInvitationsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutReceivedLudoInvitationsInput, Prisma.UserUpdateWithoutReceivedLudoInvitationsInput>, Prisma.UserUncheckedUpdateWithoutReceivedLudoInvitationsInput>
+}
+
+export type UserCreateNestedOneWithoutLudoBlocksCreatedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutLudoBlocksCreatedInput, Prisma.UserUncheckedCreateWithoutLudoBlocksCreatedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutLudoBlocksCreatedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutLudoBlocksReceivedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutLudoBlocksReceivedInput, Prisma.UserUncheckedCreateWithoutLudoBlocksReceivedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutLudoBlocksReceivedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutLudoBlocksCreatedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutLudoBlocksCreatedInput, Prisma.UserUncheckedCreateWithoutLudoBlocksCreatedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutLudoBlocksCreatedInput
+  upsert?: Prisma.UserUpsertWithoutLudoBlocksCreatedInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutLudoBlocksCreatedInput, Prisma.UserUpdateWithoutLudoBlocksCreatedInput>, Prisma.UserUncheckedUpdateWithoutLudoBlocksCreatedInput>
+}
+
+export type UserUpdateOneRequiredWithoutLudoBlocksReceivedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutLudoBlocksReceivedInput, Prisma.UserUncheckedCreateWithoutLudoBlocksReceivedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutLudoBlocksReceivedInput
+  upsert?: Prisma.UserUpsertWithoutLudoBlocksReceivedInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutLudoBlocksReceivedInput, Prisma.UserUpdateWithoutLudoBlocksReceivedInput>, Prisma.UserUncheckedUpdateWithoutLudoBlocksReceivedInput>
+}
+
 export type UserCreateWithoutProfileAvatarPurchasesInput = {
   id?: string
   firstName: string
@@ -1497,6 +1625,12 @@ export type UserCreateWithoutProfileAvatarPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutProfileAvatarPurchasesInput = {
@@ -1552,6 +1686,12 @@ export type UserUncheckedCreateWithoutProfileAvatarPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutProfileAvatarPurchasesInput = {
@@ -1623,6 +1763,12 @@ export type UserUpdateWithoutProfileAvatarPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutProfileAvatarPurchasesInput = {
@@ -1678,6 +1824,12 @@ export type UserUncheckedUpdateWithoutProfileAvatarPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutDevCoinEntriesInput = {
@@ -1733,6 +1885,12 @@ export type UserCreateWithoutDevCoinEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutDevCoinEntriesInput = {
@@ -1788,6 +1946,12 @@ export type UserUncheckedCreateWithoutDevCoinEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutDevCoinEntriesInput = {
@@ -1848,6 +2012,12 @@ export type UserCreateWithoutAuthoredDevCoinEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput = {
@@ -1903,6 +2073,12 @@ export type UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredDevCoinEntriesInput = {
@@ -1974,6 +2150,12 @@ export type UserUpdateWithoutDevCoinEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutDevCoinEntriesInput = {
@@ -2029,6 +2211,12 @@ export type UserUncheckedUpdateWithoutDevCoinEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUpsertWithoutAuthoredDevCoinEntriesInput = {
@@ -2095,6 +2283,12 @@ export type UserUpdateWithoutAuthoredDevCoinEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput = {
@@ -2150,6 +2344,12 @@ export type UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutDevCoinTransfersSentInput = {
@@ -2205,6 +2405,12 @@ export type UserCreateWithoutDevCoinTransfersSentInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutDevCoinTransfersSentInput = {
@@ -2260,6 +2466,12 @@ export type UserUncheckedCreateWithoutDevCoinTransfersSentInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutDevCoinTransfersSentInput = {
@@ -2320,6 +2532,12 @@ export type UserCreateWithoutDevCoinTransfersReceivedInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutDevCoinTransfersReceivedInput = {
@@ -2375,6 +2593,12 @@ export type UserUncheckedCreateWithoutDevCoinTransfersReceivedInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutDevCoinTransfersReceivedInput = {
@@ -2446,6 +2670,12 @@ export type UserUpdateWithoutDevCoinTransfersSentInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutDevCoinTransfersSentInput = {
@@ -2501,6 +2731,12 @@ export type UserUncheckedUpdateWithoutDevCoinTransfersSentInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUpsertWithoutDevCoinTransfersReceivedInput = {
@@ -2567,6 +2803,12 @@ export type UserUpdateWithoutDevCoinTransfersReceivedInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutDevCoinTransfersReceivedInput = {
@@ -2622,6 +2864,12 @@ export type UserUncheckedUpdateWithoutDevCoinTransfersReceivedInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutStickerCopiesInput = {
@@ -2677,6 +2925,12 @@ export type UserCreateWithoutStickerCopiesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutStickerCopiesInput = {
@@ -2732,6 +2986,12 @@ export type UserUncheckedCreateWithoutStickerCopiesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutStickerCopiesInput = {
@@ -2803,6 +3063,12 @@ export type UserUpdateWithoutStickerCopiesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerCopiesInput = {
@@ -2858,6 +3124,12 @@ export type UserUncheckedUpdateWithoutStickerCopiesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutStickerPackPurchasesInput = {
@@ -2913,6 +3185,12 @@ export type UserCreateWithoutStickerPackPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutStickerPackPurchasesInput = {
@@ -2968,6 +3246,12 @@ export type UserUncheckedCreateWithoutStickerPackPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutStickerPackPurchasesInput = {
@@ -3039,6 +3323,12 @@ export type UserUpdateWithoutStickerPackPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerPackPurchasesInput = {
@@ -3094,6 +3384,12 @@ export type UserUncheckedUpdateWithoutStickerPackPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutStickerListingsInput = {
@@ -3149,6 +3445,12 @@ export type UserCreateWithoutStickerListingsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutStickerListingsInput = {
@@ -3204,6 +3506,12 @@ export type UserUncheckedCreateWithoutStickerListingsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutStickerListingsInput = {
@@ -3264,6 +3572,12 @@ export type UserCreateWithoutStickerPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutStickerPurchasesInput = {
@@ -3319,6 +3633,12 @@ export type UserUncheckedCreateWithoutStickerPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutStickerPurchasesInput = {
@@ -3390,6 +3710,12 @@ export type UserUpdateWithoutStickerListingsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerListingsInput = {
@@ -3445,6 +3771,12 @@ export type UserUncheckedUpdateWithoutStickerListingsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUpsertWithoutStickerPurchasesInput = {
@@ -3511,6 +3843,12 @@ export type UserUpdateWithoutStickerPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerPurchasesInput = {
@@ -3566,6 +3904,12 @@ export type UserUncheckedUpdateWithoutStickerPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutStickerTradesSoldInput = {
@@ -3621,6 +3965,12 @@ export type UserCreateWithoutStickerTradesSoldInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutStickerTradesSoldInput = {
@@ -3676,6 +4026,12 @@ export type UserUncheckedCreateWithoutStickerTradesSoldInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutStickerTradesSoldInput = {
@@ -3736,6 +4092,12 @@ export type UserCreateWithoutStickerTradesBoughtInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutStickerTradesBoughtInput = {
@@ -3791,6 +4153,12 @@ export type UserUncheckedCreateWithoutStickerTradesBoughtInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutStickerTradesBoughtInput = {
@@ -3862,6 +4230,12 @@ export type UserUpdateWithoutStickerTradesSoldInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerTradesSoldInput = {
@@ -3917,6 +4291,12 @@ export type UserUncheckedUpdateWithoutStickerTradesSoldInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUpsertWithoutStickerTradesBoughtInput = {
@@ -3983,6 +4363,12 @@ export type UserUpdateWithoutStickerTradesBoughtInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerTradesBoughtInput = {
@@ -4038,6 +4424,12 @@ export type UserUncheckedUpdateWithoutStickerTradesBoughtInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutStickerDonationsSentInput = {
@@ -4093,6 +4485,12 @@ export type UserCreateWithoutStickerDonationsSentInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutStickerDonationsSentInput = {
@@ -4148,6 +4546,12 @@ export type UserUncheckedCreateWithoutStickerDonationsSentInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutStickerDonationsSentInput = {
@@ -4208,6 +4612,12 @@ export type UserCreateWithoutStickerDonationsReceivedInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutStickerDonationsReceivedInput = {
@@ -4263,6 +4673,12 @@ export type UserUncheckedCreateWithoutStickerDonationsReceivedInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutStickerDonationsReceivedInput = {
@@ -4334,6 +4750,12 @@ export type UserUpdateWithoutStickerDonationsSentInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerDonationsSentInput = {
@@ -4389,6 +4811,12 @@ export type UserUncheckedUpdateWithoutStickerDonationsSentInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUpsertWithoutStickerDonationsReceivedInput = {
@@ -4455,6 +4883,12 @@ export type UserUpdateWithoutStickerDonationsReceivedInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerDonationsReceivedInput = {
@@ -4510,6 +4944,12 @@ export type UserUncheckedUpdateWithoutStickerDonationsReceivedInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutPatentProgressInput = {
@@ -4565,6 +5005,12 @@ export type UserCreateWithoutPatentProgressInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutPatentProgressInput = {
@@ -4620,6 +5066,12 @@ export type UserUncheckedCreateWithoutPatentProgressInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutPatentProgressInput = {
@@ -4691,6 +5143,12 @@ export type UserUpdateWithoutPatentProgressInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPatentProgressInput = {
@@ -4746,6 +5204,12 @@ export type UserUncheckedUpdateWithoutPatentProgressInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutPatentRewardClaimsInput = {
@@ -4801,6 +5265,12 @@ export type UserCreateWithoutPatentRewardClaimsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutPatentRewardClaimsInput = {
@@ -4856,6 +5326,12 @@ export type UserUncheckedCreateWithoutPatentRewardClaimsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutPatentRewardClaimsInput = {
@@ -4927,6 +5403,12 @@ export type UserUpdateWithoutPatentRewardClaimsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPatentRewardClaimsInput = {
@@ -4982,6 +5464,12 @@ export type UserUncheckedUpdateWithoutPatentRewardClaimsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutTreasuryEntriesAuthoredInput = {
@@ -5037,6 +5525,12 @@ export type UserCreateWithoutTreasuryEntriesAuthoredInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutTreasuryEntriesAuthoredInput = {
@@ -5092,6 +5586,12 @@ export type UserUncheckedCreateWithoutTreasuryEntriesAuthoredInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutTreasuryEntriesAuthoredInput = {
@@ -5163,6 +5663,12 @@ export type UserUpdateWithoutTreasuryEntriesAuthoredInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutTreasuryEntriesAuthoredInput = {
@@ -5218,6 +5724,12 @@ export type UserUncheckedUpdateWithoutTreasuryEntriesAuthoredInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutLessonsInput = {
@@ -5273,6 +5785,12 @@ export type UserCreateWithoutLessonsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutLessonsInput = {
@@ -5328,6 +5846,12 @@ export type UserUncheckedCreateWithoutLessonsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutLessonsInput = {
@@ -5399,6 +5923,12 @@ export type UserUpdateWithoutLessonsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLessonsInput = {
@@ -5454,6 +5984,12 @@ export type UserUncheckedUpdateWithoutLessonsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutLessonParticipationsInput = {
@@ -5509,6 +6045,12 @@ export type UserCreateWithoutLessonParticipationsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutLessonParticipationsInput = {
@@ -5564,6 +6106,12 @@ export type UserUncheckedCreateWithoutLessonParticipationsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutLessonParticipationsInput = {
@@ -5635,6 +6183,12 @@ export type UserUpdateWithoutLessonParticipationsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLessonParticipationsInput = {
@@ -5690,6 +6244,12 @@ export type UserUncheckedUpdateWithoutLessonParticipationsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutAttendancesInput = {
@@ -5745,6 +6305,12 @@ export type UserCreateWithoutAttendancesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutAttendancesInput = {
@@ -5800,6 +6366,12 @@ export type UserUncheckedCreateWithoutAttendancesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutAttendancesInput = {
@@ -5871,6 +6443,12 @@ export type UserUpdateWithoutAttendancesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAttendancesInput = {
@@ -5926,6 +6504,12 @@ export type UserUncheckedUpdateWithoutAttendancesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutXpEntriesInput = {
@@ -5981,6 +6565,12 @@ export type UserCreateWithoutXpEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutXpEntriesInput = {
@@ -6036,6 +6626,12 @@ export type UserUncheckedCreateWithoutXpEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutXpEntriesInput = {
@@ -6096,6 +6692,12 @@ export type UserCreateWithoutAuthoredXpInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredXpInput = {
@@ -6151,6 +6753,12 @@ export type UserUncheckedCreateWithoutAuthoredXpInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredXpInput = {
@@ -6222,6 +6830,12 @@ export type UserUpdateWithoutXpEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutXpEntriesInput = {
@@ -6277,6 +6891,12 @@ export type UserUncheckedUpdateWithoutXpEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUpsertWithoutAuthoredXpInput = {
@@ -6343,6 +6963,12 @@ export type UserUpdateWithoutAuthoredXpInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredXpInput = {
@@ -6398,6 +7024,12 @@ export type UserUncheckedUpdateWithoutAuthoredXpInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutBehaviorsInput = {
@@ -6453,6 +7085,12 @@ export type UserCreateWithoutBehaviorsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutBehaviorsInput = {
@@ -6508,6 +7146,12 @@ export type UserUncheckedCreateWithoutBehaviorsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutBehaviorsInput = {
@@ -6568,6 +7212,12 @@ export type UserCreateWithoutRatedBehaviorsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutRatedBehaviorsInput = {
@@ -6623,6 +7273,12 @@ export type UserUncheckedCreateWithoutRatedBehaviorsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutRatedBehaviorsInput = {
@@ -6694,6 +7350,12 @@ export type UserUpdateWithoutBehaviorsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutBehaviorsInput = {
@@ -6749,6 +7411,12 @@ export type UserUncheckedUpdateWithoutBehaviorsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUpsertWithoutRatedBehaviorsInput = {
@@ -6815,6 +7483,12 @@ export type UserUpdateWithoutRatedBehaviorsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutRatedBehaviorsInput = {
@@ -6870,6 +7544,12 @@ export type UserUncheckedUpdateWithoutRatedBehaviorsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutCleanupsInput = {
@@ -6925,6 +7605,12 @@ export type UserCreateWithoutCleanupsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutCleanupsInput = {
@@ -6980,6 +7666,12 @@ export type UserUncheckedCreateWithoutCleanupsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutCleanupsInput = {
@@ -7040,6 +7732,12 @@ export type UserCreateWithoutConfirmedCleanupsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutConfirmedCleanupsInput = {
@@ -7095,6 +7793,12 @@ export type UserUncheckedCreateWithoutConfirmedCleanupsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutConfirmedCleanupsInput = {
@@ -7166,6 +7870,12 @@ export type UserUpdateWithoutCleanupsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCleanupsInput = {
@@ -7221,6 +7931,12 @@ export type UserUncheckedUpdateWithoutCleanupsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUpsertWithoutConfirmedCleanupsInput = {
@@ -7287,6 +8003,12 @@ export type UserUpdateWithoutConfirmedCleanupsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutConfirmedCleanupsInput = {
@@ -7342,6 +8064,12 @@ export type UserUncheckedUpdateWithoutConfirmedCleanupsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutAuthoredActivitiesInput = {
@@ -7397,6 +8125,12 @@ export type UserCreateWithoutAuthoredActivitiesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredActivitiesInput = {
@@ -7452,6 +8186,12 @@ export type UserUncheckedCreateWithoutAuthoredActivitiesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredActivitiesInput = {
@@ -7523,6 +8263,12 @@ export type UserUpdateWithoutAuthoredActivitiesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredActivitiesInput = {
@@ -7578,6 +8324,12 @@ export type UserUncheckedUpdateWithoutAuthoredActivitiesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutAuthoredNotificationsInput = {
@@ -7633,6 +8385,12 @@ export type UserCreateWithoutAuthoredNotificationsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredNotificationsInput = {
@@ -7688,6 +8446,12 @@ export type UserUncheckedCreateWithoutAuthoredNotificationsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredNotificationsInput = {
@@ -7759,6 +8523,12 @@ export type UserUpdateWithoutAuthoredNotificationsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredNotificationsInput = {
@@ -7814,6 +8584,12 @@ export type UserUncheckedUpdateWithoutAuthoredNotificationsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutNotificationReceiptsInput = {
@@ -7869,6 +8645,12 @@ export type UserCreateWithoutNotificationReceiptsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutNotificationReceiptsInput = {
@@ -7924,6 +8706,12 @@ export type UserUncheckedCreateWithoutNotificationReceiptsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutNotificationReceiptsInput = {
@@ -7995,6 +8783,12 @@ export type UserUpdateWithoutNotificationReceiptsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutNotificationReceiptsInput = {
@@ -8050,6 +8844,12 @@ export type UserUncheckedUpdateWithoutNotificationReceiptsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutActivityRecipientsInput = {
@@ -8105,6 +8905,12 @@ export type UserCreateWithoutActivityRecipientsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutActivityRecipientsInput = {
@@ -8160,6 +8966,12 @@ export type UserUncheckedCreateWithoutActivityRecipientsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutActivityRecipientsInput = {
@@ -8231,6 +9043,12 @@ export type UserUpdateWithoutActivityRecipientsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityRecipientsInput = {
@@ -8286,6 +9104,12 @@ export type UserUncheckedUpdateWithoutActivityRecipientsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutActivitySubmissionsInput = {
@@ -8341,6 +9165,12 @@ export type UserCreateWithoutActivitySubmissionsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutActivitySubmissionsInput = {
@@ -8396,6 +9226,12 @@ export type UserUncheckedCreateWithoutActivitySubmissionsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutActivitySubmissionsInput = {
@@ -8467,6 +9303,12 @@ export type UserUpdateWithoutActivitySubmissionsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivitySubmissionsInput = {
@@ -8522,6 +9364,12 @@ export type UserUncheckedUpdateWithoutActivitySubmissionsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutActivityAnswersInput = {
@@ -8577,6 +9425,12 @@ export type UserCreateWithoutActivityAnswersInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutActivityAnswersInput = {
@@ -8632,6 +9486,12 @@ export type UserUncheckedCreateWithoutActivityAnswersInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutActivityAnswersInput = {
@@ -8703,6 +9563,12 @@ export type UserUpdateWithoutActivityAnswersInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityAnswersInput = {
@@ -8758,6 +9624,12 @@ export type UserUncheckedUpdateWithoutActivityAnswersInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutActivityTeamMembershipsInput = {
@@ -8813,6 +9685,12 @@ export type UserCreateWithoutActivityTeamMembershipsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutActivityTeamMembershipsInput = {
@@ -8868,6 +9746,12 @@ export type UserUncheckedCreateWithoutActivityTeamMembershipsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutActivityTeamMembershipsInput = {
@@ -8939,6 +9823,12 @@ export type UserUpdateWithoutActivityTeamMembershipsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityTeamMembershipsInput = {
@@ -8994,6 +9884,12 @@ export type UserUncheckedUpdateWithoutActivityTeamMembershipsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutActivityAwardsInput = {
@@ -9049,6 +9945,12 @@ export type UserCreateWithoutActivityAwardsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutActivityAwardsInput = {
@@ -9104,6 +10006,12 @@ export type UserUncheckedCreateWithoutActivityAwardsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutActivityAwardsInput = {
@@ -9175,6 +10083,12 @@ export type UserUpdateWithoutActivityAwardsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityAwardsInput = {
@@ -9230,6 +10144,12 @@ export type UserUncheckedUpdateWithoutActivityAwardsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserCreateWithoutAuditActionsInput = {
@@ -9285,6 +10205,12 @@ export type UserCreateWithoutAuditActionsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutAuditActionsInput = {
@@ -9340,6 +10266,12 @@ export type UserUncheckedCreateWithoutAuditActionsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutAuditActionsInput = {
@@ -9400,6 +10332,12 @@ export type UserCreateWithoutAuditTargetsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
 }
 
 export type UserUncheckedCreateWithoutAuditTargetsInput = {
@@ -9455,6 +10393,12 @@ export type UserUncheckedCreateWithoutAuditTargetsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
 }
 
 export type UserCreateOrConnectWithoutAuditTargetsInput = {
@@ -9526,6 +10470,12 @@ export type UserUpdateWithoutAuditActionsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuditActionsInput = {
@@ -9581,6 +10531,12 @@ export type UserUncheckedUpdateWithoutAuditActionsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUpsertWithoutAuditTargetsInput = {
@@ -9647,6 +10603,12 @@ export type UserUpdateWithoutAuditTargetsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuditTargetsInput = {
@@ -9702,6 +10664,1572 @@ export type UserUncheckedUpdateWithoutAuditTargetsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+}
+
+export type UserCreateWithoutOwnedLudoRoomsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+}
+
+export type UserUncheckedCreateWithoutOwnedLudoRoomsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+}
+
+export type UserCreateOrConnectWithoutOwnedLudoRoomsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutOwnedLudoRoomsInput, Prisma.UserUncheckedCreateWithoutOwnedLudoRoomsInput>
+}
+
+export type UserUpsertWithoutOwnedLudoRoomsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutOwnedLudoRoomsInput, Prisma.UserUncheckedUpdateWithoutOwnedLudoRoomsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutOwnedLudoRoomsInput, Prisma.UserUncheckedCreateWithoutOwnedLudoRoomsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutOwnedLudoRoomsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutOwnedLudoRoomsInput, Prisma.UserUncheckedUpdateWithoutOwnedLudoRoomsInput>
+}
+
+export type UserUpdateWithoutOwnedLudoRoomsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+}
+
+export type UserUncheckedUpdateWithoutOwnedLudoRoomsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+}
+
+export type UserCreateWithoutLudoPlayersInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+}
+
+export type UserUncheckedCreateWithoutLudoPlayersInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+}
+
+export type UserCreateOrConnectWithoutLudoPlayersInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutLudoPlayersInput, Prisma.UserUncheckedCreateWithoutLudoPlayersInput>
+}
+
+export type UserUpsertWithoutLudoPlayersInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutLudoPlayersInput, Prisma.UserUncheckedUpdateWithoutLudoPlayersInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutLudoPlayersInput, Prisma.UserUncheckedCreateWithoutLudoPlayersInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutLudoPlayersInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutLudoPlayersInput, Prisma.UserUncheckedUpdateWithoutLudoPlayersInput>
+}
+
+export type UserUpdateWithoutLudoPlayersInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+}
+
+export type UserUncheckedUpdateWithoutLudoPlayersInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+}
+
+export type UserCreateWithoutSentLudoInvitationsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+}
+
+export type UserUncheckedCreateWithoutSentLudoInvitationsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+}
+
+export type UserCreateOrConnectWithoutSentLudoInvitationsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutSentLudoInvitationsInput, Prisma.UserUncheckedCreateWithoutSentLudoInvitationsInput>
+}
+
+export type UserCreateWithoutReceivedLudoInvitationsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+}
+
+export type UserUncheckedCreateWithoutReceivedLudoInvitationsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+}
+
+export type UserCreateOrConnectWithoutReceivedLudoInvitationsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutReceivedLudoInvitationsInput, Prisma.UserUncheckedCreateWithoutReceivedLudoInvitationsInput>
+}
+
+export type UserUpsertWithoutSentLudoInvitationsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutSentLudoInvitationsInput, Prisma.UserUncheckedUpdateWithoutSentLudoInvitationsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutSentLudoInvitationsInput, Prisma.UserUncheckedCreateWithoutSentLudoInvitationsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutSentLudoInvitationsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutSentLudoInvitationsInput, Prisma.UserUncheckedUpdateWithoutSentLudoInvitationsInput>
+}
+
+export type UserUpdateWithoutSentLudoInvitationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+}
+
+export type UserUncheckedUpdateWithoutSentLudoInvitationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+}
+
+export type UserUpsertWithoutReceivedLudoInvitationsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutReceivedLudoInvitationsInput, Prisma.UserUncheckedUpdateWithoutReceivedLudoInvitationsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutReceivedLudoInvitationsInput, Prisma.UserUncheckedCreateWithoutReceivedLudoInvitationsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutReceivedLudoInvitationsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutReceivedLudoInvitationsInput, Prisma.UserUncheckedUpdateWithoutReceivedLudoInvitationsInput>
+}
+
+export type UserUpdateWithoutReceivedLudoInvitationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+}
+
+export type UserUncheckedUpdateWithoutReceivedLudoInvitationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+}
+
+export type UserCreateWithoutLudoBlocksCreatedInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+}
+
+export type UserUncheckedCreateWithoutLudoBlocksCreatedInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+}
+
+export type UserCreateOrConnectWithoutLudoBlocksCreatedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutLudoBlocksCreatedInput, Prisma.UserUncheckedCreateWithoutLudoBlocksCreatedInput>
+}
+
+export type UserCreateWithoutLudoBlocksReceivedInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+}
+
+export type UserUncheckedCreateWithoutLudoBlocksReceivedInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+}
+
+export type UserCreateOrConnectWithoutLudoBlocksReceivedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutLudoBlocksReceivedInput, Prisma.UserUncheckedCreateWithoutLudoBlocksReceivedInput>
+}
+
+export type UserUpsertWithoutLudoBlocksCreatedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutLudoBlocksCreatedInput, Prisma.UserUncheckedUpdateWithoutLudoBlocksCreatedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutLudoBlocksCreatedInput, Prisma.UserUncheckedCreateWithoutLudoBlocksCreatedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutLudoBlocksCreatedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutLudoBlocksCreatedInput, Prisma.UserUncheckedUpdateWithoutLudoBlocksCreatedInput>
+}
+
+export type UserUpdateWithoutLudoBlocksCreatedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+}
+
+export type UserUncheckedUpdateWithoutLudoBlocksCreatedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+}
+
+export type UserUpsertWithoutLudoBlocksReceivedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutLudoBlocksReceivedInput, Prisma.UserUncheckedUpdateWithoutLudoBlocksReceivedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutLudoBlocksReceivedInput, Prisma.UserUncheckedCreateWithoutLudoBlocksReceivedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutLudoBlocksReceivedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutLudoBlocksReceivedInput, Prisma.UserUncheckedUpdateWithoutLudoBlocksReceivedInput>
+}
+
+export type UserUpdateWithoutLudoBlocksReceivedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+}
+
+export type UserUncheckedUpdateWithoutLudoBlocksReceivedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
 }
 
 
@@ -9744,6 +12272,12 @@ export type UserCountOutputType = {
   treasuryEntriesAuthored: number
   devCoinTransfersSent: number
   devCoinTransfersReceived: number
+  ownedLudoRooms: number
+  ludoPlayers: number
+  sentLudoInvitations: number
+  receivedLudoInvitations: number
+  ludoBlocksCreated: number
+  ludoBlocksReceived: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -9781,6 +12315,12 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   treasuryEntriesAuthored?: boolean | UserCountOutputTypeCountTreasuryEntriesAuthoredArgs
   devCoinTransfersSent?: boolean | UserCountOutputTypeCountDevCoinTransfersSentArgs
   devCoinTransfersReceived?: boolean | UserCountOutputTypeCountDevCoinTransfersReceivedArgs
+  ownedLudoRooms?: boolean | UserCountOutputTypeCountOwnedLudoRoomsArgs
+  ludoPlayers?: boolean | UserCountOutputTypeCountLudoPlayersArgs
+  sentLudoInvitations?: boolean | UserCountOutputTypeCountSentLudoInvitationsArgs
+  receivedLudoInvitations?: boolean | UserCountOutputTypeCountReceivedLudoInvitationsArgs
+  ludoBlocksCreated?: boolean | UserCountOutputTypeCountLudoBlocksCreatedArgs
+  ludoBlocksReceived?: boolean | UserCountOutputTypeCountLudoBlocksReceivedArgs
 }
 
 /**
@@ -10031,6 +12571,48 @@ export type UserCountOutputTypeCountDevCoinTransfersReceivedArgs<ExtArgs extends
   where?: Prisma.DevCoinTransferWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountOwnedLudoRoomsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.LudoRoomWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountLudoPlayersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.LudoPlayerWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountSentLudoInvitationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.LudoInvitationWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountReceivedLudoInvitationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.LudoInvitationWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountLudoBlocksCreatedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.LudoInvitationBlockWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountLudoBlocksReceivedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.LudoInvitationBlockWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -10086,6 +12668,12 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   treasuryEntriesAuthored?: boolean | Prisma.User$treasuryEntriesAuthoredArgs<ExtArgs>
   devCoinTransfersSent?: boolean | Prisma.User$devCoinTransfersSentArgs<ExtArgs>
   devCoinTransfersReceived?: boolean | Prisma.User$devCoinTransfersReceivedArgs<ExtArgs>
+  ownedLudoRooms?: boolean | Prisma.User$ownedLudoRoomsArgs<ExtArgs>
+  ludoPlayers?: boolean | Prisma.User$ludoPlayersArgs<ExtArgs>
+  sentLudoInvitations?: boolean | Prisma.User$sentLudoInvitationsArgs<ExtArgs>
+  receivedLudoInvitations?: boolean | Prisma.User$receivedLudoInvitationsArgs<ExtArgs>
+  ludoBlocksCreated?: boolean | Prisma.User$ludoBlocksCreatedArgs<ExtArgs>
+  ludoBlocksReceived?: boolean | Prisma.User$ludoBlocksReceivedArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -10189,6 +12777,12 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   treasuryEntriesAuthored?: boolean | Prisma.User$treasuryEntriesAuthoredArgs<ExtArgs>
   devCoinTransfersSent?: boolean | Prisma.User$devCoinTransfersSentArgs<ExtArgs>
   devCoinTransfersReceived?: boolean | Prisma.User$devCoinTransfersReceivedArgs<ExtArgs>
+  ownedLudoRooms?: boolean | Prisma.User$ownedLudoRoomsArgs<ExtArgs>
+  ludoPlayers?: boolean | Prisma.User$ludoPlayersArgs<ExtArgs>
+  sentLudoInvitations?: boolean | Prisma.User$sentLudoInvitationsArgs<ExtArgs>
+  receivedLudoInvitations?: boolean | Prisma.User$receivedLudoInvitationsArgs<ExtArgs>
+  ludoBlocksCreated?: boolean | Prisma.User$ludoBlocksCreatedArgs<ExtArgs>
+  ludoBlocksReceived?: boolean | Prisma.User$ludoBlocksReceivedArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -10232,6 +12826,12 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     treasuryEntriesAuthored: Prisma.$DevCoinTreasuryEntryPayload<ExtArgs>[]
     devCoinTransfersSent: Prisma.$DevCoinTransferPayload<ExtArgs>[]
     devCoinTransfersReceived: Prisma.$DevCoinTransferPayload<ExtArgs>[]
+    ownedLudoRooms: Prisma.$LudoRoomPayload<ExtArgs>[]
+    ludoPlayers: Prisma.$LudoPlayerPayload<ExtArgs>[]
+    sentLudoInvitations: Prisma.$LudoInvitationPayload<ExtArgs>[]
+    receivedLudoInvitations: Prisma.$LudoInvitationPayload<ExtArgs>[]
+    ludoBlocksCreated: Prisma.$LudoInvitationBlockPayload<ExtArgs>[]
+    ludoBlocksReceived: Prisma.$LudoInvitationBlockPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -10681,6 +13281,12 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   treasuryEntriesAuthored<T extends Prisma.User$treasuryEntriesAuthoredArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$treasuryEntriesAuthoredArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DevCoinTreasuryEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   devCoinTransfersSent<T extends Prisma.User$devCoinTransfersSentArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$devCoinTransfersSentArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DevCoinTransferPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   devCoinTransfersReceived<T extends Prisma.User$devCoinTransfersReceivedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$devCoinTransfersReceivedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DevCoinTransferPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  ownedLudoRooms<T extends Prisma.User$ownedLudoRoomsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$ownedLudoRoomsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LudoRoomPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  ludoPlayers<T extends Prisma.User$ludoPlayersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$ludoPlayersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LudoPlayerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  sentLudoInvitations<T extends Prisma.User$sentLudoInvitationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$sentLudoInvitationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LudoInvitationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  receivedLudoInvitations<T extends Prisma.User$receivedLudoInvitationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$receivedLudoInvitationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LudoInvitationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  ludoBlocksCreated<T extends Prisma.User$ludoBlocksCreatedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$ludoBlocksCreatedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LudoInvitationBlockPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  ludoBlocksReceived<T extends Prisma.User$ludoBlocksReceivedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$ludoBlocksReceivedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LudoInvitationBlockPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -11953,6 +14559,150 @@ export type User$devCoinTransfersReceivedArgs<ExtArgs extends runtime.Types.Exte
   take?: number
   skip?: number
   distinct?: Prisma.DevCoinTransferScalarFieldEnum | Prisma.DevCoinTransferScalarFieldEnum[]
+}
+
+/**
+ * User.ownedLudoRooms
+ */
+export type User$ownedLudoRoomsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the LudoRoom
+   */
+  select?: Prisma.LudoRoomSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the LudoRoom
+   */
+  omit?: Prisma.LudoRoomOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.LudoRoomInclude<ExtArgs> | null
+  where?: Prisma.LudoRoomWhereInput
+  orderBy?: Prisma.LudoRoomOrderByWithRelationInput | Prisma.LudoRoomOrderByWithRelationInput[]
+  cursor?: Prisma.LudoRoomWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.LudoRoomScalarFieldEnum | Prisma.LudoRoomScalarFieldEnum[]
+}
+
+/**
+ * User.ludoPlayers
+ */
+export type User$ludoPlayersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the LudoPlayer
+   */
+  select?: Prisma.LudoPlayerSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the LudoPlayer
+   */
+  omit?: Prisma.LudoPlayerOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.LudoPlayerInclude<ExtArgs> | null
+  where?: Prisma.LudoPlayerWhereInput
+  orderBy?: Prisma.LudoPlayerOrderByWithRelationInput | Prisma.LudoPlayerOrderByWithRelationInput[]
+  cursor?: Prisma.LudoPlayerWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.LudoPlayerScalarFieldEnum | Prisma.LudoPlayerScalarFieldEnum[]
+}
+
+/**
+ * User.sentLudoInvitations
+ */
+export type User$sentLudoInvitationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the LudoInvitation
+   */
+  select?: Prisma.LudoInvitationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the LudoInvitation
+   */
+  omit?: Prisma.LudoInvitationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.LudoInvitationInclude<ExtArgs> | null
+  where?: Prisma.LudoInvitationWhereInput
+  orderBy?: Prisma.LudoInvitationOrderByWithRelationInput | Prisma.LudoInvitationOrderByWithRelationInput[]
+  cursor?: Prisma.LudoInvitationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.LudoInvitationScalarFieldEnum | Prisma.LudoInvitationScalarFieldEnum[]
+}
+
+/**
+ * User.receivedLudoInvitations
+ */
+export type User$receivedLudoInvitationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the LudoInvitation
+   */
+  select?: Prisma.LudoInvitationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the LudoInvitation
+   */
+  omit?: Prisma.LudoInvitationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.LudoInvitationInclude<ExtArgs> | null
+  where?: Prisma.LudoInvitationWhereInput
+  orderBy?: Prisma.LudoInvitationOrderByWithRelationInput | Prisma.LudoInvitationOrderByWithRelationInput[]
+  cursor?: Prisma.LudoInvitationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.LudoInvitationScalarFieldEnum | Prisma.LudoInvitationScalarFieldEnum[]
+}
+
+/**
+ * User.ludoBlocksCreated
+ */
+export type User$ludoBlocksCreatedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the LudoInvitationBlock
+   */
+  select?: Prisma.LudoInvitationBlockSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the LudoInvitationBlock
+   */
+  omit?: Prisma.LudoInvitationBlockOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.LudoInvitationBlockInclude<ExtArgs> | null
+  where?: Prisma.LudoInvitationBlockWhereInput
+  orderBy?: Prisma.LudoInvitationBlockOrderByWithRelationInput | Prisma.LudoInvitationBlockOrderByWithRelationInput[]
+  cursor?: Prisma.LudoInvitationBlockWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.LudoInvitationBlockScalarFieldEnum | Prisma.LudoInvitationBlockScalarFieldEnum[]
+}
+
+/**
+ * User.ludoBlocksReceived
+ */
+export type User$ludoBlocksReceivedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the LudoInvitationBlock
+   */
+  select?: Prisma.LudoInvitationBlockSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the LudoInvitationBlock
+   */
+  omit?: Prisma.LudoInvitationBlockOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.LudoInvitationBlockInclude<ExtArgs> | null
+  where?: Prisma.LudoInvitationBlockWhereInput
+  orderBy?: Prisma.LudoInvitationBlockOrderByWithRelationInput | Prisma.LudoInvitationBlockOrderByWithRelationInput[]
+  cursor?: Prisma.LudoInvitationBlockWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.LudoInvitationBlockScalarFieldEnum | Prisma.LudoInvitationBlockScalarFieldEnum[]
 }
 
 /**

@@ -7,7 +7,7 @@ export class InsufficientTreasury extends Error {
 export async function debitTreasury(
   tx: Prisma.TransactionClient,
   amount: number,
-  entry: { reason: string; source: "XP_CONVERSION" | "PATENT_REWARD"; idempotencyKey: string; devCoinEntryId?: string },
+  entry: { reason: string; source: "XP_CONVERSION" | "PATENT_REWARD" | "LUDO_SETTLEMENT"; idempotencyKey: string; devCoinEntryId?: string },
 ) {
   const changed = await tx.devCoinTreasury.updateMany({
     where: { id: 1, balance: { gte: amount } },
@@ -20,7 +20,7 @@ export async function debitTreasury(
 export async function creditTreasury(
   tx: Prisma.TransactionClient,
   amount: number,
-  entry: { reason: string; source: "PLATFORM_PURCHASE" | "MARKET_FEE"; idempotencyKey: string; devCoinEntryId?: string },
+  entry: { reason: string; source: "PLATFORM_PURCHASE" | "MARKET_FEE" | "LUDO_ROOM_FEE" | "LUDO_SETTLEMENT"; idempotencyKey: string; devCoinEntryId?: string },
 ) {
   await tx.devCoinTreasury.update({ where: { id: 1 }, data: { balance: { increment: amount } } });
   await tx.devCoinTreasuryEntry.create({ data: { delta: amount, ...entry } });

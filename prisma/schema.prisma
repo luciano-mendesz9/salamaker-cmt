@@ -47,6 +47,10 @@ enum XpSource {
   PROFILE_AVATAR
   DEV_COIN_PURCHASE
   DEV_COIN_TRANSFER
+  LUDO_ROOM
+  LUDO_INVITE
+  LUDO_RESULT
+  LUDO_FORFEIT
 }
 
 enum AuditEvent {
@@ -70,6 +74,13 @@ enum AuditEvent {
   STICKER_TRADED
   STICKER_DONATED
   DEV_COIN_TRANSFERRED
+  LUDO_ROOM_CREATED
+  LUDO_ROOM_JOINED
+  LUDO_INVITE_SENT
+  LUDO_MATCH_STARTED
+  LUDO_MATCH_PAUSED
+  LUDO_MATCH_FINISHED
+  LUDO_PLAYER_FORFEITED
 }
 
 enum DevCoinSource {
@@ -82,6 +93,9 @@ enum DevCoinSource {
   PATENT_REWARD
   TRANSFER_SENT
   TRANSFER_RECEIVED
+  LUDO_ROOM_FEE
+  LUDO_ESCROW
+  LUDO_PRIZE
 }
 
 enum StickerCollectionState {
@@ -138,6 +152,55 @@ enum TreasuryEntrySource {
   TEACHER_DISTRIBUTION
   ADMIN_MINT
   ADMIN_BURN
+  LUDO_ROOM_FEE
+  LUDO_SETTLEMENT
+}
+
+enum LudoRoomMode {
+  HUMAN
+  BOT
+}
+
+enum LudoRoomStatus {
+  WAITING
+  ACTIVE
+  PAUSED
+  FINISHED
+  CANCELLED
+}
+
+enum LudoPlayerKind {
+  STUDENT
+  BOT
+}
+
+enum LudoPlayerStatus {
+  JOINED
+  PLAYING
+  FINISHED
+  FORFEITED
+}
+
+enum LudoColor {
+  RED
+  GREEN
+  YELLOW
+  BLUE
+}
+
+enum LudoInvitationStatus {
+  PENDING
+  ACCEPTED
+  DECLINED
+  EXPIRED
+}
+
+enum LudoMoveKind {
+  ROLL
+  MOVE
+  AUTO_ROLL
+  AUTO_MOVE
+  FORFEIT
 }
 
 enum AvatarPurchaseCurrency {
@@ -233,6 +296,12 @@ model User {
   treasuryEntriesAuthored  DevCoinTreasuryEntry[]  @relation("TreasuryEntryAuthor")
   devCoinTransfersSent     DevCoinTransfer[]       @relation("DevCoinTransferSender")
   devCoinTransfersReceived DevCoinTransfer[]       @relation("DevCoinTransferRecipient")
+  ownedLudoRooms           LudoRoom[]              @relation("LudoRoomOwner")
+  ludoPlayers              LudoPlayer[]            @relation("LudoPlayerStudent")
+  sentLudoInvitations      LudoInvitation[]        @relation("LudoInvitationInviter")
+  receivedLudoInvitations  LudoInvitation[]        @relation("LudoInvitationInvitee")
+  ludoBlocksCreated        LudoInvitationBlock[]   @relation("LudoBlocker")
+  ludoBlocksReceived       LudoInvitationBlock[]   @relation("LudoBlocked")
 
   @@index([role, status, xp])
   @@index([originSchoolClass, status])
@@ -807,4 +876,120 @@ model RateLimitBucket {
   attempts  Int      @default(0)
   windowEnd DateTime
   updatedAt DateTime @updatedAt
+}
+
+model LudoRoom {
+  id                 String           @id @default(uuid()) @db.Uuid
+  code               String           @unique
+  creationKey        String           @unique
+  ownerId            String           @db.Uuid
+  mode               LudoRoomMode
+  status             LudoRoomStatus   @default(WAITING)
+  wager              Int
+  roomFee            Int              @default(50)
+  maxPlayers         Int              @default(4)
+  botAdvantaged      Boolean?
+  escrowBalance      Int              @default(0)
+  initialPlayerCount Int?
+  currentSeat        Int              @default(0)
+  currentRoll        Int?
+  consecutiveSixes   Int              @default(0)
+  pauseRequestCount  Int              @default(0)
+  turnDeadline       DateTime?
+  startedAt          DateTime?
+  pausedAt           DateTime?
+  finishedAt         DateTime?
+  cancelledAt        DateTime?
+  version            Int              @default(0)
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
+  owner              User             @relation("LudoRoomOwner", fields: [ownerId], references: [id], onDelete: Restrict)
+  players            LudoPlayer[]
+  moves              LudoMove[]
+  invitations        LudoInvitation[]
+
+  @@index([status, createdAt])
+  @@index([ownerId, status])
+}
+
+model LudoPlayer {
+  id             String           @id @default(uuid()) @db.Uuid
+  roomId         String           @db.Uuid
+  studentId      String?          @db.Uuid
+  kind           LudoPlayerKind   @default(STUDENT)
+  color          LudoColor
+  seat           Int
+  status         LudoPlayerStatus @default(JOINED)
+  pieces         Json             @default("[-1,-1,-1,-1]")
+  stake          Int
+  payout         Int              @default(0)
+  finishPosition Int?
+  connected      Boolean          @default(false)
+  joinedAt       DateTime         @default(now())
+  lastSeenAt     DateTime?
+  disconnectedAt DateTime?
+  forfeitedAt    DateTime?
+  finishedAt     DateTime?
+  room           LudoRoom         @relation(fields: [roomId], references: [id], onDelete: Restrict)
+  student        User?            @relation("LudoPlayerStudent", fields: [studentId], references: [id], onDelete: Restrict)
+  moves          LudoMove[]       @relation("LudoMovePlayer")
+  captures       LudoMove[]       @relation("LudoMoveCapturedPlayer")
+
+  @@unique([roomId, seat])
+  @@unique([roomId, studentId])
+  @@index([studentId, joinedAt])
+  @@index([roomId, status, seat])
+}
+
+model LudoMove {
+  id               String       @id @default(uuid()) @db.Uuid
+  roomId           String       @db.Uuid
+  playerId         String       @db.Uuid
+  capturedPlayerId String?      @db.Uuid
+  sequence         Int
+  kind             LudoMoveKind
+  roll             Int?
+  pieceIndex       Int?
+  fromPosition     Int?
+  toPosition       Int?
+  captured         Json?
+  autoReason       String?
+  createdAt        DateTime     @default(now())
+  room             LudoRoom     @relation(fields: [roomId], references: [id], onDelete: Restrict)
+  player           LudoPlayer   @relation("LudoMovePlayer", fields: [playerId], references: [id], onDelete: Restrict)
+  capturedPlayer   LudoPlayer?  @relation("LudoMoveCapturedPlayer", fields: [capturedPlayerId], references: [id], onDelete: Restrict)
+
+  @@unique([roomId, sequence])
+  @@index([roomId, createdAt])
+}
+
+model LudoInvitation {
+  id          String               @id @default(uuid()) @db.Uuid
+  roomId      String               @db.Uuid
+  inviterId   String               @db.Uuid
+  inviteeId   String               @db.Uuid
+  status      LudoInvitationStatus @default(PENDING)
+  expiresAt   DateTime
+  createdAt   DateTime             @default(now())
+  respondedAt DateTime?
+  room        LudoRoom             @relation(fields: [roomId], references: [id], onDelete: Restrict)
+  inviter     User                 @relation("LudoInvitationInviter", fields: [inviterId], references: [id], onDelete: Restrict)
+  invitee     User                 @relation("LudoInvitationInvitee", fields: [inviteeId], references: [id], onDelete: Restrict)
+
+  @@index([inviteeId, status, expiresAt])
+  @@index([roomId, status])
+  @@index([inviterId, inviteeId, createdAt])
+}
+
+model LudoInvitationBlock {
+  id        String   @id @default(uuid()) @db.Uuid
+  blockerId String   @db.Uuid
+  blockedId String   @db.Uuid
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  blocker   User     @relation("LudoBlocker", fields: [blockerId], references: [id], onDelete: Restrict)
+  blocked   User     @relation("LudoBlocked", fields: [blockedId], references: [id], onDelete: Restrict)
+
+  @@unique([blockerId, blockedId])
+  @@index([expiresAt])
 }
