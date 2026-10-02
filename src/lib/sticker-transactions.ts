@@ -3,7 +3,7 @@ import type { Prisma } from "@/generated/prisma/client";
 import { prisma } from "@/lib/db";
 import { getCollectiblesReadiness } from "@/lib/feature-readiness";
 import { getSchoolDay } from "@/lib/school-day";
-import { DAILY_STICKER_PACK_LIMIT, marketSplit, STICKER_PACK_PRICE, STICKERS_PER_PACK } from "@/lib/stickers";
+import { DAILY_STICKER_PACK_LIMIT, marketSplit, PATENT_LADDER_VERSION, STICKER_PACK_PRICE, STICKERS_PER_PACK } from "@/lib/stickers";
 import { assertStickerMarketEnabled } from "@/lib/sticker-market";
 import { creditTreasury } from "@/lib/treasury";
 
@@ -66,7 +66,10 @@ export async function recalculatePatent(tx: Tx, studentId: string) {
   const owned = await tx.stickerCopy.findMany({ where: { ownerId: studentId, state: { in: ["OWNED", "ESCROW"] } }, distinct: ["stickerId"], select: { sticker: { select: { score: true } } } });
   const score = owned.reduce((sum, copy) => sum + copy.sticker.score, 0);
   const current = await tx.studentPatentProgress.findUnique({ where: { studentId } });
-  const level = await tx.patentLevel.findFirst({ where: { threshold: { lte: score }, collection: { state: "ACTIVE" } }, orderBy: [{ rank: "desc" }, { version: "desc" }] });
+  const level = await tx.patentLevel.findFirst({
+    where: { version: PATENT_LADDER_VERSION, threshold: { lte: score }, collection: { state: "ACTIVE" } },
+    orderBy: [{ rank: "desc" }, { collectionId: "asc" }],
+  });
   const bestRank = Math.max(current?.bestRank ?? 1, level?.rank ?? 1);
   const progress = await tx.studentPatentProgress.upsert({ where: { studentId }, create: { studentId, score, levelId: level?.id, bestRank }, update: { score, levelId: level?.id, bestRank } });
   const pendingClaims = await tx.patentRewardClaim.findMany({ where: { studentId, state: "PENDING" }, include: { patentLevel: true } });

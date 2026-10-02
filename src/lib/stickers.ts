@@ -1,6 +1,8 @@
 export const STICKER_PACK_PRICE = 30;
 export const STICKERS_PER_PACK = 3;
 export const DAILY_STICKER_PACK_LIMIT = 5;
+export const PATENT_LADDER_VERSION = 2;
+export const SUPER_DEV_SCORE = 2_000;
 
 export type StickerRarityValue = "LOW" | "MEDIUM" | "HIGH";
 

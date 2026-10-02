@@ -20,7 +20,6 @@ export async function POST(_request: Request, { params }: { params: Promise<{ id
           const lesson = await tx.lesson.findUnique({
             where: { id },
             select: {
-              status: true,
               attendances: {
                 where: { status: "PRESENT", student: { role: "STUDENT", status: "ACTIVE" } },
                 select: { student: { select: { id: true, firstName: true, lastName: true } } },
@@ -28,7 +27,7 @@ export async function POST(_request: Request, { params }: { params: Promise<{ id
               cleanups: { select: { studentId: true } },
             },
           });
-          if (!lesson || lesson.status !== "OPEN") throw new Error("CLEANUP_LESSON_NOT_OPEN");
+          if (!lesson) throw new Error("CLEANUP_LESSON_NOT_FOUND");
           if (lesson.cleanups.length >= CLEANUP_STUDENTS_PER_LESSON) throw new Error("CLEANUP_LIMIT_REACHED");
 
           const assignedIds = new Set(lesson.cleanups.map((assignment) => assignment.studentId));
@@ -69,7 +68,7 @@ export async function POST(_request: Request, { params }: { params: Promise<{ id
     if (!result) throw new Error("TRANSACTION_RETRY_EXHAUSTED");
     return NextResponse.json(result, { status: 201 });
   } catch (error) {
-    if (error instanceof Error && error.message === "CLEANUP_LESSON_NOT_OPEN") return NextResponse.json({ message: "Abra uma aula antes de sortear a faxina." }, { status: 409 });
+    if (error instanceof Error && error.message === "CLEANUP_LESSON_NOT_FOUND") return NextResponse.json({ message: "Aula não encontrada." }, { status: 404 });
     if (error instanceof Error && error.message === "CLEANUP_LIMIT_REACHED") return NextResponse.json({ message: "Os três alunos da faxina desta aula já foram sorteados." }, { status: 409 });
     if (error instanceof Error && error.message === "NO_PRESENT_CLEANUP_STUDENTS") return NextResponse.json({ message: "Não há outro aluno presente disponível para a faxina." }, { status: 409 });
     if (error instanceof Error && error.message === "NO_ELIGIBLE_CLEANUP_STUDENTS") return NextResponse.json({ message: "Todos os alunos presentes participaram da faxina nos últimos 15 dias." }, { status: 409 });

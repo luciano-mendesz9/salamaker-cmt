@@ -5,7 +5,7 @@ import { z } from "zod";
 import { STICKER_CATALOG } from "@/content/sticker-catalog.generated";
 import { apiError, requireTeacher } from "@/lib/authorization";
 import { prisma } from "@/lib/db";
-import { suggestedPatentLevels } from "@/lib/stickers";
+import { PATENT_LADDER_VERSION, suggestedPatentLevels, SUPER_DEV_SCORE } from "@/lib/stickers";
 import { assertSameOrigin, consumeRateLimit } from "@/lib/request-security";
 import { requireCollectiblesSchema } from "@/lib/feature-readiness";
 
@@ -57,9 +57,8 @@ export async function POST(request: Request) {
         },
       });
       await tx.stickerCopy.createMany({ data: Array.from({ length: manifest.totalCopies }, (_, index) => ({ stickerId: sticker.id, serial: index + 1 })) });
-      if ((await tx.patentLevel.count({ where: { collectionId: collection.id } })) === 0) {
-        const maximumScore = STICKER_CATALOG.filter(item => item.collectionSlug === manifest.collectionSlug).reduce((sum, item) => sum + item.score, 0);
-        if (maximumScore > 0) await tx.patentLevel.createMany({ data: suggestedPatentLevels(maximumScore).map(level => ({ ...level, collectionId: collection.id, version: 1 })) });
+      if ((await tx.patentLevel.count({ where: { collectionId: collection.id, version: PATENT_LADDER_VERSION } })) === 0) {
+        await tx.patentLevel.createMany({ data: suggestedPatentLevels(SUPER_DEV_SCORE).map(level => ({ ...level, collectionId: collection.id, version: PATENT_LADDER_VERSION })) });
       }
       await tx.auditLog.create({ data: { actorId: teacher.id, event: "STICKER_ACTIVATED", details: { stickerId: sticker.id, slug: manifest.slug, totalCopies: manifest.totalCopies, rarity: manifest.rarity, score: manifest.score, manifestHash, assetHash: manifest.sha256 } } });
       return { sticker, created: true };

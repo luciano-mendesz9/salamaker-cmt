@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { assetSlugFromName, isSafeAssetSlug, marketSplit, nextAvailableAssetSlug, stickerPriceRange, stickerRarity, stickerScore, suggestedPatentLevels } from "./stickers";
+import { assetSlugFromName, isSafeAssetSlug, marketSplit, nextAvailableAssetSlug, PATENT_LADDER_VERSION, stickerPriceRange, stickerRarity, stickerScore, suggestedPatentLevels, SUPER_DEV_SCORE } from "./stickers";
 import { remainingWeeklyDevCoinTransfer } from "./dev-coins";
 
 test("rarity and score follow the published copy bands", () => {
@@ -16,7 +16,8 @@ test("market fee conserves the price and ranges match rarity", () => {
 });
 
 test("patent configuration has 23 permanent levels", () => {
-  const levels = suggestedPatentLevels(2_000);
+  const levels = suggestedPatentLevels(SUPER_DEV_SCORE);
+  assert.equal(PATENT_LADDER_VERSION, 2);
   assert.equal(levels.length, 23);
   assert.equal(levels[0].name, "Bronze I");
   assert.equal(levels[0].threshold, 0);

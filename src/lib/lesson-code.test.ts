@@ -19,7 +19,11 @@ test("protects and reveals a six-digit lesson code", () => {
 
 test("rejects tampered protected lesson codes", () => {
   const protectedCode = protectLessonCode("123456");
-  assert.equal(revealLessonCode(`${protectedCode.slice(0, -1)}x`), null);
+  const parts = protectedCode.split(":");
+  const tag = Buffer.from(parts[4], "base64url");
+  tag[0] ^= 1;
+  parts[4] = tag.toString("base64url");
+  assert.equal(revealLessonCode(parts.join(":")), null);
 });
 
 test("verifies new protected codes and legacy bcrypt hashes", async () => {
