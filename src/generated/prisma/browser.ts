@@ -212,3 +212,23 @@ export type AuditLog = Prisma.AuditLogModel
  *
  */
 export type RateLimitBucket = Prisma.RateLimitBucketModel
+/**
+ * Model PongRoom
+ *
+ */
+export type PongRoom = Prisma.PongRoomModel
+/**
+ * Model PongPlayer
+ *
+ */
+export type PongPlayer = Prisma.PongPlayerModel
+/**
+ * Model PongJoinRequest
+ *
+ */
+export type PongJoinRequest = Prisma.PongJoinRequestModel
+/**
+ * Model PongPoint
+ *
+ */
+export type PongPoint = Prisma.PongPointModel

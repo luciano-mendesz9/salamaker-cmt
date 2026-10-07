@@ -711,6 +711,91 @@ export type JsonNullableWithAggregatesFilterBase<$PrismaModel = never> = {
   _max?: Prisma.NestedJsonNullableFilter<$PrismaModel>
 }
 
+export type EnumPongRoomStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.PongRoomStatus | Prisma.EnumPongRoomStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.PongRoomStatus[] | Prisma.ListEnumPongRoomStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PongRoomStatus[] | Prisma.ListEnumPongRoomStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPongRoomStatusFilter<$PrismaModel> | $Enums.PongRoomStatus
+}
+
+export type EnumPongFinishReasonNullableFilter<$PrismaModel = never> = {
+  equals?: $Enums.PongFinishReason | Prisma.EnumPongFinishReasonFieldRefInput<$PrismaModel> | null
+  in?: $Enums.PongFinishReason[] | Prisma.ListEnumPongFinishReasonFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.PongFinishReason[] | Prisma.ListEnumPongFinishReasonFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumPongFinishReasonNullableFilter<$PrismaModel> | $Enums.PongFinishReason | null
+}
+
+export type EnumPongRoomStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.PongRoomStatus | Prisma.EnumPongRoomStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.PongRoomStatus[] | Prisma.ListEnumPongRoomStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PongRoomStatus[] | Prisma.ListEnumPongRoomStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPongRoomStatusWithAggregatesFilter<$PrismaModel> | $Enums.PongRoomStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumPongRoomStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumPongRoomStatusFilter<$PrismaModel>
+}
+
+export type EnumPongFinishReasonNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.PongFinishReason | Prisma.EnumPongFinishReasonFieldRefInput<$PrismaModel> | null
+  in?: $Enums.PongFinishReason[] | Prisma.ListEnumPongFinishReasonFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.PongFinishReason[] | Prisma.ListEnumPongFinishReasonFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumPongFinishReasonNullableWithAggregatesFilter<$PrismaModel> | $Enums.PongFinishReason | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumPongFinishReasonNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumPongFinishReasonNullableFilter<$PrismaModel>
+}
+
+export type EnumPongPlayerSeatFilter<$PrismaModel = never> = {
+  equals?: $Enums.PongPlayerSeat | Prisma.EnumPongPlayerSeatFieldRefInput<$PrismaModel>
+  in?: $Enums.PongPlayerSeat[] | Prisma.ListEnumPongPlayerSeatFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PongPlayerSeat[] | Prisma.ListEnumPongPlayerSeatFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPongPlayerSeatFilter<$PrismaModel> | $Enums.PongPlayerSeat
+}
+
+export type EnumPongPlayerStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.PongPlayerStatus | Prisma.EnumPongPlayerStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.PongPlayerStatus[] | Prisma.ListEnumPongPlayerStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PongPlayerStatus[] | Prisma.ListEnumPongPlayerStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPongPlayerStatusFilter<$PrismaModel> | $Enums.PongPlayerStatus
+}
+
+export type EnumPongPlayerSeatWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.PongPlayerSeat | Prisma.EnumPongPlayerSeatFieldRefInput<$PrismaModel>
+  in?: $Enums.PongPlayerSeat[] | Prisma.ListEnumPongPlayerSeatFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PongPlayerSeat[] | Prisma.ListEnumPongPlayerSeatFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPongPlayerSeatWithAggregatesFilter<$PrismaModel> | $Enums.PongPlayerSeat
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumPongPlayerSeatFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumPongPlayerSeatFilter<$PrismaModel>
+}
+
+export type EnumPongPlayerStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.PongPlayerStatus | Prisma.EnumPongPlayerStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.PongPlayerStatus[] | Prisma.ListEnumPongPlayerStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PongPlayerStatus[] | Prisma.ListEnumPongPlayerStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPongPlayerStatusWithAggregatesFilter<$PrismaModel> | $Enums.PongPlayerStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumPongPlayerStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumPongPlayerStatusFilter<$PrismaModel>
+}
+
+export type EnumPongJoinRequestStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.PongJoinRequestStatus | Prisma.EnumPongJoinRequestStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.PongJoinRequestStatus[] | Prisma.ListEnumPongJoinRequestStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PongJoinRequestStatus[] | Prisma.ListEnumPongJoinRequestStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPongJoinRequestStatusFilter<$PrismaModel> | $Enums.PongJoinRequestStatus
+}
+
+export type EnumPongJoinRequestStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.PongJoinRequestStatus | Prisma.EnumPongJoinRequestStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.PongJoinRequestStatus[] | Prisma.ListEnumPongJoinRequestStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PongJoinRequestStatus[] | Prisma.ListEnumPongJoinRequestStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPongJoinRequestStatusWithAggregatesFilter<$PrismaModel> | $Enums.PongJoinRequestStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumPongJoinRequestStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumPongJoinRequestStatusFilter<$PrismaModel>
+}
+
 export type NestedUuidFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -1388,6 +1473,91 @@ export type NestedJsonNullableFilterBase<$PrismaModel = never> = {
   gt?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
   gte?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel>
   not?: runtime.InputJsonValue | Prisma.JsonFieldRefInput<$PrismaModel> | Prisma.JsonNullValueFilter
+}
+
+export type NestedEnumPongRoomStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.PongRoomStatus | Prisma.EnumPongRoomStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.PongRoomStatus[] | Prisma.ListEnumPongRoomStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PongRoomStatus[] | Prisma.ListEnumPongRoomStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPongRoomStatusFilter<$PrismaModel> | $Enums.PongRoomStatus
+}
+
+export type NestedEnumPongFinishReasonNullableFilter<$PrismaModel = never> = {
+  equals?: $Enums.PongFinishReason | Prisma.EnumPongFinishReasonFieldRefInput<$PrismaModel> | null
+  in?: $Enums.PongFinishReason[] | Prisma.ListEnumPongFinishReasonFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.PongFinishReason[] | Prisma.ListEnumPongFinishReasonFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumPongFinishReasonNullableFilter<$PrismaModel> | $Enums.PongFinishReason | null
+}
+
+export type NestedEnumPongRoomStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.PongRoomStatus | Prisma.EnumPongRoomStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.PongRoomStatus[] | Prisma.ListEnumPongRoomStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PongRoomStatus[] | Prisma.ListEnumPongRoomStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPongRoomStatusWithAggregatesFilter<$PrismaModel> | $Enums.PongRoomStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumPongRoomStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumPongRoomStatusFilter<$PrismaModel>
+}
+
+export type NestedEnumPongFinishReasonNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.PongFinishReason | Prisma.EnumPongFinishReasonFieldRefInput<$PrismaModel> | null
+  in?: $Enums.PongFinishReason[] | Prisma.ListEnumPongFinishReasonFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.PongFinishReason[] | Prisma.ListEnumPongFinishReasonFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumPongFinishReasonNullableWithAggregatesFilter<$PrismaModel> | $Enums.PongFinishReason | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumPongFinishReasonNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumPongFinishReasonNullableFilter<$PrismaModel>
+}
+
+export type NestedEnumPongPlayerSeatFilter<$PrismaModel = never> = {
+  equals?: $Enums.PongPlayerSeat | Prisma.EnumPongPlayerSeatFieldRefInput<$PrismaModel>
+  in?: $Enums.PongPlayerSeat[] | Prisma.ListEnumPongPlayerSeatFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PongPlayerSeat[] | Prisma.ListEnumPongPlayerSeatFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPongPlayerSeatFilter<$PrismaModel> | $Enums.PongPlayerSeat
+}
+
+export type NestedEnumPongPlayerStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.PongPlayerStatus | Prisma.EnumPongPlayerStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.PongPlayerStatus[] | Prisma.ListEnumPongPlayerStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PongPlayerStatus[] | Prisma.ListEnumPongPlayerStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPongPlayerStatusFilter<$PrismaModel> | $Enums.PongPlayerStatus
+}
+
+export type NestedEnumPongPlayerSeatWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.PongPlayerSeat | Prisma.EnumPongPlayerSeatFieldRefInput<$PrismaModel>
+  in?: $Enums.PongPlayerSeat[] | Prisma.ListEnumPongPlayerSeatFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PongPlayerSeat[] | Prisma.ListEnumPongPlayerSeatFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPongPlayerSeatWithAggregatesFilter<$PrismaModel> | $Enums.PongPlayerSeat
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumPongPlayerSeatFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumPongPlayerSeatFilter<$PrismaModel>
+}
+
+export type NestedEnumPongPlayerStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.PongPlayerStatus | Prisma.EnumPongPlayerStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.PongPlayerStatus[] | Prisma.ListEnumPongPlayerStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PongPlayerStatus[] | Prisma.ListEnumPongPlayerStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPongPlayerStatusWithAggregatesFilter<$PrismaModel> | $Enums.PongPlayerStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumPongPlayerStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumPongPlayerStatusFilter<$PrismaModel>
+}
+
+export type NestedEnumPongJoinRequestStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.PongJoinRequestStatus | Prisma.EnumPongJoinRequestStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.PongJoinRequestStatus[] | Prisma.ListEnumPongJoinRequestStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PongJoinRequestStatus[] | Prisma.ListEnumPongJoinRequestStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPongJoinRequestStatusFilter<$PrismaModel> | $Enums.PongJoinRequestStatus
+}
+
+export type NestedEnumPongJoinRequestStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.PongJoinRequestStatus | Prisma.EnumPongJoinRequestStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.PongJoinRequestStatus[] | Prisma.ListEnumPongJoinRequestStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PongJoinRequestStatus[] | Prisma.ListEnumPongJoinRequestStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPongJoinRequestStatusWithAggregatesFilter<$PrismaModel> | $Enums.PongJoinRequestStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumPongJoinRequestStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumPongJoinRequestStatusFilter<$PrismaModel>
 }
 
 

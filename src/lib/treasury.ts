@@ -20,7 +20,7 @@ export async function debitTreasury(
 export async function creditTreasury(
   tx: Prisma.TransactionClient,
   amount: number,
-  entry: { reason: string; source: "PLATFORM_PURCHASE" | "MARKET_FEE"; idempotencyKey: string; devCoinEntryId?: string },
+  entry: { reason: string; source: "PLATFORM_PURCHASE" | "MARKET_FEE" | "PONG_ROOM_FEE" | "PONG_MATCH_TAX"; idempotencyKey: string; devCoinEntryId?: string },
 ) {
   await tx.devCoinTreasury.update({ where: { id: 1 }, data: { balance: { increment: amount } } });
   await tx.devCoinTreasuryEntry.create({ data: { delta: amount, ...entry } });

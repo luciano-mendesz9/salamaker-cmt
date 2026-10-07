@@ -89,7 +89,11 @@ export const ModelName = {
   ActivityTeamMember: 'ActivityTeamMember',
   ActivityAward: 'ActivityAward',
   AuditLog: 'AuditLog',
-  RateLimitBucket: 'RateLimitBucket'
+  RateLimitBucket: 'RateLimitBucket',
+  PongRoom: 'PongRoom',
+  PongPlayer: 'PongPlayer',
+  PongJoinRequest: 'PongJoinRequest',
+  PongPoint: 'PongPoint'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -446,6 +450,7 @@ export type CleanupAssignmentScalarFieldEnum = (typeof CleanupAssignmentScalarFi
 export const AppSettingScalarFieldEnum = {
   id: 'id',
   studentAreaEnabled: 'studentAreaEnabled',
+  gamesEnabled: 'gamesEnabled',
   accentColor: 'accentColor',
   timeZone: 'timeZone',
   devCoinsPerXp: 'devCoinsPerXp',
@@ -629,6 +634,78 @@ export const RateLimitBucketScalarFieldEnum = {
 } as const
 
 export type RateLimitBucketScalarFieldEnum = (typeof RateLimitBucketScalarFieldEnum)[keyof typeof RateLimitBucketScalarFieldEnum]
+
+
+export const PongRoomScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  creationKey: 'creationKey',
+  ownerId: 'ownerId',
+  status: 'status',
+  wager: 'wager',
+  roomFee: 'roomFee',
+  creationDay: 'creationDay',
+  escrowBalance: 'escrowBalance',
+  ownerScore: 'ownerScore',
+  guestScore: 'guestScore',
+  scoreSequence: 'scoreSequence',
+  winnerId: 'winnerId',
+  loserId: 'loserId',
+  finishReason: 'finishReason',
+  winnerPayout: 'winnerPayout',
+  taxAmount: 'taxAmount',
+  createdAt: 'createdAt',
+  startedAt: 'startedAt',
+  finishedAt: 'finishedAt',
+  cancelledAt: 'cancelledAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type PongRoomScalarFieldEnum = (typeof PongRoomScalarFieldEnum)[keyof typeof PongRoomScalarFieldEnum]
+
+
+export const PongPlayerScalarFieldEnum = {
+  id: 'id',
+  roomId: 'roomId',
+  studentId: 'studentId',
+  seat: 'seat',
+  status: 'status',
+  stake: 'stake',
+  payout: 'payout',
+  connected: 'connected',
+  lastSeenAt: 'lastSeenAt',
+  disconnectedAt: 'disconnectedAt',
+  joinedAt: 'joinedAt'
+} as const
+
+export type PongPlayerScalarFieldEnum = (typeof PongPlayerScalarFieldEnum)[keyof typeof PongPlayerScalarFieldEnum]
+
+
+export const PongJoinRequestScalarFieldEnum = {
+  id: 'id',
+  roomId: 'roomId',
+  studentId: 'studentId',
+  status: 'status',
+  idempotencyKey: 'idempotencyKey',
+  expiresAt: 'expiresAt',
+  respondedAt: 'respondedAt',
+  createdAt: 'createdAt'
+} as const
+
+export type PongJoinRequestScalarFieldEnum = (typeof PongJoinRequestScalarFieldEnum)[keyof typeof PongJoinRequestScalarFieldEnum]
+
+
+export const PongPointScalarFieldEnum = {
+  id: 'id',
+  roomId: 'roomId',
+  scorerId: 'scorerId',
+  sequence: 'sequence',
+  ownerScore: 'ownerScore',
+  guestScore: 'guestScore',
+  createdAt: 'createdAt'
+} as const
+
+export type PongPointScalarFieldEnum = (typeof PongPointScalarFieldEnum)[keyof typeof PongPointScalarFieldEnum]
 
 
 export const SortOrder = {

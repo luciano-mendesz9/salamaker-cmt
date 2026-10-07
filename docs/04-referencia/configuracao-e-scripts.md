@@ -13,6 +13,7 @@
 | `DATABASE_URL` | Prisma CLI, aplicacao e scripts | Obrigatoria; URL PostgreSQL/Neon |
 | `AUTH_SECRET` | Assinatura HS256 das sessoes | Obrigatoria; minimo de 32 caracteres |
 | `ADMIN_ACTION_PASSWORD` | Acoes destrutivas ou monetarias do professor | Obrigatoria nesses fluxos; minimo de 8 caracteres |
+| `REDIS_URL` | Presenca, pub/sub, entradas e estado rapido do Pong entre instancias | Obrigatoria em producao para multiplayer confiavel; `KV_URL` e aceito como fallback |
 | `NODE_ENV` | Cookie seguro e comportamento do framework | Definida pelo ambiente |
 
 Nunca publique o arquivo `.env`, URLs de banco, senhas ou tokens. O repositorio ja ignora arquivos de ambiente locais.
@@ -35,6 +36,10 @@ Nunca publique o arquivo `.env`, URLs de banco, senhas ou tokens. O repositorio 
 | `npm run db:check-account -- CODIGO` | Verifica papel/status de uma conta |
 
 O `postinstall` executa `npx prisma generate`.
+
+## Tempo real do Pong
+
+O WebSocket usa `experimental_upgradeWebSocket` da Vercel. Neon continua sendo a autoridade para sala, aposta, placar, resultado, XP, Dev-Coins e auditoria; Redis guarda somente presenca, comandos e quadros efemeros. Sem `REDIS_URL`/`KV_URL`, o projeto usa um barramento em memoria adequado apenas ao desenvolvimento em uma unica instancia.
 
 ## Criacao de professor
 

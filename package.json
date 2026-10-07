@@ -22,6 +22,7 @@
   "dependencies": {
     "@prisma/adapter-neon": "^7.10.0",
     "@prisma/client": "^7.10.0",
+    "@vercel/functions": "^3.9.11",
     "bcryptjs": "^3.0.3",
     "dotenv": "^16.6.1",
     "fflate": "^0.8.3",
@@ -30,6 +31,7 @@
     "next": "16.3.3",
     "react": "19.2.8",
     "react-dom": "19.2.8",
+    "redis": "^6.3.0",
     "sharp": "^0.34.5",
     "sonner": "^2.0.8",
     "ws": "^8.21.3",

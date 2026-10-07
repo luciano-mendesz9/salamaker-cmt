@@ -2,20 +2,22 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { Coins, Palette, Power } from "lucide-react";
+import { Coins, Gamepad2, Palette, Power } from "lucide-react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import devCoinImage from "@/assets/dev-coin.webp";
 
 const colors = ["#328fff", "#8b5cf6", "#06b6d4", "#10b981", "#f59e0b", "#f43f5e"];
 
-export function SettingsPanel({ initial }: { initial: { accentColor: string; studentAreaEnabled: boolean; devCoinsPerXp: number } }) {
+export function SettingsPanel({ initial }: { initial: { accentColor: string; studentAreaEnabled: boolean; gamesEnabled: boolean; devCoinsPerXp: number } }) {
   const router = useRouter();
   const [color, setColor] = useState(initial.accentColor);
   const [enabled, setEnabled] = useState(initial.studentAreaEnabled);
+  const [gamesEnabled, setGamesEnabled] = useState(initial.gamesEnabled);
   const [rate, setRate] = useState(initial.devCoinsPerXp);
   const [savedRate, setSavedRate] = useState(initial.devCoinsPerXp);
-  const [password, setPassword] = useState("");
+  const [studentAreaPassword, setStudentAreaPassword] = useState("");
+  const [gamesPassword, setGamesPassword] = useState("");
   const [busy, setBusy] = useState(false);
   async function save(body: unknown) {
     setBusy(true);
@@ -31,8 +33,15 @@ export function SettingsPanel({ initial }: { initial: { accentColor: string; stu
     <section className="glass rounded-2xl p-6">
       <span className={`grid h-11 w-11 place-items-center rounded-xl ${enabled ? "bg-emerald-400/10 text-emerald-300" : "bg-rose-400/10 text-rose-300"}`}><Power /></span>
       <h2 className="mt-5 font-display text-xl font-bold">Área dos alunos</h2><p className="mt-2 text-sm leading-relaxed text-slate-400">{enabled ? "A área dos alunos está disponível." : "O site foi desativado temporariamente pelo professor."}</p>
-      <input value={password} onChange={(event) => setPassword(event.target.value)} type="password" className="input mt-5" placeholder="Sua senha de professor" />
-      <button disabled={busy || !password} onClick={async () => { if (await save({ action: "STUDENT_AREA", enabled: !enabled, teacherPassword: password })) { setEnabled(!enabled); setPassword(""); } }} className={`mt-3 rounded-xl px-4 py-3 text-sm font-bold ${enabled ? "border border-rose-400/30 bg-rose-400/10 text-rose-200" : "bg-emerald-500 text-white"}`}>{enabled ? "Desativar temporariamente" : "Reativar área dos alunos"}</button>
+      <input value={studentAreaPassword} onChange={(event) => setStudentAreaPassword(event.target.value)} type="password" className="input mt-5" placeholder="Sua senha de professor" />
+      <button disabled={busy || !studentAreaPassword} onClick={async () => { if (await save({ action: "STUDENT_AREA", enabled: !enabled, teacherPassword: studentAreaPassword })) { setEnabled(!enabled); setStudentAreaPassword(""); } }} className={`mt-3 rounded-xl px-4 py-3 text-sm font-bold ${enabled ? "border border-rose-400/30 bg-rose-400/10 text-rose-200" : "bg-emerald-500 text-white"}`}>{enabled ? "Desativar temporariamente" : "Reativar área dos alunos"}</button>
+    </section>
+    <section className="glass rounded-2xl p-6">
+      <span className={`grid h-11 w-11 place-items-center rounded-xl ${gamesEnabled ? "bg-cyan-400/10 text-cyan-300" : "bg-rose-400/10 text-rose-300"}`}><Gamepad2 /></span>
+      <h2 className="mt-5 font-display text-xl font-bold">Minigames</h2>
+      <p className="mt-2 text-sm leading-relaxed text-slate-400">{gamesEnabled ? "Os alunos podem acessar o lobby e criar novas partidas." : "Os minigames foram desativados pelo professor. Partidas já iniciadas ainda podem ser concluídas."}</p>
+      <input value={gamesPassword} onChange={(event) => setGamesPassword(event.target.value)} type="password" className="input mt-5" placeholder="Sua senha de professor" />
+      <button disabled={busy || !gamesPassword} onClick={async () => { if (await save({ action: "GAMES", enabled: !gamesEnabled, teacherPassword: gamesPassword })) { setGamesEnabled(!gamesEnabled); setGamesPassword(""); } }} className={`mt-3 rounded-xl px-4 py-3 text-sm font-bold ${gamesEnabled ? "border border-rose-400/30 bg-rose-400/10 text-rose-200" : "bg-emerald-500 text-white"}`}>{gamesEnabled ? "Desativar minigames" : "Reativar minigames"}</button>
     </section>
     <section className="glass rounded-2xl p-6">
       <span className="grid h-11 w-11 place-items-center rounded-xl bg-blue-400/10 text-blue-300"><Palette /></span><h2 className="mt-5 font-display text-xl font-bold">Cor de destaque global</h2><p className="mt-2 text-sm leading-relaxed text-slate-400">Escolha uma opção validada para manter contraste e legibilidade.</p>

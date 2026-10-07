@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ["127.0.0.1"],
   // `ws` relies on Node-specific buffer helpers. Bundling it into a serverless
   // chunk can break frame masking at runtime (`mask is not a function`).
   serverExternalPackages: ["ws"],

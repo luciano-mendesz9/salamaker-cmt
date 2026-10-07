@@ -47,6 +47,7 @@ enum XpSource {
   PROFILE_AVATAR
   DEV_COIN_PURCHASE
   DEV_COIN_TRANSFER
+  PONG_RESULT
 }
 
 enum AuditEvent {
@@ -70,6 +71,12 @@ enum AuditEvent {
   STICKER_TRADED
   STICKER_DONATED
   DEV_COIN_TRANSFERRED
+  PONG_ROOM_CREATED
+  PONG_JOIN_REQUESTED
+  PONG_JOIN_RESPONDED
+  PONG_MATCH_STARTED
+  PONG_MATCH_FINISHED
+  PONG_ROOM_CANCELLED
 }
 
 enum DevCoinSource {
@@ -82,6 +89,9 @@ enum DevCoinSource {
   PATENT_REWARD
   TRANSFER_SENT
   TRANSFER_RECEIVED
+  PONG_ROOM_FEE
+  PONG_WAGER
+  PONG_PRIZE
 }
 
 enum StickerCollectionState {
@@ -138,6 +148,8 @@ enum TreasuryEntrySource {
   TEACHER_DISTRIBUTION
   ADMIN_MINT
   ADMIN_BURN
+  PONG_ROOM_FEE
+  PONG_MATCH_TAX
 }
 
 enum AvatarPurchaseCurrency {
@@ -177,6 +189,39 @@ enum WrittenGrade {
 enum TeamDivisionMode {
   RANDOM
   MANUAL
+}
+
+enum PongRoomStatus {
+  WAITING
+  ACTIVE
+  FINISHED
+  CANCELLED
+}
+
+enum PongPlayerSeat {
+  OWNER
+  GUEST
+}
+
+enum PongPlayerStatus {
+  WAITING
+  PLAYING
+  FINISHED
+  FORFEITED
+  LEFT
+}
+
+enum PongJoinRequestStatus {
+  PENDING
+  APPROVED
+  DECLINED
+  EXPIRED
+}
+
+enum PongFinishReason {
+  SCORE
+  DISCONNECTION
+  FORFEIT
 }
 
 model User {
@@ -233,6 +278,12 @@ model User {
   treasuryEntriesAuthored  DevCoinTreasuryEntry[]  @relation("TreasuryEntryAuthor")
   devCoinTransfersSent     DevCoinTransfer[]       @relation("DevCoinTransferSender")
   devCoinTransfersReceived DevCoinTransfer[]       @relation("DevCoinTransferRecipient")
+  ownedPongRooms           PongRoom[]              @relation("PongRoomOwner")
+  wonPongRooms             PongRoom[]              @relation("PongRoomWinner")
+  lostPongRooms            PongRoom[]              @relation("PongRoomLoser")
+  pongPlayers              PongPlayer[]
+  pongJoinRequests         PongJoinRequest[]
+  pongPoints               PongPoint[]
 
   @@index([role, status, xp])
   @@index([originSchoolClass, status])
@@ -596,6 +647,7 @@ model CleanupAssignment {
 model AppSetting {
   id                 Int      @id @default(1)
   studentAreaEnabled Boolean  @default(true)
+  gamesEnabled       Boolean  @default(true)
   accentColor        String   @default("#328fff")
   timeZone           String   @default("America/Fortaleza")
   devCoinsPerXp      Int      @default(1)
@@ -807,4 +859,89 @@ model RateLimitBucket {
   attempts  Int      @default(0)
   windowEnd DateTime
   updatedAt DateTime @updatedAt
+}
+
+model PongRoom {
+  id            String            @id @default(uuid()) @db.Uuid
+  code          String            @unique @db.VarChar(6)
+  creationKey   String            @unique
+  ownerId       String            @db.Uuid
+  status        PongRoomStatus    @default(WAITING)
+  wager         Int
+  roomFee       Int               @default(50)
+  creationDay   String
+  escrowBalance Int               @default(0)
+  ownerScore    Int               @default(0)
+  guestScore    Int               @default(0)
+  scoreSequence Int               @default(0)
+  winnerId      String?           @db.Uuid
+  loserId       String?           @db.Uuid
+  finishReason  PongFinishReason?
+  winnerPayout  Int               @default(0)
+  taxAmount     Int               @default(0)
+  createdAt     DateTime          @default(now())
+  startedAt     DateTime?
+  finishedAt    DateTime?
+  cancelledAt   DateTime?
+  updatedAt     DateTime          @updatedAt
+  owner         User              @relation("PongRoomOwner", fields: [ownerId], references: [id], onDelete: Restrict)
+  winner        User?             @relation("PongRoomWinner", fields: [winnerId], references: [id], onDelete: Restrict)
+  loser         User?             @relation("PongRoomLoser", fields: [loserId], references: [id], onDelete: Restrict)
+  players       PongPlayer[]
+  joinRequests  PongJoinRequest[]
+  points        PongPoint[]
+
+  @@index([ownerId, creationDay, createdAt])
+  @@index([status, updatedAt])
+}
+
+model PongPlayer {
+  id             String           @id @default(uuid()) @db.Uuid
+  roomId         String           @db.Uuid
+  studentId      String           @db.Uuid
+  seat           PongPlayerSeat
+  status         PongPlayerStatus @default(WAITING)
+  stake          Int              @default(0)
+  payout         Int              @default(0)
+  connected      Boolean          @default(false)
+  lastSeenAt     DateTime?
+  disconnectedAt DateTime?
+  joinedAt       DateTime         @default(now())
+  room           PongRoom         @relation(fields: [roomId], references: [id], onDelete: Restrict)
+  student        User             @relation(fields: [studentId], references: [id], onDelete: Restrict)
+
+  @@unique([roomId, studentId])
+  @@unique([roomId, seat])
+  @@index([studentId, status])
+}
+
+model PongJoinRequest {
+  id             String                @id @default(uuid()) @db.Uuid
+  roomId         String                @db.Uuid
+  studentId      String                @db.Uuid
+  status         PongJoinRequestStatus @default(PENDING)
+  idempotencyKey String                @unique
+  expiresAt      DateTime
+  respondedAt    DateTime?
+  createdAt      DateTime              @default(now())
+  room           PongRoom              @relation(fields: [roomId], references: [id], onDelete: Restrict)
+  student        User                  @relation(fields: [studentId], references: [id], onDelete: Restrict)
+
+  @@index([roomId, status, createdAt])
+  @@index([studentId, status, createdAt])
+}
+
+model PongPoint {
+  id         String   @id @default(uuid()) @db.Uuid
+  roomId     String   @db.Uuid
+  scorerId   String   @db.Uuid
+  sequence   Int
+  ownerScore Int
+  guestScore Int
+  createdAt  DateTime @default(now())
+  room       PongRoom @relation(fields: [roomId], references: [id], onDelete: Restrict)
+  scorer     User     @relation(fields: [scorerId], references: [id], onDelete: Restrict)
+
+  @@unique([roomId, sequence])
+  @@index([roomId, createdAt])
 }

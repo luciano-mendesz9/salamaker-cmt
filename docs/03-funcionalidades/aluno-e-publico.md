@@ -62,6 +62,14 @@ O aluno so consulta atividades em que possui `ActivityRecipient`.
 - Grupo: mostra equipe e integrantes; a conclusao e pontuada pelo professor.
 - O gabarito das alternativas selecionadas so e revelado depois que a atividade esta fechada.
 
+## Minigames e Pong multiplayer
+
+A aba `/aluno/minigames` oferece o Pong apenas em computador. O aluno pode criar ate tres salas por dia, pagando 50 DC por sala, ou pedir entrada com um codigo numerico de seis digitos. O dono precisa permitir ou recusar o pedido antes de iniciar.
+
+A aposta individual e um inteiro entre 10 e 100 DC. O saldo e validado no pedido, na aprovacao e novamente no inicio; as duas apostas sao debitadas atomicamente somente quando os dois jogadores conectados iniciam a partida. O primeiro a dez pontos vence, recebe 70% do total apostado arredondado para baixo, e o restante vai para a tesouraria como imposto. O perdedor perde 50 XP. Desistencia e desconexao superior a tres minutos tambem encerram a partida em favor do jogador que permaneceu conectado.
+
+O professor controla `gamesEnabled` na pagina de moderacao. O bloqueio impede lobby, criacao, entrada e inicio de novas partidas; partidas ja ativas podem terminar para nao deixar apostas presas.
+
 ## Notificacoes
 
 Mensagens `INBOX` ficam em `/aluno/notificacoes`; abrir uma mensagem grava `readAt`. Pop-ups aparecem no maximo uma vez por dia escolar, enquanto validos. A opcao “nao mostrar mais” grava `dismissedAt` apenas para o aluno atual.

@@ -63,7 +63,8 @@ export const XpSource = {
   ACTIVITY: 'ACTIVITY',
   PROFILE_AVATAR: 'PROFILE_AVATAR',
   DEV_COIN_PURCHASE: 'DEV_COIN_PURCHASE',
-  DEV_COIN_TRANSFER: 'DEV_COIN_TRANSFER'
+  DEV_COIN_TRANSFER: 'DEV_COIN_TRANSFER',
+  PONG_RESULT: 'PONG_RESULT'
 } as const
 
 export type XpSource = (typeof XpSource)[keyof typeof XpSource]
@@ -89,7 +90,13 @@ export const AuditEvent = {
   STICKER_LISTED: 'STICKER_LISTED',
   STICKER_TRADED: 'STICKER_TRADED',
   STICKER_DONATED: 'STICKER_DONATED',
-  DEV_COIN_TRANSFERRED: 'DEV_COIN_TRANSFERRED'
+  DEV_COIN_TRANSFERRED: 'DEV_COIN_TRANSFERRED',
+  PONG_ROOM_CREATED: 'PONG_ROOM_CREATED',
+  PONG_JOIN_REQUESTED: 'PONG_JOIN_REQUESTED',
+  PONG_JOIN_RESPONDED: 'PONG_JOIN_RESPONDED',
+  PONG_MATCH_STARTED: 'PONG_MATCH_STARTED',
+  PONG_MATCH_FINISHED: 'PONG_MATCH_FINISHED',
+  PONG_ROOM_CANCELLED: 'PONG_ROOM_CANCELLED'
 } as const
 
 export type AuditEvent = (typeof AuditEvent)[keyof typeof AuditEvent]
@@ -104,7 +111,10 @@ export const DevCoinSource = {
   STICKER_MARKET: 'STICKER_MARKET',
   PATENT_REWARD: 'PATENT_REWARD',
   TRANSFER_SENT: 'TRANSFER_SENT',
-  TRANSFER_RECEIVED: 'TRANSFER_RECEIVED'
+  TRANSFER_RECEIVED: 'TRANSFER_RECEIVED',
+  PONG_ROOM_FEE: 'PONG_ROOM_FEE',
+  PONG_WAGER: 'PONG_WAGER',
+  PONG_PRIZE: 'PONG_PRIZE'
 } as const
 
 export type DevCoinSource = (typeof DevCoinSource)[keyof typeof DevCoinSource]
@@ -184,7 +194,9 @@ export const TreasuryEntrySource = {
   PATENT_REWARD: 'PATENT_REWARD',
   TEACHER_DISTRIBUTION: 'TEACHER_DISTRIBUTION',
   ADMIN_MINT: 'ADMIN_MINT',
-  ADMIN_BURN: 'ADMIN_BURN'
+  ADMIN_BURN: 'ADMIN_BURN',
+  PONG_ROOM_FEE: 'PONG_ROOM_FEE',
+  PONG_MATCH_TAX: 'PONG_MATCH_TAX'
 } as const
 
 export type TreasuryEntrySource = (typeof TreasuryEntrySource)[keyof typeof TreasuryEntrySource]
@@ -248,3 +260,51 @@ export const TeamDivisionMode = {
 } as const
 
 export type TeamDivisionMode = (typeof TeamDivisionMode)[keyof typeof TeamDivisionMode]
+
+
+export const PongRoomStatus = {
+  WAITING: 'WAITING',
+  ACTIVE: 'ACTIVE',
+  FINISHED: 'FINISHED',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type PongRoomStatus = (typeof PongRoomStatus)[keyof typeof PongRoomStatus]
+
+
+export const PongPlayerSeat = {
+  OWNER: 'OWNER',
+  GUEST: 'GUEST'
+} as const
+
+export type PongPlayerSeat = (typeof PongPlayerSeat)[keyof typeof PongPlayerSeat]
+
+
+export const PongPlayerStatus = {
+  WAITING: 'WAITING',
+  PLAYING: 'PLAYING',
+  FINISHED: 'FINISHED',
+  FORFEITED: 'FORFEITED',
+  LEFT: 'LEFT'
+} as const
+
+export type PongPlayerStatus = (typeof PongPlayerStatus)[keyof typeof PongPlayerStatus]
+
+
+export const PongJoinRequestStatus = {
+  PENDING: 'PENDING',
+  APPROVED: 'APPROVED',
+  DECLINED: 'DECLINED',
+  EXPIRED: 'EXPIRED'
+} as const
+
+export type PongJoinRequestStatus = (typeof PongJoinRequestStatus)[keyof typeof PongJoinRequestStatus]
+
+
+export const PongFinishReason = {
+  SCORE: 'SCORE',
+  DISCONNECTION: 'DISCONNECTION',
+  FORFEIT: 'FORFEIT'
+} as const
+
+export type PongFinishReason = (typeof PongFinishReason)[keyof typeof PongFinishReason]

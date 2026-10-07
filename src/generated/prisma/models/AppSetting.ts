@@ -39,6 +39,7 @@ export type AppSettingSumAggregateOutputType = {
 export type AppSettingMinAggregateOutputType = {
   id: number | null
   studentAreaEnabled: boolean | null
+  gamesEnabled: boolean | null
   accentColor: string | null
   timeZone: string | null
   devCoinsPerXp: number | null
@@ -48,6 +49,7 @@ export type AppSettingMinAggregateOutputType = {
 export type AppSettingMaxAggregateOutputType = {
   id: number | null
   studentAreaEnabled: boolean | null
+  gamesEnabled: boolean | null
   accentColor: string | null
   timeZone: string | null
   devCoinsPerXp: number | null
@@ -57,6 +59,7 @@ export type AppSettingMaxAggregateOutputType = {
 export type AppSettingCountAggregateOutputType = {
   id: number
   studentAreaEnabled: number
+  gamesEnabled: number
   accentColor: number
   timeZone: number
   devCoinsPerXp: number
@@ -78,6 +81,7 @@ export type AppSettingSumAggregateInputType = {
 export type AppSettingMinAggregateInputType = {
   id?: true
   studentAreaEnabled?: true
+  gamesEnabled?: true
   accentColor?: true
   timeZone?: true
   devCoinsPerXp?: true
@@ -87,6 +91,7 @@ export type AppSettingMinAggregateInputType = {
 export type AppSettingMaxAggregateInputType = {
   id?: true
   studentAreaEnabled?: true
+  gamesEnabled?: true
   accentColor?: true
   timeZone?: true
   devCoinsPerXp?: true
@@ -96,6 +101,7 @@ export type AppSettingMaxAggregateInputType = {
 export type AppSettingCountAggregateInputType = {
   id?: true
   studentAreaEnabled?: true
+  gamesEnabled?: true
   accentColor?: true
   timeZone?: true
   devCoinsPerXp?: true
@@ -192,6 +198,7 @@ export type AppSettingGroupByArgs<ExtArgs extends runtime.Types.Extensions.Inter
 export type AppSettingGroupByOutputType = {
   id: number
   studentAreaEnabled: boolean
+  gamesEnabled: boolean
   accentColor: string
   timeZone: string
   devCoinsPerXp: number
@@ -224,6 +231,7 @@ export type AppSettingWhereInput = {
   NOT?: Prisma.AppSettingWhereInput | Prisma.AppSettingWhereInput[]
   id?: Prisma.IntFilter<"AppSetting"> | number
   studentAreaEnabled?: Prisma.BoolFilter<"AppSetting"> | boolean
+  gamesEnabled?: Prisma.BoolFilter<"AppSetting"> | boolean
   accentColor?: Prisma.StringFilter<"AppSetting"> | string
   timeZone?: Prisma.StringFilter<"AppSetting"> | string
   devCoinsPerXp?: Prisma.IntFilter<"AppSetting"> | number
@@ -233,6 +241,7 @@ export type AppSettingWhereInput = {
 export type AppSettingOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   studentAreaEnabled?: Prisma.SortOrder
+  gamesEnabled?: Prisma.SortOrder
   accentColor?: Prisma.SortOrder
   timeZone?: Prisma.SortOrder
   devCoinsPerXp?: Prisma.SortOrder
@@ -245,6 +254,7 @@ export type AppSettingWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.AppSettingWhereInput[]
   NOT?: Prisma.AppSettingWhereInput | Prisma.AppSettingWhereInput[]
   studentAreaEnabled?: Prisma.BoolFilter<"AppSetting"> | boolean
+  gamesEnabled?: Prisma.BoolFilter<"AppSetting"> | boolean
   accentColor?: Prisma.StringFilter<"AppSetting"> | string
   timeZone?: Prisma.StringFilter<"AppSetting"> | string
   devCoinsPerXp?: Prisma.IntFilter<"AppSetting"> | number
@@ -254,6 +264,7 @@ export type AppSettingWhereUniqueInput = Prisma.AtLeast<{
 export type AppSettingOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   studentAreaEnabled?: Prisma.SortOrder
+  gamesEnabled?: Prisma.SortOrder
   accentColor?: Prisma.SortOrder
   timeZone?: Prisma.SortOrder
   devCoinsPerXp?: Prisma.SortOrder
@@ -271,6 +282,7 @@ export type AppSettingScalarWhereWithAggregatesInput = {
   NOT?: Prisma.AppSettingScalarWhereWithAggregatesInput | Prisma.AppSettingScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"AppSetting"> | number
   studentAreaEnabled?: Prisma.BoolWithAggregatesFilter<"AppSetting"> | boolean
+  gamesEnabled?: Prisma.BoolWithAggregatesFilter<"AppSetting"> | boolean
   accentColor?: Prisma.StringWithAggregatesFilter<"AppSetting"> | string
   timeZone?: Prisma.StringWithAggregatesFilter<"AppSetting"> | string
   devCoinsPerXp?: Prisma.IntWithAggregatesFilter<"AppSetting"> | number
@@ -280,6 +292,7 @@ export type AppSettingScalarWhereWithAggregatesInput = {
 export type AppSettingCreateInput = {
   id?: number
   studentAreaEnabled?: boolean
+  gamesEnabled?: boolean
   accentColor?: string
   timeZone?: string
   devCoinsPerXp?: number
@@ -289,6 +302,7 @@ export type AppSettingCreateInput = {
 export type AppSettingUncheckedCreateInput = {
   id?: number
   studentAreaEnabled?: boolean
+  gamesEnabled?: boolean
   accentColor?: string
   timeZone?: string
   devCoinsPerXp?: number
@@ -298,6 +312,7 @@ export type AppSettingUncheckedCreateInput = {
 export type AppSettingUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   studentAreaEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  gamesEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accentColor?: Prisma.StringFieldUpdateOperationsInput | string
   timeZone?: Prisma.StringFieldUpdateOperationsInput | string
   devCoinsPerXp?: Prisma.IntFieldUpdateOperationsInput | number
@@ -307,6 +322,7 @@ export type AppSettingUpdateInput = {
 export type AppSettingUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   studentAreaEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  gamesEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accentColor?: Prisma.StringFieldUpdateOperationsInput | string
   timeZone?: Prisma.StringFieldUpdateOperationsInput | string
   devCoinsPerXp?: Prisma.IntFieldUpdateOperationsInput | number
@@ -316,6 +332,7 @@ export type AppSettingUncheckedUpdateInput = {
 export type AppSettingCreateManyInput = {
   id?: number
   studentAreaEnabled?: boolean
+  gamesEnabled?: boolean
   accentColor?: string
   timeZone?: string
   devCoinsPerXp?: number
@@ -325,6 +342,7 @@ export type AppSettingCreateManyInput = {
 export type AppSettingUpdateManyMutationInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   studentAreaEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  gamesEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accentColor?: Prisma.StringFieldUpdateOperationsInput | string
   timeZone?: Prisma.StringFieldUpdateOperationsInput | string
   devCoinsPerXp?: Prisma.IntFieldUpdateOperationsInput | number
@@ -334,6 +352,7 @@ export type AppSettingUpdateManyMutationInput = {
 export type AppSettingUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   studentAreaEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  gamesEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
   accentColor?: Prisma.StringFieldUpdateOperationsInput | string
   timeZone?: Prisma.StringFieldUpdateOperationsInput | string
   devCoinsPerXp?: Prisma.IntFieldUpdateOperationsInput | number
@@ -343,6 +362,7 @@ export type AppSettingUncheckedUpdateManyInput = {
 export type AppSettingCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   studentAreaEnabled?: Prisma.SortOrder
+  gamesEnabled?: Prisma.SortOrder
   accentColor?: Prisma.SortOrder
   timeZone?: Prisma.SortOrder
   devCoinsPerXp?: Prisma.SortOrder
@@ -357,6 +377,7 @@ export type AppSettingAvgOrderByAggregateInput = {
 export type AppSettingMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   studentAreaEnabled?: Prisma.SortOrder
+  gamesEnabled?: Prisma.SortOrder
   accentColor?: Prisma.SortOrder
   timeZone?: Prisma.SortOrder
   devCoinsPerXp?: Prisma.SortOrder
@@ -366,6 +387,7 @@ export type AppSettingMaxOrderByAggregateInput = {
 export type AppSettingMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   studentAreaEnabled?: Prisma.SortOrder
+  gamesEnabled?: Prisma.SortOrder
   accentColor?: Prisma.SortOrder
   timeZone?: Prisma.SortOrder
   devCoinsPerXp?: Prisma.SortOrder
@@ -382,6 +404,7 @@ export type AppSettingSumOrderByAggregateInput = {
 export type AppSettingSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   studentAreaEnabled?: boolean
+  gamesEnabled?: boolean
   accentColor?: boolean
   timeZone?: boolean
   devCoinsPerXp?: boolean
@@ -391,6 +414,7 @@ export type AppSettingSelect<ExtArgs extends runtime.Types.Extensions.InternalAr
 export type AppSettingSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   studentAreaEnabled?: boolean
+  gamesEnabled?: boolean
   accentColor?: boolean
   timeZone?: boolean
   devCoinsPerXp?: boolean
@@ -400,6 +424,7 @@ export type AppSettingSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ex
 export type AppSettingSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   studentAreaEnabled?: boolean
+  gamesEnabled?: boolean
   accentColor?: boolean
   timeZone?: boolean
   devCoinsPerXp?: boolean
@@ -409,13 +434,14 @@ export type AppSettingSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ex
 export type AppSettingSelectScalar = {
   id?: boolean
   studentAreaEnabled?: boolean
+  gamesEnabled?: boolean
   accentColor?: boolean
   timeZone?: boolean
   devCoinsPerXp?: boolean
   updatedAt?: boolean
 }
 
-export type AppSettingOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "studentAreaEnabled" | "accentColor" | "timeZone" | "devCoinsPerXp" | "updatedAt", ExtArgs["result"]["appSetting"]>
+export type AppSettingOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "studentAreaEnabled" | "gamesEnabled" | "accentColor" | "timeZone" | "devCoinsPerXp" | "updatedAt", ExtArgs["result"]["appSetting"]>
 
 export type $AppSettingPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "AppSetting"
@@ -423,6 +449,7 @@ export type $AppSettingPayload<ExtArgs extends runtime.Types.Extensions.Internal
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
     studentAreaEnabled: boolean
+    gamesEnabled: boolean
     accentColor: string
     timeZone: string
     devCoinsPerXp: number
@@ -852,6 +879,7 @@ export interface Prisma__AppSettingClient<T, Null = never, ExtArgs extends runti
 export interface AppSettingFieldRefs {
   readonly id: Prisma.FieldRef<"AppSetting", 'Int'>
   readonly studentAreaEnabled: Prisma.FieldRef<"AppSetting", 'Boolean'>
+  readonly gamesEnabled: Prisma.FieldRef<"AppSetting", 'Boolean'>
   readonly accentColor: Prisma.FieldRef<"AppSetting", 'String'>
   readonly timeZone: Prisma.FieldRef<"AppSetting", 'String'>
   readonly devCoinsPerXp: Prisma.FieldRef<"AppSetting", 'Int'>
