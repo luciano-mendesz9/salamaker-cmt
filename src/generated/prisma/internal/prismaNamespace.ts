@@ -435,7 +435,11 @@ export const ModelName = {
   ActivityTeamMember: 'ActivityTeamMember',
   ActivityAward: 'ActivityAward',
   AuditLog: 'AuditLog',
-  RateLimitBucket: 'RateLimitBucket'
+  RateLimitBucket: 'RateLimitBucket',
+  PongRoom: 'PongRoom',
+  PongPlayer: 'PongPlayer',
+  PongJoinRequest: 'PongJoinRequest',
+  PongPoint: 'PongPoint'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -451,7 +455,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "profileAvatarPurchase" | "devCoinEntry" | "devCoinTransfer" | "stickerCollection" | "sticker" | "stickerCopy" | "stickerPackPurchase" | "stickerListing" | "stickerTrade" | "stickerDonation" | "patentLevel" | "studentPatentProgress" | "patentRewardClaim" | "devCoinTreasury" | "stickerMarketSetting" | "devCoinTreasuryEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket"
+    modelProps: "user" | "profileAvatarPurchase" | "devCoinEntry" | "devCoinTransfer" | "stickerCollection" | "sticker" | "stickerCopy" | "stickerPackPurchase" | "stickerListing" | "stickerTrade" | "stickerDonation" | "patentLevel" | "studentPatentProgress" | "patentRewardClaim" | "devCoinTreasury" | "stickerMarketSetting" | "devCoinTreasuryEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket" | "pongRoom" | "pongPlayer" | "pongJoinRequest" | "pongPoint"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -3341,6 +3345,302 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    PongRoom: {
+      payload: Prisma.$PongRoomPayload<ExtArgs>
+      fields: Prisma.PongRoomFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.PongRoomFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongRoomPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.PongRoomFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongRoomPayload>
+        }
+        findFirst: {
+          args: Prisma.PongRoomFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongRoomPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.PongRoomFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongRoomPayload>
+        }
+        findMany: {
+          args: Prisma.PongRoomFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongRoomPayload>[]
+        }
+        create: {
+          args: Prisma.PongRoomCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongRoomPayload>
+        }
+        createMany: {
+          args: Prisma.PongRoomCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.PongRoomCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongRoomPayload>[]
+        }
+        delete: {
+          args: Prisma.PongRoomDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongRoomPayload>
+        }
+        update: {
+          args: Prisma.PongRoomUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongRoomPayload>
+        }
+        deleteMany: {
+          args: Prisma.PongRoomDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.PongRoomUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.PongRoomUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongRoomPayload>[]
+        }
+        upsert: {
+          args: Prisma.PongRoomUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongRoomPayload>
+        }
+        aggregate: {
+          args: Prisma.PongRoomAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePongRoom>
+        }
+        groupBy: {
+          args: Prisma.PongRoomGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PongRoomGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.PongRoomCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PongRoomCountAggregateOutputType> | number
+        }
+      }
+    }
+    PongPlayer: {
+      payload: Prisma.$PongPlayerPayload<ExtArgs>
+      fields: Prisma.PongPlayerFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.PongPlayerFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPlayerPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.PongPlayerFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPlayerPayload>
+        }
+        findFirst: {
+          args: Prisma.PongPlayerFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPlayerPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.PongPlayerFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPlayerPayload>
+        }
+        findMany: {
+          args: Prisma.PongPlayerFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPlayerPayload>[]
+        }
+        create: {
+          args: Prisma.PongPlayerCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPlayerPayload>
+        }
+        createMany: {
+          args: Prisma.PongPlayerCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.PongPlayerCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPlayerPayload>[]
+        }
+        delete: {
+          args: Prisma.PongPlayerDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPlayerPayload>
+        }
+        update: {
+          args: Prisma.PongPlayerUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPlayerPayload>
+        }
+        deleteMany: {
+          args: Prisma.PongPlayerDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.PongPlayerUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.PongPlayerUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPlayerPayload>[]
+        }
+        upsert: {
+          args: Prisma.PongPlayerUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPlayerPayload>
+        }
+        aggregate: {
+          args: Prisma.PongPlayerAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePongPlayer>
+        }
+        groupBy: {
+          args: Prisma.PongPlayerGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PongPlayerGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.PongPlayerCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PongPlayerCountAggregateOutputType> | number
+        }
+      }
+    }
+    PongJoinRequest: {
+      payload: Prisma.$PongJoinRequestPayload<ExtArgs>
+      fields: Prisma.PongJoinRequestFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.PongJoinRequestFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongJoinRequestPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.PongJoinRequestFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongJoinRequestPayload>
+        }
+        findFirst: {
+          args: Prisma.PongJoinRequestFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongJoinRequestPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.PongJoinRequestFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongJoinRequestPayload>
+        }
+        findMany: {
+          args: Prisma.PongJoinRequestFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongJoinRequestPayload>[]
+        }
+        create: {
+          args: Prisma.PongJoinRequestCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongJoinRequestPayload>
+        }
+        createMany: {
+          args: Prisma.PongJoinRequestCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.PongJoinRequestCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongJoinRequestPayload>[]
+        }
+        delete: {
+          args: Prisma.PongJoinRequestDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongJoinRequestPayload>
+        }
+        update: {
+          args: Prisma.PongJoinRequestUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongJoinRequestPayload>
+        }
+        deleteMany: {
+          args: Prisma.PongJoinRequestDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.PongJoinRequestUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.PongJoinRequestUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongJoinRequestPayload>[]
+        }
+        upsert: {
+          args: Prisma.PongJoinRequestUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongJoinRequestPayload>
+        }
+        aggregate: {
+          args: Prisma.PongJoinRequestAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePongJoinRequest>
+        }
+        groupBy: {
+          args: Prisma.PongJoinRequestGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PongJoinRequestGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.PongJoinRequestCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PongJoinRequestCountAggregateOutputType> | number
+        }
+      }
+    }
+    PongPoint: {
+      payload: Prisma.$PongPointPayload<ExtArgs>
+      fields: Prisma.PongPointFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.PongPointFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPointPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.PongPointFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPointPayload>
+        }
+        findFirst: {
+          args: Prisma.PongPointFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPointPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.PongPointFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPointPayload>
+        }
+        findMany: {
+          args: Prisma.PongPointFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPointPayload>[]
+        }
+        create: {
+          args: Prisma.PongPointCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPointPayload>
+        }
+        createMany: {
+          args: Prisma.PongPointCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.PongPointCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPointPayload>[]
+        }
+        delete: {
+          args: Prisma.PongPointDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPointPayload>
+        }
+        update: {
+          args: Prisma.PongPointUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPointPayload>
+        }
+        deleteMany: {
+          args: Prisma.PongPointDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.PongPointUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.PongPointUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPointPayload>[]
+        }
+        upsert: {
+          args: Prisma.PongPointUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PongPointPayload>
+        }
+        aggregate: {
+          args: Prisma.PongPointAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePongPoint>
+        }
+        groupBy: {
+          args: Prisma.PongPointGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PongPointGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.PongPointCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PongPointCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -3718,6 +4018,7 @@ export type CleanupAssignmentScalarFieldEnum = (typeof CleanupAssignmentScalarFi
 export const AppSettingScalarFieldEnum = {
   id: 'id',
   studentAreaEnabled: 'studentAreaEnabled',
+  gamesEnabled: 'gamesEnabled',
   accentColor: 'accentColor',
   timeZone: 'timeZone',
   devCoinsPerXp: 'devCoinsPerXp',
@@ -3901,6 +4202,78 @@ export const RateLimitBucketScalarFieldEnum = {
 } as const
 
 export type RateLimitBucketScalarFieldEnum = (typeof RateLimitBucketScalarFieldEnum)[keyof typeof RateLimitBucketScalarFieldEnum]
+
+
+export const PongRoomScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  creationKey: 'creationKey',
+  ownerId: 'ownerId',
+  status: 'status',
+  wager: 'wager',
+  roomFee: 'roomFee',
+  creationDay: 'creationDay',
+  escrowBalance: 'escrowBalance',
+  ownerScore: 'ownerScore',
+  guestScore: 'guestScore',
+  scoreSequence: 'scoreSequence',
+  winnerId: 'winnerId',
+  loserId: 'loserId',
+  finishReason: 'finishReason',
+  winnerPayout: 'winnerPayout',
+  taxAmount: 'taxAmount',
+  createdAt: 'createdAt',
+  startedAt: 'startedAt',
+  finishedAt: 'finishedAt',
+  cancelledAt: 'cancelledAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type PongRoomScalarFieldEnum = (typeof PongRoomScalarFieldEnum)[keyof typeof PongRoomScalarFieldEnum]
+
+
+export const PongPlayerScalarFieldEnum = {
+  id: 'id',
+  roomId: 'roomId',
+  studentId: 'studentId',
+  seat: 'seat',
+  status: 'status',
+  stake: 'stake',
+  payout: 'payout',
+  connected: 'connected',
+  lastSeenAt: 'lastSeenAt',
+  disconnectedAt: 'disconnectedAt',
+  joinedAt: 'joinedAt'
+} as const
+
+export type PongPlayerScalarFieldEnum = (typeof PongPlayerScalarFieldEnum)[keyof typeof PongPlayerScalarFieldEnum]
+
+
+export const PongJoinRequestScalarFieldEnum = {
+  id: 'id',
+  roomId: 'roomId',
+  studentId: 'studentId',
+  status: 'status',
+  idempotencyKey: 'idempotencyKey',
+  expiresAt: 'expiresAt',
+  respondedAt: 'respondedAt',
+  createdAt: 'createdAt'
+} as const
+
+export type PongJoinRequestScalarFieldEnum = (typeof PongJoinRequestScalarFieldEnum)[keyof typeof PongJoinRequestScalarFieldEnum]
+
+
+export const PongPointScalarFieldEnum = {
+  id: 'id',
+  roomId: 'roomId',
+  scorerId: 'scorerId',
+  sequence: 'sequence',
+  ownerScore: 'ownerScore',
+  guestScore: 'guestScore',
+  createdAt: 'createdAt'
+} as const
+
+export type PongPointScalarFieldEnum = (typeof PongPointScalarFieldEnum)[keyof typeof PongPointScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -4336,6 +4709,76 @@ export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$Prisma
 
 
 /**
+ * Reference to a field of type 'PongRoomStatus'
+ */
+export type EnumPongRoomStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PongRoomStatus'>
+
+
+
+/**
+ * Reference to a field of type 'PongRoomStatus[]'
+ */
+export type ListEnumPongRoomStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PongRoomStatus[]'>
+
+
+
+/**
+ * Reference to a field of type 'PongFinishReason'
+ */
+export type EnumPongFinishReasonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PongFinishReason'>
+
+
+
+/**
+ * Reference to a field of type 'PongFinishReason[]'
+ */
+export type ListEnumPongFinishReasonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PongFinishReason[]'>
+
+
+
+/**
+ * Reference to a field of type 'PongPlayerSeat'
+ */
+export type EnumPongPlayerSeatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PongPlayerSeat'>
+
+
+
+/**
+ * Reference to a field of type 'PongPlayerSeat[]'
+ */
+export type ListEnumPongPlayerSeatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PongPlayerSeat[]'>
+
+
+
+/**
+ * Reference to a field of type 'PongPlayerStatus'
+ */
+export type EnumPongPlayerStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PongPlayerStatus'>
+
+
+
+/**
+ * Reference to a field of type 'PongPlayerStatus[]'
+ */
+export type ListEnumPongPlayerStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PongPlayerStatus[]'>
+
+
+
+/**
+ * Reference to a field of type 'PongJoinRequestStatus'
+ */
+export type EnumPongJoinRequestStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PongJoinRequestStatus'>
+
+
+
+/**
+ * Reference to a field of type 'PongJoinRequestStatus[]'
+ */
+export type ListEnumPongJoinRequestStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PongJoinRequestStatus[]'>
+
+
+
+/**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -4538,6 +4981,10 @@ export type GlobalOmitConfig = {
   activityAward?: Prisma.ActivityAwardOmit
   auditLog?: Prisma.AuditLogOmit
   rateLimitBucket?: Prisma.RateLimitBucketOmit
+  pongRoom?: Prisma.PongRoomOmit
+  pongPlayer?: Prisma.PongPlayerOmit
+  pongJoinRequest?: Prisma.PongJoinRequestOmit
+  pongPoint?: Prisma.PongPointOmit
 }
 
 /* Types for Logging */

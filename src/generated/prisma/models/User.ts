@@ -363,6 +363,12 @@ export type UserWhereInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryListRelationFilter
   devCoinTransfersSent?: Prisma.DevCoinTransferListRelationFilter
   devCoinTransfersReceived?: Prisma.DevCoinTransferListRelationFilter
+  ownedPongRooms?: Prisma.PongRoomListRelationFilter
+  wonPongRooms?: Prisma.PongRoomListRelationFilter
+  lostPongRooms?: Prisma.PongRoomListRelationFilter
+  pongPlayers?: Prisma.PongPlayerListRelationFilter
+  pongJoinRequests?: Prisma.PongJoinRequestListRelationFilter
+  pongPoints?: Prisma.PongPointListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -419,6 +425,12 @@ export type UserOrderByWithRelationInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryOrderByRelationAggregateInput
   devCoinTransfersSent?: Prisma.DevCoinTransferOrderByRelationAggregateInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferOrderByRelationAggregateInput
+  ownedPongRooms?: Prisma.PongRoomOrderByRelationAggregateInput
+  wonPongRooms?: Prisma.PongRoomOrderByRelationAggregateInput
+  lostPongRooms?: Prisma.PongRoomOrderByRelationAggregateInput
+  pongPlayers?: Prisma.PongPlayerOrderByRelationAggregateInput
+  pongJoinRequests?: Prisma.PongJoinRequestOrderByRelationAggregateInput
+  pongPoints?: Prisma.PongPointOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -478,6 +490,12 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryListRelationFilter
   devCoinTransfersSent?: Prisma.DevCoinTransferListRelationFilter
   devCoinTransfersReceived?: Prisma.DevCoinTransferListRelationFilter
+  ownedPongRooms?: Prisma.PongRoomListRelationFilter
+  wonPongRooms?: Prisma.PongRoomListRelationFilter
+  lostPongRooms?: Prisma.PongRoomListRelationFilter
+  pongPlayers?: Prisma.PongPlayerListRelationFilter
+  pongJoinRequests?: Prisma.PongJoinRequestListRelationFilter
+  pongPoints?: Prisma.PongPointListRelationFilter
 }, "id" | "accessCode">
 
 export type UserOrderByWithAggregationInput = {
@@ -584,6 +602,12 @@ export type UserCreateInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -640,6 +664,12 @@ export type UserUncheckedCreateInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserUpdateInput = {
@@ -696,6 +726,12 @@ export type UserUpdateInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -752,6 +788,12 @@ export type UserUncheckedUpdateInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -1444,6 +1486,94 @@ export type UserUpdateOneWithoutAuditTargetsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutAuditTargetsInput, Prisma.UserUpdateWithoutAuditTargetsInput>, Prisma.UserUncheckedUpdateWithoutAuditTargetsInput>
 }
 
+export type UserCreateNestedOneWithoutOwnedPongRoomsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutOwnedPongRoomsInput, Prisma.UserUncheckedCreateWithoutOwnedPongRoomsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutOwnedPongRoomsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutWonPongRoomsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutWonPongRoomsInput, Prisma.UserUncheckedCreateWithoutWonPongRoomsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutWonPongRoomsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutLostPongRoomsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutLostPongRoomsInput, Prisma.UserUncheckedCreateWithoutLostPongRoomsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutLostPongRoomsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutOwnedPongRoomsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutOwnedPongRoomsInput, Prisma.UserUncheckedCreateWithoutOwnedPongRoomsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutOwnedPongRoomsInput
+  upsert?: Prisma.UserUpsertWithoutOwnedPongRoomsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutOwnedPongRoomsInput, Prisma.UserUpdateWithoutOwnedPongRoomsInput>, Prisma.UserUncheckedUpdateWithoutOwnedPongRoomsInput>
+}
+
+export type UserUpdateOneWithoutWonPongRoomsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutWonPongRoomsInput, Prisma.UserUncheckedCreateWithoutWonPongRoomsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutWonPongRoomsInput
+  upsert?: Prisma.UserUpsertWithoutWonPongRoomsInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutWonPongRoomsInput, Prisma.UserUpdateWithoutWonPongRoomsInput>, Prisma.UserUncheckedUpdateWithoutWonPongRoomsInput>
+}
+
+export type UserUpdateOneWithoutLostPongRoomsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutLostPongRoomsInput, Prisma.UserUncheckedCreateWithoutLostPongRoomsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutLostPongRoomsInput
+  upsert?: Prisma.UserUpsertWithoutLostPongRoomsInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutLostPongRoomsInput, Prisma.UserUpdateWithoutLostPongRoomsInput>, Prisma.UserUncheckedUpdateWithoutLostPongRoomsInput>
+}
+
+export type UserCreateNestedOneWithoutPongPlayersInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPongPlayersInput, Prisma.UserUncheckedCreateWithoutPongPlayersInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPongPlayersInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutPongPlayersNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPongPlayersInput, Prisma.UserUncheckedCreateWithoutPongPlayersInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPongPlayersInput
+  upsert?: Prisma.UserUpsertWithoutPongPlayersInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutPongPlayersInput, Prisma.UserUpdateWithoutPongPlayersInput>, Prisma.UserUncheckedUpdateWithoutPongPlayersInput>
+}
+
+export type UserCreateNestedOneWithoutPongJoinRequestsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPongJoinRequestsInput, Prisma.UserUncheckedCreateWithoutPongJoinRequestsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPongJoinRequestsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutPongJoinRequestsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPongJoinRequestsInput, Prisma.UserUncheckedCreateWithoutPongJoinRequestsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPongJoinRequestsInput
+  upsert?: Prisma.UserUpsertWithoutPongJoinRequestsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutPongJoinRequestsInput, Prisma.UserUpdateWithoutPongJoinRequestsInput>, Prisma.UserUncheckedUpdateWithoutPongJoinRequestsInput>
+}
+
+export type UserCreateNestedOneWithoutPongPointsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPongPointsInput, Prisma.UserUncheckedCreateWithoutPongPointsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPongPointsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutPongPointsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPongPointsInput, Prisma.UserUncheckedCreateWithoutPongPointsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPongPointsInput
+  upsert?: Prisma.UserUpsertWithoutPongPointsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutPongPointsInput, Prisma.UserUpdateWithoutPongPointsInput>, Prisma.UserUncheckedUpdateWithoutPongPointsInput>
+}
+
 export type UserCreateWithoutProfileAvatarPurchasesInput = {
   id?: string
   firstName: string
@@ -1497,6 +1627,12 @@ export type UserCreateWithoutProfileAvatarPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutProfileAvatarPurchasesInput = {
@@ -1552,6 +1688,12 @@ export type UserUncheckedCreateWithoutProfileAvatarPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutProfileAvatarPurchasesInput = {
@@ -1623,6 +1765,12 @@ export type UserUpdateWithoutProfileAvatarPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutProfileAvatarPurchasesInput = {
@@ -1678,6 +1826,12 @@ export type UserUncheckedUpdateWithoutProfileAvatarPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutDevCoinEntriesInput = {
@@ -1733,6 +1887,12 @@ export type UserCreateWithoutDevCoinEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutDevCoinEntriesInput = {
@@ -1788,6 +1948,12 @@ export type UserUncheckedCreateWithoutDevCoinEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutDevCoinEntriesInput = {
@@ -1848,6 +2014,12 @@ export type UserCreateWithoutAuthoredDevCoinEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput = {
@@ -1903,6 +2075,12 @@ export type UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredDevCoinEntriesInput = {
@@ -1974,6 +2152,12 @@ export type UserUpdateWithoutDevCoinEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutDevCoinEntriesInput = {
@@ -2029,6 +2213,12 @@ export type UserUncheckedUpdateWithoutDevCoinEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUpsertWithoutAuthoredDevCoinEntriesInput = {
@@ -2095,6 +2285,12 @@ export type UserUpdateWithoutAuthoredDevCoinEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput = {
@@ -2150,6 +2346,12 @@ export type UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutDevCoinTransfersSentInput = {
@@ -2205,6 +2407,12 @@ export type UserCreateWithoutDevCoinTransfersSentInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutDevCoinTransfersSentInput = {
@@ -2260,6 +2468,12 @@ export type UserUncheckedCreateWithoutDevCoinTransfersSentInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutDevCoinTransfersSentInput = {
@@ -2320,6 +2534,12 @@ export type UserCreateWithoutDevCoinTransfersReceivedInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutDevCoinTransfersReceivedInput = {
@@ -2375,6 +2595,12 @@ export type UserUncheckedCreateWithoutDevCoinTransfersReceivedInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutDevCoinTransfersReceivedInput = {
@@ -2446,6 +2672,12 @@ export type UserUpdateWithoutDevCoinTransfersSentInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutDevCoinTransfersSentInput = {
@@ -2501,6 +2733,12 @@ export type UserUncheckedUpdateWithoutDevCoinTransfersSentInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUpsertWithoutDevCoinTransfersReceivedInput = {
@@ -2567,6 +2805,12 @@ export type UserUpdateWithoutDevCoinTransfersReceivedInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutDevCoinTransfersReceivedInput = {
@@ -2622,6 +2866,12 @@ export type UserUncheckedUpdateWithoutDevCoinTransfersReceivedInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutStickerCopiesInput = {
@@ -2677,6 +2927,12 @@ export type UserCreateWithoutStickerCopiesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutStickerCopiesInput = {
@@ -2732,6 +2988,12 @@ export type UserUncheckedCreateWithoutStickerCopiesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutStickerCopiesInput = {
@@ -2803,6 +3065,12 @@ export type UserUpdateWithoutStickerCopiesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerCopiesInput = {
@@ -2858,6 +3126,12 @@ export type UserUncheckedUpdateWithoutStickerCopiesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutStickerPackPurchasesInput = {
@@ -2913,6 +3187,12 @@ export type UserCreateWithoutStickerPackPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutStickerPackPurchasesInput = {
@@ -2968,6 +3248,12 @@ export type UserUncheckedCreateWithoutStickerPackPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutStickerPackPurchasesInput = {
@@ -3039,6 +3325,12 @@ export type UserUpdateWithoutStickerPackPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerPackPurchasesInput = {
@@ -3094,6 +3386,12 @@ export type UserUncheckedUpdateWithoutStickerPackPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutStickerListingsInput = {
@@ -3149,6 +3447,12 @@ export type UserCreateWithoutStickerListingsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutStickerListingsInput = {
@@ -3204,6 +3508,12 @@ export type UserUncheckedCreateWithoutStickerListingsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutStickerListingsInput = {
@@ -3264,6 +3574,12 @@ export type UserCreateWithoutStickerPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutStickerPurchasesInput = {
@@ -3319,6 +3635,12 @@ export type UserUncheckedCreateWithoutStickerPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutStickerPurchasesInput = {
@@ -3390,6 +3712,12 @@ export type UserUpdateWithoutStickerListingsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerListingsInput = {
@@ -3445,6 +3773,12 @@ export type UserUncheckedUpdateWithoutStickerListingsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUpsertWithoutStickerPurchasesInput = {
@@ -3511,6 +3845,12 @@ export type UserUpdateWithoutStickerPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerPurchasesInput = {
@@ -3566,6 +3906,12 @@ export type UserUncheckedUpdateWithoutStickerPurchasesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutStickerTradesSoldInput = {
@@ -3621,6 +3967,12 @@ export type UserCreateWithoutStickerTradesSoldInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutStickerTradesSoldInput = {
@@ -3676,6 +4028,12 @@ export type UserUncheckedCreateWithoutStickerTradesSoldInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutStickerTradesSoldInput = {
@@ -3736,6 +4094,12 @@ export type UserCreateWithoutStickerTradesBoughtInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutStickerTradesBoughtInput = {
@@ -3791,6 +4155,12 @@ export type UserUncheckedCreateWithoutStickerTradesBoughtInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutStickerTradesBoughtInput = {
@@ -3862,6 +4232,12 @@ export type UserUpdateWithoutStickerTradesSoldInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerTradesSoldInput = {
@@ -3917,6 +4293,12 @@ export type UserUncheckedUpdateWithoutStickerTradesSoldInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUpsertWithoutStickerTradesBoughtInput = {
@@ -3983,6 +4365,12 @@ export type UserUpdateWithoutStickerTradesBoughtInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerTradesBoughtInput = {
@@ -4038,6 +4426,12 @@ export type UserUncheckedUpdateWithoutStickerTradesBoughtInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutStickerDonationsSentInput = {
@@ -4093,6 +4487,12 @@ export type UserCreateWithoutStickerDonationsSentInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutStickerDonationsSentInput = {
@@ -4148,6 +4548,12 @@ export type UserUncheckedCreateWithoutStickerDonationsSentInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutStickerDonationsSentInput = {
@@ -4208,6 +4614,12 @@ export type UserCreateWithoutStickerDonationsReceivedInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutStickerDonationsReceivedInput = {
@@ -4263,6 +4675,12 @@ export type UserUncheckedCreateWithoutStickerDonationsReceivedInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutStickerDonationsReceivedInput = {
@@ -4334,6 +4752,12 @@ export type UserUpdateWithoutStickerDonationsSentInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerDonationsSentInput = {
@@ -4389,6 +4813,12 @@ export type UserUncheckedUpdateWithoutStickerDonationsSentInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUpsertWithoutStickerDonationsReceivedInput = {
@@ -4455,6 +4885,12 @@ export type UserUpdateWithoutStickerDonationsReceivedInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerDonationsReceivedInput = {
@@ -4510,6 +4946,12 @@ export type UserUncheckedUpdateWithoutStickerDonationsReceivedInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutPatentProgressInput = {
@@ -4565,6 +5007,12 @@ export type UserCreateWithoutPatentProgressInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutPatentProgressInput = {
@@ -4620,6 +5068,12 @@ export type UserUncheckedCreateWithoutPatentProgressInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutPatentProgressInput = {
@@ -4691,6 +5145,12 @@ export type UserUpdateWithoutPatentProgressInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPatentProgressInput = {
@@ -4746,6 +5206,12 @@ export type UserUncheckedUpdateWithoutPatentProgressInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutPatentRewardClaimsInput = {
@@ -4801,6 +5267,12 @@ export type UserCreateWithoutPatentRewardClaimsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutPatentRewardClaimsInput = {
@@ -4856,6 +5328,12 @@ export type UserUncheckedCreateWithoutPatentRewardClaimsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutPatentRewardClaimsInput = {
@@ -4927,6 +5405,12 @@ export type UserUpdateWithoutPatentRewardClaimsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPatentRewardClaimsInput = {
@@ -4982,6 +5466,12 @@ export type UserUncheckedUpdateWithoutPatentRewardClaimsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutTreasuryEntriesAuthoredInput = {
@@ -5037,6 +5527,12 @@ export type UserCreateWithoutTreasuryEntriesAuthoredInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutTreasuryEntriesAuthoredInput = {
@@ -5092,6 +5588,12 @@ export type UserUncheckedCreateWithoutTreasuryEntriesAuthoredInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutTreasuryEntriesAuthoredInput = {
@@ -5163,6 +5665,12 @@ export type UserUpdateWithoutTreasuryEntriesAuthoredInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutTreasuryEntriesAuthoredInput = {
@@ -5218,6 +5726,12 @@ export type UserUncheckedUpdateWithoutTreasuryEntriesAuthoredInput = {
   patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutLessonsInput = {
@@ -5273,6 +5787,12 @@ export type UserCreateWithoutLessonsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutLessonsInput = {
@@ -5328,6 +5848,12 @@ export type UserUncheckedCreateWithoutLessonsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutLessonsInput = {
@@ -5399,6 +5925,12 @@ export type UserUpdateWithoutLessonsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLessonsInput = {
@@ -5454,6 +5986,12 @@ export type UserUncheckedUpdateWithoutLessonsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutLessonParticipationsInput = {
@@ -5509,6 +6047,12 @@ export type UserCreateWithoutLessonParticipationsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutLessonParticipationsInput = {
@@ -5564,6 +6108,12 @@ export type UserUncheckedCreateWithoutLessonParticipationsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutLessonParticipationsInput = {
@@ -5635,6 +6185,12 @@ export type UserUpdateWithoutLessonParticipationsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLessonParticipationsInput = {
@@ -5690,6 +6246,12 @@ export type UserUncheckedUpdateWithoutLessonParticipationsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutAttendancesInput = {
@@ -5745,6 +6307,12 @@ export type UserCreateWithoutAttendancesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutAttendancesInput = {
@@ -5800,6 +6368,12 @@ export type UserUncheckedCreateWithoutAttendancesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutAttendancesInput = {
@@ -5871,6 +6445,12 @@ export type UserUpdateWithoutAttendancesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAttendancesInput = {
@@ -5926,6 +6506,12 @@ export type UserUncheckedUpdateWithoutAttendancesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutXpEntriesInput = {
@@ -5981,6 +6567,12 @@ export type UserCreateWithoutXpEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutXpEntriesInput = {
@@ -6036,6 +6628,12 @@ export type UserUncheckedCreateWithoutXpEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutXpEntriesInput = {
@@ -6096,6 +6694,12 @@ export type UserCreateWithoutAuthoredXpInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredXpInput = {
@@ -6151,6 +6755,12 @@ export type UserUncheckedCreateWithoutAuthoredXpInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredXpInput = {
@@ -6222,6 +6832,12 @@ export type UserUpdateWithoutXpEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutXpEntriesInput = {
@@ -6277,6 +6893,12 @@ export type UserUncheckedUpdateWithoutXpEntriesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUpsertWithoutAuthoredXpInput = {
@@ -6343,6 +6965,12 @@ export type UserUpdateWithoutAuthoredXpInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredXpInput = {
@@ -6398,6 +7026,12 @@ export type UserUncheckedUpdateWithoutAuthoredXpInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutBehaviorsInput = {
@@ -6453,6 +7087,12 @@ export type UserCreateWithoutBehaviorsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutBehaviorsInput = {
@@ -6508,6 +7148,12 @@ export type UserUncheckedCreateWithoutBehaviorsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutBehaviorsInput = {
@@ -6568,6 +7214,12 @@ export type UserCreateWithoutRatedBehaviorsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutRatedBehaviorsInput = {
@@ -6623,6 +7275,12 @@ export type UserUncheckedCreateWithoutRatedBehaviorsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutRatedBehaviorsInput = {
@@ -6694,6 +7352,12 @@ export type UserUpdateWithoutBehaviorsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutBehaviorsInput = {
@@ -6749,6 +7413,12 @@ export type UserUncheckedUpdateWithoutBehaviorsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUpsertWithoutRatedBehaviorsInput = {
@@ -6815,6 +7485,12 @@ export type UserUpdateWithoutRatedBehaviorsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutRatedBehaviorsInput = {
@@ -6870,6 +7546,12 @@ export type UserUncheckedUpdateWithoutRatedBehaviorsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutCleanupsInput = {
@@ -6925,6 +7607,12 @@ export type UserCreateWithoutCleanupsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutCleanupsInput = {
@@ -6980,6 +7668,12 @@ export type UserUncheckedCreateWithoutCleanupsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutCleanupsInput = {
@@ -7040,6 +7734,12 @@ export type UserCreateWithoutConfirmedCleanupsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutConfirmedCleanupsInput = {
@@ -7095,6 +7795,12 @@ export type UserUncheckedCreateWithoutConfirmedCleanupsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutConfirmedCleanupsInput = {
@@ -7166,6 +7872,12 @@ export type UserUpdateWithoutCleanupsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCleanupsInput = {
@@ -7221,6 +7933,12 @@ export type UserUncheckedUpdateWithoutCleanupsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUpsertWithoutConfirmedCleanupsInput = {
@@ -7287,6 +8005,12 @@ export type UserUpdateWithoutConfirmedCleanupsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutConfirmedCleanupsInput = {
@@ -7342,6 +8066,12 @@ export type UserUncheckedUpdateWithoutConfirmedCleanupsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutAuthoredActivitiesInput = {
@@ -7397,6 +8127,12 @@ export type UserCreateWithoutAuthoredActivitiesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredActivitiesInput = {
@@ -7452,6 +8188,12 @@ export type UserUncheckedCreateWithoutAuthoredActivitiesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredActivitiesInput = {
@@ -7523,6 +8265,12 @@ export type UserUpdateWithoutAuthoredActivitiesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredActivitiesInput = {
@@ -7578,6 +8326,12 @@ export type UserUncheckedUpdateWithoutAuthoredActivitiesInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutAuthoredNotificationsInput = {
@@ -7633,6 +8387,12 @@ export type UserCreateWithoutAuthoredNotificationsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredNotificationsInput = {
@@ -7688,6 +8448,12 @@ export type UserUncheckedCreateWithoutAuthoredNotificationsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredNotificationsInput = {
@@ -7759,6 +8525,12 @@ export type UserUpdateWithoutAuthoredNotificationsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredNotificationsInput = {
@@ -7814,6 +8586,12 @@ export type UserUncheckedUpdateWithoutAuthoredNotificationsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutNotificationReceiptsInput = {
@@ -7869,6 +8647,12 @@ export type UserCreateWithoutNotificationReceiptsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutNotificationReceiptsInput = {
@@ -7924,6 +8708,12 @@ export type UserUncheckedCreateWithoutNotificationReceiptsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutNotificationReceiptsInput = {
@@ -7995,6 +8785,12 @@ export type UserUpdateWithoutNotificationReceiptsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutNotificationReceiptsInput = {
@@ -8050,6 +8846,12 @@ export type UserUncheckedUpdateWithoutNotificationReceiptsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutActivityRecipientsInput = {
@@ -8105,6 +8907,12 @@ export type UserCreateWithoutActivityRecipientsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutActivityRecipientsInput = {
@@ -8160,6 +8968,12 @@ export type UserUncheckedCreateWithoutActivityRecipientsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutActivityRecipientsInput = {
@@ -8231,6 +9045,12 @@ export type UserUpdateWithoutActivityRecipientsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityRecipientsInput = {
@@ -8286,6 +9106,12 @@ export type UserUncheckedUpdateWithoutActivityRecipientsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutActivitySubmissionsInput = {
@@ -8341,6 +9167,12 @@ export type UserCreateWithoutActivitySubmissionsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutActivitySubmissionsInput = {
@@ -8396,6 +9228,12 @@ export type UserUncheckedCreateWithoutActivitySubmissionsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutActivitySubmissionsInput = {
@@ -8467,6 +9305,12 @@ export type UserUpdateWithoutActivitySubmissionsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivitySubmissionsInput = {
@@ -8522,6 +9366,12 @@ export type UserUncheckedUpdateWithoutActivitySubmissionsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutActivityAnswersInput = {
@@ -8577,6 +9427,12 @@ export type UserCreateWithoutActivityAnswersInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutActivityAnswersInput = {
@@ -8632,6 +9488,12 @@ export type UserUncheckedCreateWithoutActivityAnswersInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutActivityAnswersInput = {
@@ -8703,6 +9565,12 @@ export type UserUpdateWithoutActivityAnswersInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityAnswersInput = {
@@ -8758,6 +9626,12 @@ export type UserUncheckedUpdateWithoutActivityAnswersInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutActivityTeamMembershipsInput = {
@@ -8813,6 +9687,12 @@ export type UserCreateWithoutActivityTeamMembershipsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutActivityTeamMembershipsInput = {
@@ -8868,6 +9748,12 @@ export type UserUncheckedCreateWithoutActivityTeamMembershipsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutActivityTeamMembershipsInput = {
@@ -8939,6 +9825,12 @@ export type UserUpdateWithoutActivityTeamMembershipsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityTeamMembershipsInput = {
@@ -8994,6 +9886,12 @@ export type UserUncheckedUpdateWithoutActivityTeamMembershipsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutActivityAwardsInput = {
@@ -9049,6 +9947,12 @@ export type UserCreateWithoutActivityAwardsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutActivityAwardsInput = {
@@ -9104,6 +10008,12 @@ export type UserUncheckedCreateWithoutActivityAwardsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutActivityAwardsInput = {
@@ -9175,6 +10085,12 @@ export type UserUpdateWithoutActivityAwardsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityAwardsInput = {
@@ -9230,6 +10146,12 @@ export type UserUncheckedUpdateWithoutActivityAwardsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserCreateWithoutAuditActionsInput = {
@@ -9285,6 +10207,12 @@ export type UserCreateWithoutAuditActionsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutAuditActionsInput = {
@@ -9340,6 +10268,12 @@ export type UserUncheckedCreateWithoutAuditActionsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutAuditActionsInput = {
@@ -9400,6 +10334,12 @@ export type UserCreateWithoutAuditTargetsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
 }
 
 export type UserUncheckedCreateWithoutAuditTargetsInput = {
@@ -9455,6 +10395,12 @@ export type UserUncheckedCreateWithoutAuditTargetsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
 }
 
 export type UserCreateOrConnectWithoutAuditTargetsInput = {
@@ -9526,6 +10472,12 @@ export type UserUpdateWithoutAuditActionsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuditActionsInput = {
@@ -9581,6 +10533,12 @@ export type UserUncheckedUpdateWithoutAuditActionsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUpsertWithoutAuditTargetsInput = {
@@ -9647,6 +10605,12 @@ export type UserUpdateWithoutAuditTargetsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuditTargetsInput = {
@@ -9702,6 +10666,1572 @@ export type UserUncheckedUpdateWithoutAuditTargetsInput = {
   treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
   devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
   devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+}
+
+export type UserCreateWithoutOwnedPongRoomsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
+}
+
+export type UserUncheckedCreateWithoutOwnedPongRoomsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
+}
+
+export type UserCreateOrConnectWithoutOwnedPongRoomsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutOwnedPongRoomsInput, Prisma.UserUncheckedCreateWithoutOwnedPongRoomsInput>
+}
+
+export type UserCreateWithoutWonPongRoomsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
+}
+
+export type UserUncheckedCreateWithoutWonPongRoomsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
+}
+
+export type UserCreateOrConnectWithoutWonPongRoomsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutWonPongRoomsInput, Prisma.UserUncheckedCreateWithoutWonPongRoomsInput>
+}
+
+export type UserCreateWithoutLostPongRoomsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
+}
+
+export type UserUncheckedCreateWithoutLostPongRoomsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
+}
+
+export type UserCreateOrConnectWithoutLostPongRoomsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutLostPongRoomsInput, Prisma.UserUncheckedCreateWithoutLostPongRoomsInput>
+}
+
+export type UserUpsertWithoutOwnedPongRoomsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutOwnedPongRoomsInput, Prisma.UserUncheckedUpdateWithoutOwnedPongRoomsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutOwnedPongRoomsInput, Prisma.UserUncheckedCreateWithoutOwnedPongRoomsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutOwnedPongRoomsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutOwnedPongRoomsInput, Prisma.UserUncheckedUpdateWithoutOwnedPongRoomsInput>
+}
+
+export type UserUpdateWithoutOwnedPongRoomsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
+}
+
+export type UserUncheckedUpdateWithoutOwnedPongRoomsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+}
+
+export type UserUpsertWithoutWonPongRoomsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutWonPongRoomsInput, Prisma.UserUncheckedUpdateWithoutWonPongRoomsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutWonPongRoomsInput, Prisma.UserUncheckedCreateWithoutWonPongRoomsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutWonPongRoomsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutWonPongRoomsInput, Prisma.UserUncheckedUpdateWithoutWonPongRoomsInput>
+}
+
+export type UserUpdateWithoutWonPongRoomsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
+}
+
+export type UserUncheckedUpdateWithoutWonPongRoomsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+}
+
+export type UserUpsertWithoutLostPongRoomsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutLostPongRoomsInput, Prisma.UserUncheckedUpdateWithoutLostPongRoomsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutLostPongRoomsInput, Prisma.UserUncheckedCreateWithoutLostPongRoomsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutLostPongRoomsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutLostPongRoomsInput, Prisma.UserUncheckedUpdateWithoutLostPongRoomsInput>
+}
+
+export type UserUpdateWithoutLostPongRoomsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
+}
+
+export type UserUncheckedUpdateWithoutLostPongRoomsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+}
+
+export type UserCreateWithoutPongPlayersInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
+}
+
+export type UserUncheckedCreateWithoutPongPlayersInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
+}
+
+export type UserCreateOrConnectWithoutPongPlayersInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutPongPlayersInput, Prisma.UserUncheckedCreateWithoutPongPlayersInput>
+}
+
+export type UserUpsertWithoutPongPlayersInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutPongPlayersInput, Prisma.UserUncheckedUpdateWithoutPongPlayersInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutPongPlayersInput, Prisma.UserUncheckedCreateWithoutPongPlayersInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutPongPlayersInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutPongPlayersInput, Prisma.UserUncheckedUpdateWithoutPongPlayersInput>
+}
+
+export type UserUpdateWithoutPongPlayersInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
+}
+
+export type UserUncheckedUpdateWithoutPongPlayersInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+}
+
+export type UserCreateWithoutPongJoinRequestsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
+}
+
+export type UserUncheckedCreateWithoutPongJoinRequestsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
+}
+
+export type UserCreateOrConnectWithoutPongJoinRequestsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutPongJoinRequestsInput, Prisma.UserUncheckedCreateWithoutPongJoinRequestsInput>
+}
+
+export type UserUpsertWithoutPongJoinRequestsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutPongJoinRequestsInput, Prisma.UserUncheckedUpdateWithoutPongJoinRequestsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutPongJoinRequestsInput, Prisma.UserUncheckedCreateWithoutPongJoinRequestsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutPongJoinRequestsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutPongJoinRequestsInput, Prisma.UserUncheckedUpdateWithoutPongJoinRequestsInput>
+}
+
+export type UserUpdateWithoutPongJoinRequestsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
+}
+
+export type UserUncheckedUpdateWithoutPongJoinRequestsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+}
+
+export type UserCreateWithoutPongPointsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+}
+
+export type UserUncheckedCreateWithoutPongPointsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+}
+
+export type UserCreateOrConnectWithoutPongPointsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutPongPointsInput, Prisma.UserUncheckedCreateWithoutPongPointsInput>
+}
+
+export type UserUpsertWithoutPongPointsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutPongPointsInput, Prisma.UserUncheckedUpdateWithoutPongPointsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutPongPointsInput, Prisma.UserUncheckedCreateWithoutPongPointsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutPongPointsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutPongPointsInput, Prisma.UserUncheckedUpdateWithoutPongPointsInput>
+}
+
+export type UserUpdateWithoutPongPointsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+}
+
+export type UserUncheckedUpdateWithoutPongPointsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 
@@ -9744,6 +12274,12 @@ export type UserCountOutputType = {
   treasuryEntriesAuthored: number
   devCoinTransfersSent: number
   devCoinTransfersReceived: number
+  ownedPongRooms: number
+  wonPongRooms: number
+  lostPongRooms: number
+  pongPlayers: number
+  pongJoinRequests: number
+  pongPoints: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -9781,6 +12317,12 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   treasuryEntriesAuthored?: boolean | UserCountOutputTypeCountTreasuryEntriesAuthoredArgs
   devCoinTransfersSent?: boolean | UserCountOutputTypeCountDevCoinTransfersSentArgs
   devCoinTransfersReceived?: boolean | UserCountOutputTypeCountDevCoinTransfersReceivedArgs
+  ownedPongRooms?: boolean | UserCountOutputTypeCountOwnedPongRoomsArgs
+  wonPongRooms?: boolean | UserCountOutputTypeCountWonPongRoomsArgs
+  lostPongRooms?: boolean | UserCountOutputTypeCountLostPongRoomsArgs
+  pongPlayers?: boolean | UserCountOutputTypeCountPongPlayersArgs
+  pongJoinRequests?: boolean | UserCountOutputTypeCountPongJoinRequestsArgs
+  pongPoints?: boolean | UserCountOutputTypeCountPongPointsArgs
 }
 
 /**
@@ -10031,6 +12573,48 @@ export type UserCountOutputTypeCountDevCoinTransfersReceivedArgs<ExtArgs extends
   where?: Prisma.DevCoinTransferWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountOwnedPongRoomsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PongRoomWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountWonPongRoomsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PongRoomWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountLostPongRoomsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PongRoomWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountPongPlayersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PongPlayerWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountPongJoinRequestsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PongJoinRequestWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountPongPointsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PongPointWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -10086,6 +12670,12 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   treasuryEntriesAuthored?: boolean | Prisma.User$treasuryEntriesAuthoredArgs<ExtArgs>
   devCoinTransfersSent?: boolean | Prisma.User$devCoinTransfersSentArgs<ExtArgs>
   devCoinTransfersReceived?: boolean | Prisma.User$devCoinTransfersReceivedArgs<ExtArgs>
+  ownedPongRooms?: boolean | Prisma.User$ownedPongRoomsArgs<ExtArgs>
+  wonPongRooms?: boolean | Prisma.User$wonPongRoomsArgs<ExtArgs>
+  lostPongRooms?: boolean | Prisma.User$lostPongRoomsArgs<ExtArgs>
+  pongPlayers?: boolean | Prisma.User$pongPlayersArgs<ExtArgs>
+  pongJoinRequests?: boolean | Prisma.User$pongJoinRequestsArgs<ExtArgs>
+  pongPoints?: boolean | Prisma.User$pongPointsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -10189,6 +12779,12 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   treasuryEntriesAuthored?: boolean | Prisma.User$treasuryEntriesAuthoredArgs<ExtArgs>
   devCoinTransfersSent?: boolean | Prisma.User$devCoinTransfersSentArgs<ExtArgs>
   devCoinTransfersReceived?: boolean | Prisma.User$devCoinTransfersReceivedArgs<ExtArgs>
+  ownedPongRooms?: boolean | Prisma.User$ownedPongRoomsArgs<ExtArgs>
+  wonPongRooms?: boolean | Prisma.User$wonPongRoomsArgs<ExtArgs>
+  lostPongRooms?: boolean | Prisma.User$lostPongRoomsArgs<ExtArgs>
+  pongPlayers?: boolean | Prisma.User$pongPlayersArgs<ExtArgs>
+  pongJoinRequests?: boolean | Prisma.User$pongJoinRequestsArgs<ExtArgs>
+  pongPoints?: boolean | Prisma.User$pongPointsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -10232,6 +12828,12 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     treasuryEntriesAuthored: Prisma.$DevCoinTreasuryEntryPayload<ExtArgs>[]
     devCoinTransfersSent: Prisma.$DevCoinTransferPayload<ExtArgs>[]
     devCoinTransfersReceived: Prisma.$DevCoinTransferPayload<ExtArgs>[]
+    ownedPongRooms: Prisma.$PongRoomPayload<ExtArgs>[]
+    wonPongRooms: Prisma.$PongRoomPayload<ExtArgs>[]
+    lostPongRooms: Prisma.$PongRoomPayload<ExtArgs>[]
+    pongPlayers: Prisma.$PongPlayerPayload<ExtArgs>[]
+    pongJoinRequests: Prisma.$PongJoinRequestPayload<ExtArgs>[]
+    pongPoints: Prisma.$PongPointPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -10681,6 +13283,12 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   treasuryEntriesAuthored<T extends Prisma.User$treasuryEntriesAuthoredArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$treasuryEntriesAuthoredArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DevCoinTreasuryEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   devCoinTransfersSent<T extends Prisma.User$devCoinTransfersSentArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$devCoinTransfersSentArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DevCoinTransferPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   devCoinTransfersReceived<T extends Prisma.User$devCoinTransfersReceivedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$devCoinTransfersReceivedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DevCoinTransferPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  ownedPongRooms<T extends Prisma.User$ownedPongRoomsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$ownedPongRoomsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PongRoomPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  wonPongRooms<T extends Prisma.User$wonPongRoomsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$wonPongRoomsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PongRoomPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  lostPongRooms<T extends Prisma.User$lostPongRoomsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$lostPongRoomsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PongRoomPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  pongPlayers<T extends Prisma.User$pongPlayersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$pongPlayersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PongPlayerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  pongJoinRequests<T extends Prisma.User$pongJoinRequestsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$pongJoinRequestsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PongJoinRequestPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  pongPoints<T extends Prisma.User$pongPointsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$pongPointsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PongPointPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -11953,6 +14561,150 @@ export type User$devCoinTransfersReceivedArgs<ExtArgs extends runtime.Types.Exte
   take?: number
   skip?: number
   distinct?: Prisma.DevCoinTransferScalarFieldEnum | Prisma.DevCoinTransferScalarFieldEnum[]
+}
+
+/**
+ * User.ownedPongRooms
+ */
+export type User$ownedPongRoomsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PongRoom
+   */
+  select?: Prisma.PongRoomSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PongRoom
+   */
+  omit?: Prisma.PongRoomOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PongRoomInclude<ExtArgs> | null
+  where?: Prisma.PongRoomWhereInput
+  orderBy?: Prisma.PongRoomOrderByWithRelationInput | Prisma.PongRoomOrderByWithRelationInput[]
+  cursor?: Prisma.PongRoomWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PongRoomScalarFieldEnum | Prisma.PongRoomScalarFieldEnum[]
+}
+
+/**
+ * User.wonPongRooms
+ */
+export type User$wonPongRoomsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PongRoom
+   */
+  select?: Prisma.PongRoomSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PongRoom
+   */
+  omit?: Prisma.PongRoomOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PongRoomInclude<ExtArgs> | null
+  where?: Prisma.PongRoomWhereInput
+  orderBy?: Prisma.PongRoomOrderByWithRelationInput | Prisma.PongRoomOrderByWithRelationInput[]
+  cursor?: Prisma.PongRoomWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PongRoomScalarFieldEnum | Prisma.PongRoomScalarFieldEnum[]
+}
+
+/**
+ * User.lostPongRooms
+ */
+export type User$lostPongRoomsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PongRoom
+   */
+  select?: Prisma.PongRoomSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PongRoom
+   */
+  omit?: Prisma.PongRoomOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PongRoomInclude<ExtArgs> | null
+  where?: Prisma.PongRoomWhereInput
+  orderBy?: Prisma.PongRoomOrderByWithRelationInput | Prisma.PongRoomOrderByWithRelationInput[]
+  cursor?: Prisma.PongRoomWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PongRoomScalarFieldEnum | Prisma.PongRoomScalarFieldEnum[]
+}
+
+/**
+ * User.pongPlayers
+ */
+export type User$pongPlayersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PongPlayer
+   */
+  select?: Prisma.PongPlayerSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PongPlayer
+   */
+  omit?: Prisma.PongPlayerOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PongPlayerInclude<ExtArgs> | null
+  where?: Prisma.PongPlayerWhereInput
+  orderBy?: Prisma.PongPlayerOrderByWithRelationInput | Prisma.PongPlayerOrderByWithRelationInput[]
+  cursor?: Prisma.PongPlayerWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PongPlayerScalarFieldEnum | Prisma.PongPlayerScalarFieldEnum[]
+}
+
+/**
+ * User.pongJoinRequests
+ */
+export type User$pongJoinRequestsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PongJoinRequest
+   */
+  select?: Prisma.PongJoinRequestSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PongJoinRequest
+   */
+  omit?: Prisma.PongJoinRequestOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PongJoinRequestInclude<ExtArgs> | null
+  where?: Prisma.PongJoinRequestWhereInput
+  orderBy?: Prisma.PongJoinRequestOrderByWithRelationInput | Prisma.PongJoinRequestOrderByWithRelationInput[]
+  cursor?: Prisma.PongJoinRequestWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PongJoinRequestScalarFieldEnum | Prisma.PongJoinRequestScalarFieldEnum[]
+}
+
+/**
+ * User.pongPoints
+ */
+export type User$pongPointsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PongPoint
+   */
+  select?: Prisma.PongPointSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PongPoint
+   */
+  omit?: Prisma.PongPointOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PongPointInclude<ExtArgs> | null
+  where?: Prisma.PongPointWhereInput
+  orderBy?: Prisma.PongPointOrderByWithRelationInput | Prisma.PongPointOrderByWithRelationInput[]
+  cursor?: Prisma.PongPointWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PongPointScalarFieldEnum | Prisma.PongPointScalarFieldEnum[]
 }
 
 /**

@@ -24,6 +24,8 @@
 | `20260928120000_add_sticker_album_and_treasury` | Album, mercado, estoque, patentes e tesouraria |
 | `20260928150000_add_sticker_market_switch` | Chave administrativa de compra e venda |
 | `20260929210000_add_student_dev_coin_transfers` | Transferencias entre alunos, taxa de XP e trilha auditavel |
+| `20261002120000_rebalance_global_patent_ladder` | Reequilibrio versionado da escada global de patentes |
+| `20261006120000_add_pong_multiplayer` | Pong multiplayer, pedidos de entrada, custodia de apostas, placar e bloqueio dos minigames |
 
 ## Procedimento seguro de alteracao
 
@@ -53,6 +55,7 @@ A configuracao e adequada a um runtime Node/serverless com Neon:
 - Prisma usa o adaptador Neon;
 - `postinstall` gera o client;
 - `npm run build` usa `next build --webpack`.
+- `REDIS_URL` (ou `KV_URL`) compartilha presenca e estado rapido do Pong entre instancias WebSocket.
 
 Um build verde nao comprova que a URL do banco, segredos, migracoes e fluxos autenticados estejam corretos no ambiente publicado. Depois do deploy, valide separadamente login de professor/aluno, check-in, leitura e escrita no banco, e ao menos uma operacao reversivel de cada fluxo critico.
 
