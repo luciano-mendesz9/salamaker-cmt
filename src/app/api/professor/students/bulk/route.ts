@@ -1,21 +1,11 @@
 import {randomUUID} from "node:crypto";import {NextResponse} from "next/server";import {z} from "zod";import {prisma} from "@/lib/db";import {apiError,requireTeacher,verifyAdminActionPassword} from "@/lib/authorization";
 import { requireCollectiblesSchema } from "@/lib/feature-readiness";
-const monetaryAction = {
-  ids: z.array(z.string().uuid()).min(1).max(100),
-  amount: z.number().int().min(1).max(10_000),
-  reason: z.string().trim().min(3).max(160),
-  adminPassword: z.string(),
-};
-const schema = z.discriminatedUnion("action", [
-  z.object({ action: z.literal("XP"), ...monetaryAction }),
-  z.object({ action: z.literal("DEV_COINS"), ...monetaryAction }),
-  z.object({ action: z.literal("ARCHIVE"), ids: monetaryAction.ids, adminPassword: z.string() }),
-]);
+import { studentBulkActionSchema } from "@/lib/student-bulk-actions";
 
 export async function POST(request: Request) {
   try {
     const teacher = await requireTeacher();
-    const body = schema.parse(await request.json());
+    const body = studentBulkActionSchema.parse(await request.json());
     verifyAdminActionPassword(body.adminPassword);
     const students = await prisma.user.findMany({
       where: { id: { in: body.ids }, role: "STUDENT", status: "ACTIVE" },
