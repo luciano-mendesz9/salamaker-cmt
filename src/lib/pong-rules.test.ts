@@ -9,11 +9,11 @@ import {
   stepPongPhysics,
 } from "./pong-rules";
 
-test("Pong entrega 70% inteiro ao vencedor e conserva o restante como imposto", () => {
-  assert.deepEqual(pongSettlement(10), { total: 20, winnerPayout: 14, taxAmount: 6 });
-  assert.deepEqual(pongSettlement(11), { total: 22, winnerPayout: 15, taxAmount: 7 });
-  assert.throws(() => pongSettlement(9), /INVALID_WAGER/);
-  assert.throws(() => pongSettlement(101), /INVALID_WAGER/);
+test("Pong entrega 85% inteiro ao vencedor e conserva o restante como imposto", () => {
+  assert.deepEqual(pongSettlement(11), { total: 22, winnerPayout: 18, taxAmount: 4 });
+  assert.deepEqual(pongSettlement(50), { total: 100, winnerPayout: 85, taxAmount: 15 });
+  assert.throws(() => pongSettlement(10), /INVALID_WAGER/);
+  assert.throws(() => pongSettlement(501), /INVALID_WAGER/);
 });
 
 test("Pong registra ponto do convidado quando a bola sai pela parte inferior", () => {

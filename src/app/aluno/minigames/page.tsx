@@ -1,11 +1,24 @@
+import Link from "next/link";
+import { Bot, Brain, Gamepad2, Grid3X3, Smartphone, Sparkles, Trophy } from "lucide-react";
+import { Brand } from "@/components/brand";
 import { GamesDisabled } from "@/components/games-disabled";
-import { PongLobby } from "@/components/pong-lobby";
+import { LogoutButton } from "@/components/logout-button";
 import { requireStudent } from "@/lib/authorization";
-import { getPongLobby } from "@/lib/pong-service";
+import { prisma } from "@/lib/db";
+
+export const metadata = { title: "Minigames" };
 
 export default async function MinigamesPage() {
   const { student } = await requireStudent();
-  const lobby = await getPongLobby(student.id);
-  if (!lobby.gamesEnabled) return <GamesDisabled/>;
-  return <PongLobby initial={lobby} studentName={student.firstName}/>;
+  const settings = await prisma.appSetting.upsert({ where: { id: 1 }, create: { id: 1 }, update: {}, select: { gamesEnabled: true } });
+  if (!settings.gamesEnabled) return <GamesDisabled/>;
+  return <main className="mesh min-h-screen"><div className="mx-auto max-w-6xl px-5 pb-20 sm:px-8">
+    <header className="flex h-20 items-center justify-between border-b border-white/7"><Brand context="Arcade"/><div className="flex items-center gap-2"><Link href="/aluno" className="button-secondary py-2 text-sm">Voltar</Link><LogoutButton/></div></header>
+    <section className="mt-9 overflow-hidden rounded-3xl border border-cyan-300/20 bg-gradient-to-br from-[#071a24] via-[#0d1427] to-[#20102e] p-6 sm:p-9"><p className="eyebrow flex items-center gap-2"><Sparkles size={16}/>Sala Maker Arcade</p><h1 className="mt-3 font-display text-3xl font-black sm:text-5xl">Escolha seu próximo desafio</h1><p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">Olá, {student.firstName}. Todas as partidas são grátis para abrir. Nos modos multiplayer, cada jogador entra apenas com a aposta combinada.</p><div className="mt-5 flex flex-wrap gap-2 text-xs font-bold text-cyan-100"><span className="rounded-full bg-cyan-300/10 px-3 py-2">📱 Jogos para celular</span><span className="rounded-full bg-fuchsia-300/10 px-3 py-2">🧠 Estratégia</span><span className="rounded-full bg-amber-300/10 px-3 py-2">🏆 XP e rankings</span></div></section>
+    <section className="mt-7 grid gap-5 md:grid-cols-3"><GameCard href="/aluno/minigames/pong" icon={Gamepad2} eyebrow="Multiplayer" title="Pong" description="Duelo em tempo real até 10 pontos. Aposta, saque acelerado e 25 XP para o vencedor." accent="cyan" badges={["Computador", "2 jogadores"]}/><GameCard href="/aluno/minigames/jogo-da-velha" icon={Grid3X3} eyebrow="3 modos" title="Jogo da velha" description="Enfrente a máquina, reveze o celular com um amigo ou dispute uma sala online com revanche." accent="fuchsia" badges={["Celular", "IA + multiplayer"]}/><GameCard href="/aluno/minigames/sudoku" icon={Brain} eyebrow="5 dificuldades" title="Sudoku" description="Resolva o tabuleiro com cronômetro, teclado móvel, dicas limitadas e ranking por menor tempo." accent="amber" badges={["Celular", "30–180 XP"]}/></section>
+    <section className="glass mt-7 grid gap-5 rounded-3xl p-6 sm:grid-cols-3"><MiniFeature icon={Smartphone} title="Feito para tocar" text="Jogo da velha e Sudoku têm controles grandes e responsivos."/><MiniFeature icon={Bot} title="Adversário de verdade" text="A máquina do jogo da velha analisa todas as jogadas possíveis."/><MiniFeature icon={Trophy} title="Competição justa" text="Sudokus com dica ou erro extra dão XP, mas não entram no ranking."/></section>
+  </div></main>;
 }
+
+function GameCard({ href, icon: Icon, eyebrow, title, description, accent, badges }: { href: string; icon: typeof Gamepad2; eyebrow: string; title: string; description: string; accent: "cyan" | "fuchsia" | "amber"; badges: string[] }) { const styles = { cyan: "border-cyan-300/20 hover:border-cyan-300/60 text-cyan-300", fuchsia: "border-fuchsia-300/20 hover:border-fuchsia-300/60 text-fuchsia-300", amber: "border-amber-300/20 hover:border-amber-300/60 text-amber-300" }[accent]; return <Link href={href} className={`group rounded-3xl border bg-[#101928]/90 p-6 transition hover:-translate-y-1 hover:bg-[#142137] ${styles}`}><div className="flex items-center justify-between"><span className="rounded-2xl bg-white/5 p-3"><Icon size={30}/></span><span className="text-[10px] font-black uppercase tracking-[.22em] opacity-80">{eyebrow}</span></div><h2 className="mt-6 font-display text-2xl font-black text-white">{title}</h2><p className="mt-3 min-h-20 text-sm leading-relaxed text-slate-400">{description}</p><div className="mt-5 flex flex-wrap gap-2">{badges.map((badge) => <span key={badge} className="rounded-full bg-white/5 px-3 py-1.5 text-[11px] font-bold text-slate-300">{badge}</span>)}</div><span className="mt-6 inline-flex font-bold text-white transition group-hover:translate-x-1">Jogar agora →</span></Link>; }
+function MiniFeature({ icon: Icon, title, text }: { icon: typeof Smartphone; title: string; text: string }) { return <div className="flex gap-3"><Icon className="mt-1 shrink-0 text-blue-300" size={20}/><div><h3 className="font-bold">{title}</h3><p className="mt-1 text-xs leading-relaxed text-slate-400">{text}</p></div></div>; }

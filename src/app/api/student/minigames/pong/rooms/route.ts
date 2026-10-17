@@ -7,7 +7,7 @@ import { pongRoomChannel, publishPongEvent } from "@/lib/pong-realtime";
 import { createPongRoom, getPongLobby, makePongRoomCode, pongRoomDto } from "@/lib/pong-service";
 import { assertSameOrigin, consumeRateLimit } from "@/lib/request-security";
 
-const createInput = z.object({ wager: z.number().int().min(10).max(100), requestId: z.string().uuid() });
+const createInput = z.object({ wager: z.number().int().min(11).max(500), requestId: z.string().uuid() });
 
 export async function GET() {
   try {

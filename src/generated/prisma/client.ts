@@ -256,3 +256,23 @@ export type PongJoinRequest = Prisma.PongJoinRequestModel
  *
  */
 export type PongPoint = Prisma.PongPointModel
+/**
+ * Model TicTacToeRoom
+ *
+ */
+export type TicTacToeRoom = Prisma.TicTacToeRoomModel
+/**
+ * Model TicTacToeRound
+ *
+ */
+export type TicTacToeRound = Prisma.TicTacToeRoundModel
+/**
+ * Model SudokuGame
+ *
+ */
+export type SudokuGame = Prisma.SudokuGameModel
+/**
+ * Model SudokuAction
+ *
+ */
+export type SudokuAction = Prisma.SudokuActionModel

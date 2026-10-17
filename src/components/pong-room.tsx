@@ -5,7 +5,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Check, Clock3, Gamepad2, LogOut, Radio, Trophy, UserRound, WifiOff, X } from "lucide-react";
 import { toast } from "sonner";
 import { PongCanvas } from "@/components/pong-canvas";
-import { createPongPhysicsState, PONG_LOSER_XP_PENALTY, type PongPhysicsState, type PongSeat } from "@/lib/pong-rules";
+import { createPongPhysicsState, PONG_WINNER_XP_REWARD, type PongPhysicsState, type PongSeat } from "@/lib/pong-rules";
 
 type Player = {
   id: string;
@@ -197,7 +197,7 @@ export function PongRoom({ initialRoom, studentId }: { initialRoom: Room; studen
         <div className="mb-4 grid grid-cols-[1fr_auto_1fr] items-center gap-5"><PlayerLabel name={opponent ? `${opponent.student.firstName} ${opponent.student.lastName}` : "Adversário"} detail="adversário · raquete superior" align="left"/><div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-6 py-3"><span className="text-3xl font-black text-fuchsia-300">{opponentScore}</span><span className="text-slate-600">×</span><span className="text-3xl font-black text-cyan-300">{viewerScore}</span></div><PlayerLabel name={viewer ? `${viewer.student.firstName} ${viewer.student.lastName}` : "Você"} detail="você · raquete inferior" align="right"/></div>
         {disconnecting && <div className="mb-4 flex items-center gap-3 rounded-2xl border border-amber-300/25 bg-amber-300/10 p-4 text-sm text-amber-100"><WifiOff size={19}/><strong>{disconnecting.studentId === studentId ? "Você está reconectando." : `${disconnecting.student.firstName} desconectou.`}</strong><span>Derrota por desconexão em {disconnectSeconds ?? 180}s se a conexão não voltar.</span></div>}
         <PongCanvas frame={frame} viewerSeat={room.viewerSeat}/>
-        <div className="mt-4 flex items-center justify-between"><div><p className="font-bold text-cyan-200">Mover: A / D ou ← / →</p><p className="mt-1 text-xs text-slate-500">Primeiro a 10 pontos vence · velocidade nível {frame.speedLevel + 1}</p></div><button disabled={busy !== null} onClick={() => { if (window.confirm("Desistir agora? Você perderá a aposta e 50 XP.")) void mutate("forfeit"); }} className="inline-flex items-center gap-2 rounded-xl border border-rose-300/25 px-4 py-3 text-sm font-bold text-rose-200"><LogOut size={17}/>Desistir da partida</button></div>
+        <div className="mt-4 flex items-center justify-between"><div><p className="font-bold text-cyan-200">Mover: A / D ou ← / →</p><p className="mt-1 text-xs text-slate-500">Primeiro a 10 pontos vence · velocidade nível {frame.speedLevel + 1}</p></div><button disabled={busy !== null} onClick={() => { if (window.confirm("Desistir agora entrega a aposta e a vitória ao adversário. Continuar?")) void mutate("forfeit"); }} className="inline-flex items-center gap-2 rounded-xl border border-rose-300/25 px-4 py-3 text-sm font-bold text-rose-200"><LogOut size={17}/>Desistir da partida</button></div>
       </div>}
 
       {room.status === "FINISHED" && <Result room={room} studentId={studentId}/>}
@@ -218,7 +218,7 @@ function Result({ room, studentId }: { room: Room; studentId: string }) {
     <p className="relative mt-6 text-xs font-bold uppercase tracking-[.24em] text-slate-400">Partida encerrada por {reason}</p>
     <h1 className="relative mt-3 font-display text-5xl font-black">{won ? "Você venceu!" : "Você perdeu"}</h1>
     <p className="relative mt-4 text-lg text-slate-300">Placar final: {room.ownerScore} × {room.guestScore}</p>
-    <div className="relative mx-auto mt-7 grid max-w-xl grid-cols-3 gap-3"><Fact label={won ? "Seu prêmio" : "Aposta perdida"} value={won ? `+${room.winnerPayout} DC` : `-${room.wager} DC`}/><Fact label="Imposto" value={`${room.taxAmount} DC`}/><Fact label="XP do perdedor" value={`-${PONG_LOSER_XP_PENALTY} XP`}/></div>
+    <div className="relative mx-auto mt-7 grid max-w-xl grid-cols-3 gap-3"><Fact label={won ? "Seu prêmio" : "Aposta perdida"} value={won ? `+${room.winnerPayout} DC` : `-${room.wager} DC`}/><Fact label="Imposto" value={`${room.taxAmount} DC`}/><Fact label="XP do vencedor" value={`+${PONG_WINNER_XP_REWARD} XP`}/></div>
     <div className="relative mt-8 flex justify-center gap-3"><Link href="/aluno/minigames" className="button-primary">Jogar novamente</Link><Link href="/aluno" className="button-secondary">Voltar ao painel</Link></div>
   </section>;
 }

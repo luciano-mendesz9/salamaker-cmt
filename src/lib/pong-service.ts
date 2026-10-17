@@ -5,10 +5,10 @@ import {
   PONG_DAILY_ROOM_LIMIT,
   PONG_DISCONNECT_GRACE_MS,
   PONG_JOIN_REQUEST_TTL_MS,
-  PONG_LOSER_XP_PENALTY,
   PONG_MAX_WAGER,
   PONG_MIN_WAGER,
   PONG_ROOM_FEE,
+  PONG_WINNER_XP_REWARD,
   PONG_WIN_SCORE,
   pongSettlement,
   type PongSeat,
@@ -142,11 +142,8 @@ export async function createPongRoom(
   const creationDay = getSchoolDay().key;
   const createdToday = await tx.pongRoom.count({ where: { ownerId: studentId, creationDay } });
   if (createdToday >= PONG_DAILY_ROOM_LIMIT) throw new PongError("DAILY_ROOM_LIMIT");
-  const debit = await tx.user.updateMany({
-    where: { id: studentId, role: "STUDENT", status: "ACTIVE", devCoins: { gte: PONG_ROOM_FEE + wager } },
-    data: { devCoins: { decrement: PONG_ROOM_FEE } },
-  });
-  if (debit.count !== 1) throw new PongError("INSUFFICIENT_DEV_COINS");
+  const student = await tx.user.findFirst({ where: { id: studentId, role: "STUDENT", status: "ACTIVE" }, select: { devCoins: true } });
+  if (!student || student.devCoins < wager) throw new PongError("INSUFFICIENT_DEV_COINS");
 
   const room = await tx.pongRoom.create({
     data: {
@@ -158,22 +155,6 @@ export async function createPongRoom(
       creationDay,
       players: { create: { studentId, seat: "OWNER" } },
     },
-  });
-  const feeEntry = await tx.devCoinEntry.create({
-    data: {
-      studentId,
-      authorId: studentId,
-      delta: -PONG_ROOM_FEE,
-      reason: `Abertura da sala Pong ${code}`,
-      source: "PONG_ROOM_FEE",
-      idempotencyKey: `${creationKey}:fee`,
-    },
-  });
-  await creditTreasury(tx, PONG_ROOM_FEE, {
-    reason: `Taxa de abertura da sala Pong ${code}`,
-    source: "PONG_ROOM_FEE",
-    idempotencyKey: `${creationKey}:treasury`,
-    devCoinEntryId: feeEntry.id,
   });
   await tx.auditLog.create({
     data: { actorId: studentId, targetId: studentId, event: "PONG_ROOM_CREATED", details: { roomId: room.id, code, wager, roomFee: PONG_ROOM_FEE, creationDay } },
@@ -308,9 +289,9 @@ async function settlePongRoom(tx: Tx, room: RoomGraph, winnerId: string, loserId
   await tx.devCoinEntry.create({
     data: { studentId: winnerId, delta: winnerPayout, reason: `Vitória no Pong — sala ${room.code}`, source: "PONG_PRIZE", idempotencyKey: `pong:${room.id}:payout:${winnerId}` },
   });
-  await tx.user.update({ where: { id: loserId }, data: { xp: { decrement: PONG_LOSER_XP_PENALTY } } });
+  await tx.user.update({ where: { id: winnerId }, data: { xp: { increment: PONG_WINNER_XP_REWARD } } });
   await tx.xpEntry.create({
-    data: { studentId: loserId, delta: -PONG_LOSER_XP_PENALTY, reason: `${finishReason === "DISCONNECTION" ? "Derrota por desconexão" : finishReason === "FORFEIT" ? "Desistência" : "Derrota"} no Pong — sala ${room.code}`, source: "PONG_RESULT", idempotencyKey: `pong:${room.id}:loser-xp:${loserId}` },
+    data: { studentId: winnerId, delta: PONG_WINNER_XP_REWARD, reason: `Vitória no Pong — sala ${room.code}`, source: "PONG_RESULT", idempotencyKey: `pong:${room.id}:winner-xp:${winnerId}` },
   });
   await creditTreasury(tx, taxAmount, { reason: `Imposto da partida Pong ${room.code}`, source: "PONG_MATCH_TAX", idempotencyKey: `pong:${room.id}:tax` });
   await tx.pongPlayer.update({ where: { id: winner.id }, data: { status: "FINISHED", payout: winnerPayout, connected: false } });
@@ -320,7 +301,7 @@ async function settlePongRoom(tx: Tx, room: RoomGraph, winnerId: string, loserId
     data: { status: "FINISHED", winnerId, loserId, finishReason, winnerPayout, taxAmount, escrowBalance: 0, finishedAt: new Date() },
   });
   await tx.auditLog.create({
-    data: { actorId: winnerId, targetId: loserId, event: "PONG_MATCH_FINISHED", details: { roomId: room.id, code: room.code, finishReason, winnerId, loserId, winnerPayout, taxAmount, loserXp: -PONG_LOSER_XP_PENALTY, ownerScore: room.ownerScore, guestScore: room.guestScore } },
+    data: { actorId: winnerId, targetId: loserId, event: "PONG_MATCH_FINISHED", details: { roomId: room.id, code: room.code, finishReason, winnerId, loserId, winnerPayout, taxAmount, winnerXp: PONG_WINNER_XP_REWARD, ownerScore: room.ownerScore, guestScore: room.guestScore } },
   });
   return roomWithGraph(tx, room.id);
 }

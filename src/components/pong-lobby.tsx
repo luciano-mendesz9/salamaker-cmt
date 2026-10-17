@@ -7,7 +7,7 @@ import { Coins, Gamepad2, Hash, Laptop, ShieldAlert, Trophy, UsersRound, Zap } f
 import { toast } from "sonner";
 import { Brand } from "@/components/brand";
 import { LogoutButton } from "@/components/logout-button";
-import { PONG_DAILY_ROOM_LIMIT, PONG_ROOM_FEE, pongSettlement } from "@/lib/pong-rules";
+import { PONG_DAILY_ROOM_LIMIT, PONG_MAX_WAGER, PONG_MIN_WAGER, pongSettlement } from "@/lib/pong-rules";
 
 type Lobby = {
   gamesEnabled: boolean;
@@ -22,10 +22,11 @@ type Lobby = {
 export function PongLobby({ initial, studentName }: { initial: Lobby; studentName: string }) {
   const router = useRouter();
   const [lobby, setLobby] = useState(initial);
-  const [wager, setWager] = useState(10);
+  const [wager, setWager] = useState(PONG_MIN_WAGER);
   const [code, setCode] = useState("");
   const [busy, setBusy] = useState<"create" | "join" | null>(null);
-  const settlement = pongSettlement(wager);
+  const validWager = Number.isInteger(wager) && wager >= PONG_MIN_WAGER && wager <= PONG_MAX_WAGER;
+  const settlement = pongSettlement(validWager ? wager : PONG_MIN_WAGER);
 
   useEffect(() => {
     if (!lobby.pendingRequest) return;
@@ -68,7 +69,7 @@ export function PongLobby({ initial, studentName }: { initial: Lobby; studentNam
 
   return <main className="mesh min-h-screen">
     <div className="mx-auto max-w-6xl px-5 pb-16 sm:px-8">
-      <header className="flex h-20 items-center justify-between border-b border-white/7"><Brand context="Minigames"/><div className="flex items-center gap-2"><Link href="/aluno" className="button-secondary py-2 text-sm">Voltar</Link><LogoutButton/></div></header>
+      <header className="flex h-20 items-center justify-between border-b border-white/7"><Brand context="Pong"/><div className="flex items-center gap-2"><Link href="/aluno/minigames" className="button-secondary py-2 text-sm">Vitrine</Link><LogoutButton/></div></header>
       <section className="md:hidden"><div className="glass mt-10 rounded-3xl p-8 text-center"><Laptop className="mx-auto text-cyan-300" size={42}/><h1 className="mt-5 font-display text-2xl font-bold">Pong disponível no computador</h1><p className="mt-3 text-sm leading-relaxed text-slate-400">Este minigame usa teclado e tela ampla. Abra esta página em um computador para criar ou entrar em uma partida.</p></div></section>
       <div className="hidden md:block">
         <section className="mt-9 overflow-hidden rounded-3xl border border-cyan-300/20 bg-gradient-to-br from-[#071a24] via-[#071018] to-[#170b21] p-8">
@@ -76,9 +77,9 @@ export function PongLobby({ initial, studentName }: { initial: Lobby; studentNam
         </section>
 
         <section className="mt-6 grid gap-4 lg:grid-cols-4">
-          <Rule icon={Coins} title="Taxa + aposta" text="Criar custa 50 DC. A aposta de cada jogador, entre 10 e 100 DC, só é debitada quando a partida começa."/>
-          <Rule icon={Trophy} title="Prêmio e imposto" text="O vencedor recebe 70% das duas apostas somadas. Os 30% restantes são o imposto da partida."/>
-          <Rule icon={Zap} title="Derrota" text="O perdedor perde os Dev-Coins apostados e 50 XP, inclusive em desistência ou derrota por desconexão."/>
+          <Rule icon={Coins} title="Entrada grátis" text="Criar a sala custa 0 DC. Cada jogador paga apenas sua aposta, entre 11 e 500 DC, quando a partida começa."/>
+          <Rule icon={Trophy} title="Prêmio e imposto" text="O vencedor recebe 85% das duas apostas somadas. Os 15% restantes entram no caixa da plataforma."/>
+          <Rule icon={Zap} title="Vitória" text="Além do prêmio em Dev-Coins, o vencedor ganha 25 XP. O perdedor não sofre desconto de XP."/>
           <Rule icon={ShieldAlert} title="Desconexão" text="Após 3 minutos desconectado, o jogador perde e quem permaneceu na sala vence."/>
         </section>
 
@@ -87,12 +88,12 @@ export function PongLobby({ initial, studentName }: { initial: Lobby; studentNam
         {lobby.pendingRequest ? <section className="glass mt-6 rounded-2xl border border-fuchsia-300/20 p-6 text-center"><UsersRound className="mx-auto text-fuchsia-300"/><h2 className="mt-3 font-display text-xl font-bold">Pedido enviado para a sala {lobby.pendingRequest.room.code}</h2><p className="mt-2 text-sm text-slate-400">Aguardando o dono permitir sua entrada. Esta tela atualiza automaticamente.</p><span className="mt-4 inline-flex animate-pulse rounded-full bg-fuchsia-300/10 px-4 py-2 text-xs font-bold text-fuchsia-200">Aguardando resposta…</span></section> : !lobby.currentRoom && <div className="mt-6 grid gap-6 lg:grid-cols-2">
           <section className="glass rounded-3xl p-7">
             <p className="eyebrow">Criar partida</p><h2 className="mt-2 font-display text-2xl font-bold">Sua sala, suas regras de aposta</h2>
-            <label className="mt-6 block text-sm font-bold"><span className="mb-2 block">Aposta de cada jogador</span><input className="input" type="number" min="10" max="100" value={wager} onChange={(event) => setWager(Number(event.target.value))}/></label>
-            <input aria-label="Aposta" className="mt-3 w-full accent-cyan-400" type="range" min="10" max="100" value={wager} onChange={(event) => setWager(Number(event.target.value))}/>
+            <label className="mt-6 block text-sm font-bold"><span className="mb-2 block">Aposta de cada jogador</span><input className="input" type="number" min={PONG_MIN_WAGER} max={PONG_MAX_WAGER} value={wager} onChange={(event) => setWager(Number(event.target.value))}/></label>
+            <input aria-label="Aposta" className="mt-3 w-full accent-cyan-400" type="range" min={PONG_MIN_WAGER} max={PONG_MAX_WAGER} value={wager} onChange={(event) => setWager(Number(event.target.value))}/>
             <div className="mt-5 grid grid-cols-3 gap-3 text-center text-sm"><Summary label="Total apostado" value={`${settlement.total} DC`}/><Summary label="Vencedor" value={`${settlement.winnerPayout} DC`}/><Summary label="Imposto" value={`${settlement.taxAmount} DC`}/></div>
-            <p className="mt-4 text-xs leading-relaxed text-slate-500">Quando 70% resultar em fração, o prêmio é arredondado para baixo e a diferença menor que 1 DC permanece no imposto. Limite: {PONG_DAILY_ROOM_LIMIT} salas por dia; restam {lobby.remainingCreations} hoje.</p>
-            <button disabled={busy !== null || lobby.remainingCreations === 0 || !Number.isInteger(wager) || wager < 10 || wager > 100 || lobby.devCoins < PONG_ROOM_FEE + wager} onClick={createRoom} className="button-primary mt-6 w-full">{busy === "create" ? "Aguarde..." : `Criar sala por ${PONG_ROOM_FEE} DC`}</button>
-            {lobby.devCoins < PONG_ROOM_FEE + wager && <p className="mt-3 text-center text-xs font-bold text-rose-300">Você precisa de pelo menos {PONG_ROOM_FEE + wager} DC para criar esta sala e reservar capacidade para a aposta.</p>}
+            <p className="mt-4 text-xs leading-relaxed text-slate-500">Quando 85% resultar em fração, o prêmio é arredondado para baixo e a diferença permanece no imposto. Limite: {PONG_DAILY_ROOM_LIMIT} salas por dia; restam {lobby.remainingCreations} hoje.</p>
+            <button disabled={busy !== null || lobby.remainingCreations === 0 || !validWager || lobby.devCoins < wager} onClick={createRoom} className="button-primary mt-6 w-full">{busy === "create" ? "Aguarde..." : "Criar sala grátis"}</button>
+            {lobby.devCoins < wager && <p className="mt-3 text-center text-xs font-bold text-rose-300">Você precisa de pelo menos {wager} DC para bancar sua aposta quando o jogo começar.</p>}
           </section>
           <section className="glass rounded-3xl p-7">
             <p className="eyebrow">Entrar em uma partida</p><h2 className="mt-2 font-display text-2xl font-bold">Digite o código da sala</h2><p className="mt-3 text-sm leading-relaxed text-slate-400">O dono verá “{studentName} quer entrar na partida” e poderá permitir ou recusar.</p>

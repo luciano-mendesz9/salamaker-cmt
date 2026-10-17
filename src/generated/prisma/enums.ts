@@ -64,7 +64,9 @@ export const XpSource = {
   PROFILE_AVATAR: 'PROFILE_AVATAR',
   DEV_COIN_PURCHASE: 'DEV_COIN_PURCHASE',
   DEV_COIN_TRANSFER: 'DEV_COIN_TRANSFER',
-  PONG_RESULT: 'PONG_RESULT'
+  PONG_RESULT: 'PONG_RESULT',
+  TIC_TAC_TOE_RESULT: 'TIC_TAC_TOE_RESULT',
+  SUDOKU_RESULT: 'SUDOKU_RESULT'
 } as const
 
 export type XpSource = (typeof XpSource)[keyof typeof XpSource]
@@ -96,7 +98,17 @@ export const AuditEvent = {
   PONG_JOIN_RESPONDED: 'PONG_JOIN_RESPONDED',
   PONG_MATCH_STARTED: 'PONG_MATCH_STARTED',
   PONG_MATCH_FINISHED: 'PONG_MATCH_FINISHED',
-  PONG_ROOM_CANCELLED: 'PONG_ROOM_CANCELLED'
+  PONG_ROOM_CANCELLED: 'PONG_ROOM_CANCELLED',
+  TIC_TAC_TOE_ROOM_CREATED: 'TIC_TAC_TOE_ROOM_CREATED',
+  TIC_TAC_TOE_MATCH_STARTED: 'TIC_TAC_TOE_MATCH_STARTED',
+  TIC_TAC_TOE_MOVE_PLAYED: 'TIC_TAC_TOE_MOVE_PLAYED',
+  TIC_TAC_TOE_MATCH_FINISHED: 'TIC_TAC_TOE_MATCH_FINISHED',
+  TIC_TAC_TOE_REMATCH_REQUESTED: 'TIC_TAC_TOE_REMATCH_REQUESTED',
+  TIC_TAC_TOE_ROOM_CANCELLED: 'TIC_TAC_TOE_ROOM_CANCELLED',
+  SUDOKU_GAME_STARTED: 'SUDOKU_GAME_STARTED',
+  SUDOKU_HINT_USED: 'SUDOKU_HINT_USED',
+  SUDOKU_EXTRA_ERRORS_PURCHASED: 'SUDOKU_EXTRA_ERRORS_PURCHASED',
+  SUDOKU_GAME_FINISHED: 'SUDOKU_GAME_FINISHED'
 } as const
 
 export type AuditEvent = (typeof AuditEvent)[keyof typeof AuditEvent]
@@ -114,7 +126,10 @@ export const DevCoinSource = {
   TRANSFER_RECEIVED: 'TRANSFER_RECEIVED',
   PONG_ROOM_FEE: 'PONG_ROOM_FEE',
   PONG_WAGER: 'PONG_WAGER',
-  PONG_PRIZE: 'PONG_PRIZE'
+  PONG_PRIZE: 'PONG_PRIZE',
+  TIC_TAC_TOE_WAGER: 'TIC_TAC_TOE_WAGER',
+  TIC_TAC_TOE_PRIZE: 'TIC_TAC_TOE_PRIZE',
+  SUDOKU_EXTRA_ERRORS: 'SUDOKU_EXTRA_ERRORS'
 } as const
 
 export type DevCoinSource = (typeof DevCoinSource)[keyof typeof DevCoinSource]
@@ -196,10 +211,50 @@ export const TreasuryEntrySource = {
   ADMIN_MINT: 'ADMIN_MINT',
   ADMIN_BURN: 'ADMIN_BURN',
   PONG_ROOM_FEE: 'PONG_ROOM_FEE',
-  PONG_MATCH_TAX: 'PONG_MATCH_TAX'
+  PONG_MATCH_TAX: 'PONG_MATCH_TAX',
+  TIC_TAC_TOE_MATCH_TAX: 'TIC_TAC_TOE_MATCH_TAX',
+  SUDOKU_EXTRA_ERRORS: 'SUDOKU_EXTRA_ERRORS'
 } as const
 
 export type TreasuryEntrySource = (typeof TreasuryEntrySource)[keyof typeof TreasuryEntrySource]
+
+
+export const TicTacToeRoomStatus = {
+  WAITING: 'WAITING',
+  ACTIVE: 'ACTIVE',
+  FINISHED: 'FINISHED',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type TicTacToeRoomStatus = (typeof TicTacToeRoomStatus)[keyof typeof TicTacToeRoomStatus]
+
+
+export const TicTacToeMark = {
+  X: 'X',
+  O: 'O'
+} as const
+
+export type TicTacToeMark = (typeof TicTacToeMark)[keyof typeof TicTacToeMark]
+
+
+export const SudokuDifficulty = {
+  EASY: 'EASY',
+  MEDIUM: 'MEDIUM',
+  HARD: 'HARD',
+  EXPERT: 'EXPERT',
+  MASTER: 'MASTER'
+} as const
+
+export type SudokuDifficulty = (typeof SudokuDifficulty)[keyof typeof SudokuDifficulty]
+
+
+export const SudokuGameStatus = {
+  ACTIVE: 'ACTIVE',
+  COMPLETED: 'COMPLETED',
+  FAILED: 'FAILED'
+} as const
+
+export type SudokuGameStatus = (typeof SudokuGameStatus)[keyof typeof SudokuGameStatus]
 
 
 export const AvatarPurchaseCurrency = {

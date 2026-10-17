@@ -1,9 +1,9 @@
-export const PONG_ROOM_FEE = 50;
-export const PONG_MIN_WAGER = 10;
-export const PONG_MAX_WAGER = 100;
+export const PONG_ROOM_FEE = 0;
+export const PONG_MIN_WAGER = 11;
+export const PONG_MAX_WAGER = 500;
 export const PONG_DAILY_ROOM_LIMIT = 3;
 export const PONG_WIN_SCORE = 10;
-export const PONG_LOSER_XP_PENALTY = 50;
+export const PONG_WINNER_XP_REWARD = 25;
 export const PONG_DISCONNECT_GRACE_MS = 3 * 60_000;
 export const PONG_JOIN_REQUEST_TTL_MS = 5 * 60_000;
 
@@ -40,7 +40,7 @@ export function pongSettlement(wager: number) {
     throw new Error("INVALID_WAGER");
   }
   const total = wager * 2;
-  const winnerPayout = Math.floor(total * 0.7);
+  const winnerPayout = Math.floor(total * 0.85);
   return { total, winnerPayout, taxAmount: total - winnerPayout };
 }
 

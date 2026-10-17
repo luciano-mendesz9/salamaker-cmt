@@ -20,7 +20,7 @@ export function pongErrorResponse(error: unknown) {
   if (code.startsWith("PENDING_REQUEST:")) return { message: `Você já pediu entrada na sala ${code.split(":")[1]}.`, status: 409 };
   const messages: Record<string, { message: string; status: number }> = {
     GAMES_DISABLED: { message: "Os minigames foram desativados pelo professor.", status: 403 },
-    INVALID_WAGER: { message: "A aposta deve ser um número inteiro entre 10 e 100 Dev-Coins.", status: 400 },
+    INVALID_WAGER: { message: "A aposta deve ser um número inteiro entre 11 e 500 Dev-Coins.", status: 400 },
     INVALID_CODE: { message: "Digite o código numérico de 6 dígitos.", status: 400 },
     ROOM_NOT_FOUND: { message: "Sala não encontrada.", status: 404 },
     ROOM_NOT_JOINABLE: { message: "Esta sala não aceita novas entradas.", status: 409 },
@@ -28,7 +28,7 @@ export function pongErrorResponse(error: unknown) {
     OWN_ROOM: { message: "Você já é o dono desta sala.", status: 409 },
     ALREADY_IN_ROOM: { message: "Você já está em outra sala.", status: 409 },
     GUEST_ALREADY_IN_ROOM: { message: "Este aluno já entrou em outra sala.", status: 409 },
-    INSUFFICIENT_DEV_COINS: { message: "Saldo insuficiente para a taxa de 50 DC e a aposta escolhida.", status: 409 },
+    INSUFFICIENT_DEV_COINS: { message: "Saldo insuficiente para a aposta escolhida.", status: 409 },
     GUEST_INSUFFICIENT_DEV_COINS: { message: "O convidado não possui Dev-Coins suficientes para esta aposta.", status: 409 },
     DAILY_ROOM_LIMIT: { message: "Você já criou 3 salas hoje.", status: 409 },
     ONLY_OWNER: { message: "Somente o dono da sala pode fazer isso.", status: 403 },

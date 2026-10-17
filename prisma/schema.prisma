@@ -48,6 +48,8 @@ enum XpSource {
   DEV_COIN_PURCHASE
   DEV_COIN_TRANSFER
   PONG_RESULT
+  TIC_TAC_TOE_RESULT
+  SUDOKU_RESULT
 }
 
 enum AuditEvent {
@@ -77,6 +79,16 @@ enum AuditEvent {
   PONG_MATCH_STARTED
   PONG_MATCH_FINISHED
   PONG_ROOM_CANCELLED
+  TIC_TAC_TOE_ROOM_CREATED
+  TIC_TAC_TOE_MATCH_STARTED
+  TIC_TAC_TOE_MOVE_PLAYED
+  TIC_TAC_TOE_MATCH_FINISHED
+  TIC_TAC_TOE_REMATCH_REQUESTED
+  TIC_TAC_TOE_ROOM_CANCELLED
+  SUDOKU_GAME_STARTED
+  SUDOKU_HINT_USED
+  SUDOKU_EXTRA_ERRORS_PURCHASED
+  SUDOKU_GAME_FINISHED
 }
 
 enum DevCoinSource {
@@ -92,6 +104,9 @@ enum DevCoinSource {
   PONG_ROOM_FEE
   PONG_WAGER
   PONG_PRIZE
+  TIC_TAC_TOE_WAGER
+  TIC_TAC_TOE_PRIZE
+  SUDOKU_EXTRA_ERRORS
 }
 
 enum StickerCollectionState {
@@ -150,6 +165,34 @@ enum TreasuryEntrySource {
   ADMIN_BURN
   PONG_ROOM_FEE
   PONG_MATCH_TAX
+  TIC_TAC_TOE_MATCH_TAX
+  SUDOKU_EXTRA_ERRORS
+}
+
+enum TicTacToeRoomStatus {
+  WAITING
+  ACTIVE
+  FINISHED
+  CANCELLED
+}
+
+enum TicTacToeMark {
+  X
+  O
+}
+
+enum SudokuDifficulty {
+  EASY
+  MEDIUM
+  HARD
+  EXPERT
+  MASTER
+}
+
+enum SudokuGameStatus {
+  ACTIVE
+  COMPLETED
+  FAILED
 }
 
 enum AvatarPurchaseCurrency {
@@ -284,6 +327,11 @@ model User {
   pongPlayers              PongPlayer[]
   pongJoinRequests         PongJoinRequest[]
   pongPoints               PongPoint[]
+  ownedTicTacToeRooms      TicTacToeRoom[]         @relation("TicTacToeRoomOwner")
+  guestTicTacToeRooms      TicTacToeRoom[]         @relation("TicTacToeRoomGuest")
+  wonTicTacToeRooms        TicTacToeRoom[]         @relation("TicTacToeRoomWinner")
+  wonTicTacToeRounds       TicTacToeRound[]        @relation("TicTacToeRoundWinner")
+  sudokuGames              SudokuGame[]
 
   @@index([role, status, xp])
   @@index([originSchoolClass, status])
@@ -868,7 +916,7 @@ model PongRoom {
   ownerId       String            @db.Uuid
   status        PongRoomStatus    @default(WAITING)
   wager         Int
-  roomFee       Int               @default(50)
+  roomFee       Int               @default(0)
   creationDay   String
   escrowBalance Int               @default(0)
   ownerScore    Int               @default(0)
@@ -944,4 +992,95 @@ model PongPoint {
 
   @@unique([roomId, sequence])
   @@index([roomId, createdAt])
+}
+
+model TicTacToeRoom {
+  id                String              @id @default(uuid()) @db.Uuid
+  code              String              @unique @db.VarChar(6)
+  creationKey       String              @unique
+  ownerId           String              @db.Uuid
+  guestId           String?             @db.Uuid
+  status            TicTacToeRoomStatus @default(WAITING)
+  wager             Int
+  round             Int                 @default(1)
+  board             String              @default("---------") @db.VarChar(9)
+  nextMark          TicTacToeMark       @default(X)
+  ownerMark         TicTacToeMark       @default(X)
+  escrowBalance     Int                 @default(0)
+  winnerId          String?             @db.Uuid
+  isDraw            Boolean             @default(false)
+  winnerPayout      Int                 @default(0)
+  taxAmount         Int                 @default(0)
+  ownerRematchReady Boolean             @default(false)
+  guestRematchReady Boolean             @default(false)
+  createdAt         DateTime            @default(now())
+  startedAt         DateTime?
+  finishedAt        DateTime?
+  cancelledAt       DateTime?
+  updatedAt         DateTime            @updatedAt
+  owner             User                @relation("TicTacToeRoomOwner", fields: [ownerId], references: [id], onDelete: Restrict)
+  guest             User?               @relation("TicTacToeRoomGuest", fields: [guestId], references: [id], onDelete: Restrict)
+  winner            User?               @relation("TicTacToeRoomWinner", fields: [winnerId], references: [id], onDelete: Restrict)
+  rounds            TicTacToeRound[]
+
+  @@index([ownerId, status, updatedAt])
+  @@index([guestId, status, updatedAt])
+}
+
+model TicTacToeRound {
+  id           String         @id @default(uuid()) @db.Uuid
+  roomId       String         @db.Uuid
+  round        Int
+  board        String         @db.VarChar(9)
+  winnerId     String?        @db.Uuid
+  winnerMark   TicTacToeMark?
+  isDraw       Boolean        @default(false)
+  winnerPayout Int            @default(0)
+  taxAmount    Int            @default(0)
+  startedAt    DateTime
+  finishedAt   DateTime       @default(now())
+  room         TicTacToeRoom  @relation(fields: [roomId], references: [id], onDelete: Restrict)
+  winner       User?          @relation("TicTacToeRoundWinner", fields: [winnerId], references: [id], onDelete: Restrict)
+
+  @@unique([roomId, round])
+  @@index([winnerId, finishedAt])
+}
+
+model SudokuGame {
+  id                     String           @id @default(uuid()) @db.Uuid
+  studentId              String           @db.Uuid
+  difficulty             SudokuDifficulty
+  puzzle                 String           @db.VarChar(81)
+  solution               String           @db.VarChar(81)
+  board                  String           @db.VarChar(81)
+  status                 SudokuGameStatus @default(ACTIVE)
+  mistakes               Int              @default(0)
+  mistakeLimit           Int
+  hintsUsed              Int              @default(0)
+  extraMistakesPurchased Boolean          @default(false)
+  eligibleForRanking     Boolean          @default(true)
+  xpReward               Int
+  elapsedSeconds         Int?
+  completionKey          String?          @unique
+  startedAt              DateTime         @default(now())
+  completedAt            DateTime?
+  updatedAt              DateTime         @updatedAt
+  student                User             @relation(fields: [studentId], references: [id], onDelete: Restrict)
+  actions                SudokuAction[]
+
+  @@index([studentId, status, startedAt])
+  @@index([difficulty, status, eligibleForRanking, elapsedSeconds])
+}
+
+model SudokuAction {
+  id        String     @id @default(uuid()) @db.Uuid
+  gameId    String     @db.Uuid
+  actionKey String     @unique
+  kind      String
+  cell      Int?
+  value     Int?
+  createdAt DateTime   @default(now())
+  game      SudokuGame @relation(fields: [gameId], references: [id], onDelete: Restrict)
+
+  @@index([gameId, createdAt])
 }

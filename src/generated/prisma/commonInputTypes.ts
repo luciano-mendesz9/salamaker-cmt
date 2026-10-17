@@ -796,6 +796,91 @@ export type EnumPongJoinRequestStatusWithAggregatesFilter<$PrismaModel = never> 
   _max?: Prisma.NestedEnumPongJoinRequestStatusFilter<$PrismaModel>
 }
 
+export type EnumTicTacToeRoomStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.TicTacToeRoomStatus | Prisma.EnumTicTacToeRoomStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.TicTacToeRoomStatus[] | Prisma.ListEnumTicTacToeRoomStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TicTacToeRoomStatus[] | Prisma.ListEnumTicTacToeRoomStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTicTacToeRoomStatusFilter<$PrismaModel> | $Enums.TicTacToeRoomStatus
+}
+
+export type EnumTicTacToeMarkFilter<$PrismaModel = never> = {
+  equals?: $Enums.TicTacToeMark | Prisma.EnumTicTacToeMarkFieldRefInput<$PrismaModel>
+  in?: $Enums.TicTacToeMark[] | Prisma.ListEnumTicTacToeMarkFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TicTacToeMark[] | Prisma.ListEnumTicTacToeMarkFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTicTacToeMarkFilter<$PrismaModel> | $Enums.TicTacToeMark
+}
+
+export type EnumTicTacToeRoomStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TicTacToeRoomStatus | Prisma.EnumTicTacToeRoomStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.TicTacToeRoomStatus[] | Prisma.ListEnumTicTacToeRoomStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TicTacToeRoomStatus[] | Prisma.ListEnumTicTacToeRoomStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTicTacToeRoomStatusWithAggregatesFilter<$PrismaModel> | $Enums.TicTacToeRoomStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTicTacToeRoomStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTicTacToeRoomStatusFilter<$PrismaModel>
+}
+
+export type EnumTicTacToeMarkWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TicTacToeMark | Prisma.EnumTicTacToeMarkFieldRefInput<$PrismaModel>
+  in?: $Enums.TicTacToeMark[] | Prisma.ListEnumTicTacToeMarkFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TicTacToeMark[] | Prisma.ListEnumTicTacToeMarkFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTicTacToeMarkWithAggregatesFilter<$PrismaModel> | $Enums.TicTacToeMark
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTicTacToeMarkFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTicTacToeMarkFilter<$PrismaModel>
+}
+
+export type EnumTicTacToeMarkNullableFilter<$PrismaModel = never> = {
+  equals?: $Enums.TicTacToeMark | Prisma.EnumTicTacToeMarkFieldRefInput<$PrismaModel> | null
+  in?: $Enums.TicTacToeMark[] | Prisma.ListEnumTicTacToeMarkFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.TicTacToeMark[] | Prisma.ListEnumTicTacToeMarkFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumTicTacToeMarkNullableFilter<$PrismaModel> | $Enums.TicTacToeMark | null
+}
+
+export type EnumTicTacToeMarkNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TicTacToeMark | Prisma.EnumTicTacToeMarkFieldRefInput<$PrismaModel> | null
+  in?: $Enums.TicTacToeMark[] | Prisma.ListEnumTicTacToeMarkFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.TicTacToeMark[] | Prisma.ListEnumTicTacToeMarkFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumTicTacToeMarkNullableWithAggregatesFilter<$PrismaModel> | $Enums.TicTacToeMark | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTicTacToeMarkNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTicTacToeMarkNullableFilter<$PrismaModel>
+}
+
+export type EnumSudokuDifficultyFilter<$PrismaModel = never> = {
+  equals?: $Enums.SudokuDifficulty | Prisma.EnumSudokuDifficultyFieldRefInput<$PrismaModel>
+  in?: $Enums.SudokuDifficulty[] | Prisma.ListEnumSudokuDifficultyFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SudokuDifficulty[] | Prisma.ListEnumSudokuDifficultyFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSudokuDifficultyFilter<$PrismaModel> | $Enums.SudokuDifficulty
+}
+
+export type EnumSudokuGameStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.SudokuGameStatus | Prisma.EnumSudokuGameStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.SudokuGameStatus[] | Prisma.ListEnumSudokuGameStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SudokuGameStatus[] | Prisma.ListEnumSudokuGameStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSudokuGameStatusFilter<$PrismaModel> | $Enums.SudokuGameStatus
+}
+
+export type EnumSudokuDifficultyWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.SudokuDifficulty | Prisma.EnumSudokuDifficultyFieldRefInput<$PrismaModel>
+  in?: $Enums.SudokuDifficulty[] | Prisma.ListEnumSudokuDifficultyFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SudokuDifficulty[] | Prisma.ListEnumSudokuDifficultyFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSudokuDifficultyWithAggregatesFilter<$PrismaModel> | $Enums.SudokuDifficulty
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumSudokuDifficultyFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumSudokuDifficultyFilter<$PrismaModel>
+}
+
+export type EnumSudokuGameStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.SudokuGameStatus | Prisma.EnumSudokuGameStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.SudokuGameStatus[] | Prisma.ListEnumSudokuGameStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SudokuGameStatus[] | Prisma.ListEnumSudokuGameStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSudokuGameStatusWithAggregatesFilter<$PrismaModel> | $Enums.SudokuGameStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumSudokuGameStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumSudokuGameStatusFilter<$PrismaModel>
+}
+
 export type NestedUuidFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -1558,6 +1643,91 @@ export type NestedEnumPongJoinRequestStatusWithAggregatesFilter<$PrismaModel = n
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumPongJoinRequestStatusFilter<$PrismaModel>
   _max?: Prisma.NestedEnumPongJoinRequestStatusFilter<$PrismaModel>
+}
+
+export type NestedEnumTicTacToeRoomStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.TicTacToeRoomStatus | Prisma.EnumTicTacToeRoomStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.TicTacToeRoomStatus[] | Prisma.ListEnumTicTacToeRoomStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TicTacToeRoomStatus[] | Prisma.ListEnumTicTacToeRoomStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTicTacToeRoomStatusFilter<$PrismaModel> | $Enums.TicTacToeRoomStatus
+}
+
+export type NestedEnumTicTacToeMarkFilter<$PrismaModel = never> = {
+  equals?: $Enums.TicTacToeMark | Prisma.EnumTicTacToeMarkFieldRefInput<$PrismaModel>
+  in?: $Enums.TicTacToeMark[] | Prisma.ListEnumTicTacToeMarkFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TicTacToeMark[] | Prisma.ListEnumTicTacToeMarkFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTicTacToeMarkFilter<$PrismaModel> | $Enums.TicTacToeMark
+}
+
+export type NestedEnumTicTacToeRoomStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TicTacToeRoomStatus | Prisma.EnumTicTacToeRoomStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.TicTacToeRoomStatus[] | Prisma.ListEnumTicTacToeRoomStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TicTacToeRoomStatus[] | Prisma.ListEnumTicTacToeRoomStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTicTacToeRoomStatusWithAggregatesFilter<$PrismaModel> | $Enums.TicTacToeRoomStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTicTacToeRoomStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTicTacToeRoomStatusFilter<$PrismaModel>
+}
+
+export type NestedEnumTicTacToeMarkWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TicTacToeMark | Prisma.EnumTicTacToeMarkFieldRefInput<$PrismaModel>
+  in?: $Enums.TicTacToeMark[] | Prisma.ListEnumTicTacToeMarkFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TicTacToeMark[] | Prisma.ListEnumTicTacToeMarkFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTicTacToeMarkWithAggregatesFilter<$PrismaModel> | $Enums.TicTacToeMark
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTicTacToeMarkFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTicTacToeMarkFilter<$PrismaModel>
+}
+
+export type NestedEnumTicTacToeMarkNullableFilter<$PrismaModel = never> = {
+  equals?: $Enums.TicTacToeMark | Prisma.EnumTicTacToeMarkFieldRefInput<$PrismaModel> | null
+  in?: $Enums.TicTacToeMark[] | Prisma.ListEnumTicTacToeMarkFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.TicTacToeMark[] | Prisma.ListEnumTicTacToeMarkFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumTicTacToeMarkNullableFilter<$PrismaModel> | $Enums.TicTacToeMark | null
+}
+
+export type NestedEnumTicTacToeMarkNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TicTacToeMark | Prisma.EnumTicTacToeMarkFieldRefInput<$PrismaModel> | null
+  in?: $Enums.TicTacToeMark[] | Prisma.ListEnumTicTacToeMarkFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.TicTacToeMark[] | Prisma.ListEnumTicTacToeMarkFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumTicTacToeMarkNullableWithAggregatesFilter<$PrismaModel> | $Enums.TicTacToeMark | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTicTacToeMarkNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTicTacToeMarkNullableFilter<$PrismaModel>
+}
+
+export type NestedEnumSudokuDifficultyFilter<$PrismaModel = never> = {
+  equals?: $Enums.SudokuDifficulty | Prisma.EnumSudokuDifficultyFieldRefInput<$PrismaModel>
+  in?: $Enums.SudokuDifficulty[] | Prisma.ListEnumSudokuDifficultyFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SudokuDifficulty[] | Prisma.ListEnumSudokuDifficultyFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSudokuDifficultyFilter<$PrismaModel> | $Enums.SudokuDifficulty
+}
+
+export type NestedEnumSudokuGameStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.SudokuGameStatus | Prisma.EnumSudokuGameStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.SudokuGameStatus[] | Prisma.ListEnumSudokuGameStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SudokuGameStatus[] | Prisma.ListEnumSudokuGameStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSudokuGameStatusFilter<$PrismaModel> | $Enums.SudokuGameStatus
+}
+
+export type NestedEnumSudokuDifficultyWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.SudokuDifficulty | Prisma.EnumSudokuDifficultyFieldRefInput<$PrismaModel>
+  in?: $Enums.SudokuDifficulty[] | Prisma.ListEnumSudokuDifficultyFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SudokuDifficulty[] | Prisma.ListEnumSudokuDifficultyFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSudokuDifficultyWithAggregatesFilter<$PrismaModel> | $Enums.SudokuDifficulty
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumSudokuDifficultyFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumSudokuDifficultyFilter<$PrismaModel>
+}
+
+export type NestedEnumSudokuGameStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.SudokuGameStatus | Prisma.EnumSudokuGameStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.SudokuGameStatus[] | Prisma.ListEnumSudokuGameStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SudokuGameStatus[] | Prisma.ListEnumSudokuGameStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSudokuGameStatusWithAggregatesFilter<$PrismaModel> | $Enums.SudokuGameStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumSudokuGameStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumSudokuGameStatusFilter<$PrismaModel>
 }
 
 

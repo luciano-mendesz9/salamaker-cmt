@@ -93,7 +93,11 @@ export const ModelName = {
   PongRoom: 'PongRoom',
   PongPlayer: 'PongPlayer',
   PongJoinRequest: 'PongJoinRequest',
-  PongPoint: 'PongPoint'
+  PongPoint: 'PongPoint',
+  TicTacToeRoom: 'TicTacToeRoom',
+  TicTacToeRound: 'TicTacToeRound',
+  SudokuGame: 'SudokuGame',
+  SudokuAction: 'SudokuAction'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -706,6 +710,89 @@ export const PongPointScalarFieldEnum = {
 } as const
 
 export type PongPointScalarFieldEnum = (typeof PongPointScalarFieldEnum)[keyof typeof PongPointScalarFieldEnum]
+
+
+export const TicTacToeRoomScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  creationKey: 'creationKey',
+  ownerId: 'ownerId',
+  guestId: 'guestId',
+  status: 'status',
+  wager: 'wager',
+  round: 'round',
+  board: 'board',
+  nextMark: 'nextMark',
+  ownerMark: 'ownerMark',
+  escrowBalance: 'escrowBalance',
+  winnerId: 'winnerId',
+  isDraw: 'isDraw',
+  winnerPayout: 'winnerPayout',
+  taxAmount: 'taxAmount',
+  ownerRematchReady: 'ownerRematchReady',
+  guestRematchReady: 'guestRematchReady',
+  createdAt: 'createdAt',
+  startedAt: 'startedAt',
+  finishedAt: 'finishedAt',
+  cancelledAt: 'cancelledAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TicTacToeRoomScalarFieldEnum = (typeof TicTacToeRoomScalarFieldEnum)[keyof typeof TicTacToeRoomScalarFieldEnum]
+
+
+export const TicTacToeRoundScalarFieldEnum = {
+  id: 'id',
+  roomId: 'roomId',
+  round: 'round',
+  board: 'board',
+  winnerId: 'winnerId',
+  winnerMark: 'winnerMark',
+  isDraw: 'isDraw',
+  winnerPayout: 'winnerPayout',
+  taxAmount: 'taxAmount',
+  startedAt: 'startedAt',
+  finishedAt: 'finishedAt'
+} as const
+
+export type TicTacToeRoundScalarFieldEnum = (typeof TicTacToeRoundScalarFieldEnum)[keyof typeof TicTacToeRoundScalarFieldEnum]
+
+
+export const SudokuGameScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  difficulty: 'difficulty',
+  puzzle: 'puzzle',
+  solution: 'solution',
+  board: 'board',
+  status: 'status',
+  mistakes: 'mistakes',
+  mistakeLimit: 'mistakeLimit',
+  hintsUsed: 'hintsUsed',
+  extraMistakesPurchased: 'extraMistakesPurchased',
+  eligibleForRanking: 'eligibleForRanking',
+  xpReward: 'xpReward',
+  elapsedSeconds: 'elapsedSeconds',
+  completionKey: 'completionKey',
+  startedAt: 'startedAt',
+  completedAt: 'completedAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SudokuGameScalarFieldEnum = (typeof SudokuGameScalarFieldEnum)[keyof typeof SudokuGameScalarFieldEnum]
+
+
+export const SudokuActionScalarFieldEnum = {
+  id: 'id',
+  gameId: 'gameId',
+  actionKey: 'actionKey',
+  kind: 'kind',
+  cell: 'cell',
+  value: 'value',
+  createdAt: 'createdAt'
+} as const
+
+export type SudokuActionScalarFieldEnum = (typeof SudokuActionScalarFieldEnum)[keyof typeof SudokuActionScalarFieldEnum]
 
 
 export const SortOrder = {

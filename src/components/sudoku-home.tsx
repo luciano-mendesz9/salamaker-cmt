@@ -1,0 +1,32 @@
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Brain, Clock3, Coins, Flame, Play, ShieldCheck, Trophy } from "lucide-react";
+import { toast } from "sonner";
+import { Brand } from "@/components/brand";
+import { LogoutButton } from "@/components/logout-button";
+
+type Difficulty = "EASY" | "MEDIUM" | "HARD" | "EXPERT" | "MASTER";
+const levels: { key: Difficulty; label: string; subtitle: string; xp: number; mistakes: number; cost: number; color: string }[] = [
+  { key: "EASY", label: "Fácil", subtitle: "Um começo tranquilo", xp: 30, mistakes: 3, cost: 60, color: "emerald" },
+  { key: "MEDIUM", label: "Médio", subtitle: "Aqueça a estratégia", xp: 50, mistakes: 5, cost: 80, color: "cyan" },
+  { key: "HARD", label: "Difícil", subtitle: "Pense dois passos à frente", xp: 80, mistakes: 7, cost: 110, color: "blue" },
+  { key: "EXPERT", label: "Especialista", subtitle: "Poucas pistas, muita lógica", xp: 120, mistakes: 9, cost: 150, color: "fuchsia" },
+  { key: "MASTER", label: "Mestre", subtitle: "O desafio definitivo", xp: 180, mistakes: 12, cost: 200, color: "amber" },
+];
+type Home = { gamesEnabled: boolean; devCoins: number; activeGames: { id: string; difficulty: Difficulty; startedAt: string; mistakes: number; mistakeLimit: number }[] };
+
+export function SudokuHome({ initial, studentName }: { initial: Home; studentName: string }) {
+  const router = useRouter(); const [busy, setBusy] = useState<Difficulty | null>(null);
+  async function start(difficulty: Difficulty) { setBusy(difficulty); try { const response = await fetch("/api/student/minigames/sudoku/games", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ difficulty }) }); const data = await response.json(); if (!response.ok) return toast.error(data.message); router.push(`/aluno/minigames/sudoku/${data.game.id}`); } finally { setBusy(null); } }
+  return <main className="mesh min-h-screen"><div className="mx-auto max-w-6xl px-4 pb-20 sm:px-8"><header className="flex h-20 items-center justify-between border-b border-white/7"><Brand context="Sudoku"/><div className="flex items-center gap-2"><Link href="/aluno/minigames" className="button-secondary py-2 text-sm">Vitrine</Link><LogoutButton/></div></header>
+    <section className="mt-8 overflow-hidden rounded-3xl border border-amber-300/20 bg-gradient-to-br from-[#261c08] via-[#111929] to-[#071a24] p-6 sm:p-9"><div className="flex flex-wrap items-start justify-between gap-5"><div><p className="eyebrow flex items-center gap-2"><Brain size={16}/>Desafio de lógica</p><h1 className="mt-3 font-display text-3xl font-black sm:text-5xl">Escolha a dificuldade</h1><p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-300">{studentName}, complete linhas, colunas e blocos sem repetir números. Você tem 3 dicas; partidas assistidas dão XP, mas não entram no ranking.</p></div><div className="rounded-2xl bg-amber-300/10 px-5 py-3 text-right"><p className="text-xs text-slate-400">Seu saldo</p><strong className="text-xl text-amber-200">{initial.devCoins} DC</strong></div></div><div className="mt-6 flex flex-wrap gap-2"><Link href="/ranking/sudoku" className="button-primary"><Trophy size={18}/>Ranking de tempos</Link><span className="rounded-full bg-white/5 px-4 py-2 text-xs font-bold text-slate-300">⌨️ Teclado físico + teclado na tela</span></div></section>
+    {initial.activeGames.length > 0 && <section className="glass mt-6 rounded-3xl p-5"><h2 className="font-display text-xl font-black">Continuar partidas</h2><div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{initial.activeGames.map((game) => <Link key={game.id} href={`/aluno/minigames/sudoku/${game.id}`} className="flex items-center justify-between rounded-2xl bg-white/5 p-4 hover:bg-white/10"><div><strong>{levels.find((level) => level.key === game.difficulty)?.label}</strong><p className="text-xs text-slate-500">{game.mistakes}/{game.mistakeLimit} erros</p></div><Play className="text-amber-300" size={20}/></Link>)}</div></section>}
+    <section className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">{levels.map((level) => <article key={level.key} className="glass rounded-3xl border border-white/8 p-5"><div className="flex items-center justify-between"><span className="grid h-11 w-11 place-items-center rounded-2xl bg-amber-300/10 font-display text-xl font-black text-amber-300">{level.label[0]}</span><span className="rounded-full bg-white/5 px-2.5 py-1 text-[10px] font-bold text-slate-400">{level.xp} XP</span></div><h2 className="mt-5 font-display text-xl font-black">{level.label}</h2><p className="mt-1 min-h-10 text-xs leading-relaxed text-slate-500">{level.subtitle}</p><dl className="mt-4 space-y-2 text-xs"><Info icon={ShieldCheck} text={`${level.mistakes} erros permitidos`}/><Info icon={Coins} text={`+2 erros por ${level.cost} DC`}/><Info icon={Flame} text={`${level.xp} XP ao concluir`}/></dl><button disabled={busy !== null} onClick={() => start(level.key)} className="button-primary mt-5 w-full justify-center">{busy === level.key ? "Gerando…" : "Começar"}</button></article>)}</section>
+    <section className="mt-6 grid gap-3 sm:grid-cols-3"><Rule icon={Clock3} title="Tempo confiável" text="O servidor mede do início até a última resposta correta."/><Rule icon={Brain} title="3 dicas" text="Cada dica revela uma casa e mantém seu prêmio em XP."/><Rule icon={Trophy} title="Ranking justo" text="Só entram partidas sem dica e sem compra de erros."/></section>
+  </div></main>;
+}
+function Info({ icon: Icon, text }: { icon: typeof ShieldCheck; text: string }) { return <div className="flex items-center gap-2 text-slate-400"><Icon size={14}/><span>{text}</span></div>; }
+function Rule({ icon: Icon, title, text }: { icon: typeof Clock3; title: string; text: string }) { return <div className="glass flex gap-3 rounded-2xl p-4"><Icon className="shrink-0 text-amber-300" size={20}/><div><strong className="text-sm">{title}</strong><p className="mt-1 text-xs text-slate-500">{text}</p></div></div>; }
