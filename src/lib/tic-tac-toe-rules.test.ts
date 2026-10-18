@@ -19,7 +19,8 @@ test("aposta do jogo da velha aplica 85% e exige mais de 10 DC", () => {
 
 test("máquina alterna entre a melhor jogada e uma jogada imperfeita válida", () => {
   assert.equal(ticTacToeMachineMove("XX--O----", 0.1, 0.5), 2);
-  const imperfect = ticTacToeMachineMove("XX--O----", 0.9, 0);
+  assert.equal(ticTacToeMachineMove("XX--O----", 0.989, 0.5), 2);
+  const imperfect = ticTacToeMachineMove("XX--O----", 0.995, 0);
   assert.notEqual(imperfect, 2);
   assert.equal("XX--O----"[imperfect], "-");
 });

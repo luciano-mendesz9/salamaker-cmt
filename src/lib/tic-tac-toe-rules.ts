@@ -3,6 +3,7 @@ export const TIC_TAC_TOE_MAX_WAGER = 500;
 export const TIC_TAC_TOE_WIN_XP = 25;
 export const TIC_TAC_TOE_SOLO_REDUCED_XP = 15;
 export const TIC_TAC_TOE_SOLO_FULL_XP_MATCHES = 5;
+export const TIC_TAC_TOE_MACHINE_PERFECT_MOVE_CHANCE = 0.99;
 
 export type TicTacToeCell = "X" | "O" | "-";
 export type TicTacToeMark = Exclude<TicTacToeCell, "-">;
@@ -77,7 +78,7 @@ export function bestTicTacToeMove(board: string, machine: TicTacToeMark): number
 
 export function ticTacToeMachineMove(board: string, skillRoll: number, choiceRoll: number): number {
   const best = bestTicTacToeMove(board, "O");
-  if (skillRoll < 0.72) return best;
+  if (skillRoll < TIC_TAC_TOE_MACHINE_PERFECT_MOVE_CHANCE) return best;
   const alternatives = [...board].flatMap((cell, index) => cell === "-" && index !== best ? [index] : []);
   if (alternatives.length === 0) return best;
   const normalized = Math.min(Math.max(choiceRoll, 0), 0.999999);
