@@ -1,6 +1,8 @@
 export const TIC_TAC_TOE_MIN_WAGER = 11;
 export const TIC_TAC_TOE_MAX_WAGER = 500;
 export const TIC_TAC_TOE_WIN_XP = 25;
+export const TIC_TAC_TOE_LOSS_XP_PENALTY = 200;
+export const TIC_TAC_TOE_DAILY_OPPONENT_LIMIT = 3;
 export const TIC_TAC_TOE_SOLO_REDUCED_XP = 15;
 export const TIC_TAC_TOE_SOLO_FULL_XP_MATCHES = 5;
 export const TIC_TAC_TOE_MACHINE_PERFECT_MOVE_CHANCE = 0.99;

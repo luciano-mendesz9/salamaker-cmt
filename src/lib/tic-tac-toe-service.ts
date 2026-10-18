@@ -1,9 +1,12 @@
 import { randomInt } from "node:crypto";
 import { Prisma } from "@/generated/prisma/client";
 import { prisma } from "@/lib/db";
+import { getSchoolDay } from "@/lib/school-day";
 import { creditTreasury } from "@/lib/treasury";
 import {
   applyTicTacToeMove,
+  TIC_TAC_TOE_DAILY_OPPONENT_LIMIT,
+  TIC_TAC_TOE_LOSS_XP_PENALTY,
   TIC_TAC_TOE_MAX_WAGER,
   TIC_TAC_TOE_MIN_WAGER,
   TIC_TAC_TOE_WIN_XP,
@@ -40,6 +43,23 @@ async function lockStudents(tx: Tx, ids: string[]) {
 
 async function getRoom(tx: Tx, roomId: string) {
   return tx.ticTacToeRoom.findUniqueOrThrow({ where: { id: roomId }, include: roomGraph });
+}
+
+async function assertOpponentDailyLimit(tx: Tx, firstStudentId: string, secondStudentId: string) {
+  const settings = await tx.appSetting.upsert({ where: { id: 1 }, create: { id: 1 }, update: {}, select: { timeZone: true } });
+  const day = getSchoolDay(new Date(), settings.timeZone);
+  const rounds = await tx.ticTacToeRound.count({
+    where: {
+      finishedAt: { gte: day.start, lt: day.end },
+      room: {
+        OR: [
+          { ownerId: firstStudentId, guestId: secondStudentId },
+          { ownerId: secondStudentId, guestId: firstStudentId },
+        ],
+      },
+    },
+  });
+  if (rounds >= TIC_TAC_TOE_DAILY_OPPONENT_LIMIT) throw new TicTacToeError("OPPONENT_DAILY_LIMIT");
 }
 
 function otherMark(mark: TicTacToeMark): TicTacToeMark {
@@ -121,9 +141,10 @@ export async function joinTicTacToeRoom(tx: Tx, studentId: string, code: string)
   let room = await getRoom(tx, found.id);
   if (room.status !== "WAITING" || room.guestId) throw new TicTacToeError("ROOM_NOT_JOINABLE");
   if (room.ownerId === studentId) throw new TicTacToeError("OWN_ROOM");
-  await lockStudents(tx, [studentId]);
+  await lockStudents(tx, [room.ownerId, studentId]);
   const existing = await tx.ticTacToeRoom.findFirst({ where: { status: { in: ["WAITING", "ACTIVE"] }, OR: [{ ownerId: studentId }, { guestId: studentId }] }, select: { id: true } });
   if (existing) throw new TicTacToeError("ALREADY_IN_ROOM");
+  await assertOpponentDailyLimit(tx, room.ownerId, studentId);
   room = await tx.ticTacToeRoom.update({ where: { id: room.id }, data: { guestId: studentId }, include: roomGraph });
   await debitRoundStakes(tx, room, 1);
   const startedAt = new Date();
@@ -145,15 +166,19 @@ async function settleRound(tx: Tx, room: RoomGraph, board: string, winnerId: str
   } else {
     winnerPayout = settlement.winnerPayout;
     taxAmount = settlement.taxAmount;
+    const loserId = winnerId === room.ownerId ? room.guestId! : room.ownerId;
+    await lockStudents(tx, [winnerId!, loserId]);
     await tx.user.update({ where: { id: winnerId! }, data: { devCoins: { increment: winnerPayout }, xp: { increment: TIC_TAC_TOE_WIN_XP } } });
+    await tx.user.update({ where: { id: loserId }, data: { xp: { decrement: TIC_TAC_TOE_LOSS_XP_PENALTY } } });
     await tx.devCoinEntry.create({ data: { studentId: winnerId!, delta: winnerPayout, reason: `Vitória no jogo da velha — sala ${room.code}, rodada ${room.round}`, source: "TIC_TAC_TOE_PRIZE", idempotencyKey: `tic-tac-toe:${room.id}:round:${room.round}:prize:${winnerId}` } });
     await tx.xpEntry.create({ data: { studentId: winnerId!, delta: TIC_TAC_TOE_WIN_XP, reason: `Vitória no jogo da velha — sala ${room.code}`, source: "TIC_TAC_TOE_RESULT", idempotencyKey: `tic-tac-toe:${room.id}:round:${room.round}:xp:${winnerId}` } });
+    await tx.xpEntry.create({ data: { studentId: loserId, delta: -TIC_TAC_TOE_LOSS_XP_PENALTY, reason: `Derrota no jogo da velha — sala ${room.code}`, source: "TIC_TAC_TOE_RESULT", idempotencyKey: `tic-tac-toe:${room.id}:round:${room.round}:loser-xp:${loserId}` } });
     await creditTreasury(tx, taxAmount, { reason: `Imposto do jogo da velha ${room.code}, rodada ${room.round}`, source: "TIC_TAC_TOE_MATCH_TAX", idempotencyKey: `tic-tac-toe:${room.id}:round:${room.round}:tax` });
   }
   const finishedAt = new Date();
   await tx.ticTacToeRound.create({ data: { roomId: room.id, round: room.round, board, winnerId, winnerMark, isDraw, winnerPayout, taxAmount, startedAt: room.startedAt ?? finishedAt, finishedAt } });
   await tx.ticTacToeRoom.update({ where: { id: room.id }, data: { status: "FINISHED", board, escrowBalance: 0, winnerId, isDraw, winnerPayout, taxAmount, finishedAt, ownerRematchReady: false, guestRematchReady: false } });
-  await tx.auditLog.create({ data: { actorId: winnerId ?? room.ownerId, targetId: winnerId ? (winnerId === room.ownerId ? room.guestId : room.ownerId) : room.guestId, event: "TIC_TAC_TOE_MATCH_FINISHED", details: { roomId: room.id, code: room.code, round: room.round, winnerId, isDraw, winnerPayout, taxAmount } } });
+  await tx.auditLog.create({ data: { actorId: winnerId ?? room.ownerId, targetId: winnerId ? (winnerId === room.ownerId ? room.guestId : room.ownerId) : room.guestId, event: "TIC_TAC_TOE_MATCH_FINISHED", details: { roomId: room.id, code: room.code, round: room.round, winnerId, isDraw, winnerPayout, taxAmount, loserXpPenalty: isDraw ? 0 : TIC_TAC_TOE_LOSS_XP_PENALTY } } });
 }
 
 export async function playTicTacToeMove(tx: Tx, studentId: string, roomId: string, cell: number) {
@@ -182,6 +207,7 @@ export async function requestTicTacToeRematch(tx: Tx, studentId: string, roomId:
   if (room.status !== "FINISHED") throw new TicTacToeError("ROOM_NOT_FINISHED");
   const isOwner = room.ownerId === studentId;
   if (!isOwner && room.guestId !== studentId) throw new TicTacToeError("NOT_A_PLAYER");
+  await assertOpponentDailyLimit(tx, room.ownerId, room.guestId!);
   room = await tx.ticTacToeRoom.update({ where: { id: room.id }, data: isOwner ? { ownerRematchReady: true } : { guestRematchReady: true }, include: roomGraph });
   await tx.auditLog.create({ data: { actorId: studentId, targetId: isOwner ? room.guestId : room.ownerId, event: "TIC_TAC_TOE_REMATCH_REQUESTED", details: { roomId, round: room.round } } });
   if (!room.ownerRematchReady || !room.guestRematchReady) return room;

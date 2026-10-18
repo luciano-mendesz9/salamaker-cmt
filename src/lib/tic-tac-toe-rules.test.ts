@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { applyTicTacToeMove, bestTicTacToeMove, ticTacToeMachineMove, ticTacToeSettlement, ticTacToeSoloXpAward, ticTacToeWinner } from "./tic-tac-toe-rules";
+import { applyTicTacToeMove, bestTicTacToeMove, TIC_TAC_TOE_DAILY_OPPONENT_LIMIT, TIC_TAC_TOE_LOSS_XP_PENALTY, ticTacToeMachineMove, ticTacToeSettlement, ticTacToeSoloXpAward, ticTacToeWinner } from "./tic-tac-toe-rules";
 
 test("jogo da velha detecta vitória e bloqueia casa ocupada", () => {
   assert.equal(ticTacToeWinner("XXXOO----"), "X");
@@ -30,4 +30,9 @@ test("vitória contra a máquina paga 25 XP nas 5 primeiras partidas e 15 XP dep
   assert.equal(ticTacToeSoloXpAward(4), 25);
   assert.equal(ticTacToeSoloXpAward(5), 15);
   assert.equal(ticTacToeSoloXpAward(500), 15);
+});
+
+test("multiplayer limita a dupla a 3 partidas por dia e desconta 200 XP do perdedor", () => {
+  assert.equal(TIC_TAC_TOE_DAILY_OPPONENT_LIMIT, 3);
+  assert.equal(TIC_TAC_TOE_LOSS_XP_PENALTY, 200);
 });

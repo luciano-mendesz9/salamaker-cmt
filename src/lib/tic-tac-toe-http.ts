@@ -21,6 +21,7 @@ export function ticTacToeJsonError(error: unknown) {
     NOT_A_PLAYER: ["Você não pertence a esta sala.", 403],
     ROOM_NOT_ACTIVE: ["A partida não está ativa.", 409],
     ROOM_NOT_FINISHED: ["A revanche só pode ser pedida no fim da partida.", 409],
+    OPPONENT_DAILY_LIMIT: ["Vocês já jogaram 3 partidas entre si hoje. Escolha outro adversário ou tente novamente amanhã.", 409],
     NOT_YOUR_TURN: ["Aguarde a sua vez.", 409],
     INVALID_CELL: ["Casa inválida.", 400],
     CELL_OCCUPIED: ["Essa casa já está ocupada.", 409],
