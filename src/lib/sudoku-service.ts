@@ -1,6 +1,7 @@
 import { Prisma, type SudokuDifficulty } from "@/generated/prisma/client";
+import { SCHOOL_TIME_ZONE, schoolLocalToUtc } from "@/lib/activities";
 import { prisma } from "@/lib/db";
-import { createSudokuPuzzle, SUDOKU_DIFFICULTIES, sudokuBoardComplete, type SudokuDifficultyKey } from "@/lib/sudoku-rules";
+import { calculateSudokuXpAward, createSudokuPuzzle, DAILY_SUDOKU_XP_CAP, isSudokuRankingTimeEligible, SUDOKU_DIFFICULTIES, sudokuBoardComplete, type SudokuDifficultyKey } from "@/lib/sudoku-rules";
 import { creditTreasury } from "@/lib/treasury";
 
 type Tx = Prisma.TransactionClient;
@@ -16,6 +17,34 @@ async function assertGamesEnabled(tx: Tx) {
 }
 
 type SudokuRecord = Awaited<ReturnType<Tx["sudokuGame"]["findUniqueOrThrow"]>>;
+
+function schoolDateKey(now: Date, timeZone: string) {
+  const parts = new Intl.DateTimeFormat("en-CA", { timeZone, year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(now);
+  const values = Object.fromEntries(parts.filter((part) => part.type !== "literal").map((part) => [part.type, part.value]));
+  return `${values.year}-${values.month}-${values.day}`;
+}
+
+function nextDateKey(dateKey: string) {
+  const [year, month, day] = dateKey.split("-").map(Number);
+  return new Date(Date.UTC(year, month - 1, day + 1)).toISOString().slice(0, 10);
+}
+
+function schoolDayBounds(now: Date, timeZone: string) {
+  const dateKey = schoolDateKey(now, timeZone);
+  return {
+    start: new Date(schoolLocalToUtc(`${dateKey}T00:00`, timeZone)),
+    end: new Date(schoolLocalToUtc(`${nextDateKey(dateKey)}T00:00`, timeZone)),
+  };
+}
+
+async function sudokuXpEarnedInSchoolDay(tx: Tx, studentId: string, now: Date, timeZone: string) {
+  const { start, end } = schoolDayBounds(now, timeZone);
+  const result = await tx.xpEntry.aggregate({
+    where: { studentId, source: "SUDOKU_RESULT", createdAt: { gte: start, lt: end } },
+    _sum: { delta: true },
+  });
+  return Math.max(0, result._sum.delta ?? 0);
+}
 
 export function sudokuGameDto(game: SudokuRecord) {
   const config = SUDOKU_DIFFICULTIES[game.difficulty as SudokuDifficultyKey];
@@ -46,10 +75,19 @@ async function finishIfComplete(tx: Tx, game: SudokuRecord, board: string) {
   const completedAt = new Date();
   const elapsedSeconds = Math.max(1, Math.floor((completedAt.getTime() - game.startedAt.getTime()) / 1000));
   const completionKey = `sudoku:${game.id}:complete`;
-  await tx.user.update({ where: { id: game.studentId }, data: { xp: { increment: game.xpReward } } });
-  await tx.xpEntry.create({ data: { studentId: game.studentId, delta: game.xpReward, reason: `Sudoku ${SUDOKU_DIFFICULTIES[game.difficulty as SudokuDifficultyKey].label} concluído`, source: "SUDOKU_RESULT", idempotencyKey: completionKey } });
-  const updated = await tx.sudokuGame.update({ where: { id: game.id }, data: { board, status: "COMPLETED", completedAt, elapsedSeconds, completionKey } });
-  await tx.auditLog.create({ data: { actorId: game.studentId, targetId: game.studentId, event: "SUDOKU_GAME_FINISHED", details: { gameId: game.id, difficulty: game.difficulty, elapsedSeconds, mistakes: game.mistakes, hintsUsed: game.hintsUsed, eligibleForRanking: game.eligibleForRanking, xpReward: game.xpReward } } });
+  const difficulty = game.difficulty as SudokuDifficultyKey;
+  const settings = await tx.appSetting.findUnique({ where: { id: 1 }, select: { timeZone: true } });
+  const timeZone = settings?.timeZone ?? SCHOOL_TIME_ZONE;
+  await tx.$queryRaw`SELECT "id" FROM "User" WHERE "id" = ${game.studentId}::uuid FOR UPDATE`;
+  const xpEarnedToday = await sudokuXpEarnedInSchoolDay(tx, game.studentId, completedAt, timeZone);
+  const awardedXp = calculateSudokuXpAward(game.xpReward, xpEarnedToday);
+  const eligibleForRanking = game.eligibleForRanking && awardedXp > 0 && isSudokuRankingTimeEligible(difficulty, elapsedSeconds);
+  if (awardedXp > 0) {
+    await tx.user.update({ where: { id: game.studentId }, data: { xp: { increment: awardedXp } } });
+    await tx.xpEntry.create({ data: { studentId: game.studentId, delta: awardedXp, reason: `Sudoku ${SUDOKU_DIFFICULTIES[difficulty].label} concluído`, source: "SUDOKU_RESULT", idempotencyKey: completionKey } });
+  }
+  const updated = await tx.sudokuGame.update({ where: { id: game.id }, data: { board, status: "COMPLETED", completedAt, elapsedSeconds, completionKey, xpReward: awardedXp, eligibleForRanking } });
+  await tx.auditLog.create({ data: { actorId: game.studentId, targetId: game.studentId, event: "SUDOKU_GAME_FINISHED", details: { gameId: game.id, difficulty: game.difficulty, elapsedSeconds, mistakes: game.mistakes, hintsUsed: game.hintsUsed, eligibleForRanking, configuredXpReward: game.xpReward, awardedXp, xpEarnedBeforeCompletion: xpEarnedToday, dailyXpCap: DAILY_SUDOKU_XP_CAP } } });
   return updated;
 }
 
@@ -135,12 +173,15 @@ export async function purchaseSudokuErrors(tx: Tx, studentId: string, gameId: st
 }
 
 export async function getSudokuHome(studentId: string) {
-  const [settings, activeGames, student] = await Promise.all([
-    prisma.appSetting.upsert({ where: { id: 1 }, create: { id: 1 }, update: {}, select: { gamesEnabled: true } }),
+  const settings = await prisma.appSetting.upsert({ where: { id: 1 }, create: { id: 1 }, update: {}, select: { gamesEnabled: true, timeZone: true } });
+  const { start, end } = schoolDayBounds(new Date(), settings.timeZone);
+  const [activeGames, student, dailyXp] = await Promise.all([
     prisma.sudokuGame.findMany({ where: { studentId, status: "ACTIVE" }, orderBy: { startedAt: "desc" }, take: 5, select: { id: true, difficulty: true, startedAt: true, mistakes: true, mistakeLimit: true } }),
     prisma.user.findUniqueOrThrow({ where: { id: studentId }, select: { devCoins: true } }),
+    prisma.xpEntry.aggregate({ where: { studentId, source: "SUDOKU_RESULT", createdAt: { gte: start, lt: end } }, _sum: { delta: true } }),
   ]);
-  return { gamesEnabled: settings.gamesEnabled, devCoins: student.devCoins, activeGames: activeGames.map((game) => ({ ...game, startedAt: game.startedAt.toISOString() })) };
+  const sudokuXpEarnedToday = Math.max(0, dailyXp._sum.delta ?? 0);
+  return { gamesEnabled: settings.gamesEnabled, devCoins: student.devCoins, sudokuXpDailyCap: DAILY_SUDOKU_XP_CAP, sudokuXpEarnedToday, sudokuXpRemainingToday: Math.max(0, DAILY_SUDOKU_XP_CAP - sudokuXpEarnedToday), activeGames: activeGames.map((game) => ({ ...game, startedAt: game.startedAt.toISOString() })) };
 }
 
 export async function getSudokuRanking(difficulty: SudokuDifficultyKey) {

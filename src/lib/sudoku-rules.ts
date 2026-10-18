@@ -2,19 +2,30 @@ import { randomInt } from "node:crypto";
 
 export type SudokuDifficultyKey = "EASY" | "MEDIUM" | "HARD" | "EXPERT" | "MASTER";
 
+export const DAILY_SUDOKU_XP_CAP = 180;
+
 export const SUDOKU_DIFFICULTIES: Record<SudokuDifficultyKey, {
   label: string;
   clues: number;
   mistakeLimit: number;
   xpReward: number;
   extraMistakesCost: number;
+  minimumRankingSeconds: number;
 }> = {
-  EASY: { label: "Fácil", clues: 42, mistakeLimit: 3, xpReward: 30, extraMistakesCost: 60 },
-  MEDIUM: { label: "Médio", clues: 36, mistakeLimit: 5, xpReward: 50, extraMistakesCost: 80 },
-  HARD: { label: "Difícil", clues: 31, mistakeLimit: 7, xpReward: 80, extraMistakesCost: 110 },
-  EXPERT: { label: "Especialista", clues: 27, mistakeLimit: 9, xpReward: 120, extraMistakesCost: 150 },
-  MASTER: { label: "Mestre", clues: 24, mistakeLimit: 12, xpReward: 180, extraMistakesCost: 200 },
+  EASY: { label: "Fácil", clues: 42, mistakeLimit: 3, xpReward: 30, extraMistakesCost: 60, minimumRankingSeconds: 90 },
+  MEDIUM: { label: "Médio", clues: 36, mistakeLimit: 5, xpReward: 50, extraMistakesCost: 80, minimumRankingSeconds: 180 },
+  HARD: { label: "Difícil", clues: 31, mistakeLimit: 7, xpReward: 80, extraMistakesCost: 110, minimumRankingSeconds: 300 },
+  EXPERT: { label: "Especialista", clues: 27, mistakeLimit: 9, xpReward: 120, extraMistakesCost: 150, minimumRankingSeconds: 420 },
+  MASTER: { label: "Mestre", clues: 24, mistakeLimit: 12, xpReward: 180, extraMistakesCost: 200, minimumRankingSeconds: 600 },
 };
+
+export function calculateSudokuXpAward(configuredReward: number, xpEarnedToday: number) {
+  return Math.max(0, Math.min(configuredReward, DAILY_SUDOKU_XP_CAP - Math.max(0, xpEarnedToday)));
+}
+
+export function isSudokuRankingTimeEligible(difficulty: SudokuDifficultyKey, elapsedSeconds: number) {
+  return elapsedSeconds >= SUDOKU_DIFFICULTIES[difficulty].minimumRankingSeconds;
+}
 
 function mulberry32(seed: number) {
   return () => {
