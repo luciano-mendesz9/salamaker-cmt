@@ -32,6 +32,7 @@ type SoloGame = { id: string; board: string; status: "ACTIVE" | "FINISHED"; resu
 function MachineTicTacToe({ onBack }: { onBack: () => void }) {
   const [game, setGame] = useState<SoloGame | null>(null);
   const [busy, setBusy] = useState(true);
+  const [optimisticCell, setOptimisticCell] = useState<number | null>(null);
   async function create() {
     setBusy(true);
     try {
@@ -51,16 +52,18 @@ function MachineTicTacToe({ onBack }: { onBack: () => void }) {
   }, []);
   async function play(cell: number) {
     if (!game || busy || game.status !== "ACTIVE" || game.board[cell] !== "-") return;
+    setOptimisticCell(cell);
     setBusy(true);
     try {
       const response = await fetch(`/api/student/minigames/tic-tac-toe/solo/games/${game.id}/moves`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ cell, requestId: crypto.randomUUID() }) });
       const data = await response.json();
       if (!response.ok) return toast.error(data.message);
       setGame(data.game);
-    } finally { setBusy(false); }
+    } finally { setOptimisticCell(null); setBusy(false); }
   }
+  const displayedBoard = game && optimisticCell !== null && game.board[optimisticCell] === "-" ? applyTicTacToeMove(game.board, optimisticCell, "X") : game?.board ?? "---------";
   const message = !game ? "Preparando partida…" : game.status === "ACTIVE" ? busy ? "A máquina está pensando…" : "Sua vez — você é X" : game.result === "HUMAN_WIN" ? `Você venceu! +${game.xpReward} XP` : game.result === "MACHINE_WIN" ? "A máquina venceu. Tente outra estratégia!" : "Deu velha!";
-  return <section className="mx-auto mt-8 max-w-xl"><button onClick={onBack} className="text-sm font-bold text-slate-400">← Trocar modo</button><div className="glass mt-5 rounded-3xl p-5 text-center sm:p-8"><div className="mx-auto flex w-fit items-center gap-3 rounded-full bg-fuchsia-300/10 px-4 py-2 text-sm font-bold text-fuchsia-200"><Bot size={18}/> Você contra a máquina</div><h1 className="mt-5 font-display text-2xl font-black">{message}</h1><p className="mt-2 text-xs text-slate-400">Vitórias nas primeiras 5 partidas do dia valem 25 XP. Da 6ª em diante, valem 15 XP, sem limite de partidas.</p><TicBoard board={game?.board ?? "---------"} disabled={busy || !game || game.status !== "ACTIVE"} onPlay={play}/><div className="mt-6 flex gap-3"><button onClick={onBack} className="button-secondary flex-1 justify-center">Voltar</button><button disabled={busy || game?.status === "ACTIVE"} onClick={create} className="button-primary flex-1"><RotateCcw size={18}/>Nova rodada</button></div></div></section>;
+  return <section className="mx-auto mt-8 max-w-xl"><button onClick={onBack} className="text-sm font-bold text-slate-400">← Trocar modo</button><div className="glass mt-5 rounded-3xl p-5 text-center sm:p-8"><div className="mx-auto flex w-fit items-center gap-3 rounded-full bg-fuchsia-300/10 px-4 py-2 text-sm font-bold text-fuchsia-200"><Bot size={18}/> Você contra a máquina</div><h1 className="mt-5 font-display text-2xl font-black">{message}</h1><p className="mt-2 text-xs text-slate-400">Vitórias nas primeiras 5 partidas do dia valem 25 XP. Da 6ª em diante, valem 15 XP, sem limite de partidas.</p><TicBoard board={displayedBoard} disabled={busy || !game || game.status !== "ACTIVE"} onPlay={play}/><div className="mt-6 flex gap-3"><button onClick={onBack} className="button-secondary flex-1 justify-center">Voltar</button><button disabled={busy || game?.status === "ACTIVE"} onClick={create} className="button-primary flex-1"><RotateCcw size={18}/>Nova rodada</button></div></div></section>;
 }
 
 function LocalTicTacToe({ onBack }: { onBack: () => void }) {
