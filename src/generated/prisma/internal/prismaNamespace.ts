@@ -442,6 +442,8 @@ export const ModelName = {
   PongPoint: 'PongPoint',
   TicTacToeRoom: 'TicTacToeRoom',
   TicTacToeRound: 'TicTacToeRound',
+  TicTacToeSoloGame: 'TicTacToeSoloGame',
+  TicTacToeSoloAction: 'TicTacToeSoloAction',
   SudokuGame: 'SudokuGame',
   SudokuAction: 'SudokuAction'
 } as const
@@ -459,7 +461,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "profileAvatarPurchase" | "devCoinEntry" | "devCoinTransfer" | "stickerCollection" | "sticker" | "stickerCopy" | "stickerPackPurchase" | "stickerListing" | "stickerTrade" | "stickerDonation" | "patentLevel" | "studentPatentProgress" | "patentRewardClaim" | "devCoinTreasury" | "stickerMarketSetting" | "devCoinTreasuryEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket" | "pongRoom" | "pongPlayer" | "pongJoinRequest" | "pongPoint" | "ticTacToeRoom" | "ticTacToeRound" | "sudokuGame" | "sudokuAction"
+    modelProps: "user" | "profileAvatarPurchase" | "devCoinEntry" | "devCoinTransfer" | "stickerCollection" | "sticker" | "stickerCopy" | "stickerPackPurchase" | "stickerListing" | "stickerTrade" | "stickerDonation" | "patentLevel" | "studentPatentProgress" | "patentRewardClaim" | "devCoinTreasury" | "stickerMarketSetting" | "devCoinTreasuryEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket" | "pongRoom" | "pongPlayer" | "pongJoinRequest" | "pongPoint" | "ticTacToeRoom" | "ticTacToeRound" | "ticTacToeSoloGame" | "ticTacToeSoloAction" | "sudokuGame" | "sudokuAction"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -3793,6 +3795,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    TicTacToeSoloGame: {
+      payload: Prisma.$TicTacToeSoloGamePayload<ExtArgs>
+      fields: Prisma.TicTacToeSoloGameFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.TicTacToeSoloGameFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloGamePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.TicTacToeSoloGameFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloGamePayload>
+        }
+        findFirst: {
+          args: Prisma.TicTacToeSoloGameFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloGamePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.TicTacToeSoloGameFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloGamePayload>
+        }
+        findMany: {
+          args: Prisma.TicTacToeSoloGameFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloGamePayload>[]
+        }
+        create: {
+          args: Prisma.TicTacToeSoloGameCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloGamePayload>
+        }
+        createMany: {
+          args: Prisma.TicTacToeSoloGameCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.TicTacToeSoloGameCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloGamePayload>[]
+        }
+        delete: {
+          args: Prisma.TicTacToeSoloGameDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloGamePayload>
+        }
+        update: {
+          args: Prisma.TicTacToeSoloGameUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloGamePayload>
+        }
+        deleteMany: {
+          args: Prisma.TicTacToeSoloGameDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.TicTacToeSoloGameUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.TicTacToeSoloGameUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloGamePayload>[]
+        }
+        upsert: {
+          args: Prisma.TicTacToeSoloGameUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloGamePayload>
+        }
+        aggregate: {
+          args: Prisma.TicTacToeSoloGameAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateTicTacToeSoloGame>
+        }
+        groupBy: {
+          args: Prisma.TicTacToeSoloGameGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TicTacToeSoloGameGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.TicTacToeSoloGameCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TicTacToeSoloGameCountAggregateOutputType> | number
+        }
+      }
+    }
+    TicTacToeSoloAction: {
+      payload: Prisma.$TicTacToeSoloActionPayload<ExtArgs>
+      fields: Prisma.TicTacToeSoloActionFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.TicTacToeSoloActionFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloActionPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.TicTacToeSoloActionFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloActionPayload>
+        }
+        findFirst: {
+          args: Prisma.TicTacToeSoloActionFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloActionPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.TicTacToeSoloActionFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloActionPayload>
+        }
+        findMany: {
+          args: Prisma.TicTacToeSoloActionFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloActionPayload>[]
+        }
+        create: {
+          args: Prisma.TicTacToeSoloActionCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloActionPayload>
+        }
+        createMany: {
+          args: Prisma.TicTacToeSoloActionCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.TicTacToeSoloActionCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloActionPayload>[]
+        }
+        delete: {
+          args: Prisma.TicTacToeSoloActionDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloActionPayload>
+        }
+        update: {
+          args: Prisma.TicTacToeSoloActionUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloActionPayload>
+        }
+        deleteMany: {
+          args: Prisma.TicTacToeSoloActionDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.TicTacToeSoloActionUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.TicTacToeSoloActionUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloActionPayload>[]
+        }
+        upsert: {
+          args: Prisma.TicTacToeSoloActionUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TicTacToeSoloActionPayload>
+        }
+        aggregate: {
+          args: Prisma.TicTacToeSoloActionAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateTicTacToeSoloAction>
+        }
+        groupBy: {
+          args: Prisma.TicTacToeSoloActionGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TicTacToeSoloActionGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.TicTacToeSoloActionCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TicTacToeSoloActionCountAggregateOutputType> | number
+        }
+      }
+    }
     SudokuGame: {
       payload: Prisma.$SudokuGamePayload<ExtArgs>
       fields: Prisma.SudokuGameFieldRefs
@@ -4622,6 +4772,35 @@ export const TicTacToeRoundScalarFieldEnum = {
 export type TicTacToeRoundScalarFieldEnum = (typeof TicTacToeRoundScalarFieldEnum)[keyof typeof TicTacToeRoundScalarFieldEnum]
 
 
+export const TicTacToeSoloGameScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  creationKey: 'creationKey',
+  board: 'board',
+  status: 'status',
+  result: 'result',
+  xpReward: 'xpReward',
+  startedAt: 'startedAt',
+  finishedAt: 'finishedAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TicTacToeSoloGameScalarFieldEnum = (typeof TicTacToeSoloGameScalarFieldEnum)[keyof typeof TicTacToeSoloGameScalarFieldEnum]
+
+
+export const TicTacToeSoloActionScalarFieldEnum = {
+  id: 'id',
+  gameId: 'gameId',
+  actionKey: 'actionKey',
+  humanCell: 'humanCell',
+  machineCell: 'machineCell',
+  board: 'board',
+  createdAt: 'createdAt'
+} as const
+
+export type TicTacToeSoloActionScalarFieldEnum = (typeof TicTacToeSoloActionScalarFieldEnum)[keyof typeof TicTacToeSoloActionScalarFieldEnum]
+
+
 export const SudokuGameScalarFieldEnum = {
   id: 'id',
   studentId: 'studentId',
@@ -4637,6 +4816,8 @@ export const SudokuGameScalarFieldEnum = {
   eligibleForRanking: 'eligibleForRanking',
   xpReward: 'xpReward',
   elapsedSeconds: 'elapsedSeconds',
+  humanPlayScore: 'humanPlayScore',
+  humanPlaySignals: 'humanPlaySignals',
   completionKey: 'completionKey',
   startedAt: 'startedAt',
   completedAt: 'completedAt',
@@ -5190,6 +5371,34 @@ export type ListEnumTicTacToeMarkFieldRefInput<$PrismaModel> = FieldRefInputType
 
 
 /**
+ * Reference to a field of type 'TicTacToeSoloStatus'
+ */
+export type EnumTicTacToeSoloStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TicTacToeSoloStatus'>
+
+
+
+/**
+ * Reference to a field of type 'TicTacToeSoloStatus[]'
+ */
+export type ListEnumTicTacToeSoloStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TicTacToeSoloStatus[]'>
+
+
+
+/**
+ * Reference to a field of type 'TicTacToeSoloResult'
+ */
+export type EnumTicTacToeSoloResultFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TicTacToeSoloResult'>
+
+
+
+/**
+ * Reference to a field of type 'TicTacToeSoloResult[]'
+ */
+export type ListEnumTicTacToeSoloResultFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TicTacToeSoloResult[]'>
+
+
+
+/**
  * Reference to a field of type 'SudokuDifficulty'
  */
 export type EnumSudokuDifficultyFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SudokuDifficulty'>
@@ -5426,6 +5635,8 @@ export type GlobalOmitConfig = {
   pongPoint?: Prisma.PongPointOmit
   ticTacToeRoom?: Prisma.TicTacToeRoomOmit
   ticTacToeRound?: Prisma.TicTacToeRoundOmit
+  ticTacToeSoloGame?: Prisma.TicTacToeSoloGameOmit
+  ticTacToeSoloAction?: Prisma.TicTacToeSoloActionOmit
   sudokuGame?: Prisma.SudokuGameOmit
   sudokuAction?: Prisma.SudokuActionOmit
 }

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { calculateSudokuXpAward, countSudokuSolutions, createSudokuPuzzle, DAILY_SUDOKU_XP_CAP, generateSolvedSudoku, isSudokuRankingTimeEligible, SUDOKU_DIFFICULTIES } from "./sudoku-rules";
+import { calculateSudokuHumanPlayScore, calculateSudokuXpAward, countSudokuSolutions, createSudokuPuzzle, DAILY_SUDOKU_XP_CAP, generateSolvedSudoku, isSudokuRankingTimeEligible, SUDOKU_DIFFICULTIES } from "./sudoku-rules";
 
 function validGroup(values: string) { return [...values].sort().join("") === "123456789"; }
 
@@ -30,4 +30,24 @@ test("ranking rejeita conclusões abaixo do tempo mínimo da dificuldade", () =>
   assert.equal(isSudokuRankingTimeEligible("EASY", 90), true);
   assert.equal(isSudokuRankingTimeEligible("MASTER", 599), false);
   assert.equal(isSudokuRankingTimeEligible("MASTER", 600), true);
+});
+
+test("índice humano fica alto em uma partida Mestre de quinze minutos com cadência natural", () => {
+  const startedAt = new Date("2026-10-17T20:00:00.000Z");
+  const completedAt = new Date(startedAt.getTime() + 900_000);
+  const actions = Array.from({ length: 57 }, (_, index) => ({ kind: "VALUE", createdAt: new Date(startedAt.getTime() + 120_000 + index * 13_900) }));
+  const result = calculateSudokuHumanPlayScore({ difficulty: "MASTER", startedAt, completedAt, actions });
+  assert.ok(result.score >= 75);
+  assert.equal(result.label, "HIGH");
+  assert.equal(result.solutionTranscriptionPattern, false);
+});
+
+test("índice humano fica muito baixo após longa espera seguida de transcrição rápida", () => {
+  const startedAt = new Date("2026-10-17T20:00:00.000Z");
+  const completedAt = new Date(startedAt.getTime() + 286_000);
+  const actions = Array.from({ length: 57 }, (_, index) => ({ kind: "VALUE", createdAt: new Date(startedAt.getTime() + 130_000 + index * 2_700) }));
+  const result = calculateSudokuHumanPlayScore({ difficulty: "MASTER", startedAt, completedAt, actions });
+  assert.ok(result.score < 20);
+  assert.equal(result.label, "VERY_LOW");
+  assert.equal(result.solutionTranscriptionPattern, true);
 });

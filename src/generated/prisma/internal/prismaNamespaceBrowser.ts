@@ -96,6 +96,8 @@ export const ModelName = {
   PongPoint: 'PongPoint',
   TicTacToeRoom: 'TicTacToeRoom',
   TicTacToeRound: 'TicTacToeRound',
+  TicTacToeSoloGame: 'TicTacToeSoloGame',
+  TicTacToeSoloAction: 'TicTacToeSoloAction',
   SudokuGame: 'SudokuGame',
   SudokuAction: 'SudokuAction'
 } as const
@@ -758,6 +760,35 @@ export const TicTacToeRoundScalarFieldEnum = {
 export type TicTacToeRoundScalarFieldEnum = (typeof TicTacToeRoundScalarFieldEnum)[keyof typeof TicTacToeRoundScalarFieldEnum]
 
 
+export const TicTacToeSoloGameScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  creationKey: 'creationKey',
+  board: 'board',
+  status: 'status',
+  result: 'result',
+  xpReward: 'xpReward',
+  startedAt: 'startedAt',
+  finishedAt: 'finishedAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TicTacToeSoloGameScalarFieldEnum = (typeof TicTacToeSoloGameScalarFieldEnum)[keyof typeof TicTacToeSoloGameScalarFieldEnum]
+
+
+export const TicTacToeSoloActionScalarFieldEnum = {
+  id: 'id',
+  gameId: 'gameId',
+  actionKey: 'actionKey',
+  humanCell: 'humanCell',
+  machineCell: 'machineCell',
+  board: 'board',
+  createdAt: 'createdAt'
+} as const
+
+export type TicTacToeSoloActionScalarFieldEnum = (typeof TicTacToeSoloActionScalarFieldEnum)[keyof typeof TicTacToeSoloActionScalarFieldEnum]
+
+
 export const SudokuGameScalarFieldEnum = {
   id: 'id',
   studentId: 'studentId',
@@ -773,6 +804,8 @@ export const SudokuGameScalarFieldEnum = {
   eligibleForRanking: 'eligibleForRanking',
   xpReward: 'xpReward',
   elapsedSeconds: 'elapsedSeconds',
+  humanPlayScore: 'humanPlayScore',
+  humanPlaySignals: 'humanPlaySignals',
   completionKey: 'completionKey',
   startedAt: 'startedAt',
   completedAt: 'completedAt',

@@ -24,6 +24,8 @@ export function ticTacToeJsonError(error: unknown) {
     NOT_YOUR_TURN: ["Aguarde a sua vez.", 409],
     INVALID_CELL: ["Casa inválida.", 400],
     CELL_OCCUPIED: ["Essa casa já está ocupada.", 409],
+    SOLO_GAME_NOT_FOUND: ["Partida contra a máquina não encontrada.", 404],
+    SOLO_GAME_NOT_ACTIVE: ["Esta partida contra a máquina já terminou.", 409],
     ONLY_OWNER: ["Somente o criador pode cancelar a sala.", 403],
     ROOM_ALREADY_STARTED: ["A partida já começou.", 409],
   };

@@ -181,6 +181,17 @@ enum TicTacToeMark {
   O
 }
 
+enum TicTacToeSoloStatus {
+  ACTIVE
+  FINISHED
+}
+
+enum TicTacToeSoloResult {
+  HUMAN_WIN
+  MACHINE_WIN
+  DRAW
+}
+
 enum SudokuDifficulty {
   EASY
   MEDIUM
@@ -331,6 +342,7 @@ model User {
   guestTicTacToeRooms      TicTacToeRoom[]         @relation("TicTacToeRoomGuest")
   wonTicTacToeRooms        TicTacToeRoom[]         @relation("TicTacToeRoomWinner")
   wonTicTacToeRounds       TicTacToeRound[]        @relation("TicTacToeRoundWinner")
+  ticTacToeSoloGames       TicTacToeSoloGame[]
   sudokuGames              SudokuGame[]
 
   @@index([role, status, xp])
@@ -1046,6 +1058,36 @@ model TicTacToeRound {
   @@index([winnerId, finishedAt])
 }
 
+model TicTacToeSoloGame {
+  id          String                 @id @default(uuid()) @db.Uuid
+  studentId   String                 @db.Uuid
+  creationKey String                 @unique
+  board       String                 @default("---------") @db.VarChar(9)
+  status      TicTacToeSoloStatus    @default(ACTIVE)
+  result      TicTacToeSoloResult?
+  xpReward    Int                    @default(0)
+  startedAt   DateTime               @default(now())
+  finishedAt  DateTime?
+  updatedAt   DateTime               @updatedAt
+  student     User                   @relation(fields: [studentId], references: [id], onDelete: Restrict)
+  actions     TicTacToeSoloAction[]
+
+  @@index([studentId, status, startedAt])
+}
+
+model TicTacToeSoloAction {
+  id          String            @id @default(uuid()) @db.Uuid
+  gameId      String            @db.Uuid
+  actionKey   String            @unique
+  humanCell   Int
+  machineCell Int?
+  board       String            @db.VarChar(9)
+  createdAt   DateTime          @default(now())
+  game        TicTacToeSoloGame @relation(fields: [gameId], references: [id], onDelete: Restrict)
+
+  @@index([gameId, createdAt])
+}
+
 model SudokuGame {
   id                     String           @id @default(uuid()) @db.Uuid
   studentId              String           @db.Uuid
@@ -1061,6 +1103,8 @@ model SudokuGame {
   eligibleForRanking     Boolean          @default(true)
   xpReward               Int
   elapsedSeconds         Int?
+  humanPlayScore         Int?
+  humanPlaySignals       Json?
   completionKey          String?          @unique
   startedAt              DateTime         @default(now())
   completedAt            DateTime?

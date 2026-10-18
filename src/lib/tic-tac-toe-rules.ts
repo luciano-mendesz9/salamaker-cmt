@@ -1,6 +1,8 @@
 export const TIC_TAC_TOE_MIN_WAGER = 11;
 export const TIC_TAC_TOE_MAX_WAGER = 500;
 export const TIC_TAC_TOE_WIN_XP = 25;
+export const TIC_TAC_TOE_SOLO_REDUCED_XP = 15;
+export const TIC_TAC_TOE_SOLO_FULL_XP_MATCHES = 5;
 
 export type TicTacToeCell = "X" | "O" | "-";
 export type TicTacToeMark = Exclude<TicTacToeCell, "-">;
@@ -71,4 +73,17 @@ export function bestTicTacToeMove(board: string, machine: TicTacToeMark): number
     }
   }
   return bestCell;
+}
+
+export function ticTacToeMachineMove(board: string, skillRoll: number, choiceRoll: number): number {
+  const best = bestTicTacToeMove(board, "O");
+  if (skillRoll < 0.72) return best;
+  const alternatives = [...board].flatMap((cell, index) => cell === "-" && index !== best ? [index] : []);
+  if (alternatives.length === 0) return best;
+  const normalized = Math.min(Math.max(choiceRoll, 0), 0.999999);
+  return alternatives[Math.floor(normalized * alternatives.length)];
+}
+
+export function ticTacToeSoloXpAward(finishedMatchesToday: number) {
+  return finishedMatchesToday >= TIC_TAC_TOE_SOLO_FULL_XP_MATCHES ? TIC_TAC_TOE_SOLO_REDUCED_XP : TIC_TAC_TOE_WIN_XP;
 }

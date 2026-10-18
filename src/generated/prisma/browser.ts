@@ -243,6 +243,16 @@ export type TicTacToeRoom = Prisma.TicTacToeRoomModel
  */
 export type TicTacToeRound = Prisma.TicTacToeRoundModel
 /**
+ * Model TicTacToeSoloGame
+ *
+ */
+export type TicTacToeSoloGame = Prisma.TicTacToeSoloGameModel
+/**
+ * Model TicTacToeSoloAction
+ *
+ */
+export type TicTacToeSoloAction = Prisma.TicTacToeSoloActionModel
+/**
  * Model SudokuGame
  *
  */

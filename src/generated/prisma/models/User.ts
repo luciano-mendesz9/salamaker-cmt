@@ -373,6 +373,7 @@ export type UserWhereInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomListRelationFilter
   wonTicTacToeRooms?: Prisma.TicTacToeRoomListRelationFilter
   wonTicTacToeRounds?: Prisma.TicTacToeRoundListRelationFilter
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameListRelationFilter
   sudokuGames?: Prisma.SudokuGameListRelationFilter
 }
 
@@ -440,6 +441,7 @@ export type UserOrderByWithRelationInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomOrderByRelationAggregateInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomOrderByRelationAggregateInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundOrderByRelationAggregateInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameOrderByRelationAggregateInput
   sudokuGames?: Prisma.SudokuGameOrderByRelationAggregateInput
 }
 
@@ -510,6 +512,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   guestTicTacToeRooms?: Prisma.TicTacToeRoomListRelationFilter
   wonTicTacToeRooms?: Prisma.TicTacToeRoomListRelationFilter
   wonTicTacToeRounds?: Prisma.TicTacToeRoundListRelationFilter
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameListRelationFilter
   sudokuGames?: Prisma.SudokuGameListRelationFilter
 }, "id" | "accessCode">
 
@@ -627,6 +630,7 @@ export type UserCreateInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -694,6 +698,7 @@ export type UserUncheckedCreateInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -761,6 +766,7 @@ export type UserUpdateInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -828,6 +834,7 @@ export type UserUncheckedUpdateInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -1671,6 +1678,20 @@ export type UserUpdateOneWithoutWonTicTacToeRoundsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutWonTicTacToeRoundsInput, Prisma.UserUpdateWithoutWonTicTacToeRoundsInput>, Prisma.UserUncheckedUpdateWithoutWonTicTacToeRoundsInput>
 }
 
+export type UserCreateNestedOneWithoutTicTacToeSoloGamesInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutTicTacToeSoloGamesInput, Prisma.UserUncheckedCreateWithoutTicTacToeSoloGamesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutTicTacToeSoloGamesInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutTicTacToeSoloGamesNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutTicTacToeSoloGamesInput, Prisma.UserUncheckedCreateWithoutTicTacToeSoloGamesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutTicTacToeSoloGamesInput
+  upsert?: Prisma.UserUpsertWithoutTicTacToeSoloGamesInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutTicTacToeSoloGamesInput, Prisma.UserUpdateWithoutTicTacToeSoloGamesInput>, Prisma.UserUncheckedUpdateWithoutTicTacToeSoloGamesInput>
+}
+
 export type UserCreateNestedOneWithoutSudokuGamesInput = {
   create?: Prisma.XOR<Prisma.UserCreateWithoutSudokuGamesInput, Prisma.UserUncheckedCreateWithoutSudokuGamesInput>
   connectOrCreate?: Prisma.UserCreateOrConnectWithoutSudokuGamesInput
@@ -1748,6 +1769,7 @@ export type UserCreateWithoutProfileAvatarPurchasesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -1814,6 +1836,7 @@ export type UserUncheckedCreateWithoutProfileAvatarPurchasesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -1896,6 +1919,7 @@ export type UserUpdateWithoutProfileAvatarPurchasesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -1962,6 +1986,7 @@ export type UserUncheckedUpdateWithoutProfileAvatarPurchasesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -2028,6 +2053,7 @@ export type UserCreateWithoutDevCoinEntriesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -2094,6 +2120,7 @@ export type UserUncheckedCreateWithoutDevCoinEntriesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -2165,6 +2192,7 @@ export type UserCreateWithoutAuthoredDevCoinEntriesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -2231,6 +2259,7 @@ export type UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -2313,6 +2342,7 @@ export type UserUpdateWithoutDevCoinEntriesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -2379,6 +2409,7 @@ export type UserUncheckedUpdateWithoutDevCoinEntriesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -2456,6 +2487,7 @@ export type UserUpdateWithoutAuthoredDevCoinEntriesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -2522,6 +2554,7 @@ export type UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -2588,6 +2621,7 @@ export type UserCreateWithoutDevCoinTransfersSentInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -2654,6 +2688,7 @@ export type UserUncheckedCreateWithoutDevCoinTransfersSentInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -2725,6 +2760,7 @@ export type UserCreateWithoutDevCoinTransfersReceivedInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -2791,6 +2827,7 @@ export type UserUncheckedCreateWithoutDevCoinTransfersReceivedInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -2873,6 +2910,7 @@ export type UserUpdateWithoutDevCoinTransfersSentInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -2939,6 +2977,7 @@ export type UserUncheckedUpdateWithoutDevCoinTransfersSentInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -3016,6 +3055,7 @@ export type UserUpdateWithoutDevCoinTransfersReceivedInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -3082,6 +3122,7 @@ export type UserUncheckedUpdateWithoutDevCoinTransfersReceivedInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -3148,6 +3189,7 @@ export type UserCreateWithoutStickerCopiesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -3214,6 +3256,7 @@ export type UserUncheckedCreateWithoutStickerCopiesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -3296,6 +3339,7 @@ export type UserUpdateWithoutStickerCopiesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -3362,6 +3406,7 @@ export type UserUncheckedUpdateWithoutStickerCopiesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -3428,6 +3473,7 @@ export type UserCreateWithoutStickerPackPurchasesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -3494,6 +3540,7 @@ export type UserUncheckedCreateWithoutStickerPackPurchasesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -3576,6 +3623,7 @@ export type UserUpdateWithoutStickerPackPurchasesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -3642,6 +3690,7 @@ export type UserUncheckedUpdateWithoutStickerPackPurchasesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -3708,6 +3757,7 @@ export type UserCreateWithoutStickerListingsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -3774,6 +3824,7 @@ export type UserUncheckedCreateWithoutStickerListingsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -3845,6 +3896,7 @@ export type UserCreateWithoutStickerPurchasesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -3911,6 +3963,7 @@ export type UserUncheckedCreateWithoutStickerPurchasesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -3993,6 +4046,7 @@ export type UserUpdateWithoutStickerListingsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -4059,6 +4113,7 @@ export type UserUncheckedUpdateWithoutStickerListingsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -4136,6 +4191,7 @@ export type UserUpdateWithoutStickerPurchasesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -4202,6 +4258,7 @@ export type UserUncheckedUpdateWithoutStickerPurchasesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -4268,6 +4325,7 @@ export type UserCreateWithoutStickerTradesSoldInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -4334,6 +4392,7 @@ export type UserUncheckedCreateWithoutStickerTradesSoldInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -4405,6 +4464,7 @@ export type UserCreateWithoutStickerTradesBoughtInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -4471,6 +4531,7 @@ export type UserUncheckedCreateWithoutStickerTradesBoughtInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -4553,6 +4614,7 @@ export type UserUpdateWithoutStickerTradesSoldInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -4619,6 +4681,7 @@ export type UserUncheckedUpdateWithoutStickerTradesSoldInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -4696,6 +4759,7 @@ export type UserUpdateWithoutStickerTradesBoughtInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -4762,6 +4826,7 @@ export type UserUncheckedUpdateWithoutStickerTradesBoughtInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -4828,6 +4893,7 @@ export type UserCreateWithoutStickerDonationsSentInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -4894,6 +4960,7 @@ export type UserUncheckedCreateWithoutStickerDonationsSentInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -4965,6 +5032,7 @@ export type UserCreateWithoutStickerDonationsReceivedInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -5031,6 +5099,7 @@ export type UserUncheckedCreateWithoutStickerDonationsReceivedInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -5113,6 +5182,7 @@ export type UserUpdateWithoutStickerDonationsSentInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -5179,6 +5249,7 @@ export type UserUncheckedUpdateWithoutStickerDonationsSentInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -5256,6 +5327,7 @@ export type UserUpdateWithoutStickerDonationsReceivedInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -5322,6 +5394,7 @@ export type UserUncheckedUpdateWithoutStickerDonationsReceivedInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -5388,6 +5461,7 @@ export type UserCreateWithoutPatentProgressInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -5454,6 +5528,7 @@ export type UserUncheckedCreateWithoutPatentProgressInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -5536,6 +5611,7 @@ export type UserUpdateWithoutPatentProgressInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -5602,6 +5678,7 @@ export type UserUncheckedUpdateWithoutPatentProgressInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -5668,6 +5745,7 @@ export type UserCreateWithoutPatentRewardClaimsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -5734,6 +5812,7 @@ export type UserUncheckedCreateWithoutPatentRewardClaimsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -5816,6 +5895,7 @@ export type UserUpdateWithoutPatentRewardClaimsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -5882,6 +5962,7 @@ export type UserUncheckedUpdateWithoutPatentRewardClaimsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -5948,6 +6029,7 @@ export type UserCreateWithoutTreasuryEntriesAuthoredInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -6014,6 +6096,7 @@ export type UserUncheckedCreateWithoutTreasuryEntriesAuthoredInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -6096,6 +6179,7 @@ export type UserUpdateWithoutTreasuryEntriesAuthoredInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -6162,6 +6246,7 @@ export type UserUncheckedUpdateWithoutTreasuryEntriesAuthoredInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -6228,6 +6313,7 @@ export type UserCreateWithoutLessonsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -6294,6 +6380,7 @@ export type UserUncheckedCreateWithoutLessonsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -6376,6 +6463,7 @@ export type UserUpdateWithoutLessonsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -6442,6 +6530,7 @@ export type UserUncheckedUpdateWithoutLessonsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -6508,6 +6597,7 @@ export type UserCreateWithoutLessonParticipationsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -6574,6 +6664,7 @@ export type UserUncheckedCreateWithoutLessonParticipationsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -6656,6 +6747,7 @@ export type UserUpdateWithoutLessonParticipationsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -6722,6 +6814,7 @@ export type UserUncheckedUpdateWithoutLessonParticipationsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -6788,6 +6881,7 @@ export type UserCreateWithoutAttendancesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -6854,6 +6948,7 @@ export type UserUncheckedCreateWithoutAttendancesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -6936,6 +7031,7 @@ export type UserUpdateWithoutAttendancesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -7002,6 +7098,7 @@ export type UserUncheckedUpdateWithoutAttendancesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -7068,6 +7165,7 @@ export type UserCreateWithoutXpEntriesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -7134,6 +7232,7 @@ export type UserUncheckedCreateWithoutXpEntriesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -7205,6 +7304,7 @@ export type UserCreateWithoutAuthoredXpInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -7271,6 +7371,7 @@ export type UserUncheckedCreateWithoutAuthoredXpInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -7353,6 +7454,7 @@ export type UserUpdateWithoutXpEntriesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -7419,6 +7521,7 @@ export type UserUncheckedUpdateWithoutXpEntriesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -7496,6 +7599,7 @@ export type UserUpdateWithoutAuthoredXpInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -7562,6 +7666,7 @@ export type UserUncheckedUpdateWithoutAuthoredXpInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -7628,6 +7733,7 @@ export type UserCreateWithoutBehaviorsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -7694,6 +7800,7 @@ export type UserUncheckedCreateWithoutBehaviorsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -7765,6 +7872,7 @@ export type UserCreateWithoutRatedBehaviorsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -7831,6 +7939,7 @@ export type UserUncheckedCreateWithoutRatedBehaviorsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -7913,6 +8022,7 @@ export type UserUpdateWithoutBehaviorsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -7979,6 +8089,7 @@ export type UserUncheckedUpdateWithoutBehaviorsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -8056,6 +8167,7 @@ export type UserUpdateWithoutRatedBehaviorsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -8122,6 +8234,7 @@ export type UserUncheckedUpdateWithoutRatedBehaviorsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -8188,6 +8301,7 @@ export type UserCreateWithoutCleanupsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -8254,6 +8368,7 @@ export type UserUncheckedCreateWithoutCleanupsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -8325,6 +8440,7 @@ export type UserCreateWithoutConfirmedCleanupsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -8391,6 +8507,7 @@ export type UserUncheckedCreateWithoutConfirmedCleanupsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -8473,6 +8590,7 @@ export type UserUpdateWithoutCleanupsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -8539,6 +8657,7 @@ export type UserUncheckedUpdateWithoutCleanupsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -8616,6 +8735,7 @@ export type UserUpdateWithoutConfirmedCleanupsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -8682,6 +8802,7 @@ export type UserUncheckedUpdateWithoutConfirmedCleanupsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -8748,6 +8869,7 @@ export type UserCreateWithoutAuthoredActivitiesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -8814,6 +8936,7 @@ export type UserUncheckedCreateWithoutAuthoredActivitiesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -8896,6 +9019,7 @@ export type UserUpdateWithoutAuthoredActivitiesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -8962,6 +9086,7 @@ export type UserUncheckedUpdateWithoutAuthoredActivitiesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -9028,6 +9153,7 @@ export type UserCreateWithoutAuthoredNotificationsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -9094,6 +9220,7 @@ export type UserUncheckedCreateWithoutAuthoredNotificationsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -9176,6 +9303,7 @@ export type UserUpdateWithoutAuthoredNotificationsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -9242,6 +9370,7 @@ export type UserUncheckedUpdateWithoutAuthoredNotificationsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -9308,6 +9437,7 @@ export type UserCreateWithoutNotificationReceiptsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -9374,6 +9504,7 @@ export type UserUncheckedCreateWithoutNotificationReceiptsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -9456,6 +9587,7 @@ export type UserUpdateWithoutNotificationReceiptsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -9522,6 +9654,7 @@ export type UserUncheckedUpdateWithoutNotificationReceiptsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -9588,6 +9721,7 @@ export type UserCreateWithoutActivityRecipientsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -9654,6 +9788,7 @@ export type UserUncheckedCreateWithoutActivityRecipientsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -9736,6 +9871,7 @@ export type UserUpdateWithoutActivityRecipientsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -9802,6 +9938,7 @@ export type UserUncheckedUpdateWithoutActivityRecipientsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -9868,6 +10005,7 @@ export type UserCreateWithoutActivitySubmissionsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -9934,6 +10072,7 @@ export type UserUncheckedCreateWithoutActivitySubmissionsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -10016,6 +10155,7 @@ export type UserUpdateWithoutActivitySubmissionsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -10082,6 +10222,7 @@ export type UserUncheckedUpdateWithoutActivitySubmissionsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -10148,6 +10289,7 @@ export type UserCreateWithoutActivityAnswersInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -10214,6 +10356,7 @@ export type UserUncheckedCreateWithoutActivityAnswersInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -10296,6 +10439,7 @@ export type UserUpdateWithoutActivityAnswersInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -10362,6 +10506,7 @@ export type UserUncheckedUpdateWithoutActivityAnswersInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -10428,6 +10573,7 @@ export type UserCreateWithoutActivityTeamMembershipsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -10494,6 +10640,7 @@ export type UserUncheckedCreateWithoutActivityTeamMembershipsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -10576,6 +10723,7 @@ export type UserUpdateWithoutActivityTeamMembershipsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -10642,6 +10790,7 @@ export type UserUncheckedUpdateWithoutActivityTeamMembershipsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -10708,6 +10857,7 @@ export type UserCreateWithoutActivityAwardsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -10774,6 +10924,7 @@ export type UserUncheckedCreateWithoutActivityAwardsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -10856,6 +11007,7 @@ export type UserUpdateWithoutActivityAwardsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -10922,6 +11074,7 @@ export type UserUncheckedUpdateWithoutActivityAwardsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -10988,6 +11141,7 @@ export type UserCreateWithoutAuditActionsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -11054,6 +11208,7 @@ export type UserUncheckedCreateWithoutAuditActionsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -11125,6 +11280,7 @@ export type UserCreateWithoutAuditTargetsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -11191,6 +11347,7 @@ export type UserUncheckedCreateWithoutAuditTargetsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -11273,6 +11430,7 @@ export type UserUpdateWithoutAuditActionsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -11339,6 +11497,7 @@ export type UserUncheckedUpdateWithoutAuditActionsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -11416,6 +11575,7 @@ export type UserUpdateWithoutAuditTargetsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -11482,6 +11642,7 @@ export type UserUncheckedUpdateWithoutAuditTargetsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -11548,6 +11709,7 @@ export type UserCreateWithoutOwnedPongRoomsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -11614,6 +11776,7 @@ export type UserUncheckedCreateWithoutOwnedPongRoomsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -11685,6 +11848,7 @@ export type UserCreateWithoutWonPongRoomsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -11751,6 +11915,7 @@ export type UserUncheckedCreateWithoutWonPongRoomsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -11822,6 +11987,7 @@ export type UserCreateWithoutLostPongRoomsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -11888,6 +12054,7 @@ export type UserUncheckedCreateWithoutLostPongRoomsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -11970,6 +12137,7 @@ export type UserUpdateWithoutOwnedPongRoomsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -12036,6 +12204,7 @@ export type UserUncheckedUpdateWithoutOwnedPongRoomsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -12113,6 +12282,7 @@ export type UserUpdateWithoutWonPongRoomsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -12179,6 +12349,7 @@ export type UserUncheckedUpdateWithoutWonPongRoomsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -12256,6 +12427,7 @@ export type UserUpdateWithoutLostPongRoomsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -12322,6 +12494,7 @@ export type UserUncheckedUpdateWithoutLostPongRoomsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -12388,6 +12561,7 @@ export type UserCreateWithoutPongPlayersInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -12454,6 +12628,7 @@ export type UserUncheckedCreateWithoutPongPlayersInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -12536,6 +12711,7 @@ export type UserUpdateWithoutPongPlayersInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -12602,6 +12778,7 @@ export type UserUncheckedUpdateWithoutPongPlayersInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -12668,6 +12845,7 @@ export type UserCreateWithoutPongJoinRequestsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -12734,6 +12912,7 @@ export type UserUncheckedCreateWithoutPongJoinRequestsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -12816,6 +12995,7 @@ export type UserUpdateWithoutPongJoinRequestsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -12882,6 +13062,7 @@ export type UserUncheckedUpdateWithoutPongJoinRequestsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -12948,6 +13129,7 @@ export type UserCreateWithoutPongPointsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -13014,6 +13196,7 @@ export type UserUncheckedCreateWithoutPongPointsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -13096,6 +13279,7 @@ export type UserUpdateWithoutPongPointsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -13162,6 +13346,7 @@ export type UserUncheckedUpdateWithoutPongPointsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -13228,6 +13413,7 @@ export type UserCreateWithoutOwnedTicTacToeRoomsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -13294,6 +13480,7 @@ export type UserUncheckedCreateWithoutOwnedTicTacToeRoomsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -13365,6 +13552,7 @@ export type UserCreateWithoutGuestTicTacToeRoomsInput = {
   ownedTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutOwnerInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -13431,6 +13619,7 @@ export type UserUncheckedCreateWithoutGuestTicTacToeRoomsInput = {
   ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutOwnerInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -13502,6 +13691,7 @@ export type UserCreateWithoutWonTicTacToeRoomsInput = {
   ownedTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutOwnerInput
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -13568,6 +13758,7 @@ export type UserUncheckedCreateWithoutWonTicTacToeRoomsInput = {
   ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutOwnerInput
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -13650,6 +13841,7 @@ export type UserUpdateWithoutOwnedTicTacToeRoomsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -13716,6 +13908,7 @@ export type UserUncheckedUpdateWithoutOwnedTicTacToeRoomsInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -13793,6 +13986,7 @@ export type UserUpdateWithoutGuestTicTacToeRoomsInput = {
   ownedTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutOwnerNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -13859,6 +14053,7 @@ export type UserUncheckedUpdateWithoutGuestTicTacToeRoomsInput = {
   ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutOwnerNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -13936,6 +14131,7 @@ export type UserUpdateWithoutWonTicTacToeRoomsInput = {
   ownedTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutOwnerNestedInput
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -14002,6 +14198,7 @@ export type UserUncheckedUpdateWithoutWonTicTacToeRoomsInput = {
   ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutOwnerNestedInput
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -14068,6 +14265,7 @@ export type UserCreateWithoutWonTicTacToeRoundsInput = {
   ownedTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutOwnerInput
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
 }
 
@@ -14134,6 +14332,7 @@ export type UserUncheckedCreateWithoutWonTicTacToeRoundsInput = {
   ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutOwnerInput
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
   sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
@@ -14216,6 +14415,7 @@ export type UserUpdateWithoutWonTicTacToeRoundsInput = {
   ownedTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutOwnerNestedInput
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
   sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
 }
 
@@ -14282,6 +14482,291 @@ export type UserUncheckedUpdateWithoutWonTicTacToeRoundsInput = {
   ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutOwnerNestedInput
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
+}
+
+export type UserCreateWithoutTicTacToeSoloGamesInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
+}
+
+export type UserUncheckedCreateWithoutTicTacToeSoloGamesInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
+}
+
+export type UserCreateOrConnectWithoutTicTacToeSoloGamesInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutTicTacToeSoloGamesInput, Prisma.UserUncheckedCreateWithoutTicTacToeSoloGamesInput>
+}
+
+export type UserUpsertWithoutTicTacToeSoloGamesInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutTicTacToeSoloGamesInput, Prisma.UserUncheckedUpdateWithoutTicTacToeSoloGamesInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutTicTacToeSoloGamesInput, Prisma.UserUncheckedCreateWithoutTicTacToeSoloGamesInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutTicTacToeSoloGamesInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutTicTacToeSoloGamesInput, Prisma.UserUncheckedUpdateWithoutTicTacToeSoloGamesInput>
+}
+
+export type UserUpdateWithoutTicTacToeSoloGamesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
+}
+
+export type UserUncheckedUpdateWithoutTicTacToeSoloGamesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
   sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
@@ -14349,6 +14834,7 @@ export type UserCreateWithoutSudokuGamesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutSudokuGamesInput = {
@@ -14415,6 +14901,7 @@ export type UserUncheckedCreateWithoutSudokuGamesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutSudokuGamesInput = {
@@ -14497,6 +14984,7 @@ export type UserUpdateWithoutSudokuGamesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSudokuGamesInput = {
@@ -14563,6 +15051,7 @@ export type UserUncheckedUpdateWithoutSudokuGamesInput = {
   guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
   wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
   wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 
@@ -14615,6 +15104,7 @@ export type UserCountOutputType = {
   guestTicTacToeRooms: number
   wonTicTacToeRooms: number
   wonTicTacToeRounds: number
+  ticTacToeSoloGames: number
   sudokuGames: number
 }
 
@@ -14663,6 +15153,7 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   guestTicTacToeRooms?: boolean | UserCountOutputTypeCountGuestTicTacToeRoomsArgs
   wonTicTacToeRooms?: boolean | UserCountOutputTypeCountWonTicTacToeRoomsArgs
   wonTicTacToeRounds?: boolean | UserCountOutputTypeCountWonTicTacToeRoundsArgs
+  ticTacToeSoloGames?: boolean | UserCountOutputTypeCountTicTacToeSoloGamesArgs
   sudokuGames?: boolean | UserCountOutputTypeCountSudokuGamesArgs
 }
 
@@ -14987,6 +15478,13 @@ export type UserCountOutputTypeCountWonTicTacToeRoundsArgs<ExtArgs extends runti
 /**
  * UserCountOutputType without action
  */
+export type UserCountOutputTypeCountTicTacToeSoloGamesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.TicTacToeSoloGameWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
 export type UserCountOutputTypeCountSudokuGamesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.SudokuGameWhereInput
 }
@@ -15056,6 +15554,7 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   guestTicTacToeRooms?: boolean | Prisma.User$guestTicTacToeRoomsArgs<ExtArgs>
   wonTicTacToeRooms?: boolean | Prisma.User$wonTicTacToeRoomsArgs<ExtArgs>
   wonTicTacToeRounds?: boolean | Prisma.User$wonTicTacToeRoundsArgs<ExtArgs>
+  ticTacToeSoloGames?: boolean | Prisma.User$ticTacToeSoloGamesArgs<ExtArgs>
   sudokuGames?: boolean | Prisma.User$sudokuGamesArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
@@ -15170,6 +15669,7 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   guestTicTacToeRooms?: boolean | Prisma.User$guestTicTacToeRoomsArgs<ExtArgs>
   wonTicTacToeRooms?: boolean | Prisma.User$wonTicTacToeRoomsArgs<ExtArgs>
   wonTicTacToeRounds?: boolean | Prisma.User$wonTicTacToeRoundsArgs<ExtArgs>
+  ticTacToeSoloGames?: boolean | Prisma.User$ticTacToeSoloGamesArgs<ExtArgs>
   sudokuGames?: boolean | Prisma.User$sudokuGamesArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
@@ -15224,6 +15724,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     guestTicTacToeRooms: Prisma.$TicTacToeRoomPayload<ExtArgs>[]
     wonTicTacToeRooms: Prisma.$TicTacToeRoomPayload<ExtArgs>[]
     wonTicTacToeRounds: Prisma.$TicTacToeRoundPayload<ExtArgs>[]
+    ticTacToeSoloGames: Prisma.$TicTacToeSoloGamePayload<ExtArgs>[]
     sudokuGames: Prisma.$SudokuGamePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
@@ -15684,6 +16185,7 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   guestTicTacToeRooms<T extends Prisma.User$guestTicTacToeRoomsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$guestTicTacToeRoomsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TicTacToeRoomPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   wonTicTacToeRooms<T extends Prisma.User$wonTicTacToeRoomsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$wonTicTacToeRoomsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TicTacToeRoomPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   wonTicTacToeRounds<T extends Prisma.User$wonTicTacToeRoundsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$wonTicTacToeRoundsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TicTacToeRoundPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  ticTacToeSoloGames<T extends Prisma.User$ticTacToeSoloGamesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$ticTacToeSoloGamesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TicTacToeSoloGamePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   sudokuGames<T extends Prisma.User$sudokuGamesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$sudokuGamesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SudokuGamePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -17197,6 +17699,30 @@ export type User$wonTicTacToeRoundsArgs<ExtArgs extends runtime.Types.Extensions
   take?: number
   skip?: number
   distinct?: Prisma.TicTacToeRoundScalarFieldEnum | Prisma.TicTacToeRoundScalarFieldEnum[]
+}
+
+/**
+ * User.ticTacToeSoloGames
+ */
+export type User$ticTacToeSoloGamesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the TicTacToeSoloGame
+   */
+  select?: Prisma.TicTacToeSoloGameSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the TicTacToeSoloGame
+   */
+  omit?: Prisma.TicTacToeSoloGameOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TicTacToeSoloGameInclude<ExtArgs> | null
+  where?: Prisma.TicTacToeSoloGameWhereInput
+  orderBy?: Prisma.TicTacToeSoloGameOrderByWithRelationInput | Prisma.TicTacToeSoloGameOrderByWithRelationInput[]
+  cursor?: Prisma.TicTacToeSoloGameWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TicTacToeSoloGameScalarFieldEnum | Prisma.TicTacToeSoloGameScalarFieldEnum[]
 }
 
 /**

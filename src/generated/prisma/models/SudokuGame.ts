@@ -32,6 +32,7 @@ export type SudokuGameAvgAggregateOutputType = {
   hintsUsed: number | null
   xpReward: number | null
   elapsedSeconds: number | null
+  humanPlayScore: number | null
 }
 
 export type SudokuGameSumAggregateOutputType = {
@@ -40,6 +41,7 @@ export type SudokuGameSumAggregateOutputType = {
   hintsUsed: number | null
   xpReward: number | null
   elapsedSeconds: number | null
+  humanPlayScore: number | null
 }
 
 export type SudokuGameMinAggregateOutputType = {
@@ -57,6 +59,7 @@ export type SudokuGameMinAggregateOutputType = {
   eligibleForRanking: boolean | null
   xpReward: number | null
   elapsedSeconds: number | null
+  humanPlayScore: number | null
   completionKey: string | null
   startedAt: Date | null
   completedAt: Date | null
@@ -78,6 +81,7 @@ export type SudokuGameMaxAggregateOutputType = {
   eligibleForRanking: boolean | null
   xpReward: number | null
   elapsedSeconds: number | null
+  humanPlayScore: number | null
   completionKey: string | null
   startedAt: Date | null
   completedAt: Date | null
@@ -99,6 +103,8 @@ export type SudokuGameCountAggregateOutputType = {
   eligibleForRanking: number
   xpReward: number
   elapsedSeconds: number
+  humanPlayScore: number
+  humanPlaySignals: number
   completionKey: number
   startedAt: number
   completedAt: number
@@ -113,6 +119,7 @@ export type SudokuGameAvgAggregateInputType = {
   hintsUsed?: true
   xpReward?: true
   elapsedSeconds?: true
+  humanPlayScore?: true
 }
 
 export type SudokuGameSumAggregateInputType = {
@@ -121,6 +128,7 @@ export type SudokuGameSumAggregateInputType = {
   hintsUsed?: true
   xpReward?: true
   elapsedSeconds?: true
+  humanPlayScore?: true
 }
 
 export type SudokuGameMinAggregateInputType = {
@@ -138,6 +146,7 @@ export type SudokuGameMinAggregateInputType = {
   eligibleForRanking?: true
   xpReward?: true
   elapsedSeconds?: true
+  humanPlayScore?: true
   completionKey?: true
   startedAt?: true
   completedAt?: true
@@ -159,6 +168,7 @@ export type SudokuGameMaxAggregateInputType = {
   eligibleForRanking?: true
   xpReward?: true
   elapsedSeconds?: true
+  humanPlayScore?: true
   completionKey?: true
   startedAt?: true
   completedAt?: true
@@ -180,6 +190,8 @@ export type SudokuGameCountAggregateInputType = {
   eligibleForRanking?: true
   xpReward?: true
   elapsedSeconds?: true
+  humanPlayScore?: true
+  humanPlaySignals?: true
   completionKey?: true
   startedAt?: true
   completedAt?: true
@@ -288,6 +300,8 @@ export type SudokuGameGroupByOutputType = {
   eligibleForRanking: boolean
   xpReward: number
   elapsedSeconds: number | null
+  humanPlayScore: number | null
+  humanPlaySignals: runtime.JsonValue | null
   completionKey: string | null
   startedAt: Date
   completedAt: Date | null
@@ -332,6 +346,8 @@ export type SudokuGameWhereInput = {
   eligibleForRanking?: Prisma.BoolFilter<"SudokuGame"> | boolean
   xpReward?: Prisma.IntFilter<"SudokuGame"> | number
   elapsedSeconds?: Prisma.IntNullableFilter<"SudokuGame"> | number | null
+  humanPlayScore?: Prisma.IntNullableFilter<"SudokuGame"> | number | null
+  humanPlaySignals?: Prisma.JsonNullableFilter<"SudokuGame">
   completionKey?: Prisma.StringNullableFilter<"SudokuGame"> | string | null
   startedAt?: Prisma.DateTimeFilter<"SudokuGame"> | Date | string
   completedAt?: Prisma.DateTimeNullableFilter<"SudokuGame"> | Date | string | null
@@ -355,6 +371,8 @@ export type SudokuGameOrderByWithRelationInput = {
   eligibleForRanking?: Prisma.SortOrder
   xpReward?: Prisma.SortOrder
   elapsedSeconds?: Prisma.SortOrderInput | Prisma.SortOrder
+  humanPlayScore?: Prisma.SortOrderInput | Prisma.SortOrder
+  humanPlaySignals?: Prisma.SortOrderInput | Prisma.SortOrder
   completionKey?: Prisma.SortOrderInput | Prisma.SortOrder
   startedAt?: Prisma.SortOrder
   completedAt?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -382,6 +400,8 @@ export type SudokuGameWhereUniqueInput = Prisma.AtLeast<{
   eligibleForRanking?: Prisma.BoolFilter<"SudokuGame"> | boolean
   xpReward?: Prisma.IntFilter<"SudokuGame"> | number
   elapsedSeconds?: Prisma.IntNullableFilter<"SudokuGame"> | number | null
+  humanPlayScore?: Prisma.IntNullableFilter<"SudokuGame"> | number | null
+  humanPlaySignals?: Prisma.JsonNullableFilter<"SudokuGame">
   startedAt?: Prisma.DateTimeFilter<"SudokuGame"> | Date | string
   completedAt?: Prisma.DateTimeNullableFilter<"SudokuGame"> | Date | string | null
   updatedAt?: Prisma.DateTimeFilter<"SudokuGame"> | Date | string
@@ -404,6 +424,8 @@ export type SudokuGameOrderByWithAggregationInput = {
   eligibleForRanking?: Prisma.SortOrder
   xpReward?: Prisma.SortOrder
   elapsedSeconds?: Prisma.SortOrderInput | Prisma.SortOrder
+  humanPlayScore?: Prisma.SortOrderInput | Prisma.SortOrder
+  humanPlaySignals?: Prisma.SortOrderInput | Prisma.SortOrder
   completionKey?: Prisma.SortOrderInput | Prisma.SortOrder
   startedAt?: Prisma.SortOrder
   completedAt?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -433,6 +455,8 @@ export type SudokuGameScalarWhereWithAggregatesInput = {
   eligibleForRanking?: Prisma.BoolWithAggregatesFilter<"SudokuGame"> | boolean
   xpReward?: Prisma.IntWithAggregatesFilter<"SudokuGame"> | number
   elapsedSeconds?: Prisma.IntNullableWithAggregatesFilter<"SudokuGame"> | number | null
+  humanPlayScore?: Prisma.IntNullableWithAggregatesFilter<"SudokuGame"> | number | null
+  humanPlaySignals?: Prisma.JsonNullableWithAggregatesFilter<"SudokuGame">
   completionKey?: Prisma.StringNullableWithAggregatesFilter<"SudokuGame"> | string | null
   startedAt?: Prisma.DateTimeWithAggregatesFilter<"SudokuGame"> | Date | string
   completedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"SudokuGame"> | Date | string | null
@@ -453,6 +477,8 @@ export type SudokuGameCreateInput = {
   eligibleForRanking?: boolean
   xpReward: number
   elapsedSeconds?: number | null
+  humanPlayScore?: number | null
+  humanPlaySignals?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   completionKey?: string | null
   startedAt?: Date | string
   completedAt?: Date | string | null
@@ -476,6 +502,8 @@ export type SudokuGameUncheckedCreateInput = {
   eligibleForRanking?: boolean
   xpReward: number
   elapsedSeconds?: number | null
+  humanPlayScore?: number | null
+  humanPlaySignals?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   completionKey?: string | null
   startedAt?: Date | string
   completedAt?: Date | string | null
@@ -497,6 +525,8 @@ export type SudokuGameUpdateInput = {
   eligibleForRanking?: Prisma.BoolFieldUpdateOperationsInput | boolean
   xpReward?: Prisma.IntFieldUpdateOperationsInput | number
   elapsedSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humanPlayScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humanPlaySignals?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   completionKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -520,6 +550,8 @@ export type SudokuGameUncheckedUpdateInput = {
   eligibleForRanking?: Prisma.BoolFieldUpdateOperationsInput | boolean
   xpReward?: Prisma.IntFieldUpdateOperationsInput | number
   elapsedSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humanPlayScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humanPlaySignals?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   completionKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -542,6 +574,8 @@ export type SudokuGameCreateManyInput = {
   eligibleForRanking?: boolean
   xpReward: number
   elapsedSeconds?: number | null
+  humanPlayScore?: number | null
+  humanPlaySignals?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   completionKey?: string | null
   startedAt?: Date | string
   completedAt?: Date | string | null
@@ -562,6 +596,8 @@ export type SudokuGameUpdateManyMutationInput = {
   eligibleForRanking?: Prisma.BoolFieldUpdateOperationsInput | boolean
   xpReward?: Prisma.IntFieldUpdateOperationsInput | number
   elapsedSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humanPlayScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humanPlaySignals?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   completionKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -583,6 +619,8 @@ export type SudokuGameUncheckedUpdateManyInput = {
   eligibleForRanking?: Prisma.BoolFieldUpdateOperationsInput | boolean
   xpReward?: Prisma.IntFieldUpdateOperationsInput | number
   elapsedSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humanPlayScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humanPlaySignals?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   completionKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -614,6 +652,8 @@ export type SudokuGameCountOrderByAggregateInput = {
   eligibleForRanking?: Prisma.SortOrder
   xpReward?: Prisma.SortOrder
   elapsedSeconds?: Prisma.SortOrder
+  humanPlayScore?: Prisma.SortOrder
+  humanPlaySignals?: Prisma.SortOrder
   completionKey?: Prisma.SortOrder
   startedAt?: Prisma.SortOrder
   completedAt?: Prisma.SortOrder
@@ -626,6 +666,7 @@ export type SudokuGameAvgOrderByAggregateInput = {
   hintsUsed?: Prisma.SortOrder
   xpReward?: Prisma.SortOrder
   elapsedSeconds?: Prisma.SortOrder
+  humanPlayScore?: Prisma.SortOrder
 }
 
 export type SudokuGameMaxOrderByAggregateInput = {
@@ -643,6 +684,7 @@ export type SudokuGameMaxOrderByAggregateInput = {
   eligibleForRanking?: Prisma.SortOrder
   xpReward?: Prisma.SortOrder
   elapsedSeconds?: Prisma.SortOrder
+  humanPlayScore?: Prisma.SortOrder
   completionKey?: Prisma.SortOrder
   startedAt?: Prisma.SortOrder
   completedAt?: Prisma.SortOrder
@@ -664,6 +706,7 @@ export type SudokuGameMinOrderByAggregateInput = {
   eligibleForRanking?: Prisma.SortOrder
   xpReward?: Prisma.SortOrder
   elapsedSeconds?: Prisma.SortOrder
+  humanPlayScore?: Prisma.SortOrder
   completionKey?: Prisma.SortOrder
   startedAt?: Prisma.SortOrder
   completedAt?: Prisma.SortOrder
@@ -676,6 +719,7 @@ export type SudokuGameSumOrderByAggregateInput = {
   hintsUsed?: Prisma.SortOrder
   xpReward?: Prisma.SortOrder
   elapsedSeconds?: Prisma.SortOrder
+  humanPlayScore?: Prisma.SortOrder
 }
 
 export type SudokuGameScalarRelationFilter = {
@@ -761,6 +805,8 @@ export type SudokuGameCreateWithoutStudentInput = {
   eligibleForRanking?: boolean
   xpReward: number
   elapsedSeconds?: number | null
+  humanPlayScore?: number | null
+  humanPlaySignals?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   completionKey?: string | null
   startedAt?: Date | string
   completedAt?: Date | string | null
@@ -782,6 +828,8 @@ export type SudokuGameUncheckedCreateWithoutStudentInput = {
   eligibleForRanking?: boolean
   xpReward: number
   elapsedSeconds?: number | null
+  humanPlayScore?: number | null
+  humanPlaySignals?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   completionKey?: string | null
   startedAt?: Date | string
   completedAt?: Date | string | null
@@ -833,6 +881,8 @@ export type SudokuGameScalarWhereInput = {
   eligibleForRanking?: Prisma.BoolFilter<"SudokuGame"> | boolean
   xpReward?: Prisma.IntFilter<"SudokuGame"> | number
   elapsedSeconds?: Prisma.IntNullableFilter<"SudokuGame"> | number | null
+  humanPlayScore?: Prisma.IntNullableFilter<"SudokuGame"> | number | null
+  humanPlaySignals?: Prisma.JsonNullableFilter<"SudokuGame">
   completionKey?: Prisma.StringNullableFilter<"SudokuGame"> | string | null
   startedAt?: Prisma.DateTimeFilter<"SudokuGame"> | Date | string
   completedAt?: Prisma.DateTimeNullableFilter<"SudokuGame"> | Date | string | null
@@ -853,6 +903,8 @@ export type SudokuGameCreateWithoutActionsInput = {
   eligibleForRanking?: boolean
   xpReward: number
   elapsedSeconds?: number | null
+  humanPlayScore?: number | null
+  humanPlaySignals?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   completionKey?: string | null
   startedAt?: Date | string
   completedAt?: Date | string | null
@@ -875,6 +927,8 @@ export type SudokuGameUncheckedCreateWithoutActionsInput = {
   eligibleForRanking?: boolean
   xpReward: number
   elapsedSeconds?: number | null
+  humanPlayScore?: number | null
+  humanPlaySignals?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   completionKey?: string | null
   startedAt?: Date | string
   completedAt?: Date | string | null
@@ -911,6 +965,8 @@ export type SudokuGameUpdateWithoutActionsInput = {
   eligibleForRanking?: Prisma.BoolFieldUpdateOperationsInput | boolean
   xpReward?: Prisma.IntFieldUpdateOperationsInput | number
   elapsedSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humanPlayScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humanPlaySignals?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   completionKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -933,6 +989,8 @@ export type SudokuGameUncheckedUpdateWithoutActionsInput = {
   eligibleForRanking?: Prisma.BoolFieldUpdateOperationsInput | boolean
   xpReward?: Prisma.IntFieldUpdateOperationsInput | number
   elapsedSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humanPlayScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humanPlaySignals?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   completionKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -953,6 +1011,8 @@ export type SudokuGameCreateManyStudentInput = {
   eligibleForRanking?: boolean
   xpReward: number
   elapsedSeconds?: number | null
+  humanPlayScore?: number | null
+  humanPlaySignals?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   completionKey?: string | null
   startedAt?: Date | string
   completedAt?: Date | string | null
@@ -973,6 +1033,8 @@ export type SudokuGameUpdateWithoutStudentInput = {
   eligibleForRanking?: Prisma.BoolFieldUpdateOperationsInput | boolean
   xpReward?: Prisma.IntFieldUpdateOperationsInput | number
   elapsedSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humanPlayScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humanPlaySignals?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   completionKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -994,6 +1056,8 @@ export type SudokuGameUncheckedUpdateWithoutStudentInput = {
   eligibleForRanking?: Prisma.BoolFieldUpdateOperationsInput | boolean
   xpReward?: Prisma.IntFieldUpdateOperationsInput | number
   elapsedSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humanPlayScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humanPlaySignals?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   completionKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1015,6 +1079,8 @@ export type SudokuGameUncheckedUpdateManyWithoutStudentInput = {
   eligibleForRanking?: Prisma.BoolFieldUpdateOperationsInput | boolean
   xpReward?: Prisma.IntFieldUpdateOperationsInput | number
   elapsedSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humanPlayScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humanPlaySignals?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   completionKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1067,6 +1133,8 @@ export type SudokuGameSelect<ExtArgs extends runtime.Types.Extensions.InternalAr
   eligibleForRanking?: boolean
   xpReward?: boolean
   elapsedSeconds?: boolean
+  humanPlayScore?: boolean
+  humanPlaySignals?: boolean
   completionKey?: boolean
   startedAt?: boolean
   completedAt?: boolean
@@ -1091,6 +1159,8 @@ export type SudokuGameSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ex
   eligibleForRanking?: boolean
   xpReward?: boolean
   elapsedSeconds?: boolean
+  humanPlayScore?: boolean
+  humanPlaySignals?: boolean
   completionKey?: boolean
   startedAt?: boolean
   completedAt?: boolean
@@ -1113,6 +1183,8 @@ export type SudokuGameSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ex
   eligibleForRanking?: boolean
   xpReward?: boolean
   elapsedSeconds?: boolean
+  humanPlayScore?: boolean
+  humanPlaySignals?: boolean
   completionKey?: boolean
   startedAt?: boolean
   completedAt?: boolean
@@ -1135,13 +1207,15 @@ export type SudokuGameSelectScalar = {
   eligibleForRanking?: boolean
   xpReward?: boolean
   elapsedSeconds?: boolean
+  humanPlayScore?: boolean
+  humanPlaySignals?: boolean
   completionKey?: boolean
   startedAt?: boolean
   completedAt?: boolean
   updatedAt?: boolean
 }
 
-export type SudokuGameOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "studentId" | "difficulty" | "puzzle" | "solution" | "board" | "status" | "mistakes" | "mistakeLimit" | "hintsUsed" | "extraMistakesPurchased" | "eligibleForRanking" | "xpReward" | "elapsedSeconds" | "completionKey" | "startedAt" | "completedAt" | "updatedAt", ExtArgs["result"]["sudokuGame"]>
+export type SudokuGameOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "studentId" | "difficulty" | "puzzle" | "solution" | "board" | "status" | "mistakes" | "mistakeLimit" | "hintsUsed" | "extraMistakesPurchased" | "eligibleForRanking" | "xpReward" | "elapsedSeconds" | "humanPlayScore" | "humanPlaySignals" | "completionKey" | "startedAt" | "completedAt" | "updatedAt", ExtArgs["result"]["sudokuGame"]>
 export type SudokuGameInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   student?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   actions?: boolean | Prisma.SudokuGame$actionsArgs<ExtArgs>
@@ -1175,6 +1249,8 @@ export type $SudokuGamePayload<ExtArgs extends runtime.Types.Extensions.Internal
     eligibleForRanking: boolean
     xpReward: number
     elapsedSeconds: number | null
+    humanPlayScore: number | null
+    humanPlaySignals: runtime.JsonValue | null
     completionKey: string | null
     startedAt: Date
     completedAt: Date | null
@@ -1618,6 +1694,8 @@ export interface SudokuGameFieldRefs {
   readonly eligibleForRanking: Prisma.FieldRef<"SudokuGame", 'Boolean'>
   readonly xpReward: Prisma.FieldRef<"SudokuGame", 'Int'>
   readonly elapsedSeconds: Prisma.FieldRef<"SudokuGame", 'Int'>
+  readonly humanPlayScore: Prisma.FieldRef<"SudokuGame", 'Int'>
+  readonly humanPlaySignals: Prisma.FieldRef<"SudokuGame", 'Json'>
   readonly completionKey: Prisma.FieldRef<"SudokuGame", 'String'>
   readonly startedAt: Prisma.FieldRef<"SudokuGame", 'DateTime'>
   readonly completedAt: Prisma.FieldRef<"SudokuGame", 'DateTime'>

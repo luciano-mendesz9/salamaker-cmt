@@ -1,7 +1,7 @@
 import { Prisma, type SudokuDifficulty } from "@/generated/prisma/client";
 import { SCHOOL_TIME_ZONE, schoolLocalToUtc } from "@/lib/activities";
 import { prisma } from "@/lib/db";
-import { calculateSudokuXpAward, createSudokuPuzzle, DAILY_SUDOKU_XP_CAP, isSudokuRankingTimeEligible, SUDOKU_DIFFICULTIES, sudokuBoardComplete, type SudokuDifficultyKey } from "@/lib/sudoku-rules";
+import { calculateSudokuHumanPlayScore, calculateSudokuXpAward, createSudokuPuzzle, DAILY_SUDOKU_XP_CAP, isSudokuRankingTimeEligible, SUDOKU_DIFFICULTIES, sudokuBoardComplete, type SudokuDifficultyKey } from "@/lib/sudoku-rules";
 import { creditTreasury } from "@/lib/treasury";
 
 type Tx = Prisma.TransactionClient;
@@ -65,17 +65,20 @@ export function sudokuGameDto(game: SudokuRecord) {
     eligibleForRanking: game.eligibleForRanking,
     xpReward: game.xpReward,
     elapsedSeconds: game.elapsedSeconds,
+    humanPlayScore: game.humanPlayScore,
     startedAt: game.startedAt.toISOString(),
     completedAt: game.completedAt?.toISOString() ?? null,
   };
 }
 
-async function finishIfComplete(tx: Tx, game: SudokuRecord, board: string) {
+async function finishIfComplete(tx: Tx, game: SudokuRecord, board: string, finalActionKind: "VALUE" | "HINT") {
   if (!sudokuBoardComplete(board, game.solution)) return tx.sudokuGame.update({ where: { id: game.id }, data: { board } });
   const completedAt = new Date();
   const elapsedSeconds = Math.max(1, Math.floor((completedAt.getTime() - game.startedAt.getTime()) / 1000));
   const completionKey = `sudoku:${game.id}:complete`;
   const difficulty = game.difficulty as SudokuDifficultyKey;
+  const persistedActions = await tx.sudokuAction.findMany({ where: { gameId: game.id }, select: { kind: true, createdAt: true }, orderBy: { createdAt: "asc" } });
+  const humanPlay = calculateSudokuHumanPlayScore({ difficulty, startedAt: game.startedAt, completedAt, actions: finalActionKind === "VALUE" ? [...persistedActions, { kind: "VALUE", createdAt: completedAt }] : persistedActions });
   const settings = await tx.appSetting.findUnique({ where: { id: 1 }, select: { timeZone: true } });
   const timeZone = settings?.timeZone ?? SCHOOL_TIME_ZONE;
   await tx.$queryRaw`SELECT "id" FROM "User" WHERE "id" = ${game.studentId}::uuid FOR UPDATE`;
@@ -86,8 +89,8 @@ async function finishIfComplete(tx: Tx, game: SudokuRecord, board: string) {
     await tx.user.update({ where: { id: game.studentId }, data: { xp: { increment: awardedXp } } });
     await tx.xpEntry.create({ data: { studentId: game.studentId, delta: awardedXp, reason: `Sudoku ${SUDOKU_DIFFICULTIES[difficulty].label} concluído`, source: "SUDOKU_RESULT", idempotencyKey: completionKey } });
   }
-  const updated = await tx.sudokuGame.update({ where: { id: game.id }, data: { board, status: "COMPLETED", completedAt, elapsedSeconds, completionKey, xpReward: awardedXp, eligibleForRanking } });
-  await tx.auditLog.create({ data: { actorId: game.studentId, targetId: game.studentId, event: "SUDOKU_GAME_FINISHED", details: { gameId: game.id, difficulty: game.difficulty, elapsedSeconds, mistakes: game.mistakes, hintsUsed: game.hintsUsed, eligibleForRanking, configuredXpReward: game.xpReward, awardedXp, xpEarnedBeforeCompletion: xpEarnedToday, dailyXpCap: DAILY_SUDOKU_XP_CAP } } });
+  const updated = await tx.sudokuGame.update({ where: { id: game.id }, data: { board, status: "COMPLETED", completedAt, elapsedSeconds, completionKey, xpReward: awardedXp, eligibleForRanking, humanPlayScore: humanPlay.score, humanPlaySignals: humanPlay as Prisma.InputJsonValue } });
+  await tx.auditLog.create({ data: { actorId: game.studentId, targetId: game.studentId, event: "SUDOKU_GAME_FINISHED", details: { gameId: game.id, difficulty: game.difficulty, elapsedSeconds, mistakes: game.mistakes, hintsUsed: game.hintsUsed, eligibleForRanking, configuredXpReward: game.xpReward, awardedXp, xpEarnedBeforeCompletion: xpEarnedToday, dailyXpCap: DAILY_SUDOKU_XP_CAP, humanPlayScore: humanPlay.score } } });
   return updated;
 }
 
@@ -127,7 +130,7 @@ export async function playSudokuValue(tx: Tx, studentId: string, gameId: string,
     return updated;
   }
   const board = `${game.board.slice(0, cell)}${value}${game.board.slice(cell + 1)}`;
-  const updated = await finishIfComplete(tx, game, board);
+  const updated = await finishIfComplete(tx, game, board, "VALUE");
   await tx.sudokuAction.create({ data: { gameId: game.id, actionKey, kind: "VALUE", cell, value } });
   return updated;
 }
@@ -146,7 +149,7 @@ export async function revealSudokuHint(tx: Tx, studentId: string, gameId: string
   const cell = emptyCells[(game.hintsUsed * 17 + game.mistakes * 7) % emptyCells.length];
   const board = `${game.board.slice(0, cell)}${game.solution[cell]}${game.board.slice(cell + 1)}`;
   const withHint = await tx.sudokuGame.update({ where: { id: game.id }, data: { hintsUsed: { increment: 1 }, eligibleForRanking: false } });
-  const updated = await finishIfComplete(tx, withHint, board);
+  const updated = await finishIfComplete(tx, withHint, board, "HINT");
   await tx.sudokuAction.create({ data: { gameId: game.id, actionKey, kind: "HINT", cell, value: Number(game.solution[cell]) } });
   await tx.auditLog.create({ data: { actorId: studentId, targetId: studentId, event: "SUDOKU_HINT_USED", details: { gameId, cell, hintsUsed: game.hintsUsed + 1 } } });
   return updated;

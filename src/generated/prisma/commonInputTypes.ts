@@ -847,6 +847,40 @@ export type EnumTicTacToeMarkNullableWithAggregatesFilter<$PrismaModel = never> 
   _max?: Prisma.NestedEnumTicTacToeMarkNullableFilter<$PrismaModel>
 }
 
+export type EnumTicTacToeSoloStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.TicTacToeSoloStatus | Prisma.EnumTicTacToeSoloStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.TicTacToeSoloStatus[] | Prisma.ListEnumTicTacToeSoloStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TicTacToeSoloStatus[] | Prisma.ListEnumTicTacToeSoloStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTicTacToeSoloStatusFilter<$PrismaModel> | $Enums.TicTacToeSoloStatus
+}
+
+export type EnumTicTacToeSoloResultNullableFilter<$PrismaModel = never> = {
+  equals?: $Enums.TicTacToeSoloResult | Prisma.EnumTicTacToeSoloResultFieldRefInput<$PrismaModel> | null
+  in?: $Enums.TicTacToeSoloResult[] | Prisma.ListEnumTicTacToeSoloResultFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.TicTacToeSoloResult[] | Prisma.ListEnumTicTacToeSoloResultFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumTicTacToeSoloResultNullableFilter<$PrismaModel> | $Enums.TicTacToeSoloResult | null
+}
+
+export type EnumTicTacToeSoloStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TicTacToeSoloStatus | Prisma.EnumTicTacToeSoloStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.TicTacToeSoloStatus[] | Prisma.ListEnumTicTacToeSoloStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TicTacToeSoloStatus[] | Prisma.ListEnumTicTacToeSoloStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTicTacToeSoloStatusWithAggregatesFilter<$PrismaModel> | $Enums.TicTacToeSoloStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTicTacToeSoloStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTicTacToeSoloStatusFilter<$PrismaModel>
+}
+
+export type EnumTicTacToeSoloResultNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TicTacToeSoloResult | Prisma.EnumTicTacToeSoloResultFieldRefInput<$PrismaModel> | null
+  in?: $Enums.TicTacToeSoloResult[] | Prisma.ListEnumTicTacToeSoloResultFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.TicTacToeSoloResult[] | Prisma.ListEnumTicTacToeSoloResultFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumTicTacToeSoloResultNullableWithAggregatesFilter<$PrismaModel> | $Enums.TicTacToeSoloResult | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTicTacToeSoloResultNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTicTacToeSoloResultNullableFilter<$PrismaModel>
+}
+
 export type EnumSudokuDifficultyFilter<$PrismaModel = never> = {
   equals?: $Enums.SudokuDifficulty | Prisma.EnumSudokuDifficultyFieldRefInput<$PrismaModel>
   in?: $Enums.SudokuDifficulty[] | Prisma.ListEnumSudokuDifficultyFieldRefInput<$PrismaModel>
@@ -1694,6 +1728,40 @@ export type NestedEnumTicTacToeMarkNullableWithAggregatesFilter<$PrismaModel = n
   _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
   _min?: Prisma.NestedEnumTicTacToeMarkNullableFilter<$PrismaModel>
   _max?: Prisma.NestedEnumTicTacToeMarkNullableFilter<$PrismaModel>
+}
+
+export type NestedEnumTicTacToeSoloStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.TicTacToeSoloStatus | Prisma.EnumTicTacToeSoloStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.TicTacToeSoloStatus[] | Prisma.ListEnumTicTacToeSoloStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TicTacToeSoloStatus[] | Prisma.ListEnumTicTacToeSoloStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTicTacToeSoloStatusFilter<$PrismaModel> | $Enums.TicTacToeSoloStatus
+}
+
+export type NestedEnumTicTacToeSoloResultNullableFilter<$PrismaModel = never> = {
+  equals?: $Enums.TicTacToeSoloResult | Prisma.EnumTicTacToeSoloResultFieldRefInput<$PrismaModel> | null
+  in?: $Enums.TicTacToeSoloResult[] | Prisma.ListEnumTicTacToeSoloResultFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.TicTacToeSoloResult[] | Prisma.ListEnumTicTacToeSoloResultFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumTicTacToeSoloResultNullableFilter<$PrismaModel> | $Enums.TicTacToeSoloResult | null
+}
+
+export type NestedEnumTicTacToeSoloStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TicTacToeSoloStatus | Prisma.EnumTicTacToeSoloStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.TicTacToeSoloStatus[] | Prisma.ListEnumTicTacToeSoloStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TicTacToeSoloStatus[] | Prisma.ListEnumTicTacToeSoloStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTicTacToeSoloStatusWithAggregatesFilter<$PrismaModel> | $Enums.TicTacToeSoloStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTicTacToeSoloStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTicTacToeSoloStatusFilter<$PrismaModel>
+}
+
+export type NestedEnumTicTacToeSoloResultNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TicTacToeSoloResult | Prisma.EnumTicTacToeSoloResultFieldRefInput<$PrismaModel> | null
+  in?: $Enums.TicTacToeSoloResult[] | Prisma.ListEnumTicTacToeSoloResultFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.TicTacToeSoloResult[] | Prisma.ListEnumTicTacToeSoloResultFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumTicTacToeSoloResultNullableWithAggregatesFilter<$PrismaModel> | $Enums.TicTacToeSoloResult | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTicTacToeSoloResultNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTicTacToeSoloResultNullableFilter<$PrismaModel>
 }
 
 export type NestedEnumSudokuDifficultyFilter<$PrismaModel = never> = {

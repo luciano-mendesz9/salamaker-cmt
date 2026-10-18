@@ -1,6 +1,19 @@
 import { randomInt } from "node:crypto";
 
 export type SudokuDifficultyKey = "EASY" | "MEDIUM" | "HARD" | "EXPERT" | "MASTER";
+export type SudokuHumanPlayAction = { kind: string; createdAt: Date | string };
+
+export type SudokuHumanPlayAnalysis = {
+  score: number;
+  label: "VERY_LOW" | "LOW" | "MODERATE" | "HIGH";
+  elapsedSeconds: number;
+  valueActions: number;
+  firstActionDelaySeconds: number | null;
+  medianGapSeconds: number | null;
+  rapidMovePercent: number;
+  longestRapidSequence: number;
+  solutionTranscriptionPattern: boolean;
+};
 
 export const DAILY_SUDOKU_XP_CAP = 180;
 
@@ -25,6 +38,72 @@ export function calculateSudokuXpAward(configuredReward: number, xpEarnedToday: 
 
 export function isSudokuRankingTimeEligible(difficulty: SudokuDifficultyKey, elapsedSeconds: number) {
   return elapsedSeconds >= SUDOKU_DIFFICULTIES[difficulty].minimumRankingSeconds;
+}
+
+const expectedHumanSeconds: Record<SudokuDifficultyKey, number> = {
+  EASY: 360,
+  MEDIUM: 600,
+  HARD: 780,
+  EXPERT: 900,
+  MASTER: 1_050,
+};
+
+function clamp(value: number, minimum = 0, maximum = 100) {
+  return Math.max(minimum, Math.min(maximum, value));
+}
+
+function median(values: number[]) {
+  if (values.length === 0) return null;
+  const sorted = [...values].sort((left, right) => left - right);
+  const middle = Math.floor(sorted.length / 2);
+  return sorted.length % 2 === 0 ? (sorted[middle - 1] + sorted[middle]) / 2 : sorted[middle];
+}
+
+export function calculateSudokuHumanPlayScore(input: {
+  difficulty: SudokuDifficultyKey;
+  startedAt: Date | string;
+  completedAt: Date | string;
+  actions: SudokuHumanPlayAction[];
+}): SudokuHumanPlayAnalysis {
+  const startedAt = new Date(input.startedAt).getTime();
+  const completedAt = new Date(input.completedAt).getTime();
+  const elapsedSeconds = Math.max(1, Math.floor((completedAt - startedAt) / 1_000));
+  const actionTimes = input.actions
+    .filter((action) => action.kind === "VALUE")
+    .map((action) => new Date(action.createdAt).getTime())
+    .filter(Number.isFinite)
+    .sort((left, right) => left - right);
+  const gaps = actionTimes.slice(1).map((time, index) => Math.max(0, (time - actionTimes[index]) / 1_000));
+  const medianGapSeconds = median(gaps);
+  const rapidGaps = gaps.filter((gap) => gap < 5).length;
+  const rapidMovePercent = gaps.length === 0 ? 0 : Math.round((rapidGaps / gaps.length) * 100);
+  let longestRapidSequence = actionTimes.length > 0 ? 1 : 0;
+  let currentRapidSequence = longestRapidSequence;
+  for (const gap of gaps) {
+    currentRapidSequence = gap < 6 ? currentRapidSequence + 1 : 1;
+    longestRapidSequence = Math.max(longestRapidSequence, currentRapidSequence);
+  }
+  const firstActionDelaySeconds = actionTimes.length === 0 ? null : Math.max(0, Math.round((actionTimes[0] - startedAt) / 1_000));
+  const expectedSeconds = expectedHumanSeconds[input.difficulty];
+  const durationScore = clamp(((elapsedSeconds - expectedSeconds * 0.4) / (expectedSeconds * 0.6)) * 100);
+  const cadenceScore = medianGapSeconds === null ? 0 : clamp(((medianGapSeconds - 2) / 10) * 100);
+  const rapidityScore = 100 - rapidMovePercent;
+  const sequenceScore = clamp(((12 - longestRapidSequence) / 9) * 100);
+  const solutionTranscriptionPattern = (firstActionDelaySeconds ?? 0) >= 60 && (medianGapSeconds ?? 99) < 5 && longestRapidSequence >= 10;
+  const rawScore = durationScore * 0.4 + cadenceScore * 0.25 + rapidityScore * 0.2 + sequenceScore * 0.15 - (solutionTranscriptionPattern ? 15 : 0);
+  const score = Math.round(clamp(rawScore));
+  const label = score >= 75 ? "HIGH" : score >= 50 ? "MODERATE" : score >= 25 ? "LOW" : "VERY_LOW";
+  return {
+    score,
+    label,
+    elapsedSeconds,
+    valueActions: actionTimes.length,
+    firstActionDelaySeconds,
+    medianGapSeconds: medianGapSeconds === null ? null : Number(medianGapSeconds.toFixed(1)),
+    rapidMovePercent,
+    longestRapidSequence,
+    solutionTranscriptionPattern,
+  };
 }
 
 function mulberry32(seed: number) {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Activity, Bell, BookOpen, ClipboardList, Coins, ExternalLink, Gauge, Images, KeyRound, Palette, ScrollText, Settings2, Trophy, UsersRound } from "lucide-react";
+import { Activity, Bell, BookOpen, ClipboardList, Coins, ExternalLink, Gamepad2, Gauge, Images, KeyRound, Palette, ScrollText, Settings2, Trophy, UsersRound } from "lucide-react";
 import { Brand } from "./brand";
 import { LogoutButton } from "./logout-button";
 
@@ -10,6 +10,7 @@ const links = [
   ["/professor/notificacoes", "Notificações", Bell],
   ["/professor/comportamento", "Comportamento", Activity],
   ["/professor/logs", "Logs do sistema", ScrollText],
+  ["/professor/logs/minigames", "Logs de minigames", Gamepad2],
   ["/professor/moderacao", "Moderação e tema", Palette],
   ["/professor/tesouraria", "Tesouraria Dev-Coin", Coins],
   ["/professor/figurinhas/catalogo", "Catálogo de figurinhas", Images],

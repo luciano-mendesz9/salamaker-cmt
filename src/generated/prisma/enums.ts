@@ -237,6 +237,23 @@ export const TicTacToeMark = {
 export type TicTacToeMark = (typeof TicTacToeMark)[keyof typeof TicTacToeMark]
 
 
+export const TicTacToeSoloStatus = {
+  ACTIVE: 'ACTIVE',
+  FINISHED: 'FINISHED'
+} as const
+
+export type TicTacToeSoloStatus = (typeof TicTacToeSoloStatus)[keyof typeof TicTacToeSoloStatus]
+
+
+export const TicTacToeSoloResult = {
+  HUMAN_WIN: 'HUMAN_WIN',
+  MACHINE_WIN: 'MACHINE_WIN',
+  DRAW: 'DRAW'
+} as const
+
+export type TicTacToeSoloResult = (typeof TicTacToeSoloResult)[keyof typeof TicTacToeSoloResult]
+
+
 export const SudokuDifficulty = {
   EASY: 'EASY',
   MEDIUM: 'MEDIUM',
