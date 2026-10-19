@@ -16,7 +16,7 @@ export default async function AlbumPage(){
   await releaseExpiredStickerEscrows();
   const marketEnabled=await getStickerMarketEnabled();
   const ownedStickerIds=(await prisma.stickerCopy.findMany({where:{ownerId:student.id},distinct:["stickerId"],select:{stickerId:true}})).map(item=>item.stickerId);
-  const[stickers,listings,ownListings,donations,packs,rarityStock,progress]=await Promise.all([
+  const[stickers,listings,ownListings,donations,packs,rarityStock,progress,collectionRequests]=await Promise.all([
     prisma.sticker.findMany({where:{state:"PUBLISHED"},orderBy:[{collection:{createdAt:"desc"}},{number:"asc"}],select:{id:true,slug:true,number:true,name:true,description:true,alt:true,imagePath:true,totalCopies:true,rarity:true,score:true,collection:{select:{name:true,slug:true}},copies:{where:{ownerId:student.id},select:{id:true,state:true}}}}),
     prisma.stickerListing.findMany({
       where:{state:"ACTIVE",expiresAt:{gt:new Date()},sellerId:{not:student.id},copy:{stickerId:{notIn:ownedStickerIds}},seller:{status:"ACTIVE"}},
@@ -38,8 +38,18 @@ export default async function AlbumPage(){
     prisma.stickerPackPurchase.count({where:{studentId:student.id,schoolDay:getSchoolDay().key,price:{gt:0}}}),
     prisma.stickerCopy.groupBy({by:["stickerId"],where:{state:"TREASURY"},_count:{_all:true}}),
     prisma.studentPatentProgress.findUnique({where:{studentId:student.id},include:{level:true}}),
+    readiness.collectionPurchases ? prisma.teacherCollectionPurchaseRequest.findMany({
+      where:{state:"OPEN"},
+      orderBy:{createdAt:"desc"},
+      select:{
+        id:true,xpAmount:true,suggestedXp:true,
+        collection:{select:{name:true,stickers:{where:{state:"PUBLISHED"},select:{id:true,copies:{where:{ownerId:student.id,state:"OWNED"},take:1,select:{id:true}}}}}},
+        offers:{where:{studentId:student.id},take:1,select:{state:true}},
+      },
+    }) : Promise.resolve([]),
   ]);
   const rarityBySticker=new Map((await prisma.sticker.findMany({where:{id:{in:rarityStock.map(i=>i.stickerId)}},select:{id:true,rarity:true}})).map(s=>[s.id,s.rarity]));
   const treasuryStock:Record<string,number>={LOW:0,MEDIUM:0,HIGH:0};for(const row of rarityStock)treasuryStock[rarityBySticker.get(row.stickerId)??"LOW"]+=row._count._all;
-  return <main className="mesh min-h-screen px-4 py-6 sm:px-8"><div className="mx-auto max-w-7xl"><header className="mb-7 flex items-center justify-between"><div><p className="eyebrow">Minha coleção</p><h1 className="mt-2 font-display text-3xl font-bold">Álbum de figurinhas</h1></div><Link href="/aluno" className="button-secondary"><ArrowLeft size={17}/>Voltar</Link></header><StickerAlbum stickers={stickers} listings={listings} ownListings={ownListings} donations={donations} devCoins={student.devCoins} remainingPacks={Math.max(0,DAILY_STICKER_PACK_LIMIT-packs)} treasuryStock={treasuryStock} patent={progress?.level?.name??"Bronze I"} score={progress?.score??0} marketEnabled={marketEnabled}/></div></main>
+  const purchaseRequests=collectionRequests.map(request=>({id:request.id,collectionName:request.collection.name,xpAmount:request.xpAmount,suggestedXp:request.suggestedXp,stickerCount:request.collection.stickers.length,ownedCount:request.collection.stickers.filter(sticker=>sticker.copies.length>0).length,offerState:request.offers[0]?.state??null}));
+  return <main className="mesh min-h-screen px-4 py-6 sm:px-8"><div className="mx-auto max-w-7xl"><header className="mb-7 flex items-center justify-between"><div><p className="eyebrow">Minha coleção</p><h1 className="mt-2 font-display text-3xl font-bold">Álbum de figurinhas</h1></div><Link href="/aluno" className="button-secondary"><ArrowLeft size={17}/>Voltar</Link></header><StickerAlbum stickers={stickers} listings={listings} ownListings={ownListings} donations={donations} purchaseRequests={purchaseRequests} devCoins={student.devCoins} remainingPacks={Math.max(0,DAILY_STICKER_PACK_LIMIT-packs)} treasuryStock={treasuryStock} patent={progress?.level?.name??"Bronze I"} score={progress?.score??0} marketEnabled={marketEnabled}/></div></main>
 }

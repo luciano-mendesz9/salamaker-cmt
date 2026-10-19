@@ -66,7 +66,8 @@ export const XpSource = {
   DEV_COIN_TRANSFER: 'DEV_COIN_TRANSFER',
   PONG_RESULT: 'PONG_RESULT',
   TIC_TAC_TOE_RESULT: 'TIC_TAC_TOE_RESULT',
-  SUDOKU_RESULT: 'SUDOKU_RESULT'
+  SUDOKU_RESULT: 'SUDOKU_RESULT',
+  STICKER_COLLECTION_SALE: 'STICKER_COLLECTION_SALE'
 } as const
 
 export type XpSource = (typeof XpSource)[keyof typeof XpSource]
@@ -92,6 +93,12 @@ export const AuditEvent = {
   STICKER_LISTED: 'STICKER_LISTED',
   STICKER_TRADED: 'STICKER_TRADED',
   STICKER_DONATED: 'STICKER_DONATED',
+  STICKER_COLLECTION_REQUEST_CREATED: 'STICKER_COLLECTION_REQUEST_CREATED',
+  STICKER_COLLECTION_REQUEST_UPDATED: 'STICKER_COLLECTION_REQUEST_UPDATED',
+  STICKER_COLLECTION_OFFERED: 'STICKER_COLLECTION_OFFERED',
+  STICKER_COLLECTION_OFFER_WITHDRAWN: 'STICKER_COLLECTION_OFFER_WITHDRAWN',
+  STICKER_COLLECTION_PURCHASED: 'STICKER_COLLECTION_PURCHASED',
+  STICKER_COLLECTION_REQUEST_CANCELLED: 'STICKER_COLLECTION_REQUEST_CANCELLED',
   DEV_COIN_TRANSFERRED: 'DEV_COIN_TRANSFERRED',
   PONG_ROOM_CREATED: 'PONG_ROOM_CREATED',
   PONG_JOIN_REQUESTED: 'PONG_JOIN_REQUESTED',
@@ -190,6 +197,25 @@ export const StickerDonationState = {
 } as const
 
 export type StickerDonationState = (typeof StickerDonationState)[keyof typeof StickerDonationState]
+
+
+export const TeacherCollectionPurchaseRequestState = {
+  OPEN: 'OPEN',
+  COMPLETED: 'COMPLETED',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type TeacherCollectionPurchaseRequestState = (typeof TeacherCollectionPurchaseRequestState)[keyof typeof TeacherCollectionPurchaseRequestState]
+
+
+export const TeacherCollectionOfferState = {
+  ACTIVE: 'ACTIVE',
+  SELECTED: 'SELECTED',
+  NOT_SELECTED: 'NOT_SELECTED',
+  WITHDRAWN: 'WITHDRAWN'
+} as const
+
+export type TeacherCollectionOfferState = (typeof TeacherCollectionOfferState)[keyof typeof TeacherCollectionOfferState]
 
 
 export const PatentRewardState = {

@@ -97,6 +97,26 @@ export type StickerTrade = Prisma.StickerTradeModel
  */
 export type StickerDonation = Prisma.StickerDonationModel
 /**
+ * Model TeacherCollectionPurchaseRequest
+ *
+ */
+export type TeacherCollectionPurchaseRequest = Prisma.TeacherCollectionPurchaseRequestModel
+/**
+ * Model TeacherCollectionOffer
+ *
+ */
+export type TeacherCollectionOffer = Prisma.TeacherCollectionOfferModel
+/**
+ * Model TeacherCollectionOfferCopy
+ *
+ */
+export type TeacherCollectionOfferCopy = Prisma.TeacherCollectionOfferCopyModel
+/**
+ * Model TeacherCollectionPurchase
+ *
+ */
+export type TeacherCollectionPurchase = Prisma.TeacherCollectionPurchaseModel
+/**
  * Model PatentLevel
  *
  */

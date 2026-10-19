@@ -217,6 +217,7 @@ export type NotificationWhereInput = {
   author?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   activity?: Prisma.XOR<Prisma.ActivityNullableScalarRelationFilter, Prisma.ActivityWhereInput> | null
   receipts?: Prisma.NotificationReceiptListRelationFilter
+  collectionPurchaseRequest?: Prisma.XOR<Prisma.TeacherCollectionPurchaseRequestNullableScalarRelationFilter, Prisma.TeacherCollectionPurchaseRequestWhereInput> | null
 }
 
 export type NotificationOrderByWithRelationInput = {
@@ -232,6 +233,7 @@ export type NotificationOrderByWithRelationInput = {
   author?: Prisma.UserOrderByWithRelationInput
   activity?: Prisma.ActivityOrderByWithRelationInput
   receipts?: Prisma.NotificationReceiptOrderByRelationAggregateInput
+  collectionPurchaseRequest?: Prisma.TeacherCollectionPurchaseRequestOrderByWithRelationInput
 }
 
 export type NotificationWhereUniqueInput = Prisma.AtLeast<{
@@ -250,6 +252,7 @@ export type NotificationWhereUniqueInput = Prisma.AtLeast<{
   author?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   activity?: Prisma.XOR<Prisma.ActivityNullableScalarRelationFilter, Prisma.ActivityWhereInput> | null
   receipts?: Prisma.NotificationReceiptListRelationFilter
+  collectionPurchaseRequest?: Prisma.XOR<Prisma.TeacherCollectionPurchaseRequestNullableScalarRelationFilter, Prisma.TeacherCollectionPurchaseRequestWhereInput> | null
 }, "id">
 
 export type NotificationOrderByWithAggregationInput = {
@@ -293,6 +296,7 @@ export type NotificationCreateInput = {
   author?: Prisma.UserCreateNestedOneWithoutAuthoredNotificationsInput
   activity?: Prisma.ActivityCreateNestedOneWithoutNotificationsInput
   receipts?: Prisma.NotificationReceiptCreateNestedManyWithoutNotificationInput
+  collectionPurchaseRequest?: Prisma.TeacherCollectionPurchaseRequestCreateNestedOneWithoutNotificationInput
 }
 
 export type NotificationUncheckedCreateInput = {
@@ -306,6 +310,7 @@ export type NotificationUncheckedCreateInput = {
   activityId?: string | null
   createdAt?: Date | string
   receipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutNotificationInput
+  collectionPurchaseRequest?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedOneWithoutNotificationInput
 }
 
 export type NotificationUpdateInput = {
@@ -319,6 +324,7 @@ export type NotificationUpdateInput = {
   author?: Prisma.UserUpdateOneWithoutAuthoredNotificationsNestedInput
   activity?: Prisma.ActivityUpdateOneWithoutNotificationsNestedInput
   receipts?: Prisma.NotificationReceiptUpdateManyWithoutNotificationNestedInput
+  collectionPurchaseRequest?: Prisma.TeacherCollectionPurchaseRequestUpdateOneWithoutNotificationNestedInput
 }
 
 export type NotificationUncheckedUpdateInput = {
@@ -332,6 +338,7 @@ export type NotificationUncheckedUpdateInput = {
   activityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   receipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutNotificationNestedInput
+  collectionPurchaseRequest?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateOneWithoutNotificationNestedInput
 }
 
 export type NotificationCreateManyInput = {
@@ -376,6 +383,11 @@ export type NotificationListRelationFilter = {
 
 export type NotificationOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
+}
+
+export type NotificationNullableScalarRelationFilter = {
+  is?: Prisma.NotificationWhereInput | null
+  isNot?: Prisma.NotificationWhereInput | null
 }
 
 export type NotificationCountOrderByAggregateInput = {
@@ -461,6 +473,22 @@ export type NotificationUncheckedUpdateManyWithoutAuthorNestedInput = {
   deleteMany?: Prisma.NotificationScalarWhereInput | Prisma.NotificationScalarWhereInput[]
 }
 
+export type NotificationCreateNestedOneWithoutCollectionPurchaseRequestInput = {
+  create?: Prisma.XOR<Prisma.NotificationCreateWithoutCollectionPurchaseRequestInput, Prisma.NotificationUncheckedCreateWithoutCollectionPurchaseRequestInput>
+  connectOrCreate?: Prisma.NotificationCreateOrConnectWithoutCollectionPurchaseRequestInput
+  connect?: Prisma.NotificationWhereUniqueInput
+}
+
+export type NotificationUpdateOneWithoutCollectionPurchaseRequestNestedInput = {
+  create?: Prisma.XOR<Prisma.NotificationCreateWithoutCollectionPurchaseRequestInput, Prisma.NotificationUncheckedCreateWithoutCollectionPurchaseRequestInput>
+  connectOrCreate?: Prisma.NotificationCreateOrConnectWithoutCollectionPurchaseRequestInput
+  upsert?: Prisma.NotificationUpsertWithoutCollectionPurchaseRequestInput
+  disconnect?: Prisma.NotificationWhereInput | boolean
+  delete?: Prisma.NotificationWhereInput | boolean
+  connect?: Prisma.NotificationWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.NotificationUpdateToOneWithWhereWithoutCollectionPurchaseRequestInput, Prisma.NotificationUpdateWithoutCollectionPurchaseRequestInput>, Prisma.NotificationUncheckedUpdateWithoutCollectionPurchaseRequestInput>
+}
+
 export type NotificationCreateNestedManyWithoutActivityInput = {
   create?: Prisma.XOR<Prisma.NotificationCreateWithoutActivityInput, Prisma.NotificationUncheckedCreateWithoutActivityInput> | Prisma.NotificationCreateWithoutActivityInput[] | Prisma.NotificationUncheckedCreateWithoutActivityInput[]
   connectOrCreate?: Prisma.NotificationCreateOrConnectWithoutActivityInput | Prisma.NotificationCreateOrConnectWithoutActivityInput[]
@@ -531,6 +559,7 @@ export type NotificationCreateWithoutAuthorInput = {
   createdAt?: Date | string
   activity?: Prisma.ActivityCreateNestedOneWithoutNotificationsInput
   receipts?: Prisma.NotificationReceiptCreateNestedManyWithoutNotificationInput
+  collectionPurchaseRequest?: Prisma.TeacherCollectionPurchaseRequestCreateNestedOneWithoutNotificationInput
 }
 
 export type NotificationUncheckedCreateWithoutAuthorInput = {
@@ -543,6 +572,7 @@ export type NotificationUncheckedCreateWithoutAuthorInput = {
   activityId?: string | null
   createdAt?: Date | string
   receipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutNotificationInput
+  collectionPurchaseRequest?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedOneWithoutNotificationInput
 }
 
 export type NotificationCreateOrConnectWithoutAuthorInput = {
@@ -586,6 +616,74 @@ export type NotificationScalarWhereInput = {
   createdAt?: Prisma.DateTimeFilter<"Notification"> | Date | string
 }
 
+export type NotificationCreateWithoutCollectionPurchaseRequestInput = {
+  id?: string
+  title: string
+  body: string
+  kind: $Enums.NotificationKind
+  expiresAt?: Date | string | null
+  linkPath?: string | null
+  createdAt?: Date | string
+  author?: Prisma.UserCreateNestedOneWithoutAuthoredNotificationsInput
+  activity?: Prisma.ActivityCreateNestedOneWithoutNotificationsInput
+  receipts?: Prisma.NotificationReceiptCreateNestedManyWithoutNotificationInput
+}
+
+export type NotificationUncheckedCreateWithoutCollectionPurchaseRequestInput = {
+  id?: string
+  title: string
+  body: string
+  kind: $Enums.NotificationKind
+  expiresAt?: Date | string | null
+  linkPath?: string | null
+  authorId?: string | null
+  activityId?: string | null
+  createdAt?: Date | string
+  receipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutNotificationInput
+}
+
+export type NotificationCreateOrConnectWithoutCollectionPurchaseRequestInput = {
+  where: Prisma.NotificationWhereUniqueInput
+  create: Prisma.XOR<Prisma.NotificationCreateWithoutCollectionPurchaseRequestInput, Prisma.NotificationUncheckedCreateWithoutCollectionPurchaseRequestInput>
+}
+
+export type NotificationUpsertWithoutCollectionPurchaseRequestInput = {
+  update: Prisma.XOR<Prisma.NotificationUpdateWithoutCollectionPurchaseRequestInput, Prisma.NotificationUncheckedUpdateWithoutCollectionPurchaseRequestInput>
+  create: Prisma.XOR<Prisma.NotificationCreateWithoutCollectionPurchaseRequestInput, Prisma.NotificationUncheckedCreateWithoutCollectionPurchaseRequestInput>
+  where?: Prisma.NotificationWhereInput
+}
+
+export type NotificationUpdateToOneWithWhereWithoutCollectionPurchaseRequestInput = {
+  where?: Prisma.NotificationWhereInput
+  data: Prisma.XOR<Prisma.NotificationUpdateWithoutCollectionPurchaseRequestInput, Prisma.NotificationUncheckedUpdateWithoutCollectionPurchaseRequestInput>
+}
+
+export type NotificationUpdateWithoutCollectionPurchaseRequestInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
+  body?: Prisma.StringFieldUpdateOperationsInput | string
+  kind?: Prisma.EnumNotificationKindFieldUpdateOperationsInput | $Enums.NotificationKind
+  expiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  linkPath?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  author?: Prisma.UserUpdateOneWithoutAuthoredNotificationsNestedInput
+  activity?: Prisma.ActivityUpdateOneWithoutNotificationsNestedInput
+  receipts?: Prisma.NotificationReceiptUpdateManyWithoutNotificationNestedInput
+}
+
+export type NotificationUncheckedUpdateWithoutCollectionPurchaseRequestInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
+  body?: Prisma.StringFieldUpdateOperationsInput | string
+  kind?: Prisma.EnumNotificationKindFieldUpdateOperationsInput | $Enums.NotificationKind
+  expiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  linkPath?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  authorId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  activityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  receipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutNotificationNestedInput
+}
+
 export type NotificationCreateWithoutActivityInput = {
   id?: string
   title: string
@@ -596,6 +694,7 @@ export type NotificationCreateWithoutActivityInput = {
   createdAt?: Date | string
   author?: Prisma.UserCreateNestedOneWithoutAuthoredNotificationsInput
   receipts?: Prisma.NotificationReceiptCreateNestedManyWithoutNotificationInput
+  collectionPurchaseRequest?: Prisma.TeacherCollectionPurchaseRequestCreateNestedOneWithoutNotificationInput
 }
 
 export type NotificationUncheckedCreateWithoutActivityInput = {
@@ -608,6 +707,7 @@ export type NotificationUncheckedCreateWithoutActivityInput = {
   authorId?: string | null
   createdAt?: Date | string
   receipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutNotificationInput
+  collectionPurchaseRequest?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedOneWithoutNotificationInput
 }
 
 export type NotificationCreateOrConnectWithoutActivityInput = {
@@ -646,6 +746,7 @@ export type NotificationCreateWithoutReceiptsInput = {
   createdAt?: Date | string
   author?: Prisma.UserCreateNestedOneWithoutAuthoredNotificationsInput
   activity?: Prisma.ActivityCreateNestedOneWithoutNotificationsInput
+  collectionPurchaseRequest?: Prisma.TeacherCollectionPurchaseRequestCreateNestedOneWithoutNotificationInput
 }
 
 export type NotificationUncheckedCreateWithoutReceiptsInput = {
@@ -658,6 +759,7 @@ export type NotificationUncheckedCreateWithoutReceiptsInput = {
   authorId?: string | null
   activityId?: string | null
   createdAt?: Date | string
+  collectionPurchaseRequest?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedOneWithoutNotificationInput
 }
 
 export type NotificationCreateOrConnectWithoutReceiptsInput = {
@@ -686,6 +788,7 @@ export type NotificationUpdateWithoutReceiptsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   author?: Prisma.UserUpdateOneWithoutAuthoredNotificationsNestedInput
   activity?: Prisma.ActivityUpdateOneWithoutNotificationsNestedInput
+  collectionPurchaseRequest?: Prisma.TeacherCollectionPurchaseRequestUpdateOneWithoutNotificationNestedInput
 }
 
 export type NotificationUncheckedUpdateWithoutReceiptsInput = {
@@ -698,6 +801,7 @@ export type NotificationUncheckedUpdateWithoutReceiptsInput = {
   authorId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  collectionPurchaseRequest?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateOneWithoutNotificationNestedInput
 }
 
 export type NotificationCreateManyAuthorInput = {
@@ -721,6 +825,7 @@ export type NotificationUpdateWithoutAuthorInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   activity?: Prisma.ActivityUpdateOneWithoutNotificationsNestedInput
   receipts?: Prisma.NotificationReceiptUpdateManyWithoutNotificationNestedInput
+  collectionPurchaseRequest?: Prisma.TeacherCollectionPurchaseRequestUpdateOneWithoutNotificationNestedInput
 }
 
 export type NotificationUncheckedUpdateWithoutAuthorInput = {
@@ -733,6 +838,7 @@ export type NotificationUncheckedUpdateWithoutAuthorInput = {
   activityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   receipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutNotificationNestedInput
+  collectionPurchaseRequest?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateOneWithoutNotificationNestedInput
 }
 
 export type NotificationUncheckedUpdateManyWithoutAuthorInput = {
@@ -767,6 +873,7 @@ export type NotificationUpdateWithoutActivityInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   author?: Prisma.UserUpdateOneWithoutAuthoredNotificationsNestedInput
   receipts?: Prisma.NotificationReceiptUpdateManyWithoutNotificationNestedInput
+  collectionPurchaseRequest?: Prisma.TeacherCollectionPurchaseRequestUpdateOneWithoutNotificationNestedInput
 }
 
 export type NotificationUncheckedUpdateWithoutActivityInput = {
@@ -779,6 +886,7 @@ export type NotificationUncheckedUpdateWithoutActivityInput = {
   authorId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   receipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutNotificationNestedInput
+  collectionPurchaseRequest?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateOneWithoutNotificationNestedInput
 }
 
 export type NotificationUncheckedUpdateManyWithoutActivityInput = {
@@ -836,6 +944,7 @@ export type NotificationSelect<ExtArgs extends runtime.Types.Extensions.Internal
   author?: boolean | Prisma.Notification$authorArgs<ExtArgs>
   activity?: boolean | Prisma.Notification$activityArgs<ExtArgs>
   receipts?: boolean | Prisma.Notification$receiptsArgs<ExtArgs>
+  collectionPurchaseRequest?: boolean | Prisma.Notification$collectionPurchaseRequestArgs<ExtArgs>
   _count?: boolean | Prisma.NotificationCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["notification"]>
 
@@ -884,6 +993,7 @@ export type NotificationInclude<ExtArgs extends runtime.Types.Extensions.Interna
   author?: boolean | Prisma.Notification$authorArgs<ExtArgs>
   activity?: boolean | Prisma.Notification$activityArgs<ExtArgs>
   receipts?: boolean | Prisma.Notification$receiptsArgs<ExtArgs>
+  collectionPurchaseRequest?: boolean | Prisma.Notification$collectionPurchaseRequestArgs<ExtArgs>
   _count?: boolean | Prisma.NotificationCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type NotificationIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -901,6 +1011,7 @@ export type $NotificationPayload<ExtArgs extends runtime.Types.Extensions.Intern
     author: Prisma.$UserPayload<ExtArgs> | null
     activity: Prisma.$ActivityPayload<ExtArgs> | null
     receipts: Prisma.$NotificationReceiptPayload<ExtArgs>[]
+    collectionPurchaseRequest: Prisma.$TeacherCollectionPurchaseRequestPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1309,6 +1420,7 @@ export interface Prisma__NotificationClient<T, Null = never, ExtArgs extends run
   author<T extends Prisma.Notification$authorArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Notification$authorArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   activity<T extends Prisma.Notification$activityArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Notification$activityArgs<ExtArgs>>): Prisma.Prisma__ActivityClient<runtime.Types.Result.GetResult<Prisma.$ActivityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   receipts<T extends Prisma.Notification$receiptsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Notification$receiptsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotificationReceiptPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  collectionPurchaseRequest<T extends Prisma.Notification$collectionPurchaseRequestArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Notification$collectionPurchaseRequestArgs<ExtArgs>>): Prisma.Prisma__TeacherCollectionPurchaseRequestClient<runtime.Types.Result.GetResult<Prisma.$TeacherCollectionPurchaseRequestPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1807,6 +1919,25 @@ export type Notification$receiptsArgs<ExtArgs extends runtime.Types.Extensions.I
   take?: number
   skip?: number
   distinct?: Prisma.NotificationReceiptScalarFieldEnum | Prisma.NotificationReceiptScalarFieldEnum[]
+}
+
+/**
+ * Notification.collectionPurchaseRequest
+ */
+export type Notification$collectionPurchaseRequestArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the TeacherCollectionPurchaseRequest
+   */
+  select?: Prisma.TeacherCollectionPurchaseRequestSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the TeacherCollectionPurchaseRequest
+   */
+  omit?: Prisma.TeacherCollectionPurchaseRequestOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TeacherCollectionPurchaseRequestInclude<ExtArgs> | null
+  where?: Prisma.TeacherCollectionPurchaseRequestWhereInput
 }
 
 /**

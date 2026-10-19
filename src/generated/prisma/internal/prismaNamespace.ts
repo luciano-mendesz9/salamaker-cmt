@@ -408,6 +408,10 @@ export const ModelName = {
   StickerListing: 'StickerListing',
   StickerTrade: 'StickerTrade',
   StickerDonation: 'StickerDonation',
+  TeacherCollectionPurchaseRequest: 'TeacherCollectionPurchaseRequest',
+  TeacherCollectionOffer: 'TeacherCollectionOffer',
+  TeacherCollectionOfferCopy: 'TeacherCollectionOfferCopy',
+  TeacherCollectionPurchase: 'TeacherCollectionPurchase',
   PatentLevel: 'PatentLevel',
   StudentPatentProgress: 'StudentPatentProgress',
   PatentRewardClaim: 'PatentRewardClaim',
@@ -461,7 +465,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "profileAvatarPurchase" | "devCoinEntry" | "devCoinTransfer" | "stickerCollection" | "sticker" | "stickerCopy" | "stickerPackPurchase" | "stickerListing" | "stickerTrade" | "stickerDonation" | "patentLevel" | "studentPatentProgress" | "patentRewardClaim" | "devCoinTreasury" | "stickerMarketSetting" | "devCoinTreasuryEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket" | "pongRoom" | "pongPlayer" | "pongJoinRequest" | "pongPoint" | "ticTacToeRoom" | "ticTacToeRound" | "ticTacToeSoloGame" | "ticTacToeSoloAction" | "sudokuGame" | "sudokuAction"
+    modelProps: "user" | "profileAvatarPurchase" | "devCoinEntry" | "devCoinTransfer" | "stickerCollection" | "sticker" | "stickerCopy" | "stickerPackPurchase" | "stickerListing" | "stickerTrade" | "stickerDonation" | "teacherCollectionPurchaseRequest" | "teacherCollectionOffer" | "teacherCollectionOfferCopy" | "teacherCollectionPurchase" | "patentLevel" | "studentPatentProgress" | "patentRewardClaim" | "devCoinTreasury" | "stickerMarketSetting" | "devCoinTreasuryEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket" | "pongRoom" | "pongPlayer" | "pongJoinRequest" | "pongPoint" | "ticTacToeRoom" | "ticTacToeRound" | "ticTacToeSoloGame" | "ticTacToeSoloAction" | "sudokuGame" | "sudokuAction"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1276,6 +1280,302 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.StickerDonationCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.StickerDonationCountAggregateOutputType> | number
+        }
+      }
+    }
+    TeacherCollectionPurchaseRequest: {
+      payload: Prisma.$TeacherCollectionPurchaseRequestPayload<ExtArgs>
+      fields: Prisma.TeacherCollectionPurchaseRequestFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.TeacherCollectionPurchaseRequestFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchaseRequestPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.TeacherCollectionPurchaseRequestFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchaseRequestPayload>
+        }
+        findFirst: {
+          args: Prisma.TeacherCollectionPurchaseRequestFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchaseRequestPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.TeacherCollectionPurchaseRequestFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchaseRequestPayload>
+        }
+        findMany: {
+          args: Prisma.TeacherCollectionPurchaseRequestFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchaseRequestPayload>[]
+        }
+        create: {
+          args: Prisma.TeacherCollectionPurchaseRequestCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchaseRequestPayload>
+        }
+        createMany: {
+          args: Prisma.TeacherCollectionPurchaseRequestCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.TeacherCollectionPurchaseRequestCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchaseRequestPayload>[]
+        }
+        delete: {
+          args: Prisma.TeacherCollectionPurchaseRequestDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchaseRequestPayload>
+        }
+        update: {
+          args: Prisma.TeacherCollectionPurchaseRequestUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchaseRequestPayload>
+        }
+        deleteMany: {
+          args: Prisma.TeacherCollectionPurchaseRequestDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.TeacherCollectionPurchaseRequestUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.TeacherCollectionPurchaseRequestUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchaseRequestPayload>[]
+        }
+        upsert: {
+          args: Prisma.TeacherCollectionPurchaseRequestUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchaseRequestPayload>
+        }
+        aggregate: {
+          args: Prisma.TeacherCollectionPurchaseRequestAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateTeacherCollectionPurchaseRequest>
+        }
+        groupBy: {
+          args: Prisma.TeacherCollectionPurchaseRequestGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TeacherCollectionPurchaseRequestGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.TeacherCollectionPurchaseRequestCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TeacherCollectionPurchaseRequestCountAggregateOutputType> | number
+        }
+      }
+    }
+    TeacherCollectionOffer: {
+      payload: Prisma.$TeacherCollectionOfferPayload<ExtArgs>
+      fields: Prisma.TeacherCollectionOfferFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.TeacherCollectionOfferFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.TeacherCollectionOfferFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferPayload>
+        }
+        findFirst: {
+          args: Prisma.TeacherCollectionOfferFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.TeacherCollectionOfferFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferPayload>
+        }
+        findMany: {
+          args: Prisma.TeacherCollectionOfferFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferPayload>[]
+        }
+        create: {
+          args: Prisma.TeacherCollectionOfferCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferPayload>
+        }
+        createMany: {
+          args: Prisma.TeacherCollectionOfferCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.TeacherCollectionOfferCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferPayload>[]
+        }
+        delete: {
+          args: Prisma.TeacherCollectionOfferDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferPayload>
+        }
+        update: {
+          args: Prisma.TeacherCollectionOfferUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferPayload>
+        }
+        deleteMany: {
+          args: Prisma.TeacherCollectionOfferDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.TeacherCollectionOfferUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.TeacherCollectionOfferUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferPayload>[]
+        }
+        upsert: {
+          args: Prisma.TeacherCollectionOfferUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferPayload>
+        }
+        aggregate: {
+          args: Prisma.TeacherCollectionOfferAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateTeacherCollectionOffer>
+        }
+        groupBy: {
+          args: Prisma.TeacherCollectionOfferGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TeacherCollectionOfferGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.TeacherCollectionOfferCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TeacherCollectionOfferCountAggregateOutputType> | number
+        }
+      }
+    }
+    TeacherCollectionOfferCopy: {
+      payload: Prisma.$TeacherCollectionOfferCopyPayload<ExtArgs>
+      fields: Prisma.TeacherCollectionOfferCopyFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.TeacherCollectionOfferCopyFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferCopyPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.TeacherCollectionOfferCopyFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferCopyPayload>
+        }
+        findFirst: {
+          args: Prisma.TeacherCollectionOfferCopyFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferCopyPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.TeacherCollectionOfferCopyFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferCopyPayload>
+        }
+        findMany: {
+          args: Prisma.TeacherCollectionOfferCopyFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferCopyPayload>[]
+        }
+        create: {
+          args: Prisma.TeacherCollectionOfferCopyCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferCopyPayload>
+        }
+        createMany: {
+          args: Prisma.TeacherCollectionOfferCopyCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.TeacherCollectionOfferCopyCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferCopyPayload>[]
+        }
+        delete: {
+          args: Prisma.TeacherCollectionOfferCopyDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferCopyPayload>
+        }
+        update: {
+          args: Prisma.TeacherCollectionOfferCopyUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferCopyPayload>
+        }
+        deleteMany: {
+          args: Prisma.TeacherCollectionOfferCopyDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.TeacherCollectionOfferCopyUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.TeacherCollectionOfferCopyUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferCopyPayload>[]
+        }
+        upsert: {
+          args: Prisma.TeacherCollectionOfferCopyUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionOfferCopyPayload>
+        }
+        aggregate: {
+          args: Prisma.TeacherCollectionOfferCopyAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateTeacherCollectionOfferCopy>
+        }
+        groupBy: {
+          args: Prisma.TeacherCollectionOfferCopyGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TeacherCollectionOfferCopyGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.TeacherCollectionOfferCopyCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TeacherCollectionOfferCopyCountAggregateOutputType> | number
+        }
+      }
+    }
+    TeacherCollectionPurchase: {
+      payload: Prisma.$TeacherCollectionPurchasePayload<ExtArgs>
+      fields: Prisma.TeacherCollectionPurchaseFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.TeacherCollectionPurchaseFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchasePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.TeacherCollectionPurchaseFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchasePayload>
+        }
+        findFirst: {
+          args: Prisma.TeacherCollectionPurchaseFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchasePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.TeacherCollectionPurchaseFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchasePayload>
+        }
+        findMany: {
+          args: Prisma.TeacherCollectionPurchaseFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchasePayload>[]
+        }
+        create: {
+          args: Prisma.TeacherCollectionPurchaseCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchasePayload>
+        }
+        createMany: {
+          args: Prisma.TeacherCollectionPurchaseCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.TeacherCollectionPurchaseCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchasePayload>[]
+        }
+        delete: {
+          args: Prisma.TeacherCollectionPurchaseDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchasePayload>
+        }
+        update: {
+          args: Prisma.TeacherCollectionPurchaseUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchasePayload>
+        }
+        deleteMany: {
+          args: Prisma.TeacherCollectionPurchaseDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.TeacherCollectionPurchaseUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.TeacherCollectionPurchaseUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchasePayload>[]
+        }
+        upsert: {
+          args: Prisma.TeacherCollectionPurchaseUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$TeacherCollectionPurchasePayload>
+        }
+        aggregate: {
+          args: Prisma.TeacherCollectionPurchaseAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateTeacherCollectionPurchase>
+        }
+        groupBy: {
+          args: Prisma.TeacherCollectionPurchaseGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TeacherCollectionPurchaseGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.TeacherCollectionPurchaseCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.TeacherCollectionPurchaseCountAggregateOutputType> | number
         }
       }
     }
@@ -4305,6 +4605,55 @@ export const StickerDonationScalarFieldEnum = {
 export type StickerDonationScalarFieldEnum = (typeof StickerDonationScalarFieldEnum)[keyof typeof StickerDonationScalarFieldEnum]
 
 
+export const TeacherCollectionPurchaseRequestScalarFieldEnum = {
+  id: 'id',
+  teacherId: 'teacherId',
+  collectionId: 'collectionId',
+  notificationId: 'notificationId',
+  suggestedXp: 'suggestedXp',
+  xpAmount: 'xpAmount',
+  state: 'state',
+  createdAt: 'createdAt',
+  resolvedAt: 'resolvedAt'
+} as const
+
+export type TeacherCollectionPurchaseRequestScalarFieldEnum = (typeof TeacherCollectionPurchaseRequestScalarFieldEnum)[keyof typeof TeacherCollectionPurchaseRequestScalarFieldEnum]
+
+
+export const TeacherCollectionOfferScalarFieldEnum = {
+  id: 'id',
+  requestId: 'requestId',
+  studentId: 'studentId',
+  state: 'state',
+  createdAt: 'createdAt',
+  resolvedAt: 'resolvedAt'
+} as const
+
+export type TeacherCollectionOfferScalarFieldEnum = (typeof TeacherCollectionOfferScalarFieldEnum)[keyof typeof TeacherCollectionOfferScalarFieldEnum]
+
+
+export const TeacherCollectionOfferCopyScalarFieldEnum = {
+  offerId: 'offerId',
+  copyId: 'copyId'
+} as const
+
+export type TeacherCollectionOfferCopyScalarFieldEnum = (typeof TeacherCollectionOfferCopyScalarFieldEnum)[keyof typeof TeacherCollectionOfferCopyScalarFieldEnum]
+
+
+export const TeacherCollectionPurchaseScalarFieldEnum = {
+  id: 'id',
+  requestId: 'requestId',
+  offerId: 'offerId',
+  teacherId: 'teacherId',
+  studentId: 'studentId',
+  xpAmount: 'xpAmount',
+  xpEntryId: 'xpEntryId',
+  createdAt: 'createdAt'
+} as const
+
+export type TeacherCollectionPurchaseScalarFieldEnum = (typeof TeacherCollectionPurchaseScalarFieldEnum)[keyof typeof TeacherCollectionPurchaseScalarFieldEnum]
+
+
 export const PatentLevelScalarFieldEnum = {
   id: 'id',
   collectionId: 'collectionId',
@@ -5091,6 +5440,34 @@ export type ListEnumStickerDonationStateFieldRefInput<$PrismaModel> = FieldRefIn
 
 
 /**
+ * Reference to a field of type 'TeacherCollectionPurchaseRequestState'
+ */
+export type EnumTeacherCollectionPurchaseRequestStateFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TeacherCollectionPurchaseRequestState'>
+
+
+
+/**
+ * Reference to a field of type 'TeacherCollectionPurchaseRequestState[]'
+ */
+export type ListEnumTeacherCollectionPurchaseRequestStateFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TeacherCollectionPurchaseRequestState[]'>
+
+
+
+/**
+ * Reference to a field of type 'TeacherCollectionOfferState'
+ */
+export type EnumTeacherCollectionOfferStateFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TeacherCollectionOfferState'>
+
+
+
+/**
+ * Reference to a field of type 'TeacherCollectionOfferState[]'
+ */
+export type ListEnumTeacherCollectionOfferStateFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TeacherCollectionOfferState[]'>
+
+
+
+/**
  * Reference to a field of type 'PatentRewardState'
  */
 export type EnumPatentRewardStateFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PatentRewardState'>
@@ -5601,6 +5978,10 @@ export type GlobalOmitConfig = {
   stickerListing?: Prisma.StickerListingOmit
   stickerTrade?: Prisma.StickerTradeOmit
   stickerDonation?: Prisma.StickerDonationOmit
+  teacherCollectionPurchaseRequest?: Prisma.TeacherCollectionPurchaseRequestOmit
+  teacherCollectionOffer?: Prisma.TeacherCollectionOfferOmit
+  teacherCollectionOfferCopy?: Prisma.TeacherCollectionOfferCopyOmit
+  teacherCollectionPurchase?: Prisma.TeacherCollectionPurchaseOmit
   patentLevel?: Prisma.PatentLevelOmit
   studentPatentProgress?: Prisma.StudentPatentProgressOmit
   patentRewardClaim?: Prisma.PatentRewardClaimOmit

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Activity, Bell, BookOpen, ClipboardList, Coins, ExternalLink, Gamepad2, Gauge, Images, KeyRound, Palette, ScrollText, Settings2, Trophy, UsersRound } from "lucide-react";
+import { Activity, Bell, BookOpen, ClipboardList, Coins, ExternalLink, Gamepad2, Gauge, Images, KeyRound, Palette, ScrollText, Settings2, ShoppingBasket, Trophy, UsersRound } from "lucide-react";
 import { Brand } from "./brand";
 import { LogoutButton } from "./logout-button";
 
@@ -14,6 +14,7 @@ const links = [
   ["/professor/moderacao", "Moderação e tema", Palette],
   ["/professor/tesouraria", "Tesouraria Dev-Coin", Coins],
   ["/professor/figurinhas/catalogo", "Catálogo de figurinhas", Images],
+  ["/professor/figurinhas/compras", "Comprar coleções", ShoppingBasket],
   ["/professor/conta", "Minha conta", KeyRound],
   ...(process.env.NODE_ENV !== "production" && process.env.ENABLE_LOCAL_ASSET_MANAGER === "true"
     ? [["/professor/midias", "Mídias locais", Images] as const]

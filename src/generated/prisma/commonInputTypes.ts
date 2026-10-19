@@ -383,6 +383,40 @@ export type EnumStickerDonationStateWithAggregatesFilter<$PrismaModel = never> =
   _max?: Prisma.NestedEnumStickerDonationStateFilter<$PrismaModel>
 }
 
+export type EnumTeacherCollectionPurchaseRequestStateFilter<$PrismaModel = never> = {
+  equals?: $Enums.TeacherCollectionPurchaseRequestState | Prisma.EnumTeacherCollectionPurchaseRequestStateFieldRefInput<$PrismaModel>
+  in?: $Enums.TeacherCollectionPurchaseRequestState[] | Prisma.ListEnumTeacherCollectionPurchaseRequestStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TeacherCollectionPurchaseRequestState[] | Prisma.ListEnumTeacherCollectionPurchaseRequestStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTeacherCollectionPurchaseRequestStateFilter<$PrismaModel> | $Enums.TeacherCollectionPurchaseRequestState
+}
+
+export type EnumTeacherCollectionPurchaseRequestStateWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TeacherCollectionPurchaseRequestState | Prisma.EnumTeacherCollectionPurchaseRequestStateFieldRefInput<$PrismaModel>
+  in?: $Enums.TeacherCollectionPurchaseRequestState[] | Prisma.ListEnumTeacherCollectionPurchaseRequestStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TeacherCollectionPurchaseRequestState[] | Prisma.ListEnumTeacherCollectionPurchaseRequestStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTeacherCollectionPurchaseRequestStateWithAggregatesFilter<$PrismaModel> | $Enums.TeacherCollectionPurchaseRequestState
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTeacherCollectionPurchaseRequestStateFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTeacherCollectionPurchaseRequestStateFilter<$PrismaModel>
+}
+
+export type EnumTeacherCollectionOfferStateFilter<$PrismaModel = never> = {
+  equals?: $Enums.TeacherCollectionOfferState | Prisma.EnumTeacherCollectionOfferStateFieldRefInput<$PrismaModel>
+  in?: $Enums.TeacherCollectionOfferState[] | Prisma.ListEnumTeacherCollectionOfferStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TeacherCollectionOfferState[] | Prisma.ListEnumTeacherCollectionOfferStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTeacherCollectionOfferStateFilter<$PrismaModel> | $Enums.TeacherCollectionOfferState
+}
+
+export type EnumTeacherCollectionOfferStateWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TeacherCollectionOfferState | Prisma.EnumTeacherCollectionOfferStateFieldRefInput<$PrismaModel>
+  in?: $Enums.TeacherCollectionOfferState[] | Prisma.ListEnumTeacherCollectionOfferStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TeacherCollectionOfferState[] | Prisma.ListEnumTeacherCollectionOfferStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTeacherCollectionOfferStateWithAggregatesFilter<$PrismaModel> | $Enums.TeacherCollectionOfferState
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTeacherCollectionOfferStateFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTeacherCollectionOfferStateFilter<$PrismaModel>
+}
+
 export type EnumPatentRewardStateFilter<$PrismaModel = never> = {
   equals?: $Enums.PatentRewardState | Prisma.EnumPatentRewardStateFieldRefInput<$PrismaModel>
   in?: $Enums.PatentRewardState[] | Prisma.ListEnumPatentRewardStateFieldRefInput<$PrismaModel>
@@ -1307,6 +1341,40 @@ export type NestedEnumStickerDonationStateWithAggregatesFilter<$PrismaModel = ne
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumStickerDonationStateFilter<$PrismaModel>
   _max?: Prisma.NestedEnumStickerDonationStateFilter<$PrismaModel>
+}
+
+export type NestedEnumTeacherCollectionPurchaseRequestStateFilter<$PrismaModel = never> = {
+  equals?: $Enums.TeacherCollectionPurchaseRequestState | Prisma.EnumTeacherCollectionPurchaseRequestStateFieldRefInput<$PrismaModel>
+  in?: $Enums.TeacherCollectionPurchaseRequestState[] | Prisma.ListEnumTeacherCollectionPurchaseRequestStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TeacherCollectionPurchaseRequestState[] | Prisma.ListEnumTeacherCollectionPurchaseRequestStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTeacherCollectionPurchaseRequestStateFilter<$PrismaModel> | $Enums.TeacherCollectionPurchaseRequestState
+}
+
+export type NestedEnumTeacherCollectionPurchaseRequestStateWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TeacherCollectionPurchaseRequestState | Prisma.EnumTeacherCollectionPurchaseRequestStateFieldRefInput<$PrismaModel>
+  in?: $Enums.TeacherCollectionPurchaseRequestState[] | Prisma.ListEnumTeacherCollectionPurchaseRequestStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TeacherCollectionPurchaseRequestState[] | Prisma.ListEnumTeacherCollectionPurchaseRequestStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTeacherCollectionPurchaseRequestStateWithAggregatesFilter<$PrismaModel> | $Enums.TeacherCollectionPurchaseRequestState
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTeacherCollectionPurchaseRequestStateFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTeacherCollectionPurchaseRequestStateFilter<$PrismaModel>
+}
+
+export type NestedEnumTeacherCollectionOfferStateFilter<$PrismaModel = never> = {
+  equals?: $Enums.TeacherCollectionOfferState | Prisma.EnumTeacherCollectionOfferStateFieldRefInput<$PrismaModel>
+  in?: $Enums.TeacherCollectionOfferState[] | Prisma.ListEnumTeacherCollectionOfferStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TeacherCollectionOfferState[] | Prisma.ListEnumTeacherCollectionOfferStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTeacherCollectionOfferStateFilter<$PrismaModel> | $Enums.TeacherCollectionOfferState
+}
+
+export type NestedEnumTeacherCollectionOfferStateWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TeacherCollectionOfferState | Prisma.EnumTeacherCollectionOfferStateFieldRefInput<$PrismaModel>
+  in?: $Enums.TeacherCollectionOfferState[] | Prisma.ListEnumTeacherCollectionOfferStateFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TeacherCollectionOfferState[] | Prisma.ListEnumTeacherCollectionOfferStateFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTeacherCollectionOfferStateWithAggregatesFilter<$PrismaModel> | $Enums.TeacherCollectionOfferState
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTeacherCollectionOfferStateFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTeacherCollectionOfferStateFilter<$PrismaModel>
 }
 
 export type NestedEnumPatentRewardStateFilter<$PrismaModel = never> = {

@@ -62,6 +62,10 @@ export const ModelName = {
   StickerListing: 'StickerListing',
   StickerTrade: 'StickerTrade',
   StickerDonation: 'StickerDonation',
+  TeacherCollectionPurchaseRequest: 'TeacherCollectionPurchaseRequest',
+  TeacherCollectionOffer: 'TeacherCollectionOffer',
+  TeacherCollectionOfferCopy: 'TeacherCollectionOfferCopy',
+  TeacherCollectionPurchase: 'TeacherCollectionPurchase',
   PatentLevel: 'PatentLevel',
   StudentPatentProgress: 'StudentPatentProgress',
   PatentRewardClaim: 'PatentRewardClaim',
@@ -291,6 +295,55 @@ export const StickerDonationScalarFieldEnum = {
 } as const
 
 export type StickerDonationScalarFieldEnum = (typeof StickerDonationScalarFieldEnum)[keyof typeof StickerDonationScalarFieldEnum]
+
+
+export const TeacherCollectionPurchaseRequestScalarFieldEnum = {
+  id: 'id',
+  teacherId: 'teacherId',
+  collectionId: 'collectionId',
+  notificationId: 'notificationId',
+  suggestedXp: 'suggestedXp',
+  xpAmount: 'xpAmount',
+  state: 'state',
+  createdAt: 'createdAt',
+  resolvedAt: 'resolvedAt'
+} as const
+
+export type TeacherCollectionPurchaseRequestScalarFieldEnum = (typeof TeacherCollectionPurchaseRequestScalarFieldEnum)[keyof typeof TeacherCollectionPurchaseRequestScalarFieldEnum]
+
+
+export const TeacherCollectionOfferScalarFieldEnum = {
+  id: 'id',
+  requestId: 'requestId',
+  studentId: 'studentId',
+  state: 'state',
+  createdAt: 'createdAt',
+  resolvedAt: 'resolvedAt'
+} as const
+
+export type TeacherCollectionOfferScalarFieldEnum = (typeof TeacherCollectionOfferScalarFieldEnum)[keyof typeof TeacherCollectionOfferScalarFieldEnum]
+
+
+export const TeacherCollectionOfferCopyScalarFieldEnum = {
+  offerId: 'offerId',
+  copyId: 'copyId'
+} as const
+
+export type TeacherCollectionOfferCopyScalarFieldEnum = (typeof TeacherCollectionOfferCopyScalarFieldEnum)[keyof typeof TeacherCollectionOfferCopyScalarFieldEnum]
+
+
+export const TeacherCollectionPurchaseScalarFieldEnum = {
+  id: 'id',
+  requestId: 'requestId',
+  offerId: 'offerId',
+  teacherId: 'teacherId',
+  studentId: 'studentId',
+  xpAmount: 'xpAmount',
+  xpEntryId: 'xpEntryId',
+  createdAt: 'createdAt'
+} as const
+
+export type TeacherCollectionPurchaseScalarFieldEnum = (typeof TeacherCollectionPurchaseScalarFieldEnum)[keyof typeof TeacherCollectionPurchaseScalarFieldEnum]
 
 
 export const PatentLevelScalarFieldEnum = {

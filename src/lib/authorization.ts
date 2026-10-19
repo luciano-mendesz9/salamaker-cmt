@@ -35,6 +35,7 @@ export function apiError(error: unknown) {
     INVALID_ORIGIN: ["Origem da solicitação inválida.", 403],
     RATE_LIMITED: ["Muitas tentativas. Aguarde alguns minutos.", 429],
     COLLECTIBLES_SCHEMA_NOT_READY: ["Álbum e tesouraria aguardam a migration de produção.", 503],
+    COLLECTION_PURCHASES_SCHEMA_NOT_READY: ["Compra de coleções aguarda a migration de produção.", 503],
     STICKER_MARKET_DISABLED: ["Compras e vendas de figurinhas estão desativadas pelo professor.", 403],
     INVALID_STUDENT_PASSWORD: ["Senha do aluno incorreta.", 403],
   };

@@ -245,6 +245,7 @@ export type StickerCopyWhereInput = {
   packPurchase?: Prisma.XOR<Prisma.StickerPackPurchaseNullableScalarRelationFilter, Prisma.StickerPackPurchaseWhereInput> | null
   listings?: Prisma.StickerListingListRelationFilter
   donations?: Prisma.StickerDonationListRelationFilter
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyListRelationFilter
 }
 
 export type StickerCopyOrderByWithRelationInput = {
@@ -261,6 +262,7 @@ export type StickerCopyOrderByWithRelationInput = {
   packPurchase?: Prisma.StickerPackPurchaseOrderByWithRelationInput
   listings?: Prisma.StickerListingOrderByRelationAggregateInput
   donations?: Prisma.StickerDonationOrderByRelationAggregateInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyOrderByRelationAggregateInput
 }
 
 export type StickerCopyWhereUniqueInput = Prisma.AtLeast<{
@@ -281,6 +283,7 @@ export type StickerCopyWhereUniqueInput = Prisma.AtLeast<{
   packPurchase?: Prisma.XOR<Prisma.StickerPackPurchaseNullableScalarRelationFilter, Prisma.StickerPackPurchaseWhereInput> | null
   listings?: Prisma.StickerListingListRelationFilter
   donations?: Prisma.StickerDonationListRelationFilter
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyListRelationFilter
 }, "id" | "stickerId_serial">
 
 export type StickerCopyOrderByWithAggregationInput = {
@@ -324,6 +327,7 @@ export type StickerCopyCreateInput = {
   packPurchase?: Prisma.StickerPackPurchaseCreateNestedOneWithoutCopiesInput
   listings?: Prisma.StickerListingCreateNestedManyWithoutCopyInput
   donations?: Prisma.StickerDonationCreateNestedManyWithoutCopyInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyCreateNestedManyWithoutCopyInput
 }
 
 export type StickerCopyUncheckedCreateInput = {
@@ -337,6 +341,7 @@ export type StickerCopyUncheckedCreateInput = {
   createdAt?: Date | string
   listings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutCopyInput
   donations?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutCopyInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyUncheckedCreateNestedManyWithoutCopyInput
 }
 
 export type StickerCopyUpdateInput = {
@@ -350,6 +355,7 @@ export type StickerCopyUpdateInput = {
   packPurchase?: Prisma.StickerPackPurchaseUpdateOneWithoutCopiesNestedInput
   listings?: Prisma.StickerListingUpdateManyWithoutCopyNestedInput
   donations?: Prisma.StickerDonationUpdateManyWithoutCopyNestedInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyUpdateManyWithoutCopyNestedInput
 }
 
 export type StickerCopyUncheckedUpdateInput = {
@@ -363,6 +369,7 @@ export type StickerCopyUncheckedUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   listings?: Prisma.StickerListingUncheckedUpdateManyWithoutCopyNestedInput
   donations?: Prisma.StickerDonationUncheckedUpdateManyWithoutCopyNestedInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyUncheckedUpdateManyWithoutCopyNestedInput
 }
 
 export type StickerCopyCreateManyInput = {
@@ -614,6 +621,20 @@ export type StickerCopyUpdateOneRequiredWithoutDonationsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.StickerCopyUpdateToOneWithWhereWithoutDonationsInput, Prisma.StickerCopyUpdateWithoutDonationsInput>, Prisma.StickerCopyUncheckedUpdateWithoutDonationsInput>
 }
 
+export type StickerCopyCreateNestedOneWithoutCollectionOfferCopiesInput = {
+  create?: Prisma.XOR<Prisma.StickerCopyCreateWithoutCollectionOfferCopiesInput, Prisma.StickerCopyUncheckedCreateWithoutCollectionOfferCopiesInput>
+  connectOrCreate?: Prisma.StickerCopyCreateOrConnectWithoutCollectionOfferCopiesInput
+  connect?: Prisma.StickerCopyWhereUniqueInput
+}
+
+export type StickerCopyUpdateOneRequiredWithoutCollectionOfferCopiesNestedInput = {
+  create?: Prisma.XOR<Prisma.StickerCopyCreateWithoutCollectionOfferCopiesInput, Prisma.StickerCopyUncheckedCreateWithoutCollectionOfferCopiesInput>
+  connectOrCreate?: Prisma.StickerCopyCreateOrConnectWithoutCollectionOfferCopiesInput
+  upsert?: Prisma.StickerCopyUpsertWithoutCollectionOfferCopiesInput
+  connect?: Prisma.StickerCopyWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.StickerCopyUpdateToOneWithWhereWithoutCollectionOfferCopiesInput, Prisma.StickerCopyUpdateWithoutCollectionOfferCopiesInput>, Prisma.StickerCopyUncheckedUpdateWithoutCollectionOfferCopiesInput>
+}
+
 export type StickerCopyCreateWithoutOwnerInput = {
   id?: string
   serial: number
@@ -624,6 +645,7 @@ export type StickerCopyCreateWithoutOwnerInput = {
   packPurchase?: Prisma.StickerPackPurchaseCreateNestedOneWithoutCopiesInput
   listings?: Prisma.StickerListingCreateNestedManyWithoutCopyInput
   donations?: Prisma.StickerDonationCreateNestedManyWithoutCopyInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyCreateNestedManyWithoutCopyInput
 }
 
 export type StickerCopyUncheckedCreateWithoutOwnerInput = {
@@ -636,6 +658,7 @@ export type StickerCopyUncheckedCreateWithoutOwnerInput = {
   createdAt?: Date | string
   listings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutCopyInput
   donations?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutCopyInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyUncheckedCreateNestedManyWithoutCopyInput
 }
 
 export type StickerCopyCreateOrConnectWithoutOwnerInput = {
@@ -688,6 +711,7 @@ export type StickerCopyCreateWithoutStickerInput = {
   packPurchase?: Prisma.StickerPackPurchaseCreateNestedOneWithoutCopiesInput
   listings?: Prisma.StickerListingCreateNestedManyWithoutCopyInput
   donations?: Prisma.StickerDonationCreateNestedManyWithoutCopyInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyCreateNestedManyWithoutCopyInput
 }
 
 export type StickerCopyUncheckedCreateWithoutStickerInput = {
@@ -700,6 +724,7 @@ export type StickerCopyUncheckedCreateWithoutStickerInput = {
   createdAt?: Date | string
   listings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutCopyInput
   donations?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutCopyInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyUncheckedCreateNestedManyWithoutCopyInput
 }
 
 export type StickerCopyCreateOrConnectWithoutStickerInput = {
@@ -738,6 +763,7 @@ export type StickerCopyCreateWithoutPackPurchaseInput = {
   owner?: Prisma.UserCreateNestedOneWithoutStickerCopiesInput
   listings?: Prisma.StickerListingCreateNestedManyWithoutCopyInput
   donations?: Prisma.StickerDonationCreateNestedManyWithoutCopyInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyCreateNestedManyWithoutCopyInput
 }
 
 export type StickerCopyUncheckedCreateWithoutPackPurchaseInput = {
@@ -750,6 +776,7 @@ export type StickerCopyUncheckedCreateWithoutPackPurchaseInput = {
   createdAt?: Date | string
   listings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutCopyInput
   donations?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutCopyInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyUncheckedCreateNestedManyWithoutCopyInput
 }
 
 export type StickerCopyCreateOrConnectWithoutPackPurchaseInput = {
@@ -788,6 +815,7 @@ export type StickerCopyCreateWithoutListingsInput = {
   owner?: Prisma.UserCreateNestedOneWithoutStickerCopiesInput
   packPurchase?: Prisma.StickerPackPurchaseCreateNestedOneWithoutCopiesInput
   donations?: Prisma.StickerDonationCreateNestedManyWithoutCopyInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyCreateNestedManyWithoutCopyInput
 }
 
 export type StickerCopyUncheckedCreateWithoutListingsInput = {
@@ -800,6 +828,7 @@ export type StickerCopyUncheckedCreateWithoutListingsInput = {
   acquiredAt?: Date | string | null
   createdAt?: Date | string
   donations?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutCopyInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyUncheckedCreateNestedManyWithoutCopyInput
 }
 
 export type StickerCopyCreateOrConnectWithoutListingsInput = {
@@ -828,6 +857,7 @@ export type StickerCopyUpdateWithoutListingsInput = {
   owner?: Prisma.UserUpdateOneWithoutStickerCopiesNestedInput
   packPurchase?: Prisma.StickerPackPurchaseUpdateOneWithoutCopiesNestedInput
   donations?: Prisma.StickerDonationUpdateManyWithoutCopyNestedInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyUpdateManyWithoutCopyNestedInput
 }
 
 export type StickerCopyUncheckedUpdateWithoutListingsInput = {
@@ -840,6 +870,7 @@ export type StickerCopyUncheckedUpdateWithoutListingsInput = {
   acquiredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   donations?: Prisma.StickerDonationUncheckedUpdateManyWithoutCopyNestedInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyUncheckedUpdateManyWithoutCopyNestedInput
 }
 
 export type StickerCopyCreateWithoutDonationsInput = {
@@ -852,6 +883,7 @@ export type StickerCopyCreateWithoutDonationsInput = {
   owner?: Prisma.UserCreateNestedOneWithoutStickerCopiesInput
   packPurchase?: Prisma.StickerPackPurchaseCreateNestedOneWithoutCopiesInput
   listings?: Prisma.StickerListingCreateNestedManyWithoutCopyInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyCreateNestedManyWithoutCopyInput
 }
 
 export type StickerCopyUncheckedCreateWithoutDonationsInput = {
@@ -864,6 +896,7 @@ export type StickerCopyUncheckedCreateWithoutDonationsInput = {
   acquiredAt?: Date | string | null
   createdAt?: Date | string
   listings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutCopyInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyUncheckedCreateNestedManyWithoutCopyInput
 }
 
 export type StickerCopyCreateOrConnectWithoutDonationsInput = {
@@ -892,6 +925,7 @@ export type StickerCopyUpdateWithoutDonationsInput = {
   owner?: Prisma.UserUpdateOneWithoutStickerCopiesNestedInput
   packPurchase?: Prisma.StickerPackPurchaseUpdateOneWithoutCopiesNestedInput
   listings?: Prisma.StickerListingUpdateManyWithoutCopyNestedInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyUpdateManyWithoutCopyNestedInput
 }
 
 export type StickerCopyUncheckedUpdateWithoutDonationsInput = {
@@ -904,6 +938,75 @@ export type StickerCopyUncheckedUpdateWithoutDonationsInput = {
   acquiredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   listings?: Prisma.StickerListingUncheckedUpdateManyWithoutCopyNestedInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyUncheckedUpdateManyWithoutCopyNestedInput
+}
+
+export type StickerCopyCreateWithoutCollectionOfferCopiesInput = {
+  id?: string
+  serial: number
+  state?: $Enums.StickerCopyState
+  acquiredAt?: Date | string | null
+  createdAt?: Date | string
+  sticker: Prisma.StickerCreateNestedOneWithoutCopiesInput
+  owner?: Prisma.UserCreateNestedOneWithoutStickerCopiesInput
+  packPurchase?: Prisma.StickerPackPurchaseCreateNestedOneWithoutCopiesInput
+  listings?: Prisma.StickerListingCreateNestedManyWithoutCopyInput
+  donations?: Prisma.StickerDonationCreateNestedManyWithoutCopyInput
+}
+
+export type StickerCopyUncheckedCreateWithoutCollectionOfferCopiesInput = {
+  id?: string
+  stickerId: string
+  serial: number
+  ownerId?: string | null
+  state?: $Enums.StickerCopyState
+  packPurchaseId?: string | null
+  acquiredAt?: Date | string | null
+  createdAt?: Date | string
+  listings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutCopyInput
+  donations?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutCopyInput
+}
+
+export type StickerCopyCreateOrConnectWithoutCollectionOfferCopiesInput = {
+  where: Prisma.StickerCopyWhereUniqueInput
+  create: Prisma.XOR<Prisma.StickerCopyCreateWithoutCollectionOfferCopiesInput, Prisma.StickerCopyUncheckedCreateWithoutCollectionOfferCopiesInput>
+}
+
+export type StickerCopyUpsertWithoutCollectionOfferCopiesInput = {
+  update: Prisma.XOR<Prisma.StickerCopyUpdateWithoutCollectionOfferCopiesInput, Prisma.StickerCopyUncheckedUpdateWithoutCollectionOfferCopiesInput>
+  create: Prisma.XOR<Prisma.StickerCopyCreateWithoutCollectionOfferCopiesInput, Prisma.StickerCopyUncheckedCreateWithoutCollectionOfferCopiesInput>
+  where?: Prisma.StickerCopyWhereInput
+}
+
+export type StickerCopyUpdateToOneWithWhereWithoutCollectionOfferCopiesInput = {
+  where?: Prisma.StickerCopyWhereInput
+  data: Prisma.XOR<Prisma.StickerCopyUpdateWithoutCollectionOfferCopiesInput, Prisma.StickerCopyUncheckedUpdateWithoutCollectionOfferCopiesInput>
+}
+
+export type StickerCopyUpdateWithoutCollectionOfferCopiesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  serial?: Prisma.IntFieldUpdateOperationsInput | number
+  state?: Prisma.EnumStickerCopyStateFieldUpdateOperationsInput | $Enums.StickerCopyState
+  acquiredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  sticker?: Prisma.StickerUpdateOneRequiredWithoutCopiesNestedInput
+  owner?: Prisma.UserUpdateOneWithoutStickerCopiesNestedInput
+  packPurchase?: Prisma.StickerPackPurchaseUpdateOneWithoutCopiesNestedInput
+  listings?: Prisma.StickerListingUpdateManyWithoutCopyNestedInput
+  donations?: Prisma.StickerDonationUpdateManyWithoutCopyNestedInput
+}
+
+export type StickerCopyUncheckedUpdateWithoutCollectionOfferCopiesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  stickerId?: Prisma.StringFieldUpdateOperationsInput | string
+  serial?: Prisma.IntFieldUpdateOperationsInput | number
+  ownerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.EnumStickerCopyStateFieldUpdateOperationsInput | $Enums.StickerCopyState
+  packPurchaseId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  acquiredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  listings?: Prisma.StickerListingUncheckedUpdateManyWithoutCopyNestedInput
+  donations?: Prisma.StickerDonationUncheckedUpdateManyWithoutCopyNestedInput
 }
 
 export type StickerCopyCreateManyOwnerInput = {
@@ -926,6 +1029,7 @@ export type StickerCopyUpdateWithoutOwnerInput = {
   packPurchase?: Prisma.StickerPackPurchaseUpdateOneWithoutCopiesNestedInput
   listings?: Prisma.StickerListingUpdateManyWithoutCopyNestedInput
   donations?: Prisma.StickerDonationUpdateManyWithoutCopyNestedInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyUpdateManyWithoutCopyNestedInput
 }
 
 export type StickerCopyUncheckedUpdateWithoutOwnerInput = {
@@ -938,6 +1042,7 @@ export type StickerCopyUncheckedUpdateWithoutOwnerInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   listings?: Prisma.StickerListingUncheckedUpdateManyWithoutCopyNestedInput
   donations?: Prisma.StickerDonationUncheckedUpdateManyWithoutCopyNestedInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyUncheckedUpdateManyWithoutCopyNestedInput
 }
 
 export type StickerCopyUncheckedUpdateManyWithoutOwnerInput = {
@@ -970,6 +1075,7 @@ export type StickerCopyUpdateWithoutStickerInput = {
   packPurchase?: Prisma.StickerPackPurchaseUpdateOneWithoutCopiesNestedInput
   listings?: Prisma.StickerListingUpdateManyWithoutCopyNestedInput
   donations?: Prisma.StickerDonationUpdateManyWithoutCopyNestedInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyUpdateManyWithoutCopyNestedInput
 }
 
 export type StickerCopyUncheckedUpdateWithoutStickerInput = {
@@ -982,6 +1088,7 @@ export type StickerCopyUncheckedUpdateWithoutStickerInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   listings?: Prisma.StickerListingUncheckedUpdateManyWithoutCopyNestedInput
   donations?: Prisma.StickerDonationUncheckedUpdateManyWithoutCopyNestedInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyUncheckedUpdateManyWithoutCopyNestedInput
 }
 
 export type StickerCopyUncheckedUpdateManyWithoutStickerInput = {
@@ -1014,6 +1121,7 @@ export type StickerCopyUpdateWithoutPackPurchaseInput = {
   owner?: Prisma.UserUpdateOneWithoutStickerCopiesNestedInput
   listings?: Prisma.StickerListingUpdateManyWithoutCopyNestedInput
   donations?: Prisma.StickerDonationUpdateManyWithoutCopyNestedInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyUpdateManyWithoutCopyNestedInput
 }
 
 export type StickerCopyUncheckedUpdateWithoutPackPurchaseInput = {
@@ -1026,6 +1134,7 @@ export type StickerCopyUncheckedUpdateWithoutPackPurchaseInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   listings?: Prisma.StickerListingUncheckedUpdateManyWithoutCopyNestedInput
   donations?: Prisma.StickerDonationUncheckedUpdateManyWithoutCopyNestedInput
+  collectionOfferCopies?: Prisma.TeacherCollectionOfferCopyUncheckedUpdateManyWithoutCopyNestedInput
 }
 
 export type StickerCopyUncheckedUpdateManyWithoutPackPurchaseInput = {
@@ -1046,11 +1155,13 @@ export type StickerCopyUncheckedUpdateManyWithoutPackPurchaseInput = {
 export type StickerCopyCountOutputType = {
   listings: number
   donations: number
+  collectionOfferCopies: number
 }
 
 export type StickerCopyCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   listings?: boolean | StickerCopyCountOutputTypeCountListingsArgs
   donations?: boolean | StickerCopyCountOutputTypeCountDonationsArgs
+  collectionOfferCopies?: boolean | StickerCopyCountOutputTypeCountCollectionOfferCopiesArgs
 }
 
 /**
@@ -1077,6 +1188,13 @@ export type StickerCopyCountOutputTypeCountDonationsArgs<ExtArgs extends runtime
   where?: Prisma.StickerDonationWhereInput
 }
 
+/**
+ * StickerCopyCountOutputType without action
+ */
+export type StickerCopyCountOutputTypeCountCollectionOfferCopiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.TeacherCollectionOfferCopyWhereInput
+}
+
 
 export type StickerCopySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -1092,6 +1210,7 @@ export type StickerCopySelect<ExtArgs extends runtime.Types.Extensions.InternalA
   packPurchase?: boolean | Prisma.StickerCopy$packPurchaseArgs<ExtArgs>
   listings?: boolean | Prisma.StickerCopy$listingsArgs<ExtArgs>
   donations?: boolean | Prisma.StickerCopy$donationsArgs<ExtArgs>
+  collectionOfferCopies?: boolean | Prisma.StickerCopy$collectionOfferCopiesArgs<ExtArgs>
   _count?: boolean | Prisma.StickerCopyCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["stickerCopy"]>
 
@@ -1141,6 +1260,7 @@ export type StickerCopyInclude<ExtArgs extends runtime.Types.Extensions.Internal
   packPurchase?: boolean | Prisma.StickerCopy$packPurchaseArgs<ExtArgs>
   listings?: boolean | Prisma.StickerCopy$listingsArgs<ExtArgs>
   donations?: boolean | Prisma.StickerCopy$donationsArgs<ExtArgs>
+  collectionOfferCopies?: boolean | Prisma.StickerCopy$collectionOfferCopiesArgs<ExtArgs>
   _count?: boolean | Prisma.StickerCopyCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type StickerCopyIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1162,6 +1282,7 @@ export type $StickerCopyPayload<ExtArgs extends runtime.Types.Extensions.Interna
     packPurchase: Prisma.$StickerPackPurchasePayload<ExtArgs> | null
     listings: Prisma.$StickerListingPayload<ExtArgs>[]
     donations: Prisma.$StickerDonationPayload<ExtArgs>[]
+    collectionOfferCopies: Prisma.$TeacherCollectionOfferCopyPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1571,6 +1692,7 @@ export interface Prisma__StickerCopyClient<T, Null = never, ExtArgs extends runt
   packPurchase<T extends Prisma.StickerCopy$packPurchaseArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StickerCopy$packPurchaseArgs<ExtArgs>>): Prisma.Prisma__StickerPackPurchaseClient<runtime.Types.Result.GetResult<Prisma.$StickerPackPurchasePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   listings<T extends Prisma.StickerCopy$listingsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StickerCopy$listingsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StickerListingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   donations<T extends Prisma.StickerCopy$donationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StickerCopy$donationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StickerDonationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  collectionOfferCopies<T extends Prisma.StickerCopy$collectionOfferCopiesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StickerCopy$collectionOfferCopiesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TeacherCollectionOfferCopyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2092,6 +2214,30 @@ export type StickerCopy$donationsArgs<ExtArgs extends runtime.Types.Extensions.I
   take?: number
   skip?: number
   distinct?: Prisma.StickerDonationScalarFieldEnum | Prisma.StickerDonationScalarFieldEnum[]
+}
+
+/**
+ * StickerCopy.collectionOfferCopies
+ */
+export type StickerCopy$collectionOfferCopiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the TeacherCollectionOfferCopy
+   */
+  select?: Prisma.TeacherCollectionOfferCopySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the TeacherCollectionOfferCopy
+   */
+  omit?: Prisma.TeacherCollectionOfferCopyOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TeacherCollectionOfferCopyInclude<ExtArgs> | null
+  where?: Prisma.TeacherCollectionOfferCopyWhereInput
+  orderBy?: Prisma.TeacherCollectionOfferCopyOrderByWithRelationInput | Prisma.TeacherCollectionOfferCopyOrderByWithRelationInput[]
+  cursor?: Prisma.TeacherCollectionOfferCopyWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TeacherCollectionOfferCopyScalarFieldEnum | Prisma.TeacherCollectionOfferCopyScalarFieldEnum[]
 }
 
 /**

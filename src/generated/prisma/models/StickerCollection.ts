@@ -200,6 +200,7 @@ export type StickerCollectionWhereInput = {
   updatedAt?: Prisma.DateTimeFilter<"StickerCollection"> | Date | string
   stickers?: Prisma.StickerListRelationFilter
   patentLevels?: Prisma.PatentLevelListRelationFilter
+  purchaseRequests?: Prisma.TeacherCollectionPurchaseRequestListRelationFilter
 }
 
 export type StickerCollectionOrderByWithRelationInput = {
@@ -212,6 +213,7 @@ export type StickerCollectionOrderByWithRelationInput = {
   updatedAt?: Prisma.SortOrder
   stickers?: Prisma.StickerOrderByRelationAggregateInput
   patentLevels?: Prisma.PatentLevelOrderByRelationAggregateInput
+  purchaseRequests?: Prisma.TeacherCollectionPurchaseRequestOrderByRelationAggregateInput
 }
 
 export type StickerCollectionWhereUniqueInput = Prisma.AtLeast<{
@@ -227,6 +229,7 @@ export type StickerCollectionWhereUniqueInput = Prisma.AtLeast<{
   updatedAt?: Prisma.DateTimeFilter<"StickerCollection"> | Date | string
   stickers?: Prisma.StickerListRelationFilter
   patentLevels?: Prisma.PatentLevelListRelationFilter
+  purchaseRequests?: Prisma.TeacherCollectionPurchaseRequestListRelationFilter
 }, "id" | "slug">
 
 export type StickerCollectionOrderByWithAggregationInput = {
@@ -265,6 +268,7 @@ export type StickerCollectionCreateInput = {
   updatedAt?: Date | string
   stickers?: Prisma.StickerCreateNestedManyWithoutCollectionInput
   patentLevels?: Prisma.PatentLevelCreateNestedManyWithoutCollectionInput
+  purchaseRequests?: Prisma.TeacherCollectionPurchaseRequestCreateNestedManyWithoutCollectionInput
 }
 
 export type StickerCollectionUncheckedCreateInput = {
@@ -277,6 +281,7 @@ export type StickerCollectionUncheckedCreateInput = {
   updatedAt?: Date | string
   stickers?: Prisma.StickerUncheckedCreateNestedManyWithoutCollectionInput
   patentLevels?: Prisma.PatentLevelUncheckedCreateNestedManyWithoutCollectionInput
+  purchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedManyWithoutCollectionInput
 }
 
 export type StickerCollectionUpdateInput = {
@@ -289,6 +294,7 @@ export type StickerCollectionUpdateInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   stickers?: Prisma.StickerUpdateManyWithoutCollectionNestedInput
   patentLevels?: Prisma.PatentLevelUpdateManyWithoutCollectionNestedInput
+  purchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUpdateManyWithoutCollectionNestedInput
 }
 
 export type StickerCollectionUncheckedUpdateInput = {
@@ -301,6 +307,7 @@ export type StickerCollectionUncheckedUpdateInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   stickers?: Prisma.StickerUncheckedUpdateManyWithoutCollectionNestedInput
   patentLevels?: Prisma.PatentLevelUncheckedUpdateManyWithoutCollectionNestedInput
+  purchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateManyWithoutCollectionNestedInput
 }
 
 export type StickerCollectionCreateManyInput = {
@@ -386,6 +393,20 @@ export type StickerCollectionUpdateOneRequiredWithoutStickersNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.StickerCollectionUpdateToOneWithWhereWithoutStickersInput, Prisma.StickerCollectionUpdateWithoutStickersInput>, Prisma.StickerCollectionUncheckedUpdateWithoutStickersInput>
 }
 
+export type StickerCollectionCreateNestedOneWithoutPurchaseRequestsInput = {
+  create?: Prisma.XOR<Prisma.StickerCollectionCreateWithoutPurchaseRequestsInput, Prisma.StickerCollectionUncheckedCreateWithoutPurchaseRequestsInput>
+  connectOrCreate?: Prisma.StickerCollectionCreateOrConnectWithoutPurchaseRequestsInput
+  connect?: Prisma.StickerCollectionWhereUniqueInput
+}
+
+export type StickerCollectionUpdateOneRequiredWithoutPurchaseRequestsNestedInput = {
+  create?: Prisma.XOR<Prisma.StickerCollectionCreateWithoutPurchaseRequestsInput, Prisma.StickerCollectionUncheckedCreateWithoutPurchaseRequestsInput>
+  connectOrCreate?: Prisma.StickerCollectionCreateOrConnectWithoutPurchaseRequestsInput
+  upsert?: Prisma.StickerCollectionUpsertWithoutPurchaseRequestsInput
+  connect?: Prisma.StickerCollectionWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.StickerCollectionUpdateToOneWithWhereWithoutPurchaseRequestsInput, Prisma.StickerCollectionUpdateWithoutPurchaseRequestsInput>, Prisma.StickerCollectionUncheckedUpdateWithoutPurchaseRequestsInput>
+}
+
 export type StickerCollectionCreateNestedOneWithoutPatentLevelsInput = {
   create?: Prisma.XOR<Prisma.StickerCollectionCreateWithoutPatentLevelsInput, Prisma.StickerCollectionUncheckedCreateWithoutPatentLevelsInput>
   connectOrCreate?: Prisma.StickerCollectionCreateOrConnectWithoutPatentLevelsInput
@@ -409,6 +430,7 @@ export type StickerCollectionCreateWithoutStickersInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   patentLevels?: Prisma.PatentLevelCreateNestedManyWithoutCollectionInput
+  purchaseRequests?: Prisma.TeacherCollectionPurchaseRequestCreateNestedManyWithoutCollectionInput
 }
 
 export type StickerCollectionUncheckedCreateWithoutStickersInput = {
@@ -420,6 +442,7 @@ export type StickerCollectionUncheckedCreateWithoutStickersInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   patentLevels?: Prisma.PatentLevelUncheckedCreateNestedManyWithoutCollectionInput
+  purchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedManyWithoutCollectionInput
 }
 
 export type StickerCollectionCreateOrConnectWithoutStickersInput = {
@@ -447,6 +470,7 @@ export type StickerCollectionUpdateWithoutStickersInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   patentLevels?: Prisma.PatentLevelUpdateManyWithoutCollectionNestedInput
+  purchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUpdateManyWithoutCollectionNestedInput
 }
 
 export type StickerCollectionUncheckedUpdateWithoutStickersInput = {
@@ -457,6 +481,71 @@ export type StickerCollectionUncheckedUpdateWithoutStickersInput = {
   activatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  patentLevels?: Prisma.PatentLevelUncheckedUpdateManyWithoutCollectionNestedInput
+  purchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateManyWithoutCollectionNestedInput
+}
+
+export type StickerCollectionCreateWithoutPurchaseRequestsInput = {
+  id?: string
+  slug: string
+  name: string
+  state?: $Enums.StickerCollectionState
+  activatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  stickers?: Prisma.StickerCreateNestedManyWithoutCollectionInput
+  patentLevels?: Prisma.PatentLevelCreateNestedManyWithoutCollectionInput
+}
+
+export type StickerCollectionUncheckedCreateWithoutPurchaseRequestsInput = {
+  id?: string
+  slug: string
+  name: string
+  state?: $Enums.StickerCollectionState
+  activatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  stickers?: Prisma.StickerUncheckedCreateNestedManyWithoutCollectionInput
+  patentLevels?: Prisma.PatentLevelUncheckedCreateNestedManyWithoutCollectionInput
+}
+
+export type StickerCollectionCreateOrConnectWithoutPurchaseRequestsInput = {
+  where: Prisma.StickerCollectionWhereUniqueInput
+  create: Prisma.XOR<Prisma.StickerCollectionCreateWithoutPurchaseRequestsInput, Prisma.StickerCollectionUncheckedCreateWithoutPurchaseRequestsInput>
+}
+
+export type StickerCollectionUpsertWithoutPurchaseRequestsInput = {
+  update: Prisma.XOR<Prisma.StickerCollectionUpdateWithoutPurchaseRequestsInput, Prisma.StickerCollectionUncheckedUpdateWithoutPurchaseRequestsInput>
+  create: Prisma.XOR<Prisma.StickerCollectionCreateWithoutPurchaseRequestsInput, Prisma.StickerCollectionUncheckedCreateWithoutPurchaseRequestsInput>
+  where?: Prisma.StickerCollectionWhereInput
+}
+
+export type StickerCollectionUpdateToOneWithWhereWithoutPurchaseRequestsInput = {
+  where?: Prisma.StickerCollectionWhereInput
+  data: Prisma.XOR<Prisma.StickerCollectionUpdateWithoutPurchaseRequestsInput, Prisma.StickerCollectionUncheckedUpdateWithoutPurchaseRequestsInput>
+}
+
+export type StickerCollectionUpdateWithoutPurchaseRequestsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  state?: Prisma.EnumStickerCollectionStateFieldUpdateOperationsInput | $Enums.StickerCollectionState
+  activatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  stickers?: Prisma.StickerUpdateManyWithoutCollectionNestedInput
+  patentLevels?: Prisma.PatentLevelUpdateManyWithoutCollectionNestedInput
+}
+
+export type StickerCollectionUncheckedUpdateWithoutPurchaseRequestsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  state?: Prisma.EnumStickerCollectionStateFieldUpdateOperationsInput | $Enums.StickerCollectionState
+  activatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  stickers?: Prisma.StickerUncheckedUpdateManyWithoutCollectionNestedInput
   patentLevels?: Prisma.PatentLevelUncheckedUpdateManyWithoutCollectionNestedInput
 }
 
@@ -469,6 +558,7 @@ export type StickerCollectionCreateWithoutPatentLevelsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   stickers?: Prisma.StickerCreateNestedManyWithoutCollectionInput
+  purchaseRequests?: Prisma.TeacherCollectionPurchaseRequestCreateNestedManyWithoutCollectionInput
 }
 
 export type StickerCollectionUncheckedCreateWithoutPatentLevelsInput = {
@@ -480,6 +570,7 @@ export type StickerCollectionUncheckedCreateWithoutPatentLevelsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   stickers?: Prisma.StickerUncheckedCreateNestedManyWithoutCollectionInput
+  purchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedManyWithoutCollectionInput
 }
 
 export type StickerCollectionCreateOrConnectWithoutPatentLevelsInput = {
@@ -507,6 +598,7 @@ export type StickerCollectionUpdateWithoutPatentLevelsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   stickers?: Prisma.StickerUpdateManyWithoutCollectionNestedInput
+  purchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUpdateManyWithoutCollectionNestedInput
 }
 
 export type StickerCollectionUncheckedUpdateWithoutPatentLevelsInput = {
@@ -518,6 +610,7 @@ export type StickerCollectionUncheckedUpdateWithoutPatentLevelsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   stickers?: Prisma.StickerUncheckedUpdateManyWithoutCollectionNestedInput
+  purchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateManyWithoutCollectionNestedInput
 }
 
 
@@ -528,11 +621,13 @@ export type StickerCollectionUncheckedUpdateWithoutPatentLevelsInput = {
 export type StickerCollectionCountOutputType = {
   stickers: number
   patentLevels: number
+  purchaseRequests: number
 }
 
 export type StickerCollectionCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   stickers?: boolean | StickerCollectionCountOutputTypeCountStickersArgs
   patentLevels?: boolean | StickerCollectionCountOutputTypeCountPatentLevelsArgs
+  purchaseRequests?: boolean | StickerCollectionCountOutputTypeCountPurchaseRequestsArgs
 }
 
 /**
@@ -559,6 +654,13 @@ export type StickerCollectionCountOutputTypeCountPatentLevelsArgs<ExtArgs extend
   where?: Prisma.PatentLevelWhereInput
 }
 
+/**
+ * StickerCollectionCountOutputType without action
+ */
+export type StickerCollectionCountOutputTypeCountPurchaseRequestsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.TeacherCollectionPurchaseRequestWhereInput
+}
+
 
 export type StickerCollectionSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -570,6 +672,7 @@ export type StickerCollectionSelect<ExtArgs extends runtime.Types.Extensions.Int
   updatedAt?: boolean
   stickers?: boolean | Prisma.StickerCollection$stickersArgs<ExtArgs>
   patentLevels?: boolean | Prisma.StickerCollection$patentLevelsArgs<ExtArgs>
+  purchaseRequests?: boolean | Prisma.StickerCollection$purchaseRequestsArgs<ExtArgs>
   _count?: boolean | Prisma.StickerCollectionCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["stickerCollection"]>
 
@@ -607,6 +710,7 @@ export type StickerCollectionOmit<ExtArgs extends runtime.Types.Extensions.Inter
 export type StickerCollectionInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   stickers?: boolean | Prisma.StickerCollection$stickersArgs<ExtArgs>
   patentLevels?: boolean | Prisma.StickerCollection$patentLevelsArgs<ExtArgs>
+  purchaseRequests?: boolean | Prisma.StickerCollection$purchaseRequestsArgs<ExtArgs>
   _count?: boolean | Prisma.StickerCollectionCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type StickerCollectionIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -617,6 +721,7 @@ export type $StickerCollectionPayload<ExtArgs extends runtime.Types.Extensions.I
   objects: {
     stickers: Prisma.$StickerPayload<ExtArgs>[]
     patentLevels: Prisma.$PatentLevelPayload<ExtArgs>[]
+    purchaseRequests: Prisma.$TeacherCollectionPurchaseRequestPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1022,6 +1127,7 @@ export interface Prisma__StickerCollectionClient<T, Null = never, ExtArgs extend
   readonly [Symbol.toStringTag]: "PrismaPromise"
   stickers<T extends Prisma.StickerCollection$stickersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StickerCollection$stickersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StickerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   patentLevels<T extends Prisma.StickerCollection$patentLevelsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StickerCollection$patentLevelsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PatentLevelPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  purchaseRequests<T extends Prisma.StickerCollection$purchaseRequestsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StickerCollection$purchaseRequestsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TeacherCollectionPurchaseRequestPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1496,6 +1602,30 @@ export type StickerCollection$patentLevelsArgs<ExtArgs extends runtime.Types.Ext
   take?: number
   skip?: number
   distinct?: Prisma.PatentLevelScalarFieldEnum | Prisma.PatentLevelScalarFieldEnum[]
+}
+
+/**
+ * StickerCollection.purchaseRequests
+ */
+export type StickerCollection$purchaseRequestsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the TeacherCollectionPurchaseRequest
+   */
+  select?: Prisma.TeacherCollectionPurchaseRequestSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the TeacherCollectionPurchaseRequest
+   */
+  omit?: Prisma.TeacherCollectionPurchaseRequestOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TeacherCollectionPurchaseRequestInclude<ExtArgs> | null
+  where?: Prisma.TeacherCollectionPurchaseRequestWhereInput
+  orderBy?: Prisma.TeacherCollectionPurchaseRequestOrderByWithRelationInput | Prisma.TeacherCollectionPurchaseRequestOrderByWithRelationInput[]
+  cursor?: Prisma.TeacherCollectionPurchaseRequestWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TeacherCollectionPurchaseRequestScalarFieldEnum | Prisma.TeacherCollectionPurchaseRequestScalarFieldEnum[]
 }
 
 /**

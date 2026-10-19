@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { assetSlugFromName, isSafeAssetSlug, marketSplit, nextAvailableAssetSlug, PATENT_LADDER_VERSION, stickerPriceRange, stickerRarity, stickerScore, suggestedPatentLevels, SUPER_DEV_SCORE } from "./stickers";
+import { assetSlugFromName, isSafeAssetSlug, marketSplit, nextAvailableAssetSlug, PATENT_LADDER_VERSION, stickerPriceRange, stickerRarity, stickerScore, suggestedCollectionXp, suggestedPatentLevels, SUPER_DEV_SCORE } from "./stickers";
 import { remainingWeeklyDevCoinTransfer } from "./dev-coins";
 
 test("rarity and score follow the published copy bands", () => {
@@ -40,4 +40,12 @@ test("weekly transfer allowance never becomes negative", () => {
   assert.equal(remainingWeeklyDevCoinTransfer(125), 175);
   assert.equal(remainingWeeklyDevCoinTransfer(300), 0);
   assert.equal(remainingWeeklyDevCoinTransfer(450), 0);
+});
+
+test("complete collection XP suggestion sums the published sticker score", () => {
+  assert.equal(suggestedCollectionXp([6, 15, 50, 100]), 171);
+  assert.equal(suggestedCollectionXp([6]), 6);
+  assert.equal(suggestedCollectionXp(Array.from({ length: 101 }, () => 100)), 10_000);
+  assert.throws(() => suggestedCollectionXp([]), /EMPTY_COLLECTION/);
+  assert.throws(() => suggestedCollectionXp([6, 0]), /EMPTY_COLLECTION/);
 });

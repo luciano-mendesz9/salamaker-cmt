@@ -28,6 +28,11 @@ export function marketSplit(price: number) {
   return { sellerAmount, fee: price - sellerAmount };
 }
 
+export function suggestedCollectionXp(scores: number[]) {
+  if (scores.length === 0 || scores.some(score => !Number.isInteger(score) || score <= 0)) throw new Error("EMPTY_COLLECTION");
+  return Math.min(10_000, scores.reduce((total, score) => total + score, 0));
+}
+
 export function isSafeAssetSlug(value: string) {
   return /^[a-z0-9][a-z0-9-]{1,38}[a-z0-9]$/.test(value);
 }
