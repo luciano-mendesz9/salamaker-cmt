@@ -32,7 +32,7 @@ test("vitória contra a máquina paga 25 XP nas 5 primeiras partidas e 15 XP dep
   assert.equal(ticTacToeSoloXpAward(500), 15);
 });
 
-test("multiplayer limita a dupla a 3 partidas por dia e desconta 200 XP do perdedor", () => {
+test("multiplayer limita a dupla a 3 partidas por dia e desconta 50 XP do perdedor", () => {
   assert.equal(TIC_TAC_TOE_DAILY_OPPONENT_LIMIT, 3);
-  assert.equal(TIC_TAC_TOE_LOSS_XP_PENALTY, 200);
+  assert.equal(TIC_TAC_TOE_LOSS_XP_PENALTY, 50);
 });
