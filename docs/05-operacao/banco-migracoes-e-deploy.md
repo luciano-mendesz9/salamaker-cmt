@@ -24,6 +24,7 @@
 | `20260928120000_add_sticker_album_and_treasury` | Album, mercado, estoque, patentes e tesouraria |
 | `20260928150000_add_sticker_market_switch` | Chave administrativa de compra e venda |
 | `20260929210000_add_student_dev_coin_transfers` | Transferencias entre alunos, taxa de XP e trilha auditavel |
+| `20260930150000_add_ludo_maker` | Salas, jogadores, jogadas, custodia, convites e bloqueios do Ludo Maker |
 | `20261002120000_rebalance_global_patent_ladder` | Reequilibrio versionado da escada global de patentes |
 | `20261006120000_add_pong_multiplayer` | Pong multiplayer, pedidos de entrada, custodia de apostas, placar e bloqueio dos minigames |
 
@@ -58,6 +59,8 @@ A configuracao e adequada a um runtime Node/serverless com Neon:
 - `REDIS_URL` (ou `KV_URL`) compartilha presenca e estado rapido do Pong entre instancias WebSocket.
 
 Um build verde nao comprova que a URL do banco, segredos, migracoes e fluxos autenticados estejam corretos no ambiente publicado. Depois do deploy, valide separadamente login de professor/aluno, check-in, leitura e escrita no banco, e ao menos uma operacao reversivel de cada fluxo critico.
+
+Para o Ludo Maker, confirme tambem `REDIS_URL`/`KV_URL`, Fluid Compute, upgrade WebSocket, reconexao, pub/sub entre instancias e a soma `saldos dos alunos + tesouraria + custodia ativa`. Nao publique o botao aos alunos antes de aplicar a migration e validar uma liquidacao rollback-only.
 
 ## Evidencia de 29 de setembro de 2026
 

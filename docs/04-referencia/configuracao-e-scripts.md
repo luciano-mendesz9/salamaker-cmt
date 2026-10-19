@@ -15,6 +15,9 @@
 | `ADMIN_ACTION_PASSWORD` | Acoes destrutivas ou monetarias do professor | Obrigatoria nesses fluxos; minimo de 8 caracteres |
 | `REDIS_URL` | Presenca, pub/sub, entradas e estado rapido do Pong entre instancias | Obrigatoria em producao para multiplayer confiavel; `KV_URL` e aceito como fallback |
 | `NODE_ENV` | Cookie seguro e comportamento do framework | Definida pelo ambiente |
+| `REDIS_URL` ou `KV_URL` | Presenca, pub/sub, convites e chat do Ludo Maker entre instancias | Obrigatoria para multiplayer confiavel no deploy |
+
+O Ludo Maker usa WebSockets da Vercel e requer Fluid Compute habilitado. WebSocket e Redis nao substituem o Neon: o banco PostgreSQL continua sendo a autoridade de turnos, apostas, colocacoes e ledgers.
 
 Nunca publique o arquivo `.env`, URLs de banco, senhas ou tokens. O repositorio ja ignora arquivos de ambiente locais.
 
@@ -34,6 +37,7 @@ Nunca publique o arquivo `.env`, URLs de banco, senhas ou tokens. O repositorio 
 | `npm run create-teacher` | Cria professor interativamente ou por argumentos |
 | `npm run db:check` | Testa conexao e lista contas; cuidado com a saida |
 | `npm run db:check-account -- CODIGO` | Verifica papel/status de uma conta |
+| `npm run db:check-ludo` | Le saldos, ledgers, tesouraria e custodia do Ludo sem escrever |
 
 O `postinstall` executa `npx prisma generate`.
 

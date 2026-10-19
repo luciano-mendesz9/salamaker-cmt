@@ -15,6 +15,7 @@
     "create-teacher": "tsx scripts/create-teacher.ts",
     "db:check": "tsx scripts/check-db.ts",
     "db:check-devcoins": "node --import tsx scripts/check-dev-coin-supply.ts",
+    "db:check-ludo": "node --import tsx scripts/check-ludo-economy.ts",
     "assets:initialize": "node --import tsx scripts/initialize-asset-catalogs.ts",
     "db:check-account": "tsx scripts/check-account.ts",
     "postinstall": "npx prisma generate"
