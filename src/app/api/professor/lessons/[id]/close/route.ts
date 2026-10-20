@@ -2,37 +2,41 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { prisma } from "@/lib/db";
 import { apiError, requireTeacher } from "@/lib/authorization";
+import { buildLessonSettlements } from "@/lib/lesson-close";
 
-const schema = z.object({ excusedIds: z.array(z.string().uuid()).max(200) });
+const schema = z.object({
+  excusedIds: z.array(z.string().uuid()).max(200),
+  presentIds: z.array(z.string().uuid()).max(200).default([]),
+});
 
 export async function POST(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const teacher = await requireTeacher();
     const { id } = await params;
-    const { excusedIds } = schema.parse(await request.json());
+    const { excusedIds, presentIds } = schema.parse(await request.json());
     let result: { students: number } | undefined;
     for (let attempt = 0; attempt < 3; attempt += 1) {
       try {
         result = await prisma.$transaction(async (tx) => {
           const lesson = await tx.lesson.findUnique({ where: { id }, include: { attendances: true, participants: { select: { studentId: true } } } });
           if (!lesson || lesson.status !== "OPEN") throw new Error("LESSON_ALREADY_CLOSED");
-          const participantIds = new Set(lesson.participants.map((participant) => participant.studentId));
-          if (excusedIds.some((studentId) => !participantIds.has(studentId))) throw new Error("INVALID_PARTICIPANT");
-
-          const present = new Set(lesson.attendances.filter((attendance) => attendance.status === "PRESENT").map((attendance) => attendance.studentId));
-          const excused = new Set(excusedIds);
-          const settlements = lesson.participants.map(({ studentId }) => {
-            const status = present.has(studentId) ? "PRESENT" as const : excused.has(studentId) ? "EXCUSED" as const : "ABSENT" as const;
-            const delta = status === "PRESENT" ? 30 : status === "EXCUSED" ? 10 : -50;
-            const reason = status === "PRESENT" ? "Presença confirmada" : status === "EXCUSED" ? "Ausência justificada" : "Ausência sem justificativa";
-            return { studentId, status, delta, reason };
+          const settlements = buildLessonSettlements({
+            participantIds: lesson.participants.map((participant) => participant.studentId),
+            recordedPresentIds: lesson.attendances.filter((attendance) => attendance.status === "PRESENT").map((attendance) => attendance.studentId),
+            manualPresentIds: presentIds,
+            excusedIds,
           });
 
           const closed = await tx.lesson.updateMany({ where: { id, status: "OPEN" }, data: { status: "CLOSED", openSlot: null, closedAt: new Date() } });
           if (closed.count !== 1) throw new Error("LESSON_ALREADY_CLOSED");
 
           await tx.attendance.createMany({
-            data: settlements.map(({ studentId, status }) => ({ lessonId: id, studentId, status })),
+            data: settlements.map(({ studentId, status, manuallyMarkedPresent }) => ({
+              lessonId: id,
+              studentId,
+              status,
+              note: manuallyMarkedPresent ? "Presença marcada manualmente pelo professor no fechamento" : undefined,
+            })),
             skipDuplicates: true,
           });
           for (const status of ["PRESENT", "EXCUSED", "ABSENT"] as const) {
@@ -64,7 +68,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
     if (!result) throw new Error("TRANSACTION_RETRY_EXHAUSTED");
     return NextResponse.json(result);
   } catch (error) {
-    if (error instanceof z.ZodError || (error instanceof Error && error.message === "INVALID_PARTICIPANT")) return NextResponse.json({ message: "Revisão de ausências inválida." }, { status: 400 });
+    if (error instanceof z.ZodError || (error instanceof Error && ["INVALID_PARTICIPANT", "CONFLICTING_ATTENDANCE_REVIEW"].includes(error.message))) return NextResponse.json({ message: "Revisão de presenças e ausências inválida." }, { status: 400 });
     if (error instanceof Error && error.message === "LESSON_ALREADY_CLOSED") return NextResponse.json({ message: "Esta aula já foi fechada." }, { status: 409 });
     if ((error as { code?: string }).code === "P2028") return NextResponse.json({ message: "O banco demorou para fechar a aula. Nenhuma presença ou pontuação foi alterada; tente novamente." }, { status: 503 });
     const [message, status] = apiError(error); return NextResponse.json({ message }, { status });
