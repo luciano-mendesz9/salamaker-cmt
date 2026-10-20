@@ -65,7 +65,7 @@ export function StudentShell({ children, student, unread }: Props) {
     <div className="student-shell min-h-screen">
       <a href="#student-main" className="student-skip-link">Pular para o conteúdo</a>
       <aside className="student-sidebar" aria-label="Menu principal">
-        <Link href="/aluno" className="focus-ring flex items-center gap-3 rounded-xl">
+        <Link href="/" className="focus-ring flex items-center gap-3 rounded-xl">
           <span className="grid h-11 w-11 place-items-center rounded-2xl bg-[var(--accent)] text-white shadow-lg shadow-black/20"><Boxes size={24}/></span>
           <span><strong className="block text-base tracking-tight">SALA MAKER<span className="text-[var(--accent-soft)]">.</span></strong><small className="mt-1 block text-xs font-bold uppercase tracking-[.16em] text-slate-500">CMT · Estudante</small></span>
         </Link>
@@ -96,7 +96,7 @@ export function StudentShell({ children, student, unread }: Props) {
 
       <div className="min-w-0 md:ml-[248px]">
         <header className="student-topbar">
-          <Link href="/aluno" className="focus-ring flex items-center gap-2.5 rounded-xl md:hidden"><span className="grid h-9 w-9 place-items-center rounded-xl bg-[var(--accent)] text-white"><Boxes size={20}/></span><span className="text-sm font-extrabold">SALA MAKER<span className="text-[var(--accent-soft)]">.</span><small className="block text-xs uppercase tracking-[.1em] text-slate-500">CMT · Estudante</small></span></Link>
+          <Link href="/" className="focus-ring flex items-center gap-2.5 rounded-xl md:hidden"><span className="grid h-9 w-9 place-items-center rounded-xl bg-[var(--accent)] text-white"><Boxes size={20}/></span><span className="text-sm font-extrabold">SALA MAKER<span className="text-[var(--accent-soft)]">.</span><small className="block text-xs uppercase tracking-[.1em] text-slate-500">CMT · Estudante</small></span></Link>
           <div className="hidden md:block"><p className="text-xs text-slate-500">Espaço do estudante</p><p className="mt-1 text-sm font-bold">{currentTitle}</p></div>
           <div className="ml-auto flex items-center gap-2">
             <Link href="/aluno/notificacoes" className="student-icon-button relative" aria-label={`Notificações${unread ? `, ${unread} não lidas` : ""}`}><Bell size={18}/>{unread > 0 && <span className="student-unread-badge">{unread > 99 ? "99+" : unread}</span>}</Link>

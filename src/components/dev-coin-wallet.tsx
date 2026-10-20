@@ -10,9 +10,9 @@ import devCoinImage from "@/assets/dev-coin.webp";
 import { devCoinsForXp } from "@/lib/dev-coins";
 
 type Recipient = { id: string; firstName: string; lastName: string };
-type Props = { currentDevCoins: number; currentXp: number; devCoinsPerXp: number; recipients: Recipient[]; weeklyTransferRemaining: number };
+type Props = { currentDevCoins: number; currentXp: number; devCoinsPerXp: number; recipients: Recipient[]; weeklyTransferRemaining: number; quickAction?: React.ReactNode };
 
-export function DevCoinWallet({ currentDevCoins, currentXp, devCoinsPerXp, recipients, weeklyTransferRemaining }: Props) {
+export function DevCoinWallet({ currentDevCoins, currentXp, devCoinsPerXp, recipients, weeklyTransferRemaining, quickAction }: Props) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [xpAmount, setXpAmount] = useState(1);
@@ -79,6 +79,7 @@ export function DevCoinWallet({ currentDevCoins, currentXp, devCoinsPerXp, recip
       <span><span className="block text-xs font-bold uppercase tracking-wider text-amber-200/75">Minhas Dev-Coins</span><strong className="mt-1 block font-display text-2xl text-amber-200">{currentDevCoins}</strong></span>
       <span className="ml-auto text-right text-xs font-bold text-amber-200"><Sparkles className="ml-auto mb-1" size={17} />Comprar</span>
     </button>
+    {quickAction}
     <div className="mt-3 grid grid-cols-2 gap-3"><Link href="/aluno/album" className="button-secondary w-full"><Images size={18}/>Álbum</Link><button type="button" onClick={() => setTransferOpen(true)} className="button-secondary w-full"><Send size={18}/>Transferir</button></div>
     {open && <div className="fixed inset-0 z-[90] grid place-items-center bg-slate-950/80 p-4 backdrop-blur-sm" onMouseDown={(event) => { if (event.target === event.currentTarget && !busy) setOpen(false); }}>
       <section role="dialog" aria-modal="true" aria-labelledby="dev-coin-title" className="glass w-full max-w-md rounded-3xl p-6 sm:p-7">
