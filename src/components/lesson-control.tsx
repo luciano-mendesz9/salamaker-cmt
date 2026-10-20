@@ -16,6 +16,7 @@ export function LessonControl({ initialLesson, initialStudents, initialCode }: {
   const [modal, setModal] = useState<"open" | "close" | null>(null);
   const [code, setCode] = useState<string | null>(initialCode);
   const [excused, setExcused] = useState<string[]>([]);
+  const [manualPresent, setManualPresent] = useState<string[]>([]);
   const [busy, setBusy] = useState(false);
   const [cleanupBusy, setCleanupBusy] = useState(false);
 
@@ -51,7 +52,9 @@ export function LessonControl({ initialLesson, initialStudents, initialCode }: {
   }
 
   async function review() {
-    if (!code && !(await reload())) return;
+    setExcused([]);
+    setManualPresent([]);
+    if (!(await reload())) return;
     setModal("close");
   }
 
@@ -78,7 +81,7 @@ export function LessonControl({ initialLesson, initialStudents, initialCode }: {
     if (!lesson) return;
     setBusy(true);
     try {
-      const response = await fetch(`/api/professor/lessons/${lesson.id}/close`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ excusedIds: excused }) });
+      const response = await fetch(`/api/professor/lessons/${lesson.id}/close`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ excusedIds: excused, presentIds: manualPresent }) });
       const data = await response.json().catch(() => null);
       if (!response.ok) {
         toast.error(data?.message ?? "Não foi possível fechar a aula. Tente novamente.");
@@ -87,6 +90,8 @@ export function LessonControl({ initialLesson, initialStudents, initialCode }: {
       setLesson(null);
       setStudents([]);
       setCode(null);
+      setExcused([]);
+      setManualPresent([]);
       setModal(null);
       toast.success(`Aula fechada para ${data.students} aluno(s). XP aplicado.`);
       router.refresh();
@@ -138,10 +143,12 @@ export function LessonControl({ initialLesson, initialStudents, initialCode }: {
         <button disabled={busy} className="button-primary w-full">Abrir aula e gerar código</button>
       </form> : <div className="mt-6">
         {code && <div className="mb-4 flex items-center justify-between gap-3 rounded-xl border border-blue-400/25 bg-blue-400/8 p-3"><div><p className="text-xs font-bold uppercase tracking-wider text-blue-300">Código da aula</p><p className="mt-1 font-mono text-2xl font-bold tracking-[.2em]">{code}</p></div><button onClick={() => { navigator.clipboard.writeText(code); toast.success("Código copiado.") }} className="button-secondary" aria-label="Copiar código da aula"><Copy size={16} />Copiar</button></div>}
-        <p className="text-sm text-slate-400">Presentes receberão +30 XP. Marque como justificada cada ausência aplicável (+10 XP); as demais receberão −50 XP.</p>
+        <p className="text-sm text-slate-400">Presentes receberão +30 XP. Para quem esqueceu o registro, marque a presença manualmente; você também pode justificar uma falta (+10 XP). As demais ausências receberão −50 XP.</p>
         <div className="mt-4 max-h-80 space-y-2 overflow-y-auto">{students.map((student) => {
-          const isPresent = present.has(student.id);
-          return <label key={student.id} className="flex items-center gap-3 rounded-xl border border-slate-700 p-3"><span className={`h-2.5 w-2.5 rounded-full ${isPresent ? "bg-emerald-400" : "bg-rose-400"}`} /><span className="flex-1 text-sm">{student.firstName} {student.lastName}</span>{isPresent ? <span className="text-xs text-emerald-300">Presente</span> : <span className="flex items-center gap-2 text-xs text-amber-200"><input type="checkbox" checked={excused.includes(student.id)} onChange={(event) => setExcused((current) => event.target.checked ? [...current, student.id] : current.filter((id) => id !== student.id))} />Falta justificada</span>}</label>
+          const attendanceRecorded = present.has(student.id);
+          const isManuallyPresent = manualPresent.includes(student.id);
+          const isPresent = attendanceRecorded || isManuallyPresent;
+          return <div key={student.id} className="flex flex-col gap-3 rounded-xl border border-slate-700 p-3 sm:flex-row sm:items-center"><span className={`h-2.5 w-2.5 shrink-0 rounded-full ${isPresent ? "bg-emerald-400" : "bg-rose-400"}`} /><span className="flex-1 text-sm">{student.firstName} {student.lastName}</span>{attendanceRecorded ? <span className="text-xs text-emerald-300">Presença registrada</span> : <div className="flex flex-wrap gap-3"><label className="flex items-center gap-2 text-xs text-emerald-200"><input type="checkbox" checked={isManuallyPresent} onChange={(event) => { setManualPresent((current) => event.target.checked ? [...current, student.id] : current.filter((id) => id !== student.id)); if (event.target.checked) setExcused((current) => current.filter((id) => id !== student.id)); }} />Marcar presença</label><label className="flex items-center gap-2 text-xs text-amber-200"><input type="checkbox" checked={excused.includes(student.id)} onChange={(event) => { setExcused((current) => event.target.checked ? [...current, student.id] : current.filter((id) => id !== student.id)); if (event.target.checked) setManualPresent((current) => current.filter((id) => id !== student.id)); }} />Falta justificada</label></div>}</div>
         })}</div>
         <button disabled={busy} onClick={close} className="button-primary mt-5 w-full"><CheckCircle2 size={17} />{busy ? "Fechando..." : "Confirmar fechamento e aplicar XP"}</button>
       </div>}
