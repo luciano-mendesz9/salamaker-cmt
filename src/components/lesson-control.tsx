@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { BookOpen, CheckCircle2, Copy, LockKeyhole, Plus, Sparkles, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { BookOpen, CheckCircle2, Copy, LockKeyhole, Maximize2, Plus, Sparkles, X } from "lucide-react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
@@ -19,6 +19,23 @@ export function LessonControl({ initialLesson, initialStudents, initialCode }: {
   const [manualPresent, setManualPresent] = useState<string[]>([]);
   const [busy, setBusy] = useState(false);
   const [cleanupBusy, setCleanupBusy] = useState(false);
+  const [codeFullscreen, setCodeFullscreen] = useState(false);
+
+  useEffect(() => {
+    if (!codeFullscreen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setCodeFullscreen(false);
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [codeFullscreen]);
 
   async function reload() {
     const response = await fetch("/api/professor/lessons");
@@ -90,6 +107,7 @@ export function LessonControl({ initialLesson, initialStudents, initialCode }: {
       setLesson(null);
       setStudents([]);
       setCode(null);
+      setCodeFullscreen(false);
       setExcused([]);
       setManualPresent([]);
       setModal(null);
@@ -114,7 +132,10 @@ export function LessonControl({ initialLesson, initialStudents, initialCode }: {
             <h3 className="font-display font-bold">{lesson.title}</h3>
             <p className="text-xs text-slate-400">{lesson.attendances.length} presença(s) de {students.length} participante(s)</p>
           </div>
-          {code && <button onClick={() => { navigator.clipboard.writeText(code); toast.success("Código copiado.") }} className="button-secondary font-mono text-lg"><Copy size={16} />{code}</button>}
+          {code && <div className="flex flex-wrap gap-2">
+            <button onClick={() => { navigator.clipboard.writeText(code); toast.success("Código copiado.") }} className="button-secondary font-mono text-lg"><Copy size={16} />{code}</button>
+            <button onClick={() => setCodeFullscreen(true)} className="button-secondary" aria-label="Exibir código da aula em tela cheia"><Maximize2 size={16} />Tela cheia</button>
+          </div>}
           <button onClick={review} className="button-primary"><LockKeyhole size={16} />Revisar e fechar</button>
         </div>
 
@@ -142,7 +163,7 @@ export function LessonControl({ initialLesson, initialStudents, initialCode }: {
         <p className="rounded-xl border border-blue-400/20 bg-blue-400/8 p-3 text-sm text-blue-100">A aula incluirá todos os alunos ativos da turma de Robótica, independentemente da turma regular de origem.</p>
         <button disabled={busy} className="button-primary w-full">Abrir aula e gerar código</button>
       </form> : <div className="mt-6">
-        {code && <div className="mb-4 flex items-center justify-between gap-3 rounded-xl border border-blue-400/25 bg-blue-400/8 p-3"><div><p className="text-xs font-bold uppercase tracking-wider text-blue-300">Código da aula</p><p className="mt-1 font-mono text-2xl font-bold tracking-[.2em]">{code}</p></div><button onClick={() => { navigator.clipboard.writeText(code); toast.success("Código copiado.") }} className="button-secondary" aria-label="Copiar código da aula"><Copy size={16} />Copiar</button></div>}
+        {code && <div className="mb-4 flex flex-col gap-3 rounded-xl border border-blue-400/25 bg-blue-400/8 p-3 sm:flex-row sm:items-center sm:justify-between"><div><p className="text-xs font-bold uppercase tracking-wider text-blue-300">Código da aula</p><p className="mt-1 font-mono text-2xl font-bold tracking-[.2em]">{code}</p></div><div className="flex flex-wrap gap-2"><button onClick={() => { navigator.clipboard.writeText(code); toast.success("Código copiado.") }} className="button-secondary" aria-label="Copiar código da aula"><Copy size={16} />Copiar</button><button onClick={() => setCodeFullscreen(true)} className="button-secondary" aria-label="Exibir código da aula em tela cheia"><Maximize2 size={16} />Tela cheia</button></div></div>}
         <p className="text-sm text-slate-400">Presentes receberão +30 XP. Para quem esqueceu o registro, marque a presença manualmente; você também pode justificar uma falta (+10 XP). As demais ausências receberão −50 XP.</p>
         <div className="mt-4 max-h-80 space-y-2 overflow-y-auto">{students.map((student) => {
           const attendanceRecorded = present.has(student.id);
@@ -153,5 +174,19 @@ export function LessonControl({ initialLesson, initialStudents, initialCode }: {
         <button disabled={busy} onClick={close} className="button-primary mt-5 w-full"><CheckCircle2 size={17} />{busy ? "Fechando..." : "Confirmar fechamento e aplicar XP"}</button>
       </div>}
     </div></div>}
+
+    {codeFullscreen && code && <div className="fixed inset-0 z-[60] flex min-h-dvh flex-col bg-[#08111f] p-5 sm:p-8" role="dialog" aria-modal="true" aria-labelledby="fullscreen-code-title">
+      <div className="flex items-center justify-between gap-4">
+        <div>
+          <p className="eyebrow">Sala Maker CMT</p>
+          <h3 id="fullscreen-code-title" className="font-display text-xl font-bold text-white sm:text-2xl">Código da aula</h3>
+        </div>
+        <button autoFocus onClick={() => setCodeFullscreen(false)} className="button-secondary" aria-label="Fechar código em tela cheia"><X size={20} />Fechar</button>
+      </div>
+      <div className="flex flex-1 flex-col items-center justify-center py-8 text-center">
+        <p className="font-mono text-[clamp(4rem,18vw,14rem)] font-black leading-none tracking-[.12em] text-blue-300 drop-shadow-[0_0_40px_rgba(96,165,250,0.25)] sm:tracking-[.18em]">{code}</p>
+        <p className="mt-8 text-base text-slate-300 sm:text-xl">Digite este código para registrar sua presença.</p>
+      </div>
+    </div>}
   </>;
 }
