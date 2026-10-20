@@ -8,9 +8,9 @@ import { toast } from "sonner";
 import { PROFILE_AVATAR_DEV_COIN_PRICE } from "@/lib/profile-avatar-pricing";
 import { getProfileAvatar, PROFILE_AVATARS, type ProfileAvatarKey } from "@/lib/profile-avatars";
 
-type Props = { currentAvatar: string; currentDevCoins: number; ownedAvatars: string[]; studentName: string };
+type Props = { currentAvatar: string; currentDevCoins: number; ownedAvatars: string[]; studentName: string; compact?: boolean };
 
-export function ProfileAvatarEditor({ currentAvatar, currentDevCoins, ownedAvatars, studentName }: Props) {
+export function ProfileAvatarEditor({ currentAvatar, currentDevCoins, ownedAvatars, studentName, compact = false }: Props) {
   const router = useRouter();
   const initialAvatar = PROFILE_AVATARS.some(({ key }) => key === currentAvatar) ? currentAvatar as ProfileAvatarKey : "default";
   const [active, setActive] = useState<ProfileAvatarKey>(initialAvatar);
@@ -56,9 +56,9 @@ export function ProfileAvatarEditor({ currentAvatar, currentDevCoins, ownedAvata
 
   return (
     <>
-      <button type="button" onClick={() => { setCandidate(active); setOpen(true); }} className="focus-ring group relative h-24 w-24 shrink-0 rounded-3xl sm:h-28 sm:w-28" aria-label="Alterar foto de perfil">
-        <Image src={getProfileAvatar(active)} alt={`Foto de perfil de ${studentName}`} fill priority sizes="112px" className="rounded-3xl border-2 border-blue-300/30 object-cover shadow-xl transition group-hover:border-blue-300/70" />
-        <span className="absolute -bottom-1 -right-1 grid h-9 w-9 place-items-center rounded-full border-2 border-[#142b4d] bg-blue-500 text-white shadow-lg transition group-hover:scale-105" aria-hidden="true"><Pencil size={16} /></span>
+      <button type="button" onClick={() => { setCandidate(active); setOpen(true); }} className={`focus-ring group relative shrink-0 ${compact ? "h-11 w-11 rounded-xl" : "h-24 w-24 rounded-3xl sm:h-28 sm:w-28"}`} aria-label="Alterar foto de perfil">
+        <Image src={getProfileAvatar(active)} alt={`Foto de perfil de ${studentName}`} fill priority sizes={compact ? "44px" : "112px"} className={`${compact ? "rounded-xl" : "rounded-3xl"} border-2 border-blue-300/30 object-cover shadow-xl transition group-hover:border-blue-300/70`} />
+        <span className={`absolute grid place-items-center rounded-full border-2 border-[#142b4d] bg-blue-500 text-white shadow-lg transition group-hover:scale-105 ${compact ? "-bottom-1 -right-1 h-5 w-5" : "-bottom-1 -right-1 h-9 w-9"}`} aria-hidden="true"><Pencil size={compact ? 10 : 16} /></span>
       </button>
       {open && (
         <div className="fixed inset-0 z-[80] grid place-items-center bg-slate-950/80 p-3 backdrop-blur-sm sm:p-4" onMouseDown={event => { if (event.target === event.currentTarget && !saving) setOpen(false); }}>

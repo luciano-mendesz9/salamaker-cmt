@@ -48,7 +48,7 @@ export default async function StudentActivity({ params }: { params: Promise<{ id
   const closed = state === "CLOSED";
   const timeZone = settings?.timeZone ?? "America/Fortaleza";
   return <main className="mesh min-h-screen pb-10"><div className="mx-auto max-w-4xl px-4 sm:px-8">
-    <header className="flex h-20 items-center justify-between border-b border-white/7"><Brand context="Estudante"/><LogoutButton/></header>
+    <header data-student-legacy-header className="flex h-20 items-center justify-between border-b border-white/7"><Brand context="Estudante"/><LogoutButton/></header>
     <Link href="/aluno/atividades" className="mt-6 inline-flex items-center gap-2 text-sm text-slate-400"><ArrowLeft size={16}/>Todas as atividades</Link>
     <section className="glass mt-6 rounded-3xl p-5 sm:p-7"><div className="flex flex-wrap items-start justify-between gap-3"><div><p className="eyebrow">{activityStateLabel[state]}</p><h1 className="mt-3 font-display text-3xl font-bold">{activity.title}</h1></div><span className="rounded-full bg-blue-400/10 px-3 py-1 text-sm font-bold text-blue-300">{activity.maxXp} XP</span></div>{activity.description&&<p className="mt-4 whitespace-pre-wrap text-sm leading-relaxed text-slate-300">{activity.description}</p>}<div className="mt-5 flex items-center gap-2 text-sm text-slate-400"><Clock3 size={16}/>De {formatSchoolDate(activity.opensAt,timeZone)} até {formatSchoolDate(activity.closesAt,timeZone)}</div></section>
     {state==="SCHEDULED"&&<Notice text="Esta atividade ainda não abriu."/>}

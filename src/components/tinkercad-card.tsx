@@ -6,7 +6,7 @@ import { toast } from "sonner";
 
 const TINKERCAD_URL = "https://www.tinkercad.com/joinclass/ABJNGWPUT";
 
-export function TinkercadCard({ accessCode }: { accessCode: string }) {
+export function TinkercadCard({ accessCode, showGamesLink = true }: { accessCode: string; showGamesLink?: boolean }) {
   const [copied, setCopied] = useState(false);
   async function copy() {
     await navigator.clipboard.writeText(accessCode);
@@ -14,8 +14,14 @@ export function TinkercadCard({ accessCode }: { accessCode: string }) {
     toast.success("Código copiado.");
     setTimeout(() => setCopied(false), 2_000);
   }
+  if (!showGamesLink) return <section className="student-card overflow-hidden rounded-3xl p-5 sm:p-6">
+    <div className="flex items-center gap-3"><span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-cyan-400/10 text-cyan-300"><ExternalLink size={19}/></span><h2 className="font-display text-lg font-bold">Seu espaço de criação</h2></div>
+    <p className="mt-4 text-sm leading-relaxed text-slate-400">Entre no Tinkercad com o login de aluno e use seu código:</p>
+    <div className="mt-5 flex min-h-14 items-center justify-between gap-3 rounded-2xl border border-slate-700/70 bg-slate-950/35 px-4 py-3"><strong className="min-w-0 truncate font-mono text-base tracking-wider text-slate-100">{accessCode}</strong><button onClick={copy} className="focus-ring grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-cyan-300/10 text-cyan-200 hover:bg-cyan-300/20" aria-label="Copiar código de acesso">{copied ? <Check size={18}/> : <Copy size={18}/>}</button></div>
+    <a href={TINKERCAD_URL} target="_blank" rel="noreferrer" className="button-secondary mt-4 w-full">Acessar Tinkercad<ExternalLink size={16}/></a>
+  </section>;
   return <>
-    <section className="relative mt-5 overflow-hidden rounded-2xl border border-cyan-300/25 bg-gradient-to-r from-cyan-400/15 via-blue-400/10 to-indigo-400/10 p-5 sm:p-6">
+    <section className={`relative overflow-hidden rounded-2xl border border-cyan-300/25 bg-gradient-to-r from-cyan-400/15 via-blue-400/10 to-indigo-400/10 p-5 sm:p-6 ${showGamesLink ? "mt-5" : ""}`}>
       <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
         <a href={TINKERCAD_URL} target="_blank" rel="noreferrer" className="focus-ring group min-w-0 flex-1 rounded-xl">
           <p className="eyebrow">Tinkercad</p>
@@ -28,9 +34,9 @@ export function TinkercadCard({ accessCode }: { accessCode: string }) {
         </div>
       </div>
     </section>
-    <Link href="/aluno/minigames" className="focus-ring group mt-5 flex items-center gap-4 rounded-2xl border border-fuchsia-300/25 bg-gradient-to-r from-fuchsia-500/15 via-cyan-400/10 to-blue-500/10 p-5 transition hover:-translate-y-0.5 hover:border-fuchsia-300/45 sm:p-6">
+    {showGamesLink && <Link href="/aluno/minigames" className="focus-ring group mt-5 flex items-center gap-4 rounded-2xl border border-fuchsia-300/25 bg-gradient-to-r from-fuchsia-500/15 via-cyan-400/10 to-blue-500/10 p-5 transition hover:-translate-y-0.5 hover:border-fuchsia-300/45 sm:p-6">
       <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-fuchsia-400/15 text-fuchsia-200"><Gamepad2 size={27}/></span>
       <span className="min-w-0 flex-1"><span className="eyebrow">Diversão com responsabilidade</span><strong className="mt-1 block font-display text-xl">Acessar Mini games</strong><span className="mt-1 block text-sm text-slate-300">Entre no Ludo Maker, consulte partidas e jogue com seus colegas.</span></span>
-    </Link>
+    </Link>}
   </>;
 }
