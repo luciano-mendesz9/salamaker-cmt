@@ -1,11 +1,29 @@
+import { randomUUID } from "node:crypto";
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import type { Prisma } from "@/generated/prisma/client";
 import { apiError, requireStudent } from "@/lib/authorization";
 import { applyActivityAward } from "@/lib/activity-awards";
 import { assertOpenForSubmission, gradeObjectiveAnswer } from "@/lib/activities";
 import { prisma } from "@/lib/db";
 
 const input = z.object({ answers: z.array(z.object({ questionId: z.string().uuid(), selectedOptionIds: z.array(z.string().uuid()).default([]), writtenText: z.string().trim().max(10000).optional() })).max(100) });
+
+async function submissionTransaction<T>(operation: (tx: Prisma.TransactionClient) => Promise<T>) {
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    try {
+      return await prisma.$transaction(operation, {
+        isolationLevel: "Serializable",
+        maxWait: 10_000,
+        timeout: 20_000,
+      });
+    } catch (error) {
+      if ((error as { code?: string }).code === "P2034" && attempt < 2) continue;
+      throw error;
+    }
+  }
+  throw new Error("TRANSACTION_RETRY_EXHAUSTED");
+}
 
 export async function POST(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
@@ -31,16 +49,38 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
       return { question, writtenText: null, selected: answer.selectedOptionIds, autoCorrect: result.correct, awardedXp: result.awardedXp };
     });
     const hasWritten = prepared.some((answer) => answer.question.type === "WRITTEN");
-    const result = await prisma.$transaction(async (tx) => {
+    const result = await submissionTransaction(async (tx) => {
       const submission = await tx.activitySubmission.create({ data: { activityId: id, recipientId: recipient.id, studentId: student.id, status: hasWritten ? "AWAITING_REVIEW" : "GRADED", gradedAt: hasWritten ? null : new Date() } });
-      for (const answer of prepared) await tx.activityAnswer.create({ data: {
-        submissionId: submission.id, questionId: answer.question.id, studentId: student.id, writtenText: answer.writtenText, autoCorrect: answer.autoCorrect, awardedXp: answer.awardedXp,
-        selections: { create: answer.selected.map((optionId) => ({ optionId })) },
-      } });
-      await tx.activityRecipient.update({ where: { id: recipient.id }, data: { completedAt: new Date() } });
+      const answers = prepared.map((answer) => ({
+        id: randomUUID(),
+        submissionId: submission.id,
+        questionId: answer.question.id,
+        studentId: student.id,
+        writtenText: answer.writtenText,
+        autoCorrect: answer.autoCorrect,
+        awardedXp: answer.awardedXp,
+        selected: answer.selected,
+      }));
+      await tx.activityAnswer.createMany({
+        data: answers.map((answer) => ({
+          id: answer.id,
+          submissionId: answer.submissionId,
+          questionId: answer.questionId,
+          studentId: answer.studentId,
+          writtenText: answer.writtenText,
+          autoCorrect: answer.autoCorrect,
+          awardedXp: answer.awardedXp,
+        })),
+      });
+      const selections = answers.flatMap((answer) =>
+        answer.selected.map((optionId) => ({ answerId: answer.id, optionId })),
+      );
+      if (selections.length) await tx.activityAnswerOption.createMany({ data: selections });
       if (!hasWritten) {
         const total = prepared.reduce((sum, answer) => sum + (answer.awardedXp ?? 0), 0);
         await applyActivityAward(tx, { activityId: id, recipientId: recipient.id, studentId: student.id, teacherId: recipient.activity.authorId, awardedXp: total, maxXp: recipient.activity.maxXp, reason: `Formulário “${recipient.activity.title}” corrigido automaticamente: ${total} XP.` });
+      } else {
+        await tx.activityRecipient.update({ where: { id: recipient.id }, data: { completedAt: new Date() } });
       }
       return submission;
     });
