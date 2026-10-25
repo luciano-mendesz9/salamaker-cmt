@@ -6,11 +6,13 @@ import { EmptyState } from "@/components/empty-state";
 import { StudentEconomyChart } from "@/components/student-economy-chart";
 import { StudentAttendanceButton } from "@/components/student-attendance-button";
 import { TinkercadCard } from "@/components/tinkercad-card";
+import { XpAdjustmentAlert } from "@/components/xp-adjustment-alert";
 import { effectiveActivityState, formatSchoolDate } from "@/lib/activities";
 import { requireStudent } from "@/lib/authorization";
 import { prisma } from "@/lib/db";
 import { remainingWeeklyDevCoinTransfer } from "@/lib/dev-coins";
 import { getSchoolWeek } from "@/lib/school-day";
+import { getXpAdjustmentSchedule } from "@/lib/xp-adjustment-policy";
 
 const labels: Record<string, string> = { GRADE_6_A: "6º Ano A", GRADE_6_B: "6º Ano B", GRADE_6_C: "6º Ano C", GRADE_7_A: "7º Ano A", GRADE_7_B: "7º Ano B", GRADE_7_C: "7º Ano C" };
 type DashboardActivity = { activityId: string; studentSignaledAt: Date | null; activity: { title: string; opensAt: Date; closesAt: Date; manuallyClosedAt: Date | null; maxXp: number }; submission: { status: string } | null; award: { awardedXp: number } | null };
@@ -38,6 +40,8 @@ export default async function Aluno() {
   const timeZone = settings?.timeZone ?? "America/Fortaleza";
   const openActivities = activities.filter(item => effectiveActivityState(item.activity) === "OPEN" && !item.submission && !item.award && !item.studentSignaledAt).length;
   const history = xpLedger.slice(-3).reverse();
+  const observedAt = new Date();
+  const xpAdjustmentSchedule = getXpAdjustmentSchedule(observedAt);
 
   return <main className="mobile-safe"><div className="student-page mx-auto max-w-[1240px]">
     <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
@@ -51,6 +55,8 @@ export default async function Aluno() {
           <div className="relative z-10 max-w-md sm:w-[68%]"><p className="eyebrow flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-[var(--accent)]"/>Ideias que ganham vida</p><h2 className="mt-4 font-display text-3xl font-black leading-tight tracking-tight sm:text-4xl">O próximo projeto<br/>começa com você.</h2><p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-400">Explore suas atividades, crie soluções e avance na sua jornada maker.</p><div className="mt-6 flex flex-wrap gap-3"><Link href="/aluno/atividades" className="button-primary">Ver minhas atividades<ArrowRight size={17}/></Link><a href="https://wayground.com/join" target="_blank" rel="noopener noreferrer" className="focus-ring inline-flex items-center justify-center gap-2 rounded-xl bg-[#ef2d9c] px-4 py-3 text-sm font-bold text-white shadow-lg shadow-pink-950/25 transition hover:brightness-110"><ExternalLink size={17}/>Acessar Wayground</a></div></div>
           <div className="absolute -right-5 top-1/2 hidden h-52 w-52 -translate-y-1/2 sm:grid sm:place-items-center"><span className="absolute inset-3 rounded-full border border-[color-mix(in_srgb,var(--accent)_24%,transparent)] bg-[color-mix(in_srgb,var(--accent)_10%,transparent)]"/><span className="absolute inset-9 rounded-full border border-[color-mix(in_srgb,var(--accent)_30%,transparent)]"/><Bot className="relative text-[var(--accent-soft)] drop-shadow-[0_12px_28px_rgba(0,0,0,.35)]" size={108} strokeWidth={1.35}/><Zap className="absolute bottom-7 left-4 rotate-[-12deg] rounded-xl border border-amber-300/20 bg-[#172238] p-2 text-amber-300" size={40}/><BookOpen className="absolute right-4 top-7 rotate-12 rounded-xl border border-[color-mix(in_srgb,var(--accent)_28%,transparent)] bg-[#172238] p-2 text-[var(--accent-soft)]" size={40}/></div>
         </section>
+
+        <XpAdjustmentAlert startsAt={xpAdjustmentSchedule.startsAt.toISOString()} targetAt={xpAdjustmentSchedule.targetAt.toISOString()} observedAt={observedAt.toISOString()}/>
 
         <div className="grid grid-cols-3 gap-2 sm:gap-4"><Metric icon={Zap} label="XP atual" value={student.xp.toLocaleString("pt-BR")} unit="XP" detail="Sua experiência acumulada"/><Metric icon={Trophy} label="Ranking" value={position ? `${position}º` : "—"} unit="lugar" detail="Na classificação geral" tone="amber"/><Metric icon={CalendarDays} label="Frequência" value={`${frequency}%`} unit="presença" detail="Nas aulas encerradas" tone="emerald"/></div>
 

@@ -57,6 +57,9 @@ A configuracao e adequada a um runtime Node/serverless com Neon:
 - `postinstall` gera o client;
 - `npm run build` usa `next build --webpack`.
 - `REDIS_URL` (ou `KV_URL`) compartilha presenca e estado rapido do Pong entre instancias WebSocket.
+- `CRON_SECRET` protege o endpoint `/api/cron/monthly-xp-adjustment`; a Vercel envia o valor como `Authorization: Bearer ...` no agendamento mensal de `vercel.json`.
+
+O reajuste mensal de XP roda no dia 1º às 09h UTC (06h em `America/Fortaleza`). Ele é idempotente por aluno e competência, mantém o livro-razão com uma entrada `SYSTEM`, divide o saldo por 10, arredonda frações para cima e limita saldos negativos a zero. Confirme `CRON_SECRET` na produção antes do deploy e acompanhe a primeira execução nos logs e no ledger.
 
 Um build verde nao comprova que a URL do banco, segredos, migracoes e fluxos autenticados estejam corretos no ambiente publicado. Depois do deploy, valide separadamente login de professor/aluno, check-in, leitura e escrita no banco, e ao menos uma operacao reversivel de cada fluxo critico.
 
