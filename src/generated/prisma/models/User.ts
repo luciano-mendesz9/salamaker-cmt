@@ -348,6 +348,7 @@ export type UserWhereInput = {
   authoredNotifications?: Prisma.NotificationListRelationFilter
   notificationReceipts?: Prisma.NotificationReceiptListRelationFilter
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseListRelationFilter
+  studentThemePurchases?: Prisma.StudentThemePurchaseListRelationFilter
   devCoinEntries?: Prisma.DevCoinEntryListRelationFilter
   authoredDevCoinEntries?: Prisma.DevCoinEntryListRelationFilter
   stickerCopies?: Prisma.StickerCopyListRelationFilter
@@ -426,6 +427,7 @@ export type UserOrderByWithRelationInput = {
   authoredNotifications?: Prisma.NotificationOrderByRelationAggregateInput
   notificationReceipts?: Prisma.NotificationReceiptOrderByRelationAggregateInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseOrderByRelationAggregateInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseOrderByRelationAggregateInput
   devCoinEntries?: Prisma.DevCoinEntryOrderByRelationAggregateInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryOrderByRelationAggregateInput
   stickerCopies?: Prisma.StickerCopyOrderByRelationAggregateInput
@@ -507,6 +509,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   authoredNotifications?: Prisma.NotificationListRelationFilter
   notificationReceipts?: Prisma.NotificationReceiptListRelationFilter
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseListRelationFilter
+  studentThemePurchases?: Prisma.StudentThemePurchaseListRelationFilter
   devCoinEntries?: Prisma.DevCoinEntryListRelationFilter
   authoredDevCoinEntries?: Prisma.DevCoinEntryListRelationFilter
   stickerCopies?: Prisma.StickerCopyListRelationFilter
@@ -635,6 +638,7 @@ export type UserCreateInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -713,6 +717,7 @@ export type UserUncheckedCreateInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -791,6 +796,7 @@ export type UserUpdateInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -869,6 +875,7 @@ export type UserUncheckedUpdateInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -1104,6 +1111,20 @@ export type UserUpdateOneRequiredWithoutProfileAvatarPurchasesNestedInput = {
   upsert?: Prisma.UserUpsertWithoutProfileAvatarPurchasesInput
   connect?: Prisma.UserWhereUniqueInput
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutProfileAvatarPurchasesInput, Prisma.UserUpdateWithoutProfileAvatarPurchasesInput>, Prisma.UserUncheckedUpdateWithoutProfileAvatarPurchasesInput>
+}
+
+export type UserCreateNestedOneWithoutStudentThemePurchasesInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStudentThemePurchasesInput, Prisma.UserUncheckedCreateWithoutStudentThemePurchasesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStudentThemePurchasesInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutStudentThemePurchasesNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStudentThemePurchasesInput, Prisma.UserUncheckedCreateWithoutStudentThemePurchasesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStudentThemePurchasesInput
+  upsert?: Prisma.UserUpsertWithoutStudentThemePurchasesInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutStudentThemePurchasesInput, Prisma.UserUpdateWithoutStudentThemePurchasesInput>, Prisma.UserUncheckedUpdateWithoutStudentThemePurchasesInput>
 }
 
 export type UserCreateNestedOneWithoutDevCoinEntriesInput = {
@@ -1956,6 +1977,7 @@ export type UserCreateWithoutProfileAvatarPurchasesInput = {
   lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -2033,6 +2055,7 @@ export type UserUncheckedCreateWithoutProfileAvatarPurchasesInput = {
   lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -2126,6 +2149,7 @@ export type UserUpdateWithoutProfileAvatarPurchasesInput = {
   lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -2203,6 +2227,335 @@ export type UserUncheckedUpdateWithoutProfileAvatarPurchasesInput = {
   lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+}
+
+export type UserCreateWithoutStudentThemePurchasesInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+}
+
+export type UserUncheckedCreateWithoutStudentThemePurchasesInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+}
+
+export type UserCreateOrConnectWithoutStudentThemePurchasesInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutStudentThemePurchasesInput, Prisma.UserUncheckedCreateWithoutStudentThemePurchasesInput>
+}
+
+export type UserUpsertWithoutStudentThemePurchasesInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutStudentThemePurchasesInput, Prisma.UserUncheckedUpdateWithoutStudentThemePurchasesInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutStudentThemePurchasesInput, Prisma.UserUncheckedCreateWithoutStudentThemePurchasesInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutStudentThemePurchasesInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutStudentThemePurchasesInput, Prisma.UserUncheckedUpdateWithoutStudentThemePurchasesInput>
+}
+
+export type UserUpdateWithoutStudentThemePurchasesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+}
+
+export type UserUncheckedUpdateWithoutStudentThemePurchasesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -2281,6 +2634,7 @@ export type UserCreateWithoutDevCoinEntriesInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
   stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
@@ -2358,6 +2712,7 @@ export type UserUncheckedCreateWithoutDevCoinEntriesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
   stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
@@ -2440,6 +2795,7 @@ export type UserCreateWithoutAuthoredDevCoinEntriesInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
   stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
@@ -2517,6 +2873,7 @@ export type UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
   stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
@@ -2610,6 +2967,7 @@ export type UserUpdateWithoutDevCoinEntriesInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
   stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
@@ -2687,6 +3045,7 @@ export type UserUncheckedUpdateWithoutDevCoinEntriesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
   stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
@@ -2775,6 +3134,7 @@ export type UserUpdateWithoutAuthoredDevCoinEntriesInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
   stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
@@ -2852,6 +3212,7 @@ export type UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
   stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
@@ -2929,6 +3290,7 @@ export type UserCreateWithoutDevCoinTransfersSentInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -3006,6 +3368,7 @@ export type UserUncheckedCreateWithoutDevCoinTransfersSentInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -3088,6 +3451,7 @@ export type UserCreateWithoutDevCoinTransfersReceivedInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -3165,6 +3529,7 @@ export type UserUncheckedCreateWithoutDevCoinTransfersReceivedInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -3258,6 +3623,7 @@ export type UserUpdateWithoutDevCoinTransfersSentInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -3335,6 +3701,7 @@ export type UserUncheckedUpdateWithoutDevCoinTransfersSentInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -3423,6 +3790,7 @@ export type UserUpdateWithoutDevCoinTransfersReceivedInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -3500,6 +3868,7 @@ export type UserUncheckedUpdateWithoutDevCoinTransfersReceivedInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -3577,6 +3946,7 @@ export type UserCreateWithoutStickerCopiesInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
@@ -3654,6 +4024,7 @@ export type UserUncheckedCreateWithoutStickerCopiesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
@@ -3747,6 +4118,7 @@ export type UserUpdateWithoutStickerCopiesInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
@@ -3824,6 +4196,7 @@ export type UserUncheckedUpdateWithoutStickerCopiesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
@@ -3901,6 +4274,7 @@ export type UserCreateWithoutStickerPackPurchasesInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -3978,6 +4352,7 @@ export type UserUncheckedCreateWithoutStickerPackPurchasesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -4071,6 +4446,7 @@ export type UserUpdateWithoutStickerPackPurchasesInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -4148,6 +4524,7 @@ export type UserUncheckedUpdateWithoutStickerPackPurchasesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -4225,6 +4602,7 @@ export type UserCreateWithoutStickerListingsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -4302,6 +4680,7 @@ export type UserUncheckedCreateWithoutStickerListingsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -4384,6 +4763,7 @@ export type UserCreateWithoutStickerPurchasesInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -4461,6 +4841,7 @@ export type UserUncheckedCreateWithoutStickerPurchasesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -4554,6 +4935,7 @@ export type UserUpdateWithoutStickerListingsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -4631,6 +5013,7 @@ export type UserUncheckedUpdateWithoutStickerListingsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -4719,6 +5102,7 @@ export type UserUpdateWithoutStickerPurchasesInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -4796,6 +5180,7 @@ export type UserUncheckedUpdateWithoutStickerPurchasesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -4873,6 +5258,7 @@ export type UserCreateWithoutStickerTradesSoldInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -4950,6 +5336,7 @@ export type UserUncheckedCreateWithoutStickerTradesSoldInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -5032,6 +5419,7 @@ export type UserCreateWithoutStickerTradesBoughtInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -5109,6 +5497,7 @@ export type UserUncheckedCreateWithoutStickerTradesBoughtInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -5202,6 +5591,7 @@ export type UserUpdateWithoutStickerTradesSoldInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -5279,6 +5669,7 @@ export type UserUncheckedUpdateWithoutStickerTradesSoldInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -5367,6 +5758,7 @@ export type UserUpdateWithoutStickerTradesBoughtInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -5444,6 +5836,7 @@ export type UserUncheckedUpdateWithoutStickerTradesBoughtInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -5521,6 +5914,7 @@ export type UserCreateWithoutStickerDonationsSentInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -5598,6 +5992,7 @@ export type UserUncheckedCreateWithoutStickerDonationsSentInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -5680,6 +6075,7 @@ export type UserCreateWithoutStickerDonationsReceivedInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -5757,6 +6153,7 @@ export type UserUncheckedCreateWithoutStickerDonationsReceivedInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -5850,6 +6247,7 @@ export type UserUpdateWithoutStickerDonationsSentInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -5927,6 +6325,7 @@ export type UserUncheckedUpdateWithoutStickerDonationsSentInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -6015,6 +6414,7 @@ export type UserUpdateWithoutStickerDonationsReceivedInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -6092,6 +6492,7 @@ export type UserUncheckedUpdateWithoutStickerDonationsReceivedInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -6169,6 +6570,7 @@ export type UserCreateWithoutCollectionPurchaseRequestsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -6246,6 +6648,7 @@ export type UserUncheckedCreateWithoutCollectionPurchaseRequestsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -6339,6 +6742,7 @@ export type UserUpdateWithoutCollectionPurchaseRequestsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -6416,6 +6820,7 @@ export type UserUncheckedUpdateWithoutCollectionPurchaseRequestsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -6493,6 +6898,7 @@ export type UserCreateWithoutCollectionOffersInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -6570,6 +6976,7 @@ export type UserUncheckedCreateWithoutCollectionOffersInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -6663,6 +7070,7 @@ export type UserUpdateWithoutCollectionOffersInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -6740,6 +7148,7 @@ export type UserUncheckedUpdateWithoutCollectionOffersInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -6817,6 +7226,7 @@ export type UserCreateWithoutCollectionPurchasesAsTeacherInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -6894,6 +7304,7 @@ export type UserUncheckedCreateWithoutCollectionPurchasesAsTeacherInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -6976,6 +7387,7 @@ export type UserCreateWithoutCollectionPurchasesAsStudentInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -7053,6 +7465,7 @@ export type UserUncheckedCreateWithoutCollectionPurchasesAsStudentInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -7146,6 +7559,7 @@ export type UserUpdateWithoutCollectionPurchasesAsTeacherInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -7223,6 +7637,7 @@ export type UserUncheckedUpdateWithoutCollectionPurchasesAsTeacherInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -7311,6 +7726,7 @@ export type UserUpdateWithoutCollectionPurchasesAsStudentInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -7388,6 +7804,7 @@ export type UserUncheckedUpdateWithoutCollectionPurchasesAsStudentInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -7465,6 +7882,7 @@ export type UserCreateWithoutPatentProgressInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -7542,6 +7960,7 @@ export type UserUncheckedCreateWithoutPatentProgressInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -7635,6 +8054,7 @@ export type UserUpdateWithoutPatentProgressInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -7712,6 +8132,7 @@ export type UserUncheckedUpdateWithoutPatentProgressInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -7789,6 +8210,7 @@ export type UserCreateWithoutPatentRewardClaimsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -7866,6 +8288,7 @@ export type UserUncheckedCreateWithoutPatentRewardClaimsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -7959,6 +8382,7 @@ export type UserUpdateWithoutPatentRewardClaimsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -8036,6 +8460,7 @@ export type UserUncheckedUpdateWithoutPatentRewardClaimsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -8113,6 +8538,7 @@ export type UserCreateWithoutTreasuryEntriesAuthoredInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -8190,6 +8616,7 @@ export type UserUncheckedCreateWithoutTreasuryEntriesAuthoredInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -8283,6 +8710,7 @@ export type UserUpdateWithoutTreasuryEntriesAuthoredInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -8360,6 +8788,7 @@ export type UserUncheckedUpdateWithoutTreasuryEntriesAuthoredInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -8436,6 +8865,7 @@ export type UserCreateWithoutLessonsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -8513,6 +8943,7 @@ export type UserUncheckedCreateWithoutLessonsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -8606,6 +9037,7 @@ export type UserUpdateWithoutLessonsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -8683,6 +9115,7 @@ export type UserUncheckedUpdateWithoutLessonsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -8760,6 +9193,7 @@ export type UserCreateWithoutLessonParticipationsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -8837,6 +9271,7 @@ export type UserUncheckedCreateWithoutLessonParticipationsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -8930,6 +9365,7 @@ export type UserUpdateWithoutLessonParticipationsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -9007,6 +9443,7 @@ export type UserUncheckedUpdateWithoutLessonParticipationsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -9084,6 +9521,7 @@ export type UserCreateWithoutAttendancesInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -9161,6 +9599,7 @@ export type UserUncheckedCreateWithoutAttendancesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -9254,6 +9693,7 @@ export type UserUpdateWithoutAttendancesInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -9331,6 +9771,7 @@ export type UserUncheckedUpdateWithoutAttendancesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -9408,6 +9849,7 @@ export type UserCreateWithoutXpEntriesInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -9485,6 +9927,7 @@ export type UserUncheckedCreateWithoutXpEntriesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -9567,6 +10010,7 @@ export type UserCreateWithoutAuthoredXpInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -9644,6 +10088,7 @@ export type UserUncheckedCreateWithoutAuthoredXpInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -9737,6 +10182,7 @@ export type UserUpdateWithoutXpEntriesInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -9814,6 +10260,7 @@ export type UserUncheckedUpdateWithoutXpEntriesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -9902,6 +10349,7 @@ export type UserUpdateWithoutAuthoredXpInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -9979,6 +10427,7 @@ export type UserUncheckedUpdateWithoutAuthoredXpInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -10056,6 +10505,7 @@ export type UserCreateWithoutBehaviorsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -10133,6 +10583,7 @@ export type UserUncheckedCreateWithoutBehaviorsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -10215,6 +10666,7 @@ export type UserCreateWithoutRatedBehaviorsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -10292,6 +10744,7 @@ export type UserUncheckedCreateWithoutRatedBehaviorsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -10385,6 +10838,7 @@ export type UserUpdateWithoutBehaviorsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -10462,6 +10916,7 @@ export type UserUncheckedUpdateWithoutBehaviorsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -10550,6 +11005,7 @@ export type UserUpdateWithoutRatedBehaviorsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -10627,6 +11083,7 @@ export type UserUncheckedUpdateWithoutRatedBehaviorsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -10704,6 +11161,7 @@ export type UserCreateWithoutCleanupsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -10781,6 +11239,7 @@ export type UserUncheckedCreateWithoutCleanupsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -10863,6 +11322,7 @@ export type UserCreateWithoutConfirmedCleanupsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -10940,6 +11400,7 @@ export type UserUncheckedCreateWithoutConfirmedCleanupsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -11033,6 +11494,7 @@ export type UserUpdateWithoutCleanupsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -11110,6 +11572,7 @@ export type UserUncheckedUpdateWithoutCleanupsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -11198,6 +11661,7 @@ export type UserUpdateWithoutConfirmedCleanupsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -11275,6 +11739,7 @@ export type UserUncheckedUpdateWithoutConfirmedCleanupsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -11352,6 +11817,7 @@ export type UserCreateWithoutAuthoredActivitiesInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -11429,6 +11895,7 @@ export type UserUncheckedCreateWithoutAuthoredActivitiesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -11522,6 +11989,7 @@ export type UserUpdateWithoutAuthoredActivitiesInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -11599,6 +12067,7 @@ export type UserUncheckedUpdateWithoutAuthoredActivitiesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -11676,6 +12145,7 @@ export type UserCreateWithoutAuthoredNotificationsInput = {
   lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -11753,6 +12223,7 @@ export type UserUncheckedCreateWithoutAuthoredNotificationsInput = {
   lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -11846,6 +12317,7 @@ export type UserUpdateWithoutAuthoredNotificationsInput = {
   lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -11923,6 +12395,7 @@ export type UserUncheckedUpdateWithoutAuthoredNotificationsInput = {
   lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -12000,6 +12473,7 @@ export type UserCreateWithoutNotificationReceiptsInput = {
   lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -12077,6 +12551,7 @@ export type UserUncheckedCreateWithoutNotificationReceiptsInput = {
   lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -12170,6 +12645,7 @@ export type UserUpdateWithoutNotificationReceiptsInput = {
   lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -12247,6 +12723,7 @@ export type UserUncheckedUpdateWithoutNotificationReceiptsInput = {
   lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -12324,6 +12801,7 @@ export type UserCreateWithoutActivityRecipientsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -12401,6 +12879,7 @@ export type UserUncheckedCreateWithoutActivityRecipientsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -12494,6 +12973,7 @@ export type UserUpdateWithoutActivityRecipientsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -12571,6 +13051,7 @@ export type UserUncheckedUpdateWithoutActivityRecipientsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -12648,6 +13129,7 @@ export type UserCreateWithoutActivitySubmissionsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -12725,6 +13207,7 @@ export type UserUncheckedCreateWithoutActivitySubmissionsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -12818,6 +13301,7 @@ export type UserUpdateWithoutActivitySubmissionsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -12895,6 +13379,7 @@ export type UserUncheckedUpdateWithoutActivitySubmissionsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -12972,6 +13457,7 @@ export type UserCreateWithoutActivityAnswersInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -13049,6 +13535,7 @@ export type UserUncheckedCreateWithoutActivityAnswersInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -13142,6 +13629,7 @@ export type UserUpdateWithoutActivityAnswersInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -13219,6 +13707,7 @@ export type UserUncheckedUpdateWithoutActivityAnswersInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -13296,6 +13785,7 @@ export type UserCreateWithoutActivityTeamMembershipsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -13373,6 +13863,7 @@ export type UserUncheckedCreateWithoutActivityTeamMembershipsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -13466,6 +13957,7 @@ export type UserUpdateWithoutActivityTeamMembershipsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -13543,6 +14035,7 @@ export type UserUncheckedUpdateWithoutActivityTeamMembershipsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -13620,6 +14113,7 @@ export type UserCreateWithoutActivityAwardsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -13697,6 +14191,7 @@ export type UserUncheckedCreateWithoutActivityAwardsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -13790,6 +14285,7 @@ export type UserUpdateWithoutActivityAwardsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -13867,6 +14363,7 @@ export type UserUncheckedUpdateWithoutActivityAwardsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -13944,6 +14441,7 @@ export type UserCreateWithoutAuditActionsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -14021,6 +14519,7 @@ export type UserUncheckedCreateWithoutAuditActionsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -14103,6 +14602,7 @@ export type UserCreateWithoutAuditTargetsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -14180,6 +14680,7 @@ export type UserUncheckedCreateWithoutAuditTargetsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -14273,6 +14774,7 @@ export type UserUpdateWithoutAuditActionsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -14350,6 +14852,7 @@ export type UserUncheckedUpdateWithoutAuditActionsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -14438,6 +14941,7 @@ export type UserUpdateWithoutAuditTargetsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -14515,6 +15019,7 @@ export type UserUncheckedUpdateWithoutAuditTargetsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -14593,6 +15098,7 @@ export type UserCreateWithoutOwnedPongRoomsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -14670,6 +15176,7 @@ export type UserUncheckedCreateWithoutOwnedPongRoomsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -14752,6 +15259,7 @@ export type UserCreateWithoutWonPongRoomsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -14829,6 +15337,7 @@ export type UserUncheckedCreateWithoutWonPongRoomsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -14911,6 +15420,7 @@ export type UserCreateWithoutLostPongRoomsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -14988,6 +15498,7 @@ export type UserUncheckedCreateWithoutLostPongRoomsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -15081,6 +15592,7 @@ export type UserUpdateWithoutOwnedPongRoomsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -15158,6 +15670,7 @@ export type UserUncheckedUpdateWithoutOwnedPongRoomsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -15246,6 +15759,7 @@ export type UserUpdateWithoutWonPongRoomsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -15323,6 +15837,7 @@ export type UserUncheckedUpdateWithoutWonPongRoomsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -15411,6 +15926,7 @@ export type UserUpdateWithoutLostPongRoomsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -15488,6 +16004,7 @@ export type UserUncheckedUpdateWithoutLostPongRoomsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -15565,6 +16082,7 @@ export type UserCreateWithoutPongPlayersInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -15642,6 +16160,7 @@ export type UserUncheckedCreateWithoutPongPlayersInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -15735,6 +16254,7 @@ export type UserUpdateWithoutPongPlayersInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -15812,6 +16332,7 @@ export type UserUncheckedUpdateWithoutPongPlayersInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -15889,6 +16410,7 @@ export type UserCreateWithoutPongJoinRequestsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -15966,6 +16488,7 @@ export type UserUncheckedCreateWithoutPongJoinRequestsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -16059,6 +16582,7 @@ export type UserUpdateWithoutPongJoinRequestsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -16136,6 +16660,7 @@ export type UserUncheckedUpdateWithoutPongJoinRequestsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -16213,6 +16738,7 @@ export type UserCreateWithoutPongPointsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -16290,6 +16816,7 @@ export type UserUncheckedCreateWithoutPongPointsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -16383,6 +16910,7 @@ export type UserUpdateWithoutPongPointsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -16460,6 +16988,7 @@ export type UserUncheckedUpdateWithoutPongPointsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -16537,6 +17066,7 @@ export type UserCreateWithoutOwnedTicTacToeRoomsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -16614,6 +17144,7 @@ export type UserUncheckedCreateWithoutOwnedTicTacToeRoomsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -16696,6 +17227,7 @@ export type UserCreateWithoutGuestTicTacToeRoomsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -16773,6 +17305,7 @@ export type UserUncheckedCreateWithoutGuestTicTacToeRoomsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -16855,6 +17388,7 @@ export type UserCreateWithoutWonTicTacToeRoomsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -16932,6 +17466,7 @@ export type UserUncheckedCreateWithoutWonTicTacToeRoomsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -17025,6 +17560,7 @@ export type UserUpdateWithoutOwnedTicTacToeRoomsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -17102,6 +17638,7 @@ export type UserUncheckedUpdateWithoutOwnedTicTacToeRoomsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -17190,6 +17727,7 @@ export type UserUpdateWithoutGuestTicTacToeRoomsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -17267,6 +17805,7 @@ export type UserUncheckedUpdateWithoutGuestTicTacToeRoomsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -17355,6 +17894,7 @@ export type UserUpdateWithoutWonTicTacToeRoomsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -17432,6 +17972,7 @@ export type UserUncheckedUpdateWithoutWonTicTacToeRoomsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -17509,6 +18050,7 @@ export type UserCreateWithoutWonTicTacToeRoundsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -17586,6 +18128,7 @@ export type UserUncheckedCreateWithoutWonTicTacToeRoundsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -17679,6 +18222,7 @@ export type UserUpdateWithoutWonTicTacToeRoundsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -17756,6 +18300,7 @@ export type UserUncheckedUpdateWithoutWonTicTacToeRoundsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -17833,6 +18378,7 @@ export type UserCreateWithoutTicTacToeSoloGamesInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -17910,6 +18456,7 @@ export type UserUncheckedCreateWithoutTicTacToeSoloGamesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -18003,6 +18550,7 @@ export type UserUpdateWithoutTicTacToeSoloGamesInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -18080,6 +18628,7 @@ export type UserUncheckedUpdateWithoutTicTacToeSoloGamesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -18157,6 +18706,7 @@ export type UserCreateWithoutSudokuGamesInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -18234,6 +18784,7 @@ export type UserUncheckedCreateWithoutSudokuGamesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -18327,6 +18878,7 @@ export type UserUpdateWithoutSudokuGamesInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -18404,6 +18956,7 @@ export type UserUncheckedUpdateWithoutSudokuGamesInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -18481,6 +19034,7 @@ export type UserCreateWithoutOwnedLudoRoomsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -18558,6 +19112,7 @@ export type UserUncheckedCreateWithoutOwnedLudoRoomsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -18651,6 +19206,7 @@ export type UserUpdateWithoutOwnedLudoRoomsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -18728,6 +19284,7 @@ export type UserUncheckedUpdateWithoutOwnedLudoRoomsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -18805,6 +19362,7 @@ export type UserCreateWithoutLudoPlayersInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -18882,6 +19440,7 @@ export type UserUncheckedCreateWithoutLudoPlayersInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -18975,6 +19534,7 @@ export type UserUpdateWithoutLudoPlayersInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -19052,6 +19612,7 @@ export type UserUncheckedUpdateWithoutLudoPlayersInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -19129,6 +19690,7 @@ export type UserCreateWithoutSentLudoInvitationsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -19206,6 +19768,7 @@ export type UserUncheckedCreateWithoutSentLudoInvitationsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -19288,6 +19851,7 @@ export type UserCreateWithoutReceivedLudoInvitationsInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -19365,6 +19929,7 @@ export type UserUncheckedCreateWithoutReceivedLudoInvitationsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -19458,6 +20023,7 @@ export type UserUpdateWithoutSentLudoInvitationsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -19535,6 +20101,7 @@ export type UserUncheckedUpdateWithoutSentLudoInvitationsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -19623,6 +20190,7 @@ export type UserUpdateWithoutReceivedLudoInvitationsInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -19700,6 +20268,7 @@ export type UserUncheckedUpdateWithoutReceivedLudoInvitationsInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -19777,6 +20346,7 @@ export type UserCreateWithoutLudoBlocksCreatedInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -19854,6 +20424,7 @@ export type UserUncheckedCreateWithoutLudoBlocksCreatedInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -19936,6 +20507,7 @@ export type UserCreateWithoutLudoBlocksReceivedInput = {
   authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
@@ -20013,6 +20585,7 @@ export type UserUncheckedCreateWithoutLudoBlocksReceivedInput = {
   authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
   stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
@@ -20106,6 +20679,7 @@ export type UserUpdateWithoutLudoBlocksCreatedInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -20183,6 +20757,7 @@ export type UserUncheckedUpdateWithoutLudoBlocksCreatedInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -20271,6 +20846,7 @@ export type UserUpdateWithoutLudoBlocksReceivedInput = {
   authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
@@ -20348,6 +20924,7 @@ export type UserUncheckedUpdateWithoutLudoBlocksReceivedInput = {
   authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
   notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
   profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
   devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
   authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
   stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
@@ -20412,6 +20989,7 @@ export type UserCountOutputType = {
   authoredNotifications: number
   notificationReceipts: number
   profileAvatarPurchases: number
+  studentThemePurchases: number
   devCoinEntries: number
   authoredDevCoinEntries: number
   stickerCopies: number
@@ -20471,6 +21049,7 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   authoredNotifications?: boolean | UserCountOutputTypeCountAuthoredNotificationsArgs
   notificationReceipts?: boolean | UserCountOutputTypeCountNotificationReceiptsArgs
   profileAvatarPurchases?: boolean | UserCountOutputTypeCountProfileAvatarPurchasesArgs
+  studentThemePurchases?: boolean | UserCountOutputTypeCountStudentThemePurchasesArgs
   devCoinEntries?: boolean | UserCountOutputTypeCountDevCoinEntriesArgs
   authoredDevCoinEntries?: boolean | UserCountOutputTypeCountAuthoredDevCoinEntriesArgs
   stickerCopies?: boolean | UserCountOutputTypeCountStickerCopiesArgs
@@ -20657,6 +21236,13 @@ export type UserCountOutputTypeCountNotificationReceiptsArgs<ExtArgs extends run
  */
 export type UserCountOutputTypeCountProfileAvatarPurchasesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.ProfileAvatarPurchaseWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountStudentThemePurchasesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.StudentThemePurchaseWhereInput
 }
 
 /**
@@ -20951,6 +21537,7 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   authoredNotifications?: boolean | Prisma.User$authoredNotificationsArgs<ExtArgs>
   notificationReceipts?: boolean | Prisma.User$notificationReceiptsArgs<ExtArgs>
   profileAvatarPurchases?: boolean | Prisma.User$profileAvatarPurchasesArgs<ExtArgs>
+  studentThemePurchases?: boolean | Prisma.User$studentThemePurchasesArgs<ExtArgs>
   devCoinEntries?: boolean | Prisma.User$devCoinEntriesArgs<ExtArgs>
   authoredDevCoinEntries?: boolean | Prisma.User$authoredDevCoinEntriesArgs<ExtArgs>
   stickerCopies?: boolean | Prisma.User$stickerCopiesArgs<ExtArgs>
@@ -21076,6 +21663,7 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   authoredNotifications?: boolean | Prisma.User$authoredNotificationsArgs<ExtArgs>
   notificationReceipts?: boolean | Prisma.User$notificationReceiptsArgs<ExtArgs>
   profileAvatarPurchases?: boolean | Prisma.User$profileAvatarPurchasesArgs<ExtArgs>
+  studentThemePurchases?: boolean | Prisma.User$studentThemePurchasesArgs<ExtArgs>
   devCoinEntries?: boolean | Prisma.User$devCoinEntriesArgs<ExtArgs>
   authoredDevCoinEntries?: boolean | Prisma.User$authoredDevCoinEntriesArgs<ExtArgs>
   stickerCopies?: boolean | Prisma.User$stickerCopiesArgs<ExtArgs>
@@ -21141,6 +21729,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     authoredNotifications: Prisma.$NotificationPayload<ExtArgs>[]
     notificationReceipts: Prisma.$NotificationReceiptPayload<ExtArgs>[]
     profileAvatarPurchases: Prisma.$ProfileAvatarPurchasePayload<ExtArgs>[]
+    studentThemePurchases: Prisma.$StudentThemePurchasePayload<ExtArgs>[]
     devCoinEntries: Prisma.$DevCoinEntryPayload<ExtArgs>[]
     authoredDevCoinEntries: Prisma.$DevCoinEntryPayload<ExtArgs>[]
     stickerCopies: Prisma.$StickerCopyPayload<ExtArgs>[]
@@ -21612,6 +22201,7 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   authoredNotifications<T extends Prisma.User$authoredNotificationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$authoredNotificationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotificationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   notificationReceipts<T extends Prisma.User$notificationReceiptsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$notificationReceiptsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotificationReceiptPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   profileAvatarPurchases<T extends Prisma.User$profileAvatarPurchasesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$profileAvatarPurchasesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProfileAvatarPurchasePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  studentThemePurchases<T extends Prisma.User$studentThemePurchasesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$studentThemePurchasesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StudentThemePurchasePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   devCoinEntries<T extends Prisma.User$devCoinEntriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$devCoinEntriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DevCoinEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   authoredDevCoinEntries<T extends Prisma.User$authoredDevCoinEntriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$authoredDevCoinEntriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DevCoinEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   stickerCopies<T extends Prisma.User$stickerCopiesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$stickerCopiesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StickerCopyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -22566,6 +23156,30 @@ export type User$profileAvatarPurchasesArgs<ExtArgs extends runtime.Types.Extens
   take?: number
   skip?: number
   distinct?: Prisma.ProfileAvatarPurchaseScalarFieldEnum | Prisma.ProfileAvatarPurchaseScalarFieldEnum[]
+}
+
+/**
+ * User.studentThemePurchases
+ */
+export type User$studentThemePurchasesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the StudentThemePurchase
+   */
+  select?: Prisma.StudentThemePurchaseSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the StudentThemePurchase
+   */
+  omit?: Prisma.StudentThemePurchaseOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StudentThemePurchaseInclude<ExtArgs> | null
+  where?: Prisma.StudentThemePurchaseWhereInput
+  orderBy?: Prisma.StudentThemePurchaseOrderByWithRelationInput | Prisma.StudentThemePurchaseOrderByWithRelationInput[]
+  cursor?: Prisma.StudentThemePurchaseWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StudentThemePurchaseScalarFieldEnum | Prisma.StudentThemePurchaseScalarFieldEnum[]
 }
 
 /**

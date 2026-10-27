@@ -399,6 +399,7 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 export const ModelName = {
   User: 'User',
   ProfileAvatarPurchase: 'ProfileAvatarPurchase',
+  StudentThemePurchase: 'StudentThemePurchase',
   DevCoinEntry: 'DevCoinEntry',
   DevCoinTransfer: 'DevCoinTransfer',
   StickerCollection: 'StickerCollection',
@@ -470,7 +471,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "profileAvatarPurchase" | "devCoinEntry" | "devCoinTransfer" | "stickerCollection" | "sticker" | "stickerCopy" | "stickerPackPurchase" | "stickerListing" | "stickerTrade" | "stickerDonation" | "teacherCollectionPurchaseRequest" | "teacherCollectionOffer" | "teacherCollectionOfferCopy" | "teacherCollectionPurchase" | "patentLevel" | "studentPatentProgress" | "patentRewardClaim" | "devCoinTreasury" | "stickerMarketSetting" | "devCoinTreasuryEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket" | "pongRoom" | "pongPlayer" | "pongJoinRequest" | "pongPoint" | "ticTacToeRoom" | "ticTacToeRound" | "ticTacToeSoloGame" | "ticTacToeSoloAction" | "sudokuGame" | "sudokuAction" | "ludoRoom" | "ludoPlayer" | "ludoMove" | "ludoInvitation" | "ludoInvitationBlock"
+    modelProps: "user" | "profileAvatarPurchase" | "studentThemePurchase" | "devCoinEntry" | "devCoinTransfer" | "stickerCollection" | "sticker" | "stickerCopy" | "stickerPackPurchase" | "stickerListing" | "stickerTrade" | "stickerDonation" | "teacherCollectionPurchaseRequest" | "teacherCollectionOffer" | "teacherCollectionOfferCopy" | "teacherCollectionPurchase" | "patentLevel" | "studentPatentProgress" | "patentRewardClaim" | "devCoinTreasury" | "stickerMarketSetting" | "devCoinTreasuryEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket" | "pongRoom" | "pongPlayer" | "pongJoinRequest" | "pongPoint" | "ticTacToeRoom" | "ticTacToeRound" | "ticTacToeSoloGame" | "ticTacToeSoloAction" | "sudokuGame" | "sudokuAction" | "ludoRoom" | "ludoPlayer" | "ludoMove" | "ludoInvitation" | "ludoInvitationBlock"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -619,6 +620,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.ProfileAvatarPurchaseCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.ProfileAvatarPurchaseCountAggregateOutputType> | number
+        }
+      }
+    }
+    StudentThemePurchase: {
+      payload: Prisma.$StudentThemePurchasePayload<ExtArgs>
+      fields: Prisma.StudentThemePurchaseFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.StudentThemePurchaseFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentThemePurchasePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.StudentThemePurchaseFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentThemePurchasePayload>
+        }
+        findFirst: {
+          args: Prisma.StudentThemePurchaseFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentThemePurchasePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.StudentThemePurchaseFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentThemePurchasePayload>
+        }
+        findMany: {
+          args: Prisma.StudentThemePurchaseFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentThemePurchasePayload>[]
+        }
+        create: {
+          args: Prisma.StudentThemePurchaseCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentThemePurchasePayload>
+        }
+        createMany: {
+          args: Prisma.StudentThemePurchaseCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.StudentThemePurchaseCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentThemePurchasePayload>[]
+        }
+        delete: {
+          args: Prisma.StudentThemePurchaseDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentThemePurchasePayload>
+        }
+        update: {
+          args: Prisma.StudentThemePurchaseUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentThemePurchasePayload>
+        }
+        deleteMany: {
+          args: Prisma.StudentThemePurchaseDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.StudentThemePurchaseUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.StudentThemePurchaseUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentThemePurchasePayload>[]
+        }
+        upsert: {
+          args: Prisma.StudentThemePurchaseUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentThemePurchasePayload>
+        }
+        aggregate: {
+          args: Prisma.StudentThemePurchaseAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateStudentThemePurchase>
+        }
+        groupBy: {
+          args: Prisma.StudentThemePurchaseGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StudentThemePurchaseGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.StudentThemePurchaseCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StudentThemePurchaseCountAggregateOutputType> | number
         }
       }
     }
@@ -4843,6 +4918,19 @@ export const ProfileAvatarPurchaseScalarFieldEnum = {
 export type ProfileAvatarPurchaseScalarFieldEnum = (typeof ProfileAvatarPurchaseScalarFieldEnum)[keyof typeof ProfileAvatarPurchaseScalarFieldEnum]
 
 
+export const StudentThemePurchaseScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  themeKey: 'themeKey',
+  amountPaid: 'amountPaid',
+  devCoinEntryId: 'devCoinEntryId',
+  selectedAt: 'selectedAt',
+  purchasedAt: 'purchasedAt'
+} as const
+
+export type StudentThemePurchaseScalarFieldEnum = (typeof StudentThemePurchaseScalarFieldEnum)[keyof typeof StudentThemePurchaseScalarFieldEnum]
+
+
 export const DevCoinEntryScalarFieldEnum = {
   id: 'id',
   studentId: 'studentId',
@@ -6546,6 +6634,7 @@ export type PrismaClientOptions = PrismaClientOptionsWithAccelerateUrl | PrismaC
 export type GlobalOmitConfig = {
   user?: Prisma.UserOmit
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseOmit
+  studentThemePurchase?: Prisma.StudentThemePurchaseOmit
   devCoinEntry?: Prisma.DevCoinEntryOmit
   devCoinTransfer?: Prisma.DevCoinTransferOmit
   stickerCollection?: Prisma.StickerCollectionOmit

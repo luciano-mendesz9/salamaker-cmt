@@ -1,2 +1,2 @@
-"use client";import {LogOut} from "lucide-react";
-export function LogoutButton({label=false}:{label?:boolean}){return <form action="/api/auth/logout" method="post"><button aria-label="Sair" className="focus-ring flex items-center gap-2 rounded-lg p-2 text-slate-400 hover:bg-white/5 hover:text-white"><LogOut size={18}/>{label&&<span className="text-sm">Sair</span>}</button></form>}
+"use client";import {LogOut} from "lucide-react";import {STUDENT_THEME_STORAGE_KEY} from "@/lib/student-themes";
+export function LogoutButton({label=false}:{label?:boolean}){function clearStudentTheme(){try{localStorage.removeItem(STUDENT_THEME_STORAGE_KEY)}catch{}}return <form action="/api/auth/logout" method="post" onSubmit={clearStudentTheme}><button aria-label="Sair" className="focus-ring flex items-center gap-2 rounded-lg p-2 text-slate-400 hover:bg-white/5 hover:text-white"><LogOut size={18}/>{label&&<span className="text-sm">Sair</span>}</button></form>}

@@ -10,6 +10,7 @@
  */
 export type * from './models/User'
 export type * from './models/ProfileAvatarPurchase'
+export type * from './models/StudentThemePurchase'
 export type * from './models/DevCoinEntry'
 export type * from './models/DevCoinTransfer'
 export type * from './models/StickerCollection'

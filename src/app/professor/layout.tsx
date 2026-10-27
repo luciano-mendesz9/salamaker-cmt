@@ -1,2 +1,2 @@
-import {requireTeacher} from "@/lib/authorization";
-export default async function Layout({children}:{children:React.ReactNode}){await requireTeacher();return children}
+import {requireTeacher} from "@/lib/authorization";import {prisma} from "@/lib/db";
+export default async function Layout({children}:{children:React.ReactNode}){await requireTeacher();const accentColor=await prisma.appSetting.findUnique({where:{id:1},select:{accentColor:true}}).then(v=>v?.accentColor??"#328fff").catch(()=>"#328fff");return <div className="contents" style={{"--accent":accentColor,"--accent-soft":accentColor} as React.CSSProperties}>{children}</div>}

@@ -53,6 +53,7 @@ export const AnyNull = runtime.AnyNull
 export const ModelName = {
   User: 'User',
   ProfileAvatarPurchase: 'ProfileAvatarPurchase',
+  StudentThemePurchase: 'StudentThemePurchase',
   DevCoinEntry: 'DevCoinEntry',
   DevCoinTransfer: 'DevCoinTransfer',
   StickerCollection: 'StickerCollection',
@@ -163,6 +164,19 @@ export const ProfileAvatarPurchaseScalarFieldEnum = {
 } as const
 
 export type ProfileAvatarPurchaseScalarFieldEnum = (typeof ProfileAvatarPurchaseScalarFieldEnum)[keyof typeof ProfileAvatarPurchaseScalarFieldEnum]
+
+
+export const StudentThemePurchaseScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  themeKey: 'themeKey',
+  amountPaid: 'amountPaid',
+  devCoinEntryId: 'devCoinEntryId',
+  selectedAt: 'selectedAt',
+  purchasedAt: 'purchasedAt'
+} as const
+
+export type StudentThemePurchaseScalarFieldEnum = (typeof StudentThemePurchaseScalarFieldEnum)[keyof typeof StudentThemePurchaseScalarFieldEnum]
 
 
 export const DevCoinEntryScalarFieldEnum = {
