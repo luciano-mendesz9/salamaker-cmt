@@ -128,6 +128,7 @@ enum DevCoinSource {
   LUDO_ROOM_FEE
   LUDO_ESCROW
   LUDO_PRIZE
+  STUDENT_THEME
 }
 
 enum StickerCollectionState {
@@ -400,6 +401,7 @@ model User {
   authoredNotifications        Notification[]                     @relation("NotificationAuthor")
   notificationReceipts         NotificationReceipt[]
   profileAvatarPurchases       ProfileAvatarPurchase[]
+  studentThemePurchases        StudentThemePurchase[]
   devCoinEntries               DevCoinEntry[]                     @relation("StudentDevCoins")
   authoredDevCoinEntries       DevCoinEntry[]                     @relation("DevCoinAuthor")
   stickerCopies                StickerCopy[]                      @relation("StickerCopyOwner")
@@ -459,6 +461,21 @@ model ProfileAvatarPurchase {
   @@index([studentId, purchasedAt])
 }
 
+model StudentThemePurchase {
+  id             String       @id @default(uuid()) @db.Uuid
+  studentId      String       @db.Uuid
+  themeKey       String
+  amountPaid     Int
+  devCoinEntryId String       @unique @db.Uuid
+  selectedAt     DateTime?
+  purchasedAt    DateTime     @default(now())
+  student        User         @relation(fields: [studentId], references: [id], onDelete: Restrict)
+  devCoinEntry   DevCoinEntry @relation(fields: [devCoinEntryId], references: [id], onDelete: Restrict)
+
+  @@unique([studentId, themeKey])
+  @@index([studentId, selectedAt])
+}
+
 model DevCoinEntry {
   id                    String                 @id @default(uuid()) @db.Uuid
   studentId             String                 @db.Uuid
@@ -473,6 +490,7 @@ model DevCoinEntry {
   author                User?                  @relation("DevCoinAuthor", fields: [authorId], references: [id], onDelete: SetNull)
   xpEntry               XpEntry?               @relation(fields: [xpEntryId], references: [id], onDelete: Restrict)
   profileAvatarPurchase ProfileAvatarPurchase?
+  studentThemePurchase  StudentThemePurchase?
   treasuryEntry         DevCoinTreasuryEntry?
   sentTransfer          DevCoinTransfer?       @relation("DevCoinTransferSenderEntry")
   receivedTransfer      DevCoinTransfer?       @relation("DevCoinTransferRecipientEntry")

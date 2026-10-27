@@ -150,7 +150,8 @@ export const DevCoinSource = {
   SUDOKU_EXTRA_ERRORS: 'SUDOKU_EXTRA_ERRORS',
   LUDO_ROOM_FEE: 'LUDO_ROOM_FEE',
   LUDO_ESCROW: 'LUDO_ESCROW',
-  LUDO_PRIZE: 'LUDO_PRIZE'
+  LUDO_PRIZE: 'LUDO_PRIZE',
+  STUDENT_THEME: 'STUDENT_THEME'
 } as const
 
 export type DevCoinSource = (typeof DevCoinSource)[keyof typeof DevCoinSource]

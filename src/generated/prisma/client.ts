@@ -52,6 +52,11 @@ export type User = Prisma.UserModel
  */
 export type ProfileAvatarPurchase = Prisma.ProfileAvatarPurchaseModel
 /**
+ * Model StudentThemePurchase
+ *
+ */
+export type StudentThemePurchase = Prisma.StudentThemePurchaseModel
+/**
  * Model DevCoinEntry
  *
  */

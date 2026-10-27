@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 import {
   Bell,
   BookOpen,
@@ -16,16 +17,19 @@ import {
 } from "lucide-react";
 import { LogoutButton } from "@/components/logout-button";
 import { getProfileAvatar, type ProfileAvatarKey } from "@/lib/profile-avatars";
+import { STUDENT_THEME_STORAGE_KEY, type StudentThemeKey } from "@/lib/student-themes";
 
 type Props = {
   children: React.ReactNode;
   student: {
+    id: string;
     firstName: string;
     lastName: string;
     profileAvatar: string;
     classLabel: string;
   };
   unread: number;
+  theme: StudentThemeKey;
 };
 
 const navItems = [
@@ -51,10 +55,13 @@ function isActive(pathname: string, href: string, exact?: boolean) {
   return exact ? pathname === href : pathname === href || pathname.startsWith(`${href}/`);
 }
 
-export function StudentShell({ children, student, unread }: Props) {
+export function StudentShell({ children, student, unread, theme }: Props) {
   const pathname = usePathname();
   const immersive = pathname === "/aluno/trocar-senha" || /^\/aluno\/minigames\/(?:ludo|pong|jogo-da-velha|sudoku)\/[^/]+$/.test(pathname);
-  if (immersive) return <>{children}</>;
+  useEffect(() => {
+    try { localStorage.setItem(STUDENT_THEME_STORAGE_KEY, JSON.stringify({ studentId: student.id, theme })); } catch {}
+  }, [student.id, theme]);
+  if (immersive) return <div className="student-theme-root min-h-screen" data-student-theme={theme}>{children}</div>;
 
   const currentTitle = Object.entries(titles)
     .sort(([a], [b]) => b.length - a.length)
@@ -62,7 +69,7 @@ export function StudentShell({ children, student, unread }: Props) {
   const avatarKey = student.profileAvatar as ProfileAvatarKey;
 
   return (
-    <div className="student-shell min-h-screen">
+    <div className="student-theme-root student-shell min-h-screen" data-student-theme={theme}>
       <a href="#student-main" className="student-skip-link">Pular para o conteúdo</a>
       <aside className="student-sidebar" aria-label="Menu principal">
         <Link href="/" className="focus-ring flex items-center gap-3 rounded-xl">

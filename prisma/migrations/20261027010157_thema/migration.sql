@@ -1,0 +1,2 @@
+-- RenameIndex
+ALTER INDEX "SudokuGame_difficulty_status_eligibleForRanking_elapsedSeconds_" RENAME TO "SudokuGame_difficulty_status_eligibleForRanking_elapsedSeco_idx";
