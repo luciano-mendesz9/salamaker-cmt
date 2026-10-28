@@ -72,7 +72,8 @@ export const XpSource = {
   LUDO_INVITE: 'LUDO_INVITE',
   LUDO_RESULT: 'LUDO_RESULT',
   LUDO_FORFEIT: 'LUDO_FORFEIT',
-  EXTERNAL_CODE: 'EXTERNAL_CODE'
+  EXTERNAL_CODE: 'EXTERNAL_CODE',
+  BATTLESHIP: 'BATTLESHIP'
 } as const
 
 export type XpSource = (typeof XpSource)[keyof typeof XpSource]
@@ -129,7 +130,12 @@ export const AuditEvent = {
   LUDO_MATCH_FINISHED: 'LUDO_MATCH_FINISHED',
   LUDO_PLAYER_FORFEITED: 'LUDO_PLAYER_FORFEITED',
   XP_GRANT_CODE_CREATED: 'XP_GRANT_CODE_CREATED',
-  XP_GRANT_CODE_REDEEMED: 'XP_GRANT_CODE_REDEEMED'
+  XP_GRANT_CODE_REDEEMED: 'XP_GRANT_CODE_REDEEMED',
+  BATTLESHIP_ROOM_CREATED: 'BATTLESHIP_ROOM_CREATED',
+  BATTLESHIP_MATCH_STARTED: 'BATTLESHIP_MATCH_STARTED',
+  BATTLESHIP_SHOT_FIRED: 'BATTLESHIP_SHOT_FIRED',
+  BATTLESHIP_MATCH_FINISHED: 'BATTLESHIP_MATCH_FINISHED',
+  BATTLESHIP_ROOM_CANCELLED: 'BATTLESHIP_ROOM_CANCELLED'
 } as const
 
 export type AuditEvent = (typeof AuditEvent)[keyof typeof AuditEvent]
@@ -154,7 +160,9 @@ export const DevCoinSource = {
   LUDO_ROOM_FEE: 'LUDO_ROOM_FEE',
   LUDO_ESCROW: 'LUDO_ESCROW',
   LUDO_PRIZE: 'LUDO_PRIZE',
-  STUDENT_THEME: 'STUDENT_THEME'
+  STUDENT_THEME: 'STUDENT_THEME',
+  BATTLESHIP_WAGER: 'BATTLESHIP_WAGER',
+  BATTLESHIP_PRIZE: 'BATTLESHIP_PRIZE'
 } as const
 
 export type DevCoinSource = (typeof DevCoinSource)[keyof typeof DevCoinSource]
@@ -259,10 +267,21 @@ export const TreasuryEntrySource = {
   TIC_TAC_TOE_MATCH_TAX: 'TIC_TAC_TOE_MATCH_TAX',
   SUDOKU_EXTRA_ERRORS: 'SUDOKU_EXTRA_ERRORS',
   LUDO_ROOM_FEE: 'LUDO_ROOM_FEE',
-  LUDO_SETTLEMENT: 'LUDO_SETTLEMENT'
+  LUDO_SETTLEMENT: 'LUDO_SETTLEMENT',
+  BATTLESHIP_MATCH_TAX: 'BATTLESHIP_MATCH_TAX'
 } as const
 
 export type TreasuryEntrySource = (typeof TreasuryEntrySource)[keyof typeof TreasuryEntrySource]
+
+
+export const BattleshipRoomStatus = {
+  WAITING: 'WAITING',
+  ACTIVE: 'ACTIVE',
+  FINISHED: 'FINISHED',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type BattleshipRoomStatus = (typeof BattleshipRoomStatus)[keyof typeof BattleshipRoomStatus]
 
 
 export const LudoRoomMode = {

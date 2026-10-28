@@ -105,6 +105,9 @@ export const ModelName = {
   TicTacToeRound: 'TicTacToeRound',
   TicTacToeSoloGame: 'TicTacToeSoloGame',
   TicTacToeSoloAction: 'TicTacToeSoloAction',
+  BattleshipRoom: 'BattleshipRoom',
+  BattleshipBoard: 'BattleshipBoard',
+  BattleshipShot: 'BattleshipShot',
   SudokuGame: 'SudokuGame',
   SudokuAction: 'SudokuAction',
   LudoRoom: 'LudoRoom',
@@ -884,6 +887,59 @@ export const TicTacToeSoloActionScalarFieldEnum = {
 } as const
 
 export type TicTacToeSoloActionScalarFieldEnum = (typeof TicTacToeSoloActionScalarFieldEnum)[keyof typeof TicTacToeSoloActionScalarFieldEnum]
+
+
+export const BattleshipRoomScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  creationKey: 'creationKey',
+  ownerId: 'ownerId',
+  guestId: 'guestId',
+  status: 'status',
+  wager: 'wager',
+  escrowBalance: 'escrowBalance',
+  currentTurnId: 'currentTurnId',
+  winnerId: 'winnerId',
+  loserId: 'loserId',
+  winnerPayout: 'winnerPayout',
+  taxAmount: 'taxAmount',
+  shotSequence: 'shotSequence',
+  createdAt: 'createdAt',
+  startedAt: 'startedAt',
+  finishedAt: 'finishedAt',
+  cancelledAt: 'cancelledAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BattleshipRoomScalarFieldEnum = (typeof BattleshipRoomScalarFieldEnum)[keyof typeof BattleshipRoomScalarFieldEnum]
+
+
+export const BattleshipBoardScalarFieldEnum = {
+  id: 'id',
+  roomId: 'roomId',
+  studentId: 'studentId',
+  ships: 'ships',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BattleshipBoardScalarFieldEnum = (typeof BattleshipBoardScalarFieldEnum)[keyof typeof BattleshipBoardScalarFieldEnum]
+
+
+export const BattleshipShotScalarFieldEnum = {
+  id: 'id',
+  roomId: 'roomId',
+  attackerId: 'attackerId',
+  defenderId: 'defenderId',
+  actionKey: 'actionKey',
+  sequence: 'sequence',
+  cell: 'cell',
+  hit: 'hit',
+  sunkShip: 'sunkShip',
+  createdAt: 'createdAt'
+} as const
+
+export type BattleshipShotScalarFieldEnum = (typeof BattleshipShotScalarFieldEnum)[keyof typeof BattleshipShotScalarFieldEnum]
 
 
 export const SudokuGameScalarFieldEnum = {

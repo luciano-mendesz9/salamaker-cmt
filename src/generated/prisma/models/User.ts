@@ -388,6 +388,14 @@ export type UserWhereInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockListRelationFilter
   createdXpGrantCodes?: Prisma.XpGrantCodeListRelationFilter
   xpGrantRedemptions?: Prisma.XpGrantRedemptionListRelationFilter
+  ownedBattleshipRooms?: Prisma.BattleshipRoomListRelationFilter
+  guestBattleshipRooms?: Prisma.BattleshipRoomListRelationFilter
+  battleshipTurns?: Prisma.BattleshipRoomListRelationFilter
+  wonBattleshipRooms?: Prisma.BattleshipRoomListRelationFilter
+  lostBattleshipRooms?: Prisma.BattleshipRoomListRelationFilter
+  battleshipBoards?: Prisma.BattleshipBoardListRelationFilter
+  battleshipShotsFired?: Prisma.BattleshipShotListRelationFilter
+  battleshipShotsReceived?: Prisma.BattleshipShotListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -469,6 +477,14 @@ export type UserOrderByWithRelationInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockOrderByRelationAggregateInput
   createdXpGrantCodes?: Prisma.XpGrantCodeOrderByRelationAggregateInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionOrderByRelationAggregateInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomOrderByRelationAggregateInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomOrderByRelationAggregateInput
+  battleshipTurns?: Prisma.BattleshipRoomOrderByRelationAggregateInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomOrderByRelationAggregateInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomOrderByRelationAggregateInput
+  battleshipBoards?: Prisma.BattleshipBoardOrderByRelationAggregateInput
+  battleshipShotsFired?: Prisma.BattleshipShotOrderByRelationAggregateInput
+  battleshipShotsReceived?: Prisma.BattleshipShotOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -553,6 +569,14 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   ludoBlocksReceived?: Prisma.LudoInvitationBlockListRelationFilter
   createdXpGrantCodes?: Prisma.XpGrantCodeListRelationFilter
   xpGrantRedemptions?: Prisma.XpGrantRedemptionListRelationFilter
+  ownedBattleshipRooms?: Prisma.BattleshipRoomListRelationFilter
+  guestBattleshipRooms?: Prisma.BattleshipRoomListRelationFilter
+  battleshipTurns?: Prisma.BattleshipRoomListRelationFilter
+  wonBattleshipRooms?: Prisma.BattleshipRoomListRelationFilter
+  lostBattleshipRooms?: Prisma.BattleshipRoomListRelationFilter
+  battleshipBoards?: Prisma.BattleshipBoardListRelationFilter
+  battleshipShotsFired?: Prisma.BattleshipShotListRelationFilter
+  battleshipShotsReceived?: Prisma.BattleshipShotListRelationFilter
 }, "id" | "accessCode">
 
 export type UserOrderByWithAggregationInput = {
@@ -684,6 +708,14 @@ export type UserCreateInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -765,6 +797,14 @@ export type UserUncheckedCreateInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUpdateInput = {
@@ -846,6 +886,14 @@ export type UserUpdateInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -927,6 +975,14 @@ export type UserUncheckedUpdateInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -1881,6 +1937,126 @@ export type UserUpdateOneRequiredWithoutTicTacToeSoloGamesNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutTicTacToeSoloGamesInput, Prisma.UserUpdateWithoutTicTacToeSoloGamesInput>, Prisma.UserUncheckedUpdateWithoutTicTacToeSoloGamesInput>
 }
 
+export type UserCreateNestedOneWithoutOwnedBattleshipRoomsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutOwnedBattleshipRoomsInput, Prisma.UserUncheckedCreateWithoutOwnedBattleshipRoomsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutOwnedBattleshipRoomsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutGuestBattleshipRoomsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutGuestBattleshipRoomsInput, Prisma.UserUncheckedCreateWithoutGuestBattleshipRoomsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutGuestBattleshipRoomsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutBattleshipTurnsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBattleshipTurnsInput, Prisma.UserUncheckedCreateWithoutBattleshipTurnsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBattleshipTurnsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutWonBattleshipRoomsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutWonBattleshipRoomsInput, Prisma.UserUncheckedCreateWithoutWonBattleshipRoomsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutWonBattleshipRoomsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutLostBattleshipRoomsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutLostBattleshipRoomsInput, Prisma.UserUncheckedCreateWithoutLostBattleshipRoomsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutLostBattleshipRoomsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutOwnedBattleshipRoomsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutOwnedBattleshipRoomsInput, Prisma.UserUncheckedCreateWithoutOwnedBattleshipRoomsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutOwnedBattleshipRoomsInput
+  upsert?: Prisma.UserUpsertWithoutOwnedBattleshipRoomsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutOwnedBattleshipRoomsInput, Prisma.UserUpdateWithoutOwnedBattleshipRoomsInput>, Prisma.UserUncheckedUpdateWithoutOwnedBattleshipRoomsInput>
+}
+
+export type UserUpdateOneWithoutGuestBattleshipRoomsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutGuestBattleshipRoomsInput, Prisma.UserUncheckedCreateWithoutGuestBattleshipRoomsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutGuestBattleshipRoomsInput
+  upsert?: Prisma.UserUpsertWithoutGuestBattleshipRoomsInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutGuestBattleshipRoomsInput, Prisma.UserUpdateWithoutGuestBattleshipRoomsInput>, Prisma.UserUncheckedUpdateWithoutGuestBattleshipRoomsInput>
+}
+
+export type UserUpdateOneWithoutBattleshipTurnsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBattleshipTurnsInput, Prisma.UserUncheckedCreateWithoutBattleshipTurnsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBattleshipTurnsInput
+  upsert?: Prisma.UserUpsertWithoutBattleshipTurnsInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutBattleshipTurnsInput, Prisma.UserUpdateWithoutBattleshipTurnsInput>, Prisma.UserUncheckedUpdateWithoutBattleshipTurnsInput>
+}
+
+export type UserUpdateOneWithoutWonBattleshipRoomsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutWonBattleshipRoomsInput, Prisma.UserUncheckedCreateWithoutWonBattleshipRoomsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutWonBattleshipRoomsInput
+  upsert?: Prisma.UserUpsertWithoutWonBattleshipRoomsInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutWonBattleshipRoomsInput, Prisma.UserUpdateWithoutWonBattleshipRoomsInput>, Prisma.UserUncheckedUpdateWithoutWonBattleshipRoomsInput>
+}
+
+export type UserUpdateOneWithoutLostBattleshipRoomsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutLostBattleshipRoomsInput, Prisma.UserUncheckedCreateWithoutLostBattleshipRoomsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutLostBattleshipRoomsInput
+  upsert?: Prisma.UserUpsertWithoutLostBattleshipRoomsInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutLostBattleshipRoomsInput, Prisma.UserUpdateWithoutLostBattleshipRoomsInput>, Prisma.UserUncheckedUpdateWithoutLostBattleshipRoomsInput>
+}
+
+export type UserCreateNestedOneWithoutBattleshipBoardsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBattleshipBoardsInput, Prisma.UserUncheckedCreateWithoutBattleshipBoardsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBattleshipBoardsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutBattleshipBoardsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBattleshipBoardsInput, Prisma.UserUncheckedCreateWithoutBattleshipBoardsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBattleshipBoardsInput
+  upsert?: Prisma.UserUpsertWithoutBattleshipBoardsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutBattleshipBoardsInput, Prisma.UserUpdateWithoutBattleshipBoardsInput>, Prisma.UserUncheckedUpdateWithoutBattleshipBoardsInput>
+}
+
+export type UserCreateNestedOneWithoutBattleshipShotsFiredInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBattleshipShotsFiredInput, Prisma.UserUncheckedCreateWithoutBattleshipShotsFiredInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBattleshipShotsFiredInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutBattleshipShotsReceivedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBattleshipShotsReceivedInput, Prisma.UserUncheckedCreateWithoutBattleshipShotsReceivedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBattleshipShotsReceivedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutBattleshipShotsFiredNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBattleshipShotsFiredInput, Prisma.UserUncheckedCreateWithoutBattleshipShotsFiredInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBattleshipShotsFiredInput
+  upsert?: Prisma.UserUpsertWithoutBattleshipShotsFiredInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutBattleshipShotsFiredInput, Prisma.UserUpdateWithoutBattleshipShotsFiredInput>, Prisma.UserUncheckedUpdateWithoutBattleshipShotsFiredInput>
+}
+
+export type UserUpdateOneRequiredWithoutBattleshipShotsReceivedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBattleshipShotsReceivedInput, Prisma.UserUncheckedCreateWithoutBattleshipShotsReceivedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBattleshipShotsReceivedInput
+  upsert?: Prisma.UserUpsertWithoutBattleshipShotsReceivedInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutBattleshipShotsReceivedInput, Prisma.UserUpdateWithoutBattleshipShotsReceivedInput>, Prisma.UserUncheckedUpdateWithoutBattleshipShotsReceivedInput>
+}
+
 export type UserCreateNestedOneWithoutSudokuGamesInput = {
   create?: Prisma.XOR<Prisma.UserCreateWithoutSudokuGamesInput, Prisma.UserUncheckedCreateWithoutSudokuGamesInput>
   connectOrCreate?: Prisma.UserCreateOrConnectWithoutSudokuGamesInput
@@ -2059,6 +2235,14 @@ export type UserCreateWithoutProfileAvatarPurchasesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutProfileAvatarPurchasesInput = {
@@ -2139,6 +2323,14 @@ export type UserUncheckedCreateWithoutProfileAvatarPurchasesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutProfileAvatarPurchasesInput = {
@@ -2235,6 +2427,14 @@ export type UserUpdateWithoutProfileAvatarPurchasesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutProfileAvatarPurchasesInput = {
@@ -2315,6 +2515,14 @@ export type UserUncheckedUpdateWithoutProfileAvatarPurchasesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutStudentThemePurchasesInput = {
@@ -2395,6 +2603,14 @@ export type UserCreateWithoutStudentThemePurchasesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutStudentThemePurchasesInput = {
@@ -2475,6 +2691,14 @@ export type UserUncheckedCreateWithoutStudentThemePurchasesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutStudentThemePurchasesInput = {
@@ -2571,6 +2795,14 @@ export type UserUpdateWithoutStudentThemePurchasesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStudentThemePurchasesInput = {
@@ -2651,6 +2883,14 @@ export type UserUncheckedUpdateWithoutStudentThemePurchasesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutDevCoinEntriesInput = {
@@ -2731,6 +2971,14 @@ export type UserCreateWithoutDevCoinEntriesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutDevCoinEntriesInput = {
@@ -2811,6 +3059,14 @@ export type UserUncheckedCreateWithoutDevCoinEntriesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutDevCoinEntriesInput = {
@@ -2896,6 +3152,14 @@ export type UserCreateWithoutAuthoredDevCoinEntriesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput = {
@@ -2976,6 +3240,14 @@ export type UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredDevCoinEntriesInput = {
@@ -3072,6 +3344,14 @@ export type UserUpdateWithoutDevCoinEntriesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutDevCoinEntriesInput = {
@@ -3152,6 +3432,14 @@ export type UserUncheckedUpdateWithoutDevCoinEntriesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUpsertWithoutAuthoredDevCoinEntriesInput = {
@@ -3243,6 +3531,14 @@ export type UserUpdateWithoutAuthoredDevCoinEntriesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput = {
@@ -3323,6 +3619,14 @@ export type UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutDevCoinTransfersSentInput = {
@@ -3403,6 +3707,14 @@ export type UserCreateWithoutDevCoinTransfersSentInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutDevCoinTransfersSentInput = {
@@ -3483,6 +3795,14 @@ export type UserUncheckedCreateWithoutDevCoinTransfersSentInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutDevCoinTransfersSentInput = {
@@ -3568,6 +3888,14 @@ export type UserCreateWithoutDevCoinTransfersReceivedInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutDevCoinTransfersReceivedInput = {
@@ -3648,6 +3976,14 @@ export type UserUncheckedCreateWithoutDevCoinTransfersReceivedInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutDevCoinTransfersReceivedInput = {
@@ -3744,6 +4080,14 @@ export type UserUpdateWithoutDevCoinTransfersSentInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutDevCoinTransfersSentInput = {
@@ -3824,6 +4168,14 @@ export type UserUncheckedUpdateWithoutDevCoinTransfersSentInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUpsertWithoutDevCoinTransfersReceivedInput = {
@@ -3915,6 +4267,14 @@ export type UserUpdateWithoutDevCoinTransfersReceivedInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutDevCoinTransfersReceivedInput = {
@@ -3995,6 +4355,14 @@ export type UserUncheckedUpdateWithoutDevCoinTransfersReceivedInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutStickerCopiesInput = {
@@ -4075,6 +4443,14 @@ export type UserCreateWithoutStickerCopiesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutStickerCopiesInput = {
@@ -4155,6 +4531,14 @@ export type UserUncheckedCreateWithoutStickerCopiesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutStickerCopiesInput = {
@@ -4251,6 +4635,14 @@ export type UserUpdateWithoutStickerCopiesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerCopiesInput = {
@@ -4331,6 +4723,14 @@ export type UserUncheckedUpdateWithoutStickerCopiesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutStickerPackPurchasesInput = {
@@ -4411,6 +4811,14 @@ export type UserCreateWithoutStickerPackPurchasesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutStickerPackPurchasesInput = {
@@ -4491,6 +4899,14 @@ export type UserUncheckedCreateWithoutStickerPackPurchasesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutStickerPackPurchasesInput = {
@@ -4587,6 +5003,14 @@ export type UserUpdateWithoutStickerPackPurchasesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerPackPurchasesInput = {
@@ -4667,6 +5091,14 @@ export type UserUncheckedUpdateWithoutStickerPackPurchasesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutStickerListingsInput = {
@@ -4747,6 +5179,14 @@ export type UserCreateWithoutStickerListingsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutStickerListingsInput = {
@@ -4827,6 +5267,14 @@ export type UserUncheckedCreateWithoutStickerListingsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutStickerListingsInput = {
@@ -4912,6 +5360,14 @@ export type UserCreateWithoutStickerPurchasesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutStickerPurchasesInput = {
@@ -4992,6 +5448,14 @@ export type UserUncheckedCreateWithoutStickerPurchasesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutStickerPurchasesInput = {
@@ -5088,6 +5552,14 @@ export type UserUpdateWithoutStickerListingsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerListingsInput = {
@@ -5168,6 +5640,14 @@ export type UserUncheckedUpdateWithoutStickerListingsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUpsertWithoutStickerPurchasesInput = {
@@ -5259,6 +5739,14 @@ export type UserUpdateWithoutStickerPurchasesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerPurchasesInput = {
@@ -5339,6 +5827,14 @@ export type UserUncheckedUpdateWithoutStickerPurchasesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutStickerTradesSoldInput = {
@@ -5419,6 +5915,14 @@ export type UserCreateWithoutStickerTradesSoldInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutStickerTradesSoldInput = {
@@ -5499,6 +6003,14 @@ export type UserUncheckedCreateWithoutStickerTradesSoldInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutStickerTradesSoldInput = {
@@ -5584,6 +6096,14 @@ export type UserCreateWithoutStickerTradesBoughtInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutStickerTradesBoughtInput = {
@@ -5664,6 +6184,14 @@ export type UserUncheckedCreateWithoutStickerTradesBoughtInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutStickerTradesBoughtInput = {
@@ -5760,6 +6288,14 @@ export type UserUpdateWithoutStickerTradesSoldInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerTradesSoldInput = {
@@ -5840,6 +6376,14 @@ export type UserUncheckedUpdateWithoutStickerTradesSoldInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUpsertWithoutStickerTradesBoughtInput = {
@@ -5931,6 +6475,14 @@ export type UserUpdateWithoutStickerTradesBoughtInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerTradesBoughtInput = {
@@ -6011,6 +6563,14 @@ export type UserUncheckedUpdateWithoutStickerTradesBoughtInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutStickerDonationsSentInput = {
@@ -6091,6 +6651,14 @@ export type UserCreateWithoutStickerDonationsSentInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutStickerDonationsSentInput = {
@@ -6171,6 +6739,14 @@ export type UserUncheckedCreateWithoutStickerDonationsSentInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutStickerDonationsSentInput = {
@@ -6256,6 +6832,14 @@ export type UserCreateWithoutStickerDonationsReceivedInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutStickerDonationsReceivedInput = {
@@ -6336,6 +6920,14 @@ export type UserUncheckedCreateWithoutStickerDonationsReceivedInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutStickerDonationsReceivedInput = {
@@ -6432,6 +7024,14 @@ export type UserUpdateWithoutStickerDonationsSentInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerDonationsSentInput = {
@@ -6512,6 +7112,14 @@ export type UserUncheckedUpdateWithoutStickerDonationsSentInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUpsertWithoutStickerDonationsReceivedInput = {
@@ -6603,6 +7211,14 @@ export type UserUpdateWithoutStickerDonationsReceivedInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerDonationsReceivedInput = {
@@ -6683,6 +7299,14 @@ export type UserUncheckedUpdateWithoutStickerDonationsReceivedInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutCollectionPurchaseRequestsInput = {
@@ -6763,6 +7387,14 @@ export type UserCreateWithoutCollectionPurchaseRequestsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutCollectionPurchaseRequestsInput = {
@@ -6843,6 +7475,14 @@ export type UserUncheckedCreateWithoutCollectionPurchaseRequestsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutCollectionPurchaseRequestsInput = {
@@ -6939,6 +7579,14 @@ export type UserUpdateWithoutCollectionPurchaseRequestsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCollectionPurchaseRequestsInput = {
@@ -7019,6 +7667,14 @@ export type UserUncheckedUpdateWithoutCollectionPurchaseRequestsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutCollectionOffersInput = {
@@ -7099,6 +7755,14 @@ export type UserCreateWithoutCollectionOffersInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutCollectionOffersInput = {
@@ -7179,6 +7843,14 @@ export type UserUncheckedCreateWithoutCollectionOffersInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutCollectionOffersInput = {
@@ -7275,6 +7947,14 @@ export type UserUpdateWithoutCollectionOffersInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCollectionOffersInput = {
@@ -7355,6 +8035,14 @@ export type UserUncheckedUpdateWithoutCollectionOffersInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutCollectionPurchasesAsTeacherInput = {
@@ -7435,6 +8123,14 @@ export type UserCreateWithoutCollectionPurchasesAsTeacherInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutCollectionPurchasesAsTeacherInput = {
@@ -7515,6 +8211,14 @@ export type UserUncheckedCreateWithoutCollectionPurchasesAsTeacherInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutCollectionPurchasesAsTeacherInput = {
@@ -7600,6 +8304,14 @@ export type UserCreateWithoutCollectionPurchasesAsStudentInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutCollectionPurchasesAsStudentInput = {
@@ -7680,6 +8392,14 @@ export type UserUncheckedCreateWithoutCollectionPurchasesAsStudentInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutCollectionPurchasesAsStudentInput = {
@@ -7776,6 +8496,14 @@ export type UserUpdateWithoutCollectionPurchasesAsTeacherInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCollectionPurchasesAsTeacherInput = {
@@ -7856,6 +8584,14 @@ export type UserUncheckedUpdateWithoutCollectionPurchasesAsTeacherInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUpsertWithoutCollectionPurchasesAsStudentInput = {
@@ -7947,6 +8683,14 @@ export type UserUpdateWithoutCollectionPurchasesAsStudentInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCollectionPurchasesAsStudentInput = {
@@ -8027,6 +8771,14 @@ export type UserUncheckedUpdateWithoutCollectionPurchasesAsStudentInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutPatentProgressInput = {
@@ -8107,6 +8859,14 @@ export type UserCreateWithoutPatentProgressInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutPatentProgressInput = {
@@ -8187,6 +8947,14 @@ export type UserUncheckedCreateWithoutPatentProgressInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutPatentProgressInput = {
@@ -8283,6 +9051,14 @@ export type UserUpdateWithoutPatentProgressInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPatentProgressInput = {
@@ -8363,6 +9139,14 @@ export type UserUncheckedUpdateWithoutPatentProgressInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutPatentRewardClaimsInput = {
@@ -8443,6 +9227,14 @@ export type UserCreateWithoutPatentRewardClaimsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutPatentRewardClaimsInput = {
@@ -8523,6 +9315,14 @@ export type UserUncheckedCreateWithoutPatentRewardClaimsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutPatentRewardClaimsInput = {
@@ -8619,6 +9419,14 @@ export type UserUpdateWithoutPatentRewardClaimsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPatentRewardClaimsInput = {
@@ -8699,6 +9507,14 @@ export type UserUncheckedUpdateWithoutPatentRewardClaimsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutTreasuryEntriesAuthoredInput = {
@@ -8779,6 +9595,14 @@ export type UserCreateWithoutTreasuryEntriesAuthoredInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutTreasuryEntriesAuthoredInput = {
@@ -8859,6 +9683,14 @@ export type UserUncheckedCreateWithoutTreasuryEntriesAuthoredInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutTreasuryEntriesAuthoredInput = {
@@ -8955,6 +9787,14 @@ export type UserUpdateWithoutTreasuryEntriesAuthoredInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutTreasuryEntriesAuthoredInput = {
@@ -9035,6 +9875,14 @@ export type UserUncheckedUpdateWithoutTreasuryEntriesAuthoredInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutLessonsInput = {
@@ -9115,6 +9963,14 @@ export type UserCreateWithoutLessonsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutLessonsInput = {
@@ -9195,6 +10051,14 @@ export type UserUncheckedCreateWithoutLessonsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutLessonsInput = {
@@ -9291,6 +10155,14 @@ export type UserUpdateWithoutLessonsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLessonsInput = {
@@ -9371,6 +10243,14 @@ export type UserUncheckedUpdateWithoutLessonsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutLessonParticipationsInput = {
@@ -9451,6 +10331,14 @@ export type UserCreateWithoutLessonParticipationsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutLessonParticipationsInput = {
@@ -9531,6 +10419,14 @@ export type UserUncheckedCreateWithoutLessonParticipationsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutLessonParticipationsInput = {
@@ -9627,6 +10523,14 @@ export type UserUpdateWithoutLessonParticipationsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLessonParticipationsInput = {
@@ -9707,6 +10611,14 @@ export type UserUncheckedUpdateWithoutLessonParticipationsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutAttendancesInput = {
@@ -9787,6 +10699,14 @@ export type UserCreateWithoutAttendancesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutAttendancesInput = {
@@ -9867,6 +10787,14 @@ export type UserUncheckedCreateWithoutAttendancesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutAttendancesInput = {
@@ -9963,6 +10891,14 @@ export type UserUpdateWithoutAttendancesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAttendancesInput = {
@@ -10043,6 +10979,14 @@ export type UserUncheckedUpdateWithoutAttendancesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutXpEntriesInput = {
@@ -10123,6 +11067,14 @@ export type UserCreateWithoutXpEntriesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutXpEntriesInput = {
@@ -10203,6 +11155,14 @@ export type UserUncheckedCreateWithoutXpEntriesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutXpEntriesInput = {
@@ -10288,6 +11248,14 @@ export type UserCreateWithoutAuthoredXpInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredXpInput = {
@@ -10368,6 +11336,14 @@ export type UserUncheckedCreateWithoutAuthoredXpInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredXpInput = {
@@ -10464,6 +11440,14 @@ export type UserUpdateWithoutXpEntriesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutXpEntriesInput = {
@@ -10544,6 +11528,14 @@ export type UserUncheckedUpdateWithoutXpEntriesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUpsertWithoutAuthoredXpInput = {
@@ -10635,6 +11627,14 @@ export type UserUpdateWithoutAuthoredXpInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredXpInput = {
@@ -10715,6 +11715,14 @@ export type UserUncheckedUpdateWithoutAuthoredXpInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutCreatedXpGrantCodesInput = {
@@ -10795,6 +11803,14 @@ export type UserCreateWithoutCreatedXpGrantCodesInput = {
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutCreatedXpGrantCodesInput = {
@@ -10875,6 +11891,14 @@ export type UserUncheckedCreateWithoutCreatedXpGrantCodesInput = {
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutCreatedXpGrantCodesInput = {
@@ -10971,6 +11995,14 @@ export type UserUpdateWithoutCreatedXpGrantCodesInput = {
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCreatedXpGrantCodesInput = {
@@ -11051,6 +12083,14 @@ export type UserUncheckedUpdateWithoutCreatedXpGrantCodesInput = {
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutXpGrantRedemptionsInput = {
@@ -11131,6 +12171,14 @@ export type UserCreateWithoutXpGrantRedemptionsInput = {
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutXpGrantRedemptionsInput = {
@@ -11211,6 +12259,14 @@ export type UserUncheckedCreateWithoutXpGrantRedemptionsInput = {
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutXpGrantRedemptionsInput = {
@@ -11307,6 +12363,14 @@ export type UserUpdateWithoutXpGrantRedemptionsInput = {
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutXpGrantRedemptionsInput = {
@@ -11387,6 +12451,14 @@ export type UserUncheckedUpdateWithoutXpGrantRedemptionsInput = {
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutBehaviorsInput = {
@@ -11467,6 +12539,14 @@ export type UserCreateWithoutBehaviorsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutBehaviorsInput = {
@@ -11547,6 +12627,14 @@ export type UserUncheckedCreateWithoutBehaviorsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutBehaviorsInput = {
@@ -11632,6 +12720,14 @@ export type UserCreateWithoutRatedBehaviorsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutRatedBehaviorsInput = {
@@ -11712,6 +12808,14 @@ export type UserUncheckedCreateWithoutRatedBehaviorsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutRatedBehaviorsInput = {
@@ -11808,6 +12912,14 @@ export type UserUpdateWithoutBehaviorsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutBehaviorsInput = {
@@ -11888,6 +13000,14 @@ export type UserUncheckedUpdateWithoutBehaviorsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUpsertWithoutRatedBehaviorsInput = {
@@ -11979,6 +13099,14 @@ export type UserUpdateWithoutRatedBehaviorsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutRatedBehaviorsInput = {
@@ -12059,6 +13187,14 @@ export type UserUncheckedUpdateWithoutRatedBehaviorsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutCleanupsInput = {
@@ -12139,6 +13275,14 @@ export type UserCreateWithoutCleanupsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutCleanupsInput = {
@@ -12219,6 +13363,14 @@ export type UserUncheckedCreateWithoutCleanupsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutCleanupsInput = {
@@ -12304,6 +13456,14 @@ export type UserCreateWithoutConfirmedCleanupsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutConfirmedCleanupsInput = {
@@ -12384,6 +13544,14 @@ export type UserUncheckedCreateWithoutConfirmedCleanupsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutConfirmedCleanupsInput = {
@@ -12480,6 +13648,14 @@ export type UserUpdateWithoutCleanupsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCleanupsInput = {
@@ -12560,6 +13736,14 @@ export type UserUncheckedUpdateWithoutCleanupsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUpsertWithoutConfirmedCleanupsInput = {
@@ -12651,6 +13835,14 @@ export type UserUpdateWithoutConfirmedCleanupsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutConfirmedCleanupsInput = {
@@ -12731,6 +13923,14 @@ export type UserUncheckedUpdateWithoutConfirmedCleanupsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutAuthoredActivitiesInput = {
@@ -12811,6 +14011,14 @@ export type UserCreateWithoutAuthoredActivitiesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredActivitiesInput = {
@@ -12891,6 +14099,14 @@ export type UserUncheckedCreateWithoutAuthoredActivitiesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredActivitiesInput = {
@@ -12987,6 +14203,14 @@ export type UserUpdateWithoutAuthoredActivitiesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredActivitiesInput = {
@@ -13067,6 +14291,14 @@ export type UserUncheckedUpdateWithoutAuthoredActivitiesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutAuthoredNotificationsInput = {
@@ -13147,6 +14379,14 @@ export type UserCreateWithoutAuthoredNotificationsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredNotificationsInput = {
@@ -13227,6 +14467,14 @@ export type UserUncheckedCreateWithoutAuthoredNotificationsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredNotificationsInput = {
@@ -13323,6 +14571,14 @@ export type UserUpdateWithoutAuthoredNotificationsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredNotificationsInput = {
@@ -13403,6 +14659,14 @@ export type UserUncheckedUpdateWithoutAuthoredNotificationsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutNotificationReceiptsInput = {
@@ -13483,6 +14747,14 @@ export type UserCreateWithoutNotificationReceiptsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutNotificationReceiptsInput = {
@@ -13563,6 +14835,14 @@ export type UserUncheckedCreateWithoutNotificationReceiptsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutNotificationReceiptsInput = {
@@ -13659,6 +14939,14 @@ export type UserUpdateWithoutNotificationReceiptsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutNotificationReceiptsInput = {
@@ -13739,6 +15027,14 @@ export type UserUncheckedUpdateWithoutNotificationReceiptsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutActivityRecipientsInput = {
@@ -13819,6 +15115,14 @@ export type UserCreateWithoutActivityRecipientsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutActivityRecipientsInput = {
@@ -13899,6 +15203,14 @@ export type UserUncheckedCreateWithoutActivityRecipientsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutActivityRecipientsInput = {
@@ -13995,6 +15307,14 @@ export type UserUpdateWithoutActivityRecipientsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityRecipientsInput = {
@@ -14075,6 +15395,14 @@ export type UserUncheckedUpdateWithoutActivityRecipientsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutActivitySubmissionsInput = {
@@ -14155,6 +15483,14 @@ export type UserCreateWithoutActivitySubmissionsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutActivitySubmissionsInput = {
@@ -14235,6 +15571,14 @@ export type UserUncheckedCreateWithoutActivitySubmissionsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutActivitySubmissionsInput = {
@@ -14331,6 +15675,14 @@ export type UserUpdateWithoutActivitySubmissionsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivitySubmissionsInput = {
@@ -14411,6 +15763,14 @@ export type UserUncheckedUpdateWithoutActivitySubmissionsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutActivityAnswersInput = {
@@ -14491,6 +15851,14 @@ export type UserCreateWithoutActivityAnswersInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutActivityAnswersInput = {
@@ -14571,6 +15939,14 @@ export type UserUncheckedCreateWithoutActivityAnswersInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutActivityAnswersInput = {
@@ -14667,6 +16043,14 @@ export type UserUpdateWithoutActivityAnswersInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityAnswersInput = {
@@ -14747,6 +16131,14 @@ export type UserUncheckedUpdateWithoutActivityAnswersInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutActivityTeamMembershipsInput = {
@@ -14827,6 +16219,14 @@ export type UserCreateWithoutActivityTeamMembershipsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutActivityTeamMembershipsInput = {
@@ -14907,6 +16307,14 @@ export type UserUncheckedCreateWithoutActivityTeamMembershipsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutActivityTeamMembershipsInput = {
@@ -15003,6 +16411,14 @@ export type UserUpdateWithoutActivityTeamMembershipsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityTeamMembershipsInput = {
@@ -15083,6 +16499,14 @@ export type UserUncheckedUpdateWithoutActivityTeamMembershipsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutActivityAwardsInput = {
@@ -15163,6 +16587,14 @@ export type UserCreateWithoutActivityAwardsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutActivityAwardsInput = {
@@ -15243,6 +16675,14 @@ export type UserUncheckedCreateWithoutActivityAwardsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutActivityAwardsInput = {
@@ -15339,6 +16779,14 @@ export type UserUpdateWithoutActivityAwardsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityAwardsInput = {
@@ -15419,6 +16867,14 @@ export type UserUncheckedUpdateWithoutActivityAwardsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutAuditActionsInput = {
@@ -15499,6 +16955,14 @@ export type UserCreateWithoutAuditActionsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutAuditActionsInput = {
@@ -15579,6 +17043,14 @@ export type UserUncheckedCreateWithoutAuditActionsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutAuditActionsInput = {
@@ -15664,6 +17136,14 @@ export type UserCreateWithoutAuditTargetsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutAuditTargetsInput = {
@@ -15744,6 +17224,14 @@ export type UserUncheckedCreateWithoutAuditTargetsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutAuditTargetsInput = {
@@ -15840,6 +17328,14 @@ export type UserUpdateWithoutAuditActionsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuditActionsInput = {
@@ -15920,6 +17416,14 @@ export type UserUncheckedUpdateWithoutAuditActionsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUpsertWithoutAuditTargetsInput = {
@@ -16011,6 +17515,14 @@ export type UserUpdateWithoutAuditTargetsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuditTargetsInput = {
@@ -16091,6 +17603,14 @@ export type UserUncheckedUpdateWithoutAuditTargetsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutOwnedPongRoomsInput = {
@@ -16171,6 +17691,14 @@ export type UserCreateWithoutOwnedPongRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutOwnedPongRoomsInput = {
@@ -16251,6 +17779,14 @@ export type UserUncheckedCreateWithoutOwnedPongRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutOwnedPongRoomsInput = {
@@ -16336,6 +17872,14 @@ export type UserCreateWithoutWonPongRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutWonPongRoomsInput = {
@@ -16416,6 +17960,14 @@ export type UserUncheckedCreateWithoutWonPongRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutWonPongRoomsInput = {
@@ -16501,6 +18053,14 @@ export type UserCreateWithoutLostPongRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutLostPongRoomsInput = {
@@ -16581,6 +18141,14 @@ export type UserUncheckedCreateWithoutLostPongRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutLostPongRoomsInput = {
@@ -16677,6 +18245,14 @@ export type UserUpdateWithoutOwnedPongRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutOwnedPongRoomsInput = {
@@ -16757,6 +18333,14 @@ export type UserUncheckedUpdateWithoutOwnedPongRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUpsertWithoutWonPongRoomsInput = {
@@ -16848,6 +18432,14 @@ export type UserUpdateWithoutWonPongRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutWonPongRoomsInput = {
@@ -16928,6 +18520,14 @@ export type UserUncheckedUpdateWithoutWonPongRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUpsertWithoutLostPongRoomsInput = {
@@ -17019,6 +18619,14 @@ export type UserUpdateWithoutLostPongRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLostPongRoomsInput = {
@@ -17099,6 +18707,14 @@ export type UserUncheckedUpdateWithoutLostPongRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutPongPlayersInput = {
@@ -17179,6 +18795,14 @@ export type UserCreateWithoutPongPlayersInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutPongPlayersInput = {
@@ -17259,6 +18883,14 @@ export type UserUncheckedCreateWithoutPongPlayersInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutPongPlayersInput = {
@@ -17355,6 +18987,14 @@ export type UserUpdateWithoutPongPlayersInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPongPlayersInput = {
@@ -17435,6 +19075,14 @@ export type UserUncheckedUpdateWithoutPongPlayersInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutPongJoinRequestsInput = {
@@ -17515,6 +19163,14 @@ export type UserCreateWithoutPongJoinRequestsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutPongJoinRequestsInput = {
@@ -17595,6 +19251,14 @@ export type UserUncheckedCreateWithoutPongJoinRequestsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutPongJoinRequestsInput = {
@@ -17691,6 +19355,14 @@ export type UserUpdateWithoutPongJoinRequestsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPongJoinRequestsInput = {
@@ -17771,6 +19443,14 @@ export type UserUncheckedUpdateWithoutPongJoinRequestsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutPongPointsInput = {
@@ -17851,6 +19531,14 @@ export type UserCreateWithoutPongPointsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutPongPointsInput = {
@@ -17931,6 +19619,14 @@ export type UserUncheckedCreateWithoutPongPointsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutPongPointsInput = {
@@ -18027,6 +19723,14 @@ export type UserUpdateWithoutPongPointsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPongPointsInput = {
@@ -18107,6 +19811,14 @@ export type UserUncheckedUpdateWithoutPongPointsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutOwnedTicTacToeRoomsInput = {
@@ -18187,6 +19899,14 @@ export type UserCreateWithoutOwnedTicTacToeRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutOwnedTicTacToeRoomsInput = {
@@ -18267,6 +19987,14 @@ export type UserUncheckedCreateWithoutOwnedTicTacToeRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutOwnedTicTacToeRoomsInput = {
@@ -18352,6 +20080,14 @@ export type UserCreateWithoutGuestTicTacToeRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutGuestTicTacToeRoomsInput = {
@@ -18432,6 +20168,14 @@ export type UserUncheckedCreateWithoutGuestTicTacToeRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutGuestTicTacToeRoomsInput = {
@@ -18517,6 +20261,14 @@ export type UserCreateWithoutWonTicTacToeRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutWonTicTacToeRoomsInput = {
@@ -18597,6 +20349,14 @@ export type UserUncheckedCreateWithoutWonTicTacToeRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutWonTicTacToeRoomsInput = {
@@ -18693,6 +20453,14 @@ export type UserUpdateWithoutOwnedTicTacToeRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutOwnedTicTacToeRoomsInput = {
@@ -18773,6 +20541,14 @@ export type UserUncheckedUpdateWithoutOwnedTicTacToeRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUpsertWithoutGuestTicTacToeRoomsInput = {
@@ -18864,6 +20640,14 @@ export type UserUpdateWithoutGuestTicTacToeRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutGuestTicTacToeRoomsInput = {
@@ -18944,6 +20728,14 @@ export type UserUncheckedUpdateWithoutGuestTicTacToeRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUpsertWithoutWonTicTacToeRoomsInput = {
@@ -19035,6 +20827,14 @@ export type UserUpdateWithoutWonTicTacToeRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutWonTicTacToeRoomsInput = {
@@ -19115,6 +20915,14 @@ export type UserUncheckedUpdateWithoutWonTicTacToeRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutWonTicTacToeRoundsInput = {
@@ -19195,6 +21003,14 @@ export type UserCreateWithoutWonTicTacToeRoundsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutWonTicTacToeRoundsInput = {
@@ -19275,6 +21091,14 @@ export type UserUncheckedCreateWithoutWonTicTacToeRoundsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutWonTicTacToeRoundsInput = {
@@ -19371,6 +21195,14 @@ export type UserUpdateWithoutWonTicTacToeRoundsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutWonTicTacToeRoundsInput = {
@@ -19451,6 +21283,14 @@ export type UserUncheckedUpdateWithoutWonTicTacToeRoundsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutTicTacToeSoloGamesInput = {
@@ -19531,6 +21371,14 @@ export type UserCreateWithoutTicTacToeSoloGamesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutTicTacToeSoloGamesInput = {
@@ -19611,6 +21459,14 @@ export type UserUncheckedCreateWithoutTicTacToeSoloGamesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutTicTacToeSoloGamesInput = {
@@ -19707,6 +21563,14 @@ export type UserUpdateWithoutTicTacToeSoloGamesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutTicTacToeSoloGamesInput = {
@@ -19787,6 +21651,2958 @@ export type UserUncheckedUpdateWithoutTicTacToeSoloGamesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
+}
+
+export type UserCreateWithoutOwnedBattleshipRoomsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
+}
+
+export type UserUncheckedCreateWithoutOwnedBattleshipRoomsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
+}
+
+export type UserCreateOrConnectWithoutOwnedBattleshipRoomsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutOwnedBattleshipRoomsInput, Prisma.UserUncheckedCreateWithoutOwnedBattleshipRoomsInput>
+}
+
+export type UserCreateWithoutGuestBattleshipRoomsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
+}
+
+export type UserUncheckedCreateWithoutGuestBattleshipRoomsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
+}
+
+export type UserCreateOrConnectWithoutGuestBattleshipRoomsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutGuestBattleshipRoomsInput, Prisma.UserUncheckedCreateWithoutGuestBattleshipRoomsInput>
+}
+
+export type UserCreateWithoutBattleshipTurnsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
+}
+
+export type UserUncheckedCreateWithoutBattleshipTurnsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
+}
+
+export type UserCreateOrConnectWithoutBattleshipTurnsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutBattleshipTurnsInput, Prisma.UserUncheckedCreateWithoutBattleshipTurnsInput>
+}
+
+export type UserCreateWithoutWonBattleshipRoomsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
+}
+
+export type UserUncheckedCreateWithoutWonBattleshipRoomsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
+}
+
+export type UserCreateOrConnectWithoutWonBattleshipRoomsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutWonBattleshipRoomsInput, Prisma.UserUncheckedCreateWithoutWonBattleshipRoomsInput>
+}
+
+export type UserCreateWithoutLostBattleshipRoomsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
+}
+
+export type UserUncheckedCreateWithoutLostBattleshipRoomsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
+}
+
+export type UserCreateOrConnectWithoutLostBattleshipRoomsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutLostBattleshipRoomsInput, Prisma.UserUncheckedCreateWithoutLostBattleshipRoomsInput>
+}
+
+export type UserUpsertWithoutOwnedBattleshipRoomsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutOwnedBattleshipRoomsInput, Prisma.UserUncheckedUpdateWithoutOwnedBattleshipRoomsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutOwnedBattleshipRoomsInput, Prisma.UserUncheckedCreateWithoutOwnedBattleshipRoomsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutOwnedBattleshipRoomsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutOwnedBattleshipRoomsInput, Prisma.UserUncheckedUpdateWithoutOwnedBattleshipRoomsInput>
+}
+
+export type UserUpdateWithoutOwnedBattleshipRoomsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
+}
+
+export type UserUncheckedUpdateWithoutOwnedBattleshipRoomsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
+}
+
+export type UserUpsertWithoutGuestBattleshipRoomsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutGuestBattleshipRoomsInput, Prisma.UserUncheckedUpdateWithoutGuestBattleshipRoomsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutGuestBattleshipRoomsInput, Prisma.UserUncheckedCreateWithoutGuestBattleshipRoomsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutGuestBattleshipRoomsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutGuestBattleshipRoomsInput, Prisma.UserUncheckedUpdateWithoutGuestBattleshipRoomsInput>
+}
+
+export type UserUpdateWithoutGuestBattleshipRoomsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
+}
+
+export type UserUncheckedUpdateWithoutGuestBattleshipRoomsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
+}
+
+export type UserUpsertWithoutBattleshipTurnsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutBattleshipTurnsInput, Prisma.UserUncheckedUpdateWithoutBattleshipTurnsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutBattleshipTurnsInput, Prisma.UserUncheckedCreateWithoutBattleshipTurnsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutBattleshipTurnsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutBattleshipTurnsInput, Prisma.UserUncheckedUpdateWithoutBattleshipTurnsInput>
+}
+
+export type UserUpdateWithoutBattleshipTurnsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
+}
+
+export type UserUncheckedUpdateWithoutBattleshipTurnsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
+}
+
+export type UserUpsertWithoutWonBattleshipRoomsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutWonBattleshipRoomsInput, Prisma.UserUncheckedUpdateWithoutWonBattleshipRoomsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutWonBattleshipRoomsInput, Prisma.UserUncheckedCreateWithoutWonBattleshipRoomsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutWonBattleshipRoomsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutWonBattleshipRoomsInput, Prisma.UserUncheckedUpdateWithoutWonBattleshipRoomsInput>
+}
+
+export type UserUpdateWithoutWonBattleshipRoomsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
+}
+
+export type UserUncheckedUpdateWithoutWonBattleshipRoomsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
+}
+
+export type UserUpsertWithoutLostBattleshipRoomsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutLostBattleshipRoomsInput, Prisma.UserUncheckedUpdateWithoutLostBattleshipRoomsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutLostBattleshipRoomsInput, Prisma.UserUncheckedCreateWithoutLostBattleshipRoomsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutLostBattleshipRoomsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutLostBattleshipRoomsInput, Prisma.UserUncheckedUpdateWithoutLostBattleshipRoomsInput>
+}
+
+export type UserUpdateWithoutLostBattleshipRoomsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
+}
+
+export type UserUncheckedUpdateWithoutLostBattleshipRoomsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
+}
+
+export type UserCreateWithoutBattleshipBoardsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
+}
+
+export type UserUncheckedCreateWithoutBattleshipBoardsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
+}
+
+export type UserCreateOrConnectWithoutBattleshipBoardsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutBattleshipBoardsInput, Prisma.UserUncheckedCreateWithoutBattleshipBoardsInput>
+}
+
+export type UserUpsertWithoutBattleshipBoardsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutBattleshipBoardsInput, Prisma.UserUncheckedUpdateWithoutBattleshipBoardsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutBattleshipBoardsInput, Prisma.UserUncheckedCreateWithoutBattleshipBoardsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutBattleshipBoardsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutBattleshipBoardsInput, Prisma.UserUncheckedUpdateWithoutBattleshipBoardsInput>
+}
+
+export type UserUpdateWithoutBattleshipBoardsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
+}
+
+export type UserUncheckedUpdateWithoutBattleshipBoardsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
+}
+
+export type UserCreateWithoutBattleshipShotsFiredInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
+}
+
+export type UserUncheckedCreateWithoutBattleshipShotsFiredInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
+}
+
+export type UserCreateOrConnectWithoutBattleshipShotsFiredInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutBattleshipShotsFiredInput, Prisma.UserUncheckedCreateWithoutBattleshipShotsFiredInput>
+}
+
+export type UserCreateWithoutBattleshipShotsReceivedInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+}
+
+export type UserUncheckedCreateWithoutBattleshipShotsReceivedInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+}
+
+export type UserCreateOrConnectWithoutBattleshipShotsReceivedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutBattleshipShotsReceivedInput, Prisma.UserUncheckedCreateWithoutBattleshipShotsReceivedInput>
+}
+
+export type UserUpsertWithoutBattleshipShotsFiredInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutBattleshipShotsFiredInput, Prisma.UserUncheckedUpdateWithoutBattleshipShotsFiredInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutBattleshipShotsFiredInput, Prisma.UserUncheckedCreateWithoutBattleshipShotsFiredInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutBattleshipShotsFiredInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutBattleshipShotsFiredInput, Prisma.UserUncheckedUpdateWithoutBattleshipShotsFiredInput>
+}
+
+export type UserUpdateWithoutBattleshipShotsFiredInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
+}
+
+export type UserUncheckedUpdateWithoutBattleshipShotsFiredInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
+}
+
+export type UserUpsertWithoutBattleshipShotsReceivedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutBattleshipShotsReceivedInput, Prisma.UserUncheckedUpdateWithoutBattleshipShotsReceivedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutBattleshipShotsReceivedInput, Prisma.UserUncheckedCreateWithoutBattleshipShotsReceivedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutBattleshipShotsReceivedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutBattleshipShotsReceivedInput, Prisma.UserUncheckedUpdateWithoutBattleshipShotsReceivedInput>
+}
+
+export type UserUpdateWithoutBattleshipShotsReceivedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+}
+
+export type UserUncheckedUpdateWithoutBattleshipShotsReceivedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
 }
 
 export type UserCreateWithoutSudokuGamesInput = {
@@ -19867,6 +24683,14 @@ export type UserCreateWithoutSudokuGamesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutSudokuGamesInput = {
@@ -19947,6 +24771,14 @@ export type UserUncheckedCreateWithoutSudokuGamesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutSudokuGamesInput = {
@@ -20043,6 +24875,14 @@ export type UserUpdateWithoutSudokuGamesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSudokuGamesInput = {
@@ -20123,6 +24963,14 @@ export type UserUncheckedUpdateWithoutSudokuGamesInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutOwnedLudoRoomsInput = {
@@ -20203,6 +25051,14 @@ export type UserCreateWithoutOwnedLudoRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutOwnedLudoRoomsInput = {
@@ -20283,6 +25139,14 @@ export type UserUncheckedCreateWithoutOwnedLudoRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutOwnedLudoRoomsInput = {
@@ -20379,6 +25243,14 @@ export type UserUpdateWithoutOwnedLudoRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutOwnedLudoRoomsInput = {
@@ -20459,6 +25331,14 @@ export type UserUncheckedUpdateWithoutOwnedLudoRoomsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutLudoPlayersInput = {
@@ -20539,6 +25419,14 @@ export type UserCreateWithoutLudoPlayersInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutLudoPlayersInput = {
@@ -20619,6 +25507,14 @@ export type UserUncheckedCreateWithoutLudoPlayersInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutLudoPlayersInput = {
@@ -20715,6 +25611,14 @@ export type UserUpdateWithoutLudoPlayersInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLudoPlayersInput = {
@@ -20795,6 +25699,14 @@ export type UserUncheckedUpdateWithoutLudoPlayersInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutSentLudoInvitationsInput = {
@@ -20875,6 +25787,14 @@ export type UserCreateWithoutSentLudoInvitationsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutSentLudoInvitationsInput = {
@@ -20955,6 +25875,14 @@ export type UserUncheckedCreateWithoutSentLudoInvitationsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutSentLudoInvitationsInput = {
@@ -21040,6 +25968,14 @@ export type UserCreateWithoutReceivedLudoInvitationsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutReceivedLudoInvitationsInput = {
@@ -21120,6 +26056,14 @@ export type UserUncheckedCreateWithoutReceivedLudoInvitationsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutReceivedLudoInvitationsInput = {
@@ -21216,6 +26160,14 @@ export type UserUpdateWithoutSentLudoInvitationsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSentLudoInvitationsInput = {
@@ -21296,6 +26248,14 @@ export type UserUncheckedUpdateWithoutSentLudoInvitationsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUpsertWithoutReceivedLudoInvitationsInput = {
@@ -21387,6 +26347,14 @@ export type UserUpdateWithoutReceivedLudoInvitationsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutReceivedLudoInvitationsInput = {
@@ -21467,6 +26435,14 @@ export type UserUncheckedUpdateWithoutReceivedLudoInvitationsInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserCreateWithoutLudoBlocksCreatedInput = {
@@ -21547,6 +26523,14 @@ export type UserCreateWithoutLudoBlocksCreatedInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutLudoBlocksCreatedInput = {
@@ -21627,6 +26611,14 @@ export type UserUncheckedCreateWithoutLudoBlocksCreatedInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutLudoBlocksCreatedInput = {
@@ -21712,6 +26704,14 @@ export type UserCreateWithoutLudoBlocksReceivedInput = {
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
 }
 
 export type UserUncheckedCreateWithoutLudoBlocksReceivedInput = {
@@ -21792,6 +26792,14 @@ export type UserUncheckedCreateWithoutLudoBlocksReceivedInput = {
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
 }
 
 export type UserCreateOrConnectWithoutLudoBlocksReceivedInput = {
@@ -21888,6 +26896,14 @@ export type UserUpdateWithoutLudoBlocksCreatedInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLudoBlocksCreatedInput = {
@@ -21968,6 +26984,14 @@ export type UserUncheckedUpdateWithoutLudoBlocksCreatedInput = {
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUpsertWithoutLudoBlocksReceivedInput = {
@@ -22059,6 +27083,14 @@ export type UserUpdateWithoutLudoBlocksReceivedInput = {
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLudoBlocksReceivedInput = {
@@ -22139,6 +27171,14 @@ export type UserUncheckedUpdateWithoutLudoBlocksReceivedInput = {
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
   xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
 }
 
 
@@ -22206,6 +27246,14 @@ export type UserCountOutputType = {
   ludoBlocksReceived: number
   createdXpGrantCodes: number
   xpGrantRedemptions: number
+  ownedBattleshipRooms: number
+  guestBattleshipRooms: number
+  battleshipTurns: number
+  wonBattleshipRooms: number
+  lostBattleshipRooms: number
+  battleshipBoards: number
+  battleshipShotsFired: number
+  battleshipShotsReceived: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -22268,6 +27316,14 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   ludoBlocksReceived?: boolean | UserCountOutputTypeCountLudoBlocksReceivedArgs
   createdXpGrantCodes?: boolean | UserCountOutputTypeCountCreatedXpGrantCodesArgs
   xpGrantRedemptions?: boolean | UserCountOutputTypeCountXpGrantRedemptionsArgs
+  ownedBattleshipRooms?: boolean | UserCountOutputTypeCountOwnedBattleshipRoomsArgs
+  guestBattleshipRooms?: boolean | UserCountOutputTypeCountGuestBattleshipRoomsArgs
+  battleshipTurns?: boolean | UserCountOutputTypeCountBattleshipTurnsArgs
+  wonBattleshipRooms?: boolean | UserCountOutputTypeCountWonBattleshipRoomsArgs
+  lostBattleshipRooms?: boolean | UserCountOutputTypeCountLostBattleshipRoomsArgs
+  battleshipBoards?: boolean | UserCountOutputTypeCountBattleshipBoardsArgs
+  battleshipShotsFired?: boolean | UserCountOutputTypeCountBattleshipShotsFiredArgs
+  battleshipShotsReceived?: boolean | UserCountOutputTypeCountBattleshipShotsReceivedArgs
 }
 
 /**
@@ -22693,6 +27749,62 @@ export type UserCountOutputTypeCountXpGrantRedemptionsArgs<ExtArgs extends runti
   where?: Prisma.XpGrantRedemptionWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountOwnedBattleshipRoomsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BattleshipRoomWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountGuestBattleshipRoomsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BattleshipRoomWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountBattleshipTurnsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BattleshipRoomWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountWonBattleshipRoomsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BattleshipRoomWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountLostBattleshipRoomsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BattleshipRoomWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountBattleshipBoardsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BattleshipBoardWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountBattleshipShotsFiredArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BattleshipShotWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountBattleshipShotsReceivedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BattleshipShotWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -22773,6 +27885,14 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   ludoBlocksReceived?: boolean | Prisma.User$ludoBlocksReceivedArgs<ExtArgs>
   createdXpGrantCodes?: boolean | Prisma.User$createdXpGrantCodesArgs<ExtArgs>
   xpGrantRedemptions?: boolean | Prisma.User$xpGrantRedemptionsArgs<ExtArgs>
+  ownedBattleshipRooms?: boolean | Prisma.User$ownedBattleshipRoomsArgs<ExtArgs>
+  guestBattleshipRooms?: boolean | Prisma.User$guestBattleshipRoomsArgs<ExtArgs>
+  battleshipTurns?: boolean | Prisma.User$battleshipTurnsArgs<ExtArgs>
+  wonBattleshipRooms?: boolean | Prisma.User$wonBattleshipRoomsArgs<ExtArgs>
+  lostBattleshipRooms?: boolean | Prisma.User$lostBattleshipRoomsArgs<ExtArgs>
+  battleshipBoards?: boolean | Prisma.User$battleshipBoardsArgs<ExtArgs>
+  battleshipShotsFired?: boolean | Prisma.User$battleshipShotsFiredArgs<ExtArgs>
+  battleshipShotsReceived?: boolean | Prisma.User$battleshipShotsReceivedArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -22901,6 +28021,14 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   ludoBlocksReceived?: boolean | Prisma.User$ludoBlocksReceivedArgs<ExtArgs>
   createdXpGrantCodes?: boolean | Prisma.User$createdXpGrantCodesArgs<ExtArgs>
   xpGrantRedemptions?: boolean | Prisma.User$xpGrantRedemptionsArgs<ExtArgs>
+  ownedBattleshipRooms?: boolean | Prisma.User$ownedBattleshipRoomsArgs<ExtArgs>
+  guestBattleshipRooms?: boolean | Prisma.User$guestBattleshipRoomsArgs<ExtArgs>
+  battleshipTurns?: boolean | Prisma.User$battleshipTurnsArgs<ExtArgs>
+  wonBattleshipRooms?: boolean | Prisma.User$wonBattleshipRoomsArgs<ExtArgs>
+  lostBattleshipRooms?: boolean | Prisma.User$lostBattleshipRoomsArgs<ExtArgs>
+  battleshipBoards?: boolean | Prisma.User$battleshipBoardsArgs<ExtArgs>
+  battleshipShotsFired?: boolean | Prisma.User$battleshipShotsFiredArgs<ExtArgs>
+  battleshipShotsReceived?: boolean | Prisma.User$battleshipShotsReceivedArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -22969,6 +28097,14 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     ludoBlocksReceived: Prisma.$LudoInvitationBlockPayload<ExtArgs>[]
     createdXpGrantCodes: Prisma.$XpGrantCodePayload<ExtArgs>[]
     xpGrantRedemptions: Prisma.$XpGrantRedemptionPayload<ExtArgs>[]
+    ownedBattleshipRooms: Prisma.$BattleshipRoomPayload<ExtArgs>[]
+    guestBattleshipRooms: Prisma.$BattleshipRoomPayload<ExtArgs>[]
+    battleshipTurns: Prisma.$BattleshipRoomPayload<ExtArgs>[]
+    wonBattleshipRooms: Prisma.$BattleshipRoomPayload<ExtArgs>[]
+    lostBattleshipRooms: Prisma.$BattleshipRoomPayload<ExtArgs>[]
+    battleshipBoards: Prisma.$BattleshipBoardPayload<ExtArgs>[]
+    battleshipShotsFired: Prisma.$BattleshipShotPayload<ExtArgs>[]
+    battleshipShotsReceived: Prisma.$BattleshipShotPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -23443,6 +28579,14 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   ludoBlocksReceived<T extends Prisma.User$ludoBlocksReceivedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$ludoBlocksReceivedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LudoInvitationBlockPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   createdXpGrantCodes<T extends Prisma.User$createdXpGrantCodesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$createdXpGrantCodesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$XpGrantCodePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   xpGrantRedemptions<T extends Prisma.User$xpGrantRedemptionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$xpGrantRedemptionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$XpGrantRedemptionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  ownedBattleshipRooms<T extends Prisma.User$ownedBattleshipRoomsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$ownedBattleshipRoomsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BattleshipRoomPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  guestBattleshipRooms<T extends Prisma.User$guestBattleshipRoomsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$guestBattleshipRoomsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BattleshipRoomPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  battleshipTurns<T extends Prisma.User$battleshipTurnsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$battleshipTurnsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BattleshipRoomPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  wonBattleshipRooms<T extends Prisma.User$wonBattleshipRoomsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$wonBattleshipRoomsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BattleshipRoomPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  lostBattleshipRooms<T extends Prisma.User$lostBattleshipRoomsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$lostBattleshipRoomsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BattleshipRoomPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  battleshipBoards<T extends Prisma.User$battleshipBoardsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$battleshipBoardsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BattleshipBoardPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  battleshipShotsFired<T extends Prisma.User$battleshipShotsFiredArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$battleshipShotsFiredArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BattleshipShotPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  battleshipShotsReceived<T extends Prisma.User$battleshipShotsReceivedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$battleshipShotsReceivedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BattleshipShotPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -25315,6 +30459,198 @@ export type User$xpGrantRedemptionsArgs<ExtArgs extends runtime.Types.Extensions
   take?: number
   skip?: number
   distinct?: Prisma.XpGrantRedemptionScalarFieldEnum | Prisma.XpGrantRedemptionScalarFieldEnum[]
+}
+
+/**
+ * User.ownedBattleshipRooms
+ */
+export type User$ownedBattleshipRoomsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BattleshipRoom
+   */
+  select?: Prisma.BattleshipRoomSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BattleshipRoom
+   */
+  omit?: Prisma.BattleshipRoomOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BattleshipRoomInclude<ExtArgs> | null
+  where?: Prisma.BattleshipRoomWhereInput
+  orderBy?: Prisma.BattleshipRoomOrderByWithRelationInput | Prisma.BattleshipRoomOrderByWithRelationInput[]
+  cursor?: Prisma.BattleshipRoomWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BattleshipRoomScalarFieldEnum | Prisma.BattleshipRoomScalarFieldEnum[]
+}
+
+/**
+ * User.guestBattleshipRooms
+ */
+export type User$guestBattleshipRoomsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BattleshipRoom
+   */
+  select?: Prisma.BattleshipRoomSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BattleshipRoom
+   */
+  omit?: Prisma.BattleshipRoomOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BattleshipRoomInclude<ExtArgs> | null
+  where?: Prisma.BattleshipRoomWhereInput
+  orderBy?: Prisma.BattleshipRoomOrderByWithRelationInput | Prisma.BattleshipRoomOrderByWithRelationInput[]
+  cursor?: Prisma.BattleshipRoomWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BattleshipRoomScalarFieldEnum | Prisma.BattleshipRoomScalarFieldEnum[]
+}
+
+/**
+ * User.battleshipTurns
+ */
+export type User$battleshipTurnsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BattleshipRoom
+   */
+  select?: Prisma.BattleshipRoomSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BattleshipRoom
+   */
+  omit?: Prisma.BattleshipRoomOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BattleshipRoomInclude<ExtArgs> | null
+  where?: Prisma.BattleshipRoomWhereInput
+  orderBy?: Prisma.BattleshipRoomOrderByWithRelationInput | Prisma.BattleshipRoomOrderByWithRelationInput[]
+  cursor?: Prisma.BattleshipRoomWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BattleshipRoomScalarFieldEnum | Prisma.BattleshipRoomScalarFieldEnum[]
+}
+
+/**
+ * User.wonBattleshipRooms
+ */
+export type User$wonBattleshipRoomsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BattleshipRoom
+   */
+  select?: Prisma.BattleshipRoomSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BattleshipRoom
+   */
+  omit?: Prisma.BattleshipRoomOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BattleshipRoomInclude<ExtArgs> | null
+  where?: Prisma.BattleshipRoomWhereInput
+  orderBy?: Prisma.BattleshipRoomOrderByWithRelationInput | Prisma.BattleshipRoomOrderByWithRelationInput[]
+  cursor?: Prisma.BattleshipRoomWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BattleshipRoomScalarFieldEnum | Prisma.BattleshipRoomScalarFieldEnum[]
+}
+
+/**
+ * User.lostBattleshipRooms
+ */
+export type User$lostBattleshipRoomsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BattleshipRoom
+   */
+  select?: Prisma.BattleshipRoomSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BattleshipRoom
+   */
+  omit?: Prisma.BattleshipRoomOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BattleshipRoomInclude<ExtArgs> | null
+  where?: Prisma.BattleshipRoomWhereInput
+  orderBy?: Prisma.BattleshipRoomOrderByWithRelationInput | Prisma.BattleshipRoomOrderByWithRelationInput[]
+  cursor?: Prisma.BattleshipRoomWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BattleshipRoomScalarFieldEnum | Prisma.BattleshipRoomScalarFieldEnum[]
+}
+
+/**
+ * User.battleshipBoards
+ */
+export type User$battleshipBoardsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BattleshipBoard
+   */
+  select?: Prisma.BattleshipBoardSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BattleshipBoard
+   */
+  omit?: Prisma.BattleshipBoardOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BattleshipBoardInclude<ExtArgs> | null
+  where?: Prisma.BattleshipBoardWhereInput
+  orderBy?: Prisma.BattleshipBoardOrderByWithRelationInput | Prisma.BattleshipBoardOrderByWithRelationInput[]
+  cursor?: Prisma.BattleshipBoardWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BattleshipBoardScalarFieldEnum | Prisma.BattleshipBoardScalarFieldEnum[]
+}
+
+/**
+ * User.battleshipShotsFired
+ */
+export type User$battleshipShotsFiredArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BattleshipShot
+   */
+  select?: Prisma.BattleshipShotSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BattleshipShot
+   */
+  omit?: Prisma.BattleshipShotOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BattleshipShotInclude<ExtArgs> | null
+  where?: Prisma.BattleshipShotWhereInput
+  orderBy?: Prisma.BattleshipShotOrderByWithRelationInput | Prisma.BattleshipShotOrderByWithRelationInput[]
+  cursor?: Prisma.BattleshipShotWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BattleshipShotScalarFieldEnum | Prisma.BattleshipShotScalarFieldEnum[]
+}
+
+/**
+ * User.battleshipShotsReceived
+ */
+export type User$battleshipShotsReceivedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BattleshipShot
+   */
+  select?: Prisma.BattleshipShotSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BattleshipShot
+   */
+  omit?: Prisma.BattleshipShotOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BattleshipShotInclude<ExtArgs> | null
+  where?: Prisma.BattleshipShotWhereInput
+  orderBy?: Prisma.BattleshipShotOrderByWithRelationInput | Prisma.BattleshipShotOrderByWithRelationInput[]
+  cursor?: Prisma.BattleshipShotWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BattleshipShotScalarFieldEnum | Prisma.BattleshipShotScalarFieldEnum[]
 }
 
 /**

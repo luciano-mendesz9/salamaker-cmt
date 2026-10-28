@@ -288,6 +288,21 @@ export type TicTacToeSoloGame = Prisma.TicTacToeSoloGameModel
  */
 export type TicTacToeSoloAction = Prisma.TicTacToeSoloActionModel
 /**
+ * Model BattleshipRoom
+ *
+ */
+export type BattleshipRoom = Prisma.BattleshipRoomModel
+/**
+ * Model BattleshipBoard
+ *
+ */
+export type BattleshipBoard = Prisma.BattleshipBoardModel
+/**
+ * Model BattleshipShot
+ *
+ */
+export type BattleshipShot = Prisma.BattleshipShotModel
+/**
  * Model SudokuGame
  *
  */

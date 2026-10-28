@@ -451,6 +451,9 @@ export const ModelName = {
   TicTacToeRound: 'TicTacToeRound',
   TicTacToeSoloGame: 'TicTacToeSoloGame',
   TicTacToeSoloAction: 'TicTacToeSoloAction',
+  BattleshipRoom: 'BattleshipRoom',
+  BattleshipBoard: 'BattleshipBoard',
+  BattleshipShot: 'BattleshipShot',
   SudokuGame: 'SudokuGame',
   SudokuAction: 'SudokuAction',
   LudoRoom: 'LudoRoom',
@@ -473,7 +476,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "profileAvatarPurchase" | "studentThemePurchase" | "devCoinEntry" | "devCoinTransfer" | "stickerCollection" | "sticker" | "stickerCopy" | "stickerPackPurchase" | "stickerListing" | "stickerTrade" | "stickerDonation" | "teacherCollectionPurchaseRequest" | "teacherCollectionOffer" | "teacherCollectionOfferCopy" | "teacherCollectionPurchase" | "patentLevel" | "studentPatentProgress" | "patentRewardClaim" | "devCoinTreasury" | "stickerMarketSetting" | "devCoinTreasuryEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "xpGrantCode" | "xpGrantRedemption" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket" | "pongRoom" | "pongPlayer" | "pongJoinRequest" | "pongPoint" | "ticTacToeRoom" | "ticTacToeRound" | "ticTacToeSoloGame" | "ticTacToeSoloAction" | "sudokuGame" | "sudokuAction" | "ludoRoom" | "ludoPlayer" | "ludoMove" | "ludoInvitation" | "ludoInvitationBlock"
+    modelProps: "user" | "profileAvatarPurchase" | "studentThemePurchase" | "devCoinEntry" | "devCoinTransfer" | "stickerCollection" | "sticker" | "stickerCopy" | "stickerPackPurchase" | "stickerListing" | "stickerTrade" | "stickerDonation" | "teacherCollectionPurchaseRequest" | "teacherCollectionOffer" | "teacherCollectionOfferCopy" | "teacherCollectionPurchase" | "patentLevel" | "studentPatentProgress" | "patentRewardClaim" | "devCoinTreasury" | "stickerMarketSetting" | "devCoinTreasuryEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "xpGrantCode" | "xpGrantRedemption" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket" | "pongRoom" | "pongPlayer" | "pongJoinRequest" | "pongPoint" | "ticTacToeRoom" | "ticTacToeRound" | "ticTacToeSoloGame" | "ticTacToeSoloAction" | "battleshipRoom" | "battleshipBoard" | "battleshipShot" | "sudokuGame" | "sudokuAction" | "ludoRoom" | "ludoPlayer" | "ludoMove" | "ludoInvitation" | "ludoInvitationBlock"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -4473,6 +4476,228 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    BattleshipRoom: {
+      payload: Prisma.$BattleshipRoomPayload<ExtArgs>
+      fields: Prisma.BattleshipRoomFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.BattleshipRoomFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipRoomPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.BattleshipRoomFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipRoomPayload>
+        }
+        findFirst: {
+          args: Prisma.BattleshipRoomFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipRoomPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.BattleshipRoomFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipRoomPayload>
+        }
+        findMany: {
+          args: Prisma.BattleshipRoomFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipRoomPayload>[]
+        }
+        create: {
+          args: Prisma.BattleshipRoomCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipRoomPayload>
+        }
+        createMany: {
+          args: Prisma.BattleshipRoomCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.BattleshipRoomCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipRoomPayload>[]
+        }
+        delete: {
+          args: Prisma.BattleshipRoomDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipRoomPayload>
+        }
+        update: {
+          args: Prisma.BattleshipRoomUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipRoomPayload>
+        }
+        deleteMany: {
+          args: Prisma.BattleshipRoomDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.BattleshipRoomUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.BattleshipRoomUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipRoomPayload>[]
+        }
+        upsert: {
+          args: Prisma.BattleshipRoomUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipRoomPayload>
+        }
+        aggregate: {
+          args: Prisma.BattleshipRoomAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateBattleshipRoom>
+        }
+        groupBy: {
+          args: Prisma.BattleshipRoomGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BattleshipRoomGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.BattleshipRoomCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BattleshipRoomCountAggregateOutputType> | number
+        }
+      }
+    }
+    BattleshipBoard: {
+      payload: Prisma.$BattleshipBoardPayload<ExtArgs>
+      fields: Prisma.BattleshipBoardFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.BattleshipBoardFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipBoardPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.BattleshipBoardFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipBoardPayload>
+        }
+        findFirst: {
+          args: Prisma.BattleshipBoardFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipBoardPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.BattleshipBoardFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipBoardPayload>
+        }
+        findMany: {
+          args: Prisma.BattleshipBoardFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipBoardPayload>[]
+        }
+        create: {
+          args: Prisma.BattleshipBoardCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipBoardPayload>
+        }
+        createMany: {
+          args: Prisma.BattleshipBoardCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.BattleshipBoardCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipBoardPayload>[]
+        }
+        delete: {
+          args: Prisma.BattleshipBoardDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipBoardPayload>
+        }
+        update: {
+          args: Prisma.BattleshipBoardUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipBoardPayload>
+        }
+        deleteMany: {
+          args: Prisma.BattleshipBoardDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.BattleshipBoardUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.BattleshipBoardUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipBoardPayload>[]
+        }
+        upsert: {
+          args: Prisma.BattleshipBoardUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipBoardPayload>
+        }
+        aggregate: {
+          args: Prisma.BattleshipBoardAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateBattleshipBoard>
+        }
+        groupBy: {
+          args: Prisma.BattleshipBoardGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BattleshipBoardGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.BattleshipBoardCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BattleshipBoardCountAggregateOutputType> | number
+        }
+      }
+    }
+    BattleshipShot: {
+      payload: Prisma.$BattleshipShotPayload<ExtArgs>
+      fields: Prisma.BattleshipShotFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.BattleshipShotFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipShotPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.BattleshipShotFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipShotPayload>
+        }
+        findFirst: {
+          args: Prisma.BattleshipShotFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipShotPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.BattleshipShotFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipShotPayload>
+        }
+        findMany: {
+          args: Prisma.BattleshipShotFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipShotPayload>[]
+        }
+        create: {
+          args: Prisma.BattleshipShotCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipShotPayload>
+        }
+        createMany: {
+          args: Prisma.BattleshipShotCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.BattleshipShotCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipShotPayload>[]
+        }
+        delete: {
+          args: Prisma.BattleshipShotDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipShotPayload>
+        }
+        update: {
+          args: Prisma.BattleshipShotUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipShotPayload>
+        }
+        deleteMany: {
+          args: Prisma.BattleshipShotDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.BattleshipShotUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.BattleshipShotUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipShotPayload>[]
+        }
+        upsert: {
+          args: Prisma.BattleshipShotUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BattleshipShotPayload>
+        }
+        aggregate: {
+          args: Prisma.BattleshipShotAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateBattleshipShot>
+        }
+        groupBy: {
+          args: Prisma.BattleshipShotGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BattleshipShotGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.BattleshipShotCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BattleshipShotCountAggregateOutputType> | number
+        }
+      }
+    }
     SudokuGame: {
       payload: Prisma.$SudokuGamePayload<ExtArgs>
       fields: Prisma.SudokuGameFieldRefs
@@ -5786,6 +6011,59 @@ export const TicTacToeSoloActionScalarFieldEnum = {
 export type TicTacToeSoloActionScalarFieldEnum = (typeof TicTacToeSoloActionScalarFieldEnum)[keyof typeof TicTacToeSoloActionScalarFieldEnum]
 
 
+export const BattleshipRoomScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  creationKey: 'creationKey',
+  ownerId: 'ownerId',
+  guestId: 'guestId',
+  status: 'status',
+  wager: 'wager',
+  escrowBalance: 'escrowBalance',
+  currentTurnId: 'currentTurnId',
+  winnerId: 'winnerId',
+  loserId: 'loserId',
+  winnerPayout: 'winnerPayout',
+  taxAmount: 'taxAmount',
+  shotSequence: 'shotSequence',
+  createdAt: 'createdAt',
+  startedAt: 'startedAt',
+  finishedAt: 'finishedAt',
+  cancelledAt: 'cancelledAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BattleshipRoomScalarFieldEnum = (typeof BattleshipRoomScalarFieldEnum)[keyof typeof BattleshipRoomScalarFieldEnum]
+
+
+export const BattleshipBoardScalarFieldEnum = {
+  id: 'id',
+  roomId: 'roomId',
+  studentId: 'studentId',
+  ships: 'ships',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BattleshipBoardScalarFieldEnum = (typeof BattleshipBoardScalarFieldEnum)[keyof typeof BattleshipBoardScalarFieldEnum]
+
+
+export const BattleshipShotScalarFieldEnum = {
+  id: 'id',
+  roomId: 'roomId',
+  attackerId: 'attackerId',
+  defenderId: 'defenderId',
+  actionKey: 'actionKey',
+  sequence: 'sequence',
+  cell: 'cell',
+  hit: 'hit',
+  sunkShip: 'sunkShip',
+  createdAt: 'createdAt'
+} as const
+
+export type BattleshipShotScalarFieldEnum = (typeof BattleshipShotScalarFieldEnum)[keyof typeof BattleshipShotScalarFieldEnum]
+
+
 export const SudokuGameScalarFieldEnum = {
   id: 'id',
   studentId: 'studentId',
@@ -6516,6 +6794,20 @@ export type ListEnumTicTacToeSoloResultFieldRefInput<$PrismaModel> = FieldRefInp
 
 
 /**
+ * Reference to a field of type 'BattleshipRoomStatus'
+ */
+export type EnumBattleshipRoomStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BattleshipRoomStatus'>
+
+
+
+/**
+ * Reference to a field of type 'BattleshipRoomStatus[]'
+ */
+export type ListEnumBattleshipRoomStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BattleshipRoomStatus[]'>
+
+
+
+/**
  * Reference to a field of type 'SudokuDifficulty'
  */
 export type EnumSudokuDifficultyFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SudokuDifficulty'>
@@ -6859,6 +7151,9 @@ export type GlobalOmitConfig = {
   ticTacToeRound?: Prisma.TicTacToeRoundOmit
   ticTacToeSoloGame?: Prisma.TicTacToeSoloGameOmit
   ticTacToeSoloAction?: Prisma.TicTacToeSoloActionOmit
+  battleshipRoom?: Prisma.BattleshipRoomOmit
+  battleshipBoard?: Prisma.BattleshipBoardOmit
+  battleshipShot?: Prisma.BattleshipShotOmit
   sudokuGame?: Prisma.SudokuGameOmit
   sudokuAction?: Prisma.SudokuActionOmit
   ludoRoom?: Prisma.LudoRoomOmit

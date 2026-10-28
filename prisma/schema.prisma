@@ -56,6 +56,7 @@ enum XpSource {
   LUDO_RESULT
   LUDO_FORFEIT
   EXTERNAL_CODE
+  BATTLESHIP
 }
 
 enum AuditEvent {
@@ -110,6 +111,11 @@ enum AuditEvent {
   LUDO_PLAYER_FORFEITED
   XP_GRANT_CODE_CREATED
   XP_GRANT_CODE_REDEEMED
+  BATTLESHIP_ROOM_CREATED
+  BATTLESHIP_MATCH_STARTED
+  BATTLESHIP_SHOT_FIRED
+  BATTLESHIP_MATCH_FINISHED
+  BATTLESHIP_ROOM_CANCELLED
 }
 
 enum DevCoinSource {
@@ -132,6 +138,8 @@ enum DevCoinSource {
   LUDO_ESCROW
   LUDO_PRIZE
   STUDENT_THEME
+  BATTLESHIP_WAGER
+  BATTLESHIP_PRIZE
 }
 
 enum StickerCollectionState {
@@ -207,6 +215,14 @@ enum TreasuryEntrySource {
   SUDOKU_EXTRA_ERRORS
   LUDO_ROOM_FEE
   LUDO_SETTLEMENT
+  BATTLESHIP_MATCH_TAX
+}
+
+enum BattleshipRoomStatus {
+  WAITING
+  ACTIVE
+  FINISHED
+  CANCELLED
 }
 
 enum LudoRoomMode {
@@ -444,6 +460,14 @@ model User {
   ludoBlocksReceived           LudoInvitationBlock[]              @relation("LudoBlocked")
   createdXpGrantCodes          XpGrantCode[]                      @relation("XpGrantCodeCreator")
   xpGrantRedemptions           XpGrantRedemption[]
+  ownedBattleshipRooms         BattleshipRoom[]                   @relation("BattleshipRoomOwner")
+  guestBattleshipRooms         BattleshipRoom[]                   @relation("BattleshipRoomGuest")
+  battleshipTurns              BattleshipRoom[]                   @relation("BattleshipCurrentTurn")
+  wonBattleshipRooms           BattleshipRoom[]                   @relation("BattleshipRoomWinner")
+  lostBattleshipRooms          BattleshipRoom[]                   @relation("BattleshipRoomLoser")
+  battleshipBoards             BattleshipBoard[]
+  battleshipShotsFired         BattleshipShot[]                   @relation("BattleshipShotAttacker")
+  battleshipShotsReceived      BattleshipShot[]                   @relation("BattleshipShotDefender")
 
   @@index([role, status, xp])
   @@index([originSchoolClass, status])
@@ -1299,6 +1323,74 @@ model TicTacToeSoloAction {
   game        TicTacToeSoloGame @relation(fields: [gameId], references: [id], onDelete: Restrict)
 
   @@index([gameId, createdAt])
+}
+
+model BattleshipRoom {
+  id            String               @id @default(uuid()) @db.Uuid
+  code          String               @unique @db.VarChar(6)
+  creationKey   String               @unique
+  ownerId       String               @db.Uuid
+  guestId       String?              @db.Uuid
+  status        BattleshipRoomStatus @default(WAITING)
+  wager         Int
+  escrowBalance Int                  @default(0)
+  currentTurnId String?              @db.Uuid
+  winnerId      String?              @db.Uuid
+  loserId       String?              @db.Uuid
+  winnerPayout  Int                  @default(0)
+  taxAmount     Int                  @default(0)
+  shotSequence  Int                  @default(0)
+  createdAt     DateTime             @default(now())
+  startedAt     DateTime?
+  finishedAt    DateTime?
+  cancelledAt   DateTime?
+  updatedAt     DateTime             @updatedAt
+  owner         User                 @relation("BattleshipRoomOwner", fields: [ownerId], references: [id], onDelete: Restrict)
+  guest         User?                @relation("BattleshipRoomGuest", fields: [guestId], references: [id], onDelete: Restrict)
+  currentTurn   User?                @relation("BattleshipCurrentTurn", fields: [currentTurnId], references: [id], onDelete: Restrict)
+  winner        User?                @relation("BattleshipRoomWinner", fields: [winnerId], references: [id], onDelete: Restrict)
+  loser         User?                @relation("BattleshipRoomLoser", fields: [loserId], references: [id], onDelete: Restrict)
+  boards        BattleshipBoard[]
+  shots         BattleshipShot[]
+
+  @@index([ownerId, status, startedAt])
+  @@index([guestId, status, startedAt])
+  @@index([status, updatedAt])
+}
+
+model BattleshipBoard {
+  id        String         @id @default(uuid()) @db.Uuid
+  roomId    String         @db.Uuid
+  studentId String         @db.Uuid
+  ships     Json
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  room      BattleshipRoom @relation(fields: [roomId], references: [id], onDelete: Restrict)
+  student   User           @relation(fields: [studentId], references: [id], onDelete: Restrict)
+
+  @@unique([roomId, studentId])
+  @@index([studentId, createdAt])
+}
+
+model BattleshipShot {
+  id         String         @id @default(uuid()) @db.Uuid
+  roomId     String         @db.Uuid
+  attackerId String         @db.Uuid
+  defenderId String         @db.Uuid
+  actionKey  String         @unique
+  sequence   Int
+  cell       Int
+  hit        Boolean
+  sunkShip   String?
+  createdAt  DateTime       @default(now())
+  room       BattleshipRoom @relation(fields: [roomId], references: [id], onDelete: Restrict)
+  attacker   User           @relation("BattleshipShotAttacker", fields: [attackerId], references: [id], onDelete: Restrict)
+  defender   User           @relation("BattleshipShotDefender", fields: [defenderId], references: [id], onDelete: Restrict)
+
+  @@unique([roomId, sequence])
+  @@unique([roomId, attackerId, cell])
+  @@index([roomId, createdAt])
+  @@index([defenderId, createdAt])
 }
 
 model SudokuGame {
