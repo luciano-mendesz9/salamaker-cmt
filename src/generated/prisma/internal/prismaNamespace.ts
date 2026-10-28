@@ -424,6 +424,8 @@ export const ModelName = {
   LessonParticipant: 'LessonParticipant',
   Attendance: 'Attendance',
   XpEntry: 'XpEntry',
+  XpGrantCode: 'XpGrantCode',
+  XpGrantRedemption: 'XpGrantRedemption',
   BehaviorRating: 'BehaviorRating',
   CleanupAssignment: 'CleanupAssignment',
   AppSetting: 'AppSetting',
@@ -471,7 +473,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "profileAvatarPurchase" | "studentThemePurchase" | "devCoinEntry" | "devCoinTransfer" | "stickerCollection" | "sticker" | "stickerCopy" | "stickerPackPurchase" | "stickerListing" | "stickerTrade" | "stickerDonation" | "teacherCollectionPurchaseRequest" | "teacherCollectionOffer" | "teacherCollectionOfferCopy" | "teacherCollectionPurchase" | "patentLevel" | "studentPatentProgress" | "patentRewardClaim" | "devCoinTreasury" | "stickerMarketSetting" | "devCoinTreasuryEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket" | "pongRoom" | "pongPlayer" | "pongJoinRequest" | "pongPoint" | "ticTacToeRoom" | "ticTacToeRound" | "ticTacToeSoloGame" | "ticTacToeSoloAction" | "sudokuGame" | "sudokuAction" | "ludoRoom" | "ludoPlayer" | "ludoMove" | "ludoInvitation" | "ludoInvitationBlock"
+    modelProps: "user" | "profileAvatarPurchase" | "studentThemePurchase" | "devCoinEntry" | "devCoinTransfer" | "stickerCollection" | "sticker" | "stickerCopy" | "stickerPackPurchase" | "stickerListing" | "stickerTrade" | "stickerDonation" | "teacherCollectionPurchaseRequest" | "teacherCollectionOffer" | "teacherCollectionOfferCopy" | "teacherCollectionPurchase" | "patentLevel" | "studentPatentProgress" | "patentRewardClaim" | "devCoinTreasury" | "stickerMarketSetting" | "devCoinTreasuryEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "xpGrantCode" | "xpGrantRedemption" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket" | "pongRoom" | "pongPlayer" | "pongJoinRequest" | "pongPoint" | "ticTacToeRoom" | "ticTacToeRound" | "ticTacToeSoloGame" | "ticTacToeSoloAction" | "sudokuGame" | "sudokuAction" | "ludoRoom" | "ludoPlayer" | "ludoMove" | "ludoInvitation" | "ludoInvitationBlock"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -2470,6 +2472,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.XpEntryCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.XpEntryCountAggregateOutputType> | number
+        }
+      }
+    }
+    XpGrantCode: {
+      payload: Prisma.$XpGrantCodePayload<ExtArgs>
+      fields: Prisma.XpGrantCodeFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.XpGrantCodeFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantCodePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.XpGrantCodeFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantCodePayload>
+        }
+        findFirst: {
+          args: Prisma.XpGrantCodeFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantCodePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.XpGrantCodeFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantCodePayload>
+        }
+        findMany: {
+          args: Prisma.XpGrantCodeFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantCodePayload>[]
+        }
+        create: {
+          args: Prisma.XpGrantCodeCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantCodePayload>
+        }
+        createMany: {
+          args: Prisma.XpGrantCodeCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.XpGrantCodeCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantCodePayload>[]
+        }
+        delete: {
+          args: Prisma.XpGrantCodeDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantCodePayload>
+        }
+        update: {
+          args: Prisma.XpGrantCodeUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantCodePayload>
+        }
+        deleteMany: {
+          args: Prisma.XpGrantCodeDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.XpGrantCodeUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.XpGrantCodeUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantCodePayload>[]
+        }
+        upsert: {
+          args: Prisma.XpGrantCodeUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantCodePayload>
+        }
+        aggregate: {
+          args: Prisma.XpGrantCodeAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateXpGrantCode>
+        }
+        groupBy: {
+          args: Prisma.XpGrantCodeGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.XpGrantCodeGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.XpGrantCodeCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.XpGrantCodeCountAggregateOutputType> | number
+        }
+      }
+    }
+    XpGrantRedemption: {
+      payload: Prisma.$XpGrantRedemptionPayload<ExtArgs>
+      fields: Prisma.XpGrantRedemptionFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.XpGrantRedemptionFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantRedemptionPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.XpGrantRedemptionFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantRedemptionPayload>
+        }
+        findFirst: {
+          args: Prisma.XpGrantRedemptionFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantRedemptionPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.XpGrantRedemptionFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantRedemptionPayload>
+        }
+        findMany: {
+          args: Prisma.XpGrantRedemptionFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantRedemptionPayload>[]
+        }
+        create: {
+          args: Prisma.XpGrantRedemptionCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantRedemptionPayload>
+        }
+        createMany: {
+          args: Prisma.XpGrantRedemptionCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.XpGrantRedemptionCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantRedemptionPayload>[]
+        }
+        delete: {
+          args: Prisma.XpGrantRedemptionDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantRedemptionPayload>
+        }
+        update: {
+          args: Prisma.XpGrantRedemptionUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantRedemptionPayload>
+        }
+        deleteMany: {
+          args: Prisma.XpGrantRedemptionDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.XpGrantRedemptionUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.XpGrantRedemptionUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantRedemptionPayload>[]
+        }
+        upsert: {
+          args: Prisma.XpGrantRedemptionUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$XpGrantRedemptionPayload>
+        }
+        aggregate: {
+          args: Prisma.XpGrantRedemptionAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateXpGrantRedemption>
+        }
+        groupBy: {
+          args: Prisma.XpGrantRedemptionGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.XpGrantRedemptionGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.XpGrantRedemptionCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.XpGrantRedemptionCountAggregateOutputType> | number
         }
       }
     }
@@ -5251,6 +5401,29 @@ export const XpEntryScalarFieldEnum = {
 export type XpEntryScalarFieldEnum = (typeof XpEntryScalarFieldEnum)[keyof typeof XpEntryScalarFieldEnum]
 
 
+export const XpGrantCodeScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  reason: 'reason',
+  createdById: 'createdById',
+  createdAt: 'createdAt'
+} as const
+
+export type XpGrantCodeScalarFieldEnum = (typeof XpGrantCodeScalarFieldEnum)[keyof typeof XpGrantCodeScalarFieldEnum]
+
+
+export const XpGrantRedemptionScalarFieldEnum = {
+  id: 'id',
+  grantCodeId: 'grantCodeId',
+  studentId: 'studentId',
+  xpEntryId: 'xpEntryId',
+  xpAmount: 'xpAmount',
+  createdAt: 'createdAt'
+} as const
+
+export type XpGrantRedemptionScalarFieldEnum = (typeof XpGrantRedemptionScalarFieldEnum)[keyof typeof XpGrantRedemptionScalarFieldEnum]
+
+
 export const BehaviorRatingScalarFieldEnum = {
   id: 'id',
   lessonId: 'lessonId',
@@ -6659,6 +6832,8 @@ export type GlobalOmitConfig = {
   lessonParticipant?: Prisma.LessonParticipantOmit
   attendance?: Prisma.AttendanceOmit
   xpEntry?: Prisma.XpEntryOmit
+  xpGrantCode?: Prisma.XpGrantCodeOmit
+  xpGrantRedemption?: Prisma.XpGrantRedemptionOmit
   behaviorRating?: Prisma.BehaviorRatingOmit
   cleanupAssignment?: Prisma.CleanupAssignmentOmit
   appSetting?: Prisma.AppSettingOmit

@@ -78,6 +78,8 @@ export const ModelName = {
   LessonParticipant: 'LessonParticipant',
   Attendance: 'Attendance',
   XpEntry: 'XpEntry',
+  XpGrantCode: 'XpGrantCode',
+  XpGrantRedemption: 'XpGrantRedemption',
   BehaviorRating: 'BehaviorRating',
   CleanupAssignment: 'CleanupAssignment',
   AppSetting: 'AppSetting',
@@ -497,6 +499,29 @@ export const XpEntryScalarFieldEnum = {
 } as const
 
 export type XpEntryScalarFieldEnum = (typeof XpEntryScalarFieldEnum)[keyof typeof XpEntryScalarFieldEnum]
+
+
+export const XpGrantCodeScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  reason: 'reason',
+  createdById: 'createdById',
+  createdAt: 'createdAt'
+} as const
+
+export type XpGrantCodeScalarFieldEnum = (typeof XpGrantCodeScalarFieldEnum)[keyof typeof XpGrantCodeScalarFieldEnum]
+
+
+export const XpGrantRedemptionScalarFieldEnum = {
+  id: 'id',
+  grantCodeId: 'grantCodeId',
+  studentId: 'studentId',
+  xpEntryId: 'xpEntryId',
+  xpAmount: 'xpAmount',
+  createdAt: 'createdAt'
+} as const
+
+export type XpGrantRedemptionScalarFieldEnum = (typeof XpGrantRedemptionScalarFieldEnum)[keyof typeof XpGrantRedemptionScalarFieldEnum]
 
 
 export const BehaviorRatingScalarFieldEnum = {

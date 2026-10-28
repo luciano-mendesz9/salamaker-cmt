@@ -386,6 +386,8 @@ export type UserWhereInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationListRelationFilter
   ludoBlocksCreated?: Prisma.LudoInvitationBlockListRelationFilter
   ludoBlocksReceived?: Prisma.LudoInvitationBlockListRelationFilter
+  createdXpGrantCodes?: Prisma.XpGrantCodeListRelationFilter
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -465,6 +467,8 @@ export type UserOrderByWithRelationInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationOrderByRelationAggregateInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockOrderByRelationAggregateInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockOrderByRelationAggregateInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeOrderByRelationAggregateInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -547,6 +551,8 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   receivedLudoInvitations?: Prisma.LudoInvitationListRelationFilter
   ludoBlocksCreated?: Prisma.LudoInvitationBlockListRelationFilter
   ludoBlocksReceived?: Prisma.LudoInvitationBlockListRelationFilter
+  createdXpGrantCodes?: Prisma.XpGrantCodeListRelationFilter
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionListRelationFilter
 }, "id" | "accessCode">
 
 export type UserOrderByWithAggregationInput = {
@@ -676,6 +682,8 @@ export type UserCreateInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -755,6 +763,8 @@ export type UserUncheckedCreateInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserUpdateInput = {
@@ -834,6 +844,8 @@ export type UserUpdateInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -913,6 +925,8 @@ export type UserUncheckedUpdateInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -1473,6 +1487,34 @@ export type UserUpdateOneWithoutAuthoredXpNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutAuthoredXpInput, Prisma.UserUpdateWithoutAuthoredXpInput>, Prisma.UserUncheckedUpdateWithoutAuthoredXpInput>
 }
 
+export type UserCreateNestedOneWithoutCreatedXpGrantCodesInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutCreatedXpGrantCodesInput, Prisma.UserUncheckedCreateWithoutCreatedXpGrantCodesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutCreatedXpGrantCodesInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutCreatedXpGrantCodesNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutCreatedXpGrantCodesInput, Prisma.UserUncheckedCreateWithoutCreatedXpGrantCodesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutCreatedXpGrantCodesInput
+  upsert?: Prisma.UserUpsertWithoutCreatedXpGrantCodesInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutCreatedXpGrantCodesInput, Prisma.UserUpdateWithoutCreatedXpGrantCodesInput>, Prisma.UserUncheckedUpdateWithoutCreatedXpGrantCodesInput>
+}
+
+export type UserCreateNestedOneWithoutXpGrantRedemptionsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutXpGrantRedemptionsInput, Prisma.UserUncheckedCreateWithoutXpGrantRedemptionsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutXpGrantRedemptionsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutXpGrantRedemptionsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutXpGrantRedemptionsInput, Prisma.UserUncheckedCreateWithoutXpGrantRedemptionsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutXpGrantRedemptionsInput
+  upsert?: Prisma.UserUpsertWithoutXpGrantRedemptionsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutXpGrantRedemptionsInput, Prisma.UserUpdateWithoutXpGrantRedemptionsInput>, Prisma.UserUncheckedUpdateWithoutXpGrantRedemptionsInput>
+}
+
 export type UserCreateNestedOneWithoutBehaviorsInput = {
   create?: Prisma.XOR<Prisma.UserCreateWithoutBehaviorsInput, Prisma.UserUncheckedCreateWithoutBehaviorsInput>
   connectOrCreate?: Prisma.UserCreateOrConnectWithoutBehaviorsInput
@@ -2015,6 +2057,8 @@ export type UserCreateWithoutProfileAvatarPurchasesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutProfileAvatarPurchasesInput = {
@@ -2093,6 +2137,8 @@ export type UserUncheckedCreateWithoutProfileAvatarPurchasesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutProfileAvatarPurchasesInput = {
@@ -2187,6 +2233,8 @@ export type UserUpdateWithoutProfileAvatarPurchasesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutProfileAvatarPurchasesInput = {
@@ -2265,6 +2313,8 @@ export type UserUncheckedUpdateWithoutProfileAvatarPurchasesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutStudentThemePurchasesInput = {
@@ -2343,6 +2393,8 @@ export type UserCreateWithoutStudentThemePurchasesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutStudentThemePurchasesInput = {
@@ -2421,6 +2473,8 @@ export type UserUncheckedCreateWithoutStudentThemePurchasesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutStudentThemePurchasesInput = {
@@ -2515,6 +2569,8 @@ export type UserUpdateWithoutStudentThemePurchasesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStudentThemePurchasesInput = {
@@ -2593,6 +2649,8 @@ export type UserUncheckedUpdateWithoutStudentThemePurchasesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutDevCoinEntriesInput = {
@@ -2671,6 +2729,8 @@ export type UserCreateWithoutDevCoinEntriesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutDevCoinEntriesInput = {
@@ -2749,6 +2809,8 @@ export type UserUncheckedCreateWithoutDevCoinEntriesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutDevCoinEntriesInput = {
@@ -2832,6 +2894,8 @@ export type UserCreateWithoutAuthoredDevCoinEntriesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput = {
@@ -2910,6 +2974,8 @@ export type UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredDevCoinEntriesInput = {
@@ -3004,6 +3070,8 @@ export type UserUpdateWithoutDevCoinEntriesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutDevCoinEntriesInput = {
@@ -3082,6 +3150,8 @@ export type UserUncheckedUpdateWithoutDevCoinEntriesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUpsertWithoutAuthoredDevCoinEntriesInput = {
@@ -3171,6 +3241,8 @@ export type UserUpdateWithoutAuthoredDevCoinEntriesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput = {
@@ -3249,6 +3321,8 @@ export type UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutDevCoinTransfersSentInput = {
@@ -3327,6 +3401,8 @@ export type UserCreateWithoutDevCoinTransfersSentInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutDevCoinTransfersSentInput = {
@@ -3405,6 +3481,8 @@ export type UserUncheckedCreateWithoutDevCoinTransfersSentInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutDevCoinTransfersSentInput = {
@@ -3488,6 +3566,8 @@ export type UserCreateWithoutDevCoinTransfersReceivedInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutDevCoinTransfersReceivedInput = {
@@ -3566,6 +3646,8 @@ export type UserUncheckedCreateWithoutDevCoinTransfersReceivedInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutDevCoinTransfersReceivedInput = {
@@ -3660,6 +3742,8 @@ export type UserUpdateWithoutDevCoinTransfersSentInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutDevCoinTransfersSentInput = {
@@ -3738,6 +3822,8 @@ export type UserUncheckedUpdateWithoutDevCoinTransfersSentInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUpsertWithoutDevCoinTransfersReceivedInput = {
@@ -3827,6 +3913,8 @@ export type UserUpdateWithoutDevCoinTransfersReceivedInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutDevCoinTransfersReceivedInput = {
@@ -3905,6 +3993,8 @@ export type UserUncheckedUpdateWithoutDevCoinTransfersReceivedInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutStickerCopiesInput = {
@@ -3983,6 +4073,8 @@ export type UserCreateWithoutStickerCopiesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutStickerCopiesInput = {
@@ -4061,6 +4153,8 @@ export type UserUncheckedCreateWithoutStickerCopiesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutStickerCopiesInput = {
@@ -4155,6 +4249,8 @@ export type UserUpdateWithoutStickerCopiesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerCopiesInput = {
@@ -4233,6 +4329,8 @@ export type UserUncheckedUpdateWithoutStickerCopiesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutStickerPackPurchasesInput = {
@@ -4311,6 +4409,8 @@ export type UserCreateWithoutStickerPackPurchasesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutStickerPackPurchasesInput = {
@@ -4389,6 +4489,8 @@ export type UserUncheckedCreateWithoutStickerPackPurchasesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutStickerPackPurchasesInput = {
@@ -4483,6 +4585,8 @@ export type UserUpdateWithoutStickerPackPurchasesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerPackPurchasesInput = {
@@ -4561,6 +4665,8 @@ export type UserUncheckedUpdateWithoutStickerPackPurchasesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutStickerListingsInput = {
@@ -4639,6 +4745,8 @@ export type UserCreateWithoutStickerListingsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutStickerListingsInput = {
@@ -4717,6 +4825,8 @@ export type UserUncheckedCreateWithoutStickerListingsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutStickerListingsInput = {
@@ -4800,6 +4910,8 @@ export type UserCreateWithoutStickerPurchasesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutStickerPurchasesInput = {
@@ -4878,6 +4990,8 @@ export type UserUncheckedCreateWithoutStickerPurchasesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutStickerPurchasesInput = {
@@ -4972,6 +5086,8 @@ export type UserUpdateWithoutStickerListingsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerListingsInput = {
@@ -5050,6 +5166,8 @@ export type UserUncheckedUpdateWithoutStickerListingsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUpsertWithoutStickerPurchasesInput = {
@@ -5139,6 +5257,8 @@ export type UserUpdateWithoutStickerPurchasesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerPurchasesInput = {
@@ -5217,6 +5337,8 @@ export type UserUncheckedUpdateWithoutStickerPurchasesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutStickerTradesSoldInput = {
@@ -5295,6 +5417,8 @@ export type UserCreateWithoutStickerTradesSoldInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutStickerTradesSoldInput = {
@@ -5373,6 +5497,8 @@ export type UserUncheckedCreateWithoutStickerTradesSoldInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutStickerTradesSoldInput = {
@@ -5456,6 +5582,8 @@ export type UserCreateWithoutStickerTradesBoughtInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutStickerTradesBoughtInput = {
@@ -5534,6 +5662,8 @@ export type UserUncheckedCreateWithoutStickerTradesBoughtInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutStickerTradesBoughtInput = {
@@ -5628,6 +5758,8 @@ export type UserUpdateWithoutStickerTradesSoldInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerTradesSoldInput = {
@@ -5706,6 +5838,8 @@ export type UserUncheckedUpdateWithoutStickerTradesSoldInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUpsertWithoutStickerTradesBoughtInput = {
@@ -5795,6 +5929,8 @@ export type UserUpdateWithoutStickerTradesBoughtInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerTradesBoughtInput = {
@@ -5873,6 +6009,8 @@ export type UserUncheckedUpdateWithoutStickerTradesBoughtInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutStickerDonationsSentInput = {
@@ -5951,6 +6089,8 @@ export type UserCreateWithoutStickerDonationsSentInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutStickerDonationsSentInput = {
@@ -6029,6 +6169,8 @@ export type UserUncheckedCreateWithoutStickerDonationsSentInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutStickerDonationsSentInput = {
@@ -6112,6 +6254,8 @@ export type UserCreateWithoutStickerDonationsReceivedInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutStickerDonationsReceivedInput = {
@@ -6190,6 +6334,8 @@ export type UserUncheckedCreateWithoutStickerDonationsReceivedInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutStickerDonationsReceivedInput = {
@@ -6284,6 +6430,8 @@ export type UserUpdateWithoutStickerDonationsSentInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerDonationsSentInput = {
@@ -6362,6 +6510,8 @@ export type UserUncheckedUpdateWithoutStickerDonationsSentInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUpsertWithoutStickerDonationsReceivedInput = {
@@ -6451,6 +6601,8 @@ export type UserUpdateWithoutStickerDonationsReceivedInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerDonationsReceivedInput = {
@@ -6529,6 +6681,8 @@ export type UserUncheckedUpdateWithoutStickerDonationsReceivedInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutCollectionPurchaseRequestsInput = {
@@ -6607,6 +6761,8 @@ export type UserCreateWithoutCollectionPurchaseRequestsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutCollectionPurchaseRequestsInput = {
@@ -6685,6 +6841,8 @@ export type UserUncheckedCreateWithoutCollectionPurchaseRequestsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutCollectionPurchaseRequestsInput = {
@@ -6779,6 +6937,8 @@ export type UserUpdateWithoutCollectionPurchaseRequestsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCollectionPurchaseRequestsInput = {
@@ -6857,6 +7017,8 @@ export type UserUncheckedUpdateWithoutCollectionPurchaseRequestsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutCollectionOffersInput = {
@@ -6935,6 +7097,8 @@ export type UserCreateWithoutCollectionOffersInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutCollectionOffersInput = {
@@ -7013,6 +7177,8 @@ export type UserUncheckedCreateWithoutCollectionOffersInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutCollectionOffersInput = {
@@ -7107,6 +7273,8 @@ export type UserUpdateWithoutCollectionOffersInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCollectionOffersInput = {
@@ -7185,6 +7353,8 @@ export type UserUncheckedUpdateWithoutCollectionOffersInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutCollectionPurchasesAsTeacherInput = {
@@ -7263,6 +7433,8 @@ export type UserCreateWithoutCollectionPurchasesAsTeacherInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutCollectionPurchasesAsTeacherInput = {
@@ -7341,6 +7513,8 @@ export type UserUncheckedCreateWithoutCollectionPurchasesAsTeacherInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutCollectionPurchasesAsTeacherInput = {
@@ -7424,6 +7598,8 @@ export type UserCreateWithoutCollectionPurchasesAsStudentInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutCollectionPurchasesAsStudentInput = {
@@ -7502,6 +7678,8 @@ export type UserUncheckedCreateWithoutCollectionPurchasesAsStudentInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutCollectionPurchasesAsStudentInput = {
@@ -7596,6 +7774,8 @@ export type UserUpdateWithoutCollectionPurchasesAsTeacherInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCollectionPurchasesAsTeacherInput = {
@@ -7674,6 +7854,8 @@ export type UserUncheckedUpdateWithoutCollectionPurchasesAsTeacherInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUpsertWithoutCollectionPurchasesAsStudentInput = {
@@ -7763,6 +7945,8 @@ export type UserUpdateWithoutCollectionPurchasesAsStudentInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCollectionPurchasesAsStudentInput = {
@@ -7841,6 +8025,8 @@ export type UserUncheckedUpdateWithoutCollectionPurchasesAsStudentInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutPatentProgressInput = {
@@ -7919,6 +8105,8 @@ export type UserCreateWithoutPatentProgressInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutPatentProgressInput = {
@@ -7997,6 +8185,8 @@ export type UserUncheckedCreateWithoutPatentProgressInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutPatentProgressInput = {
@@ -8091,6 +8281,8 @@ export type UserUpdateWithoutPatentProgressInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPatentProgressInput = {
@@ -8169,6 +8361,8 @@ export type UserUncheckedUpdateWithoutPatentProgressInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutPatentRewardClaimsInput = {
@@ -8247,6 +8441,8 @@ export type UserCreateWithoutPatentRewardClaimsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutPatentRewardClaimsInput = {
@@ -8325,6 +8521,8 @@ export type UserUncheckedCreateWithoutPatentRewardClaimsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutPatentRewardClaimsInput = {
@@ -8419,6 +8617,8 @@ export type UserUpdateWithoutPatentRewardClaimsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPatentRewardClaimsInput = {
@@ -8497,6 +8697,8 @@ export type UserUncheckedUpdateWithoutPatentRewardClaimsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutTreasuryEntriesAuthoredInput = {
@@ -8575,6 +8777,8 @@ export type UserCreateWithoutTreasuryEntriesAuthoredInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutTreasuryEntriesAuthoredInput = {
@@ -8653,6 +8857,8 @@ export type UserUncheckedCreateWithoutTreasuryEntriesAuthoredInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutTreasuryEntriesAuthoredInput = {
@@ -8747,6 +8953,8 @@ export type UserUpdateWithoutTreasuryEntriesAuthoredInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutTreasuryEntriesAuthoredInput = {
@@ -8825,6 +9033,8 @@ export type UserUncheckedUpdateWithoutTreasuryEntriesAuthoredInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutLessonsInput = {
@@ -8903,6 +9113,8 @@ export type UserCreateWithoutLessonsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutLessonsInput = {
@@ -8981,6 +9193,8 @@ export type UserUncheckedCreateWithoutLessonsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutLessonsInput = {
@@ -9075,6 +9289,8 @@ export type UserUpdateWithoutLessonsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLessonsInput = {
@@ -9153,6 +9369,8 @@ export type UserUncheckedUpdateWithoutLessonsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutLessonParticipationsInput = {
@@ -9231,6 +9449,8 @@ export type UserCreateWithoutLessonParticipationsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutLessonParticipationsInput = {
@@ -9309,6 +9529,8 @@ export type UserUncheckedCreateWithoutLessonParticipationsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutLessonParticipationsInput = {
@@ -9403,6 +9625,8 @@ export type UserUpdateWithoutLessonParticipationsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLessonParticipationsInput = {
@@ -9481,6 +9705,8 @@ export type UserUncheckedUpdateWithoutLessonParticipationsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutAttendancesInput = {
@@ -9559,6 +9785,8 @@ export type UserCreateWithoutAttendancesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutAttendancesInput = {
@@ -9637,6 +9865,8 @@ export type UserUncheckedCreateWithoutAttendancesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutAttendancesInput = {
@@ -9731,6 +9961,8 @@ export type UserUpdateWithoutAttendancesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAttendancesInput = {
@@ -9809,6 +10041,8 @@ export type UserUncheckedUpdateWithoutAttendancesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutXpEntriesInput = {
@@ -9887,6 +10121,8 @@ export type UserCreateWithoutXpEntriesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutXpEntriesInput = {
@@ -9965,6 +10201,8 @@ export type UserUncheckedCreateWithoutXpEntriesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutXpEntriesInput = {
@@ -10048,6 +10286,8 @@ export type UserCreateWithoutAuthoredXpInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredXpInput = {
@@ -10126,6 +10366,8 @@ export type UserUncheckedCreateWithoutAuthoredXpInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredXpInput = {
@@ -10220,6 +10462,8 @@ export type UserUpdateWithoutXpEntriesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutXpEntriesInput = {
@@ -10298,6 +10542,8 @@ export type UserUncheckedUpdateWithoutXpEntriesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUpsertWithoutAuthoredXpInput = {
@@ -10387,6 +10633,8 @@ export type UserUpdateWithoutAuthoredXpInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredXpInput = {
@@ -10465,6 +10713,680 @@ export type UserUncheckedUpdateWithoutAuthoredXpInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+}
+
+export type UserCreateWithoutCreatedXpGrantCodesInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+}
+
+export type UserUncheckedCreateWithoutCreatedXpGrantCodesInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+}
+
+export type UserCreateOrConnectWithoutCreatedXpGrantCodesInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutCreatedXpGrantCodesInput, Prisma.UserUncheckedCreateWithoutCreatedXpGrantCodesInput>
+}
+
+export type UserUpsertWithoutCreatedXpGrantCodesInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutCreatedXpGrantCodesInput, Prisma.UserUncheckedUpdateWithoutCreatedXpGrantCodesInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutCreatedXpGrantCodesInput, Prisma.UserUncheckedCreateWithoutCreatedXpGrantCodesInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutCreatedXpGrantCodesInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutCreatedXpGrantCodesInput, Prisma.UserUncheckedUpdateWithoutCreatedXpGrantCodesInput>
+}
+
+export type UserUpdateWithoutCreatedXpGrantCodesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+}
+
+export type UserUncheckedUpdateWithoutCreatedXpGrantCodesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+}
+
+export type UserCreateWithoutXpGrantRedemptionsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+}
+
+export type UserUncheckedCreateWithoutXpGrantRedemptionsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+}
+
+export type UserCreateOrConnectWithoutXpGrantRedemptionsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutXpGrantRedemptionsInput, Prisma.UserUncheckedCreateWithoutXpGrantRedemptionsInput>
+}
+
+export type UserUpsertWithoutXpGrantRedemptionsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutXpGrantRedemptionsInput, Prisma.UserUncheckedUpdateWithoutXpGrantRedemptionsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutXpGrantRedemptionsInput, Prisma.UserUncheckedCreateWithoutXpGrantRedemptionsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutXpGrantRedemptionsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutXpGrantRedemptionsInput, Prisma.UserUncheckedUpdateWithoutXpGrantRedemptionsInput>
+}
+
+export type UserUpdateWithoutXpGrantRedemptionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutXpGrantRedemptionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
 }
 
 export type UserCreateWithoutBehaviorsInput = {
@@ -10543,6 +11465,8 @@ export type UserCreateWithoutBehaviorsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutBehaviorsInput = {
@@ -10621,6 +11545,8 @@ export type UserUncheckedCreateWithoutBehaviorsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutBehaviorsInput = {
@@ -10704,6 +11630,8 @@ export type UserCreateWithoutRatedBehaviorsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutRatedBehaviorsInput = {
@@ -10782,6 +11710,8 @@ export type UserUncheckedCreateWithoutRatedBehaviorsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutRatedBehaviorsInput = {
@@ -10876,6 +11806,8 @@ export type UserUpdateWithoutBehaviorsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutBehaviorsInput = {
@@ -10954,6 +11886,8 @@ export type UserUncheckedUpdateWithoutBehaviorsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUpsertWithoutRatedBehaviorsInput = {
@@ -11043,6 +11977,8 @@ export type UserUpdateWithoutRatedBehaviorsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutRatedBehaviorsInput = {
@@ -11121,6 +12057,8 @@ export type UserUncheckedUpdateWithoutRatedBehaviorsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutCleanupsInput = {
@@ -11199,6 +12137,8 @@ export type UserCreateWithoutCleanupsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutCleanupsInput = {
@@ -11277,6 +12217,8 @@ export type UserUncheckedCreateWithoutCleanupsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutCleanupsInput = {
@@ -11360,6 +12302,8 @@ export type UserCreateWithoutConfirmedCleanupsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutConfirmedCleanupsInput = {
@@ -11438,6 +12382,8 @@ export type UserUncheckedCreateWithoutConfirmedCleanupsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutConfirmedCleanupsInput = {
@@ -11532,6 +12478,8 @@ export type UserUpdateWithoutCleanupsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCleanupsInput = {
@@ -11610,6 +12558,8 @@ export type UserUncheckedUpdateWithoutCleanupsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUpsertWithoutConfirmedCleanupsInput = {
@@ -11699,6 +12649,8 @@ export type UserUpdateWithoutConfirmedCleanupsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutConfirmedCleanupsInput = {
@@ -11777,6 +12729,8 @@ export type UserUncheckedUpdateWithoutConfirmedCleanupsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutAuthoredActivitiesInput = {
@@ -11855,6 +12809,8 @@ export type UserCreateWithoutAuthoredActivitiesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredActivitiesInput = {
@@ -11933,6 +12889,8 @@ export type UserUncheckedCreateWithoutAuthoredActivitiesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredActivitiesInput = {
@@ -12027,6 +12985,8 @@ export type UserUpdateWithoutAuthoredActivitiesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredActivitiesInput = {
@@ -12105,6 +13065,8 @@ export type UserUncheckedUpdateWithoutAuthoredActivitiesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutAuthoredNotificationsInput = {
@@ -12183,6 +13145,8 @@ export type UserCreateWithoutAuthoredNotificationsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredNotificationsInput = {
@@ -12261,6 +13225,8 @@ export type UserUncheckedCreateWithoutAuthoredNotificationsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredNotificationsInput = {
@@ -12355,6 +13321,8 @@ export type UserUpdateWithoutAuthoredNotificationsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredNotificationsInput = {
@@ -12433,6 +13401,8 @@ export type UserUncheckedUpdateWithoutAuthoredNotificationsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutNotificationReceiptsInput = {
@@ -12511,6 +13481,8 @@ export type UserCreateWithoutNotificationReceiptsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutNotificationReceiptsInput = {
@@ -12589,6 +13561,8 @@ export type UserUncheckedCreateWithoutNotificationReceiptsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutNotificationReceiptsInput = {
@@ -12683,6 +13657,8 @@ export type UserUpdateWithoutNotificationReceiptsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutNotificationReceiptsInput = {
@@ -12761,6 +13737,8 @@ export type UserUncheckedUpdateWithoutNotificationReceiptsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutActivityRecipientsInput = {
@@ -12839,6 +13817,8 @@ export type UserCreateWithoutActivityRecipientsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutActivityRecipientsInput = {
@@ -12917,6 +13897,8 @@ export type UserUncheckedCreateWithoutActivityRecipientsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutActivityRecipientsInput = {
@@ -13011,6 +13993,8 @@ export type UserUpdateWithoutActivityRecipientsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityRecipientsInput = {
@@ -13089,6 +14073,8 @@ export type UserUncheckedUpdateWithoutActivityRecipientsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutActivitySubmissionsInput = {
@@ -13167,6 +14153,8 @@ export type UserCreateWithoutActivitySubmissionsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutActivitySubmissionsInput = {
@@ -13245,6 +14233,8 @@ export type UserUncheckedCreateWithoutActivitySubmissionsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutActivitySubmissionsInput = {
@@ -13339,6 +14329,8 @@ export type UserUpdateWithoutActivitySubmissionsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivitySubmissionsInput = {
@@ -13417,6 +14409,8 @@ export type UserUncheckedUpdateWithoutActivitySubmissionsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutActivityAnswersInput = {
@@ -13495,6 +14489,8 @@ export type UserCreateWithoutActivityAnswersInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutActivityAnswersInput = {
@@ -13573,6 +14569,8 @@ export type UserUncheckedCreateWithoutActivityAnswersInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutActivityAnswersInput = {
@@ -13667,6 +14665,8 @@ export type UserUpdateWithoutActivityAnswersInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityAnswersInput = {
@@ -13745,6 +14745,8 @@ export type UserUncheckedUpdateWithoutActivityAnswersInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutActivityTeamMembershipsInput = {
@@ -13823,6 +14825,8 @@ export type UserCreateWithoutActivityTeamMembershipsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutActivityTeamMembershipsInput = {
@@ -13901,6 +14905,8 @@ export type UserUncheckedCreateWithoutActivityTeamMembershipsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutActivityTeamMembershipsInput = {
@@ -13995,6 +15001,8 @@ export type UserUpdateWithoutActivityTeamMembershipsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityTeamMembershipsInput = {
@@ -14073,6 +15081,8 @@ export type UserUncheckedUpdateWithoutActivityTeamMembershipsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutActivityAwardsInput = {
@@ -14151,6 +15161,8 @@ export type UserCreateWithoutActivityAwardsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutActivityAwardsInput = {
@@ -14229,6 +15241,8 @@ export type UserUncheckedCreateWithoutActivityAwardsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutActivityAwardsInput = {
@@ -14323,6 +15337,8 @@ export type UserUpdateWithoutActivityAwardsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityAwardsInput = {
@@ -14401,6 +15417,8 @@ export type UserUncheckedUpdateWithoutActivityAwardsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutAuditActionsInput = {
@@ -14479,6 +15497,8 @@ export type UserCreateWithoutAuditActionsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutAuditActionsInput = {
@@ -14557,6 +15577,8 @@ export type UserUncheckedCreateWithoutAuditActionsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutAuditActionsInput = {
@@ -14640,6 +15662,8 @@ export type UserCreateWithoutAuditTargetsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutAuditTargetsInput = {
@@ -14718,6 +15742,8 @@ export type UserUncheckedCreateWithoutAuditTargetsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutAuditTargetsInput = {
@@ -14812,6 +15838,8 @@ export type UserUpdateWithoutAuditActionsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuditActionsInput = {
@@ -14890,6 +15918,8 @@ export type UserUncheckedUpdateWithoutAuditActionsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUpsertWithoutAuditTargetsInput = {
@@ -14979,6 +16009,8 @@ export type UserUpdateWithoutAuditTargetsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuditTargetsInput = {
@@ -15057,6 +16089,8 @@ export type UserUncheckedUpdateWithoutAuditTargetsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutOwnedPongRoomsInput = {
@@ -15135,6 +16169,8 @@ export type UserCreateWithoutOwnedPongRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutOwnedPongRoomsInput = {
@@ -15213,6 +16249,8 @@ export type UserUncheckedCreateWithoutOwnedPongRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutOwnedPongRoomsInput = {
@@ -15296,6 +16334,8 @@ export type UserCreateWithoutWonPongRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutWonPongRoomsInput = {
@@ -15374,6 +16414,8 @@ export type UserUncheckedCreateWithoutWonPongRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutWonPongRoomsInput = {
@@ -15457,6 +16499,8 @@ export type UserCreateWithoutLostPongRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutLostPongRoomsInput = {
@@ -15535,6 +16579,8 @@ export type UserUncheckedCreateWithoutLostPongRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutLostPongRoomsInput = {
@@ -15629,6 +16675,8 @@ export type UserUpdateWithoutOwnedPongRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutOwnedPongRoomsInput = {
@@ -15707,6 +16755,8 @@ export type UserUncheckedUpdateWithoutOwnedPongRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUpsertWithoutWonPongRoomsInput = {
@@ -15796,6 +16846,8 @@ export type UserUpdateWithoutWonPongRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutWonPongRoomsInput = {
@@ -15874,6 +16926,8 @@ export type UserUncheckedUpdateWithoutWonPongRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUpsertWithoutLostPongRoomsInput = {
@@ -15963,6 +17017,8 @@ export type UserUpdateWithoutLostPongRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLostPongRoomsInput = {
@@ -16041,6 +17097,8 @@ export type UserUncheckedUpdateWithoutLostPongRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutPongPlayersInput = {
@@ -16119,6 +17177,8 @@ export type UserCreateWithoutPongPlayersInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutPongPlayersInput = {
@@ -16197,6 +17257,8 @@ export type UserUncheckedCreateWithoutPongPlayersInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutPongPlayersInput = {
@@ -16291,6 +17353,8 @@ export type UserUpdateWithoutPongPlayersInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPongPlayersInput = {
@@ -16369,6 +17433,8 @@ export type UserUncheckedUpdateWithoutPongPlayersInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutPongJoinRequestsInput = {
@@ -16447,6 +17513,8 @@ export type UserCreateWithoutPongJoinRequestsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutPongJoinRequestsInput = {
@@ -16525,6 +17593,8 @@ export type UserUncheckedCreateWithoutPongJoinRequestsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutPongJoinRequestsInput = {
@@ -16619,6 +17689,8 @@ export type UserUpdateWithoutPongJoinRequestsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPongJoinRequestsInput = {
@@ -16697,6 +17769,8 @@ export type UserUncheckedUpdateWithoutPongJoinRequestsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutPongPointsInput = {
@@ -16775,6 +17849,8 @@ export type UserCreateWithoutPongPointsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutPongPointsInput = {
@@ -16853,6 +17929,8 @@ export type UserUncheckedCreateWithoutPongPointsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutPongPointsInput = {
@@ -16947,6 +18025,8 @@ export type UserUpdateWithoutPongPointsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPongPointsInput = {
@@ -17025,6 +18105,8 @@ export type UserUncheckedUpdateWithoutPongPointsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutOwnedTicTacToeRoomsInput = {
@@ -17103,6 +18185,8 @@ export type UserCreateWithoutOwnedTicTacToeRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutOwnedTicTacToeRoomsInput = {
@@ -17181,6 +18265,8 @@ export type UserUncheckedCreateWithoutOwnedTicTacToeRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutOwnedTicTacToeRoomsInput = {
@@ -17264,6 +18350,8 @@ export type UserCreateWithoutGuestTicTacToeRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutGuestTicTacToeRoomsInput = {
@@ -17342,6 +18430,8 @@ export type UserUncheckedCreateWithoutGuestTicTacToeRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutGuestTicTacToeRoomsInput = {
@@ -17425,6 +18515,8 @@ export type UserCreateWithoutWonTicTacToeRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutWonTicTacToeRoomsInput = {
@@ -17503,6 +18595,8 @@ export type UserUncheckedCreateWithoutWonTicTacToeRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutWonTicTacToeRoomsInput = {
@@ -17597,6 +18691,8 @@ export type UserUpdateWithoutOwnedTicTacToeRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutOwnedTicTacToeRoomsInput = {
@@ -17675,6 +18771,8 @@ export type UserUncheckedUpdateWithoutOwnedTicTacToeRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUpsertWithoutGuestTicTacToeRoomsInput = {
@@ -17764,6 +18862,8 @@ export type UserUpdateWithoutGuestTicTacToeRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutGuestTicTacToeRoomsInput = {
@@ -17842,6 +18942,8 @@ export type UserUncheckedUpdateWithoutGuestTicTacToeRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUpsertWithoutWonTicTacToeRoomsInput = {
@@ -17931,6 +19033,8 @@ export type UserUpdateWithoutWonTicTacToeRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutWonTicTacToeRoomsInput = {
@@ -18009,6 +19113,8 @@ export type UserUncheckedUpdateWithoutWonTicTacToeRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutWonTicTacToeRoundsInput = {
@@ -18087,6 +19193,8 @@ export type UserCreateWithoutWonTicTacToeRoundsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutWonTicTacToeRoundsInput = {
@@ -18165,6 +19273,8 @@ export type UserUncheckedCreateWithoutWonTicTacToeRoundsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutWonTicTacToeRoundsInput = {
@@ -18259,6 +19369,8 @@ export type UserUpdateWithoutWonTicTacToeRoundsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutWonTicTacToeRoundsInput = {
@@ -18337,6 +19449,8 @@ export type UserUncheckedUpdateWithoutWonTicTacToeRoundsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutTicTacToeSoloGamesInput = {
@@ -18415,6 +19529,8 @@ export type UserCreateWithoutTicTacToeSoloGamesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutTicTacToeSoloGamesInput = {
@@ -18493,6 +19609,8 @@ export type UserUncheckedCreateWithoutTicTacToeSoloGamesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutTicTacToeSoloGamesInput = {
@@ -18587,6 +19705,8 @@ export type UserUpdateWithoutTicTacToeSoloGamesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutTicTacToeSoloGamesInput = {
@@ -18665,6 +19785,8 @@ export type UserUncheckedUpdateWithoutTicTacToeSoloGamesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutSudokuGamesInput = {
@@ -18743,6 +19865,8 @@ export type UserCreateWithoutSudokuGamesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutSudokuGamesInput = {
@@ -18821,6 +19945,8 @@ export type UserUncheckedCreateWithoutSudokuGamesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutSudokuGamesInput = {
@@ -18915,6 +20041,8 @@ export type UserUpdateWithoutSudokuGamesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSudokuGamesInput = {
@@ -18993,6 +20121,8 @@ export type UserUncheckedUpdateWithoutSudokuGamesInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutOwnedLudoRoomsInput = {
@@ -19071,6 +20201,8 @@ export type UserCreateWithoutOwnedLudoRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutOwnedLudoRoomsInput = {
@@ -19149,6 +20281,8 @@ export type UserUncheckedCreateWithoutOwnedLudoRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutOwnedLudoRoomsInput = {
@@ -19243,6 +20377,8 @@ export type UserUpdateWithoutOwnedLudoRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutOwnedLudoRoomsInput = {
@@ -19321,6 +20457,8 @@ export type UserUncheckedUpdateWithoutOwnedLudoRoomsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutLudoPlayersInput = {
@@ -19399,6 +20537,8 @@ export type UserCreateWithoutLudoPlayersInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutLudoPlayersInput = {
@@ -19477,6 +20617,8 @@ export type UserUncheckedCreateWithoutLudoPlayersInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutLudoPlayersInput = {
@@ -19571,6 +20713,8 @@ export type UserUpdateWithoutLudoPlayersInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLudoPlayersInput = {
@@ -19649,6 +20793,8 @@ export type UserUncheckedUpdateWithoutLudoPlayersInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutSentLudoInvitationsInput = {
@@ -19727,6 +20873,8 @@ export type UserCreateWithoutSentLudoInvitationsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutSentLudoInvitationsInput = {
@@ -19805,6 +20953,8 @@ export type UserUncheckedCreateWithoutSentLudoInvitationsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutSentLudoInvitationsInput = {
@@ -19888,6 +21038,8 @@ export type UserCreateWithoutReceivedLudoInvitationsInput = {
   sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutReceivedLudoInvitationsInput = {
@@ -19966,6 +21118,8 @@ export type UserUncheckedCreateWithoutReceivedLudoInvitationsInput = {
   sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutReceivedLudoInvitationsInput = {
@@ -20060,6 +21214,8 @@ export type UserUpdateWithoutSentLudoInvitationsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSentLudoInvitationsInput = {
@@ -20138,6 +21294,8 @@ export type UserUncheckedUpdateWithoutSentLudoInvitationsInput = {
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUpsertWithoutReceivedLudoInvitationsInput = {
@@ -20227,6 +21385,8 @@ export type UserUpdateWithoutReceivedLudoInvitationsInput = {
   sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutReceivedLudoInvitationsInput = {
@@ -20305,6 +21465,8 @@ export type UserUncheckedUpdateWithoutReceivedLudoInvitationsInput = {
   sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserCreateWithoutLudoBlocksCreatedInput = {
@@ -20383,6 +21545,8 @@ export type UserCreateWithoutLudoBlocksCreatedInput = {
   sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutLudoBlocksCreatedInput = {
@@ -20461,6 +21625,8 @@ export type UserUncheckedCreateWithoutLudoBlocksCreatedInput = {
   sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutLudoBlocksCreatedInput = {
@@ -20544,6 +21710,8 @@ export type UserCreateWithoutLudoBlocksReceivedInput = {
   sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
   receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
 }
 
 export type UserUncheckedCreateWithoutLudoBlocksReceivedInput = {
@@ -20622,6 +21790,8 @@ export type UserUncheckedCreateWithoutLudoBlocksReceivedInput = {
   sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
 }
 
 export type UserCreateOrConnectWithoutLudoBlocksReceivedInput = {
@@ -20716,6 +21886,8 @@ export type UserUpdateWithoutLudoBlocksCreatedInput = {
   sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLudoBlocksCreatedInput = {
@@ -20794,6 +21966,8 @@ export type UserUncheckedUpdateWithoutLudoBlocksCreatedInput = {
   sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUpsertWithoutLudoBlocksReceivedInput = {
@@ -20883,6 +22057,8 @@ export type UserUpdateWithoutLudoBlocksReceivedInput = {
   sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
   receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLudoBlocksReceivedInput = {
@@ -20961,6 +22137,8 @@ export type UserUncheckedUpdateWithoutLudoBlocksReceivedInput = {
   sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
   receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
   ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
 }
 
 
@@ -21026,6 +22204,8 @@ export type UserCountOutputType = {
   receivedLudoInvitations: number
   ludoBlocksCreated: number
   ludoBlocksReceived: number
+  createdXpGrantCodes: number
+  xpGrantRedemptions: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -21086,6 +22266,8 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   receivedLudoInvitations?: boolean | UserCountOutputTypeCountReceivedLudoInvitationsArgs
   ludoBlocksCreated?: boolean | UserCountOutputTypeCountLudoBlocksCreatedArgs
   ludoBlocksReceived?: boolean | UserCountOutputTypeCountLudoBlocksReceivedArgs
+  createdXpGrantCodes?: boolean | UserCountOutputTypeCountCreatedXpGrantCodesArgs
+  xpGrantRedemptions?: boolean | UserCountOutputTypeCountXpGrantRedemptionsArgs
 }
 
 /**
@@ -21497,6 +22679,20 @@ export type UserCountOutputTypeCountLudoBlocksReceivedArgs<ExtArgs extends runti
   where?: Prisma.LudoInvitationBlockWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountCreatedXpGrantCodesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.XpGrantCodeWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountXpGrantRedemptionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.XpGrantRedemptionWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -21575,6 +22771,8 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   receivedLudoInvitations?: boolean | Prisma.User$receivedLudoInvitationsArgs<ExtArgs>
   ludoBlocksCreated?: boolean | Prisma.User$ludoBlocksCreatedArgs<ExtArgs>
   ludoBlocksReceived?: boolean | Prisma.User$ludoBlocksReceivedArgs<ExtArgs>
+  createdXpGrantCodes?: boolean | Prisma.User$createdXpGrantCodesArgs<ExtArgs>
+  xpGrantRedemptions?: boolean | Prisma.User$xpGrantRedemptionsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -21701,6 +22899,8 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   receivedLudoInvitations?: boolean | Prisma.User$receivedLudoInvitationsArgs<ExtArgs>
   ludoBlocksCreated?: boolean | Prisma.User$ludoBlocksCreatedArgs<ExtArgs>
   ludoBlocksReceived?: boolean | Prisma.User$ludoBlocksReceivedArgs<ExtArgs>
+  createdXpGrantCodes?: boolean | Prisma.User$createdXpGrantCodesArgs<ExtArgs>
+  xpGrantRedemptions?: boolean | Prisma.User$xpGrantRedemptionsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -21767,6 +22967,8 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     receivedLudoInvitations: Prisma.$LudoInvitationPayload<ExtArgs>[]
     ludoBlocksCreated: Prisma.$LudoInvitationBlockPayload<ExtArgs>[]
     ludoBlocksReceived: Prisma.$LudoInvitationBlockPayload<ExtArgs>[]
+    createdXpGrantCodes: Prisma.$XpGrantCodePayload<ExtArgs>[]
+    xpGrantRedemptions: Prisma.$XpGrantRedemptionPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -22239,6 +23441,8 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   receivedLudoInvitations<T extends Prisma.User$receivedLudoInvitationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$receivedLudoInvitationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LudoInvitationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   ludoBlocksCreated<T extends Prisma.User$ludoBlocksCreatedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$ludoBlocksCreatedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LudoInvitationBlockPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   ludoBlocksReceived<T extends Prisma.User$ludoBlocksReceivedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$ludoBlocksReceivedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LudoInvitationBlockPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  createdXpGrantCodes<T extends Prisma.User$createdXpGrantCodesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$createdXpGrantCodesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$XpGrantCodePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  xpGrantRedemptions<T extends Prisma.User$xpGrantRedemptionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$xpGrantRedemptionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$XpGrantRedemptionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -24063,6 +25267,54 @@ export type User$ludoBlocksReceivedArgs<ExtArgs extends runtime.Types.Extensions
   take?: number
   skip?: number
   distinct?: Prisma.LudoInvitationBlockScalarFieldEnum | Prisma.LudoInvitationBlockScalarFieldEnum[]
+}
+
+/**
+ * User.createdXpGrantCodes
+ */
+export type User$createdXpGrantCodesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the XpGrantCode
+   */
+  select?: Prisma.XpGrantCodeSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the XpGrantCode
+   */
+  omit?: Prisma.XpGrantCodeOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.XpGrantCodeInclude<ExtArgs> | null
+  where?: Prisma.XpGrantCodeWhereInput
+  orderBy?: Prisma.XpGrantCodeOrderByWithRelationInput | Prisma.XpGrantCodeOrderByWithRelationInput[]
+  cursor?: Prisma.XpGrantCodeWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.XpGrantCodeScalarFieldEnum | Prisma.XpGrantCodeScalarFieldEnum[]
+}
+
+/**
+ * User.xpGrantRedemptions
+ */
+export type User$xpGrantRedemptionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the XpGrantRedemption
+   */
+  select?: Prisma.XpGrantRedemptionSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the XpGrantRedemption
+   */
+  omit?: Prisma.XpGrantRedemptionOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.XpGrantRedemptionInclude<ExtArgs> | null
+  where?: Prisma.XpGrantRedemptionWhereInput
+  orderBy?: Prisma.XpGrantRedemptionOrderByWithRelationInput | Prisma.XpGrantRedemptionOrderByWithRelationInput[]
+  cursor?: Prisma.XpGrantRedemptionWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.XpGrantRedemptionScalarFieldEnum | Prisma.XpGrantRedemptionScalarFieldEnum[]
 }
 
 /**

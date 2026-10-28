@@ -55,6 +55,7 @@ enum XpSource {
   LUDO_INVITE
   LUDO_RESULT
   LUDO_FORFEIT
+  EXTERNAL_CODE
 }
 
 enum AuditEvent {
@@ -107,6 +108,8 @@ enum AuditEvent {
   LUDO_MATCH_PAUSED
   LUDO_MATCH_FINISHED
   LUDO_PLAYER_FORFEITED
+  XP_GRANT_CODE_CREATED
+  XP_GRANT_CODE_REDEEMED
 }
 
 enum DevCoinSource {
@@ -439,6 +442,8 @@ model User {
   receivedLudoInvitations      LudoInvitation[]                   @relation("LudoInvitationInvitee")
   ludoBlocksCreated            LudoInvitationBlock[]              @relation("LudoBlocker")
   ludoBlocksReceived           LudoInvitationBlock[]              @relation("LudoBlocked")
+  createdXpGrantCodes          XpGrantCode[]                      @relation("XpGrantCodeCreator")
+  xpGrantRedemptions           XpGrantRedemption[]
 
   @@index([role, status, xp])
   @@index([originSchoolClass, status])
@@ -847,7 +852,35 @@ model XpEntry {
   devCoinEntry          DevCoinEntry?
   devCoinTransfer       DevCoinTransfer?
   collectionPurchase    TeacherCollectionPurchase?
+  xpGrantRedemption     XpGrantRedemption?
 
+  @@index([studentId, createdAt])
+}
+
+model XpGrantCode {
+  id          String              @id @default(uuid()) @db.Uuid
+  code        String              @unique @db.VarChar(6)
+  reason      String
+  createdById String              @db.Uuid
+  createdAt   DateTime            @default(now())
+  createdBy   User                @relation("XpGrantCodeCreator", fields: [createdById], references: [id], onDelete: Restrict)
+  redemptions XpGrantRedemption[]
+
+  @@index([createdById, createdAt])
+}
+
+model XpGrantRedemption {
+  id          String      @id @default(uuid()) @db.Uuid
+  grantCodeId String      @db.Uuid
+  studentId   String      @db.Uuid
+  xpEntryId   String      @unique @db.Uuid
+  xpAmount    Int
+  createdAt   DateTime    @default(now())
+  grantCode   XpGrantCode @relation(fields: [grantCodeId], references: [id], onDelete: Restrict)
+  student     User        @relation(fields: [studentId], references: [id], onDelete: Restrict)
+  xpEntry     XpEntry     @relation(fields: [xpEntryId], references: [id], onDelete: Restrict)
+
+  @@unique([grantCodeId, studentId])
   @@index([studentId, createdAt])
 }
 

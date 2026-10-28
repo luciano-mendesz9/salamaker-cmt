@@ -153,6 +153,16 @@ export type Attendance = Prisma.AttendanceModel
  */
 export type XpEntry = Prisma.XpEntryModel
 /**
+ * Model XpGrantCode
+ *
+ */
+export type XpGrantCode = Prisma.XpGrantCodeModel
+/**
+ * Model XpGrantRedemption
+ *
+ */
+export type XpGrantRedemption = Prisma.XpGrantRedemptionModel
+/**
  * Model BehaviorRating
  *
  */
