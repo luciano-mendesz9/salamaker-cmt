@@ -57,6 +57,7 @@ enum XpSource {
   LUDO_FORFEIT
   EXTERNAL_CODE
   BATTLESHIP
+  INVESTMENT_FEE
 }
 
 enum AuditEvent {
@@ -116,6 +117,9 @@ enum AuditEvent {
   BATTLESHIP_SHOT_FIRED
   BATTLESHIP_MATCH_FINISHED
   BATTLESHIP_ROOM_CANCELLED
+  INVESTMENT_APPLIED
+  INVESTMENT_REDEEMED
+  INVESTMENT_RESERVE_CHANGED
 }
 
 enum DevCoinSource {
@@ -140,6 +144,8 @@ enum DevCoinSource {
   STUDENT_THEME
   BATTLESHIP_WAGER
   BATTLESHIP_PRIZE
+  INVESTMENT_APPLICATION
+  INVESTMENT_REDEMPTION
 }
 
 enum StickerCollectionState {
@@ -216,6 +222,30 @@ enum TreasuryEntrySource {
   LUDO_ROOM_FEE
   LUDO_SETTLEMENT
   BATTLESHIP_MATCH_TAX
+  INVESTMENT_APPLICATION
+  INVESTMENT_REDEMPTION
+}
+
+enum InvestmentProduct {
+  MAKER_SAVINGS
+  MAKER_BOND
+  MAKER_BOND_PLUS
+}
+
+enum InvestmentStatus {
+  ACTIVE
+  REDEEMED
+}
+
+enum InvestmentTransactionType {
+  APPLICATION
+  REDEMPTION
+}
+
+enum InvestmentReserveEntrySource {
+  ADMIN_MINT
+  ADMIN_BURN
+  REDEMPTION_GUARANTEE
 }
 
 enum BattleshipRoomStatus {
@@ -468,6 +498,9 @@ model User {
   battleshipBoards             BattleshipBoard[]
   battleshipShotsFired         BattleshipShot[]                   @relation("BattleshipShotAttacker")
   battleshipShotsReceived      BattleshipShot[]                   @relation("BattleshipShotDefender")
+  investmentPositions          InvestmentPosition[]
+  investmentTransactions       InvestmentTransaction[]
+  investmentReserveEntries     InvestmentReserveEntry[]           @relation("InvestmentReserveEntryAuthor")
 
   @@index([role, status, xp])
   @@index([originSchoolClass, status])
@@ -523,6 +556,7 @@ model DevCoinEntry {
   treasuryEntry         DevCoinTreasuryEntry?
   sentTransfer          DevCoinTransfer?       @relation("DevCoinTransferSenderEntry")
   receivedTransfer      DevCoinTransfer?       @relation("DevCoinTransferRecipientEntry")
+  investmentTransaction InvestmentTransaction?
 
   @@index([studentId, createdAt])
 }
@@ -808,6 +842,72 @@ model DevCoinTreasuryEntry {
   @@index([createdAt])
 }
 
+model InvestmentFund {
+  id            Int      @id @default(1)
+  balance       Int      @default(0)
+  targetBalance Int      @default(30000)
+  coverageBps   Int      @default(12000)
+  updatedAt     DateTime @updatedAt
+}
+
+model InvestmentPosition {
+  id             String                  @id @default(uuid()) @db.Uuid
+  studentId      String                  @db.Uuid
+  product        InvestmentProduct
+  status         InvestmentStatus        @default(ACTIVE)
+  principal      Int
+  weeklyRateBps  Int
+  xpBase         Int
+  xpFee          Int
+  applicationDay String
+  appliedAt      DateTime                @default(now())
+  unlockAt       DateTime
+  yieldEndsAt    DateTime
+  redeemedAt     DateTime?
+  feeXpEntryId   String?                 @unique @db.Uuid
+  student        User                    @relation(fields: [studentId], references: [id], onDelete: Restrict)
+  feeXpEntry     XpEntry?                @relation(fields: [feeXpEntryId], references: [id], onDelete: Restrict)
+  transactions   InvestmentTransaction[]
+
+  @@index([studentId, status, appliedAt])
+  @@index([status, yieldEndsAt])
+  @@index([studentId, applicationDay])
+}
+
+model InvestmentTransaction {
+  id              String                    @id @default(uuid()) @db.Uuid
+  positionId      String                    @db.Uuid
+  studentId       String                    @db.Uuid
+  type            InvestmentTransactionType
+  principalAmount Int
+  dividendAmount  Int                       @default(0)
+  devCoinEntryId  String                    @unique @db.Uuid
+  requestId       String                    @unique @db.Uuid
+  createdAt       DateTime                  @default(now())
+  position        InvestmentPosition        @relation(fields: [positionId], references: [id], onDelete: Restrict)
+  student         User                      @relation(fields: [studentId], references: [id], onDelete: Restrict)
+  devCoinEntry    DevCoinEntry              @relation(fields: [devCoinEntryId], references: [id], onDelete: Restrict)
+  reserveEntry    InvestmentReserveEntry?
+
+  @@index([studentId, createdAt])
+  @@index([positionId, createdAt])
+}
+
+model InvestmentReserveEntry {
+  id             String                       @id @default(uuid()) @db.Uuid
+  authorId       String?                      @db.Uuid
+  transactionId  String?                      @unique @db.Uuid
+  delta          Int
+  reason         String
+  source         InvestmentReserveEntrySource
+  idempotencyKey String                       @unique
+  createdAt      DateTime                     @default(now())
+  author         User?                        @relation("InvestmentReserveEntryAuthor", fields: [authorId], references: [id], onDelete: SetNull)
+  transaction    InvestmentTransaction?       @relation(fields: [transactionId], references: [id], onDelete: Restrict)
+
+  @@index([createdAt])
+}
+
 model AccessCodeSequence {
   year      Int @id
   nextValue Int @default(1)
@@ -877,6 +977,7 @@ model XpEntry {
   devCoinTransfer       DevCoinTransfer?
   collectionPurchase    TeacherCollectionPurchase?
   xpGrantRedemption     XpGrantRedemption?
+  investmentPosition    InvestmentPosition?
 
   @@index([studentId, createdAt])
 }

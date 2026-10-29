@@ -152,6 +152,26 @@ export type StickerMarketSetting = Prisma.StickerMarketSettingModel
  */
 export type DevCoinTreasuryEntry = Prisma.DevCoinTreasuryEntryModel
 /**
+ * Model InvestmentFund
+ *
+ */
+export type InvestmentFund = Prisma.InvestmentFundModel
+/**
+ * Model InvestmentPosition
+ *
+ */
+export type InvestmentPosition = Prisma.InvestmentPositionModel
+/**
+ * Model InvestmentTransaction
+ *
+ */
+export type InvestmentTransaction = Prisma.InvestmentTransactionModel
+/**
+ * Model InvestmentReserveEntry
+ *
+ */
+export type InvestmentReserveEntry = Prisma.InvestmentReserveEntryModel
+/**
  * Model AccessCodeSequence
  *
  */

@@ -46,6 +46,7 @@ const titles: Record<string, string> = {
   "/aluno": "Visão geral",
   "/aluno/atividades": "Minhas atividades",
   "/aluno/album": "Álbum de Figurinhas",
+  "/aluno/investimentos": "Carteira de investimentos",
   "/aluno/minigames": "Minigames",
   "/aluno/notificacoes": "Notificações",
   "/aluno/perfil": "Meu perfil",

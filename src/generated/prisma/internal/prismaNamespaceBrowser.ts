@@ -73,6 +73,10 @@ export const ModelName = {
   DevCoinTreasury: 'DevCoinTreasury',
   StickerMarketSetting: 'StickerMarketSetting',
   DevCoinTreasuryEntry: 'DevCoinTreasuryEntry',
+  InvestmentFund: 'InvestmentFund',
+  InvestmentPosition: 'InvestmentPosition',
+  InvestmentTransaction: 'InvestmentTransaction',
+  InvestmentReserveEntry: 'InvestmentReserveEntry',
   AccessCodeSequence: 'AccessCodeSequence',
   Lesson: 'Lesson',
   LessonParticipant: 'LessonParticipant',
@@ -443,6 +447,66 @@ export const DevCoinTreasuryEntryScalarFieldEnum = {
 } as const
 
 export type DevCoinTreasuryEntryScalarFieldEnum = (typeof DevCoinTreasuryEntryScalarFieldEnum)[keyof typeof DevCoinTreasuryEntryScalarFieldEnum]
+
+
+export const InvestmentFundScalarFieldEnum = {
+  id: 'id',
+  balance: 'balance',
+  targetBalance: 'targetBalance',
+  coverageBps: 'coverageBps',
+  updatedAt: 'updatedAt'
+} as const
+
+export type InvestmentFundScalarFieldEnum = (typeof InvestmentFundScalarFieldEnum)[keyof typeof InvestmentFundScalarFieldEnum]
+
+
+export const InvestmentPositionScalarFieldEnum = {
+  id: 'id',
+  studentId: 'studentId',
+  product: 'product',
+  status: 'status',
+  principal: 'principal',
+  weeklyRateBps: 'weeklyRateBps',
+  xpBase: 'xpBase',
+  xpFee: 'xpFee',
+  applicationDay: 'applicationDay',
+  appliedAt: 'appliedAt',
+  unlockAt: 'unlockAt',
+  yieldEndsAt: 'yieldEndsAt',
+  redeemedAt: 'redeemedAt',
+  feeXpEntryId: 'feeXpEntryId'
+} as const
+
+export type InvestmentPositionScalarFieldEnum = (typeof InvestmentPositionScalarFieldEnum)[keyof typeof InvestmentPositionScalarFieldEnum]
+
+
+export const InvestmentTransactionScalarFieldEnum = {
+  id: 'id',
+  positionId: 'positionId',
+  studentId: 'studentId',
+  type: 'type',
+  principalAmount: 'principalAmount',
+  dividendAmount: 'dividendAmount',
+  devCoinEntryId: 'devCoinEntryId',
+  requestId: 'requestId',
+  createdAt: 'createdAt'
+} as const
+
+export type InvestmentTransactionScalarFieldEnum = (typeof InvestmentTransactionScalarFieldEnum)[keyof typeof InvestmentTransactionScalarFieldEnum]
+
+
+export const InvestmentReserveEntryScalarFieldEnum = {
+  id: 'id',
+  authorId: 'authorId',
+  transactionId: 'transactionId',
+  delta: 'delta',
+  reason: 'reason',
+  source: 'source',
+  idempotencyKey: 'idempotencyKey',
+  createdAt: 'createdAt'
+} as const
+
+export type InvestmentReserveEntryScalarFieldEnum = (typeof InvestmentReserveEntryScalarFieldEnum)[keyof typeof InvestmentReserveEntryScalarFieldEnum]
 
 
 export const AccessCodeSequenceScalarFieldEnum = {

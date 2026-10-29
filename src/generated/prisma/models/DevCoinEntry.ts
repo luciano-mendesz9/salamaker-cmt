@@ -256,6 +256,7 @@ export type DevCoinEntryWhereInput = {
   treasuryEntry?: Prisma.XOR<Prisma.DevCoinTreasuryEntryNullableScalarRelationFilter, Prisma.DevCoinTreasuryEntryWhereInput> | null
   sentTransfer?: Prisma.XOR<Prisma.DevCoinTransferNullableScalarRelationFilter, Prisma.DevCoinTransferWhereInput> | null
   receivedTransfer?: Prisma.XOR<Prisma.DevCoinTransferNullableScalarRelationFilter, Prisma.DevCoinTransferWhereInput> | null
+  investmentTransaction?: Prisma.XOR<Prisma.InvestmentTransactionNullableScalarRelationFilter, Prisma.InvestmentTransactionWhereInput> | null
 }
 
 export type DevCoinEntryOrderByWithRelationInput = {
@@ -276,6 +277,7 @@ export type DevCoinEntryOrderByWithRelationInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryOrderByWithRelationInput
   sentTransfer?: Prisma.DevCoinTransferOrderByWithRelationInput
   receivedTransfer?: Prisma.DevCoinTransferOrderByWithRelationInput
+  investmentTransaction?: Prisma.InvestmentTransactionOrderByWithRelationInput
 }
 
 export type DevCoinEntryWhereUniqueInput = Prisma.AtLeast<{
@@ -299,6 +301,7 @@ export type DevCoinEntryWhereUniqueInput = Prisma.AtLeast<{
   treasuryEntry?: Prisma.XOR<Prisma.DevCoinTreasuryEntryNullableScalarRelationFilter, Prisma.DevCoinTreasuryEntryWhereInput> | null
   sentTransfer?: Prisma.XOR<Prisma.DevCoinTransferNullableScalarRelationFilter, Prisma.DevCoinTransferWhereInput> | null
   receivedTransfer?: Prisma.XOR<Prisma.DevCoinTransferNullableScalarRelationFilter, Prisma.DevCoinTransferWhereInput> | null
+  investmentTransaction?: Prisma.XOR<Prisma.InvestmentTransactionNullableScalarRelationFilter, Prisma.InvestmentTransactionWhereInput> | null
 }, "id" | "xpEntryId" | "idempotencyKey">
 
 export type DevCoinEntryOrderByWithAggregationInput = {
@@ -348,6 +351,7 @@ export type DevCoinEntryCreateInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryCreateNestedOneWithoutDevCoinEntryInput
   sentTransfer?: Prisma.DevCoinTransferCreateNestedOneWithoutSenderEntryInput
   receivedTransfer?: Prisma.DevCoinTransferCreateNestedOneWithoutRecipientEntryInput
+  investmentTransaction?: Prisma.InvestmentTransactionCreateNestedOneWithoutDevCoinEntryInput
 }
 
 export type DevCoinEntryUncheckedCreateInput = {
@@ -365,6 +369,7 @@ export type DevCoinEntryUncheckedCreateInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedOneWithoutDevCoinEntryInput
   sentTransfer?: Prisma.DevCoinTransferUncheckedCreateNestedOneWithoutSenderEntryInput
   receivedTransfer?: Prisma.DevCoinTransferUncheckedCreateNestedOneWithoutRecipientEntryInput
+  investmentTransaction?: Prisma.InvestmentTransactionUncheckedCreateNestedOneWithoutDevCoinEntryInput
 }
 
 export type DevCoinEntryUpdateInput = {
@@ -382,6 +387,7 @@ export type DevCoinEntryUpdateInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUpdateOneWithoutDevCoinEntryNestedInput
   sentTransfer?: Prisma.DevCoinTransferUpdateOneWithoutSenderEntryNestedInput
   receivedTransfer?: Prisma.DevCoinTransferUpdateOneWithoutRecipientEntryNestedInput
+  investmentTransaction?: Prisma.InvestmentTransactionUpdateOneWithoutDevCoinEntryNestedInput
 }
 
 export type DevCoinEntryUncheckedUpdateInput = {
@@ -399,6 +405,7 @@ export type DevCoinEntryUncheckedUpdateInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUncheckedUpdateOneWithoutDevCoinEntryNestedInput
   sentTransfer?: Prisma.DevCoinTransferUncheckedUpdateOneWithoutSenderEntryNestedInput
   receivedTransfer?: Prisma.DevCoinTransferUncheckedUpdateOneWithoutRecipientEntryNestedInput
+  investmentTransaction?: Prisma.InvestmentTransactionUncheckedUpdateOneWithoutDevCoinEntryNestedInput
 }
 
 export type DevCoinEntryCreateManyInput = {
@@ -660,6 +667,20 @@ export type DevCoinEntryUpdateOneWithoutTreasuryEntryNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.DevCoinEntryUpdateToOneWithWhereWithoutTreasuryEntryInput, Prisma.DevCoinEntryUpdateWithoutTreasuryEntryInput>, Prisma.DevCoinEntryUncheckedUpdateWithoutTreasuryEntryInput>
 }
 
+export type DevCoinEntryCreateNestedOneWithoutInvestmentTransactionInput = {
+  create?: Prisma.XOR<Prisma.DevCoinEntryCreateWithoutInvestmentTransactionInput, Prisma.DevCoinEntryUncheckedCreateWithoutInvestmentTransactionInput>
+  connectOrCreate?: Prisma.DevCoinEntryCreateOrConnectWithoutInvestmentTransactionInput
+  connect?: Prisma.DevCoinEntryWhereUniqueInput
+}
+
+export type DevCoinEntryUpdateOneRequiredWithoutInvestmentTransactionNestedInput = {
+  create?: Prisma.XOR<Prisma.DevCoinEntryCreateWithoutInvestmentTransactionInput, Prisma.DevCoinEntryUncheckedCreateWithoutInvestmentTransactionInput>
+  connectOrCreate?: Prisma.DevCoinEntryCreateOrConnectWithoutInvestmentTransactionInput
+  upsert?: Prisma.DevCoinEntryUpsertWithoutInvestmentTransactionInput
+  connect?: Prisma.DevCoinEntryWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.DevCoinEntryUpdateToOneWithWhereWithoutInvestmentTransactionInput, Prisma.DevCoinEntryUpdateWithoutInvestmentTransactionInput>, Prisma.DevCoinEntryUncheckedUpdateWithoutInvestmentTransactionInput>
+}
+
 export type DevCoinEntryCreateNestedOneWithoutXpEntryInput = {
   create?: Prisma.XOR<Prisma.DevCoinEntryCreateWithoutXpEntryInput, Prisma.DevCoinEntryUncheckedCreateWithoutXpEntryInput>
   connectOrCreate?: Prisma.DevCoinEntryCreateOrConnectWithoutXpEntryInput
@@ -706,6 +727,7 @@ export type DevCoinEntryCreateWithoutStudentInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryCreateNestedOneWithoutDevCoinEntryInput
   sentTransfer?: Prisma.DevCoinTransferCreateNestedOneWithoutSenderEntryInput
   receivedTransfer?: Prisma.DevCoinTransferCreateNestedOneWithoutRecipientEntryInput
+  investmentTransaction?: Prisma.InvestmentTransactionCreateNestedOneWithoutDevCoinEntryInput
 }
 
 export type DevCoinEntryUncheckedCreateWithoutStudentInput = {
@@ -722,6 +744,7 @@ export type DevCoinEntryUncheckedCreateWithoutStudentInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedOneWithoutDevCoinEntryInput
   sentTransfer?: Prisma.DevCoinTransferUncheckedCreateNestedOneWithoutSenderEntryInput
   receivedTransfer?: Prisma.DevCoinTransferUncheckedCreateNestedOneWithoutRecipientEntryInput
+  investmentTransaction?: Prisma.InvestmentTransactionUncheckedCreateNestedOneWithoutDevCoinEntryInput
 }
 
 export type DevCoinEntryCreateOrConnectWithoutStudentInput = {
@@ -748,6 +771,7 @@ export type DevCoinEntryCreateWithoutAuthorInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryCreateNestedOneWithoutDevCoinEntryInput
   sentTransfer?: Prisma.DevCoinTransferCreateNestedOneWithoutSenderEntryInput
   receivedTransfer?: Prisma.DevCoinTransferCreateNestedOneWithoutRecipientEntryInput
+  investmentTransaction?: Prisma.InvestmentTransactionCreateNestedOneWithoutDevCoinEntryInput
 }
 
 export type DevCoinEntryUncheckedCreateWithoutAuthorInput = {
@@ -764,6 +788,7 @@ export type DevCoinEntryUncheckedCreateWithoutAuthorInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedOneWithoutDevCoinEntryInput
   sentTransfer?: Prisma.DevCoinTransferUncheckedCreateNestedOneWithoutSenderEntryInput
   receivedTransfer?: Prisma.DevCoinTransferUncheckedCreateNestedOneWithoutRecipientEntryInput
+  investmentTransaction?: Prisma.InvestmentTransactionUncheckedCreateNestedOneWithoutDevCoinEntryInput
 }
 
 export type DevCoinEntryCreateOrConnectWithoutAuthorInput = {
@@ -837,6 +862,7 @@ export type DevCoinEntryCreateWithoutProfileAvatarPurchaseInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryCreateNestedOneWithoutDevCoinEntryInput
   sentTransfer?: Prisma.DevCoinTransferCreateNestedOneWithoutSenderEntryInput
   receivedTransfer?: Prisma.DevCoinTransferCreateNestedOneWithoutRecipientEntryInput
+  investmentTransaction?: Prisma.InvestmentTransactionCreateNestedOneWithoutDevCoinEntryInput
 }
 
 export type DevCoinEntryUncheckedCreateWithoutProfileAvatarPurchaseInput = {
@@ -853,6 +879,7 @@ export type DevCoinEntryUncheckedCreateWithoutProfileAvatarPurchaseInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedOneWithoutDevCoinEntryInput
   sentTransfer?: Prisma.DevCoinTransferUncheckedCreateNestedOneWithoutSenderEntryInput
   receivedTransfer?: Prisma.DevCoinTransferUncheckedCreateNestedOneWithoutRecipientEntryInput
+  investmentTransaction?: Prisma.InvestmentTransactionUncheckedCreateNestedOneWithoutDevCoinEntryInput
 }
 
 export type DevCoinEntryCreateOrConnectWithoutProfileAvatarPurchaseInput = {
@@ -885,6 +912,7 @@ export type DevCoinEntryUpdateWithoutProfileAvatarPurchaseInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUpdateOneWithoutDevCoinEntryNestedInput
   sentTransfer?: Prisma.DevCoinTransferUpdateOneWithoutSenderEntryNestedInput
   receivedTransfer?: Prisma.DevCoinTransferUpdateOneWithoutRecipientEntryNestedInput
+  investmentTransaction?: Prisma.InvestmentTransactionUpdateOneWithoutDevCoinEntryNestedInput
 }
 
 export type DevCoinEntryUncheckedUpdateWithoutProfileAvatarPurchaseInput = {
@@ -901,6 +929,7 @@ export type DevCoinEntryUncheckedUpdateWithoutProfileAvatarPurchaseInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUncheckedUpdateOneWithoutDevCoinEntryNestedInput
   sentTransfer?: Prisma.DevCoinTransferUncheckedUpdateOneWithoutSenderEntryNestedInput
   receivedTransfer?: Prisma.DevCoinTransferUncheckedUpdateOneWithoutRecipientEntryNestedInput
+  investmentTransaction?: Prisma.InvestmentTransactionUncheckedUpdateOneWithoutDevCoinEntryNestedInput
 }
 
 export type DevCoinEntryCreateWithoutStudentThemePurchaseInput = {
@@ -917,6 +946,7 @@ export type DevCoinEntryCreateWithoutStudentThemePurchaseInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryCreateNestedOneWithoutDevCoinEntryInput
   sentTransfer?: Prisma.DevCoinTransferCreateNestedOneWithoutSenderEntryInput
   receivedTransfer?: Prisma.DevCoinTransferCreateNestedOneWithoutRecipientEntryInput
+  investmentTransaction?: Prisma.InvestmentTransactionCreateNestedOneWithoutDevCoinEntryInput
 }
 
 export type DevCoinEntryUncheckedCreateWithoutStudentThemePurchaseInput = {
@@ -933,6 +963,7 @@ export type DevCoinEntryUncheckedCreateWithoutStudentThemePurchaseInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedOneWithoutDevCoinEntryInput
   sentTransfer?: Prisma.DevCoinTransferUncheckedCreateNestedOneWithoutSenderEntryInput
   receivedTransfer?: Prisma.DevCoinTransferUncheckedCreateNestedOneWithoutRecipientEntryInput
+  investmentTransaction?: Prisma.InvestmentTransactionUncheckedCreateNestedOneWithoutDevCoinEntryInput
 }
 
 export type DevCoinEntryCreateOrConnectWithoutStudentThemePurchaseInput = {
@@ -965,6 +996,7 @@ export type DevCoinEntryUpdateWithoutStudentThemePurchaseInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUpdateOneWithoutDevCoinEntryNestedInput
   sentTransfer?: Prisma.DevCoinTransferUpdateOneWithoutSenderEntryNestedInput
   receivedTransfer?: Prisma.DevCoinTransferUpdateOneWithoutRecipientEntryNestedInput
+  investmentTransaction?: Prisma.InvestmentTransactionUpdateOneWithoutDevCoinEntryNestedInput
 }
 
 export type DevCoinEntryUncheckedUpdateWithoutStudentThemePurchaseInput = {
@@ -981,6 +1013,7 @@ export type DevCoinEntryUncheckedUpdateWithoutStudentThemePurchaseInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUncheckedUpdateOneWithoutDevCoinEntryNestedInput
   sentTransfer?: Prisma.DevCoinTransferUncheckedUpdateOneWithoutSenderEntryNestedInput
   receivedTransfer?: Prisma.DevCoinTransferUncheckedUpdateOneWithoutRecipientEntryNestedInput
+  investmentTransaction?: Prisma.InvestmentTransactionUncheckedUpdateOneWithoutDevCoinEntryNestedInput
 }
 
 export type DevCoinEntryCreateWithoutSentTransferInput = {
@@ -997,6 +1030,7 @@ export type DevCoinEntryCreateWithoutSentTransferInput = {
   studentThemePurchase?: Prisma.StudentThemePurchaseCreateNestedOneWithoutDevCoinEntryInput
   treasuryEntry?: Prisma.DevCoinTreasuryEntryCreateNestedOneWithoutDevCoinEntryInput
   receivedTransfer?: Prisma.DevCoinTransferCreateNestedOneWithoutRecipientEntryInput
+  investmentTransaction?: Prisma.InvestmentTransactionCreateNestedOneWithoutDevCoinEntryInput
 }
 
 export type DevCoinEntryUncheckedCreateWithoutSentTransferInput = {
@@ -1013,6 +1047,7 @@ export type DevCoinEntryUncheckedCreateWithoutSentTransferInput = {
   studentThemePurchase?: Prisma.StudentThemePurchaseUncheckedCreateNestedOneWithoutDevCoinEntryInput
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedOneWithoutDevCoinEntryInput
   receivedTransfer?: Prisma.DevCoinTransferUncheckedCreateNestedOneWithoutRecipientEntryInput
+  investmentTransaction?: Prisma.InvestmentTransactionUncheckedCreateNestedOneWithoutDevCoinEntryInput
 }
 
 export type DevCoinEntryCreateOrConnectWithoutSentTransferInput = {
@@ -1034,6 +1069,7 @@ export type DevCoinEntryCreateWithoutReceivedTransferInput = {
   studentThemePurchase?: Prisma.StudentThemePurchaseCreateNestedOneWithoutDevCoinEntryInput
   treasuryEntry?: Prisma.DevCoinTreasuryEntryCreateNestedOneWithoutDevCoinEntryInput
   sentTransfer?: Prisma.DevCoinTransferCreateNestedOneWithoutSenderEntryInput
+  investmentTransaction?: Prisma.InvestmentTransactionCreateNestedOneWithoutDevCoinEntryInput
 }
 
 export type DevCoinEntryUncheckedCreateWithoutReceivedTransferInput = {
@@ -1050,6 +1086,7 @@ export type DevCoinEntryUncheckedCreateWithoutReceivedTransferInput = {
   studentThemePurchase?: Prisma.StudentThemePurchaseUncheckedCreateNestedOneWithoutDevCoinEntryInput
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedOneWithoutDevCoinEntryInput
   sentTransfer?: Prisma.DevCoinTransferUncheckedCreateNestedOneWithoutSenderEntryInput
+  investmentTransaction?: Prisma.InvestmentTransactionUncheckedCreateNestedOneWithoutDevCoinEntryInput
 }
 
 export type DevCoinEntryCreateOrConnectWithoutReceivedTransferInput = {
@@ -1082,6 +1119,7 @@ export type DevCoinEntryUpdateWithoutSentTransferInput = {
   studentThemePurchase?: Prisma.StudentThemePurchaseUpdateOneWithoutDevCoinEntryNestedInput
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUpdateOneWithoutDevCoinEntryNestedInput
   receivedTransfer?: Prisma.DevCoinTransferUpdateOneWithoutRecipientEntryNestedInput
+  investmentTransaction?: Prisma.InvestmentTransactionUpdateOneWithoutDevCoinEntryNestedInput
 }
 
 export type DevCoinEntryUncheckedUpdateWithoutSentTransferInput = {
@@ -1098,6 +1136,7 @@ export type DevCoinEntryUncheckedUpdateWithoutSentTransferInput = {
   studentThemePurchase?: Prisma.StudentThemePurchaseUncheckedUpdateOneWithoutDevCoinEntryNestedInput
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUncheckedUpdateOneWithoutDevCoinEntryNestedInput
   receivedTransfer?: Prisma.DevCoinTransferUncheckedUpdateOneWithoutRecipientEntryNestedInput
+  investmentTransaction?: Prisma.InvestmentTransactionUncheckedUpdateOneWithoutDevCoinEntryNestedInput
 }
 
 export type DevCoinEntryUpsertWithoutReceivedTransferInput = {
@@ -1125,6 +1164,7 @@ export type DevCoinEntryUpdateWithoutReceivedTransferInput = {
   studentThemePurchase?: Prisma.StudentThemePurchaseUpdateOneWithoutDevCoinEntryNestedInput
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUpdateOneWithoutDevCoinEntryNestedInput
   sentTransfer?: Prisma.DevCoinTransferUpdateOneWithoutSenderEntryNestedInput
+  investmentTransaction?: Prisma.InvestmentTransactionUpdateOneWithoutDevCoinEntryNestedInput
 }
 
 export type DevCoinEntryUncheckedUpdateWithoutReceivedTransferInput = {
@@ -1141,6 +1181,7 @@ export type DevCoinEntryUncheckedUpdateWithoutReceivedTransferInput = {
   studentThemePurchase?: Prisma.StudentThemePurchaseUncheckedUpdateOneWithoutDevCoinEntryNestedInput
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUncheckedUpdateOneWithoutDevCoinEntryNestedInput
   sentTransfer?: Prisma.DevCoinTransferUncheckedUpdateOneWithoutSenderEntryNestedInput
+  investmentTransaction?: Prisma.InvestmentTransactionUncheckedUpdateOneWithoutDevCoinEntryNestedInput
 }
 
 export type DevCoinEntryCreateWithoutTreasuryEntryInput = {
@@ -1157,6 +1198,7 @@ export type DevCoinEntryCreateWithoutTreasuryEntryInput = {
   studentThemePurchase?: Prisma.StudentThemePurchaseCreateNestedOneWithoutDevCoinEntryInput
   sentTransfer?: Prisma.DevCoinTransferCreateNestedOneWithoutSenderEntryInput
   receivedTransfer?: Prisma.DevCoinTransferCreateNestedOneWithoutRecipientEntryInput
+  investmentTransaction?: Prisma.InvestmentTransactionCreateNestedOneWithoutDevCoinEntryInput
 }
 
 export type DevCoinEntryUncheckedCreateWithoutTreasuryEntryInput = {
@@ -1173,6 +1215,7 @@ export type DevCoinEntryUncheckedCreateWithoutTreasuryEntryInput = {
   studentThemePurchase?: Prisma.StudentThemePurchaseUncheckedCreateNestedOneWithoutDevCoinEntryInput
   sentTransfer?: Prisma.DevCoinTransferUncheckedCreateNestedOneWithoutSenderEntryInput
   receivedTransfer?: Prisma.DevCoinTransferUncheckedCreateNestedOneWithoutRecipientEntryInput
+  investmentTransaction?: Prisma.InvestmentTransactionUncheckedCreateNestedOneWithoutDevCoinEntryInput
 }
 
 export type DevCoinEntryCreateOrConnectWithoutTreasuryEntryInput = {
@@ -1205,6 +1248,7 @@ export type DevCoinEntryUpdateWithoutTreasuryEntryInput = {
   studentThemePurchase?: Prisma.StudentThemePurchaseUpdateOneWithoutDevCoinEntryNestedInput
   sentTransfer?: Prisma.DevCoinTransferUpdateOneWithoutSenderEntryNestedInput
   receivedTransfer?: Prisma.DevCoinTransferUpdateOneWithoutRecipientEntryNestedInput
+  investmentTransaction?: Prisma.InvestmentTransactionUpdateOneWithoutDevCoinEntryNestedInput
 }
 
 export type DevCoinEntryUncheckedUpdateWithoutTreasuryEntryInput = {
@@ -1219,6 +1263,91 @@ export type DevCoinEntryUncheckedUpdateWithoutTreasuryEntryInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUncheckedUpdateOneWithoutDevCoinEntryNestedInput
   studentThemePurchase?: Prisma.StudentThemePurchaseUncheckedUpdateOneWithoutDevCoinEntryNestedInput
+  sentTransfer?: Prisma.DevCoinTransferUncheckedUpdateOneWithoutSenderEntryNestedInput
+  receivedTransfer?: Prisma.DevCoinTransferUncheckedUpdateOneWithoutRecipientEntryNestedInput
+  investmentTransaction?: Prisma.InvestmentTransactionUncheckedUpdateOneWithoutDevCoinEntryNestedInput
+}
+
+export type DevCoinEntryCreateWithoutInvestmentTransactionInput = {
+  id?: string
+  delta: number
+  reason: string
+  source: $Enums.DevCoinSource
+  idempotencyKey: string
+  createdAt?: Date | string
+  student: Prisma.UserCreateNestedOneWithoutDevCoinEntriesInput
+  author?: Prisma.UserCreateNestedOneWithoutAuthoredDevCoinEntriesInput
+  xpEntry?: Prisma.XpEntryCreateNestedOneWithoutDevCoinEntryInput
+  profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseCreateNestedOneWithoutDevCoinEntryInput
+  studentThemePurchase?: Prisma.StudentThemePurchaseCreateNestedOneWithoutDevCoinEntryInput
+  treasuryEntry?: Prisma.DevCoinTreasuryEntryCreateNestedOneWithoutDevCoinEntryInput
+  sentTransfer?: Prisma.DevCoinTransferCreateNestedOneWithoutSenderEntryInput
+  receivedTransfer?: Prisma.DevCoinTransferCreateNestedOneWithoutRecipientEntryInput
+}
+
+export type DevCoinEntryUncheckedCreateWithoutInvestmentTransactionInput = {
+  id?: string
+  studentId: string
+  authorId?: string | null
+  xpEntryId?: string | null
+  delta: number
+  reason: string
+  source: $Enums.DevCoinSource
+  idempotencyKey: string
+  createdAt?: Date | string
+  profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedOneWithoutDevCoinEntryInput
+  studentThemePurchase?: Prisma.StudentThemePurchaseUncheckedCreateNestedOneWithoutDevCoinEntryInput
+  treasuryEntry?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedOneWithoutDevCoinEntryInput
+  sentTransfer?: Prisma.DevCoinTransferUncheckedCreateNestedOneWithoutSenderEntryInput
+  receivedTransfer?: Prisma.DevCoinTransferUncheckedCreateNestedOneWithoutRecipientEntryInput
+}
+
+export type DevCoinEntryCreateOrConnectWithoutInvestmentTransactionInput = {
+  where: Prisma.DevCoinEntryWhereUniqueInput
+  create: Prisma.XOR<Prisma.DevCoinEntryCreateWithoutInvestmentTransactionInput, Prisma.DevCoinEntryUncheckedCreateWithoutInvestmentTransactionInput>
+}
+
+export type DevCoinEntryUpsertWithoutInvestmentTransactionInput = {
+  update: Prisma.XOR<Prisma.DevCoinEntryUpdateWithoutInvestmentTransactionInput, Prisma.DevCoinEntryUncheckedUpdateWithoutInvestmentTransactionInput>
+  create: Prisma.XOR<Prisma.DevCoinEntryCreateWithoutInvestmentTransactionInput, Prisma.DevCoinEntryUncheckedCreateWithoutInvestmentTransactionInput>
+  where?: Prisma.DevCoinEntryWhereInput
+}
+
+export type DevCoinEntryUpdateToOneWithWhereWithoutInvestmentTransactionInput = {
+  where?: Prisma.DevCoinEntryWhereInput
+  data: Prisma.XOR<Prisma.DevCoinEntryUpdateWithoutInvestmentTransactionInput, Prisma.DevCoinEntryUncheckedUpdateWithoutInvestmentTransactionInput>
+}
+
+export type DevCoinEntryUpdateWithoutInvestmentTransactionInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  delta?: Prisma.IntFieldUpdateOperationsInput | number
+  reason?: Prisma.StringFieldUpdateOperationsInput | string
+  source?: Prisma.EnumDevCoinSourceFieldUpdateOperationsInput | $Enums.DevCoinSource
+  idempotencyKey?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  student?: Prisma.UserUpdateOneRequiredWithoutDevCoinEntriesNestedInput
+  author?: Prisma.UserUpdateOneWithoutAuthoredDevCoinEntriesNestedInput
+  xpEntry?: Prisma.XpEntryUpdateOneWithoutDevCoinEntryNestedInput
+  profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUpdateOneWithoutDevCoinEntryNestedInput
+  studentThemePurchase?: Prisma.StudentThemePurchaseUpdateOneWithoutDevCoinEntryNestedInput
+  treasuryEntry?: Prisma.DevCoinTreasuryEntryUpdateOneWithoutDevCoinEntryNestedInput
+  sentTransfer?: Prisma.DevCoinTransferUpdateOneWithoutSenderEntryNestedInput
+  receivedTransfer?: Prisma.DevCoinTransferUpdateOneWithoutRecipientEntryNestedInput
+}
+
+export type DevCoinEntryUncheckedUpdateWithoutInvestmentTransactionInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  studentId?: Prisma.StringFieldUpdateOperationsInput | string
+  authorId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  xpEntryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  delta?: Prisma.IntFieldUpdateOperationsInput | number
+  reason?: Prisma.StringFieldUpdateOperationsInput | string
+  source?: Prisma.EnumDevCoinSourceFieldUpdateOperationsInput | $Enums.DevCoinSource
+  idempotencyKey?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  profileAvatarPurchase?: Prisma.ProfileAvatarPurchaseUncheckedUpdateOneWithoutDevCoinEntryNestedInput
+  studentThemePurchase?: Prisma.StudentThemePurchaseUncheckedUpdateOneWithoutDevCoinEntryNestedInput
+  treasuryEntry?: Prisma.DevCoinTreasuryEntryUncheckedUpdateOneWithoutDevCoinEntryNestedInput
   sentTransfer?: Prisma.DevCoinTransferUncheckedUpdateOneWithoutSenderEntryNestedInput
   receivedTransfer?: Prisma.DevCoinTransferUncheckedUpdateOneWithoutRecipientEntryNestedInput
 }
@@ -1237,6 +1366,7 @@ export type DevCoinEntryCreateWithoutXpEntryInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryCreateNestedOneWithoutDevCoinEntryInput
   sentTransfer?: Prisma.DevCoinTransferCreateNestedOneWithoutSenderEntryInput
   receivedTransfer?: Prisma.DevCoinTransferCreateNestedOneWithoutRecipientEntryInput
+  investmentTransaction?: Prisma.InvestmentTransactionCreateNestedOneWithoutDevCoinEntryInput
 }
 
 export type DevCoinEntryUncheckedCreateWithoutXpEntryInput = {
@@ -1253,6 +1383,7 @@ export type DevCoinEntryUncheckedCreateWithoutXpEntryInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedOneWithoutDevCoinEntryInput
   sentTransfer?: Prisma.DevCoinTransferUncheckedCreateNestedOneWithoutSenderEntryInput
   receivedTransfer?: Prisma.DevCoinTransferUncheckedCreateNestedOneWithoutRecipientEntryInput
+  investmentTransaction?: Prisma.InvestmentTransactionUncheckedCreateNestedOneWithoutDevCoinEntryInput
 }
 
 export type DevCoinEntryCreateOrConnectWithoutXpEntryInput = {
@@ -1285,6 +1416,7 @@ export type DevCoinEntryUpdateWithoutXpEntryInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUpdateOneWithoutDevCoinEntryNestedInput
   sentTransfer?: Prisma.DevCoinTransferUpdateOneWithoutSenderEntryNestedInput
   receivedTransfer?: Prisma.DevCoinTransferUpdateOneWithoutRecipientEntryNestedInput
+  investmentTransaction?: Prisma.InvestmentTransactionUpdateOneWithoutDevCoinEntryNestedInput
 }
 
 export type DevCoinEntryUncheckedUpdateWithoutXpEntryInput = {
@@ -1301,6 +1433,7 @@ export type DevCoinEntryUncheckedUpdateWithoutXpEntryInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUncheckedUpdateOneWithoutDevCoinEntryNestedInput
   sentTransfer?: Prisma.DevCoinTransferUncheckedUpdateOneWithoutSenderEntryNestedInput
   receivedTransfer?: Prisma.DevCoinTransferUncheckedUpdateOneWithoutRecipientEntryNestedInput
+  investmentTransaction?: Prisma.InvestmentTransactionUncheckedUpdateOneWithoutDevCoinEntryNestedInput
 }
 
 export type DevCoinEntryCreateManyStudentInput = {
@@ -1339,6 +1472,7 @@ export type DevCoinEntryUpdateWithoutStudentInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUpdateOneWithoutDevCoinEntryNestedInput
   sentTransfer?: Prisma.DevCoinTransferUpdateOneWithoutSenderEntryNestedInput
   receivedTransfer?: Prisma.DevCoinTransferUpdateOneWithoutRecipientEntryNestedInput
+  investmentTransaction?: Prisma.InvestmentTransactionUpdateOneWithoutDevCoinEntryNestedInput
 }
 
 export type DevCoinEntryUncheckedUpdateWithoutStudentInput = {
@@ -1355,6 +1489,7 @@ export type DevCoinEntryUncheckedUpdateWithoutStudentInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUncheckedUpdateOneWithoutDevCoinEntryNestedInput
   sentTransfer?: Prisma.DevCoinTransferUncheckedUpdateOneWithoutSenderEntryNestedInput
   receivedTransfer?: Prisma.DevCoinTransferUncheckedUpdateOneWithoutRecipientEntryNestedInput
+  investmentTransaction?: Prisma.InvestmentTransactionUncheckedUpdateOneWithoutDevCoinEntryNestedInput
 }
 
 export type DevCoinEntryUncheckedUpdateManyWithoutStudentInput = {
@@ -1382,6 +1517,7 @@ export type DevCoinEntryUpdateWithoutAuthorInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUpdateOneWithoutDevCoinEntryNestedInput
   sentTransfer?: Prisma.DevCoinTransferUpdateOneWithoutSenderEntryNestedInput
   receivedTransfer?: Prisma.DevCoinTransferUpdateOneWithoutRecipientEntryNestedInput
+  investmentTransaction?: Prisma.InvestmentTransactionUpdateOneWithoutDevCoinEntryNestedInput
 }
 
 export type DevCoinEntryUncheckedUpdateWithoutAuthorInput = {
@@ -1398,6 +1534,7 @@ export type DevCoinEntryUncheckedUpdateWithoutAuthorInput = {
   treasuryEntry?: Prisma.DevCoinTreasuryEntryUncheckedUpdateOneWithoutDevCoinEntryNestedInput
   sentTransfer?: Prisma.DevCoinTransferUncheckedUpdateOneWithoutSenderEntryNestedInput
   receivedTransfer?: Prisma.DevCoinTransferUncheckedUpdateOneWithoutRecipientEntryNestedInput
+  investmentTransaction?: Prisma.InvestmentTransactionUncheckedUpdateOneWithoutDevCoinEntryNestedInput
 }
 
 export type DevCoinEntryUncheckedUpdateManyWithoutAuthorInput = {
@@ -1431,6 +1568,7 @@ export type DevCoinEntrySelect<ExtArgs extends runtime.Types.Extensions.Internal
   treasuryEntry?: boolean | Prisma.DevCoinEntry$treasuryEntryArgs<ExtArgs>
   sentTransfer?: boolean | Prisma.DevCoinEntry$sentTransferArgs<ExtArgs>
   receivedTransfer?: boolean | Prisma.DevCoinEntry$receivedTransferArgs<ExtArgs>
+  investmentTransaction?: boolean | Prisma.DevCoinEntry$investmentTransactionArgs<ExtArgs>
 }, ExtArgs["result"]["devCoinEntry"]>
 
 export type DevCoinEntrySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1485,6 +1623,7 @@ export type DevCoinEntryInclude<ExtArgs extends runtime.Types.Extensions.Interna
   treasuryEntry?: boolean | Prisma.DevCoinEntry$treasuryEntryArgs<ExtArgs>
   sentTransfer?: boolean | Prisma.DevCoinEntry$sentTransferArgs<ExtArgs>
   receivedTransfer?: boolean | Prisma.DevCoinEntry$receivedTransferArgs<ExtArgs>
+  investmentTransaction?: boolean | Prisma.DevCoinEntry$investmentTransactionArgs<ExtArgs>
 }
 export type DevCoinEntryIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   student?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -1508,6 +1647,7 @@ export type $DevCoinEntryPayload<ExtArgs extends runtime.Types.Extensions.Intern
     treasuryEntry: Prisma.$DevCoinTreasuryEntryPayload<ExtArgs> | null
     sentTransfer: Prisma.$DevCoinTransferPayload<ExtArgs> | null
     receivedTransfer: Prisma.$DevCoinTransferPayload<ExtArgs> | null
+    investmentTransaction: Prisma.$InvestmentTransactionPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1921,6 +2061,7 @@ export interface Prisma__DevCoinEntryClient<T, Null = never, ExtArgs extends run
   treasuryEntry<T extends Prisma.DevCoinEntry$treasuryEntryArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.DevCoinEntry$treasuryEntryArgs<ExtArgs>>): Prisma.Prisma__DevCoinTreasuryEntryClient<runtime.Types.Result.GetResult<Prisma.$DevCoinTreasuryEntryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   sentTransfer<T extends Prisma.DevCoinEntry$sentTransferArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.DevCoinEntry$sentTransferArgs<ExtArgs>>): Prisma.Prisma__DevCoinTransferClient<runtime.Types.Result.GetResult<Prisma.$DevCoinTransferPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   receivedTransfer<T extends Prisma.DevCoinEntry$receivedTransferArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.DevCoinEntry$receivedTransferArgs<ExtArgs>>): Prisma.Prisma__DevCoinTransferClient<runtime.Types.Result.GetResult<Prisma.$DevCoinTransferPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  investmentTransaction<T extends Prisma.DevCoinEntry$investmentTransactionArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.DevCoinEntry$investmentTransactionArgs<ExtArgs>>): Prisma.Prisma__InvestmentTransactionClient<runtime.Types.Result.GetResult<Prisma.$InvestmentTransactionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2490,6 +2631,25 @@ export type DevCoinEntry$receivedTransferArgs<ExtArgs extends runtime.Types.Exte
    */
   include?: Prisma.DevCoinTransferInclude<ExtArgs> | null
   where?: Prisma.DevCoinTransferWhereInput
+}
+
+/**
+ * DevCoinEntry.investmentTransaction
+ */
+export type DevCoinEntry$investmentTransactionArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the InvestmentTransaction
+   */
+  select?: Prisma.InvestmentTransactionSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the InvestmentTransaction
+   */
+  omit?: Prisma.InvestmentTransactionOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.InvestmentTransactionInclude<ExtArgs> | null
+  where?: Prisma.InvestmentTransactionWhereInput
 }
 
 /**

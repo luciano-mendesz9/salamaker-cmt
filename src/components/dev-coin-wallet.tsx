@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { Images, Send, ShoppingCart, Sparkles, X, Zap } from "lucide-react";
+import { ChartNoAxesCombined, Images, Send, ShoppingCart, Sparkles, X, Zap } from "lucide-react";
 import { toast } from "sonner";
 import devCoinImage from "@/assets/dev-coin.webp";
 import { devCoinsForXp } from "@/lib/dev-coins";
@@ -79,6 +79,11 @@ export function DevCoinWallet({ currentDevCoins, currentXp, devCoinsPerXp, recip
       <span><span className="block text-xs font-bold uppercase tracking-wider text-amber-200/75">Minhas Dev-Coins</span><strong className="mt-1 block font-display text-2xl text-amber-200">{currentDevCoins}</strong></span>
       <span className="ml-auto text-right text-xs font-bold text-amber-200"><Sparkles className="ml-auto mb-1" size={17} />Comprar</span>
     </button>
+    <Link href="/aluno/investimentos" className="investment-laser-card focus-ring group mt-3 flex w-full items-center gap-3 rounded-2xl p-4">
+      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[color-mix(in_srgb,var(--accent)_16%,transparent)] text-[var(--accent-soft)]"><ChartNoAxesCombined size={23}/></span>
+      <span className="min-w-0 flex-1"><span className="block text-[10px] font-black uppercase tracking-[.16em] text-[var(--accent-soft)]">Faça suas moedas crescerem</span><strong className="mt-1 block text-sm tracking-wide">CARTEIRA DE INVESTIMENTOS</strong></span>
+      <Sparkles className="shrink-0 text-[var(--accent-soft)] transition group-hover:rotate-12 group-hover:scale-110" size={19}/>
+    </Link>
     {quickAction}
     <div className="mt-3 grid grid-cols-2 gap-3"><Link href="/aluno/album" className="button-secondary w-full"><Images size={18}/>Álbum</Link><button type="button" onClick={() => setTransferOpen(true)} className="button-secondary w-full"><Send size={18}/>Transferir</button></div>
     {open && <div className="fixed inset-0 z-[90] grid place-items-center bg-slate-950/80 p-4 backdrop-blur-sm" onMouseDown={(event) => { if (event.target === event.currentTarget && !busy) setOpen(false); }}>

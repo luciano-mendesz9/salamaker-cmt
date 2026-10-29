@@ -6,24 +6,27 @@ export type CollectiblesReadiness = {
   marketSettings: boolean;
   collectionPurchases: boolean;
   studentThemes: boolean;
+  investments: boolean;
   ready: boolean;
 };
 
 export async function getCollectiblesReadiness(): Promise<CollectiblesReadiness> {
-  const [row] = await prisma.$queryRaw<Array<{ sticker: string | null; treasury: string | null; marketSettings: string | null; collectionPurchases: string | null; studentThemes: string | null }>>`
+  const [row] = await prisma.$queryRaw<Array<{ sticker: string | null; treasury: string | null; marketSettings: string | null; collectionPurchases: string | null; studentThemes: string | null; investments: string | null }>>`
     SELECT
       to_regclass('public."Sticker"')::text AS "sticker",
       to_regclass('public."DevCoinTreasury"')::text AS "treasury",
       to_regclass('public."StickerMarketSetting"')::text AS "marketSettings",
       to_regclass('public."TeacherCollectionPurchaseRequest"')::text AS "collectionPurchases",
-      to_regclass('public."StudentThemePurchase"')::text AS "studentThemes"
+      to_regclass('public."StudentThemePurchase"')::text AS "studentThemes",
+      to_regclass('public."InvestmentPosition"')::text AS "investments"
   `;
   const stickers = Boolean(row?.sticker);
   const treasury = Boolean(row?.treasury);
   const marketSettings = Boolean(row?.marketSettings);
   const collectionPurchases = Boolean(row?.collectionPurchases);
   const studentThemes = Boolean(row?.studentThemes);
-  return { stickers, treasury, marketSettings, collectionPurchases, studentThemes, ready: stickers && treasury && marketSettings };
+  const investments = Boolean(row?.investments);
+  return { stickers, treasury, marketSettings, collectionPurchases, studentThemes, investments, ready: stickers && treasury && marketSettings };
 }
 
 export async function requireCollectionPurchasesSchema() {
@@ -38,4 +41,10 @@ export async function requireStudentThemesSchema() {
   const readiness = await getCollectiblesReadiness();
   if (!readiness.ready) throw new Error("COLLECTIBLES_SCHEMA_NOT_READY");
   if (!readiness.studentThemes) throw new Error("STUDENT_THEMES_SCHEMA_NOT_READY");
+}
+
+export async function requireInvestmentsSchema() {
+  const readiness = await getCollectiblesReadiness();
+  if (!readiness.ready) throw new Error("COLLECTIBLES_SCHEMA_NOT_READY");
+  if (!readiness.investments) throw new Error("INVESTMENTS_SCHEMA_NOT_READY");
 }

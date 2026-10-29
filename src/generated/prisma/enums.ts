@@ -73,7 +73,8 @@ export const XpSource = {
   LUDO_RESULT: 'LUDO_RESULT',
   LUDO_FORFEIT: 'LUDO_FORFEIT',
   EXTERNAL_CODE: 'EXTERNAL_CODE',
-  BATTLESHIP: 'BATTLESHIP'
+  BATTLESHIP: 'BATTLESHIP',
+  INVESTMENT_FEE: 'INVESTMENT_FEE'
 } as const
 
 export type XpSource = (typeof XpSource)[keyof typeof XpSource]
@@ -135,7 +136,10 @@ export const AuditEvent = {
   BATTLESHIP_MATCH_STARTED: 'BATTLESHIP_MATCH_STARTED',
   BATTLESHIP_SHOT_FIRED: 'BATTLESHIP_SHOT_FIRED',
   BATTLESHIP_MATCH_FINISHED: 'BATTLESHIP_MATCH_FINISHED',
-  BATTLESHIP_ROOM_CANCELLED: 'BATTLESHIP_ROOM_CANCELLED'
+  BATTLESHIP_ROOM_CANCELLED: 'BATTLESHIP_ROOM_CANCELLED',
+  INVESTMENT_APPLIED: 'INVESTMENT_APPLIED',
+  INVESTMENT_REDEEMED: 'INVESTMENT_REDEEMED',
+  INVESTMENT_RESERVE_CHANGED: 'INVESTMENT_RESERVE_CHANGED'
 } as const
 
 export type AuditEvent = (typeof AuditEvent)[keyof typeof AuditEvent]
@@ -162,7 +166,9 @@ export const DevCoinSource = {
   LUDO_PRIZE: 'LUDO_PRIZE',
   STUDENT_THEME: 'STUDENT_THEME',
   BATTLESHIP_WAGER: 'BATTLESHIP_WAGER',
-  BATTLESHIP_PRIZE: 'BATTLESHIP_PRIZE'
+  BATTLESHIP_PRIZE: 'BATTLESHIP_PRIZE',
+  INVESTMENT_APPLICATION: 'INVESTMENT_APPLICATION',
+  INVESTMENT_REDEMPTION: 'INVESTMENT_REDEMPTION'
 } as const
 
 export type DevCoinSource = (typeof DevCoinSource)[keyof typeof DevCoinSource]
@@ -268,10 +274,46 @@ export const TreasuryEntrySource = {
   SUDOKU_EXTRA_ERRORS: 'SUDOKU_EXTRA_ERRORS',
   LUDO_ROOM_FEE: 'LUDO_ROOM_FEE',
   LUDO_SETTLEMENT: 'LUDO_SETTLEMENT',
-  BATTLESHIP_MATCH_TAX: 'BATTLESHIP_MATCH_TAX'
+  BATTLESHIP_MATCH_TAX: 'BATTLESHIP_MATCH_TAX',
+  INVESTMENT_APPLICATION: 'INVESTMENT_APPLICATION',
+  INVESTMENT_REDEMPTION: 'INVESTMENT_REDEMPTION'
 } as const
 
 export type TreasuryEntrySource = (typeof TreasuryEntrySource)[keyof typeof TreasuryEntrySource]
+
+
+export const InvestmentProduct = {
+  MAKER_SAVINGS: 'MAKER_SAVINGS',
+  MAKER_BOND: 'MAKER_BOND',
+  MAKER_BOND_PLUS: 'MAKER_BOND_PLUS'
+} as const
+
+export type InvestmentProduct = (typeof InvestmentProduct)[keyof typeof InvestmentProduct]
+
+
+export const InvestmentStatus = {
+  ACTIVE: 'ACTIVE',
+  REDEEMED: 'REDEEMED'
+} as const
+
+export type InvestmentStatus = (typeof InvestmentStatus)[keyof typeof InvestmentStatus]
+
+
+export const InvestmentTransactionType = {
+  APPLICATION: 'APPLICATION',
+  REDEMPTION: 'REDEMPTION'
+} as const
+
+export type InvestmentTransactionType = (typeof InvestmentTransactionType)[keyof typeof InvestmentTransactionType]
+
+
+export const InvestmentReserveEntrySource = {
+  ADMIN_MINT: 'ADMIN_MINT',
+  ADMIN_BURN: 'ADMIN_BURN',
+  REDEMPTION_GUARANTEE: 'REDEMPTION_GUARANTEE'
+} as const
+
+export type InvestmentReserveEntrySource = (typeof InvestmentReserveEntrySource)[keyof typeof InvestmentReserveEntrySource]
 
 
 export const BattleshipRoomStatus = {

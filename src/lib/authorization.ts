@@ -48,6 +48,7 @@ export function apiError(error: unknown) {
     COLLECTIBLES_SCHEMA_NOT_READY: ["Álbum e tesouraria aguardam a migration de produção.", 503],
     COLLECTION_PURCHASES_SCHEMA_NOT_READY: ["Compra de coleções aguarda a migration de produção.", 503],
     STUDENT_THEMES_SCHEMA_NOT_READY: ["A loja de temas aguarda a migration de produção.", 503],
+    INVESTMENTS_SCHEMA_NOT_READY: ["A carteira de investimentos aguarda a migration de produção.", 503],
     STICKER_MARKET_DISABLED: ["Compras e vendas de figurinhas estão desativadas pelo professor.", 403],
     INVALID_STUDENT_PASSWORD: ["Senha do aluno incorreta.", 403],
   };
