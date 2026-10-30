@@ -20,8 +20,18 @@ export type ActivitySubmissionModel = runtime.Types.Result.DefaultSelection<Pris
 
 export type AggregateActivitySubmission = {
   _count: ActivitySubmissionCountAggregateOutputType | null
+  _avg: ActivitySubmissionAvgAggregateOutputType | null
+  _sum: ActivitySubmissionSumAggregateOutputType | null
   _min: ActivitySubmissionMinAggregateOutputType | null
   _max: ActivitySubmissionMaxAggregateOutputType | null
+}
+
+export type ActivitySubmissionAvgAggregateOutputType = {
+  codingSeconds: number | null
+}
+
+export type ActivitySubmissionSumAggregateOutputType = {
+  codingSeconds: number | null
 }
 
 export type ActivitySubmissionMinAggregateOutputType = {
@@ -32,6 +42,7 @@ export type ActivitySubmissionMinAggregateOutputType = {
   status: $Enums.SubmissionStatus | null
   submittedAt: Date | null
   gradedAt: Date | null
+  codingSeconds: number | null
 }
 
 export type ActivitySubmissionMaxAggregateOutputType = {
@@ -42,6 +53,7 @@ export type ActivitySubmissionMaxAggregateOutputType = {
   status: $Enums.SubmissionStatus | null
   submittedAt: Date | null
   gradedAt: Date | null
+  codingSeconds: number | null
 }
 
 export type ActivitySubmissionCountAggregateOutputType = {
@@ -52,9 +64,18 @@ export type ActivitySubmissionCountAggregateOutputType = {
   status: number
   submittedAt: number
   gradedAt: number
+  codingSeconds: number
   _all: number
 }
 
+
+export type ActivitySubmissionAvgAggregateInputType = {
+  codingSeconds?: true
+}
+
+export type ActivitySubmissionSumAggregateInputType = {
+  codingSeconds?: true
+}
 
 export type ActivitySubmissionMinAggregateInputType = {
   id?: true
@@ -64,6 +85,7 @@ export type ActivitySubmissionMinAggregateInputType = {
   status?: true
   submittedAt?: true
   gradedAt?: true
+  codingSeconds?: true
 }
 
 export type ActivitySubmissionMaxAggregateInputType = {
@@ -74,6 +96,7 @@ export type ActivitySubmissionMaxAggregateInputType = {
   status?: true
   submittedAt?: true
   gradedAt?: true
+  codingSeconds?: true
 }
 
 export type ActivitySubmissionCountAggregateInputType = {
@@ -84,6 +107,7 @@ export type ActivitySubmissionCountAggregateInputType = {
   status?: true
   submittedAt?: true
   gradedAt?: true
+  codingSeconds?: true
   _all?: true
 }
 
@@ -125,6 +149,18 @@ export type ActivitySubmissionAggregateArgs<ExtArgs extends runtime.Types.Extens
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    *
+   * Select which fields to average
+  **/
+  _avg?: ActivitySubmissionAvgAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   *
+   * Select which fields to sum
+  **/
+  _sum?: ActivitySubmissionSumAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   *
    * Select which fields to find the minimum value
   **/
   _min?: ActivitySubmissionMinAggregateInputType
@@ -155,6 +191,8 @@ export type ActivitySubmissionGroupByArgs<ExtArgs extends runtime.Types.Extensio
   take?: number
   skip?: number
   _count?: ActivitySubmissionCountAggregateInputType | true
+  _avg?: ActivitySubmissionAvgAggregateInputType
+  _sum?: ActivitySubmissionSumAggregateInputType
   _min?: ActivitySubmissionMinAggregateInputType
   _max?: ActivitySubmissionMaxAggregateInputType
 }
@@ -167,7 +205,10 @@ export type ActivitySubmissionGroupByOutputType = {
   status: $Enums.SubmissionStatus
   submittedAt: Date
   gradedAt: Date | null
+  codingSeconds: number | null
   _count: ActivitySubmissionCountAggregateOutputType | null
+  _avg: ActivitySubmissionAvgAggregateOutputType | null
+  _sum: ActivitySubmissionSumAggregateOutputType | null
   _min: ActivitySubmissionMinAggregateOutputType | null
   _max: ActivitySubmissionMaxAggregateOutputType | null
 }
@@ -198,6 +239,7 @@ export type ActivitySubmissionWhereInput = {
   status?: Prisma.EnumSubmissionStatusFilter<"ActivitySubmission"> | $Enums.SubmissionStatus
   submittedAt?: Prisma.DateTimeFilter<"ActivitySubmission"> | Date | string
   gradedAt?: Prisma.DateTimeNullableFilter<"ActivitySubmission"> | Date | string | null
+  codingSeconds?: Prisma.IntNullableFilter<"ActivitySubmission"> | number | null
   activity?: Prisma.XOR<Prisma.ActivityScalarRelationFilter, Prisma.ActivityWhereInput>
   recipient?: Prisma.XOR<Prisma.ActivityRecipientScalarRelationFilter, Prisma.ActivityRecipientWhereInput>
   student?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -212,6 +254,7 @@ export type ActivitySubmissionOrderByWithRelationInput = {
   status?: Prisma.SortOrder
   submittedAt?: Prisma.SortOrder
   gradedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  codingSeconds?: Prisma.SortOrderInput | Prisma.SortOrder
   activity?: Prisma.ActivityOrderByWithRelationInput
   recipient?: Prisma.ActivityRecipientOrderByWithRelationInput
   student?: Prisma.UserOrderByWithRelationInput
@@ -230,6 +273,7 @@ export type ActivitySubmissionWhereUniqueInput = Prisma.AtLeast<{
   status?: Prisma.EnumSubmissionStatusFilter<"ActivitySubmission"> | $Enums.SubmissionStatus
   submittedAt?: Prisma.DateTimeFilter<"ActivitySubmission"> | Date | string
   gradedAt?: Prisma.DateTimeNullableFilter<"ActivitySubmission"> | Date | string | null
+  codingSeconds?: Prisma.IntNullableFilter<"ActivitySubmission"> | number | null
   activity?: Prisma.XOR<Prisma.ActivityScalarRelationFilter, Prisma.ActivityWhereInput>
   recipient?: Prisma.XOR<Prisma.ActivityRecipientScalarRelationFilter, Prisma.ActivityRecipientWhereInput>
   student?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -244,9 +288,12 @@ export type ActivitySubmissionOrderByWithAggregationInput = {
   status?: Prisma.SortOrder
   submittedAt?: Prisma.SortOrder
   gradedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  codingSeconds?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.ActivitySubmissionCountOrderByAggregateInput
+  _avg?: Prisma.ActivitySubmissionAvgOrderByAggregateInput
   _max?: Prisma.ActivitySubmissionMaxOrderByAggregateInput
   _min?: Prisma.ActivitySubmissionMinOrderByAggregateInput
+  _sum?: Prisma.ActivitySubmissionSumOrderByAggregateInput
 }
 
 export type ActivitySubmissionScalarWhereWithAggregatesInput = {
@@ -260,6 +307,7 @@ export type ActivitySubmissionScalarWhereWithAggregatesInput = {
   status?: Prisma.EnumSubmissionStatusWithAggregatesFilter<"ActivitySubmission"> | $Enums.SubmissionStatus
   submittedAt?: Prisma.DateTimeWithAggregatesFilter<"ActivitySubmission"> | Date | string
   gradedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"ActivitySubmission"> | Date | string | null
+  codingSeconds?: Prisma.IntNullableWithAggregatesFilter<"ActivitySubmission"> | number | null
 }
 
 export type ActivitySubmissionCreateInput = {
@@ -267,6 +315,7 @@ export type ActivitySubmissionCreateInput = {
   status: $Enums.SubmissionStatus
   submittedAt?: Date | string
   gradedAt?: Date | string | null
+  codingSeconds?: number | null
   activity: Prisma.ActivityCreateNestedOneWithoutSubmissionsInput
   recipient: Prisma.ActivityRecipientCreateNestedOneWithoutSubmissionInput
   student: Prisma.UserCreateNestedOneWithoutActivitySubmissionsInput
@@ -281,6 +330,7 @@ export type ActivitySubmissionUncheckedCreateInput = {
   status: $Enums.SubmissionStatus
   submittedAt?: Date | string
   gradedAt?: Date | string | null
+  codingSeconds?: number | null
   answers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutSubmissionInput
 }
 
@@ -289,6 +339,7 @@ export type ActivitySubmissionUpdateInput = {
   status?: Prisma.EnumSubmissionStatusFieldUpdateOperationsInput | $Enums.SubmissionStatus
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   gradedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   activity?: Prisma.ActivityUpdateOneRequiredWithoutSubmissionsNestedInput
   recipient?: Prisma.ActivityRecipientUpdateOneRequiredWithoutSubmissionNestedInput
   student?: Prisma.UserUpdateOneRequiredWithoutActivitySubmissionsNestedInput
@@ -303,6 +354,7 @@ export type ActivitySubmissionUncheckedUpdateInput = {
   status?: Prisma.EnumSubmissionStatusFieldUpdateOperationsInput | $Enums.SubmissionStatus
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   gradedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   answers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutSubmissionNestedInput
 }
 
@@ -314,6 +366,7 @@ export type ActivitySubmissionCreateManyInput = {
   status: $Enums.SubmissionStatus
   submittedAt?: Date | string
   gradedAt?: Date | string | null
+  codingSeconds?: number | null
 }
 
 export type ActivitySubmissionUpdateManyMutationInput = {
@@ -321,6 +374,7 @@ export type ActivitySubmissionUpdateManyMutationInput = {
   status?: Prisma.EnumSubmissionStatusFieldUpdateOperationsInput | $Enums.SubmissionStatus
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   gradedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type ActivitySubmissionUncheckedUpdateManyInput = {
@@ -331,6 +385,7 @@ export type ActivitySubmissionUncheckedUpdateManyInput = {
   status?: Prisma.EnumSubmissionStatusFieldUpdateOperationsInput | $Enums.SubmissionStatus
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   gradedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type ActivitySubmissionListRelationFilter = {
@@ -361,6 +416,11 @@ export type ActivitySubmissionCountOrderByAggregateInput = {
   status?: Prisma.SortOrder
   submittedAt?: Prisma.SortOrder
   gradedAt?: Prisma.SortOrder
+  codingSeconds?: Prisma.SortOrder
+}
+
+export type ActivitySubmissionAvgOrderByAggregateInput = {
+  codingSeconds?: Prisma.SortOrder
 }
 
 export type ActivitySubmissionMaxOrderByAggregateInput = {
@@ -371,6 +431,7 @@ export type ActivitySubmissionMaxOrderByAggregateInput = {
   status?: Prisma.SortOrder
   submittedAt?: Prisma.SortOrder
   gradedAt?: Prisma.SortOrder
+  codingSeconds?: Prisma.SortOrder
 }
 
 export type ActivitySubmissionMinOrderByAggregateInput = {
@@ -381,6 +442,11 @@ export type ActivitySubmissionMinOrderByAggregateInput = {
   status?: Prisma.SortOrder
   submittedAt?: Prisma.SortOrder
   gradedAt?: Prisma.SortOrder
+  codingSeconds?: Prisma.SortOrder
+}
+
+export type ActivitySubmissionSumOrderByAggregateInput = {
+  codingSeconds?: Prisma.SortOrder
 }
 
 export type ActivitySubmissionScalarRelationFilter = {
@@ -508,6 +574,14 @@ export type EnumSubmissionStatusFieldUpdateOperationsInput = {
   set?: $Enums.SubmissionStatus
 }
 
+export type NullableIntFieldUpdateOperationsInput = {
+  set?: number | null
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
+}
+
 export type ActivitySubmissionCreateNestedOneWithoutAnswersInput = {
   create?: Prisma.XOR<Prisma.ActivitySubmissionCreateWithoutAnswersInput, Prisma.ActivitySubmissionUncheckedCreateWithoutAnswersInput>
   connectOrCreate?: Prisma.ActivitySubmissionCreateOrConnectWithoutAnswersInput
@@ -527,6 +601,7 @@ export type ActivitySubmissionCreateWithoutStudentInput = {
   status: $Enums.SubmissionStatus
   submittedAt?: Date | string
   gradedAt?: Date | string | null
+  codingSeconds?: number | null
   activity: Prisma.ActivityCreateNestedOneWithoutSubmissionsInput
   recipient: Prisma.ActivityRecipientCreateNestedOneWithoutSubmissionInput
   answers?: Prisma.ActivityAnswerCreateNestedManyWithoutSubmissionInput
@@ -539,6 +614,7 @@ export type ActivitySubmissionUncheckedCreateWithoutStudentInput = {
   status: $Enums.SubmissionStatus
   submittedAt?: Date | string
   gradedAt?: Date | string | null
+  codingSeconds?: number | null
   answers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutSubmissionInput
 }
 
@@ -579,6 +655,7 @@ export type ActivitySubmissionScalarWhereInput = {
   status?: Prisma.EnumSubmissionStatusFilter<"ActivitySubmission"> | $Enums.SubmissionStatus
   submittedAt?: Prisma.DateTimeFilter<"ActivitySubmission"> | Date | string
   gradedAt?: Prisma.DateTimeNullableFilter<"ActivitySubmission"> | Date | string | null
+  codingSeconds?: Prisma.IntNullableFilter<"ActivitySubmission"> | number | null
 }
 
 export type ActivitySubmissionCreateWithoutActivityInput = {
@@ -586,6 +663,7 @@ export type ActivitySubmissionCreateWithoutActivityInput = {
   status: $Enums.SubmissionStatus
   submittedAt?: Date | string
   gradedAt?: Date | string | null
+  codingSeconds?: number | null
   recipient: Prisma.ActivityRecipientCreateNestedOneWithoutSubmissionInput
   student: Prisma.UserCreateNestedOneWithoutActivitySubmissionsInput
   answers?: Prisma.ActivityAnswerCreateNestedManyWithoutSubmissionInput
@@ -598,6 +676,7 @@ export type ActivitySubmissionUncheckedCreateWithoutActivityInput = {
   status: $Enums.SubmissionStatus
   submittedAt?: Date | string
   gradedAt?: Date | string | null
+  codingSeconds?: number | null
   answers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutSubmissionInput
 }
 
@@ -632,6 +711,7 @@ export type ActivitySubmissionCreateWithoutRecipientInput = {
   status: $Enums.SubmissionStatus
   submittedAt?: Date | string
   gradedAt?: Date | string | null
+  codingSeconds?: number | null
   activity: Prisma.ActivityCreateNestedOneWithoutSubmissionsInput
   student: Prisma.UserCreateNestedOneWithoutActivitySubmissionsInput
   answers?: Prisma.ActivityAnswerCreateNestedManyWithoutSubmissionInput
@@ -644,6 +724,7 @@ export type ActivitySubmissionUncheckedCreateWithoutRecipientInput = {
   status: $Enums.SubmissionStatus
   submittedAt?: Date | string
   gradedAt?: Date | string | null
+  codingSeconds?: number | null
   answers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutSubmissionInput
 }
 
@@ -668,6 +749,7 @@ export type ActivitySubmissionUpdateWithoutRecipientInput = {
   status?: Prisma.EnumSubmissionStatusFieldUpdateOperationsInput | $Enums.SubmissionStatus
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   gradedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   activity?: Prisma.ActivityUpdateOneRequiredWithoutSubmissionsNestedInput
   student?: Prisma.UserUpdateOneRequiredWithoutActivitySubmissionsNestedInput
   answers?: Prisma.ActivityAnswerUpdateManyWithoutSubmissionNestedInput
@@ -680,6 +762,7 @@ export type ActivitySubmissionUncheckedUpdateWithoutRecipientInput = {
   status?: Prisma.EnumSubmissionStatusFieldUpdateOperationsInput | $Enums.SubmissionStatus
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   gradedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   answers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutSubmissionNestedInput
 }
 
@@ -688,6 +771,7 @@ export type ActivitySubmissionCreateWithoutAnswersInput = {
   status: $Enums.SubmissionStatus
   submittedAt?: Date | string
   gradedAt?: Date | string | null
+  codingSeconds?: number | null
   activity: Prisma.ActivityCreateNestedOneWithoutSubmissionsInput
   recipient: Prisma.ActivityRecipientCreateNestedOneWithoutSubmissionInput
   student: Prisma.UserCreateNestedOneWithoutActivitySubmissionsInput
@@ -701,6 +785,7 @@ export type ActivitySubmissionUncheckedCreateWithoutAnswersInput = {
   status: $Enums.SubmissionStatus
   submittedAt?: Date | string
   gradedAt?: Date | string | null
+  codingSeconds?: number | null
 }
 
 export type ActivitySubmissionCreateOrConnectWithoutAnswersInput = {
@@ -724,6 +809,7 @@ export type ActivitySubmissionUpdateWithoutAnswersInput = {
   status?: Prisma.EnumSubmissionStatusFieldUpdateOperationsInput | $Enums.SubmissionStatus
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   gradedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   activity?: Prisma.ActivityUpdateOneRequiredWithoutSubmissionsNestedInput
   recipient?: Prisma.ActivityRecipientUpdateOneRequiredWithoutSubmissionNestedInput
   student?: Prisma.UserUpdateOneRequiredWithoutActivitySubmissionsNestedInput
@@ -737,6 +823,7 @@ export type ActivitySubmissionUncheckedUpdateWithoutAnswersInput = {
   status?: Prisma.EnumSubmissionStatusFieldUpdateOperationsInput | $Enums.SubmissionStatus
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   gradedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type ActivitySubmissionCreateManyStudentInput = {
@@ -746,6 +833,7 @@ export type ActivitySubmissionCreateManyStudentInput = {
   status: $Enums.SubmissionStatus
   submittedAt?: Date | string
   gradedAt?: Date | string | null
+  codingSeconds?: number | null
 }
 
 export type ActivitySubmissionUpdateWithoutStudentInput = {
@@ -753,6 +841,7 @@ export type ActivitySubmissionUpdateWithoutStudentInput = {
   status?: Prisma.EnumSubmissionStatusFieldUpdateOperationsInput | $Enums.SubmissionStatus
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   gradedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   activity?: Prisma.ActivityUpdateOneRequiredWithoutSubmissionsNestedInput
   recipient?: Prisma.ActivityRecipientUpdateOneRequiredWithoutSubmissionNestedInput
   answers?: Prisma.ActivityAnswerUpdateManyWithoutSubmissionNestedInput
@@ -765,6 +854,7 @@ export type ActivitySubmissionUncheckedUpdateWithoutStudentInput = {
   status?: Prisma.EnumSubmissionStatusFieldUpdateOperationsInput | $Enums.SubmissionStatus
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   gradedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   answers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutSubmissionNestedInput
 }
 
@@ -775,6 +865,7 @@ export type ActivitySubmissionUncheckedUpdateManyWithoutStudentInput = {
   status?: Prisma.EnumSubmissionStatusFieldUpdateOperationsInput | $Enums.SubmissionStatus
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   gradedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type ActivitySubmissionCreateManyActivityInput = {
@@ -784,6 +875,7 @@ export type ActivitySubmissionCreateManyActivityInput = {
   status: $Enums.SubmissionStatus
   submittedAt?: Date | string
   gradedAt?: Date | string | null
+  codingSeconds?: number | null
 }
 
 export type ActivitySubmissionUpdateWithoutActivityInput = {
@@ -791,6 +883,7 @@ export type ActivitySubmissionUpdateWithoutActivityInput = {
   status?: Prisma.EnumSubmissionStatusFieldUpdateOperationsInput | $Enums.SubmissionStatus
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   gradedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   recipient?: Prisma.ActivityRecipientUpdateOneRequiredWithoutSubmissionNestedInput
   student?: Prisma.UserUpdateOneRequiredWithoutActivitySubmissionsNestedInput
   answers?: Prisma.ActivityAnswerUpdateManyWithoutSubmissionNestedInput
@@ -803,6 +896,7 @@ export type ActivitySubmissionUncheckedUpdateWithoutActivityInput = {
   status?: Prisma.EnumSubmissionStatusFieldUpdateOperationsInput | $Enums.SubmissionStatus
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   gradedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   answers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutSubmissionNestedInput
 }
 
@@ -813,6 +907,7 @@ export type ActivitySubmissionUncheckedUpdateManyWithoutActivityInput = {
   status?: Prisma.EnumSubmissionStatusFieldUpdateOperationsInput | $Enums.SubmissionStatus
   submittedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   gradedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingSeconds?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 
@@ -854,6 +949,7 @@ export type ActivitySubmissionSelect<ExtArgs extends runtime.Types.Extensions.In
   status?: boolean
   submittedAt?: boolean
   gradedAt?: boolean
+  codingSeconds?: boolean
   activity?: boolean | Prisma.ActivityDefaultArgs<ExtArgs>
   recipient?: boolean | Prisma.ActivityRecipientDefaultArgs<ExtArgs>
   student?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -869,6 +965,7 @@ export type ActivitySubmissionSelectCreateManyAndReturn<ExtArgs extends runtime.
   status?: boolean
   submittedAt?: boolean
   gradedAt?: boolean
+  codingSeconds?: boolean
   activity?: boolean | Prisma.ActivityDefaultArgs<ExtArgs>
   recipient?: boolean | Prisma.ActivityRecipientDefaultArgs<ExtArgs>
   student?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -882,6 +979,7 @@ export type ActivitySubmissionSelectUpdateManyAndReturn<ExtArgs extends runtime.
   status?: boolean
   submittedAt?: boolean
   gradedAt?: boolean
+  codingSeconds?: boolean
   activity?: boolean | Prisma.ActivityDefaultArgs<ExtArgs>
   recipient?: boolean | Prisma.ActivityRecipientDefaultArgs<ExtArgs>
   student?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -895,9 +993,10 @@ export type ActivitySubmissionSelectScalar = {
   status?: boolean
   submittedAt?: boolean
   gradedAt?: boolean
+  codingSeconds?: boolean
 }
 
-export type ActivitySubmissionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "activityId" | "recipientId" | "studentId" | "status" | "submittedAt" | "gradedAt", ExtArgs["result"]["activitySubmission"]>
+export type ActivitySubmissionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "activityId" | "recipientId" | "studentId" | "status" | "submittedAt" | "gradedAt" | "codingSeconds", ExtArgs["result"]["activitySubmission"]>
 export type ActivitySubmissionInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   activity?: boolean | Prisma.ActivityDefaultArgs<ExtArgs>
   recipient?: boolean | Prisma.ActivityRecipientDefaultArgs<ExtArgs>
@@ -932,6 +1031,7 @@ export type $ActivitySubmissionPayload<ExtArgs extends runtime.Types.Extensions.
     status: $Enums.SubmissionStatus
     submittedAt: Date
     gradedAt: Date | null
+    codingSeconds: number | null
   }, ExtArgs["result"]["activitySubmission"]>
   composites: {}
 }
@@ -1366,6 +1466,7 @@ export interface ActivitySubmissionFieldRefs {
   readonly status: Prisma.FieldRef<"ActivitySubmission", 'SubmissionStatus'>
   readonly submittedAt: Prisma.FieldRef<"ActivitySubmission", 'DateTime'>
   readonly gradedAt: Prisma.FieldRef<"ActivitySubmission", 'DateTime'>
+  readonly codingSeconds: Prisma.FieldRef<"ActivitySubmission", 'Int'>
 }
 
 

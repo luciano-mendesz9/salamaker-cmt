@@ -639,6 +639,8 @@ export const ActivityScalarFieldEnum = {
   closesAt: 'closesAt',
   manuallyClosedAt: 'manuallyClosedAt',
   externalUrl: 'externalUrl',
+  codePrompt: 'codePrompt',
+  codeImageUrl: 'codeImageUrl',
   maxXp: 'maxXp',
   authorId: 'authorId',
   divisionMode: 'divisionMode',
@@ -682,6 +684,7 @@ export const ActivityRecipientScalarFieldEnum = {
   studentId: 'studentId',
   studentSignaledAt: 'studentSignaledAt',
   completedAt: 'completedAt',
+  codingStartedAt: 'codingStartedAt',
   createdAt: 'createdAt'
 } as const
 
@@ -718,7 +721,8 @@ export const ActivitySubmissionScalarFieldEnum = {
   studentId: 'studentId',
   status: 'status',
   submittedAt: 'submittedAt',
-  gradedAt: 'gradedAt'
+  gradedAt: 'gradedAt',
+  codingSeconds: 'codingSeconds'
 } as const
 
 export type ActivitySubmissionScalarFieldEnum = (typeof ActivitySubmissionScalarFieldEnum)[keyof typeof ActivitySubmissionScalarFieldEnum]

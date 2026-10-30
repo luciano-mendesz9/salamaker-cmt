@@ -30,6 +30,7 @@ export type ActivityRecipientMinAggregateOutputType = {
   studentId: string | null
   studentSignaledAt: Date | null
   completedAt: Date | null
+  codingStartedAt: Date | null
   createdAt: Date | null
 }
 
@@ -39,6 +40,7 @@ export type ActivityRecipientMaxAggregateOutputType = {
   studentId: string | null
   studentSignaledAt: Date | null
   completedAt: Date | null
+  codingStartedAt: Date | null
   createdAt: Date | null
 }
 
@@ -48,6 +50,7 @@ export type ActivityRecipientCountAggregateOutputType = {
   studentId: number
   studentSignaledAt: number
   completedAt: number
+  codingStartedAt: number
   createdAt: number
   _all: number
 }
@@ -59,6 +62,7 @@ export type ActivityRecipientMinAggregateInputType = {
   studentId?: true
   studentSignaledAt?: true
   completedAt?: true
+  codingStartedAt?: true
   createdAt?: true
 }
 
@@ -68,6 +72,7 @@ export type ActivityRecipientMaxAggregateInputType = {
   studentId?: true
   studentSignaledAt?: true
   completedAt?: true
+  codingStartedAt?: true
   createdAt?: true
 }
 
@@ -77,6 +82,7 @@ export type ActivityRecipientCountAggregateInputType = {
   studentId?: true
   studentSignaledAt?: true
   completedAt?: true
+  codingStartedAt?: true
   createdAt?: true
   _all?: true
 }
@@ -159,6 +165,7 @@ export type ActivityRecipientGroupByOutputType = {
   studentId: string
   studentSignaledAt: Date | null
   completedAt: Date | null
+  codingStartedAt: Date | null
   createdAt: Date
   _count: ActivityRecipientCountAggregateOutputType | null
   _min: ActivityRecipientMinAggregateOutputType | null
@@ -189,6 +196,7 @@ export type ActivityRecipientWhereInput = {
   studentId?: Prisma.UuidFilter<"ActivityRecipient"> | string
   studentSignaledAt?: Prisma.DateTimeNullableFilter<"ActivityRecipient"> | Date | string | null
   completedAt?: Prisma.DateTimeNullableFilter<"ActivityRecipient"> | Date | string | null
+  codingStartedAt?: Prisma.DateTimeNullableFilter<"ActivityRecipient"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"ActivityRecipient"> | Date | string
   activity?: Prisma.XOR<Prisma.ActivityScalarRelationFilter, Prisma.ActivityWhereInput>
   student?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -203,6 +211,7 @@ export type ActivityRecipientOrderByWithRelationInput = {
   studentId?: Prisma.SortOrder
   studentSignaledAt?: Prisma.SortOrderInput | Prisma.SortOrder
   completedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  codingStartedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   activity?: Prisma.ActivityOrderByWithRelationInput
   student?: Prisma.UserOrderByWithRelationInput
@@ -221,6 +230,7 @@ export type ActivityRecipientWhereUniqueInput = Prisma.AtLeast<{
   studentId?: Prisma.UuidFilter<"ActivityRecipient"> | string
   studentSignaledAt?: Prisma.DateTimeNullableFilter<"ActivityRecipient"> | Date | string | null
   completedAt?: Prisma.DateTimeNullableFilter<"ActivityRecipient"> | Date | string | null
+  codingStartedAt?: Prisma.DateTimeNullableFilter<"ActivityRecipient"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"ActivityRecipient"> | Date | string
   activity?: Prisma.XOR<Prisma.ActivityScalarRelationFilter, Prisma.ActivityWhereInput>
   student?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -235,6 +245,7 @@ export type ActivityRecipientOrderByWithAggregationInput = {
   studentId?: Prisma.SortOrder
   studentSignaledAt?: Prisma.SortOrderInput | Prisma.SortOrder
   completedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  codingStartedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.ActivityRecipientCountOrderByAggregateInput
   _max?: Prisma.ActivityRecipientMaxOrderByAggregateInput
@@ -250,6 +261,7 @@ export type ActivityRecipientScalarWhereWithAggregatesInput = {
   studentId?: Prisma.UuidWithAggregatesFilter<"ActivityRecipient"> | string
   studentSignaledAt?: Prisma.DateTimeNullableWithAggregatesFilter<"ActivityRecipient"> | Date | string | null
   completedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"ActivityRecipient"> | Date | string | null
+  codingStartedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"ActivityRecipient"> | Date | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"ActivityRecipient"> | Date | string
 }
 
@@ -257,6 +269,7 @@ export type ActivityRecipientCreateInput = {
   id?: string
   studentSignaledAt?: Date | string | null
   completedAt?: Date | string | null
+  codingStartedAt?: Date | string | null
   createdAt?: Date | string
   activity: Prisma.ActivityCreateNestedOneWithoutRecipientsInput
   student: Prisma.UserCreateNestedOneWithoutActivityRecipientsInput
@@ -271,6 +284,7 @@ export type ActivityRecipientUncheckedCreateInput = {
   studentId: string
   studentSignaledAt?: Date | string | null
   completedAt?: Date | string | null
+  codingStartedAt?: Date | string | null
   createdAt?: Date | string
   submission?: Prisma.ActivitySubmissionUncheckedCreateNestedOneWithoutRecipientInput
   teamMembership?: Prisma.ActivityTeamMemberUncheckedCreateNestedOneWithoutRecipientInput
@@ -281,6 +295,7 @@ export type ActivityRecipientUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   studentSignaledAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingStartedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   activity?: Prisma.ActivityUpdateOneRequiredWithoutRecipientsNestedInput
   student?: Prisma.UserUpdateOneRequiredWithoutActivityRecipientsNestedInput
@@ -295,6 +310,7 @@ export type ActivityRecipientUncheckedUpdateInput = {
   studentId?: Prisma.StringFieldUpdateOperationsInput | string
   studentSignaledAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingStartedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   submission?: Prisma.ActivitySubmissionUncheckedUpdateOneWithoutRecipientNestedInput
   teamMembership?: Prisma.ActivityTeamMemberUncheckedUpdateOneWithoutRecipientNestedInput
@@ -307,6 +323,7 @@ export type ActivityRecipientCreateManyInput = {
   studentId: string
   studentSignaledAt?: Date | string | null
   completedAt?: Date | string | null
+  codingStartedAt?: Date | string | null
   createdAt?: Date | string
 }
 
@@ -314,6 +331,7 @@ export type ActivityRecipientUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   studentSignaledAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingStartedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -323,6 +341,7 @@ export type ActivityRecipientUncheckedUpdateManyInput = {
   studentId?: Prisma.StringFieldUpdateOperationsInput | string
   studentSignaledAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingStartedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -347,6 +366,7 @@ export type ActivityRecipientCountOrderByAggregateInput = {
   studentId?: Prisma.SortOrder
   studentSignaledAt?: Prisma.SortOrder
   completedAt?: Prisma.SortOrder
+  codingStartedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -356,6 +376,7 @@ export type ActivityRecipientMaxOrderByAggregateInput = {
   studentId?: Prisma.SortOrder
   studentSignaledAt?: Prisma.SortOrder
   completedAt?: Prisma.SortOrder
+  codingStartedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -365,6 +386,7 @@ export type ActivityRecipientMinOrderByAggregateInput = {
   studentId?: Prisma.SortOrder
   studentSignaledAt?: Prisma.SortOrder
   completedAt?: Prisma.SortOrder
+  codingStartedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -503,6 +525,7 @@ export type ActivityRecipientCreateWithoutStudentInput = {
   id?: string
   studentSignaledAt?: Date | string | null
   completedAt?: Date | string | null
+  codingStartedAt?: Date | string | null
   createdAt?: Date | string
   activity: Prisma.ActivityCreateNestedOneWithoutRecipientsInput
   submission?: Prisma.ActivitySubmissionCreateNestedOneWithoutRecipientInput
@@ -515,6 +538,7 @@ export type ActivityRecipientUncheckedCreateWithoutStudentInput = {
   activityId: string
   studentSignaledAt?: Date | string | null
   completedAt?: Date | string | null
+  codingStartedAt?: Date | string | null
   createdAt?: Date | string
   submission?: Prisma.ActivitySubmissionUncheckedCreateNestedOneWithoutRecipientInput
   teamMembership?: Prisma.ActivityTeamMemberUncheckedCreateNestedOneWithoutRecipientInput
@@ -556,6 +580,7 @@ export type ActivityRecipientScalarWhereInput = {
   studentId?: Prisma.UuidFilter<"ActivityRecipient"> | string
   studentSignaledAt?: Prisma.DateTimeNullableFilter<"ActivityRecipient"> | Date | string | null
   completedAt?: Prisma.DateTimeNullableFilter<"ActivityRecipient"> | Date | string | null
+  codingStartedAt?: Prisma.DateTimeNullableFilter<"ActivityRecipient"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"ActivityRecipient"> | Date | string
 }
 
@@ -563,6 +588,7 @@ export type ActivityRecipientCreateWithoutActivityInput = {
   id?: string
   studentSignaledAt?: Date | string | null
   completedAt?: Date | string | null
+  codingStartedAt?: Date | string | null
   createdAt?: Date | string
   student: Prisma.UserCreateNestedOneWithoutActivityRecipientsInput
   submission?: Prisma.ActivitySubmissionCreateNestedOneWithoutRecipientInput
@@ -575,6 +601,7 @@ export type ActivityRecipientUncheckedCreateWithoutActivityInput = {
   studentId: string
   studentSignaledAt?: Date | string | null
   completedAt?: Date | string | null
+  codingStartedAt?: Date | string | null
   createdAt?: Date | string
   submission?: Prisma.ActivitySubmissionUncheckedCreateNestedOneWithoutRecipientInput
   teamMembership?: Prisma.ActivityTeamMemberUncheckedCreateNestedOneWithoutRecipientInput
@@ -611,6 +638,7 @@ export type ActivityRecipientCreateWithoutSubmissionInput = {
   id?: string
   studentSignaledAt?: Date | string | null
   completedAt?: Date | string | null
+  codingStartedAt?: Date | string | null
   createdAt?: Date | string
   activity: Prisma.ActivityCreateNestedOneWithoutRecipientsInput
   student: Prisma.UserCreateNestedOneWithoutActivityRecipientsInput
@@ -624,6 +652,7 @@ export type ActivityRecipientUncheckedCreateWithoutSubmissionInput = {
   studentId: string
   studentSignaledAt?: Date | string | null
   completedAt?: Date | string | null
+  codingStartedAt?: Date | string | null
   createdAt?: Date | string
   teamMembership?: Prisma.ActivityTeamMemberUncheckedCreateNestedOneWithoutRecipientInput
   award?: Prisma.ActivityAwardUncheckedCreateNestedOneWithoutRecipientInput
@@ -649,6 +678,7 @@ export type ActivityRecipientUpdateWithoutSubmissionInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   studentSignaledAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingStartedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   activity?: Prisma.ActivityUpdateOneRequiredWithoutRecipientsNestedInput
   student?: Prisma.UserUpdateOneRequiredWithoutActivityRecipientsNestedInput
@@ -662,6 +692,7 @@ export type ActivityRecipientUncheckedUpdateWithoutSubmissionInput = {
   studentId?: Prisma.StringFieldUpdateOperationsInput | string
   studentSignaledAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingStartedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   teamMembership?: Prisma.ActivityTeamMemberUncheckedUpdateOneWithoutRecipientNestedInput
   award?: Prisma.ActivityAwardUncheckedUpdateOneWithoutRecipientNestedInput
@@ -671,6 +702,7 @@ export type ActivityRecipientCreateWithoutTeamMembershipInput = {
   id?: string
   studentSignaledAt?: Date | string | null
   completedAt?: Date | string | null
+  codingStartedAt?: Date | string | null
   createdAt?: Date | string
   activity: Prisma.ActivityCreateNestedOneWithoutRecipientsInput
   student: Prisma.UserCreateNestedOneWithoutActivityRecipientsInput
@@ -684,6 +716,7 @@ export type ActivityRecipientUncheckedCreateWithoutTeamMembershipInput = {
   studentId: string
   studentSignaledAt?: Date | string | null
   completedAt?: Date | string | null
+  codingStartedAt?: Date | string | null
   createdAt?: Date | string
   submission?: Prisma.ActivitySubmissionUncheckedCreateNestedOneWithoutRecipientInput
   award?: Prisma.ActivityAwardUncheckedCreateNestedOneWithoutRecipientInput
@@ -709,6 +742,7 @@ export type ActivityRecipientUpdateWithoutTeamMembershipInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   studentSignaledAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingStartedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   activity?: Prisma.ActivityUpdateOneRequiredWithoutRecipientsNestedInput
   student?: Prisma.UserUpdateOneRequiredWithoutActivityRecipientsNestedInput
@@ -722,6 +756,7 @@ export type ActivityRecipientUncheckedUpdateWithoutTeamMembershipInput = {
   studentId?: Prisma.StringFieldUpdateOperationsInput | string
   studentSignaledAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingStartedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   submission?: Prisma.ActivitySubmissionUncheckedUpdateOneWithoutRecipientNestedInput
   award?: Prisma.ActivityAwardUncheckedUpdateOneWithoutRecipientNestedInput
@@ -731,6 +766,7 @@ export type ActivityRecipientCreateWithoutAwardInput = {
   id?: string
   studentSignaledAt?: Date | string | null
   completedAt?: Date | string | null
+  codingStartedAt?: Date | string | null
   createdAt?: Date | string
   activity: Prisma.ActivityCreateNestedOneWithoutRecipientsInput
   student: Prisma.UserCreateNestedOneWithoutActivityRecipientsInput
@@ -744,6 +780,7 @@ export type ActivityRecipientUncheckedCreateWithoutAwardInput = {
   studentId: string
   studentSignaledAt?: Date | string | null
   completedAt?: Date | string | null
+  codingStartedAt?: Date | string | null
   createdAt?: Date | string
   submission?: Prisma.ActivitySubmissionUncheckedCreateNestedOneWithoutRecipientInput
   teamMembership?: Prisma.ActivityTeamMemberUncheckedCreateNestedOneWithoutRecipientInput
@@ -769,6 +806,7 @@ export type ActivityRecipientUpdateWithoutAwardInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   studentSignaledAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingStartedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   activity?: Prisma.ActivityUpdateOneRequiredWithoutRecipientsNestedInput
   student?: Prisma.UserUpdateOneRequiredWithoutActivityRecipientsNestedInput
@@ -782,6 +820,7 @@ export type ActivityRecipientUncheckedUpdateWithoutAwardInput = {
   studentId?: Prisma.StringFieldUpdateOperationsInput | string
   studentSignaledAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingStartedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   submission?: Prisma.ActivitySubmissionUncheckedUpdateOneWithoutRecipientNestedInput
   teamMembership?: Prisma.ActivityTeamMemberUncheckedUpdateOneWithoutRecipientNestedInput
@@ -792,6 +831,7 @@ export type ActivityRecipientCreateManyStudentInput = {
   activityId: string
   studentSignaledAt?: Date | string | null
   completedAt?: Date | string | null
+  codingStartedAt?: Date | string | null
   createdAt?: Date | string
 }
 
@@ -799,6 +839,7 @@ export type ActivityRecipientUpdateWithoutStudentInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   studentSignaledAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingStartedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   activity?: Prisma.ActivityUpdateOneRequiredWithoutRecipientsNestedInput
   submission?: Prisma.ActivitySubmissionUpdateOneWithoutRecipientNestedInput
@@ -811,6 +852,7 @@ export type ActivityRecipientUncheckedUpdateWithoutStudentInput = {
   activityId?: Prisma.StringFieldUpdateOperationsInput | string
   studentSignaledAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingStartedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   submission?: Prisma.ActivitySubmissionUncheckedUpdateOneWithoutRecipientNestedInput
   teamMembership?: Prisma.ActivityTeamMemberUncheckedUpdateOneWithoutRecipientNestedInput
@@ -822,6 +864,7 @@ export type ActivityRecipientUncheckedUpdateManyWithoutStudentInput = {
   activityId?: Prisma.StringFieldUpdateOperationsInput | string
   studentSignaledAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingStartedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -830,6 +873,7 @@ export type ActivityRecipientCreateManyActivityInput = {
   studentId: string
   studentSignaledAt?: Date | string | null
   completedAt?: Date | string | null
+  codingStartedAt?: Date | string | null
   createdAt?: Date | string
 }
 
@@ -837,6 +881,7 @@ export type ActivityRecipientUpdateWithoutActivityInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   studentSignaledAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingStartedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   student?: Prisma.UserUpdateOneRequiredWithoutActivityRecipientsNestedInput
   submission?: Prisma.ActivitySubmissionUpdateOneWithoutRecipientNestedInput
@@ -849,6 +894,7 @@ export type ActivityRecipientUncheckedUpdateWithoutActivityInput = {
   studentId?: Prisma.StringFieldUpdateOperationsInput | string
   studentSignaledAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingStartedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   submission?: Prisma.ActivitySubmissionUncheckedUpdateOneWithoutRecipientNestedInput
   teamMembership?: Prisma.ActivityTeamMemberUncheckedUpdateOneWithoutRecipientNestedInput
@@ -860,6 +906,7 @@ export type ActivityRecipientUncheckedUpdateManyWithoutActivityInput = {
   studentId?: Prisma.StringFieldUpdateOperationsInput | string
   studentSignaledAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   completedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  codingStartedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -871,6 +918,7 @@ export type ActivityRecipientSelect<ExtArgs extends runtime.Types.Extensions.Int
   studentId?: boolean
   studentSignaledAt?: boolean
   completedAt?: boolean
+  codingStartedAt?: boolean
   createdAt?: boolean
   activity?: boolean | Prisma.ActivityDefaultArgs<ExtArgs>
   student?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -885,6 +933,7 @@ export type ActivityRecipientSelectCreateManyAndReturn<ExtArgs extends runtime.T
   studentId?: boolean
   studentSignaledAt?: boolean
   completedAt?: boolean
+  codingStartedAt?: boolean
   createdAt?: boolean
   activity?: boolean | Prisma.ActivityDefaultArgs<ExtArgs>
   student?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -896,6 +945,7 @@ export type ActivityRecipientSelectUpdateManyAndReturn<ExtArgs extends runtime.T
   studentId?: boolean
   studentSignaledAt?: boolean
   completedAt?: boolean
+  codingStartedAt?: boolean
   createdAt?: boolean
   activity?: boolean | Prisma.ActivityDefaultArgs<ExtArgs>
   student?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -907,10 +957,11 @@ export type ActivityRecipientSelectScalar = {
   studentId?: boolean
   studentSignaledAt?: boolean
   completedAt?: boolean
+  codingStartedAt?: boolean
   createdAt?: boolean
 }
 
-export type ActivityRecipientOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "activityId" | "studentId" | "studentSignaledAt" | "completedAt" | "createdAt", ExtArgs["result"]["activityRecipient"]>
+export type ActivityRecipientOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "activityId" | "studentId" | "studentSignaledAt" | "completedAt" | "codingStartedAt" | "createdAt", ExtArgs["result"]["activityRecipient"]>
 export type ActivityRecipientInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   activity?: boolean | Prisma.ActivityDefaultArgs<ExtArgs>
   student?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -942,6 +993,7 @@ export type $ActivityRecipientPayload<ExtArgs extends runtime.Types.Extensions.I
     studentId: string
     studentSignaledAt: Date | null
     completedAt: Date | null
+    codingStartedAt: Date | null
     createdAt: Date
   }, ExtArgs["result"]["activityRecipient"]>
   composites: {}
@@ -1376,6 +1428,7 @@ export interface ActivityRecipientFieldRefs {
   readonly studentId: Prisma.FieldRef<"ActivityRecipient", 'String'>
   readonly studentSignaledAt: Prisma.FieldRef<"ActivityRecipient", 'DateTime'>
   readonly completedAt: Prisma.FieldRef<"ActivityRecipient", 'DateTime'>
+  readonly codingStartedAt: Prisma.FieldRef<"ActivityRecipient", 'DateTime'>
   readonly createdAt: Prisma.FieldRef<"ActivityRecipient", 'DateTime'>
 }
 

@@ -6,7 +6,7 @@ import { XpGrantCodeDialog } from "@/components/xp-grant-code-dialog";
 import { activityStateLabel, effectiveActivityState, formatSchoolDate } from "@/lib/activities";
 import { prisma } from "@/lib/db";
 
-const typeLabels:Record<string,string>={EXTERNAL_LINK:"Link externo",FORM:"Formulário",GROUP:"Em grupo"};
+const typeLabels:Record<string,string>={EXTERNAL_LINK:"Link externo",FORM:"Formulário",GROUP:"Em grupo",CPP_CODE:"Código C++"};
 export default async function Atividades({searchParams}:{searchParams:Promise<Record<string,string|undefined>>}){
   const filters=await searchParams;
   const settings=await prisma.appSetting.findUnique({where:{id:1},select:{timeZone:true}});

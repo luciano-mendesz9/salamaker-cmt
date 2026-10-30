@@ -605,14 +605,6 @@ export type NullableEnumWrittenGradeFieldUpdateOperationsInput = {
   set?: $Enums.WrittenGrade | null
 }
 
-export type NullableIntFieldUpdateOperationsInput = {
-  set?: number | null
-  increment?: number
-  decrement?: number
-  multiply?: number
-  divide?: number
-}
-
 export type ActivityAnswerCreateNestedOneWithoutSelectionsInput = {
   create?: Prisma.XOR<Prisma.ActivityAnswerCreateWithoutSelectionsInput, Prisma.ActivityAnswerUncheckedCreateWithoutSelectionsInput>
   connectOrCreate?: Prisma.ActivityAnswerCreateOrConnectWithoutSelectionsInput

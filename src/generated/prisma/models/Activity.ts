@@ -43,6 +43,8 @@ export type ActivityMinAggregateOutputType = {
   closesAt: Date | null
   manuallyClosedAt: Date | null
   externalUrl: string | null
+  codePrompt: string | null
+  codeImageUrl: string | null
   maxXp: number | null
   authorId: string | null
   divisionMode: $Enums.TeamDivisionMode | null
@@ -59,6 +61,8 @@ export type ActivityMaxAggregateOutputType = {
   closesAt: Date | null
   manuallyClosedAt: Date | null
   externalUrl: string | null
+  codePrompt: string | null
+  codeImageUrl: string | null
   maxXp: number | null
   authorId: string | null
   divisionMode: $Enums.TeamDivisionMode | null
@@ -75,6 +79,8 @@ export type ActivityCountAggregateOutputType = {
   closesAt: number
   manuallyClosedAt: number
   externalUrl: number
+  codePrompt: number
+  codeImageUrl: number
   maxXp: number
   authorId: number
   divisionMode: number
@@ -101,6 +107,8 @@ export type ActivityMinAggregateInputType = {
   closesAt?: true
   manuallyClosedAt?: true
   externalUrl?: true
+  codePrompt?: true
+  codeImageUrl?: true
   maxXp?: true
   authorId?: true
   divisionMode?: true
@@ -117,6 +125,8 @@ export type ActivityMaxAggregateInputType = {
   closesAt?: true
   manuallyClosedAt?: true
   externalUrl?: true
+  codePrompt?: true
+  codeImageUrl?: true
   maxXp?: true
   authorId?: true
   divisionMode?: true
@@ -133,6 +143,8 @@ export type ActivityCountAggregateInputType = {
   closesAt?: true
   manuallyClosedAt?: true
   externalUrl?: true
+  codePrompt?: true
+  codeImageUrl?: true
   maxXp?: true
   authorId?: true
   divisionMode?: true
@@ -236,6 +248,8 @@ export type ActivityGroupByOutputType = {
   closesAt: Date
   manuallyClosedAt: Date | null
   externalUrl: string | null
+  codePrompt: string | null
+  codeImageUrl: string | null
   maxXp: number
   authorId: string
   divisionMode: $Enums.TeamDivisionMode | null
@@ -275,6 +289,8 @@ export type ActivityWhereInput = {
   closesAt?: Prisma.DateTimeFilter<"Activity"> | Date | string
   manuallyClosedAt?: Prisma.DateTimeNullableFilter<"Activity"> | Date | string | null
   externalUrl?: Prisma.StringNullableFilter<"Activity"> | string | null
+  codePrompt?: Prisma.StringNullableFilter<"Activity"> | string | null
+  codeImageUrl?: Prisma.StringNullableFilter<"Activity"> | string | null
   maxXp?: Prisma.IntFilter<"Activity"> | number
   authorId?: Prisma.UuidFilter<"Activity"> | string
   divisionMode?: Prisma.EnumTeamDivisionModeNullableFilter<"Activity"> | $Enums.TeamDivisionMode | null
@@ -298,6 +314,8 @@ export type ActivityOrderByWithRelationInput = {
   closesAt?: Prisma.SortOrder
   manuallyClosedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   externalUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  codePrompt?: Prisma.SortOrderInput | Prisma.SortOrder
+  codeImageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   maxXp?: Prisma.SortOrder
   authorId?: Prisma.SortOrder
   divisionMode?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -324,6 +342,8 @@ export type ActivityWhereUniqueInput = Prisma.AtLeast<{
   closesAt?: Prisma.DateTimeFilter<"Activity"> | Date | string
   manuallyClosedAt?: Prisma.DateTimeNullableFilter<"Activity"> | Date | string | null
   externalUrl?: Prisma.StringNullableFilter<"Activity"> | string | null
+  codePrompt?: Prisma.StringNullableFilter<"Activity"> | string | null
+  codeImageUrl?: Prisma.StringNullableFilter<"Activity"> | string | null
   maxXp?: Prisma.IntFilter<"Activity"> | number
   authorId?: Prisma.UuidFilter<"Activity"> | string
   divisionMode?: Prisma.EnumTeamDivisionModeNullableFilter<"Activity"> | $Enums.TeamDivisionMode | null
@@ -347,6 +367,8 @@ export type ActivityOrderByWithAggregationInput = {
   closesAt?: Prisma.SortOrder
   manuallyClosedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   externalUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  codePrompt?: Prisma.SortOrderInput | Prisma.SortOrder
+  codeImageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   maxXp?: Prisma.SortOrder
   authorId?: Prisma.SortOrder
   divisionMode?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -371,6 +393,8 @@ export type ActivityScalarWhereWithAggregatesInput = {
   closesAt?: Prisma.DateTimeWithAggregatesFilter<"Activity"> | Date | string
   manuallyClosedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"Activity"> | Date | string | null
   externalUrl?: Prisma.StringNullableWithAggregatesFilter<"Activity"> | string | null
+  codePrompt?: Prisma.StringNullableWithAggregatesFilter<"Activity"> | string | null
+  codeImageUrl?: Prisma.StringNullableWithAggregatesFilter<"Activity"> | string | null
   maxXp?: Prisma.IntWithAggregatesFilter<"Activity"> | number
   authorId?: Prisma.UuidWithAggregatesFilter<"Activity"> | string
   divisionMode?: Prisma.EnumTeamDivisionModeNullableWithAggregatesFilter<"Activity"> | $Enums.TeamDivisionMode | null
@@ -387,6 +411,8 @@ export type ActivityCreateInput = {
   closesAt: Date | string
   manuallyClosedAt?: Date | string | null
   externalUrl?: string | null
+  codePrompt?: string | null
+  codeImageUrl?: string | null
   maxXp: number
   divisionMode?: $Enums.TeamDivisionMode | null
   createdAt?: Date | string
@@ -409,6 +435,8 @@ export type ActivityUncheckedCreateInput = {
   closesAt: Date | string
   manuallyClosedAt?: Date | string | null
   externalUrl?: string | null
+  codePrompt?: string | null
+  codeImageUrl?: string | null
   maxXp: number
   authorId: string
   divisionMode?: $Enums.TeamDivisionMode | null
@@ -431,6 +459,8 @@ export type ActivityUpdateInput = {
   closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codePrompt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codeImageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   maxXp?: Prisma.IntFieldUpdateOperationsInput | number
   divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -453,6 +483,8 @@ export type ActivityUncheckedUpdateInput = {
   closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codePrompt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codeImageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   maxXp?: Prisma.IntFieldUpdateOperationsInput | number
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
@@ -475,6 +507,8 @@ export type ActivityCreateManyInput = {
   closesAt: Date | string
   manuallyClosedAt?: Date | string | null
   externalUrl?: string | null
+  codePrompt?: string | null
+  codeImageUrl?: string | null
   maxXp: number
   authorId: string
   divisionMode?: $Enums.TeamDivisionMode | null
@@ -491,6 +525,8 @@ export type ActivityUpdateManyMutationInput = {
   closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codePrompt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codeImageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   maxXp?: Prisma.IntFieldUpdateOperationsInput | number
   divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -506,6 +542,8 @@ export type ActivityUncheckedUpdateManyInput = {
   closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codePrompt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codeImageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   maxXp?: Prisma.IntFieldUpdateOperationsInput | number
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
@@ -532,6 +570,8 @@ export type ActivityCountOrderByAggregateInput = {
   closesAt?: Prisma.SortOrder
   manuallyClosedAt?: Prisma.SortOrder
   externalUrl?: Prisma.SortOrder
+  codePrompt?: Prisma.SortOrder
+  codeImageUrl?: Prisma.SortOrder
   maxXp?: Prisma.SortOrder
   authorId?: Prisma.SortOrder
   divisionMode?: Prisma.SortOrder
@@ -552,6 +592,8 @@ export type ActivityMaxOrderByAggregateInput = {
   closesAt?: Prisma.SortOrder
   manuallyClosedAt?: Prisma.SortOrder
   externalUrl?: Prisma.SortOrder
+  codePrompt?: Prisma.SortOrder
+  codeImageUrl?: Prisma.SortOrder
   maxXp?: Prisma.SortOrder
   authorId?: Prisma.SortOrder
   divisionMode?: Prisma.SortOrder
@@ -568,6 +610,8 @@ export type ActivityMinOrderByAggregateInput = {
   closesAt?: Prisma.SortOrder
   manuallyClosedAt?: Prisma.SortOrder
   externalUrl?: Prisma.SortOrder
+  codePrompt?: Prisma.SortOrder
+  codeImageUrl?: Prisma.SortOrder
   maxXp?: Prisma.SortOrder
   authorId?: Prisma.SortOrder
   divisionMode?: Prisma.SortOrder
@@ -734,6 +778,8 @@ export type ActivityCreateWithoutAuthorInput = {
   closesAt: Date | string
   manuallyClosedAt?: Date | string | null
   externalUrl?: string | null
+  codePrompt?: string | null
+  codeImageUrl?: string | null
   maxXp: number
   divisionMode?: $Enums.TeamDivisionMode | null
   createdAt?: Date | string
@@ -755,6 +801,8 @@ export type ActivityUncheckedCreateWithoutAuthorInput = {
   closesAt: Date | string
   manuallyClosedAt?: Date | string | null
   externalUrl?: string | null
+  codePrompt?: string | null
+  codeImageUrl?: string | null
   maxXp: number
   divisionMode?: $Enums.TeamDivisionMode | null
   createdAt?: Date | string
@@ -805,6 +853,8 @@ export type ActivityScalarWhereInput = {
   closesAt?: Prisma.DateTimeFilter<"Activity"> | Date | string
   manuallyClosedAt?: Prisma.DateTimeNullableFilter<"Activity"> | Date | string | null
   externalUrl?: Prisma.StringNullableFilter<"Activity"> | string | null
+  codePrompt?: Prisma.StringNullableFilter<"Activity"> | string | null
+  codeImageUrl?: Prisma.StringNullableFilter<"Activity"> | string | null
   maxXp?: Prisma.IntFilter<"Activity"> | number
   authorId?: Prisma.UuidFilter<"Activity"> | string
   divisionMode?: Prisma.EnumTeamDivisionModeNullableFilter<"Activity"> | $Enums.TeamDivisionMode | null
@@ -821,6 +871,8 @@ export type ActivityCreateWithoutNotificationsInput = {
   closesAt: Date | string
   manuallyClosedAt?: Date | string | null
   externalUrl?: string | null
+  codePrompt?: string | null
+  codeImageUrl?: string | null
   maxXp: number
   divisionMode?: $Enums.TeamDivisionMode | null
   createdAt?: Date | string
@@ -842,6 +894,8 @@ export type ActivityUncheckedCreateWithoutNotificationsInput = {
   closesAt: Date | string
   manuallyClosedAt?: Date | string | null
   externalUrl?: string | null
+  codePrompt?: string | null
+  codeImageUrl?: string | null
   maxXp: number
   authorId: string
   divisionMode?: $Enums.TeamDivisionMode | null
@@ -879,6 +933,8 @@ export type ActivityUpdateWithoutNotificationsInput = {
   closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codePrompt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codeImageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   maxXp?: Prisma.IntFieldUpdateOperationsInput | number
   divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -900,6 +956,8 @@ export type ActivityUncheckedUpdateWithoutNotificationsInput = {
   closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codePrompt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codeImageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   maxXp?: Prisma.IntFieldUpdateOperationsInput | number
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
@@ -921,6 +979,8 @@ export type ActivityCreateWithoutRecipientsInput = {
   closesAt: Date | string
   manuallyClosedAt?: Date | string | null
   externalUrl?: string | null
+  codePrompt?: string | null
+  codeImageUrl?: string | null
   maxXp: number
   divisionMode?: $Enums.TeamDivisionMode | null
   createdAt?: Date | string
@@ -942,6 +1002,8 @@ export type ActivityUncheckedCreateWithoutRecipientsInput = {
   closesAt: Date | string
   manuallyClosedAt?: Date | string | null
   externalUrl?: string | null
+  codePrompt?: string | null
+  codeImageUrl?: string | null
   maxXp: number
   authorId: string
   divisionMode?: $Enums.TeamDivisionMode | null
@@ -979,6 +1041,8 @@ export type ActivityUpdateWithoutRecipientsInput = {
   closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codePrompt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codeImageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   maxXp?: Prisma.IntFieldUpdateOperationsInput | number
   divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1000,6 +1064,8 @@ export type ActivityUncheckedUpdateWithoutRecipientsInput = {
   closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codePrompt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codeImageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   maxXp?: Prisma.IntFieldUpdateOperationsInput | number
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
@@ -1021,6 +1087,8 @@ export type ActivityCreateWithoutQuestionsInput = {
   closesAt: Date | string
   manuallyClosedAt?: Date | string | null
   externalUrl?: string | null
+  codePrompt?: string | null
+  codeImageUrl?: string | null
   maxXp: number
   divisionMode?: $Enums.TeamDivisionMode | null
   createdAt?: Date | string
@@ -1042,6 +1110,8 @@ export type ActivityUncheckedCreateWithoutQuestionsInput = {
   closesAt: Date | string
   manuallyClosedAt?: Date | string | null
   externalUrl?: string | null
+  codePrompt?: string | null
+  codeImageUrl?: string | null
   maxXp: number
   authorId: string
   divisionMode?: $Enums.TeamDivisionMode | null
@@ -1079,6 +1149,8 @@ export type ActivityUpdateWithoutQuestionsInput = {
   closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codePrompt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codeImageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   maxXp?: Prisma.IntFieldUpdateOperationsInput | number
   divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1100,6 +1172,8 @@ export type ActivityUncheckedUpdateWithoutQuestionsInput = {
   closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codePrompt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codeImageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   maxXp?: Prisma.IntFieldUpdateOperationsInput | number
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
@@ -1121,6 +1195,8 @@ export type ActivityCreateWithoutSubmissionsInput = {
   closesAt: Date | string
   manuallyClosedAt?: Date | string | null
   externalUrl?: string | null
+  codePrompt?: string | null
+  codeImageUrl?: string | null
   maxXp: number
   divisionMode?: $Enums.TeamDivisionMode | null
   createdAt?: Date | string
@@ -1142,6 +1218,8 @@ export type ActivityUncheckedCreateWithoutSubmissionsInput = {
   closesAt: Date | string
   manuallyClosedAt?: Date | string | null
   externalUrl?: string | null
+  codePrompt?: string | null
+  codeImageUrl?: string | null
   maxXp: number
   authorId: string
   divisionMode?: $Enums.TeamDivisionMode | null
@@ -1179,6 +1257,8 @@ export type ActivityUpdateWithoutSubmissionsInput = {
   closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codePrompt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codeImageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   maxXp?: Prisma.IntFieldUpdateOperationsInput | number
   divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1200,6 +1280,8 @@ export type ActivityUncheckedUpdateWithoutSubmissionsInput = {
   closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codePrompt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codeImageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   maxXp?: Prisma.IntFieldUpdateOperationsInput | number
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
@@ -1221,6 +1303,8 @@ export type ActivityCreateWithoutTeamsInput = {
   closesAt: Date | string
   manuallyClosedAt?: Date | string | null
   externalUrl?: string | null
+  codePrompt?: string | null
+  codeImageUrl?: string | null
   maxXp: number
   divisionMode?: $Enums.TeamDivisionMode | null
   createdAt?: Date | string
@@ -1242,6 +1326,8 @@ export type ActivityUncheckedCreateWithoutTeamsInput = {
   closesAt: Date | string
   manuallyClosedAt?: Date | string | null
   externalUrl?: string | null
+  codePrompt?: string | null
+  codeImageUrl?: string | null
   maxXp: number
   authorId: string
   divisionMode?: $Enums.TeamDivisionMode | null
@@ -1279,6 +1365,8 @@ export type ActivityUpdateWithoutTeamsInput = {
   closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codePrompt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codeImageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   maxXp?: Prisma.IntFieldUpdateOperationsInput | number
   divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1300,6 +1388,8 @@ export type ActivityUncheckedUpdateWithoutTeamsInput = {
   closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codePrompt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codeImageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   maxXp?: Prisma.IntFieldUpdateOperationsInput | number
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
@@ -1321,6 +1411,8 @@ export type ActivityCreateWithoutAwardsInput = {
   closesAt: Date | string
   manuallyClosedAt?: Date | string | null
   externalUrl?: string | null
+  codePrompt?: string | null
+  codeImageUrl?: string | null
   maxXp: number
   divisionMode?: $Enums.TeamDivisionMode | null
   createdAt?: Date | string
@@ -1342,6 +1434,8 @@ export type ActivityUncheckedCreateWithoutAwardsInput = {
   closesAt: Date | string
   manuallyClosedAt?: Date | string | null
   externalUrl?: string | null
+  codePrompt?: string | null
+  codeImageUrl?: string | null
   maxXp: number
   authorId: string
   divisionMode?: $Enums.TeamDivisionMode | null
@@ -1379,6 +1473,8 @@ export type ActivityUpdateWithoutAwardsInput = {
   closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codePrompt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codeImageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   maxXp?: Prisma.IntFieldUpdateOperationsInput | number
   divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1400,6 +1496,8 @@ export type ActivityUncheckedUpdateWithoutAwardsInput = {
   closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codePrompt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codeImageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   maxXp?: Prisma.IntFieldUpdateOperationsInput | number
   authorId?: Prisma.StringFieldUpdateOperationsInput | string
   divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
@@ -1421,6 +1519,8 @@ export type ActivityCreateManyAuthorInput = {
   closesAt: Date | string
   manuallyClosedAt?: Date | string | null
   externalUrl?: string | null
+  codePrompt?: string | null
+  codeImageUrl?: string | null
   maxXp: number
   divisionMode?: $Enums.TeamDivisionMode | null
   createdAt?: Date | string
@@ -1436,6 +1536,8 @@ export type ActivityUpdateWithoutAuthorInput = {
   closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codePrompt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codeImageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   maxXp?: Prisma.IntFieldUpdateOperationsInput | number
   divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1457,6 +1559,8 @@ export type ActivityUncheckedUpdateWithoutAuthorInput = {
   closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codePrompt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codeImageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   maxXp?: Prisma.IntFieldUpdateOperationsInput | number
   divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1478,6 +1582,8 @@ export type ActivityUncheckedUpdateManyWithoutAuthorInput = {
   closesAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   manuallyClosedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   externalUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codePrompt?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  codeImageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   maxXp?: Prisma.IntFieldUpdateOperationsInput | number
   divisionMode?: Prisma.NullableEnumTeamDivisionModeFieldUpdateOperationsInput | $Enums.TeamDivisionMode | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1569,6 +1675,8 @@ export type ActivitySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   closesAt?: boolean
   manuallyClosedAt?: boolean
   externalUrl?: boolean
+  codePrompt?: boolean
+  codeImageUrl?: boolean
   maxXp?: boolean
   authorId?: boolean
   divisionMode?: boolean
@@ -1593,6 +1701,8 @@ export type ActivitySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
   closesAt?: boolean
   manuallyClosedAt?: boolean
   externalUrl?: boolean
+  codePrompt?: boolean
+  codeImageUrl?: boolean
   maxXp?: boolean
   authorId?: boolean
   divisionMode?: boolean
@@ -1610,6 +1720,8 @@ export type ActivitySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
   closesAt?: boolean
   manuallyClosedAt?: boolean
   externalUrl?: boolean
+  codePrompt?: boolean
+  codeImageUrl?: boolean
   maxXp?: boolean
   authorId?: boolean
   divisionMode?: boolean
@@ -1627,6 +1739,8 @@ export type ActivitySelectScalar = {
   closesAt?: boolean
   manuallyClosedAt?: boolean
   externalUrl?: boolean
+  codePrompt?: boolean
+  codeImageUrl?: boolean
   maxXp?: boolean
   authorId?: boolean
   divisionMode?: boolean
@@ -1634,7 +1748,7 @@ export type ActivitySelectScalar = {
   updatedAt?: boolean
 }
 
-export type ActivityOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "description" | "type" | "opensAt" | "closesAt" | "manuallyClosedAt" | "externalUrl" | "maxXp" | "authorId" | "divisionMode" | "createdAt" | "updatedAt", ExtArgs["result"]["activity"]>
+export type ActivityOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "description" | "type" | "opensAt" | "closesAt" | "manuallyClosedAt" | "externalUrl" | "codePrompt" | "codeImageUrl" | "maxXp" | "authorId" | "divisionMode" | "createdAt" | "updatedAt", ExtArgs["result"]["activity"]>
 export type ActivityInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   author?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   recipients?: boolean | Prisma.Activity$recipientsArgs<ExtArgs>
@@ -1672,6 +1786,8 @@ export type $ActivityPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
     closesAt: Date
     manuallyClosedAt: Date | null
     externalUrl: string | null
+    codePrompt: string | null
+    codeImageUrl: string | null
     maxXp: number
     authorId: string
     divisionMode: $Enums.TeamDivisionMode | null
@@ -2115,6 +2231,8 @@ export interface ActivityFieldRefs {
   readonly closesAt: Prisma.FieldRef<"Activity", 'DateTime'>
   readonly manuallyClosedAt: Prisma.FieldRef<"Activity", 'DateTime'>
   readonly externalUrl: Prisma.FieldRef<"Activity", 'String'>
+  readonly codePrompt: Prisma.FieldRef<"Activity", 'String'>
+  readonly codeImageUrl: Prisma.FieldRef<"Activity", 'String'>
   readonly maxXp: Prisma.FieldRef<"Activity", 'Int'>
   readonly authorId: Prisma.FieldRef<"Activity", 'String'>
   readonly divisionMode: Prisma.FieldRef<"Activity", 'TeamDivisionMode'>

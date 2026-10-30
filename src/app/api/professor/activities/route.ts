@@ -14,11 +14,13 @@ const question = z.object({
 const input = z.object({
   title: z.string().trim().min(3).max(150),
   description: z.string().trim().max(5000).optional(),
-  type: z.enum(["EXTERNAL_LINK", "FORM", "GROUP"]),
+  type: z.enum(["EXTERNAL_LINK", "FORM", "GROUP", "CPP_CODE"]),
   opensAt: z.coerce.date(),
   closesAt: z.coerce.date(),
   maxXp: z.number().int().min(0).max(100000).optional(),
   externalUrl: z.string().url().optional(),
+  codePrompt: z.string().trim().min(1).max(10000).optional(),
+  codeImageUrl: z.string().url().max(2000).optional(),
   questions: z.array(question).max(100).default([]),
   divisionMode: z.enum(["RANDOM", "MANUAL"]).optional(),
   teamCount: z.number().int().min(1).max(100).optional(),
@@ -40,6 +42,13 @@ function validateActivity(body: z.infer<typeof input>, eligibleIds: string[]) {
         const correct = item.options.filter((choice) => choice.isCorrect).length;
         if ((item.type === "SINGLE_CHOICE" && correct !== 1) || (item.type === "MULTIPLE_CHOICE" && correct < 1)) throw new Error("INVALID_QUESTIONS");
       }
+    }
+  }
+  if (body.type === "CPP_CODE") {
+    if (body.maxXp === undefined || !body.codePrompt) throw new Error("INVALID_CODE_ACTIVITY");
+    if (body.codeImageUrl) {
+      const url = new URL(body.codeImageUrl);
+      if (url.protocol !== "https:" || url.hostname !== "res.cloudinary.com" || !/^\/[^/]+\/image\/upload\//.test(url.pathname)) throw new Error("INVALID_CODE_IMAGE");
     }
   }
   if (body.type === "GROUP") {
@@ -83,10 +92,12 @@ export async function POST(request: Request) {
           closesAt: body.closesAt,
           maxXp,
           externalUrl: body.type === "EXTERNAL_LINK" ? body.externalUrl : null,
+          codePrompt: body.type === "CPP_CODE" ? body.codePrompt : null,
+          codeImageUrl: body.type === "CPP_CODE" ? body.codeImageUrl ?? null : null,
           divisionMode: body.type === "GROUP" ? body.divisionMode : null,
           authorId: teacher.id,
           recipients: { create: students.map((student) => ({ studentId: student.id })) },
-          questions: body.type === "FORM" ? { create: body.questions.map((item, position) => ({
+          questions: body.type === "CPP_CODE" ? { create: [{ prompt: body.codePrompt!, type: "WRITTEN", maxXp, position: 0 }] } : body.type === "FORM" ? { create: body.questions.map((item, position) => ({
             prompt: item.prompt,
             type: item.type,
             maxXp: item.maxXp,
@@ -133,7 +144,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ id: created.id }, { status: 201 });
   } catch (error) {
     if (error instanceof z.ZodError) return NextResponse.json({ message: "Revise os dados da atividade." }, { status: 400 });
-    const known: Record<string, string> = { INVALID_DATES: "O fechamento deve ocorrer depois da abertura.", INVALID_URL: "Informe uma URL HTTPS válida.", INVALID_MAX_XP: "Informe o XP máximo.", INVALID_QUESTIONS: "Revise as questões, alternativas e gabaritos.", INVALID_TEAMS: "A divisão das equipes é inválida." };
+    const known: Record<string, string> = { INVALID_DATES: "O fechamento deve ocorrer depois da abertura.", INVALID_URL: "Informe uma URL HTTPS válida.", INVALID_MAX_XP: "Informe o XP máximo.", INVALID_QUESTIONS: "Revise as questões, alternativas e gabaritos.", INVALID_TEAMS: "A divisão das equipes é inválida.", INVALID_CODE_ACTIVITY: "Informe o enunciado e o XP máximo.", INVALID_CODE_IMAGE: "Use uma URL HTTPS de imagem do Cloudinary." };
     if (error instanceof Error && known[error.message]) return NextResponse.json({ message: known[error.message] }, { status: 400 });
     const [message, status] = apiError(error); return NextResponse.json({ message }, { status });
   }

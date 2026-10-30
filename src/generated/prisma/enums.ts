@@ -468,7 +468,8 @@ export type NotificationKind = (typeof NotificationKind)[keyof typeof Notificati
 export const ActivityType = {
   EXTERNAL_LINK: 'EXTERNAL_LINK',
   FORM: 'FORM',
-  GROUP: 'GROUP'
+  GROUP: 'GROUP',
+  CPP_CODE: 'CPP_CODE'
 } as const
 
 export type ActivityType = (typeof ActivityType)[keyof typeof ActivityType]

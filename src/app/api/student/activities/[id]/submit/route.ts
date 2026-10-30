@@ -7,7 +7,7 @@ import { applyActivityAward } from "@/lib/activity-awards";
 import { assertOpenForSubmission, gradeObjectiveAnswer } from "@/lib/activities";
 import { prisma } from "@/lib/db";
 
-const input = z.object({ answers: z.array(z.object({ questionId: z.string().uuid(), selectedOptionIds: z.array(z.string().uuid()).default([]), writtenText: z.string().trim().max(10000).optional() })).max(100) });
+const input = z.object({ answers: z.array(z.object({ questionId: z.string().uuid(), selectedOptionIds: z.array(z.string().uuid()).default([]), writtenText: z.string().max(50000).optional() })).max(100), codingSeconds: z.number().int().min(0).optional() });
 
 async function submissionTransaction<T>(operation: (tx: Prisma.TransactionClient) => Promise<T>) {
   for (let attempt = 0; attempt < 3; attempt += 1) {
@@ -32,16 +32,23 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
       where: { activityId_studentId: { activityId: id, studentId: student.id } },
       include: { activity: { include: { questions: { include: { options: true }, orderBy: { position: "asc" } } } }, submission: { select: { id: true } } },
     });
-    if (!recipient || recipient.activity.type !== "FORM") return NextResponse.json({ message: "Atividade não encontrada." }, { status: 404 });
+    if (!recipient || !["FORM", "CPP_CODE"].includes(recipient.activity.type)) return NextResponse.json({ message: "Atividade não encontrada." }, { status: 404 });
+    const isCode = recipient.activity.type === "CPP_CODE";
     assertOpenForSubmission(recipient.activity);
     if (recipient.submission) return NextResponse.json({ message: "Este formulário já foi enviado." }, { status: 409 });
+    if (isCode) {
+      if (!recipient.codingStartedAt || body.codingSeconds === undefined || body.answers.length !== 1 || recipient.activity.questions.length !== 1) throw new Error("INVALID_CODE_SUBMISSION");
+      const elapsed = Math.ceil((Date.now() - recipient.codingStartedAt.getTime()) / 1000);
+      if (body.codingSeconds > Math.max(0, elapsed) + 5) throw new Error("INVALID_CODE_SUBMISSION");
+    }
     const answerByQuestion = new Map(body.answers.map((answer) => [answer.questionId, answer]));
     if (answerByQuestion.size !== recipient.activity.questions.length) return NextResponse.json({ message: "Responda todas as questões antes de enviar." }, { status: 400 });
     const prepared = recipient.activity.questions.map((question) => {
       const answer = answerByQuestion.get(question.id); if (!answer) throw new Error("INVALID_ANSWERS");
       if (question.type === "WRITTEN") {
-        if (!answer.writtenText) throw new Error("INVALID_ANSWERS");
-        return { question, writtenText: answer.writtenText, selected: [] as string[], autoCorrect: null, awardedXp: null };
+        const writtenText = isCode ? answer.writtenText?.trim() : answer.writtenText?.trim();
+        if (!writtenText || (!isCode && writtenText.length > 10000) || (isCode && writtenText.length > 50000) || (isCode && answer.selectedOptionIds.length)) throw new Error("INVALID_ANSWERS");
+        return { question, writtenText, selected: [] as string[], autoCorrect: null, awardedXp: null };
       }
       if (question.type === "SINGLE_CHOICE" && answer.selectedOptionIds.length !== 1) throw new Error("INVALID_ANSWERS");
       if (question.type === "MULTIPLE_CHOICE" && answer.selectedOptionIds.length < 1) throw new Error("INVALID_ANSWERS");
@@ -50,7 +57,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
     });
     const hasWritten = prepared.some((answer) => answer.question.type === "WRITTEN");
     const result = await submissionTransaction(async (tx) => {
-      const submission = await tx.activitySubmission.create({ data: { activityId: id, recipientId: recipient.id, studentId: student.id, status: hasWritten ? "AWAITING_REVIEW" : "GRADED", gradedAt: hasWritten ? null : new Date() } });
+      const submission = await tx.activitySubmission.create({ data: { activityId: id, recipientId: recipient.id, studentId: student.id, status: hasWritten ? "AWAITING_REVIEW" : "GRADED", gradedAt: hasWritten ? null : new Date(), codingSeconds: isCode ? body.codingSeconds : null } });
       const answers = prepared.map((answer) => ({
         id: randomUUID(),
         submissionId: submission.id,
@@ -86,7 +93,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
     });
     return NextResponse.json({ id: result.id, status: result.status }, { status: 201 });
   } catch (error) {
-    if (error instanceof z.ZodError || (error instanceof Error && ["INVALID_ANSWERS", "INVALID_OPTIONS"].includes(error.message))) return NextResponse.json({ message: "Revise as respostas do formulário." }, { status: 400 });
+    if (error instanceof z.ZodError || (error instanceof Error && ["INVALID_ANSWERS", "INVALID_OPTIONS", "INVALID_CODE_SUBMISSION"].includes(error.message))) return NextResponse.json({ message: "Revise a resposta e o tempo de edição antes de enviar." }, { status: 400 });
     if (error instanceof Error && error.message === "ACTIVITY_NOT_OPEN") return NextResponse.json({ message: "O prazo desta atividade não está aberto." }, { status: 409 });
     if (typeof error === "object" && error && "code" in error && error.code === "P2002") return NextResponse.json({ message: "Este formulário já foi enviado." }, { status: 409 });
     const [message, status] = apiError(error); return NextResponse.json({ message }, { status });

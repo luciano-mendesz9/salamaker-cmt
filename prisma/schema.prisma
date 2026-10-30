@@ -353,6 +353,7 @@ enum ActivityType {
   EXTERNAL_LINK
   FORM
   GROUP
+  CPP_CODE
 }
 
 enum ActivityQuestionType {
@@ -1060,6 +1061,8 @@ model Activity {
   closesAt         DateTime
   manuallyClosedAt DateTime?
   externalUrl      String?
+  codePrompt       String?
+  codeImageUrl     String?
   maxXp            Int
   authorId         String               @db.Uuid
   divisionMode     TeamDivisionMode?
@@ -1116,6 +1119,7 @@ model ActivityRecipient {
   studentId         String              @db.Uuid
   studentSignaledAt DateTime?
   completedAt       DateTime?
+  codingStartedAt   DateTime?
   createdAt         DateTime            @default(now())
   activity          Activity            @relation(fields: [activityId], references: [id], onDelete: Cascade)
   student           User                @relation("ActivityRecipientStudent", fields: [studentId], references: [id], onDelete: Restrict)
@@ -1161,6 +1165,7 @@ model ActivitySubmission {
   status      SubmissionStatus
   submittedAt DateTime          @default(now())
   gradedAt    DateTime?
+  codingSeconds Int?
   activity    Activity          @relation(fields: [activityId], references: [id], onDelete: Restrict)
   recipient   ActivityRecipient @relation(fields: [recipientId], references: [id], onDelete: Restrict)
   student     User              @relation(fields: [studentId], references: [id], onDelete: Restrict)

@@ -4,9 +4,9 @@ import Link from "next/link";
 import { ArrowRight, BookOpen, CheckCircle2, Clock3, ExternalLink, Search, UsersRound } from "lucide-react";
 import { useMemo, useState } from "react";
 
-type ActivityItem = { id: string; title: string; description: string | null; type: "EXTERNAL_LINK" | "FORM" | "GROUP"; maxXp: number; opensAt: string; closesAt: string; state: "SCHEDULED" | "OPEN" | "CLOSED"; completed: boolean; status: string };
+type ActivityItem = { id: string; title: string; description: string | null; type: "EXTERNAL_LINK" | "FORM" | "GROUP" | "CPP_CODE"; maxXp: number; opensAt: string; closesAt: string; state: "SCHEDULED" | "OPEN" | "CLOSED"; completed: boolean; status: string };
 type Filter = "ALL" | "OPEN" | "COMPLETED" | "CLOSED";
-const typeLabels = { EXTERNAL_LINK: "Link externo", FORM: "Formulário", GROUP: "Em grupo" } as const;
+const typeLabels = { EXTERNAL_LINK: "Link externo", FORM: "Formulário", GROUP: "Em grupo", CPP_CODE: "Código C++" } as const;
 const filters: { key: Filter; label: string }[] = [{ key: "ALL", label: "Todas" }, { key: "OPEN", label: "Em aberto" }, { key: "COMPLETED", label: "Concluídas" }, { key: "CLOSED", label: "Encerradas" }];
 
 export function StudentActivitiesExplorer({ items, timeZone }: { items: ActivityItem[]; timeZone: string }) {
