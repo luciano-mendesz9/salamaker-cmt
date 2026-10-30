@@ -4,6 +4,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Maximize2, Minus, Plus, X } from "lucide-react";
+import { isBlockedCodeEditorChange } from "@/lib/code-editor-input";
 import styles from "./cpp-code-submission.module.css";
 
 const STARTER = "void setup() {\n  \n}\n\nvoid loop() {\n  \n}\n";
@@ -34,6 +35,7 @@ export function CppCodeSubmission({ activityId, questionId, prompt, imageUrl }: 
   const lines = useRef<HTMLDivElement>(null);
   const seconds = useRef(0);
   const lastTyping = useRef(0);
+  const codeRef = useRef(STARTER);
   const [code, setCode] = useState(STARTER);
   const [ready, setReady] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -48,7 +50,7 @@ export function CppCodeSubmission({ activityId, questionId, prompt, imageUrl }: 
       const stored = JSON.parse(sessionStorage.getItem(storageKey) || "null");
       if (stored && typeof stored.code === "string" && typeof stored.seconds === "number") {
         seconds.current = Math.max(0, stored.seconds);
-        queueMicrotask(() => { if (alive) setCode(stored.code); });
+        queueMicrotask(() => { if (alive) { codeRef.current = stored.code; setCode(stored.code); } });
       }
     } catch { /* A draft is optional. */ }
     let alive = true;
@@ -61,10 +63,20 @@ export function CppCodeSubmission({ activityId, questionId, prompt, imageUrl }: 
         try { sessionStorage.setItem(storageKey, JSON.stringify({ code: editor.current?.value ?? STARTER, seconds: seconds.current })); } catch { /* Storage may be unavailable. */ }
       }
     }, 1000);
-    return () => { alive = false; window.clearInterval(timer); };
+    const target = editor.current;
+    const blockPaste = (event: Event) => { event.preventDefault(); setMessage("Colar texto não é permitido neste editor. Digite o código."); };
+    const blockBeforeInput = (event: Event) => {
+      const kind = (event as InputEvent).inputType?.toLowerCase() ?? "";
+      if (kind.includes("paste") || kind.includes("drop")) blockPaste(event);
+    };
+    target?.addEventListener("paste", blockPaste, true);
+    target?.addEventListener("drop", blockPaste, true);
+    target?.addEventListener("beforeinput", blockBeforeInput, true);
+    return () => { alive = false; window.clearInterval(timer); target?.removeEventListener("paste", blockPaste, true); target?.removeEventListener("drop", blockPaste, true); target?.removeEventListener("beforeinput", blockBeforeInput, true); };
   }, [activityId, storageKey]);
 
   function persist(next: string) {
+    codeRef.current = next;
     setCode(next);
     lastTyping.current = performance.now();
     try { sessionStorage.setItem(storageKey, JSON.stringify({ code: next, seconds: seconds.current })); } catch { /* Storage may be unavailable. */ }
@@ -76,9 +88,16 @@ export function CppCodeSubmission({ activityId, questionId, prompt, imageUrl }: 
   function onChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
     const input = event.nativeEvent as InputEvent;
     const next = event.currentTarget.value;
+    const previous = codeRef.current;
+    if (isBlockedCodeEditorChange(previous, next, input.inputType)) {
+      event.currentTarget.value = previous;
+      setMessage("Colar texto não é permitido neste editor. Digite o código.");
+      return;
+    }
+    if (message) setMessage("");
     const cursor = event.currentTarget.selectionStart;
     const pairs: Record<string, string> = { "{": "}", "[": "]", "(": ")", '"': '"', "'": "'" };
-    if (!input.isComposing && input.inputType === "insertText" && input.data && pairs[input.data] && next.length === code.length + 1 && next[cursor - 1] === input.data) {
+    if (!input.isComposing && input.inputType === "insertText" && input.data && pairs[input.data] && next.length === previous.length + 1 && next[cursor - 1] === input.data) {
       insert(next.slice(0, cursor) + pairs[input.data] + next.slice(cursor), cursor);
     } else persist(next);
   }
