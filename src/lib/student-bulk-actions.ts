@@ -14,10 +14,11 @@ export const studentBulkActionSchema = z.discriminatedUnion("action", [
   }),
   z.object({
     action: z.literal("DEV_COINS"),
-    ids,
-    amount: z.number().int().min(1).max(10_000),
+    ids: ids.refine((value) => new Set(value).size === value.length),
+    amount: z.number().int().min(-10_000).max(10_000).refine((amount) => amount !== 0),
     reason,
     adminPassword,
+    requestId: z.string().uuid(),
   }),
   z.object({ action: z.literal("ARCHIVE"), ids, adminPassword }),
 ]);
