@@ -12,6 +12,8 @@ import { effectiveActivityState, formatSchoolDate } from "@/lib/activities";
 import { requireStudent } from "@/lib/authorization";
 import { prisma } from "@/lib/db";
 import { remainingWeeklyDevCoinTransfer } from "@/lib/dev-coins";
+import { DEV_COIN_TO_XP_WINDOW_MS, devCoinToXpQuota } from "@/lib/dev-coin-to-xp-policy";
+import { devCoinToXpSchemaReady } from "@/lib/feature-readiness";
 import { getSchoolWeek } from "@/lib/school-day";
 import { getXpAdjustmentSchedule } from "@/lib/xp-adjustment-policy";
 import { getStudentThemeState } from "@/lib/student-theme-state";
@@ -22,7 +24,9 @@ type DashboardActivity = { activityId: string; studentSignaledAt: Date | null; a
 export default async function Aluno() {
   const { student } = await requireStudent();
   const weekKey = getSchoolWeek().key;
-  const [ranking, closedLessons, presentCount, xpLedger, devCoinLedger, behaviors, settings, transferRecipients, weeklyTransfers, activities, openLesson, themeState] = await Promise.all([
+  const conversionReady = await devCoinToXpSchemaReady();
+  const conversionObservedAt = new Date();
+  const [ranking, closedLessons, presentCount, xpLedger, devCoinLedger, behaviors, settings, transferRecipients, weeklyTransfers, activities, openLesson, themeState, recentConversions] = await Promise.all([
     prisma.user.findMany({ where: { role: "STUDENT", status: "ACTIVE" }, select: { id: true }, orderBy: [{ xp: "desc" }, { createdAt: "asc" }, { id: "asc" }] }),
     prisma.lesson.count({ where: { status: "CLOSED", participants: { some: { studentId: student.id } } } }),
     prisma.attendance.count({ where: { studentId: student.id, status: "PRESENT", lesson: { status: "CLOSED", participants: { some: { studentId: student.id } } } } }),
@@ -35,6 +39,7 @@ export default async function Aluno() {
     prisma.activityRecipient.findMany({ where: { studentId: student.id }, include: { activity: true, submission: { select: { status: true } }, award: { select: { awardedXp: true } } }, orderBy: { createdAt: "desc" }, take: 3 }),
     prisma.lesson.findFirst({ where: { status: "OPEN" }, select: { id: true, attendances: { where: { studentId: student.id, status: "PRESENT" }, select: { id: true }, take: 1 } } }),
     getStudentThemeState(student.id),
+    conversionReady ? prisma.xpEntry.findMany({ where: { studentId: student.id, source: "DEV_COIN_TO_XP", createdAt: { gt: new Date(conversionObservedAt.getTime() - DEV_COIN_TO_XP_WINDOW_MS) } }, select: { delta: true, createdAt: true } }) : Promise.resolve([]),
   ]);
 
   const position = ranking.findIndex(item => item.id === student.id) + 1;
@@ -75,7 +80,7 @@ export default async function Aluno() {
       </div>
 
       <aside className="min-w-0 space-y-5 lg:space-y-6" aria-label="Resumo da conta">
-        <DevCoinWallet currentDevCoins={student.devCoins} currentXp={student.xp} devCoinsPerXp={settings?.devCoinsPerXp ?? 1} recipients={transferRecipients} weeklyTransferRemaining={remainingWeeklyDevCoinTransfer(weeklyTransfers._sum.amount ?? 0)} quickAction={openLesson && openLesson.attendances.length === 0 ? <StudentAttendanceButton/> : null}/>
+        <DevCoinWallet currentDevCoins={student.devCoins} currentXp={student.xp} devCoinsPerXp={settings?.devCoinsPerXp ?? 1} recipients={transferRecipients} weeklyTransferRemaining={remainingWeeklyDevCoinTransfer(weeklyTransfers._sum.amount ?? 0)} conversionQuota={devCoinToXpQuota(recentConversions, conversionObservedAt)} conversionReady={conversionReady} observedAt={conversionObservedAt.toISOString()} quickAction={openLesson && openLesson.attendances.length === 0 ? <StudentAttendanceButton/> : null}/>
         <StudentThemeStore studentId={student.id} activeTheme={themeState.activeTheme} ownedThemes={themeState.ownedThemes} currentDevCoins={student.devCoins} storeReady={themeState.storeReady}/>
         <TinkercadCard accessCode={student.accessCode} showGamesLink={false}/>
         <BehaviorChart ratings={behaviors}/>

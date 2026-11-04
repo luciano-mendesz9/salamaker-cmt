@@ -18,6 +18,7 @@ type Category = { value: string; label: string };
 
 const xpCategories: Category[] = [
   { value: "access", label: "Acesso" },
+  { value: "conversion", label: "Conversão de DevCoins" },
   { value: "attendance", label: "Presença" },
   { value: "behavior", label: "Comportamento" },
   { value: "activity", label: "Atividade" },
@@ -32,7 +33,7 @@ const xpCategories: Category[] = [
 ];
 
 const devCoinCategories: Category[] = [
-  { value: "conversion", label: "Conversão de XP" },
+  { value: "conversion", label: "Conversões de XP e DevCoins" },
   { value: "teacher", label: "Envio do professor" },
   { value: "initial", label: "Crédito inicial" },
   { value: "transfer", label: "Transferência" },
@@ -47,6 +48,7 @@ const devCoinCategories: Category[] = [
 function xpCategory(row: LedgerRow) {
   const text = `${row.reason} ${row.idempotencyKey}`.toLowerCase();
   if (text.includes("daily-login") || text.includes("acesso diário") || text.includes("primeiro acesso")) return "access";
+  if (row.source === "DEV_COIN_TO_XP") return "conversion";
   if (row.source === "ATTENDANCE") return "attendance";
   if (row.source === "BEHAVIOR") return "behavior";
   if (row.source === "ACTIVITY") return "activity";
@@ -61,7 +63,7 @@ function xpCategory(row: LedgerRow) {
 }
 
 function devCoinCategory(row: LedgerRow) {
-  if (row.source === "PURCHASE") return "conversion";
+  if (row.source === "PURCHASE" || row.source === "XP_CONVERSION_REDEMPTION") return "conversion";
   if (row.source === "TEACHER_GRANT") return "teacher";
   if (row.source === "INITIAL_GRANT") return "initial";
   if (row.source.startsWith("TRANSFER_")) return "transfer";

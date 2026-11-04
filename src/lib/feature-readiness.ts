@@ -48,3 +48,14 @@ export async function requireInvestmentsSchema() {
   if (!readiness.ready) throw new Error("COLLECTIBLES_SCHEMA_NOT_READY");
   if (!readiness.investments) throw new Error("INVESTMENTS_SCHEMA_NOT_READY");
 }
+
+export async function devCoinToXpSchemaReady() {
+  const [row] = await prisma.$queryRaw<Array<{ ready: boolean }>>`
+    SELECT EXISTS (
+      SELECT 1 FROM pg_enum AS entry
+      JOIN pg_type AS kind ON kind.oid = entry.enumtypid
+      WHERE kind.typname = 'XpSource' AND entry.enumlabel = 'DEV_COIN_TO_XP'
+    ) AS "ready"
+  `;
+  return Boolean(row?.ready);
+}

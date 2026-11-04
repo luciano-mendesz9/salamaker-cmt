@@ -8,11 +8,12 @@ import { ChartNoAxesCombined, Images, Send, ShoppingCart, Sparkles, X, Zap } fro
 import { toast } from "sonner";
 import devCoinImage from "@/assets/dev-coin.webp";
 import { devCoinsForXp } from "@/lib/dev-coins";
+import { DevCoinToXp } from "@/components/dev-coin-to-xp";
 
 type Recipient = { id: string; firstName: string; lastName: string };
-type Props = { currentDevCoins: number; currentXp: number; devCoinsPerXp: number; recipients: Recipient[]; weeklyTransferRemaining: number; quickAction?: React.ReactNode };
+type Props = { currentDevCoins: number; currentXp: number; devCoinsPerXp: number; recipients: Recipient[]; weeklyTransferRemaining: number; conversionQuota: { used: number; remaining: number; nextAvailableAt: string | null }; conversionReady: boolean; observedAt: string; quickAction?: React.ReactNode };
 
-export function DevCoinWallet({ currentDevCoins, currentXp, devCoinsPerXp, recipients, weeklyTransferRemaining, quickAction }: Props) {
+export function DevCoinWallet({ currentDevCoins, currentXp, devCoinsPerXp, recipients, weeklyTransferRemaining, conversionQuota, conversionReady, observedAt, quickAction }: Props) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [xpAmount, setXpAmount] = useState(1);
@@ -84,6 +85,7 @@ export function DevCoinWallet({ currentDevCoins, currentXp, devCoinsPerXp, recip
       <span className="min-w-0 flex-1"><span className="block text-[10px] font-black uppercase tracking-[.16em] text-[var(--accent-soft)]">Faça suas moedas crescerem</span><strong className="mt-1 block text-sm tracking-wide">CARTEIRA DE INVESTIMENTOS</strong></span>
       <Sparkles className="shrink-0 text-[var(--accent-soft)] transition group-hover:rotate-12 group-hover:scale-110" size={19}/>
     </Link>
+    <DevCoinToXp key={`${currentDevCoins}:${currentXp}:${rate}:${conversionReady}:${conversionQuota.used}:${conversionQuota.nextAvailableAt}:${observedAt}`} currentDevCoins={currentDevCoins} currentXp={currentXp} rate={rate} initialQuota={conversionQuota} ready={conversionReady} observedAt={observedAt}/>
     {quickAction}
     <div className="mt-3 grid grid-cols-2 gap-3"><Link href="/aluno/album" className="button-secondary w-full"><Images size={18}/>Álbum</Link><button type="button" onClick={() => setTransferOpen(true)} className="button-secondary w-full"><Send size={18}/>Transferir</button></div>
     {open && <div className="fixed inset-0 z-[90] grid place-items-center bg-slate-950/80 p-4 backdrop-blur-sm" onMouseDown={(event) => { if (event.target === event.currentTarget && !busy) setOpen(false); }}>
