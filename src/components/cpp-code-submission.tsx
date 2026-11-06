@@ -28,7 +28,7 @@ function highlighted(code: string) {
   return parts;
 }
 
-export function CppCodeSubmission({ activityId, questionId, prompt, imageUrl }: { activityId: string; questionId: string; prompt: string; imageUrl: string | null }) {
+export function CppCodeSubmission({ activityId, studentId, questionId, prompt, imageUrl }: { activityId: string; studentId: string; questionId: string; prompt: string; imageUrl: string | null }) {
   const router = useRouter();
   const editor = useRef<HTMLTextAreaElement>(null);
   const highlight = useRef<HTMLPreElement>(null);
@@ -36,33 +36,46 @@ export function CppCodeSubmission({ activityId, questionId, prompt, imageUrl }: 
   const seconds = useRef(0);
   const lastTyping = useRef(0);
   const codeRef = useRef(STARTER);
+  const hasDraft = useRef(false);
+  const submitted = useRef(false);
   const [code, setCode] = useState(STARTER);
   const [ready, setReady] = useState(false);
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState("");
+  const [storageError, setStorageError] = useState(false);
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [imageOpen, setImageOpen] = useState(false);
   const [zoom, setZoom] = useState(1);
-  const storageKey = `cpp-activity:${activityId}`;
+  const storageKey = `cpp-activity:${studentId}:${activityId}`;
 
   useEffect(() => {
-    try {
-      const stored = JSON.parse(sessionStorage.getItem(storageKey) || "null");
-      if (stored && typeof stored.code === "string" && typeof stored.seconds === "number") {
-        seconds.current = Math.max(0, stored.seconds);
-        queueMicrotask(() => { if (alive) { codeRef.current = stored.code; setCode(stored.code); } });
-      }
-    } catch { /* A draft is optional. */ }
     let alive = true;
+    try {
+      const stored = JSON.parse(localStorage.getItem(storageKey) || "null");
+      if (stored && typeof stored.code === "string" && stored.code.length <= 50000 && Number.isSafeInteger(stored.seconds) && stored.seconds >= 0) {
+        seconds.current = stored.seconds;
+        hasDraft.current = true;
+        codeRef.current = stored.code;
+        queueMicrotask(() => { if (alive) setCode(stored.code); });
+      }
+    } catch { queueMicrotask(() => { if (alive) setStorageError(true); }); }
+    const saveDraft = () => {
+      if (!hasDraft.current || submitted.current) return;
+      try { localStorage.setItem(storageKey, JSON.stringify({ code: codeRef.current, seconds: seconds.current })); }
+      catch { if (alive) setStorageError(true); }
+    };
     fetch(`/api/student/activities/${activityId}/code-start`, { method: "POST" })
       .then(async response => { if (!response.ok) throw new Error((await response.json()).message || "Não foi possível iniciar a edição."); if (alive) setReady(true); })
       .catch(error => { if (alive) setMessage(error instanceof Error ? error.message : "Não foi possível iniciar a edição."); });
     const timer = window.setInterval(() => {
       if (document.visibilityState === "visible" && document.activeElement === editor.current && performance.now() - lastTyping.current < 30_000) {
         seconds.current += 1;
-        try { sessionStorage.setItem(storageKey, JSON.stringify({ code: editor.current?.value ?? STARTER, seconds: seconds.current })); } catch { /* Storage may be unavailable. */ }
       }
     }, 1000);
+    const saveTimer = window.setInterval(saveDraft, 5000);
+    const saveWhenHidden = () => { if (document.visibilityState === "hidden") saveDraft(); };
+    window.addEventListener("pagehide", saveDraft);
+    document.addEventListener("visibilitychange", saveWhenHidden);
     const target = editor.current;
     const blockPaste = (event: Event) => { event.preventDefault(); setMessage("Colar texto não é permitido neste editor. Digite o código."); };
     const blockBeforeInput = (event: Event) => {
@@ -72,14 +85,14 @@ export function CppCodeSubmission({ activityId, questionId, prompt, imageUrl }: 
     target?.addEventListener("paste", blockPaste, true);
     target?.addEventListener("drop", blockPaste, true);
     target?.addEventListener("beforeinput", blockBeforeInput, true);
-    return () => { alive = false; window.clearInterval(timer); target?.removeEventListener("paste", blockPaste, true); target?.removeEventListener("drop", blockPaste, true); target?.removeEventListener("beforeinput", blockBeforeInput, true); };
+    return () => { alive = false; saveDraft(); window.clearInterval(timer); window.clearInterval(saveTimer); window.removeEventListener("pagehide", saveDraft); document.removeEventListener("visibilitychange", saveWhenHidden); target?.removeEventListener("paste", blockPaste, true); target?.removeEventListener("drop", blockPaste, true); target?.removeEventListener("beforeinput", blockBeforeInput, true); };
   }, [activityId, storageKey]);
 
   function persist(next: string) {
     codeRef.current = next;
     setCode(next);
     lastTyping.current = performance.now();
-    try { sessionStorage.setItem(storageKey, JSON.stringify({ code: next, seconds: seconds.current })); } catch { /* Storage may be unavailable. */ }
+    hasDraft.current = true;
     const cursor = editor.current?.selectionStart ?? next.length;
     const word = /[a-zA-Z_][\w.]*$/.exec(next.slice(0, cursor))?.[0] ?? "";
     setSuggestions(word.length >= 5 ? COMPLETIONS.filter(item => item.toLowerCase().startsWith(word.toLowerCase()) && item !== word).slice(0, 5) : []);
@@ -163,7 +176,8 @@ export function CppCodeSubmission({ activityId, questionId, prompt, imageUrl }: 
       const response = await fetch(`/api/student/activities/${activityId}/submit`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ answers: [{ questionId, writtenText: code }], codingSeconds: seconds.current }) });
       const data = await response.json();
       if (!response.ok) throw new Error(data.message || "Não foi possível enviar o código.");
-      sessionStorage.removeItem(storageKey);
+      submitted.current = true;
+      try { localStorage.removeItem(storageKey); } catch { /* Submission already succeeded. */ }
       router.refresh();
     } catch (error) { setMessage(error instanceof Error ? error.message : "Falha de conexão. Tente novamente."); }
     finally { setBusy(false); }
@@ -187,6 +201,7 @@ export function CppCodeSubmission({ activityId, questionId, prompt, imageUrl }: 
         </div>
         {suggestions.length > 0 && <div className={styles.suggestions} role="listbox" aria-label="Sugestões de código">{suggestions.map(item => <button key={item} type="button" role="option" aria-selected={false} onMouseDown={event => event.preventDefault()} onClick={() => chooseSuggestion(item)}>{item}</button>)}</div>}
         <div className={styles.footer}><p>O código será avaliado manualmente pelo professor.</p><button className="button-primary" disabled={!ready || busy || !code.trim()}>{busy ? "Enviando…" : "Enviar código"}</button></div>
+        {storageError && <p role="alert" className={styles.message}>O navegador não permitiu salvar o rascunho neste dispositivo. Verifique o armazenamento do navegador antes de continuar.</p>}
         {message && <p role="alert" className={styles.message}>{message}</p>}
       </form>
     </div>
