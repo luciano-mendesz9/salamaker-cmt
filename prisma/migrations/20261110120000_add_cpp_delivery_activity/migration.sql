@@ -1,0 +1,3 @@
+ALTER TYPE "ActivityType" ADD VALUE 'CPP_DELIVERY';
+
+ALTER TABLE "Activity" ADD COLUMN "codeContent" TEXT;

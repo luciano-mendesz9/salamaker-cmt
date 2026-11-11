@@ -586,6 +586,40 @@ export type EnumAttendanceStatusWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedEnumAttendanceStatusFilter<$PrismaModel>
 }
 
+export type EnumStudentComplaintKindFilter<$PrismaModel = never> = {
+  equals?: $Enums.StudentComplaintKind | Prisma.EnumStudentComplaintKindFieldRefInput<$PrismaModel>
+  in?: $Enums.StudentComplaintKind[] | Prisma.ListEnumStudentComplaintKindFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StudentComplaintKind[] | Prisma.ListEnumStudentComplaintKindFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStudentComplaintKindFilter<$PrismaModel> | $Enums.StudentComplaintKind
+}
+
+export type EnumStudentComplaintStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.StudentComplaintStatus | Prisma.EnumStudentComplaintStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.StudentComplaintStatus[] | Prisma.ListEnumStudentComplaintStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StudentComplaintStatus[] | Prisma.ListEnumStudentComplaintStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStudentComplaintStatusFilter<$PrismaModel> | $Enums.StudentComplaintStatus
+}
+
+export type EnumStudentComplaintKindWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.StudentComplaintKind | Prisma.EnumStudentComplaintKindFieldRefInput<$PrismaModel>
+  in?: $Enums.StudentComplaintKind[] | Prisma.ListEnumStudentComplaintKindFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StudentComplaintKind[] | Prisma.ListEnumStudentComplaintKindFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStudentComplaintKindWithAggregatesFilter<$PrismaModel> | $Enums.StudentComplaintKind
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumStudentComplaintKindFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumStudentComplaintKindFilter<$PrismaModel>
+}
+
+export type EnumStudentComplaintStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.StudentComplaintStatus | Prisma.EnumStudentComplaintStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.StudentComplaintStatus[] | Prisma.ListEnumStudentComplaintStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StudentComplaintStatus[] | Prisma.ListEnumStudentComplaintStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStudentComplaintStatusWithAggregatesFilter<$PrismaModel> | $Enums.StudentComplaintStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumStudentComplaintStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumStudentComplaintStatusFilter<$PrismaModel>
+}
+
 export type EnumXpSourceFilter<$PrismaModel = never> = {
   equals?: $Enums.XpSource | Prisma.EnumXpSourceFieldRefInput<$PrismaModel>
   in?: $Enums.XpSource[] | Prisma.ListEnumXpSourceFieldRefInput<$PrismaModel>
@@ -1783,6 +1817,40 @@ export type NestedEnumAttendanceStatusWithAggregatesFilter<$PrismaModel = never>
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumAttendanceStatusFilter<$PrismaModel>
   _max?: Prisma.NestedEnumAttendanceStatusFilter<$PrismaModel>
+}
+
+export type NestedEnumStudentComplaintKindFilter<$PrismaModel = never> = {
+  equals?: $Enums.StudentComplaintKind | Prisma.EnumStudentComplaintKindFieldRefInput<$PrismaModel>
+  in?: $Enums.StudentComplaintKind[] | Prisma.ListEnumStudentComplaintKindFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StudentComplaintKind[] | Prisma.ListEnumStudentComplaintKindFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStudentComplaintKindFilter<$PrismaModel> | $Enums.StudentComplaintKind
+}
+
+export type NestedEnumStudentComplaintStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.StudentComplaintStatus | Prisma.EnumStudentComplaintStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.StudentComplaintStatus[] | Prisma.ListEnumStudentComplaintStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StudentComplaintStatus[] | Prisma.ListEnumStudentComplaintStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStudentComplaintStatusFilter<$PrismaModel> | $Enums.StudentComplaintStatus
+}
+
+export type NestedEnumStudentComplaintKindWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.StudentComplaintKind | Prisma.EnumStudentComplaintKindFieldRefInput<$PrismaModel>
+  in?: $Enums.StudentComplaintKind[] | Prisma.ListEnumStudentComplaintKindFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StudentComplaintKind[] | Prisma.ListEnumStudentComplaintKindFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStudentComplaintKindWithAggregatesFilter<$PrismaModel> | $Enums.StudentComplaintKind
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumStudentComplaintKindFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumStudentComplaintKindFilter<$PrismaModel>
+}
+
+export type NestedEnumStudentComplaintStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.StudentComplaintStatus | Prisma.EnumStudentComplaintStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.StudentComplaintStatus[] | Prisma.ListEnumStudentComplaintStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.StudentComplaintStatus[] | Prisma.ListEnumStudentComplaintStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumStudentComplaintStatusWithAggregatesFilter<$PrismaModel> | $Enums.StudentComplaintStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumStudentComplaintStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumStudentComplaintStatusFilter<$PrismaModel>
 }
 
 export type NestedEnumXpSourceFilter<$PrismaModel = never> = {

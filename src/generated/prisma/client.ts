@@ -192,6 +192,16 @@ export type LessonParticipant = Prisma.LessonParticipantModel
  */
 export type Attendance = Prisma.AttendanceModel
 /**
+ * Model StudentComplaint
+ *
+ */
+export type StudentComplaint = Prisma.StudentComplaintModel
+/**
+ * Model ComplaintCycle
+ *
+ */
+export type ComplaintCycle = Prisma.ComplaintCycleModel
+/**
  * Model XpEntry
  *
  */

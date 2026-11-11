@@ -42,6 +42,7 @@ Correcao de comportamento preserva reversao e substituicao como dois lancamentos
 - Comprar Dev-Coins, pacotes ou figurinhas do mercado exige a senha atual do aluno.
 - Transferencias entre alunos preservam a oferta total e usam dois lancamentos espelhados.
 - Cada aluno pode enviar ate 300 DC por semana, de segunda a domingo no fuso escolar.
+- Na aula aberta, o aluno presente pode registrar até três reclamações sobre o mesmo colega, por 2, 5 e 10 DevCoins. Pode também registrar uma reclamação gratuita sobre o professor da aula. Só o professor vê autor e motivo. O débito vai para a tesouraria; a revogação preserva o lançamento e o limite de envios, mas retira o relato das contagens.
 
 ## Estado de atividades
 

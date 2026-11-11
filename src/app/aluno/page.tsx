@@ -6,6 +6,7 @@ import { EmptyState } from "@/components/empty-state";
 import { StudentEconomyChart } from "@/components/student-economy-chart";
 import { StudentAttendanceButton } from "@/components/student-attendance-button";
 import { StudentThemeStore } from "@/components/student-theme-store";
+import { StudentComplaintsCard } from "@/components/student-complaints-card";
 import { TinkercadCard } from "@/components/tinkercad-card";
 import { XpAdjustmentAlert } from "@/components/xp-adjustment-alert";
 import { effectiveActivityState, formatSchoolDate } from "@/lib/activities";
@@ -13,10 +14,11 @@ import { requireStudent } from "@/lib/authorization";
 import { prisma } from "@/lib/db";
 import { remainingWeeklyDevCoinTransfer } from "@/lib/dev-coins";
 import { DEV_COIN_TO_XP_WINDOW_MS, devCoinToXpQuota } from "@/lib/dev-coin-to-xp-policy";
-import { devCoinToXpSchemaReady } from "@/lib/feature-readiness";
+import { devCoinToXpSchemaReady, studentComplaintsSchemaReady } from "@/lib/feature-readiness";
 import { getSchoolWeek } from "@/lib/school-day";
 import { getXpAdjustmentSchedule } from "@/lib/xp-adjustment-policy";
 import { getStudentThemeState } from "@/lib/student-theme-state";
+import { complaintPeriod, complaintWeekDays } from "@/lib/student-complaint-period";
 
 const labels: Record<string, string> = { GRADE_6_A: "6º Ano A", GRADE_6_B: "6º Ano B", GRADE_6_C: "6º Ano C", GRADE_7_A: "7º Ano A", GRADE_7_B: "7º Ano B", GRADE_7_C: "7º Ano C" };
 type DashboardActivity = { activityId: string; studentSignaledAt: Date | null; activity: { title: string; opensAt: Date; closesAt: Date; manuallyClosedAt: Date | null; maxXp: number }; submission: { status: string } | null; award: { awardedXp: number } | null };
@@ -25,8 +27,9 @@ export default async function Aluno() {
   const { student } = await requireStudent();
   const weekKey = getSchoolWeek().key;
   const conversionReady = await devCoinToXpSchemaReady();
+  const complaintsReady = await studentComplaintsSchemaReady();
   const conversionObservedAt = new Date();
-  const [ranking, closedLessons, presentCount, xpLedger, devCoinLedger, behaviors, settings, transferRecipients, weeklyTransfers, activities, openLesson, themeState, recentConversions] = await Promise.all([
+  const [ranking, closedLessons, presentCount, xpLedger, devCoinLedger, behaviors, settings, transferRecipients, weeklyTransfers, activities, openLesson, themeState, recentConversions, complaintCycle] = await Promise.all([
     prisma.user.findMany({ where: { role: "STUDENT", status: "ACTIVE" }, select: { id: true }, orderBy: [{ xp: "desc" }, { createdAt: "asc" }, { id: "asc" }] }),
     prisma.lesson.count({ where: { status: "CLOSED", participants: { some: { studentId: student.id } } } }),
     prisma.attendance.count({ where: { studentId: student.id, status: "PRESENT", lesson: { status: "CLOSED", participants: { some: { studentId: student.id } } } } }),
@@ -37,9 +40,10 @@ export default async function Aluno() {
     prisma.user.findMany({ where: { role: "STUDENT", status: "ACTIVE", id: { not: student.id } }, select: { id: true, firstName: true, lastName: true }, orderBy: [{ firstName: "asc" }, { lastName: "asc" }] }),
     prisma.devCoinTransfer.aggregate({ where: { senderId: student.id, weekKey }, _sum: { amount: true } }),
     prisma.activityRecipient.findMany({ where: { studentId: student.id }, include: { activity: true, submission: { select: { status: true } }, award: { select: { awardedXp: true } } }, orderBy: { createdAt: "desc" }, take: 3 }),
-    prisma.lesson.findFirst({ where: { status: "OPEN" }, select: { id: true, attendances: { where: { studentId: student.id, status: "PRESENT" }, select: { id: true }, take: 1 } } }),
+    prisma.lesson.findFirst({ where: { status: "OPEN" }, select: { id: true, title: true, attendances: { where: { studentId: student.id, status: "PRESENT" }, select: { id: true }, take: 1 } } }),
     getStudentThemeState(student.id),
     conversionReady ? prisma.xpEntry.findMany({ where: { studentId: student.id, source: "DEV_COIN_TO_XP", createdAt: { gt: new Date(conversionObservedAt.getTime() - DEV_COIN_TO_XP_WINDOW_MS) } }, select: { delta: true, createdAt: true } }) : Promise.resolve([]),
+    complaintsReady ? prisma.complaintCycle.findUnique({ where: { id: 1 }, select: { resetAt: true } }) : Promise.resolve(null),
   ]);
 
   const position = ranking.findIndex(item => item.id === student.id) + 1;
@@ -50,6 +54,12 @@ export default async function Aluno() {
   const history = xpLedger.slice(-3).reverse();
   const observedAt = new Date();
   const xpAdjustmentSchedule = getXpAdjustmentSchedule(observedAt);
+  const complaintWindow = complaintPeriod(observedAt, complaintCycle?.resetAt, timeZone);
+  const complaintsReceived = complaintsReady ? await prisma.studentComplaint.findMany({ where: { targetId: student.id, targetKind: "STUDENT", status: "ACTIVE", createdAt: { gte: complaintWindow.weekStart, lt: complaintWindow.weekEnd } }, select: { createdAt: true } }) : [];
+  const filedThisLesson = complaintsReady && openLesson ? await prisma.studentComplaint.findMany({ where: { lessonId: openLesson.id, reporterId: student.id }, select: { targetId: true, targetKind: true } }) : [];
+  const complaintCounts = transferRecipients.map(item => ({ studentId: item.id, count: filedThisLesson.filter(complaint => complaint.targetKind === "STUDENT" && complaint.targetId === item.id).length }));
+  const teacherComplaintFiled = filedThisLesson.some(complaint => complaint.targetKind === "TEACHER");
+  const complaintDays = complaintWeekDays(complaintWindow.weekKey, timeZone).map((day, index, days) => ({ label: new Intl.DateTimeFormat("pt-BR", { weekday: "short", timeZone }).format(day.start), count: complaintsReceived.filter(item => item.createdAt >= day.start && item.createdAt < (days[index + 1]?.start ?? complaintWindow.weekEnd)).length }));
 
   return <main className="mobile-safe"><div className="student-page mx-auto max-w-[1240px]">
     <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
@@ -67,6 +77,8 @@ export default async function Aluno() {
         <XpAdjustmentAlert startsAt={xpAdjustmentSchedule.startsAt.toISOString()} targetAt={xpAdjustmentSchedule.targetAt.toISOString()} observedAt={observedAt.toISOString()}/>
 
         <div className="grid grid-cols-3 gap-2 sm:gap-4"><Metric icon={Zap} label="XP atual" value={student.xp.toLocaleString("pt-BR")} unit="XP" detail="Sua experiência acumulada"/><Metric icon={Trophy} label="Ranking" value={position ? `${position}º` : "—"} unit="lugar" detail="Na classificação geral" tone="amber"/><Metric icon={CalendarDays} label="Frequência" value={`${frequency}%`} unit="presença" detail="Nas aulas encerradas" tone="emerald"/></div>
+
+        <StudentComplaintsCard days={complaintDays} ready={complaintsReady} canFile={Boolean(openLesson?.attendances.length)} hasOpenLesson={Boolean(openLesson)} lessonId={openLesson?.id ?? null} lessonTitle={openLesson?.title ?? null} students={transferRecipients} complaintCounts={complaintCounts} teacherComplaintFiled={teacherComplaintFiled} devCoins={student.devCoins}/>
 
         <section className="student-card rounded-3xl p-5 sm:p-6"><div className="mb-2 flex items-center justify-between gap-3"><div className="flex flex-wrap items-center gap-3"><h2 className="font-display text-xl font-bold">Suas próximas atividades</h2><span className="rounded-full bg-[color-mix(in_srgb,var(--accent)_13%,transparent)] px-3 py-1 text-xs font-bold text-[var(--accent-soft)]">{openActivities} {openActivities === 1 ? "aberta" : "abertas"}</span></div><Link href="/aluno/atividades" className="focus-ring inline-flex items-center gap-1 whitespace-nowrap rounded-lg text-sm font-bold text-[var(--accent-soft)]">Ver todas<ArrowRight size={15}/></Link></div>
           {activities.length ? <div className="divide-y divide-slate-800">{activities.map(item => <ActivityRow key={item.id} item={item} timeZone={timeZone}/>)}</div> : <div className="mt-5"><EmptyState icon={BookOpen} title="Nenhuma atividade" description="As novas atividades da turma aparecerão aqui."/></div>}

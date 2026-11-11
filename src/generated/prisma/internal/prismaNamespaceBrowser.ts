@@ -81,6 +81,8 @@ export const ModelName = {
   Lesson: 'Lesson',
   LessonParticipant: 'LessonParticipant',
   Attendance: 'Attendance',
+  StudentComplaint: 'StudentComplaint',
+  ComplaintCycle: 'ComplaintCycle',
   XpEntry: 'XpEntry',
   XpGrantCode: 'XpGrantCode',
   XpGrantRedemption: 'XpGrantRedemption',
@@ -553,6 +555,35 @@ export const AttendanceScalarFieldEnum = {
 export type AttendanceScalarFieldEnum = (typeof AttendanceScalarFieldEnum)[keyof typeof AttendanceScalarFieldEnum]
 
 
+export const StudentComplaintScalarFieldEnum = {
+  id: 'id',
+  lessonId: 'lessonId',
+  reporterId: 'reporterId',
+  targetId: 'targetId',
+  targetKind: 'targetKind',
+  ordinal: 'ordinal',
+  reason: 'reason',
+  status: 'status',
+  requestKey: 'requestKey',
+  feeEntryId: 'feeEntryId',
+  createdAt: 'createdAt',
+  revokedAt: 'revokedAt',
+  revokedById: 'revokedById',
+  revocationReason: 'revocationReason'
+} as const
+
+export type StudentComplaintScalarFieldEnum = (typeof StudentComplaintScalarFieldEnum)[keyof typeof StudentComplaintScalarFieldEnum]
+
+
+export const ComplaintCycleScalarFieldEnum = {
+  id: 'id',
+  periodKey: 'periodKey',
+  resetAt: 'resetAt'
+} as const
+
+export type ComplaintCycleScalarFieldEnum = (typeof ComplaintCycleScalarFieldEnum)[keyof typeof ComplaintCycleScalarFieldEnum]
+
+
 export const XpEntryScalarFieldEnum = {
   id: 'id',
   studentId: 'studentId',
@@ -641,6 +672,7 @@ export const ActivityScalarFieldEnum = {
   externalUrl: 'externalUrl',
   codePrompt: 'codePrompt',
   codeImageUrl: 'codeImageUrl',
+  codeContent: 'codeContent',
   maxXp: 'maxXp',
   authorId: 'authorId',
   divisionMode: 'divisionMode',

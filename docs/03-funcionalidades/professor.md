@@ -33,15 +33,19 @@ O historico em `/professor/aulas` mostra presencas por aula e a pagina de detalh
 
 ## Atividades
 
-O professor pode criar tres tipos:
+O professor pode criar os seguintes tipos:
 
 - `EXTERNAL_LINK`: URL HTTPS, XP maximo e confirmacao do aluno; o professor atribui a nota.
 - `FORM`: questoes de escolha unica, multipla ou resposta escrita; objetivas sao corrigidas automaticamente e escritas aguardam revisao.
 - `GROUP`: equipes manuais ou aleatorias equilibradas; a nota e aplicada a cada integrante.
+- `CPP_CODE`: desafio de codigo C++ enviado pelo aluno para correcao manual.
+- `CPP_DELIVERY` (Entregar Codigo C++): o professor cola o codigo Arduino/C++ com a identacao original; os alunos podem visualizar e copiar. A recompensa e sempre 0 XP, definida pelo servidor. Nao ha envio, correcao nem registro de conclusao neste tipo.
 
 Toda atividade e destinada a todos os alunos ativos da coorte de Robotica. O professor pode buscar e filtrar por tipo/estado, fechar manualmente, reabrir com novo prazo e revisar pontuacoes. Uma revisao de nota movimenta somente a diferenca de XP.
 
 ## Comportamento
+
+As reclamações enviadas por alunos são acompanhadas em `/professor/reclamacoes`. Veja [Reclamações de Aluno](reclamacoes-de-aluno.md) para o fluxo, os filtros, a revogação e a auditoria.
 
 A avaliacao so pode ser lancada para participante de aula fechada:
 

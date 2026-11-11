@@ -212,6 +212,7 @@ export type LessonWhereInput = {
   behaviors?: Prisma.BehaviorRatingListRelationFilter
   cleanups?: Prisma.CleanupAssignmentListRelationFilter
   participants?: Prisma.LessonParticipantListRelationFilter
+  complaints?: Prisma.StudentComplaintListRelationFilter
 }
 
 export type LessonOrderByWithRelationInput = {
@@ -229,6 +230,7 @@ export type LessonOrderByWithRelationInput = {
   behaviors?: Prisma.BehaviorRatingOrderByRelationAggregateInput
   cleanups?: Prisma.CleanupAssignmentOrderByRelationAggregateInput
   participants?: Prisma.LessonParticipantOrderByRelationAggregateInput
+  complaints?: Prisma.StudentComplaintOrderByRelationAggregateInput
 }
 
 export type LessonWhereUniqueInput = Prisma.AtLeast<{
@@ -249,6 +251,7 @@ export type LessonWhereUniqueInput = Prisma.AtLeast<{
   behaviors?: Prisma.BehaviorRatingListRelationFilter
   cleanups?: Prisma.CleanupAssignmentListRelationFilter
   participants?: Prisma.LessonParticipantListRelationFilter
+  complaints?: Prisma.StudentComplaintListRelationFilter
 }, "id" | "openSlot">
 
 export type LessonOrderByWithAggregationInput = {
@@ -293,6 +296,7 @@ export type LessonCreateInput = {
   behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutLessonInput
   cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutLessonInput
   participants?: Prisma.LessonParticipantCreateNestedManyWithoutLessonInput
+  complaints?: Prisma.StudentComplaintCreateNestedManyWithoutLessonInput
 }
 
 export type LessonUncheckedCreateInput = {
@@ -309,6 +313,7 @@ export type LessonUncheckedCreateInput = {
   behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutLessonInput
   cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutLessonInput
   participants?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutLessonInput
+  complaints?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutLessonInput
 }
 
 export type LessonUpdateInput = {
@@ -325,6 +330,7 @@ export type LessonUpdateInput = {
   behaviors?: Prisma.BehaviorRatingUpdateManyWithoutLessonNestedInput
   cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutLessonNestedInput
   participants?: Prisma.LessonParticipantUpdateManyWithoutLessonNestedInput
+  complaints?: Prisma.StudentComplaintUpdateManyWithoutLessonNestedInput
 }
 
 export type LessonUncheckedUpdateInput = {
@@ -341,6 +347,7 @@ export type LessonUncheckedUpdateInput = {
   behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutLessonNestedInput
   cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutLessonNestedInput
   participants?: Prisma.LessonParticipantUncheckedUpdateManyWithoutLessonNestedInput
+  complaints?: Prisma.StudentComplaintUncheckedUpdateManyWithoutLessonNestedInput
 }
 
 export type LessonCreateManyInput = {
@@ -502,6 +509,20 @@ export type LessonUpdateOneRequiredWithoutAttendancesNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.LessonUpdateToOneWithWhereWithoutAttendancesInput, Prisma.LessonUpdateWithoutAttendancesInput>, Prisma.LessonUncheckedUpdateWithoutAttendancesInput>
 }
 
+export type LessonCreateNestedOneWithoutComplaintsInput = {
+  create?: Prisma.XOR<Prisma.LessonCreateWithoutComplaintsInput, Prisma.LessonUncheckedCreateWithoutComplaintsInput>
+  connectOrCreate?: Prisma.LessonCreateOrConnectWithoutComplaintsInput
+  connect?: Prisma.LessonWhereUniqueInput
+}
+
+export type LessonUpdateOneRequiredWithoutComplaintsNestedInput = {
+  create?: Prisma.XOR<Prisma.LessonCreateWithoutComplaintsInput, Prisma.LessonUncheckedCreateWithoutComplaintsInput>
+  connectOrCreate?: Prisma.LessonCreateOrConnectWithoutComplaintsInput
+  upsert?: Prisma.LessonUpsertWithoutComplaintsInput
+  connect?: Prisma.LessonWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.LessonUpdateToOneWithWhereWithoutComplaintsInput, Prisma.LessonUpdateWithoutComplaintsInput>, Prisma.LessonUncheckedUpdateWithoutComplaintsInput>
+}
+
 export type LessonCreateNestedOneWithoutXpEntriesInput = {
   create?: Prisma.XOR<Prisma.LessonCreateWithoutXpEntriesInput, Prisma.LessonUncheckedCreateWithoutXpEntriesInput>
   connectOrCreate?: Prisma.LessonCreateOrConnectWithoutXpEntriesInput
@@ -559,6 +580,7 @@ export type LessonCreateWithoutTeacherInput = {
   behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutLessonInput
   cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutLessonInput
   participants?: Prisma.LessonParticipantCreateNestedManyWithoutLessonInput
+  complaints?: Prisma.StudentComplaintCreateNestedManyWithoutLessonInput
 }
 
 export type LessonUncheckedCreateWithoutTeacherInput = {
@@ -574,6 +596,7 @@ export type LessonUncheckedCreateWithoutTeacherInput = {
   behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutLessonInput
   cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutLessonInput
   participants?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutLessonInput
+  complaints?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutLessonInput
 }
 
 export type LessonCreateOrConnectWithoutTeacherInput = {
@@ -629,6 +652,7 @@ export type LessonCreateWithoutParticipantsInput = {
   xpEntries?: Prisma.XpEntryCreateNestedManyWithoutLessonInput
   behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutLessonInput
   cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutLessonInput
+  complaints?: Prisma.StudentComplaintCreateNestedManyWithoutLessonInput
 }
 
 export type LessonUncheckedCreateWithoutParticipantsInput = {
@@ -644,6 +668,7 @@ export type LessonUncheckedCreateWithoutParticipantsInput = {
   xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutLessonInput
   behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutLessonInput
   cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutLessonInput
+  complaints?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutLessonInput
 }
 
 export type LessonCreateOrConnectWithoutParticipantsInput = {
@@ -675,6 +700,7 @@ export type LessonUpdateWithoutParticipantsInput = {
   xpEntries?: Prisma.XpEntryUpdateManyWithoutLessonNestedInput
   behaviors?: Prisma.BehaviorRatingUpdateManyWithoutLessonNestedInput
   cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutLessonNestedInput
+  complaints?: Prisma.StudentComplaintUpdateManyWithoutLessonNestedInput
 }
 
 export type LessonUncheckedUpdateWithoutParticipantsInput = {
@@ -690,6 +716,7 @@ export type LessonUncheckedUpdateWithoutParticipantsInput = {
   xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutLessonNestedInput
   behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutLessonNestedInput
   cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutLessonNestedInput
+  complaints?: Prisma.StudentComplaintUncheckedUpdateManyWithoutLessonNestedInput
 }
 
 export type LessonCreateWithoutAttendancesInput = {
@@ -705,6 +732,7 @@ export type LessonCreateWithoutAttendancesInput = {
   behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutLessonInput
   cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutLessonInput
   participants?: Prisma.LessonParticipantCreateNestedManyWithoutLessonInput
+  complaints?: Prisma.StudentComplaintCreateNestedManyWithoutLessonInput
 }
 
 export type LessonUncheckedCreateWithoutAttendancesInput = {
@@ -720,6 +748,7 @@ export type LessonUncheckedCreateWithoutAttendancesInput = {
   behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutLessonInput
   cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutLessonInput
   participants?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutLessonInput
+  complaints?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutLessonInput
 }
 
 export type LessonCreateOrConnectWithoutAttendancesInput = {
@@ -751,6 +780,7 @@ export type LessonUpdateWithoutAttendancesInput = {
   behaviors?: Prisma.BehaviorRatingUpdateManyWithoutLessonNestedInput
   cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutLessonNestedInput
   participants?: Prisma.LessonParticipantUpdateManyWithoutLessonNestedInput
+  complaints?: Prisma.StudentComplaintUpdateManyWithoutLessonNestedInput
 }
 
 export type LessonUncheckedUpdateWithoutAttendancesInput = {
@@ -762,6 +792,87 @@ export type LessonUncheckedUpdateWithoutAttendancesInput = {
   presenceCodeHash?: Prisma.StringFieldUpdateOperationsInput | string
   openedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   closedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutLessonNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutLessonNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutLessonNestedInput
+  participants?: Prisma.LessonParticipantUncheckedUpdateManyWithoutLessonNestedInput
+  complaints?: Prisma.StudentComplaintUncheckedUpdateManyWithoutLessonNestedInput
+}
+
+export type LessonCreateWithoutComplaintsInput = {
+  id?: string
+  title: string
+  status?: $Enums.LessonStatus
+  openSlot?: string | null
+  presenceCodeHash: string
+  openedAt?: Date | string
+  closedAt?: Date | string | null
+  teacher: Prisma.UserCreateNestedOneWithoutLessonsInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutLessonInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutLessonInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutLessonInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutLessonInput
+  participants?: Prisma.LessonParticipantCreateNestedManyWithoutLessonInput
+}
+
+export type LessonUncheckedCreateWithoutComplaintsInput = {
+  id?: string
+  title: string
+  teacherId: string
+  status?: $Enums.LessonStatus
+  openSlot?: string | null
+  presenceCodeHash: string
+  openedAt?: Date | string
+  closedAt?: Date | string | null
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutLessonInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutLessonInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutLessonInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutLessonInput
+  participants?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutLessonInput
+}
+
+export type LessonCreateOrConnectWithoutComplaintsInput = {
+  where: Prisma.LessonWhereUniqueInput
+  create: Prisma.XOR<Prisma.LessonCreateWithoutComplaintsInput, Prisma.LessonUncheckedCreateWithoutComplaintsInput>
+}
+
+export type LessonUpsertWithoutComplaintsInput = {
+  update: Prisma.XOR<Prisma.LessonUpdateWithoutComplaintsInput, Prisma.LessonUncheckedUpdateWithoutComplaintsInput>
+  create: Prisma.XOR<Prisma.LessonCreateWithoutComplaintsInput, Prisma.LessonUncheckedCreateWithoutComplaintsInput>
+  where?: Prisma.LessonWhereInput
+}
+
+export type LessonUpdateToOneWithWhereWithoutComplaintsInput = {
+  where?: Prisma.LessonWhereInput
+  data: Prisma.XOR<Prisma.LessonUpdateWithoutComplaintsInput, Prisma.LessonUncheckedUpdateWithoutComplaintsInput>
+}
+
+export type LessonUpdateWithoutComplaintsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.EnumLessonStatusFieldUpdateOperationsInput | $Enums.LessonStatus
+  openSlot?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  presenceCodeHash?: Prisma.StringFieldUpdateOperationsInput | string
+  openedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  closedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  teacher?: Prisma.UserUpdateOneRequiredWithoutLessonsNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutLessonNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutLessonNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutLessonNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutLessonNestedInput
+  participants?: Prisma.LessonParticipantUpdateManyWithoutLessonNestedInput
+}
+
+export type LessonUncheckedUpdateWithoutComplaintsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  title?: Prisma.StringFieldUpdateOperationsInput | string
+  teacherId?: Prisma.StringFieldUpdateOperationsInput | string
+  status?: Prisma.EnumLessonStatusFieldUpdateOperationsInput | $Enums.LessonStatus
+  openSlot?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  presenceCodeHash?: Prisma.StringFieldUpdateOperationsInput | string
+  openedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  closedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutLessonNestedInput
   xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutLessonNestedInput
   behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutLessonNestedInput
   cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutLessonNestedInput
@@ -781,6 +892,7 @@ export type LessonCreateWithoutXpEntriesInput = {
   behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutLessonInput
   cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutLessonInput
   participants?: Prisma.LessonParticipantCreateNestedManyWithoutLessonInput
+  complaints?: Prisma.StudentComplaintCreateNestedManyWithoutLessonInput
 }
 
 export type LessonUncheckedCreateWithoutXpEntriesInput = {
@@ -796,6 +908,7 @@ export type LessonUncheckedCreateWithoutXpEntriesInput = {
   behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutLessonInput
   cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutLessonInput
   participants?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutLessonInput
+  complaints?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutLessonInput
 }
 
 export type LessonCreateOrConnectWithoutXpEntriesInput = {
@@ -827,6 +940,7 @@ export type LessonUpdateWithoutXpEntriesInput = {
   behaviors?: Prisma.BehaviorRatingUpdateManyWithoutLessonNestedInput
   cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutLessonNestedInput
   participants?: Prisma.LessonParticipantUpdateManyWithoutLessonNestedInput
+  complaints?: Prisma.StudentComplaintUpdateManyWithoutLessonNestedInput
 }
 
 export type LessonUncheckedUpdateWithoutXpEntriesInput = {
@@ -842,6 +956,7 @@ export type LessonUncheckedUpdateWithoutXpEntriesInput = {
   behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutLessonNestedInput
   cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutLessonNestedInput
   participants?: Prisma.LessonParticipantUncheckedUpdateManyWithoutLessonNestedInput
+  complaints?: Prisma.StudentComplaintUncheckedUpdateManyWithoutLessonNestedInput
 }
 
 export type LessonCreateWithoutBehaviorsInput = {
@@ -857,6 +972,7 @@ export type LessonCreateWithoutBehaviorsInput = {
   xpEntries?: Prisma.XpEntryCreateNestedManyWithoutLessonInput
   cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutLessonInput
   participants?: Prisma.LessonParticipantCreateNestedManyWithoutLessonInput
+  complaints?: Prisma.StudentComplaintCreateNestedManyWithoutLessonInput
 }
 
 export type LessonUncheckedCreateWithoutBehaviorsInput = {
@@ -872,6 +988,7 @@ export type LessonUncheckedCreateWithoutBehaviorsInput = {
   xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutLessonInput
   cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutLessonInput
   participants?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutLessonInput
+  complaints?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutLessonInput
 }
 
 export type LessonCreateOrConnectWithoutBehaviorsInput = {
@@ -903,6 +1020,7 @@ export type LessonUpdateWithoutBehaviorsInput = {
   xpEntries?: Prisma.XpEntryUpdateManyWithoutLessonNestedInput
   cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutLessonNestedInput
   participants?: Prisma.LessonParticipantUpdateManyWithoutLessonNestedInput
+  complaints?: Prisma.StudentComplaintUpdateManyWithoutLessonNestedInput
 }
 
 export type LessonUncheckedUpdateWithoutBehaviorsInput = {
@@ -918,6 +1036,7 @@ export type LessonUncheckedUpdateWithoutBehaviorsInput = {
   xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutLessonNestedInput
   cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutLessonNestedInput
   participants?: Prisma.LessonParticipantUncheckedUpdateManyWithoutLessonNestedInput
+  complaints?: Prisma.StudentComplaintUncheckedUpdateManyWithoutLessonNestedInput
 }
 
 export type LessonCreateWithoutCleanupsInput = {
@@ -933,6 +1052,7 @@ export type LessonCreateWithoutCleanupsInput = {
   xpEntries?: Prisma.XpEntryCreateNestedManyWithoutLessonInput
   behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutLessonInput
   participants?: Prisma.LessonParticipantCreateNestedManyWithoutLessonInput
+  complaints?: Prisma.StudentComplaintCreateNestedManyWithoutLessonInput
 }
 
 export type LessonUncheckedCreateWithoutCleanupsInput = {
@@ -948,6 +1068,7 @@ export type LessonUncheckedCreateWithoutCleanupsInput = {
   xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutLessonInput
   behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutLessonInput
   participants?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutLessonInput
+  complaints?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutLessonInput
 }
 
 export type LessonCreateOrConnectWithoutCleanupsInput = {
@@ -979,6 +1100,7 @@ export type LessonUpdateWithoutCleanupsInput = {
   xpEntries?: Prisma.XpEntryUpdateManyWithoutLessonNestedInput
   behaviors?: Prisma.BehaviorRatingUpdateManyWithoutLessonNestedInput
   participants?: Prisma.LessonParticipantUpdateManyWithoutLessonNestedInput
+  complaints?: Prisma.StudentComplaintUpdateManyWithoutLessonNestedInput
 }
 
 export type LessonUncheckedUpdateWithoutCleanupsInput = {
@@ -994,6 +1116,7 @@ export type LessonUncheckedUpdateWithoutCleanupsInput = {
   xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutLessonNestedInput
   behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutLessonNestedInput
   participants?: Prisma.LessonParticipantUncheckedUpdateManyWithoutLessonNestedInput
+  complaints?: Prisma.StudentComplaintUncheckedUpdateManyWithoutLessonNestedInput
 }
 
 export type LessonCreateManyTeacherInput = {
@@ -1019,6 +1142,7 @@ export type LessonUpdateWithoutTeacherInput = {
   behaviors?: Prisma.BehaviorRatingUpdateManyWithoutLessonNestedInput
   cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutLessonNestedInput
   participants?: Prisma.LessonParticipantUpdateManyWithoutLessonNestedInput
+  complaints?: Prisma.StudentComplaintUpdateManyWithoutLessonNestedInput
 }
 
 export type LessonUncheckedUpdateWithoutTeacherInput = {
@@ -1034,6 +1158,7 @@ export type LessonUncheckedUpdateWithoutTeacherInput = {
   behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutLessonNestedInput
   cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutLessonNestedInput
   participants?: Prisma.LessonParticipantUncheckedUpdateManyWithoutLessonNestedInput
+  complaints?: Prisma.StudentComplaintUncheckedUpdateManyWithoutLessonNestedInput
 }
 
 export type LessonUncheckedUpdateManyWithoutTeacherInput = {
@@ -1057,6 +1182,7 @@ export type LessonCountOutputType = {
   behaviors: number
   cleanups: number
   participants: number
+  complaints: number
 }
 
 export type LessonCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1065,6 +1191,7 @@ export type LessonCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions
   behaviors?: boolean | LessonCountOutputTypeCountBehaviorsArgs
   cleanups?: boolean | LessonCountOutputTypeCountCleanupsArgs
   participants?: boolean | LessonCountOutputTypeCountParticipantsArgs
+  complaints?: boolean | LessonCountOutputTypeCountComplaintsArgs
 }
 
 /**
@@ -1112,6 +1239,13 @@ export type LessonCountOutputTypeCountParticipantsArgs<ExtArgs extends runtime.T
   where?: Prisma.LessonParticipantWhereInput
 }
 
+/**
+ * LessonCountOutputType without action
+ */
+export type LessonCountOutputTypeCountComplaintsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.StudentComplaintWhereInput
+}
+
 
 export type LessonSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -1128,6 +1262,7 @@ export type LessonSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   behaviors?: boolean | Prisma.Lesson$behaviorsArgs<ExtArgs>
   cleanups?: boolean | Prisma.Lesson$cleanupsArgs<ExtArgs>
   participants?: boolean | Prisma.Lesson$participantsArgs<ExtArgs>
+  complaints?: boolean | Prisma.Lesson$complaintsArgs<ExtArgs>
   _count?: boolean | Prisma.LessonCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["lesson"]>
 
@@ -1174,6 +1309,7 @@ export type LessonInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   behaviors?: boolean | Prisma.Lesson$behaviorsArgs<ExtArgs>
   cleanups?: boolean | Prisma.Lesson$cleanupsArgs<ExtArgs>
   participants?: boolean | Prisma.Lesson$participantsArgs<ExtArgs>
+  complaints?: boolean | Prisma.Lesson$complaintsArgs<ExtArgs>
   _count?: boolean | Prisma.LessonCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type LessonIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1192,6 +1328,7 @@ export type $LessonPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
     behaviors: Prisma.$BehaviorRatingPayload<ExtArgs>[]
     cleanups: Prisma.$CleanupAssignmentPayload<ExtArgs>[]
     participants: Prisma.$LessonParticipantPayload<ExtArgs>[]
+    complaints: Prisma.$StudentComplaintPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1602,6 +1739,7 @@ export interface Prisma__LessonClient<T, Null = never, ExtArgs extends runtime.T
   behaviors<T extends Prisma.Lesson$behaviorsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Lesson$behaviorsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BehaviorRatingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   cleanups<T extends Prisma.Lesson$cleanupsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Lesson$cleanupsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CleanupAssignmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   participants<T extends Prisma.Lesson$participantsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Lesson$participantsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LessonParticipantPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  complaints<T extends Prisma.Lesson$complaintsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Lesson$complaintsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StudentComplaintPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2157,6 +2295,30 @@ export type Lesson$participantsArgs<ExtArgs extends runtime.Types.Extensions.Int
   take?: number
   skip?: number
   distinct?: Prisma.LessonParticipantScalarFieldEnum | Prisma.LessonParticipantScalarFieldEnum[]
+}
+
+/**
+ * Lesson.complaints
+ */
+export type Lesson$complaintsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the StudentComplaint
+   */
+  select?: Prisma.StudentComplaintSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the StudentComplaint
+   */
+  omit?: Prisma.StudentComplaintOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StudentComplaintInclude<ExtArgs> | null
+  where?: Prisma.StudentComplaintWhereInput
+  orderBy?: Prisma.StudentComplaintOrderByWithRelationInput | Prisma.StudentComplaintOrderByWithRelationInput[]
+  cursor?: Prisma.StudentComplaintWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StudentComplaintScalarFieldEnum | Prisma.StudentComplaintScalarFieldEnum[]
 }
 
 /**

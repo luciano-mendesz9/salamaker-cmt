@@ -37,6 +37,7 @@ const devCoinCategories: Category[] = [
   { value: "teacher", label: "Envio do professor" },
   { value: "initial", label: "Crédito inicial" },
   { value: "transfer", label: "Transferência" },
+  { value: "complaints", label: "Reclamações" },
   { value: "pong", label: "Pong" },
   { value: "tic-tac-toe", label: "Jogo da velha" },
   { value: "sudoku", label: "Sudoku" },
@@ -63,6 +64,7 @@ function xpCategory(row: LedgerRow) {
 }
 
 function devCoinCategory(row: LedgerRow) {
+  if (row.source === "STUDENT_COMPLAINT_FEE") return "complaints";
   if (row.source === "PURCHASE" || row.source === "XP_CONVERSION_REDEMPTION") return "conversion";
   if (row.source === "TEACHER_GRANT") return "teacher";
   if (row.source === "INITIAL_GRANT") return "initial";

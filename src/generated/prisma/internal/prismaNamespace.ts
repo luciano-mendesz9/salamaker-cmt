@@ -427,6 +427,8 @@ export const ModelName = {
   Lesson: 'Lesson',
   LessonParticipant: 'LessonParticipant',
   Attendance: 'Attendance',
+  StudentComplaint: 'StudentComplaint',
+  ComplaintCycle: 'ComplaintCycle',
   XpEntry: 'XpEntry',
   XpGrantCode: 'XpGrantCode',
   XpGrantRedemption: 'XpGrantRedemption',
@@ -480,7 +482,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "profileAvatarPurchase" | "studentThemePurchase" | "devCoinEntry" | "devCoinTransfer" | "stickerCollection" | "sticker" | "stickerCopy" | "stickerPackPurchase" | "stickerListing" | "stickerTrade" | "stickerDonation" | "teacherCollectionPurchaseRequest" | "teacherCollectionOffer" | "teacherCollectionOfferCopy" | "teacherCollectionPurchase" | "patentLevel" | "studentPatentProgress" | "patentRewardClaim" | "devCoinTreasury" | "stickerMarketSetting" | "devCoinTreasuryEntry" | "investmentFund" | "investmentPosition" | "investmentTransaction" | "investmentReserveEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "xpEntry" | "xpGrantCode" | "xpGrantRedemption" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket" | "pongRoom" | "pongPlayer" | "pongJoinRequest" | "pongPoint" | "ticTacToeRoom" | "ticTacToeRound" | "ticTacToeSoloGame" | "ticTacToeSoloAction" | "battleshipRoom" | "battleshipBoard" | "battleshipShot" | "sudokuGame" | "sudokuAction" | "ludoRoom" | "ludoPlayer" | "ludoMove" | "ludoInvitation" | "ludoInvitationBlock"
+    modelProps: "user" | "profileAvatarPurchase" | "studentThemePurchase" | "devCoinEntry" | "devCoinTransfer" | "stickerCollection" | "sticker" | "stickerCopy" | "stickerPackPurchase" | "stickerListing" | "stickerTrade" | "stickerDonation" | "teacherCollectionPurchaseRequest" | "teacherCollectionOffer" | "teacherCollectionOfferCopy" | "teacherCollectionPurchase" | "patentLevel" | "studentPatentProgress" | "patentRewardClaim" | "devCoinTreasury" | "stickerMarketSetting" | "devCoinTreasuryEntry" | "investmentFund" | "investmentPosition" | "investmentTransaction" | "investmentReserveEntry" | "accessCodeSequence" | "lesson" | "lessonParticipant" | "attendance" | "studentComplaint" | "complaintCycle" | "xpEntry" | "xpGrantCode" | "xpGrantRedemption" | "behaviorRating" | "cleanupAssignment" | "appSetting" | "activity" | "notification" | "notificationReceipt" | "activityRecipient" | "activityQuestion" | "activityOption" | "activitySubmission" | "activityAnswer" | "activityAnswerOption" | "activityTeam" | "activityTeamMember" | "activityAward" | "auditLog" | "rateLimitBucket" | "pongRoom" | "pongPlayer" | "pongJoinRequest" | "pongPoint" | "ticTacToeRoom" | "ticTacToeRound" | "ticTacToeSoloGame" | "ticTacToeSoloAction" | "battleshipRoom" | "battleshipBoard" | "battleshipShot" | "sudokuGame" | "sudokuAction" | "ludoRoom" | "ludoPlayer" | "ludoMove" | "ludoInvitation" | "ludoInvitationBlock"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -2701,6 +2703,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.AttendanceCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.AttendanceCountAggregateOutputType> | number
+        }
+      }
+    }
+    StudentComplaint: {
+      payload: Prisma.$StudentComplaintPayload<ExtArgs>
+      fields: Prisma.StudentComplaintFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.StudentComplaintFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentComplaintPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.StudentComplaintFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentComplaintPayload>
+        }
+        findFirst: {
+          args: Prisma.StudentComplaintFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentComplaintPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.StudentComplaintFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentComplaintPayload>
+        }
+        findMany: {
+          args: Prisma.StudentComplaintFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentComplaintPayload>[]
+        }
+        create: {
+          args: Prisma.StudentComplaintCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentComplaintPayload>
+        }
+        createMany: {
+          args: Prisma.StudentComplaintCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.StudentComplaintCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentComplaintPayload>[]
+        }
+        delete: {
+          args: Prisma.StudentComplaintDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentComplaintPayload>
+        }
+        update: {
+          args: Prisma.StudentComplaintUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentComplaintPayload>
+        }
+        deleteMany: {
+          args: Prisma.StudentComplaintDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.StudentComplaintUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.StudentComplaintUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentComplaintPayload>[]
+        }
+        upsert: {
+          args: Prisma.StudentComplaintUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$StudentComplaintPayload>
+        }
+        aggregate: {
+          args: Prisma.StudentComplaintAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateStudentComplaint>
+        }
+        groupBy: {
+          args: Prisma.StudentComplaintGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StudentComplaintGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.StudentComplaintCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.StudentComplaintCountAggregateOutputType> | number
+        }
+      }
+    }
+    ComplaintCycle: {
+      payload: Prisma.$ComplaintCyclePayload<ExtArgs>
+      fields: Prisma.ComplaintCycleFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ComplaintCycleFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ComplaintCyclePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ComplaintCycleFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ComplaintCyclePayload>
+        }
+        findFirst: {
+          args: Prisma.ComplaintCycleFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ComplaintCyclePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ComplaintCycleFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ComplaintCyclePayload>
+        }
+        findMany: {
+          args: Prisma.ComplaintCycleFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ComplaintCyclePayload>[]
+        }
+        create: {
+          args: Prisma.ComplaintCycleCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ComplaintCyclePayload>
+        }
+        createMany: {
+          args: Prisma.ComplaintCycleCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ComplaintCycleCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ComplaintCyclePayload>[]
+        }
+        delete: {
+          args: Prisma.ComplaintCycleDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ComplaintCyclePayload>
+        }
+        update: {
+          args: Prisma.ComplaintCycleUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ComplaintCyclePayload>
+        }
+        deleteMany: {
+          args: Prisma.ComplaintCycleDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ComplaintCycleUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ComplaintCycleUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ComplaintCyclePayload>[]
+        }
+        upsert: {
+          args: Prisma.ComplaintCycleUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ComplaintCyclePayload>
+        }
+        aggregate: {
+          args: Prisma.ComplaintCycleAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateComplaintCycle>
+        }
+        groupBy: {
+          args: Prisma.ComplaintCycleGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ComplaintCycleGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ComplaintCycleCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ComplaintCycleCountAggregateOutputType> | number
         }
       }
     }
@@ -5971,6 +6121,35 @@ export const AttendanceScalarFieldEnum = {
 export type AttendanceScalarFieldEnum = (typeof AttendanceScalarFieldEnum)[keyof typeof AttendanceScalarFieldEnum]
 
 
+export const StudentComplaintScalarFieldEnum = {
+  id: 'id',
+  lessonId: 'lessonId',
+  reporterId: 'reporterId',
+  targetId: 'targetId',
+  targetKind: 'targetKind',
+  ordinal: 'ordinal',
+  reason: 'reason',
+  status: 'status',
+  requestKey: 'requestKey',
+  feeEntryId: 'feeEntryId',
+  createdAt: 'createdAt',
+  revokedAt: 'revokedAt',
+  revokedById: 'revokedById',
+  revocationReason: 'revocationReason'
+} as const
+
+export type StudentComplaintScalarFieldEnum = (typeof StudentComplaintScalarFieldEnum)[keyof typeof StudentComplaintScalarFieldEnum]
+
+
+export const ComplaintCycleScalarFieldEnum = {
+  id: 'id',
+  periodKey: 'periodKey',
+  resetAt: 'resetAt'
+} as const
+
+export type ComplaintCycleScalarFieldEnum = (typeof ComplaintCycleScalarFieldEnum)[keyof typeof ComplaintCycleScalarFieldEnum]
+
+
 export const XpEntryScalarFieldEnum = {
   id: 'id',
   studentId: 'studentId',
@@ -6059,6 +6238,7 @@ export const ActivityScalarFieldEnum = {
   externalUrl: 'externalUrl',
   codePrompt: 'codePrompt',
   codeImageUrl: 'codeImageUrl',
+  codeContent: 'codeContent',
   maxXp: 'maxXp',
   authorId: 'authorId',
   divisionMode: 'divisionMode',
@@ -6962,6 +7142,34 @@ export type ListEnumAttendanceStatusFieldRefInput<$PrismaModel> = FieldRefInputT
 
 
 /**
+ * Reference to a field of type 'StudentComplaintKind'
+ */
+export type EnumStudentComplaintKindFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StudentComplaintKind'>
+
+
+
+/**
+ * Reference to a field of type 'StudentComplaintKind[]'
+ */
+export type ListEnumStudentComplaintKindFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StudentComplaintKind[]'>
+
+
+
+/**
+ * Reference to a field of type 'StudentComplaintStatus'
+ */
+export type EnumStudentComplaintStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StudentComplaintStatus'>
+
+
+
+/**
+ * Reference to a field of type 'StudentComplaintStatus[]'
+ */
+export type ListEnumStudentComplaintStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StudentComplaintStatus[]'>
+
+
+
+/**
  * Reference to a field of type 'XpSource'
  */
 export type EnumXpSourceFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'XpSource'>
@@ -7547,6 +7755,8 @@ export type GlobalOmitConfig = {
   lesson?: Prisma.LessonOmit
   lessonParticipant?: Prisma.LessonParticipantOmit
   attendance?: Prisma.AttendanceOmit
+  studentComplaint?: Prisma.StudentComplaintOmit
+  complaintCycle?: Prisma.ComplaintCycleOmit
   xpEntry?: Prisma.XpEntryOmit
   xpGrantCode?: Prisma.XpGrantCodeOmit
   xpGrantRedemption?: Prisma.XpGrantRedemptionOmit

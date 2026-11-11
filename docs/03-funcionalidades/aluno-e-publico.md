@@ -55,11 +55,14 @@ Existem a foto gratuita `default` e 40 opcoes locais (`001` a `040`). Cada foto 
 
 ## Atividades do aluno
 
+O início do aluno também apresenta o gráfico semanal de reclamações recebidas e os botões de envio e ranking. Veja [Reclamações de Aluno](reclamacoes-de-aluno.md).
+
 O aluno so consulta atividades em que possui `ActivityRecipient`.
 
 - Link externo: abre em nova aba e permite sinalizar realizacao, sem conceder XP automaticamente.
 - Formulario: aceita um unico envio; questoes objetivas usam correspondencia exata do gabarito; respostas escritas aguardam professor.
 - Grupo: mostra equipe e integrantes; a conclusao e pontuada pelo professor.
+- Entregar Codigo C++: apos a abertura, mostra o codigo Arduino/C++ com a identacao preservada e um botao "Copiar codigo" com aviso de sucesso ou erro. O codigo permanece visivel depois do fechamento; nao ha envio nem XP. O cartao, o codigo e o aviso usam as cores do tema ativo do aluno.
 - O gabarito das alternativas selecionadas so e revelado depois que a atividade esta fechada.
 
 ## Minigames e Pong multiplayer

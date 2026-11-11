@@ -18,6 +18,7 @@
 | `/aluno/trocar-senha` | Troca obrigatoria da senha temporaria |
 | `/aluno/atividades` | Lista de atividades recebidas |
 | `/aluno/atividades/[id]` | Execucao e resultado de uma atividade |
+| `/aluno/reclamacoes/ranking` | Ranking mensal de reclamações ativas |
 | `/aluno/notificacoes` | Caixa de entrada individual |
 
 ### Professor
@@ -32,6 +33,7 @@
 | `/professor/atividades/[id]` | Acompanhamento, estado e correcao |
 | `/professor/atividades/[id]/corrigir/[submissionId]` | Correcao de respostas escritas |
 | `/professor/comportamento` | Avaliacao por aula fechada |
+| `/professor/reclamacoes` | Busca, revisão e revogação de reclamações sobre alunos e professores |
 | `/professor/notificacoes` | Publicacao e exclusao de mensagens |
 | `/professor/logs` | Historico de XP e auditoria |
 | `/professor/moderacao` | Area do aluno, tema e taxa de Dev-Coins |
@@ -51,6 +53,7 @@
 |---|---|
 | `POST /api/student/activities/[id]/signal` | Marca link externo como realizado |
 | `POST /api/student/activities/[id]/submit` | Envia formulario unico e corrige objetivas |
+| `POST /api/student/complaints` | Registra reclamação na aula aberta; custa 2, 5 ou 10 DevCoins sobre colega e é gratuita sobre professor |
 | `POST /api/student/dev-coins` | Converte XP em Dev-Coins |
 | `POST /api/student/dev-coins/transfer` | Transfere DC para outro aluno, cobra 5 XP e aplica teto semanal |
 | `POST /api/student/stickers/packs` | Compra pacote mediante senha atual |
@@ -72,6 +75,7 @@
 | `GET/POST /api/professor/lessons` | Consulta aula aberta ou abre nova aula |
 | `POST /api/professor/lessons/[id]/close` | Fecha aula e aplica presenca/XP |
 | `POST /api/professor/behavior` | Cria ou corrige avaliacao de comportamento |
+| `POST /api/professor/complaints/[id]/revoke` | Revoga reclamação com justificativa e auditoria |
 | `GET/POST /api/professor/activities` | Lista ou cria atividade |
 | `POST /api/professor/activities/[id]/state` | Fecha ou reabre atividade |
 | `POST /api/professor/activities/[id]/grade-link` | Pontua atividade por link |

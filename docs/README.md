@@ -18,6 +18,7 @@ Esta pasta descreve o estado observado no codigo do projeto, atualizado em 29 de
 12. [Transferencias de Dev-Coins e confirmacao por senha](./03-funcionalidades/transferencias-devcoin-e-confirmacao-por-senha.md) — taxa, teto semanal, ledgers e autorizacao.
 13. [Cadastro simplificado de figurinhas](./03-funcionalidades/cadastro-simplificado-de-figurinhas.md) — colecoes selecionaveis e identificadores automaticos.
 14. [F0003 — Ludo Maker](./07-pedidos-de-implementacao/F0003-ludo-maker-multiplayer-em-tempo-real-2026-09-30.md) — regras, economia, IA, WebSocket e criterios de ativacao.
+15. [Reclamações de Aluno](./03-funcionalidades/reclamacoes-de-aluno.md) — gráfico semanal, ranking mensal, taxa, revisão e revogação.
 
 ## Hierarquia
 

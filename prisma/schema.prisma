@@ -62,6 +62,8 @@ enum XpSource {
 }
 
 enum AuditEvent {
+  STUDENT_COMPLAINT_CREATED
+  STUDENT_COMPLAINT_REVOKED
   USER_CREATED
   USER_UPDATED
   USER_STATUS_CHANGED
@@ -125,6 +127,7 @@ enum AuditEvent {
 }
 
 enum DevCoinSource {
+  STUDENT_COMPLAINT_FEE
   PURCHASE
   XP_CONVERSION_REDEMPTION
   TEACHER_GRANT
@@ -209,6 +212,7 @@ enum PatentRewardState {
 }
 
 enum TreasuryEntrySource {
+  STUDENT_COMPLAINT_FEE
   OPENING
   EXISTING_CIRCULATION
   XP_CONVERSION
@@ -358,6 +362,17 @@ enum ActivityType {
   FORM
   GROUP
   CPP_CODE
+  CPP_DELIVERY
+}
+
+enum StudentComplaintStatus {
+  ACTIVE
+  REVOKED
+}
+
+enum StudentComplaintKind {
+  STUDENT
+  TEACHER
 }
 
 enum ActivityQuestionType {
@@ -506,6 +521,9 @@ model User {
   investmentPositions          InvestmentPosition[]
   investmentTransactions       InvestmentTransaction[]
   investmentReserveEntries     InvestmentReserveEntry[]           @relation("InvestmentReserveEntryAuthor")
+  complaintsFiled              StudentComplaint[]                 @relation("ComplaintReporter")
+  complaintsReceived           StudentComplaint[]                 @relation("ComplaintTarget")
+  complaintsRevoked            StudentComplaint[]                 @relation("ComplaintRevoker")
 
   @@index([role, status, xp])
   @@index([originSchoolClass, status])
@@ -562,6 +580,7 @@ model DevCoinEntry {
   sentTransfer          DevCoinTransfer?       @relation("DevCoinTransferSenderEntry")
   receivedTransfer      DevCoinTransfer?       @relation("DevCoinTransferRecipientEntry")
   investmentTransaction InvestmentTransaction?
+  complaintFee          StudentComplaint?
 
   @@index([studentId, createdAt])
 }
@@ -933,6 +952,7 @@ model Lesson {
   behaviors        BehaviorRating[]
   cleanups         CleanupAssignment[]
   participants     LessonParticipant[]
+  complaints      StudentComplaint[]
 
   @@index([status, openedAt])
 }
@@ -960,6 +980,39 @@ model Attendance {
   student   User             @relation(fields: [studentId], references: [id], onDelete: Restrict)
 
   @@unique([lessonId, studentId])
+}
+
+model StudentComplaint {
+  id               String                 @id @default(uuid()) @db.Uuid
+  lessonId         String                 @db.Uuid
+  reporterId       String                 @db.Uuid
+  targetId         String                 @db.Uuid
+  targetKind       StudentComplaintKind   @default(STUDENT)
+  ordinal          Int                    @default(1)
+  reason           String                 @db.Text
+  status           StudentComplaintStatus @default(ACTIVE)
+  requestKey       String                 @unique
+  feeEntryId       String?                @unique @db.Uuid
+  createdAt        DateTime               @default(now())
+  revokedAt        DateTime?
+  revokedById      String?                @db.Uuid
+  revocationReason String?                @db.VarChar(500)
+  lesson           Lesson                 @relation(fields: [lessonId], references: [id], onDelete: Restrict)
+  reporter         User                   @relation("ComplaintReporter", fields: [reporterId], references: [id], onDelete: Restrict)
+  target           User                   @relation("ComplaintTarget", fields: [targetId], references: [id], onDelete: Restrict)
+  revokedBy        User?                  @relation("ComplaintRevoker", fields: [revokedById], references: [id], onDelete: Restrict)
+  feeEntry         DevCoinEntry?          @relation(fields: [feeEntryId], references: [id], onDelete: Restrict)
+
+  @@unique([lessonId, reporterId, targetId, ordinal])
+  @@index([targetId, status, createdAt])
+  @@index([lessonId, createdAt])
+  @@index([reporterId, createdAt])
+}
+
+model ComplaintCycle {
+  id        Int      @id @default(1)
+  periodKey String
+  resetAt   DateTime
 }
 
 model XpEntry {
@@ -1067,6 +1120,7 @@ model Activity {
   externalUrl      String?
   codePrompt       String?
   codeImageUrl     String?
+  codeContent      String?              @db.Text
   maxXp            Int
   authorId         String               @db.Uuid
   divisionMode     TeamDivisionMode?

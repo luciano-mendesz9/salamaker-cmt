@@ -18,6 +18,7 @@ const overview: NavEntry[] = [
 
 const management: NavEntry[] = [
   { href: "/professor/comportamento", label: "Comportamento", icon: Activity },
+  { href: "/professor/reclamacoes", label: "Reclamações de Aluno", icon: Activity },
   { href: "/professor/logs", label: "Logs do sistema", icon: ScrollText },
   { href: "/professor/logs/minigames", label: "Logs de minigames", icon: Gamepad2 },
   { href: "/professor/moderacao", label: "Moderação e tema", icon: Palette },

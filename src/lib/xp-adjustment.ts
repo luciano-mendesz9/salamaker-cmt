@@ -1,6 +1,7 @@
 import { Prisma } from "@/generated/prisma/client";
 import { prisma } from "@/lib/db";
 import { adjustedXp, getDueXpAdjustmentPeriod } from "@/lib/xp-adjustment-policy";
+import { studentComplaintsSchemaReady } from "@/lib/feature-readiness";
 
 const MAX_ATTEMPTS = 3;
 
@@ -15,6 +16,7 @@ export async function applyMonthlyXpAdjustment(now = new Date()): Promise<XpAdju
   const periodKey = getDueXpAdjustmentPeriod(now);
   if (!periodKey) return { status: "not-due", periodKey: null, students: 0, changedStudents: 0 };
   const keyPrefix = `monthly-xp-adjustment:${periodKey}:`;
+  const complaintsReady = await studentComplaintsSchemaReady();
 
   for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt += 1) {
     try {
@@ -47,6 +49,14 @@ export async function applyMonthlyXpAdjustment(now = new Date()): Promise<XpAdju
               source: "SYSTEM",
               idempotencyKey: `${keyPrefix}${student.id}`,
             },
+          });
+        }
+
+        if (pendingStudents.length && complaintsReady) {
+          await tx.complaintCycle.upsert({
+            where: { id: 1 },
+            create: { id: 1, periodKey, resetAt: now },
+            update: { periodKey, resetAt: now },
           });
         }
 

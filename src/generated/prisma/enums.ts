@@ -82,6 +82,8 @@ export type XpSource = (typeof XpSource)[keyof typeof XpSource]
 
 
 export const AuditEvent = {
+  STUDENT_COMPLAINT_CREATED: 'STUDENT_COMPLAINT_CREATED',
+  STUDENT_COMPLAINT_REVOKED: 'STUDENT_COMPLAINT_REVOKED',
   USER_CREATED: 'USER_CREATED',
   USER_UPDATED: 'USER_UPDATED',
   USER_STATUS_CHANGED: 'USER_STATUS_CHANGED',
@@ -148,6 +150,7 @@ export type AuditEvent = (typeof AuditEvent)[keyof typeof AuditEvent]
 
 
 export const DevCoinSource = {
+  STUDENT_COMPLAINT_FEE: 'STUDENT_COMPLAINT_FEE',
   PURCHASE: 'PURCHASE',
   XP_CONVERSION_REDEMPTION: 'XP_CONVERSION_REDEMPTION',
   TEACHER_GRANT: 'TEACHER_GRANT',
@@ -262,6 +265,7 @@ export type PatentRewardState = (typeof PatentRewardState)[keyof typeof PatentRe
 
 
 export const TreasuryEntrySource = {
+  STUDENT_COMPLAINT_FEE: 'STUDENT_COMPLAINT_FEE',
   OPENING: 'OPENING',
   EXISTING_CIRCULATION: 'EXISTING_CIRCULATION',
   XP_CONVERSION: 'XP_CONVERSION',
@@ -473,10 +477,27 @@ export const ActivityType = {
   EXTERNAL_LINK: 'EXTERNAL_LINK',
   FORM: 'FORM',
   GROUP: 'GROUP',
-  CPP_CODE: 'CPP_CODE'
+  CPP_CODE: 'CPP_CODE',
+  CPP_DELIVERY: 'CPP_DELIVERY'
 } as const
 
 export type ActivityType = (typeof ActivityType)[keyof typeof ActivityType]
+
+
+export const StudentComplaintStatus = {
+  ACTIVE: 'ACTIVE',
+  REVOKED: 'REVOKED'
+} as const
+
+export type StudentComplaintStatus = (typeof StudentComplaintStatus)[keyof typeof StudentComplaintStatus]
+
+
+export const StudentComplaintKind = {
+  STUDENT: 'STUDENT',
+  TEACHER: 'TEACHER'
+} as const
+
+export type StudentComplaintKind = (typeof StudentComplaintKind)[keyof typeof StudentComplaintKind]
 
 
 export const ActivityQuestionType = {

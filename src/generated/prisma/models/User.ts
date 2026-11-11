@@ -399,6 +399,9 @@ export type UserWhereInput = {
   investmentPositions?: Prisma.InvestmentPositionListRelationFilter
   investmentTransactions?: Prisma.InvestmentTransactionListRelationFilter
   investmentReserveEntries?: Prisma.InvestmentReserveEntryListRelationFilter
+  complaintsFiled?: Prisma.StudentComplaintListRelationFilter
+  complaintsReceived?: Prisma.StudentComplaintListRelationFilter
+  complaintsRevoked?: Prisma.StudentComplaintListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -491,6 +494,9 @@ export type UserOrderByWithRelationInput = {
   investmentPositions?: Prisma.InvestmentPositionOrderByRelationAggregateInput
   investmentTransactions?: Prisma.InvestmentTransactionOrderByRelationAggregateInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryOrderByRelationAggregateInput
+  complaintsFiled?: Prisma.StudentComplaintOrderByRelationAggregateInput
+  complaintsReceived?: Prisma.StudentComplaintOrderByRelationAggregateInput
+  complaintsRevoked?: Prisma.StudentComplaintOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -586,6 +592,9 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   investmentPositions?: Prisma.InvestmentPositionListRelationFilter
   investmentTransactions?: Prisma.InvestmentTransactionListRelationFilter
   investmentReserveEntries?: Prisma.InvestmentReserveEntryListRelationFilter
+  complaintsFiled?: Prisma.StudentComplaintListRelationFilter
+  complaintsReceived?: Prisma.StudentComplaintListRelationFilter
+  complaintsRevoked?: Prisma.StudentComplaintListRelationFilter
 }, "id" | "accessCode">
 
 export type UserOrderByWithAggregationInput = {
@@ -728,6 +737,9 @@ export type UserCreateInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -820,6 +832,9 @@ export type UserUncheckedCreateInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUpdateInput = {
@@ -912,6 +927,9 @@ export type UserUpdateInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -1004,6 +1022,9 @@ export type UserUncheckedUpdateInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -1576,6 +1597,50 @@ export type UserUpdateOneRequiredWithoutAttendancesNestedInput = {
   upsert?: Prisma.UserUpsertWithoutAttendancesInput
   connect?: Prisma.UserWhereUniqueInput
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutAttendancesInput, Prisma.UserUpdateWithoutAttendancesInput>, Prisma.UserUncheckedUpdateWithoutAttendancesInput>
+}
+
+export type UserCreateNestedOneWithoutComplaintsFiledInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutComplaintsFiledInput, Prisma.UserUncheckedCreateWithoutComplaintsFiledInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutComplaintsFiledInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutComplaintsReceivedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutComplaintsReceivedInput, Prisma.UserUncheckedCreateWithoutComplaintsReceivedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutComplaintsReceivedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutComplaintsRevokedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutComplaintsRevokedInput, Prisma.UserUncheckedCreateWithoutComplaintsRevokedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutComplaintsRevokedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutComplaintsFiledNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutComplaintsFiledInput, Prisma.UserUncheckedCreateWithoutComplaintsFiledInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutComplaintsFiledInput
+  upsert?: Prisma.UserUpsertWithoutComplaintsFiledInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutComplaintsFiledInput, Prisma.UserUpdateWithoutComplaintsFiledInput>, Prisma.UserUncheckedUpdateWithoutComplaintsFiledInput>
+}
+
+export type UserUpdateOneRequiredWithoutComplaintsReceivedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutComplaintsReceivedInput, Prisma.UserUncheckedCreateWithoutComplaintsReceivedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutComplaintsReceivedInput
+  upsert?: Prisma.UserUpsertWithoutComplaintsReceivedInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutComplaintsReceivedInput, Prisma.UserUpdateWithoutComplaintsReceivedInput>, Prisma.UserUncheckedUpdateWithoutComplaintsReceivedInput>
+}
+
+export type UserUpdateOneWithoutComplaintsRevokedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutComplaintsRevokedInput, Prisma.UserUncheckedCreateWithoutComplaintsRevokedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutComplaintsRevokedInput
+  upsert?: Prisma.UserUpsertWithoutComplaintsRevokedInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutComplaintsRevokedInput, Prisma.UserUpdateWithoutComplaintsRevokedInput>, Prisma.UserUncheckedUpdateWithoutComplaintsRevokedInput>
 }
 
 export type UserCreateNestedOneWithoutXpEntriesInput = {
@@ -2311,6 +2376,9 @@ export type UserCreateWithoutProfileAvatarPurchasesInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutProfileAvatarPurchasesInput = {
@@ -2402,6 +2470,9 @@ export type UserUncheckedCreateWithoutProfileAvatarPurchasesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutProfileAvatarPurchasesInput = {
@@ -2509,6 +2580,9 @@ export type UserUpdateWithoutProfileAvatarPurchasesInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutProfileAvatarPurchasesInput = {
@@ -2600,6 +2674,9 @@ export type UserUncheckedUpdateWithoutProfileAvatarPurchasesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutStudentThemePurchasesInput = {
@@ -2691,6 +2768,9 @@ export type UserCreateWithoutStudentThemePurchasesInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutStudentThemePurchasesInput = {
@@ -2782,6 +2862,9 @@ export type UserUncheckedCreateWithoutStudentThemePurchasesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutStudentThemePurchasesInput = {
@@ -2889,6 +2972,9 @@ export type UserUpdateWithoutStudentThemePurchasesInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStudentThemePurchasesInput = {
@@ -2980,6 +3066,9 @@ export type UserUncheckedUpdateWithoutStudentThemePurchasesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutDevCoinEntriesInput = {
@@ -3071,6 +3160,9 @@ export type UserCreateWithoutDevCoinEntriesInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutDevCoinEntriesInput = {
@@ -3162,6 +3254,9 @@ export type UserUncheckedCreateWithoutDevCoinEntriesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutDevCoinEntriesInput = {
@@ -3258,6 +3353,9 @@ export type UserCreateWithoutAuthoredDevCoinEntriesInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput = {
@@ -3349,6 +3447,9 @@ export type UserUncheckedCreateWithoutAuthoredDevCoinEntriesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredDevCoinEntriesInput = {
@@ -3456,6 +3557,9 @@ export type UserUpdateWithoutDevCoinEntriesInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutDevCoinEntriesInput = {
@@ -3547,6 +3651,9 @@ export type UserUncheckedUpdateWithoutDevCoinEntriesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutAuthoredDevCoinEntriesInput = {
@@ -3649,6 +3756,9 @@ export type UserUpdateWithoutAuthoredDevCoinEntriesInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput = {
@@ -3740,6 +3850,9 @@ export type UserUncheckedUpdateWithoutAuthoredDevCoinEntriesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutDevCoinTransfersSentInput = {
@@ -3831,6 +3944,9 @@ export type UserCreateWithoutDevCoinTransfersSentInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutDevCoinTransfersSentInput = {
@@ -3922,6 +4038,9 @@ export type UserUncheckedCreateWithoutDevCoinTransfersSentInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutDevCoinTransfersSentInput = {
@@ -4018,6 +4137,9 @@ export type UserCreateWithoutDevCoinTransfersReceivedInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutDevCoinTransfersReceivedInput = {
@@ -4109,6 +4231,9 @@ export type UserUncheckedCreateWithoutDevCoinTransfersReceivedInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutDevCoinTransfersReceivedInput = {
@@ -4216,6 +4341,9 @@ export type UserUpdateWithoutDevCoinTransfersSentInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutDevCoinTransfersSentInput = {
@@ -4307,6 +4435,9 @@ export type UserUncheckedUpdateWithoutDevCoinTransfersSentInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutDevCoinTransfersReceivedInput = {
@@ -4409,6 +4540,9 @@ export type UserUpdateWithoutDevCoinTransfersReceivedInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutDevCoinTransfersReceivedInput = {
@@ -4500,6 +4634,9 @@ export type UserUncheckedUpdateWithoutDevCoinTransfersReceivedInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutStickerCopiesInput = {
@@ -4591,6 +4728,9 @@ export type UserCreateWithoutStickerCopiesInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutStickerCopiesInput = {
@@ -4682,6 +4822,9 @@ export type UserUncheckedCreateWithoutStickerCopiesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutStickerCopiesInput = {
@@ -4789,6 +4932,9 @@ export type UserUpdateWithoutStickerCopiesInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerCopiesInput = {
@@ -4880,6 +5026,9 @@ export type UserUncheckedUpdateWithoutStickerCopiesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutStickerPackPurchasesInput = {
@@ -4971,6 +5120,9 @@ export type UserCreateWithoutStickerPackPurchasesInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutStickerPackPurchasesInput = {
@@ -5062,6 +5214,9 @@ export type UserUncheckedCreateWithoutStickerPackPurchasesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutStickerPackPurchasesInput = {
@@ -5169,6 +5324,9 @@ export type UserUpdateWithoutStickerPackPurchasesInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerPackPurchasesInput = {
@@ -5260,6 +5418,9 @@ export type UserUncheckedUpdateWithoutStickerPackPurchasesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutStickerListingsInput = {
@@ -5351,6 +5512,9 @@ export type UserCreateWithoutStickerListingsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutStickerListingsInput = {
@@ -5442,6 +5606,9 @@ export type UserUncheckedCreateWithoutStickerListingsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutStickerListingsInput = {
@@ -5538,6 +5705,9 @@ export type UserCreateWithoutStickerPurchasesInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutStickerPurchasesInput = {
@@ -5629,6 +5799,9 @@ export type UserUncheckedCreateWithoutStickerPurchasesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutStickerPurchasesInput = {
@@ -5736,6 +5909,9 @@ export type UserUpdateWithoutStickerListingsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerListingsInput = {
@@ -5827,6 +6003,9 @@ export type UserUncheckedUpdateWithoutStickerListingsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutStickerPurchasesInput = {
@@ -5929,6 +6108,9 @@ export type UserUpdateWithoutStickerPurchasesInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerPurchasesInput = {
@@ -6020,6 +6202,9 @@ export type UserUncheckedUpdateWithoutStickerPurchasesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutStickerTradesSoldInput = {
@@ -6111,6 +6296,9 @@ export type UserCreateWithoutStickerTradesSoldInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutStickerTradesSoldInput = {
@@ -6202,6 +6390,9 @@ export type UserUncheckedCreateWithoutStickerTradesSoldInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutStickerTradesSoldInput = {
@@ -6298,6 +6489,9 @@ export type UserCreateWithoutStickerTradesBoughtInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutStickerTradesBoughtInput = {
@@ -6389,6 +6583,9 @@ export type UserUncheckedCreateWithoutStickerTradesBoughtInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutStickerTradesBoughtInput = {
@@ -6496,6 +6693,9 @@ export type UserUpdateWithoutStickerTradesSoldInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerTradesSoldInput = {
@@ -6587,6 +6787,9 @@ export type UserUncheckedUpdateWithoutStickerTradesSoldInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutStickerTradesBoughtInput = {
@@ -6689,6 +6892,9 @@ export type UserUpdateWithoutStickerTradesBoughtInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerTradesBoughtInput = {
@@ -6780,6 +6986,9 @@ export type UserUncheckedUpdateWithoutStickerTradesBoughtInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutStickerDonationsSentInput = {
@@ -6871,6 +7080,9 @@ export type UserCreateWithoutStickerDonationsSentInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutStickerDonationsSentInput = {
@@ -6962,6 +7174,9 @@ export type UserUncheckedCreateWithoutStickerDonationsSentInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutStickerDonationsSentInput = {
@@ -7058,6 +7273,9 @@ export type UserCreateWithoutStickerDonationsReceivedInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutStickerDonationsReceivedInput = {
@@ -7149,6 +7367,9 @@ export type UserUncheckedCreateWithoutStickerDonationsReceivedInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutStickerDonationsReceivedInput = {
@@ -7256,6 +7477,9 @@ export type UserUpdateWithoutStickerDonationsSentInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerDonationsSentInput = {
@@ -7347,6 +7571,9 @@ export type UserUncheckedUpdateWithoutStickerDonationsSentInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutStickerDonationsReceivedInput = {
@@ -7449,6 +7676,9 @@ export type UserUpdateWithoutStickerDonationsReceivedInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutStickerDonationsReceivedInput = {
@@ -7540,6 +7770,9 @@ export type UserUncheckedUpdateWithoutStickerDonationsReceivedInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutCollectionPurchaseRequestsInput = {
@@ -7631,6 +7864,9 @@ export type UserCreateWithoutCollectionPurchaseRequestsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutCollectionPurchaseRequestsInput = {
@@ -7722,6 +7958,9 @@ export type UserUncheckedCreateWithoutCollectionPurchaseRequestsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutCollectionPurchaseRequestsInput = {
@@ -7829,6 +8068,9 @@ export type UserUpdateWithoutCollectionPurchaseRequestsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCollectionPurchaseRequestsInput = {
@@ -7920,6 +8162,9 @@ export type UserUncheckedUpdateWithoutCollectionPurchaseRequestsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutCollectionOffersInput = {
@@ -8011,6 +8256,9 @@ export type UserCreateWithoutCollectionOffersInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutCollectionOffersInput = {
@@ -8102,6 +8350,9 @@ export type UserUncheckedCreateWithoutCollectionOffersInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutCollectionOffersInput = {
@@ -8209,6 +8460,9 @@ export type UserUpdateWithoutCollectionOffersInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCollectionOffersInput = {
@@ -8300,6 +8554,9 @@ export type UserUncheckedUpdateWithoutCollectionOffersInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutCollectionPurchasesAsTeacherInput = {
@@ -8391,6 +8648,9 @@ export type UserCreateWithoutCollectionPurchasesAsTeacherInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutCollectionPurchasesAsTeacherInput = {
@@ -8482,6 +8742,9 @@ export type UserUncheckedCreateWithoutCollectionPurchasesAsTeacherInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutCollectionPurchasesAsTeacherInput = {
@@ -8578,6 +8841,9 @@ export type UserCreateWithoutCollectionPurchasesAsStudentInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutCollectionPurchasesAsStudentInput = {
@@ -8669,6 +8935,9 @@ export type UserUncheckedCreateWithoutCollectionPurchasesAsStudentInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutCollectionPurchasesAsStudentInput = {
@@ -8776,6 +9045,9 @@ export type UserUpdateWithoutCollectionPurchasesAsTeacherInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCollectionPurchasesAsTeacherInput = {
@@ -8867,6 +9139,9 @@ export type UserUncheckedUpdateWithoutCollectionPurchasesAsTeacherInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutCollectionPurchasesAsStudentInput = {
@@ -8969,6 +9244,9 @@ export type UserUpdateWithoutCollectionPurchasesAsStudentInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCollectionPurchasesAsStudentInput = {
@@ -9060,6 +9338,9 @@ export type UserUncheckedUpdateWithoutCollectionPurchasesAsStudentInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutPatentProgressInput = {
@@ -9151,6 +9432,9 @@ export type UserCreateWithoutPatentProgressInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutPatentProgressInput = {
@@ -9242,6 +9526,9 @@ export type UserUncheckedCreateWithoutPatentProgressInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutPatentProgressInput = {
@@ -9349,6 +9636,9 @@ export type UserUpdateWithoutPatentProgressInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPatentProgressInput = {
@@ -9440,6 +9730,9 @@ export type UserUncheckedUpdateWithoutPatentProgressInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutPatentRewardClaimsInput = {
@@ -9531,6 +9824,9 @@ export type UserCreateWithoutPatentRewardClaimsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutPatentRewardClaimsInput = {
@@ -9622,6 +9918,9 @@ export type UserUncheckedCreateWithoutPatentRewardClaimsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutPatentRewardClaimsInput = {
@@ -9729,6 +10028,9 @@ export type UserUpdateWithoutPatentRewardClaimsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPatentRewardClaimsInput = {
@@ -9820,6 +10122,9 @@ export type UserUncheckedUpdateWithoutPatentRewardClaimsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutTreasuryEntriesAuthoredInput = {
@@ -9911,6 +10216,9 @@ export type UserCreateWithoutTreasuryEntriesAuthoredInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutTreasuryEntriesAuthoredInput = {
@@ -10002,6 +10310,9 @@ export type UserUncheckedCreateWithoutTreasuryEntriesAuthoredInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutTreasuryEntriesAuthoredInput = {
@@ -10109,6 +10420,9 @@ export type UserUpdateWithoutTreasuryEntriesAuthoredInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutTreasuryEntriesAuthoredInput = {
@@ -10200,6 +10514,9 @@ export type UserUncheckedUpdateWithoutTreasuryEntriesAuthoredInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutInvestmentPositionsInput = {
@@ -10291,6 +10608,9 @@ export type UserCreateWithoutInvestmentPositionsInput = {
   battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutInvestmentPositionsInput = {
@@ -10382,6 +10702,9 @@ export type UserUncheckedCreateWithoutInvestmentPositionsInput = {
   battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutInvestmentPositionsInput = {
@@ -10489,6 +10812,9 @@ export type UserUpdateWithoutInvestmentPositionsInput = {
   battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutInvestmentPositionsInput = {
@@ -10580,6 +10906,9 @@ export type UserUncheckedUpdateWithoutInvestmentPositionsInput = {
   battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutInvestmentTransactionsInput = {
@@ -10671,6 +11000,9 @@ export type UserCreateWithoutInvestmentTransactionsInput = {
   battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutInvestmentTransactionsInput = {
@@ -10762,6 +11094,9 @@ export type UserUncheckedCreateWithoutInvestmentTransactionsInput = {
   battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutInvestmentTransactionsInput = {
@@ -10869,6 +11204,9 @@ export type UserUpdateWithoutInvestmentTransactionsInput = {
   battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutInvestmentTransactionsInput = {
@@ -10960,6 +11298,9 @@ export type UserUncheckedUpdateWithoutInvestmentTransactionsInput = {
   battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutInvestmentReserveEntriesInput = {
@@ -11051,6 +11392,9 @@ export type UserCreateWithoutInvestmentReserveEntriesInput = {
   battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutInvestmentReserveEntriesInput = {
@@ -11142,6 +11486,9 @@ export type UserUncheckedCreateWithoutInvestmentReserveEntriesInput = {
   battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutInvestmentReserveEntriesInput = {
@@ -11249,6 +11596,9 @@ export type UserUpdateWithoutInvestmentReserveEntriesInput = {
   battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutInvestmentReserveEntriesInput = {
@@ -11340,6 +11690,9 @@ export type UserUncheckedUpdateWithoutInvestmentReserveEntriesInput = {
   battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutLessonsInput = {
@@ -11431,6 +11784,9 @@ export type UserCreateWithoutLessonsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutLessonsInput = {
@@ -11522,6 +11878,9 @@ export type UserUncheckedCreateWithoutLessonsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutLessonsInput = {
@@ -11629,6 +11988,9 @@ export type UserUpdateWithoutLessonsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLessonsInput = {
@@ -11720,6 +12082,9 @@ export type UserUncheckedUpdateWithoutLessonsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutLessonParticipationsInput = {
@@ -11811,6 +12176,9 @@ export type UserCreateWithoutLessonParticipationsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutLessonParticipationsInput = {
@@ -11902,6 +12270,9 @@ export type UserUncheckedCreateWithoutLessonParticipationsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutLessonParticipationsInput = {
@@ -12009,6 +12380,9 @@ export type UserUpdateWithoutLessonParticipationsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLessonParticipationsInput = {
@@ -12100,6 +12474,9 @@ export type UserUncheckedUpdateWithoutLessonParticipationsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutAttendancesInput = {
@@ -12191,6 +12568,9 @@ export type UserCreateWithoutAttendancesInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutAttendancesInput = {
@@ -12282,6 +12662,9 @@ export type UserUncheckedCreateWithoutAttendancesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutAttendancesInput = {
@@ -12389,6 +12772,9 @@ export type UserUpdateWithoutAttendancesInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAttendancesInput = {
@@ -12480,6 +12866,1185 @@ export type UserUncheckedUpdateWithoutAttendancesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
+}
+
+export type UserCreateWithoutComplaintsFiledInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
+  investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
+  investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
+  investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
+}
+
+export type UserUncheckedCreateWithoutComplaintsFiledInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
+  investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
+  investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
+  investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
+}
+
+export type UserCreateOrConnectWithoutComplaintsFiledInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutComplaintsFiledInput, Prisma.UserUncheckedCreateWithoutComplaintsFiledInput>
+}
+
+export type UserCreateWithoutComplaintsReceivedInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
+  investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
+  investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
+  investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
+}
+
+export type UserUncheckedCreateWithoutComplaintsReceivedInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
+  investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
+  investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
+  investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
+}
+
+export type UserCreateOrConnectWithoutComplaintsReceivedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutComplaintsReceivedInput, Prisma.UserUncheckedCreateWithoutComplaintsReceivedInput>
+}
+
+export type UserCreateWithoutComplaintsRevokedInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotCreateNestedManyWithoutDefenderInput
+  investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
+  investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
+  investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+}
+
+export type UserUncheckedCreateWithoutComplaintsRevokedInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  passwordHash: string
+  xp?: number
+  devCoins?: number
+  accessCode: string
+  originSchoolClass?: $Enums.SchoolClass | null
+  status?: $Enums.UserStatus
+  role: $Enums.Role
+  profileAvatar?: string
+  sessionVersion?: number
+  mustChangePassword?: boolean
+  lastLoginAt?: Date | string | null
+  lastSeenAt?: Date | string | null
+  deactivatedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutTeacherInput
+  attendances?: Prisma.AttendanceUncheckedCreateNestedManyWithoutStudentInput
+  xpEntries?: Prisma.XpEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredXp?: Prisma.XpEntryUncheckedCreateNestedManyWithoutAuthorInput
+  behaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutStudentInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedCreateNestedManyWithoutTeacherInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutStudentInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedCreateNestedManyWithoutTeacherInput
+  auditActions?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  auditTargets?: Prisma.AuditLogUncheckedCreateNestedManyWithoutTargetInput
+  authoredActivities?: Prisma.ActivityUncheckedCreateNestedManyWithoutAuthorInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedCreateNestedManyWithoutStudentInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedCreateNestedManyWithoutStudentInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedCreateNestedManyWithoutStudentInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedCreateNestedManyWithoutStudentInput
+  activityAwards?: Prisma.ActivityAwardUncheckedCreateNestedManyWithoutStudentInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedCreateNestedManyWithoutStudentInput
+  authoredNotifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutAuthorInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedCreateNestedManyWithoutStudentInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedCreateNestedManyWithoutStudentInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutStudentInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedCreateNestedManyWithoutAuthorInput
+  stickerCopies?: Prisma.StickerCopyUncheckedCreateNestedManyWithoutOwnerInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  stickerListings?: Prisma.StickerListingUncheckedCreateNestedManyWithoutSellerInput
+  stickerPurchases?: Prisma.StickerListingUncheckedCreateNestedManyWithoutBuyerInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutSellerInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedCreateNestedManyWithoutBuyerInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutSenderInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedCreateNestedManyWithoutRecipientInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedCreateNestedManyWithoutTeacherInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedCreateNestedManyWithoutStudentInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutTeacherInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedCreateNestedManyWithoutStudentInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedCreateNestedOneWithoutStudentInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedCreateNestedManyWithoutStudentInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedCreateNestedManyWithoutAuthorInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutSenderInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedCreateNestedManyWithoutRecipientInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutOwnerInput
+  wonPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostPongRooms?: Prisma.PongRoomUncheckedCreateNestedManyWithoutLoserInput
+  pongPlayers?: Prisma.PongPlayerUncheckedCreateNestedManyWithoutStudentInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedCreateNestedManyWithoutStudentInput
+  pongPoints?: Prisma.PongPointUncheckedCreateNestedManyWithoutScorerInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutGuestInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedCreateNestedManyWithoutWinnerInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedCreateNestedManyWithoutWinnerInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedCreateNestedManyWithoutStudentInput
+  sudokuGames?: Prisma.SudokuGameUncheckedCreateNestedManyWithoutStudentInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedCreateNestedManyWithoutOwnerInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedCreateNestedManyWithoutStudentInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviterInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedCreateNestedManyWithoutInviteeInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockerInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedCreateNestedManyWithoutBlockedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedCreateNestedManyWithoutCreatedByInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedCreateNestedManyWithoutStudentInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutOwnerInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutGuestInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutCurrentTurnInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutWinnerInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedCreateNestedManyWithoutLoserInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedCreateNestedManyWithoutStudentInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutAttackerInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedCreateNestedManyWithoutDefenderInput
+  investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
+  investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
+  investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+}
+
+export type UserCreateOrConnectWithoutComplaintsRevokedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutComplaintsRevokedInput, Prisma.UserUncheckedCreateWithoutComplaintsRevokedInput>
+}
+
+export type UserUpsertWithoutComplaintsFiledInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutComplaintsFiledInput, Prisma.UserUncheckedUpdateWithoutComplaintsFiledInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutComplaintsFiledInput, Prisma.UserUncheckedCreateWithoutComplaintsFiledInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutComplaintsFiledInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutComplaintsFiledInput, Prisma.UserUncheckedUpdateWithoutComplaintsFiledInput>
+}
+
+export type UserUpdateWithoutComplaintsFiledInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
+  investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
+  investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
+  investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutComplaintsFiledInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
+  investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
+  investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
+  investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
+}
+
+export type UserUpsertWithoutComplaintsReceivedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutComplaintsReceivedInput, Prisma.UserUncheckedUpdateWithoutComplaintsReceivedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutComplaintsReceivedInput, Prisma.UserUncheckedCreateWithoutComplaintsReceivedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutComplaintsReceivedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutComplaintsReceivedInput, Prisma.UserUncheckedUpdateWithoutComplaintsReceivedInput>
+}
+
+export type UserUpdateWithoutComplaintsReceivedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
+  investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
+  investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
+  investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutComplaintsReceivedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
+  investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
+  investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
+  investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
+}
+
+export type UserUpsertWithoutComplaintsRevokedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutComplaintsRevokedInput, Prisma.UserUncheckedUpdateWithoutComplaintsRevokedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutComplaintsRevokedInput, Prisma.UserUncheckedCreateWithoutComplaintsRevokedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutComplaintsRevokedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutComplaintsRevokedInput, Prisma.UserUncheckedUpdateWithoutComplaintsRevokedInput>
+}
+
+export type UserUpdateWithoutComplaintsRevokedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUpdateManyWithoutDefenderNestedInput
+  investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
+  investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
+  investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+}
+
+export type UserUncheckedUpdateWithoutComplaintsRevokedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  passwordHash?: Prisma.StringFieldUpdateOperationsInput | string
+  xp?: Prisma.IntFieldUpdateOperationsInput | number
+  devCoins?: Prisma.IntFieldUpdateOperationsInput | number
+  accessCode?: Prisma.StringFieldUpdateOperationsInput | string
+  originSchoolClass?: Prisma.NullableEnumSchoolClassFieldUpdateOperationsInput | $Enums.SchoolClass | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
+  profileAvatar?: Prisma.StringFieldUpdateOperationsInput | string
+  sessionVersion?: Prisma.IntFieldUpdateOperationsInput | number
+  mustChangePassword?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastSeenAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  deactivatedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  lessons?: Prisma.LessonUncheckedUpdateManyWithoutTeacherNestedInput
+  attendances?: Prisma.AttendanceUncheckedUpdateManyWithoutStudentNestedInput
+  xpEntries?: Prisma.XpEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredXp?: Prisma.XpEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  behaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutStudentNestedInput
+  ratedBehaviors?: Prisma.BehaviorRatingUncheckedUpdateManyWithoutTeacherNestedInput
+  cleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutStudentNestedInput
+  confirmedCleanups?: Prisma.CleanupAssignmentUncheckedUpdateManyWithoutTeacherNestedInput
+  auditActions?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  auditTargets?: Prisma.AuditLogUncheckedUpdateManyWithoutTargetNestedInput
+  authoredActivities?: Prisma.ActivityUncheckedUpdateManyWithoutAuthorNestedInput
+  activityRecipients?: Prisma.ActivityRecipientUncheckedUpdateManyWithoutStudentNestedInput
+  activitySubmissions?: Prisma.ActivitySubmissionUncheckedUpdateManyWithoutStudentNestedInput
+  activityAnswers?: Prisma.ActivityAnswerUncheckedUpdateManyWithoutStudentNestedInput
+  activityTeamMemberships?: Prisma.ActivityTeamMemberUncheckedUpdateManyWithoutStudentNestedInput
+  activityAwards?: Prisma.ActivityAwardUncheckedUpdateManyWithoutStudentNestedInput
+  lessonParticipations?: Prisma.LessonParticipantUncheckedUpdateManyWithoutStudentNestedInput
+  authoredNotifications?: Prisma.NotificationUncheckedUpdateManyWithoutAuthorNestedInput
+  notificationReceipts?: Prisma.NotificationReceiptUncheckedUpdateManyWithoutStudentNestedInput
+  profileAvatarPurchases?: Prisma.ProfileAvatarPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  studentThemePurchases?: Prisma.StudentThemePurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  devCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutStudentNestedInput
+  authoredDevCoinEntries?: Prisma.DevCoinEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  stickerCopies?: Prisma.StickerCopyUncheckedUpdateManyWithoutOwnerNestedInput
+  stickerPackPurchases?: Prisma.StickerPackPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  stickerListings?: Prisma.StickerListingUncheckedUpdateManyWithoutSellerNestedInput
+  stickerPurchases?: Prisma.StickerListingUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerTradesSold?: Prisma.StickerTradeUncheckedUpdateManyWithoutSellerNestedInput
+  stickerTradesBought?: Prisma.StickerTradeUncheckedUpdateManyWithoutBuyerNestedInput
+  stickerDonationsSent?: Prisma.StickerDonationUncheckedUpdateManyWithoutSenderNestedInput
+  stickerDonationsReceived?: Prisma.StickerDonationUncheckedUpdateManyWithoutRecipientNestedInput
+  collectionPurchaseRequests?: Prisma.TeacherCollectionPurchaseRequestUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionOffers?: Prisma.TeacherCollectionOfferUncheckedUpdateManyWithoutStudentNestedInput
+  collectionPurchasesAsTeacher?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutTeacherNestedInput
+  collectionPurchasesAsStudent?: Prisma.TeacherCollectionPurchaseUncheckedUpdateManyWithoutStudentNestedInput
+  patentProgress?: Prisma.StudentPatentProgressUncheckedUpdateOneWithoutStudentNestedInput
+  patentRewardClaims?: Prisma.PatentRewardClaimUncheckedUpdateManyWithoutStudentNestedInput
+  treasuryEntriesAuthored?: Prisma.DevCoinTreasuryEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  devCoinTransfersSent?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutSenderNestedInput
+  devCoinTransfersReceived?: Prisma.DevCoinTransferUncheckedUpdateManyWithoutRecipientNestedInput
+  ownedPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  wonPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostPongRooms?: Prisma.PongRoomUncheckedUpdateManyWithoutLoserNestedInput
+  pongPlayers?: Prisma.PongPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  pongJoinRequests?: Prisma.PongJoinRequestUncheckedUpdateManyWithoutStudentNestedInput
+  pongPoints?: Prisma.PongPointUncheckedUpdateManyWithoutScorerNestedInput
+  ownedTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutGuestNestedInput
+  wonTicTacToeRooms?: Prisma.TicTacToeRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  wonTicTacToeRounds?: Prisma.TicTacToeRoundUncheckedUpdateManyWithoutWinnerNestedInput
+  ticTacToeSoloGames?: Prisma.TicTacToeSoloGameUncheckedUpdateManyWithoutStudentNestedInput
+  sudokuGames?: Prisma.SudokuGameUncheckedUpdateManyWithoutStudentNestedInput
+  ownedLudoRooms?: Prisma.LudoRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  ludoPlayers?: Prisma.LudoPlayerUncheckedUpdateManyWithoutStudentNestedInput
+  sentLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviterNestedInput
+  receivedLudoInvitations?: Prisma.LudoInvitationUncheckedUpdateManyWithoutInviteeNestedInput
+  ludoBlocksCreated?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockerNestedInput
+  ludoBlocksReceived?: Prisma.LudoInvitationBlockUncheckedUpdateManyWithoutBlockedNestedInput
+  createdXpGrantCodes?: Prisma.XpGrantCodeUncheckedUpdateManyWithoutCreatedByNestedInput
+  xpGrantRedemptions?: Prisma.XpGrantRedemptionUncheckedUpdateManyWithoutStudentNestedInput
+  ownedBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutOwnerNestedInput
+  guestBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutGuestNestedInput
+  battleshipTurns?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutCurrentTurnNestedInput
+  wonBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutWinnerNestedInput
+  lostBattleshipRooms?: Prisma.BattleshipRoomUncheckedUpdateManyWithoutLoserNestedInput
+  battleshipBoards?: Prisma.BattleshipBoardUncheckedUpdateManyWithoutStudentNestedInput
+  battleshipShotsFired?: Prisma.BattleshipShotUncheckedUpdateManyWithoutAttackerNestedInput
+  battleshipShotsReceived?: Prisma.BattleshipShotUncheckedUpdateManyWithoutDefenderNestedInput
+  investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
+  investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
+  investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
 }
 
 export type UserCreateWithoutXpEntriesInput = {
@@ -12571,6 +14136,9 @@ export type UserCreateWithoutXpEntriesInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutXpEntriesInput = {
@@ -12662,6 +14230,9 @@ export type UserUncheckedCreateWithoutXpEntriesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutXpEntriesInput = {
@@ -12758,6 +14329,9 @@ export type UserCreateWithoutAuthoredXpInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredXpInput = {
@@ -12849,6 +14423,9 @@ export type UserUncheckedCreateWithoutAuthoredXpInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredXpInput = {
@@ -12956,6 +14533,9 @@ export type UserUpdateWithoutXpEntriesInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutXpEntriesInput = {
@@ -13047,6 +14627,9 @@ export type UserUncheckedUpdateWithoutXpEntriesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutAuthoredXpInput = {
@@ -13149,6 +14732,9 @@ export type UserUpdateWithoutAuthoredXpInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredXpInput = {
@@ -13240,6 +14826,9 @@ export type UserUncheckedUpdateWithoutAuthoredXpInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutCreatedXpGrantCodesInput = {
@@ -13331,6 +14920,9 @@ export type UserCreateWithoutCreatedXpGrantCodesInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutCreatedXpGrantCodesInput = {
@@ -13422,6 +15014,9 @@ export type UserUncheckedCreateWithoutCreatedXpGrantCodesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutCreatedXpGrantCodesInput = {
@@ -13529,6 +15124,9 @@ export type UserUpdateWithoutCreatedXpGrantCodesInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCreatedXpGrantCodesInput = {
@@ -13620,6 +15218,9 @@ export type UserUncheckedUpdateWithoutCreatedXpGrantCodesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutXpGrantRedemptionsInput = {
@@ -13711,6 +15312,9 @@ export type UserCreateWithoutXpGrantRedemptionsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutXpGrantRedemptionsInput = {
@@ -13802,6 +15406,9 @@ export type UserUncheckedCreateWithoutXpGrantRedemptionsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutXpGrantRedemptionsInput = {
@@ -13909,6 +15516,9 @@ export type UserUpdateWithoutXpGrantRedemptionsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutXpGrantRedemptionsInput = {
@@ -14000,6 +15610,9 @@ export type UserUncheckedUpdateWithoutXpGrantRedemptionsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutBehaviorsInput = {
@@ -14091,6 +15704,9 @@ export type UserCreateWithoutBehaviorsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutBehaviorsInput = {
@@ -14182,6 +15798,9 @@ export type UserUncheckedCreateWithoutBehaviorsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutBehaviorsInput = {
@@ -14278,6 +15897,9 @@ export type UserCreateWithoutRatedBehaviorsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutRatedBehaviorsInput = {
@@ -14369,6 +15991,9 @@ export type UserUncheckedCreateWithoutRatedBehaviorsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutRatedBehaviorsInput = {
@@ -14476,6 +16101,9 @@ export type UserUpdateWithoutBehaviorsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutBehaviorsInput = {
@@ -14567,6 +16195,9 @@ export type UserUncheckedUpdateWithoutBehaviorsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutRatedBehaviorsInput = {
@@ -14669,6 +16300,9 @@ export type UserUpdateWithoutRatedBehaviorsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutRatedBehaviorsInput = {
@@ -14760,6 +16394,9 @@ export type UserUncheckedUpdateWithoutRatedBehaviorsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutCleanupsInput = {
@@ -14851,6 +16488,9 @@ export type UserCreateWithoutCleanupsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutCleanupsInput = {
@@ -14942,6 +16582,9 @@ export type UserUncheckedCreateWithoutCleanupsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutCleanupsInput = {
@@ -15038,6 +16681,9 @@ export type UserCreateWithoutConfirmedCleanupsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutConfirmedCleanupsInput = {
@@ -15129,6 +16775,9 @@ export type UserUncheckedCreateWithoutConfirmedCleanupsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutConfirmedCleanupsInput = {
@@ -15236,6 +16885,9 @@ export type UserUpdateWithoutCleanupsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCleanupsInput = {
@@ -15327,6 +16979,9 @@ export type UserUncheckedUpdateWithoutCleanupsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutConfirmedCleanupsInput = {
@@ -15429,6 +17084,9 @@ export type UserUpdateWithoutConfirmedCleanupsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutConfirmedCleanupsInput = {
@@ -15520,6 +17178,9 @@ export type UserUncheckedUpdateWithoutConfirmedCleanupsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutAuthoredActivitiesInput = {
@@ -15611,6 +17272,9 @@ export type UserCreateWithoutAuthoredActivitiesInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredActivitiesInput = {
@@ -15702,6 +17366,9 @@ export type UserUncheckedCreateWithoutAuthoredActivitiesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredActivitiesInput = {
@@ -15809,6 +17476,9 @@ export type UserUpdateWithoutAuthoredActivitiesInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredActivitiesInput = {
@@ -15900,6 +17570,9 @@ export type UserUncheckedUpdateWithoutAuthoredActivitiesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutAuthoredNotificationsInput = {
@@ -15991,6 +17664,9 @@ export type UserCreateWithoutAuthoredNotificationsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutAuthoredNotificationsInput = {
@@ -16082,6 +17758,9 @@ export type UserUncheckedCreateWithoutAuthoredNotificationsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutAuthoredNotificationsInput = {
@@ -16189,6 +17868,9 @@ export type UserUpdateWithoutAuthoredNotificationsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuthoredNotificationsInput = {
@@ -16280,6 +17962,9 @@ export type UserUncheckedUpdateWithoutAuthoredNotificationsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutNotificationReceiptsInput = {
@@ -16371,6 +18056,9 @@ export type UserCreateWithoutNotificationReceiptsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutNotificationReceiptsInput = {
@@ -16462,6 +18150,9 @@ export type UserUncheckedCreateWithoutNotificationReceiptsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutNotificationReceiptsInput = {
@@ -16569,6 +18260,9 @@ export type UserUpdateWithoutNotificationReceiptsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutNotificationReceiptsInput = {
@@ -16660,6 +18354,9 @@ export type UserUncheckedUpdateWithoutNotificationReceiptsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutActivityRecipientsInput = {
@@ -16751,6 +18448,9 @@ export type UserCreateWithoutActivityRecipientsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutActivityRecipientsInput = {
@@ -16842,6 +18542,9 @@ export type UserUncheckedCreateWithoutActivityRecipientsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutActivityRecipientsInput = {
@@ -16949,6 +18652,9 @@ export type UserUpdateWithoutActivityRecipientsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityRecipientsInput = {
@@ -17040,6 +18746,9 @@ export type UserUncheckedUpdateWithoutActivityRecipientsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutActivitySubmissionsInput = {
@@ -17131,6 +18840,9 @@ export type UserCreateWithoutActivitySubmissionsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutActivitySubmissionsInput = {
@@ -17222,6 +18934,9 @@ export type UserUncheckedCreateWithoutActivitySubmissionsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutActivitySubmissionsInput = {
@@ -17329,6 +19044,9 @@ export type UserUpdateWithoutActivitySubmissionsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivitySubmissionsInput = {
@@ -17420,6 +19138,9 @@ export type UserUncheckedUpdateWithoutActivitySubmissionsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutActivityAnswersInput = {
@@ -17511,6 +19232,9 @@ export type UserCreateWithoutActivityAnswersInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutActivityAnswersInput = {
@@ -17602,6 +19326,9 @@ export type UserUncheckedCreateWithoutActivityAnswersInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutActivityAnswersInput = {
@@ -17709,6 +19436,9 @@ export type UserUpdateWithoutActivityAnswersInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityAnswersInput = {
@@ -17800,6 +19530,9 @@ export type UserUncheckedUpdateWithoutActivityAnswersInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutActivityTeamMembershipsInput = {
@@ -17891,6 +19624,9 @@ export type UserCreateWithoutActivityTeamMembershipsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutActivityTeamMembershipsInput = {
@@ -17982,6 +19718,9 @@ export type UserUncheckedCreateWithoutActivityTeamMembershipsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutActivityTeamMembershipsInput = {
@@ -18089,6 +19828,9 @@ export type UserUpdateWithoutActivityTeamMembershipsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityTeamMembershipsInput = {
@@ -18180,6 +19922,9 @@ export type UserUncheckedUpdateWithoutActivityTeamMembershipsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutActivityAwardsInput = {
@@ -18271,6 +20016,9 @@ export type UserCreateWithoutActivityAwardsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutActivityAwardsInput = {
@@ -18362,6 +20110,9 @@ export type UserUncheckedCreateWithoutActivityAwardsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutActivityAwardsInput = {
@@ -18469,6 +20220,9 @@ export type UserUpdateWithoutActivityAwardsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityAwardsInput = {
@@ -18560,6 +20314,9 @@ export type UserUncheckedUpdateWithoutActivityAwardsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutAuditActionsInput = {
@@ -18651,6 +20408,9 @@ export type UserCreateWithoutAuditActionsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutAuditActionsInput = {
@@ -18742,6 +20502,9 @@ export type UserUncheckedCreateWithoutAuditActionsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutAuditActionsInput = {
@@ -18838,6 +20601,9 @@ export type UserCreateWithoutAuditTargetsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutAuditTargetsInput = {
@@ -18929,6 +20695,9 @@ export type UserUncheckedCreateWithoutAuditTargetsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutAuditTargetsInput = {
@@ -19036,6 +20805,9 @@ export type UserUpdateWithoutAuditActionsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuditActionsInput = {
@@ -19127,6 +20899,9 @@ export type UserUncheckedUpdateWithoutAuditActionsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutAuditTargetsInput = {
@@ -19229,6 +21004,9 @@ export type UserUpdateWithoutAuditTargetsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuditTargetsInput = {
@@ -19320,6 +21098,9 @@ export type UserUncheckedUpdateWithoutAuditTargetsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutOwnedPongRoomsInput = {
@@ -19411,6 +21192,9 @@ export type UserCreateWithoutOwnedPongRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutOwnedPongRoomsInput = {
@@ -19502,6 +21286,9 @@ export type UserUncheckedCreateWithoutOwnedPongRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutOwnedPongRoomsInput = {
@@ -19598,6 +21385,9 @@ export type UserCreateWithoutWonPongRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutWonPongRoomsInput = {
@@ -19689,6 +21479,9 @@ export type UserUncheckedCreateWithoutWonPongRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutWonPongRoomsInput = {
@@ -19785,6 +21578,9 @@ export type UserCreateWithoutLostPongRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutLostPongRoomsInput = {
@@ -19876,6 +21672,9 @@ export type UserUncheckedCreateWithoutLostPongRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutLostPongRoomsInput = {
@@ -19983,6 +21782,9 @@ export type UserUpdateWithoutOwnedPongRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutOwnedPongRoomsInput = {
@@ -20074,6 +21876,9 @@ export type UserUncheckedUpdateWithoutOwnedPongRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutWonPongRoomsInput = {
@@ -20176,6 +21981,9 @@ export type UserUpdateWithoutWonPongRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutWonPongRoomsInput = {
@@ -20267,6 +22075,9 @@ export type UserUncheckedUpdateWithoutWonPongRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutLostPongRoomsInput = {
@@ -20369,6 +22180,9 @@ export type UserUpdateWithoutLostPongRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLostPongRoomsInput = {
@@ -20460,6 +22274,9 @@ export type UserUncheckedUpdateWithoutLostPongRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutPongPlayersInput = {
@@ -20551,6 +22368,9 @@ export type UserCreateWithoutPongPlayersInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutPongPlayersInput = {
@@ -20642,6 +22462,9 @@ export type UserUncheckedCreateWithoutPongPlayersInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutPongPlayersInput = {
@@ -20749,6 +22572,9 @@ export type UserUpdateWithoutPongPlayersInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPongPlayersInput = {
@@ -20840,6 +22666,9 @@ export type UserUncheckedUpdateWithoutPongPlayersInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutPongJoinRequestsInput = {
@@ -20931,6 +22760,9 @@ export type UserCreateWithoutPongJoinRequestsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutPongJoinRequestsInput = {
@@ -21022,6 +22854,9 @@ export type UserUncheckedCreateWithoutPongJoinRequestsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutPongJoinRequestsInput = {
@@ -21129,6 +22964,9 @@ export type UserUpdateWithoutPongJoinRequestsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPongJoinRequestsInput = {
@@ -21220,6 +23058,9 @@ export type UserUncheckedUpdateWithoutPongJoinRequestsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutPongPointsInput = {
@@ -21311,6 +23152,9 @@ export type UserCreateWithoutPongPointsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutPongPointsInput = {
@@ -21402,6 +23246,9 @@ export type UserUncheckedCreateWithoutPongPointsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutPongPointsInput = {
@@ -21509,6 +23356,9 @@ export type UserUpdateWithoutPongPointsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPongPointsInput = {
@@ -21600,6 +23450,9 @@ export type UserUncheckedUpdateWithoutPongPointsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutOwnedTicTacToeRoomsInput = {
@@ -21691,6 +23544,9 @@ export type UserCreateWithoutOwnedTicTacToeRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutOwnedTicTacToeRoomsInput = {
@@ -21782,6 +23638,9 @@ export type UserUncheckedCreateWithoutOwnedTicTacToeRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutOwnedTicTacToeRoomsInput = {
@@ -21878,6 +23737,9 @@ export type UserCreateWithoutGuestTicTacToeRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutGuestTicTacToeRoomsInput = {
@@ -21969,6 +23831,9 @@ export type UserUncheckedCreateWithoutGuestTicTacToeRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutGuestTicTacToeRoomsInput = {
@@ -22065,6 +23930,9 @@ export type UserCreateWithoutWonTicTacToeRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutWonTicTacToeRoomsInput = {
@@ -22156,6 +24024,9 @@ export type UserUncheckedCreateWithoutWonTicTacToeRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutWonTicTacToeRoomsInput = {
@@ -22263,6 +24134,9 @@ export type UserUpdateWithoutOwnedTicTacToeRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutOwnedTicTacToeRoomsInput = {
@@ -22354,6 +24228,9 @@ export type UserUncheckedUpdateWithoutOwnedTicTacToeRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutGuestTicTacToeRoomsInput = {
@@ -22456,6 +24333,9 @@ export type UserUpdateWithoutGuestTicTacToeRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutGuestTicTacToeRoomsInput = {
@@ -22547,6 +24427,9 @@ export type UserUncheckedUpdateWithoutGuestTicTacToeRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutWonTicTacToeRoomsInput = {
@@ -22649,6 +24532,9 @@ export type UserUpdateWithoutWonTicTacToeRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutWonTicTacToeRoomsInput = {
@@ -22740,6 +24626,9 @@ export type UserUncheckedUpdateWithoutWonTicTacToeRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutWonTicTacToeRoundsInput = {
@@ -22831,6 +24720,9 @@ export type UserCreateWithoutWonTicTacToeRoundsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutWonTicTacToeRoundsInput = {
@@ -22922,6 +24814,9 @@ export type UserUncheckedCreateWithoutWonTicTacToeRoundsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutWonTicTacToeRoundsInput = {
@@ -23029,6 +24924,9 @@ export type UserUpdateWithoutWonTicTacToeRoundsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutWonTicTacToeRoundsInput = {
@@ -23120,6 +25018,9 @@ export type UserUncheckedUpdateWithoutWonTicTacToeRoundsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutTicTacToeSoloGamesInput = {
@@ -23211,6 +25112,9 @@ export type UserCreateWithoutTicTacToeSoloGamesInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutTicTacToeSoloGamesInput = {
@@ -23302,6 +25206,9 @@ export type UserUncheckedCreateWithoutTicTacToeSoloGamesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutTicTacToeSoloGamesInput = {
@@ -23409,6 +25316,9 @@ export type UserUpdateWithoutTicTacToeSoloGamesInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutTicTacToeSoloGamesInput = {
@@ -23500,6 +25410,9 @@ export type UserUncheckedUpdateWithoutTicTacToeSoloGamesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutOwnedBattleshipRoomsInput = {
@@ -23591,6 +25504,9 @@ export type UserCreateWithoutOwnedBattleshipRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutOwnedBattleshipRoomsInput = {
@@ -23682,6 +25598,9 @@ export type UserUncheckedCreateWithoutOwnedBattleshipRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutOwnedBattleshipRoomsInput = {
@@ -23778,6 +25697,9 @@ export type UserCreateWithoutGuestBattleshipRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutGuestBattleshipRoomsInput = {
@@ -23869,6 +25791,9 @@ export type UserUncheckedCreateWithoutGuestBattleshipRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutGuestBattleshipRoomsInput = {
@@ -23965,6 +25890,9 @@ export type UserCreateWithoutBattleshipTurnsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutBattleshipTurnsInput = {
@@ -24056,6 +25984,9 @@ export type UserUncheckedCreateWithoutBattleshipTurnsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutBattleshipTurnsInput = {
@@ -24152,6 +26083,9 @@ export type UserCreateWithoutWonBattleshipRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutWonBattleshipRoomsInput = {
@@ -24243,6 +26177,9 @@ export type UserUncheckedCreateWithoutWonBattleshipRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutWonBattleshipRoomsInput = {
@@ -24339,6 +26276,9 @@ export type UserCreateWithoutLostBattleshipRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutLostBattleshipRoomsInput = {
@@ -24430,6 +26370,9 @@ export type UserUncheckedCreateWithoutLostBattleshipRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutLostBattleshipRoomsInput = {
@@ -24537,6 +26480,9 @@ export type UserUpdateWithoutOwnedBattleshipRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutOwnedBattleshipRoomsInput = {
@@ -24628,6 +26574,9 @@ export type UserUncheckedUpdateWithoutOwnedBattleshipRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutGuestBattleshipRoomsInput = {
@@ -24730,6 +26679,9 @@ export type UserUpdateWithoutGuestBattleshipRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutGuestBattleshipRoomsInput = {
@@ -24821,6 +26773,9 @@ export type UserUncheckedUpdateWithoutGuestBattleshipRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutBattleshipTurnsInput = {
@@ -24923,6 +26878,9 @@ export type UserUpdateWithoutBattleshipTurnsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutBattleshipTurnsInput = {
@@ -25014,6 +26972,9 @@ export type UserUncheckedUpdateWithoutBattleshipTurnsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutWonBattleshipRoomsInput = {
@@ -25116,6 +27077,9 @@ export type UserUpdateWithoutWonBattleshipRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutWonBattleshipRoomsInput = {
@@ -25207,6 +27171,9 @@ export type UserUncheckedUpdateWithoutWonBattleshipRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutLostBattleshipRoomsInput = {
@@ -25309,6 +27276,9 @@ export type UserUpdateWithoutLostBattleshipRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLostBattleshipRoomsInput = {
@@ -25400,6 +27370,9 @@ export type UserUncheckedUpdateWithoutLostBattleshipRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutBattleshipBoardsInput = {
@@ -25491,6 +27464,9 @@ export type UserCreateWithoutBattleshipBoardsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutBattleshipBoardsInput = {
@@ -25582,6 +27558,9 @@ export type UserUncheckedCreateWithoutBattleshipBoardsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutBattleshipBoardsInput = {
@@ -25689,6 +27668,9 @@ export type UserUpdateWithoutBattleshipBoardsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutBattleshipBoardsInput = {
@@ -25780,6 +27762,9 @@ export type UserUncheckedUpdateWithoutBattleshipBoardsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutBattleshipShotsFiredInput = {
@@ -25871,6 +27856,9 @@ export type UserCreateWithoutBattleshipShotsFiredInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutBattleshipShotsFiredInput = {
@@ -25962,6 +27950,9 @@ export type UserUncheckedCreateWithoutBattleshipShotsFiredInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutBattleshipShotsFiredInput = {
@@ -26058,6 +28049,9 @@ export type UserCreateWithoutBattleshipShotsReceivedInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutBattleshipShotsReceivedInput = {
@@ -26149,6 +28143,9 @@ export type UserUncheckedCreateWithoutBattleshipShotsReceivedInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutBattleshipShotsReceivedInput = {
@@ -26256,6 +28253,9 @@ export type UserUpdateWithoutBattleshipShotsFiredInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutBattleshipShotsFiredInput = {
@@ -26347,6 +28347,9 @@ export type UserUncheckedUpdateWithoutBattleshipShotsFiredInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutBattleshipShotsReceivedInput = {
@@ -26449,6 +28452,9 @@ export type UserUpdateWithoutBattleshipShotsReceivedInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutBattleshipShotsReceivedInput = {
@@ -26540,6 +28546,9 @@ export type UserUncheckedUpdateWithoutBattleshipShotsReceivedInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutSudokuGamesInput = {
@@ -26631,6 +28640,9 @@ export type UserCreateWithoutSudokuGamesInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutSudokuGamesInput = {
@@ -26722,6 +28734,9 @@ export type UserUncheckedCreateWithoutSudokuGamesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutSudokuGamesInput = {
@@ -26829,6 +28844,9 @@ export type UserUpdateWithoutSudokuGamesInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSudokuGamesInput = {
@@ -26920,6 +28938,9 @@ export type UserUncheckedUpdateWithoutSudokuGamesInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutOwnedLudoRoomsInput = {
@@ -27011,6 +29032,9 @@ export type UserCreateWithoutOwnedLudoRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutOwnedLudoRoomsInput = {
@@ -27102,6 +29126,9 @@ export type UserUncheckedCreateWithoutOwnedLudoRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutOwnedLudoRoomsInput = {
@@ -27209,6 +29236,9 @@ export type UserUpdateWithoutOwnedLudoRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutOwnedLudoRoomsInput = {
@@ -27300,6 +29330,9 @@ export type UserUncheckedUpdateWithoutOwnedLudoRoomsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutLudoPlayersInput = {
@@ -27391,6 +29424,9 @@ export type UserCreateWithoutLudoPlayersInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutLudoPlayersInput = {
@@ -27482,6 +29518,9 @@ export type UserUncheckedCreateWithoutLudoPlayersInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutLudoPlayersInput = {
@@ -27589,6 +29628,9 @@ export type UserUpdateWithoutLudoPlayersInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLudoPlayersInput = {
@@ -27680,6 +29722,9 @@ export type UserUncheckedUpdateWithoutLudoPlayersInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutSentLudoInvitationsInput = {
@@ -27771,6 +29816,9 @@ export type UserCreateWithoutSentLudoInvitationsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutSentLudoInvitationsInput = {
@@ -27862,6 +29910,9 @@ export type UserUncheckedCreateWithoutSentLudoInvitationsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutSentLudoInvitationsInput = {
@@ -27958,6 +30009,9 @@ export type UserCreateWithoutReceivedLudoInvitationsInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutReceivedLudoInvitationsInput = {
@@ -28049,6 +30103,9 @@ export type UserUncheckedCreateWithoutReceivedLudoInvitationsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutReceivedLudoInvitationsInput = {
@@ -28156,6 +30213,9 @@ export type UserUpdateWithoutSentLudoInvitationsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSentLudoInvitationsInput = {
@@ -28247,6 +30307,9 @@ export type UserUncheckedUpdateWithoutSentLudoInvitationsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutReceivedLudoInvitationsInput = {
@@ -28349,6 +30412,9 @@ export type UserUpdateWithoutReceivedLudoInvitationsInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutReceivedLudoInvitationsInput = {
@@ -28440,6 +30506,9 @@ export type UserUncheckedUpdateWithoutReceivedLudoInvitationsInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserCreateWithoutLudoBlocksCreatedInput = {
@@ -28531,6 +30600,9 @@ export type UserCreateWithoutLudoBlocksCreatedInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutLudoBlocksCreatedInput = {
@@ -28622,6 +30694,9 @@ export type UserUncheckedCreateWithoutLudoBlocksCreatedInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutLudoBlocksCreatedInput = {
@@ -28718,6 +30793,9 @@ export type UserCreateWithoutLudoBlocksReceivedInput = {
   investmentPositions?: Prisma.InvestmentPositionCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserUncheckedCreateWithoutLudoBlocksReceivedInput = {
@@ -28809,6 +30887,9 @@ export type UserUncheckedCreateWithoutLudoBlocksReceivedInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedCreateNestedManyWithoutStudentInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedCreateNestedManyWithoutStudentInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedCreateNestedManyWithoutAuthorInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutReporterInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutTargetInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedCreateNestedManyWithoutRevokedByInput
 }
 
 export type UserCreateOrConnectWithoutLudoBlocksReceivedInput = {
@@ -28916,6 +30997,9 @@ export type UserUpdateWithoutLudoBlocksCreatedInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLudoBlocksCreatedInput = {
@@ -29007,6 +31091,9 @@ export type UserUncheckedUpdateWithoutLudoBlocksCreatedInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUpsertWithoutLudoBlocksReceivedInput = {
@@ -29109,6 +31196,9 @@ export type UserUpdateWithoutLudoBlocksReceivedInput = {
   investmentPositions?: Prisma.InvestmentPositionUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUpdateManyWithoutRevokedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLudoBlocksReceivedInput = {
@@ -29200,6 +31290,9 @@ export type UserUncheckedUpdateWithoutLudoBlocksReceivedInput = {
   investmentPositions?: Prisma.InvestmentPositionUncheckedUpdateManyWithoutStudentNestedInput
   investmentTransactions?: Prisma.InvestmentTransactionUncheckedUpdateManyWithoutStudentNestedInput
   investmentReserveEntries?: Prisma.InvestmentReserveEntryUncheckedUpdateManyWithoutAuthorNestedInput
+  complaintsFiled?: Prisma.StudentComplaintUncheckedUpdateManyWithoutReporterNestedInput
+  complaintsReceived?: Prisma.StudentComplaintUncheckedUpdateManyWithoutTargetNestedInput
+  complaintsRevoked?: Prisma.StudentComplaintUncheckedUpdateManyWithoutRevokedByNestedInput
 }
 
 
@@ -29278,6 +31371,9 @@ export type UserCountOutputType = {
   investmentPositions: number
   investmentTransactions: number
   investmentReserveEntries: number
+  complaintsFiled: number
+  complaintsReceived: number
+  complaintsRevoked: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -29351,6 +31447,9 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   investmentPositions?: boolean | UserCountOutputTypeCountInvestmentPositionsArgs
   investmentTransactions?: boolean | UserCountOutputTypeCountInvestmentTransactionsArgs
   investmentReserveEntries?: boolean | UserCountOutputTypeCountInvestmentReserveEntriesArgs
+  complaintsFiled?: boolean | UserCountOutputTypeCountComplaintsFiledArgs
+  complaintsReceived?: boolean | UserCountOutputTypeCountComplaintsReceivedArgs
+  complaintsRevoked?: boolean | UserCountOutputTypeCountComplaintsRevokedArgs
 }
 
 /**
@@ -29853,6 +31952,27 @@ export type UserCountOutputTypeCountInvestmentReserveEntriesArgs<ExtArgs extends
   where?: Prisma.InvestmentReserveEntryWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountComplaintsFiledArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.StudentComplaintWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountComplaintsReceivedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.StudentComplaintWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountComplaintsRevokedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.StudentComplaintWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -29944,6 +32064,9 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   investmentPositions?: boolean | Prisma.User$investmentPositionsArgs<ExtArgs>
   investmentTransactions?: boolean | Prisma.User$investmentTransactionsArgs<ExtArgs>
   investmentReserveEntries?: boolean | Prisma.User$investmentReserveEntriesArgs<ExtArgs>
+  complaintsFiled?: boolean | Prisma.User$complaintsFiledArgs<ExtArgs>
+  complaintsReceived?: boolean | Prisma.User$complaintsReceivedArgs<ExtArgs>
+  complaintsRevoked?: boolean | Prisma.User$complaintsRevokedArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -30083,6 +32206,9 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   investmentPositions?: boolean | Prisma.User$investmentPositionsArgs<ExtArgs>
   investmentTransactions?: boolean | Prisma.User$investmentTransactionsArgs<ExtArgs>
   investmentReserveEntries?: boolean | Prisma.User$investmentReserveEntriesArgs<ExtArgs>
+  complaintsFiled?: boolean | Prisma.User$complaintsFiledArgs<ExtArgs>
+  complaintsReceived?: boolean | Prisma.User$complaintsReceivedArgs<ExtArgs>
+  complaintsRevoked?: boolean | Prisma.User$complaintsRevokedArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -30162,6 +32288,9 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     investmentPositions: Prisma.$InvestmentPositionPayload<ExtArgs>[]
     investmentTransactions: Prisma.$InvestmentTransactionPayload<ExtArgs>[]
     investmentReserveEntries: Prisma.$InvestmentReserveEntryPayload<ExtArgs>[]
+    complaintsFiled: Prisma.$StudentComplaintPayload<ExtArgs>[]
+    complaintsReceived: Prisma.$StudentComplaintPayload<ExtArgs>[]
+    complaintsRevoked: Prisma.$StudentComplaintPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -30647,6 +32776,9 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   investmentPositions<T extends Prisma.User$investmentPositionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$investmentPositionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InvestmentPositionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   investmentTransactions<T extends Prisma.User$investmentTransactionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$investmentTransactionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InvestmentTransactionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   investmentReserveEntries<T extends Prisma.User$investmentReserveEntriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$investmentReserveEntriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InvestmentReserveEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  complaintsFiled<T extends Prisma.User$complaintsFiledArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$complaintsFiledArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StudentComplaintPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  complaintsReceived<T extends Prisma.User$complaintsReceivedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$complaintsReceivedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StudentComplaintPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  complaintsRevoked<T extends Prisma.User$complaintsRevokedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$complaintsRevokedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StudentComplaintPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -32783,6 +34915,78 @@ export type User$investmentReserveEntriesArgs<ExtArgs extends runtime.Types.Exte
   take?: number
   skip?: number
   distinct?: Prisma.InvestmentReserveEntryScalarFieldEnum | Prisma.InvestmentReserveEntryScalarFieldEnum[]
+}
+
+/**
+ * User.complaintsFiled
+ */
+export type User$complaintsFiledArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the StudentComplaint
+   */
+  select?: Prisma.StudentComplaintSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the StudentComplaint
+   */
+  omit?: Prisma.StudentComplaintOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StudentComplaintInclude<ExtArgs> | null
+  where?: Prisma.StudentComplaintWhereInput
+  orderBy?: Prisma.StudentComplaintOrderByWithRelationInput | Prisma.StudentComplaintOrderByWithRelationInput[]
+  cursor?: Prisma.StudentComplaintWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StudentComplaintScalarFieldEnum | Prisma.StudentComplaintScalarFieldEnum[]
+}
+
+/**
+ * User.complaintsReceived
+ */
+export type User$complaintsReceivedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the StudentComplaint
+   */
+  select?: Prisma.StudentComplaintSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the StudentComplaint
+   */
+  omit?: Prisma.StudentComplaintOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StudentComplaintInclude<ExtArgs> | null
+  where?: Prisma.StudentComplaintWhereInput
+  orderBy?: Prisma.StudentComplaintOrderByWithRelationInput | Prisma.StudentComplaintOrderByWithRelationInput[]
+  cursor?: Prisma.StudentComplaintWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StudentComplaintScalarFieldEnum | Prisma.StudentComplaintScalarFieldEnum[]
+}
+
+/**
+ * User.complaintsRevoked
+ */
+export type User$complaintsRevokedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the StudentComplaint
+   */
+  select?: Prisma.StudentComplaintSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the StudentComplaint
+   */
+  omit?: Prisma.StudentComplaintOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StudentComplaintInclude<ExtArgs> | null
+  where?: Prisma.StudentComplaintWhereInput
+  orderBy?: Prisma.StudentComplaintOrderByWithRelationInput | Prisma.StudentComplaintOrderByWithRelationInput[]
+  cursor?: Prisma.StudentComplaintWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StudentComplaintScalarFieldEnum | Prisma.StudentComplaintScalarFieldEnum[]
 }
 
 /**

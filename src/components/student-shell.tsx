@@ -45,6 +45,7 @@ const navItems = [
 const titles: Record<string, string> = {
   "/aluno": "Visão geral",
   "/aluno/atividades": "Minhas atividades",
+  "/aluno/reclamacoes/ranking": "Ranking de reclamações",
   "/aluno/album": "Álbum de Figurinhas",
   "/aluno/investimentos": "Carteira de investimentos",
   "/aluno/minigames": "Minigames",

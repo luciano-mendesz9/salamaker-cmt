@@ -59,3 +59,13 @@ export async function devCoinToXpSchemaReady() {
   `;
   return Boolean(row?.ready);
 }
+
+export async function studentComplaintsSchemaReady() {
+  const [row] = await prisma.$queryRaw<Array<{ complaint: string | null; cycle: string | null; targetKind: boolean; ordinal: boolean }>>`
+    SELECT to_regclass('public."StudentComplaint"')::text AS "complaint",
+           to_regclass('public."ComplaintCycle"')::text AS "cycle",
+           EXISTS (SELECT 1 FROM information_schema.columns WHERE table_schema = 'public' AND table_name = 'StudentComplaint' AND column_name = 'targetKind') AS "targetKind",
+           EXISTS (SELECT 1 FROM information_schema.columns WHERE table_schema = 'public' AND table_name = 'StudentComplaint' AND column_name = 'ordinal') AS "ordinal"
+  `;
+  return Boolean(row?.complaint && row.cycle && row.targetKind && row.ordinal);
+}
