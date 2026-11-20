@@ -1,0 +1,7 @@
+Referência técnica básica para respostas sobre Arduino:
+- `setup()` executa uma vez ao iniciar a placa; `loop()` se repete enquanto a placa funciona.
+- `pinMode(pino, OUTPUT)` configura um pino digital como saída; `pinMode(pino, INPUT)` configura como entrada. `INPUT_PULLUP` ativa o resistor interno de pull-up em placas compatíveis.
+- `digitalWrite(pino, HIGH)` coloca uma saída digital em nível alto; `digitalWrite(pino, LOW)` coloca em nível baixo. Um LED requer circuito adequado, inclusive resistor limitador de corrente.
+- `digitalRead(pino)` lê o nível de um pino digital configurado como entrada.
+- Um erro de compilação é diferente de um circuito montado incorretamente. Peça ao estudante a mensagem de erro ou a descrição do circuito quando precisar distinguir os dois.
+Esta lista é apenas referência inicial. Não invente especificações elétricas de placas e componentes sem saber o modelo exato.

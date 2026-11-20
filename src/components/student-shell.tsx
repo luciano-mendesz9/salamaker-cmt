@@ -59,7 +59,7 @@ function isActive(pathname: string, href: string, exact?: boolean) {
 
 export function StudentShell({ children, student, unread, theme }: Props) {
   const pathname = usePathname();
-  const immersive = pathname === "/aluno/trocar-senha" || /^\/aluno\/minigames\/(?:ludo|pong|jogo-da-velha|sudoku)\/[^/]+$/.test(pathname);
+  const immersive = pathname === "/aluno/trocar-senha" || pathname === "/aluno/brex-ai" || /^\/aluno\/minigames\/(?:ludo|pong|jogo-da-velha|sudoku)\/[^/]+$/.test(pathname);
   useEffect(() => {
     try { localStorage.setItem(STUDENT_THEME_STORAGE_KEY, JSON.stringify({ studentId: student.id, theme })); } catch {}
   }, [student.id, theme]);

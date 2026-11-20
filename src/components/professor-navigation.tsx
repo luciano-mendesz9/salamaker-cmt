@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Activity, Bell, BookOpen, ClipboardList, Coins, ExternalLink, Gamepad2, Gauge, Images, KeyRound, Menu, Orbit, Palette, ScrollText, ShoppingBasket, Trophy, X } from "lucide-react";
+import { Activity, Bell, BookOpen, Bot, ClipboardList, Coins, ExternalLink, Gamepad2, Gauge, Images, KeyRound, Menu, Orbit, Palette, ScrollText, ShoppingBasket, Trophy, X } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import styles from "./professor-navigation.module.css";
 
@@ -14,6 +14,7 @@ const overview: NavEntry[] = [
   { href: "/professor/atividades", label: "Atividades", icon: ClipboardList },
   { href: "/professor/aulas", label: "Histórico de aulas", icon: BookOpen },
   { href: "/professor/notificacoes", label: "Notificações", icon: Bell },
+  { href: "/professor/brex-ai", label: "Brex AI", icon: Bot },
 ];
 
 const management: NavEntry[] = [

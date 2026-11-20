@@ -1,4 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
+import brexAvatar from "@/assets/brex-ai.png";
+import brexStyles from "@/components/brex-launch.module.css";
 import { ArrowRight, BookOpen, Bot, CalendarDays, CheckCircle2, Clock3, ExternalLink, Gamepad2, Trophy, UserRound, Zap } from "lucide-react";
 import { BehaviorChart } from "@/components/behavior-chart";
 import { DevCoinWallet } from "@/components/dev-coin-wallet";
@@ -73,6 +76,8 @@ export default async function Aluno() {
           <div className="relative z-10 max-w-md sm:w-[68%]"><p className="eyebrow flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-[var(--accent)]"/>Ideias que ganham vida</p><h2 className="mt-4 font-display text-3xl font-black leading-tight tracking-tight sm:text-4xl">O próximo projeto<br/>começa com você.</h2><p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-400">Explore suas atividades, crie soluções e avance na sua jornada maker.</p><div className="mt-6 flex flex-wrap gap-3"><Link href="/aluno/atividades" className="button-primary">Ver minhas atividades<ArrowRight size={17}/></Link><a href="https://wayground.com/join" target="_blank" rel="noopener noreferrer" className="focus-ring inline-flex items-center justify-center gap-2 rounded-xl bg-[#ef2d9c] px-4 py-3 text-sm font-bold text-white shadow-lg shadow-pink-950/25 transition hover:brightness-110"><ExternalLink size={17}/>Acessar Wayground</a></div></div>
           <div className="absolute -right-5 top-1/2 hidden h-52 w-52 -translate-y-1/2 sm:grid sm:place-items-center"><span className="absolute inset-3 rounded-full border border-[color-mix(in_srgb,var(--accent)_24%,transparent)] bg-[color-mix(in_srgb,var(--accent)_10%,transparent)]"/><span className="absolute inset-9 rounded-full border border-[color-mix(in_srgb,var(--accent)_30%,transparent)]"/><Bot className="relative text-[var(--accent-soft)] drop-shadow-[0_12px_28px_rgba(0,0,0,.35)]" size={108} strokeWidth={1.35}/><Zap className="absolute bottom-7 left-4 rotate-[-12deg] rounded-xl border border-amber-300/20 bg-[#172238] p-2 text-amber-300" size={40}/><BookOpen className="absolute right-4 top-7 rotate-12 rounded-xl border border-[color-mix(in_srgb,var(--accent)_28%,transparent)] bg-[#172238] p-2 text-[var(--accent-soft)]" size={40}/></div>
         </section>
+
+        <Link href="/aluno/brex-ai" className={brexStyles.launch}><span className={brexStyles.avatar}><Image src={brexAvatar} alt="Avatar do Brex AI" fill sizes="72px" className="object-cover"/></span><span className={brexStyles.copy}><small>Seu parceiro na Sala Maker</small><strong>Falar com Brex AI</strong><span>Tire dúvidas de programação, Arduino e robótica.</span></span><ArrowRight className={brexStyles.arrow} size={22}/></Link>
 
         <XpAdjustmentAlert startsAt={xpAdjustmentSchedule.startsAt.toISOString()} targetAt={xpAdjustmentSchedule.targetAt.toISOString()} observedAt={observedAt.toISOString()}/>
 
